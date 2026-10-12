@@ -1,0 +1,462 @@
+<!-- Consultarius — Home (draft). Brand system + homepage. All styles scoped under .cbx -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== BRAND SYSTEM ===== */
+.cbx{
+  --bg:#F6F3EE;          /* fundal cald, aproape alb */
+  --surface:#FFFFFF;     /* carduri */
+  --sand:#EFE8DC;        /* secțiuni alternative */
+  --ink:#1E1C19;         /* titluri, butoane închise */
+  --ink-2:#5E5950;       /* text secundar */
+  --ink-3:#8F887C;       /* text discret */
+  --line:#E5DDD0;        /* borduri */
+  --bronze:#8A6A2E;      /* accent principal */
+  --bronze-d:#6F5422;    /* hover */
+  --bronze-l:#F2E8D6;    /* fundal accent */
+  --radius-s:12px; --radius:20px; --radius-l:32px; --pill:999px;
+  --shadow:0 1px 2px rgba(30,28,25,.04),0 12px 32px -12px rgba(30,28,25,.14);
+  --font:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --wrap:1200px;
+  font-family:var(--font);color:var(--ink);background:var(--bg);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.cbx *,.cbx *::before,.cbx *::after{box-sizing:border-box}
+.cbx img{max-width:100%;display:block}
+.cbx a{color:inherit;text-decoration:none}
+.cbx h1,.cbx h2,.cbx h3,.cbx p{margin:0;font-family:var(--font)}
+.cbx h1{font-size:clamp(40px,5.6vw,72px);line-height:1.04;font-weight:800;letter-spacing:-.035em;color:var(--ink)}
+.cbx h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.cbx h3{font-size:20px;line-height:1.3;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+.cbx .accent{color:var(--bronze)}
+.cbx .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.cbx section{padding:96px 0}
+.cbx .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:18px}
+.cbx .eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+.cbx .lead{font-size:18px;color:var(--ink-2);max-width:560px}
+.cbx .sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.cbx .sec-head p{max-width:440px;color:var(--ink-2)}
+
+/* Buttons */
+.cbx .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border-radius:var(--pill);font-weight:700;font-size:15px;border:0;cursor:pointer;transition:background .2s,transform .2s,color .2s;white-space:nowrap}
+.cbx .btn:hover{transform:translateY(-1px)}
+.cbx .btn-primary{background:var(--bronze);color:#fff}
+.cbx .btn-primary:hover{background:var(--bronze-d);color:#fff}
+.cbx .btn-dark{background:var(--ink);color:#fff;height:44px;padding:0 22px;font-size:14px}
+.cbx .btn-dark:hover{background:#000;color:#fff}
+.cbx .btn-ghost{background:transparent;color:var(--ink);padding:0 8px}
+.cbx .btn-ghost:hover{color:var(--bronze)}
+.cbx .btn-light{background:#fff;color:var(--ink)}
+.cbx .btn svg{width:16px;height:16px}
+
+/* Icon circle */
+.cbx .ic{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--bronze);color:var(--bronze);display:grid;place-items:center;flex:none;background:var(--surface)}
+.cbx .ic svg{width:22px;height:22px}
+.cbx .ic.fill{background:var(--bronze);color:#fff}
+
+/* Card */
+.cbx .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+
+/* ===== HEADER ===== */
+.cbx .hdr{position:sticky;top:0;z-index:50;background:rgba(246,243,238,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent}
+.cbx .hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px}
+.cbx .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.cbx .logo .ic{width:40px;height:40px}
+.cbx .logo .ic svg{width:20px;height:20px}
+.cbx .nav{display:flex;gap:32px;font-size:15px;font-weight:500;color:var(--ink-2)}
+.cbx .nav a:hover{color:var(--bronze)}
+
+/* ===== HERO ===== */
+.cbx .hero{padding:40px 0 64px}
+.cbx .hero-box{background:var(--surface);border-radius:var(--radius-l);padding:64px 56px 48px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.cbx .hero-grid{display:grid;grid-template-columns:1.15fr .95fr .75fr;gap:40px;align-items:center}
+.cbx .hero h1{margin-bottom:24px}
+.cbx .hero .lead{font-size:17px;margin-bottom:36px}
+.cbx .hero-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cbx .hero-photo{position:relative;height:520px}
+.cbx .hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:240px 240px var(--radius) var(--radius)}
+.cbx .hero-photo .badge{position:absolute;left:-28px;bottom:40px;background:var(--surface);border-radius:var(--radius-s);padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600}
+.cbx .hero-photo .badge .ic{width:40px;height:40px}
+.cbx .hero-photo .badge small{display:block;font-weight:500;color:var(--ink-3);font-size:12px}
+.cbx .hero-side .icons{display:flex;gap:10px;margin-bottom:28px}
+.cbx .hero-side .icons .ic{width:46px;height:46px}
+.cbx .hero-side .icons .ic svg{width:19px;height:19px}
+.cbx .svc-list{list-style:none;margin:0 0 40px;padding:0}
+.cbx .svc-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:600;color:var(--ink-3);display:flex;gap:10px}
+.cbx .svc-list li:first-child{color:var(--ink)}
+.cbx .svc-list li:first-child p{font-weight:500;color:var(--ink-2);font-size:13px;margin-top:6px;line-height:1.5}
+.cbx .svc-list li span.arr{color:var(--bronze)}
+.cbx .stats-mini{display:flex;gap:28px}
+.cbx .stats-mini div{font-size:12px;color:var(--ink-3);line-height:1.3}
+.cbx .stats-mini b{display:block;font-size:34px;color:var(--ink);font-weight:800;letter-spacing:-.03em;margin-top:8px}
+.cbx .laws{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);color:var(--ink-3);font-weight:700;font-size:15px}
+.cbx .laws span{display:flex;align-items:center;gap:8px}
+.cbx .laws svg{width:18px;height:18px;color:var(--bronze)}
+
+/* ===== PROBLEMS ===== */
+.cbx .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.cbx .split .ph img{border-radius:var(--radius-l);height:540px;width:100%;object-fit:cover}
+.cbx .pain{display:grid;gap:14px;margin:32px 0 36px}
+.cbx .pain div{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);padding:16px 18px;font-weight:600;font-size:15px}
+.cbx .pain .ic{width:40px;height:40px}
+.cbx .pain .ic svg{width:18px;height:18px}
+
+/* ===== STATS BAND ===== */
+.cbx .band{background:var(--ink);color:#fff;border-radius:var(--radius-l);padding:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.cbx .band b{display:block;font-size:clamp(36px,4vw,52px);font-weight:800;letter-spacing:-.03em;color:#D9B878;line-height:1}
+.cbx .band span{display:block;margin-top:12px;color:rgba(255,255,255,.7);font-size:15px}
+
+/* ===== SERVICES ===== */
+.cbx .services{background:var(--sand)}
+.cbx .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cbx .svc{background:var(--surface);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.cbx .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cbx .svc img{height:200px;width:100%;object-fit:cover}
+.cbx .svc .b{padding:28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.cbx .svc .law{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze)}
+.cbx .svc p{color:var(--ink-2);font-size:15px;flex:1}
+.cbx .svc .more{font-weight:700;font-size:14px;display:inline-flex;gap:8px;align-items:center;margin-top:8px}
+.cbx .svc .more:hover{color:var(--bronze)}
+.cbx .extra{margin-top:24px;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:var(--surface);border-radius:var(--radius);padding:40px;border:1px solid var(--line)}
+.cbx .extra ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+.cbx .extra li{display:flex;gap:10px;font-weight:600;font-size:15px}
+.cbx .extra li svg{width:20px;height:20px;color:var(--bronze);flex:none;margin-top:2px}
+.cbx .extra p{color:var(--ink-2);margin-top:12px}
+
+/* ===== WHY ===== */
+.cbx .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cbx .why-grid .card{box-shadow:none;display:flex;flex-direction:column;gap:16px}
+.cbx .why-grid .card p{color:var(--ink-2);font-size:15px}
+
+/* ===== STEPS ===== */
+.cbx .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
+.cbx .step{position:relative;padding-top:72px}
+.cbx .step::before{counter-increment:s;content:"0" counter(s);position:absolute;top:0;left:0;width:52px;height:52px;border-radius:50%;background:var(--bronze-l);color:var(--bronze);display:grid;place-items:center;font-weight:800;font-size:16px}
+.cbx .step::after{content:"";position:absolute;top:26px;left:64px;right:-8px;height:1.5px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.cbx .step:last-child::after{display:none}
+.cbx .step h3{font-size:18px;margin-bottom:8px}
+.cbx .step p{color:var(--ink-2);font-size:15px}
+.cbx .step:last-child::before{background:var(--bronze);color:#fff}
+
+/* ===== EXPLAIN ===== */
+.cbx .explain{background:var(--sand)}
+.cbx .cmp{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.cbx .cmp .card{box-shadow:none}
+.cbx .cmp .card.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cbx .cmp .card.dark h3{color:#fff}
+.cbx .cmp .card.dark p{color:rgba(255,255,255,.72)}
+.cbx .cmp .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:var(--pill);background:var(--bronze-l);color:var(--bronze);margin-bottom:18px}
+.cbx .cmp .dark .tag{background:rgba(217,184,120,.16);color:#D9B878}
+.cbx .cmp h3{font-size:24px;margin-bottom:12px}
+.cbx .cmp p{color:var(--ink-2)}
+.cbx .quote{margin-top:24px;background:var(--surface);border-radius:var(--radius);padding:40px 48px;border-left:4px solid var(--bronze);font-size:clamp(19px,2vw,24px);font-weight:600;line-height:1.45;letter-spacing:-.01em}
+.cbx .quote small{display:block;margin-top:16px;font-size:14px;font-weight:600;color:var(--ink-3)}
+
+/* ===== FAQ ===== */
+.cbx .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.cbx .faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.cbx .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;font-weight:700;font-size:18px}
+.cbx .faq summary::-webkit-details-marker{display:none}
+.cbx .faq summary::after{content:"+";width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;flex:none;font-weight:500;font-size:20px;color:var(--bronze);transition:transform .2s,background .2s}
+.cbx .faq details[open] summary::after{transform:rotate(45deg);background:var(--bronze-l);border-color:var(--bronze-l)}
+.cbx .faq details p{padding:0 56px 24px 0;color:var(--ink-2)}
+
+/* ===== CONTACT ===== */
+.cbx .contact-box{background:var(--ink);border-radius:var(--radius-l);padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:56px;color:#fff}
+.cbx .contact-box h2{color:#fff}
+.cbx .contact-box .lead{color:rgba(255,255,255,.72);margin:20px 0 32px}
+.cbx .contact-box .eyebrow{color:#D9B878}
+.cbx .contact-points{display:grid;gap:16px}
+.cbx .contact-points div{display:flex;gap:14px;align-items:center;color:rgba(255,255,255,.85);font-weight:600}
+.cbx .contact-points .ic{background:transparent;border-color:#D9B878;color:#D9B878;width:44px;height:44px}
+.cbx .contact-points .ic svg{width:18px;height:18px}
+.cbx .form-card{background:var(--surface);border-radius:var(--radius);padding:36px;color:var(--ink)}
+.cbx .form-card h3{margin-bottom:6px}
+.cbx .form-card > p{color:var(--ink-2);font-size:15px;margin-bottom:20px}
+
+/* ===== FOOTER ===== */
+.cbx .ftr{padding:48px 0 40px;color:var(--ink-3);font-size:14px}
+.cbx .ftr .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:32px}
+.cbx .ftr .nav{font-size:14px}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1100px){
+  .cbx .hero-grid{grid-template-columns:1.1fr 1fr}
+  .cbx .hero-side{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+  .cbx .hero-side .svc-list{margin:0}
+  .cbx .steps{grid-template-columns:repeat(3,1fr);row-gap:40px}
+  .cbx .step:nth-child(3)::after{display:none}
+}
+@media (max-width:860px){
+  .cbx{font-size:16px}
+  .cbx section{padding:64px 0}
+  .cbx .nav{display:none}
+  .cbx .hero{padding:16px 0 40px}
+  .cbx .hero-box{padding:40px 24px 32px;border-radius:var(--radius)}
+  .cbx .hero-grid,.cbx .split,.cbx .faq-grid,.cbx .contact-box,.cbx .extra,.cbx .cmp{grid-template-columns:1fr}
+  .cbx .hero-side{grid-template-columns:1fr}
+  .cbx .hero-photo{height:380px}
+  .cbx .hero-photo .badge{left:12px}
+  .cbx .split{gap:40px}
+  .cbx .split .ph img{height:320px}
+  .cbx .band{grid-template-columns:1fr 1fr;padding:36px 28px}
+  .cbx .svc-grid,.cbx .why-grid{grid-template-columns:1fr}
+  .cbx .extra{padding:28px}
+  .cbx .extra ul{grid-template-columns:1fr}
+  .cbx .steps{grid-template-columns:1fr}
+  .cbx .step{padding:0 0 0 72px;min-height:52px}
+  .cbx .step::after{display:none}
+  .cbx .contact-box{padding:36px 24px}
+  .cbx .form-card{padding:24px}
+  .cbx .quote{padding:28px}
+  .cbx .faq details p{padding-right:0}
+  .cbx .laws{gap:20px 28px}
+}
+@media (max-width:480px){
+  .cbx .hdr .btn-dark span{display:none}
+  .cbx .hdr .btn-dark{width:44px;padding:0}
+  .cbx .hero-cta .btn-primary{width:100%}
+}
+</style>
+
+<div class="cbx">
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+      Consultarius
+    </a>
+    <nav class="nav">
+      <a href="#despre">Despre noi</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#pasi">Cum lucrăm</a>
+      <a href="#insolventa">Insolvența</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a href="#contact" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg><span>Sunați-ne</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <div class="hero-grid">
+        <div>
+          <h1>Ieșiți din datorii pe cale legală. <span class="accent">Împreună.</span></h1>
+          <p class="lead">Soluții legale pentru debitorii copleșiți de datorii: oprim presiunea creditorilor, suspendăm executarea silită și aplicăm procedura de insolvență (Legea 151/2015). Primul pas — o consultație gratuită și confidențială.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Consultație gratuită</a>
+            <a href="#pasi" class="btn btn-ghost">Cum lucrăm <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/06/hero-consultanta-insolventa.jpg" alt="Avocat Consultarius în consultație cu o clientă">
+          <div class="badge">
+            <span class="ic fill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <div>Confidențialitate deplină<small>Consultația inițială e gratuită</small></div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div>
+            <div class="icons">
+              <span class="ic fill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4.5l5 5M12 7l5 5M3 21l8-8M9.5 9.5l5 5"/></svg></span>
+            </div>
+            <ul class="svc-list">
+              <li><span class="arr">↗</span><div>Insolvența persoanelor fizice<p>Procedura prevăzută de Legea 151/2015, de la cerere până la ștergerea datoriilor rămase.</p></div></li>
+              <li><span class="arr">→</span>Oprirea executării silite</li>
+              <li><span class="arr">→</span>Reorganizare judiciară pentru firme</li>
+              <li><span class="arr">→</span>Negocieri cu creditorii</li>
+            </ul>
+          </div>
+          <div class="stats-mini">
+            <div>cazuri<br>analizate<b>[XXXX]+</b></div>
+            <div>clienți<br>mulțumiți<b>[XX]%</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="laws">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Legea 151/2015</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Legea 85/2014</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Grupul Consultarius</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS / ABOUT -->
+<section id="despre">
+  <div class="wrap split">
+    <div class="ph"><img src="https://chinsolvency.ro/wp-content/uploads/2026/06/insolventa-persoane-fizice.jpg" alt="Persoană care analizează o scrisoare de la creditori" loading="lazy"></div>
+    <div>
+      <span class="eyebrow">Despre noi</span>
+      <h2>Înțelegem prin ce treceți — și știm cum vă <span class="accent">putem ajuta</span></h2>
+      <p class="lead" style="margin-top:20px">Datoriile acumulate, popririle și apelurile creditorilor pot transforma viața de zi cu zi într-o sursă constantă de stres. Nu sunteți singur, iar legea vă oferă soluții reale.</p>
+      <div class="pain">
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>Apeluri și presiune din partea creditorilor și a firmelor de recuperare</div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>Executare silită: poprire pe salariu, pe cont sau riscul pierderii bunurilor</div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span>Dobânzi și penalități care cresc mai repede decât puteți achita</div>
+        <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17h.01"/></svg></span>Incertitudine juridică privind drepturile dumneavoastră de debitor</div>
+      </div>
+      <a href="#contact" class="btn btn-primary">Discutați cu un avocat</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band">
+      <div><b>[XX]+</b><span>Ani de experiență</span></div>
+      <div><b>[XXXX]+</b><span>Cazuri analizate</span></div>
+      <div><b>[XX]+</b><span>Țări în care activează grupul Consultarius</span></div>
+      <div><b>[XX]%</b><span>Grad de satisfacție a clienților</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicii" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Serviciile noastre</span><h2>Soluții complete pentru<br>problemele cu <span class="accent">datoriile</span></h2></div>
+      <p>De la prima analiză a dosarului până la hotărârea instanței — fiecare pas este făcut legal, transparent și cu explicații clare.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <img src="https://chinsolvency.ro/wp-content/uploads/2026/06/consultanta-juridica-plan-rambursare.jpg" alt="Consultanță juridică pentru persoane fizice" loading="lazy">
+        <div class="b"><span class="law">Legea 151/2015</span><h3>Insolvența persoanelor fizice</h3><p>Vă ghidăm pas cu pas prin procedură — de la cerere până la ștergerea datoriilor rămase.</p><a href="#contact" class="more">Aflați mai mult →</a></div>
+      </article>
+      <article class="svc">
+        <img src="https://chinsolvency.ro/wp-content/uploads/2026/06/oprirea-executarii-silite.jpg" alt="Avocat care discută oprirea executării silite" loading="lazy">
+        <div class="b"><span class="law">Executare silită</span><h3>Oprirea executării silite</h3><p>Analizăm dosarul de executare și acționăm legal pentru a contesta sau suspenda executarea și a vă proteja veniturile.</p><a href="#contact" class="more">Aflați mai mult →</a></div>
+      </article>
+      <article class="svc">
+        <img src="https://chinsolvency.ro/wp-content/uploads/2026/06/insolventa-firme.jpg" alt="Antreprenor care analizează situația firmei" loading="lazy">
+        <div class="b"><span class="law">Legea 85/2014</span><h3>Reorganizare judiciară pentru firme</h3><p>Pentru companii în dificultate, construim un plan de reorganizare realist, pentru a continua activitatea.</p><a href="#contact" class="more">Aflați mai mult →</a></div>
+      </article>
+    </div>
+    <div class="extra">
+      <div><span class="eyebrow">De asemenea, vă oferim</span><h3 style="font-size:26px">Servicii suplimentare</h3><p>Consultanță juridică inițială gratuită, analiza dosarului de executare și pregătirea documentelor pentru instanță.</p></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Restructurarea datoriilor și plan de rambursare</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Protecție față de creditori și firme de recuperare</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Analiza dosarului de executare silită</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Întocmirea documentelor pentru instanță</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Reprezentare în relația cu creditorii</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Consultație inițială gratuită</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">De ce să ne alegeți</span><h2>Un partener de încredere<br><span class="accent">alături de dumneavoastră</span></h2></div>
+      <p>Lucrăm cu oameni și firme aflate în momente dificile. De aceea punem pe primul loc claritatea, discreția și rapiditatea.</p>
+    </div>
+    <div class="why-grid">
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><h3>Abordare individuală</h3><p>Fiecare situație este unică. Construim o soluție adaptată datoriilor și veniturilor dumneavoastră.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><h3>Experiență internațională</h3><p>Facem parte din grupul Consultarius, prezent în mai multe țări europene.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><h3>Confidențialitate deplină</h3><p>Tratăm fiecare caz cu discreție totală și respect pentru intimitatea dumneavoastră.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Transparență</h3><p>Vă explicăm clar fiecare pas, fără costuri ascunse și fără promisiuni nerealiste.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><h3>Reacție rapidă</h3><p>Acționăm prompt, mai ales când există un termen de executare silită.</p></div>
+      <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20a7 7 0 0 1 14 0M15 20a5 5 0 0 1 7-4.6"/></svg></span><h3>Echipă multidisciplinară</h3><p>Reunim cunoștințe juridice, financiare și de negociere într-un singur loc.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="pasi" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Cum lucrăm</span><h2>Cinci pași simpli către<br><span class="accent">soluția potrivită</span></h2></div>
+      <a href="#contact" class="btn btn-primary">Începeți cu pasul 1</a>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Solicitare</h3><p>Completați formularul sau ne sunați. Primul contact este gratuit și fără obligații.</p></div>
+      <div class="step"><h3>Analiză gratuită</h3><p>Evaluăm datoriile, veniturile și dosarele de executare silită pentru a înțelege situația.</p></div>
+      <div class="step"><h3>Plan de acțiune</h3><p>Vă propunem soluția legală potrivită: insolvență, plan de rambursare sau reorganizare.</p></div>
+      <div class="step"><h3>Procedura</h3><p>Vă reprezentăm și depunem documentele necesare în fața instanței și a creditorilor.</p></div>
+      <div class="step"><h3>Rezultat</h3><p>Ștergerea sau restructurarea datoriilor, oprirea presiunii și un nou început financiar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLAIN -->
+<section id="insolventa" class="explain">
+  <div class="wrap">
+    <span class="eyebrow">Insolvența explicată simplu</span>
+    <h2 style="max-width:760px">Insolvența nu este același lucru cu <span class="accent">falimentul</span></h2>
+    <p class="lead" style="margin-top:20px;max-width:760px">Insolvența înseamnă situația în care un debitor nu își mai poate plăti datoriile la scadență cu banii disponibili. Nu este o simplă întârziere de câteva zile, ci incapacitate de plată — și nu înseamnă automat faliment.</p>
+    <div class="cmp">
+      <div class="card"><span class="tag">Insolvența</span><h3>Diagnosticul și cadrul de protecție</h3><p>O firmă în insolvență poate avea încă activitate, contracte, salariați și șanse de reorganizare judiciară. Pentru persoane fizice de bună-credință, procedura poate fi o cale de protecție și redresare.</p></div>
+      <div class="card dark"><span class="tag">Falimentul</span><h3>Etapa de lichidare judiciară</h3><p>Bunurile sunt valorificate, iar sumele se distribuie creditorilor. Este soluția dură, atunci când reorganizarea nu mai funcționează.</p></div>
+    </div>
+    <div class="quote">„Insolvența nu este locul unde mergi când totul este pierdut. Este locul unde trebuie să ajungi înainte ca datoriile, executările silite și creditorii să îți rupă complet echilibrul.”<small>— Avocat Consultarius</small></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="intrebari">
+  <div class="wrap faq-grid">
+    <div>
+      <span class="eyebrow">Întrebări frecvente</span>
+      <h2>Răspunsuri <span class="accent">clare</span> la întrebările dumneavoastră</h2>
+      <p class="lead" style="margin:20px 0 32px">Nu ați găsit răspunsul? Scrieți-ne — prima consultație este gratuită.</p>
+      <a href="#contact" class="btn btn-primary">Puneți o întrebare</a>
+    </div>
+    <div class="faq">
+      <details open><summary>Ce este insolvența persoanei fizice?</summary><p>Este procedura prevăzută de Legea 151/2015, prin care un debitor persoană fizică de bună-credință, care nu își mai poate plăti datoriile, poate obține un plan de rambursare sau, în anumite condiții, ștergerea datoriilor rămase.</p></details>
+      <details><summary>Poate fi oprită o executare silită deja începută?</summary><p>În multe cazuri, da. Analizăm dosarul de executare și verificăm dacă există temeiuri pentru contestație sau suspendare. Deschiderea procedurii de insolvență poate, de asemenea, să suspende executările individuale.</p></details>
+      <details><summary>Insolvența înseamnă că firma mea va da faliment?</summary><p>Nu. Insolvența este starea de dificultate și cadrul procedural. Conform Legii 85/2014, o firmă poate trece prin reorganizare judiciară și își poate continua activitatea.</p></details>
+      <details><summary>Cât costă prima consultație?</summary><p>Consultația inițială este gratuită și confidențială. După analiza situației, vă prezentăm clar costurile, fără taxe ascunse.</p></details>
+      <details><summary>Ce documente trebuie să pregătesc?</summary><p>Pentru început, sunt utile contractele de credit, notificările de la creditori sau executori și dovezile privind veniturile. Vă spunem exact ce mai este necesar după prima discuție.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Consultație gratuită</span>
+        <h2>Faceți primul pas către un nou început financiar</h2>
+        <p class="lead">Completați formularul, iar un avocat Consultarius vă contactează pentru analiza gratuită și confidențială a situației.</p>
+        <div class="contact-points">
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>[Telefon]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>[E-mail]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>[Adresa biroului]</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Solicitați o evaluare gratuită</h3>
+        <p>Vă răspundem în cel mai scurt timp.</p>
+<!-- FORM_SLOT -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ftr">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Consultarius</a>
+    <nav class="nav"><a href="#despre">Despre noi</a><a href="#servicii">Servicii</a><a href="#pasi">Cum lucrăm</a><a href="#contact">Contact</a></nav>
+    <span>© 2026 Consultarius. Toate drepturile rezervate.</span>
+  </div>
+</footer>
+
+</div>
