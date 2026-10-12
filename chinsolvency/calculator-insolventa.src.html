@@ -1,0 +1,672 @@
+<!-- Consultarius — /calculator-insolventa/ (draft). Built by build.py: BRAND_CSS + FORM_SLOT are injected. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*BRAND_CSS*/
+
+/* ===== ARTICLE / CALCULATOR PAGE ===== */
+.cbx .crumbs{font-size:13px;color:var(--ink-3);margin-bottom:24px;display:flex;gap:8px;flex-wrap:wrap}
+.cbx .crumbs a:hover{color:var(--bronze)}
+.cbx .a-hero .hero-box{padding:56px}
+.cbx .a-hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:start}
+.cbx .a-hero h1{font-size:clamp(34px,4.4vw,56px);margin-bottom:24px}
+.cbx .a-hero .lead p+p{margin-top:14px}
+.cbx .meta{display:flex;gap:10px 24px;flex-wrap:wrap;margin:28px 0 32px;font-size:13px;color:var(--ink-3);font-weight:600}
+.cbx .meta span{display:flex;gap:8px;align-items:center}
+.cbx .meta svg{width:16px;height:16px;color:var(--bronze)}
+.cbx .answer{background:var(--bg);border-radius:var(--radius);padding:32px;border:1px solid var(--line)}
+.cbx .answer h2{font-size:22px;letter-spacing:-.01em;margin-bottom:12px}
+.cbx .answer p{font-size:15px;color:var(--ink-2)}
+.cbx .answer p+p{margin-top:10px}
+.cbx .lights{display:grid;gap:10px;margin-top:20px}
+.cbx .light{display:flex;gap:12px;align-items:center;background:var(--surface);border-radius:var(--radius-s);padding:12px 14px;font-size:14px;font-weight:600}
+.cbx .light i{width:14px;height:14px;border-radius:50%;flex:none}
+.cbx .light small{display:block;font-weight:500;color:var(--ink-3);font-size:12px}
+.cbx .g{background:#3F8F5A}.cbx .y{background:#D9A520}.cbx .r{background:#B9382F}
+
+/* calculator */
+.cbx .calc{background:var(--surface);border-radius:var(--radius-l);box-shadow:var(--shadow);overflow:hidden}
+.cbx .tabs{display:flex;gap:6px;padding:10px;background:var(--sand);flex-wrap:wrap}
+.cbx .tab{flex:1;min-width:200px;border:0;background:transparent;border-radius:var(--radius-s);padding:14px 18px;font:700 15px var(--font);color:var(--ink-2);cursor:pointer;display:flex;gap:10px;align-items:center;justify-content:center}
+.cbx .tab svg{width:18px;height:18px}
+.cbx .tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.cbx .panel{display:grid;grid-template-columns:1.1fr .9fr}
+.cbx .panel[hidden]{display:none}
+.cbx .fields{padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-content:start}
+.cbx .field{display:flex;flex-direction:column;gap:8px}
+.cbx .field.full{grid-column:1/-1}
+.cbx .field label{font-size:14px;font-weight:700;color:var(--ink)}
+.cbx .field small{font-size:12px;color:var(--ink-3);line-height:1.4}
+.cbx .inp{position:relative}
+.cbx .inp input,.cbx .inp select{width:100%;height:52px;border:1.5px solid var(--line);border-radius:var(--radius-s);padding:0 54px 0 16px;font:600 16px var(--font);color:var(--ink);background:var(--bg);outline:none;transition:border-color .2s,background .2s;-moz-appearance:textfield}
+.cbx .inp input::-webkit-outer-spin-button,.cbx .inp input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.cbx .inp input:focus,.cbx .inp select:focus{border-color:var(--bronze);background:#fff}
+.cbx .inp .unit{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:var(--ink-3);pointer-events:none}
+.cbx .inp select{padding-right:16px;appearance:auto}
+.cbx .row-btns{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.cbx .btn-line{background:transparent;border:1.5px solid var(--line);color:var(--ink-2);height:52px}
+.cbx .btn-line:hover{border-color:var(--bronze);color:var(--bronze)}
+.cbx .result{background:var(--ink);color:#fff;padding:40px;display:flex;flex-direction:column;gap:18px;min-height:100%}
+.cbx .result .lbl{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#D9B878}
+.cbx .result .big{font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.cbx .result .status{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+.cbx .result .status i{width:16px;height:16px;border-radius:50%;background:#555}
+.cbx .result p{color:rgba(255,255,255,.75);font-size:15px}
+.cbx .meter{height:10px;border-radius:999px;background:linear-gradient(90deg,#B9382F 0 50%,#D9A520 50% 96%,#3F8F5A 96%);position:relative;margin:4px 0 22px}
+.cbx .meter::after{content:"";position:absolute;right:0;top:0;bottom:0;width:0}
+.cbx .meter b{position:absolute;top:50%;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--ink);transform:translate(-50%,-50%);left:0;transition:left .4s}
+.cbx .meter-scale{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.5);margin-top:-14px}
+.cbx .flag{border-radius:var(--radius-s);padding:14px 16px;font-size:14px;line-height:1.5;background:rgba(255,255,255,.06);color:rgba(255,255,255,.85)}
+.cbx .flag.warn{background:rgba(185,56,47,.22);color:#FFD9D4}
+.cbx .result .disc{font-size:12px;color:rgba(255,255,255,.5);margin-top:auto}
+.cbx .result .btn{align-self:flex-start}
+
+/* article layout */
+.cbx .article{display:grid;grid-template-columns:260px 1fr;gap:64px;align-items:start}
+.cbx .toc{position:sticky;top:104px;font-size:14px}
+.cbx .toc b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:14px}
+.cbx .toc a{display:block;padding:8px 0 8px 14px;border-left:2px solid var(--line);color:var(--ink-2);font-weight:500;line-height:1.4}
+.cbx .toc a:hover{color:var(--bronze);border-color:var(--bronze)}
+.cbx .prose{max-width:760px;min-width:0}
+.cbx .prose > section{padding:0 0 64px;scroll-margin-top:100px}
+.cbx .prose h2{font-size:clamp(26px,3vw,36px);margin-bottom:20px}
+.cbx .prose h3{font-size:21px;margin:32px 0 14px}
+.cbx .prose h4{font:700 17px var(--font);margin:28px 0 12px;color:var(--ink)}
+.cbx .prose p{color:var(--ink-2);margin:0 0 16px}
+.cbx .prose p strong,.cbx .prose li strong{color:var(--ink)}
+.cbx .prose a{color:var(--bronze);text-decoration:underline;text-underline-offset:3px}
+.cbx .prose ul.chk,.cbx .prose ol.num{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+.cbx .prose ul.chk li{position:relative;padding:14px 18px 14px 50px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);color:var(--ink-2);font-size:16px}
+.cbx .prose ul.chk li::before{content:"";position:absolute;left:18px;top:19px;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--bronze);background:radial-gradient(circle,var(--bronze) 0 3px,transparent 3.5px)}
+.cbx .prose ol.num{counter-reset:n}
+.cbx .prose ol.num li{counter-increment:n;position:relative;padding:14px 18px 14px 62px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);color:var(--ink-2)}
+.cbx .prose ol.num li::before{content:counter(n);position:absolute;left:16px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--bronze-l);color:var(--bronze);font-weight:800;font-size:14px;display:grid;place-items:center}
+.cbx .note{border-radius:var(--radius);padding:24px 28px;margin:24px 0;background:var(--bronze-l);color:var(--ink);font-size:16px;line-height:1.6}
+.cbx .note b{color:var(--bronze-d)}
+.cbx .note.dark{background:var(--ink);color:rgba(255,255,255,.85)}
+.cbx .note.dark b{color:#D9B878}
+.cbx .example{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin:24px 0}
+.cbx .example .t{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin-bottom:12px}
+.cbx .example p{margin-bottom:10px}
+.cbx .formula{font-weight:700;color:var(--ink);background:var(--bg);border-radius:var(--radius-s);padding:12px 16px;display:inline-block;margin:4px 0 12px}
+.cbx .pill{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;padding:6px 12px;border-radius:999px;background:#F6DEDB;color:#9A2B23}
+.cbx .pill i{width:10px;height:10px;border-radius:50%;background:#B9382F}
+.cbx figure{margin:32px 0}
+.cbx figure img{width:100%;border-radius:var(--radius);border:1px solid var(--line)}
+.cbx figcaption{font-size:13px;color:var(--ink-3);margin-top:10px}
+.cbx .latin{margin:28px 0;padding:28px 32px;border-left:4px solid var(--bronze);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-size:20px;font-weight:600;color:var(--ink);line-height:1.45}
+.cbx .latin small{display:block;font-size:15px;font-weight:500;color:var(--ink-2);margin-top:8px}
+.cbx .t-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.cbx .t-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.cbx .t-card h3{margin:0 0 14px;font-size:19px;display:flex;gap:10px;align-items:center}
+.cbx .t-card h3 .ic{width:38px;height:38px}
+.cbx .t-card h3 .ic svg{width:17px;height:17px}
+.cbx .t-card ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.cbx .t-card li{font-size:15px;color:var(--ink-2);line-height:1.55;padding-top:14px;border-top:1px solid var(--line)}
+.cbx .t-card li:first-child{border-top:0;padding-top:0}
+.cbx .t-card li .d{display:inline-block;font-weight:800;color:var(--bronze);background:var(--bronze-l);border-radius:8px;padding:2px 8px;margin-right:6px;font-size:13px}
+.cbx .risk3{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.cbx .risk{border-radius:var(--radius);padding:24px;border:1px solid var(--line);background:var(--surface)}
+.cbx .risk h3{margin:0 0 10px;font-size:19px;display:flex;gap:10px;align-items:center}
+.cbx .risk h3 i{width:12px;height:12px;border-radius:50%}
+.cbx .risk p{font-size:15px;margin:0 0 8px}
+.cbx .risk .do{font-weight:700;color:var(--ink);font-size:15px;margin:0}
+.cbx .tbl{overflow-x:auto;margin:20px 0 28px;border-radius:var(--radius);border:1px solid var(--line);background:var(--surface);-webkit-overflow-scrolling:touch}
+.cbx .tbl table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px}
+.cbx .tbl th{background:var(--ink);color:#fff;text-align:left;padding:14px 16px;font-weight:700;font-size:13px;white-space:nowrap}
+.cbx .tbl td{padding:14px 16px;border-top:1px solid var(--line);color:var(--ink-2);vertical-align:top;line-height:1.5}
+.cbx .tbl td:first-child{font-weight:700;color:var(--ink)}
+.cbx .tbl tr:nth-child(even) td{background:#FBF9F5}
+.cbx .tbl.wide table{min-width:1100px}
+.cbx .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 16px}
+.cbx .trio div{background:var(--ink);color:#fff;border-radius:var(--radius-s);padding:18px;font-size:14px;line-height:1.45}
+.cbx .trio b{display:block;color:#D9B878;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.cbx .cases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.cbx .cases .card{box-shadow:none}
+.cbx .cases .card h3{margin:0 0 12px}
+.cbx .cases .card p{font-size:15px;margin:0}
+.cbx .author{display:flex;gap:20px;align-items:center;background:var(--surface);border:1px dashed var(--bronze);border-radius:var(--radius);padding:24px;margin-top:8px}
+.cbx .author .av{width:72px;height:72px;border-radius:50%;background:var(--bronze-l);display:grid;place-items:center;color:var(--bronze);flex:none}
+.cbx .author .av svg{width:30px;height:30px}
+.cbx .author b{display:block;font-size:16px}
+.cbx .author span{font-size:14px;color:var(--ink-3)}
+.cbx .faq-wide .faq details p{padding-right:56px}
+
+@media (max-width:1100px){
+  .cbx .article{grid-template-columns:1fr}
+  .cbx .toc{position:static;display:none}
+}
+@media (max-width:860px){
+  .cbx .a-hero .hero-box{padding:32px 22px}
+  .cbx .a-hero-grid,.cbx .panel,.cbx .t-grid,.cbx .risk3,.cbx .cases,.cbx .trio{grid-template-columns:1fr}
+  .cbx .fields{grid-template-columns:1fr;padding:24px}
+  .cbx .result{padding:28px 24px}
+  .cbx .result .big{font-size:44px}
+  .cbx .tab{min-width:0}
+  .cbx .latin{padding:22px;font-size:18px}
+  .cbx .faq-wide .faq details p{padding-right:0}
+  .cbx .author{flex-direction:column;align-items:flex-start}
+}
+</style>
+
+<div class="cbx">
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+      Consultarius
+    </a>
+    <nav class="nav">
+      <a href="#calculator">Calculator</a>
+      <a href="#termene">Termene</a>
+      <a href="#recuperare">Recuperare creanțe</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a href="#contact" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg><span>Consultație gratuită</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Calculator insolvență</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Instrument gratuit · Legea nr. 85/2014</span>
+          <h1>Calculator insolvență pentru <span class="accent">termene și recuperare creanțe</span></h1>
+          <div class="lead">
+            <p>O poprire pe cont schimbă totul într-o zi. Salariile nu mai pleacă. Furnizorii sună. O somație cere plata în câteva zile.</p>
+            <p>Atunci apare o singură întrebare: firma mai poate plăti sau a intrat deja în insolvență? Un <strong>calculator insolvență</strong> dă primul răspuns în câteva minute. Mai jos vezi ce date introduci, cum citești rezultatul, ce termene curg pentru debitor și creditor și când rezultatul trebuie verificat de un avocat.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 8 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Prag și termene verificate după Legea nr. 85/2014 și Codul de procedură civilă</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează riscul</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer" id="raspuns">
+          <h2>Calculator insolvență: răspuns rapid</h2>
+          <p>Un calculator insolvență compară datoriile scadente cu banii disponibili și arată riscul: scăzut, mediu sau ridicat. Poate estima termene procedurale, costuri posibile și șanse de recuperare a creanțelor.</p>
+          <p>Rezultatul este orientativ. Nu este un verdict juridic și nu înlocuiește analiza actelor.</p>
+          <div class="lights">
+            <div class="light"><i class="g"></i><div>Verde — monitorizare<small>acoperire peste 100%</small></div></div>
+            <div class="light"><i class="y"></i><div>Galben — verificare urgentă<small>acoperire între 50% și 100%</small></div></div>
+            <div class="light"><i class="r"></i><div>Roșu — analiză imediată<small>acoperire sub 50%</small></div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator online</span><h2>Verifică riscul și <span class="accent">termenele</span></h2></div>
+      <p>Datele rămân în browserul dumneavoastră — nu le trimitem nicăieri. Rezultatul este orientativ și nu înlocuiește analiza juridică.</p>
+    </div>
+    <div class="calc">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="p-risc" id="t-risc" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/></svg>Risc de insolvență</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-termen" id="t-termen" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Termen procedural</button>
+      </div>
+
+      <div class="panel" id="p-risc" role="tabpanel" aria-labelledby="t-risc">
+        <form class="fields" id="f-risc" onsubmit="return false">
+          <div class="field full"><label for="c-datorii">Datorii scadente</label><div class="inp"><input id="c-datorii" inputmode="decimal" placeholder="ex. 180 000"><span class="unit">lei</span></div><small>Furnizori, ANAF, bancă, salarii — doar sumele ajunse la scadență.</small></div>
+          <div class="field"><label for="c-bani">Bani în cont și în casă</label><div class="inp"><input id="c-bani" inputmode="decimal" placeholder="ex. 25 000"><span class="unit">lei</span></div></div>
+          <div class="field"><label for="c-incasari">Încasări sigure în 30 de zile</label><div class="inp"><input id="c-incasari" inputmode="decimal" placeholder="ex. 40 000"><span class="unit">lei</span></div><small>Nu includeți facturi incerte sau contestate.</small></div>
+          <div class="field"><label for="c-creanta">Cea mai mare datorie restantă către un singur creditor</label><div class="inp"><input id="c-creanta" inputmode="decimal" placeholder="ex. 60 000"><span class="unit">lei</span></div></div>
+          <div class="field"><label for="c-zile">Zile de întârziere pentru această datorie</label><div class="inp"><input id="c-zile" inputmode="numeric" placeholder="ex. 75"><span class="unit">zile</span></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-risc">Calculează riscul</button>
+            <button type="button" class="btn btn-line" id="b-ex">Completează exemplul din articol</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Grad de acoperire</span>
+          <div class="big" id="r-pct">—</div>
+          <div><div class="meter"><b id="r-dot"></b></div><div class="meter-scale"><span>0%</span><span>50%</span><span>100%+</span></div></div>
+          <div class="status" id="r-status"><i></i><span>Introduceți datele</span></div>
+          <p id="r-text">Acoperire = (bani disponibili + încasări sigure în 30 de zile) / datorii scadente.</p>
+          <div class="flag" id="r-flag" hidden></div>
+          <a href="#contact" class="btn btn-primary" id="r-cta" hidden>Trimite rezultatul unui avocat</a>
+          <span class="disc">Grilă orientativă de lucru, nu prag legal. Calculatorul nu deschide procedura și nu garantează recuperarea unei creanțe.</span>
+        </div>
+      </div>
+
+      <div class="panel" id="p-termen" role="tabpanel" aria-labelledby="t-termen" hidden>
+        <form class="fields" id="f-termen" onsubmit="return false">
+          <div class="field full"><label for="d-start">Data comunicării sau a publicării în BPI</label><div class="inp"><input type="date" id="d-start"></div><small>Folosiți data de pe dovada de comunicare.</small></div>
+          <div class="field full"><label for="d-tip">Tipul termenului</label><div class="inp"><select id="d-tip">
+            <option value="10">Contestația debitorului la cererea creditorului — 10 zile</option>
+            <option value="7">Contestația la tabelul preliminar — 7 zile</option>
+            <option value="30">Cererea debitorului de deschidere a procedurii — 30 de zile</option>
+            <option value="custom">Alt termen (introduc numărul de zile)</option>
+          </select></div></div>
+          <div class="field full" id="d-custom-wrap" hidden><label for="d-zile">Număr de zile</label><div class="inp"><input id="d-zile" inputmode="numeric" placeholder="ex. 15"><span class="unit">zile</span></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-termen">Calculează termenul</button>
+            <button type="button" class="btn btn-line" id="b-ex2">Exemplul din articol</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Ultima zi orientativă pentru depunere</span>
+          <div class="big" id="t-date" style="font-size:40px">—</div>
+          <p id="t-text">Termenele pe zile se calculează pe zile libere: nu se numără nici ziua de la care începe să curgă, nici ziua în care se împlinește (art. 181 C. proc. civ.). Dacă ultima zi este nelucrătoare, termenul se prelungește până la prima zi lucrătoare (art. 182).</p>
+          <div class="flag" id="t-flag" hidden></div>
+          <span class="disc">Calcul orientativ. Ia în calcul weekendurile și sărbătorile legale din România, dar nu verifică dovada comunicării. Pentru termen sub 10 zile, cereți avocat.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#ce-este">Ce este un calculator de insolvență</a>
+      <a href="#termene">Termene juridice în insolvență</a>
+      <a href="#recuperare">Recuperare creanțe</a>
+      <a href="#interpretare">Cum interpretezi rezultatele</a>
+      <a href="#semne">Semnele de risc</a>
+      <a href="#legislatie">Legislație aplicabilă</a>
+      <a href="#comparatie">Tabel comparativ</a>
+      <a href="#practica">Practica judiciară</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#avocat">Când ai nevoie de avocat</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+      <a href="#concluzie">Concluzie</a>
+    </nav>
+
+    <div class="prose">
+
+      <section>
+        <p>Logica vine din lege. <a href="https://legislatie.just.ro/Public/DetaliiDocument/159286" target="_blank" rel="noopener">Legea nr. 85/2014</a>, art. 5 pct. 29, definește insolvența ca stare a patrimoniului debitorului caracterizată prin insuficiența fondurilor bănești disponibile pentru plata datoriilor certe, lichide și exigibile. Contează banii de azi, nu valoarea firmei pe hârtie.</p>
+        <p>Legea prezumă insolvența dacă debitorul nu plătește un creditor la 60 de zile de la scadență. Pentru a cere deschiderea procedurii, creanța trebuie să depășească valoarea-prag de 50.000 lei.</p>
+        <p>Gândește-te la calculator ca la un semafor. Verde înseamnă monitorizare. Galben înseamnă verificare urgentă. Roșu înseamnă că trebuie analizate imediat actele, termenele și riscul de deschidere a procedurii insolvenței.</p>
+        <div class="note"><b>Important:</b> calculatorul nu deschide procedura, nu stabilește masa credală și nu garantează recuperarea unei creanțe. Îți arată când trebuie să acționezi.</div>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Ghid</span>
+        <h2>Ce este un calculator de insolvență</h2>
+        <p>Un calculator de insolvență este un instrument online în care introduci datoriile, lichiditățile, creanțele de încasat, activele și termenele. Pe baza lor primești o <strong>estimare risc insolvență</strong> și pașii recomandați. Este util pentru debitori, creditori, firme, avocați și practicieni în insolvență.</p>
+        <p>Fiecare îl folosește altfel. Debitorul verifică dacă mai poate negocia sau trebuie să ceară reorganizarea. Creditorul verifică dacă mai are sens executarea silită sau trebuie să meargă în procedura colectivă. Practicianul verifică dacă firma mai poate fi salvată.</p>
+        <div class="note dark"><b>Atenție la persoanele fizice.</b> Legea nr. 85/2014 se aplică firmelor și profesioniștilor. Pentru datoriile unei persoane fizice care nu desfășoară activitate economică se aplică Legea nr. 151/2015 privind procedura insolvenței persoanelor fizice. Regulile și pragurile sunt diferite.</div>
+
+        <h3>Ce date introduci în calculator</h3>
+        <ul class="chk">
+          <li><strong>Datorii totale</strong>, separat cele scadente de cele care nu au ajuns încă la scadență.</li>
+          <li><strong>Creanțe restante</strong>: facturile emise și neîncasate.</li>
+          <li><strong>Termene de plată</strong>: data scadenței pentru fiecare datorie.</li>
+          <li><strong>Active și venituri</strong>: bani în cont și în casă, încasări sigure în următoarele 30 de zile.</li>
+          <li><strong>Costuri procedurale</strong>: taxe, onorarii, executări în curs.</li>
+        </ul>
+        <p>În practica mea, cea mai frecventă greșeală este amestecarea creanțelor cu lichiditățile. O factură emisă nu plătește salarii. Banii încasați plătesc.</p>
+
+        <h3>Ce rezultat poți obține</h3>
+        <ul class="chk">
+          <li>Estimarea riscului de insolvență: scăzut, mediu sau ridicat.</li>
+          <li>Termene orientative pentru pașii următori.</li>
+          <li>Costuri posibile ale procedurii.</li>
+          <li>Etapele procedurale recomandate: negociere, ordonanță de plată, executare silită, cerere de insolvență sau plan de reorganizare.</li>
+          <li>Costuri procedură insolvență: taxe, onorariul de administrator judiciar sau lichidator, publicitate.</li>
+        </ul>
+
+        <div class="example">
+          <div class="t">Calcul pe scurt</div>
+          <p>O firmă are datorii scadente de 180.000 lei: 95.000 lei la furnizori, 45.000 lei la ANAF, 40.000 lei la bancă. În cont și în casă are 25.000 lei. Încasări sigure în 30 de zile: 40.000 lei.</p>
+          <span class="formula">(25.000 + 40.000) / 180.000 = 36%</span>
+          <p>Un singur furnizor are de primit 60.000 lei, restanți de 75 de zile. Suma depășește pragul de 50.000 lei, iar întârzierea depășește 60 de zile. Furnizorul poate cere deschiderea procedurii.</p>
+          <span class="pill"><i></i>Rezultat: roșu</span>
+        </div>
+        <p>Grila noastră de lucru este simplă: peste 100% acoperire înseamnă verde, între 50% și 100% galben, sub 50% roșu. Este o regulă practică, nu un prag legal.</p>
+
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/calculator-insolventa-etape.webp" width="1200" height="675" alt="Etapele unui calculator insolvență: datorii, termene, analiza riscului, rezultat, consultanță juridică" loading="lazy">
+          <figcaption>Cum funcționează calculatorul insolvență</figcaption>
+        </figure>
+      </section>
+
+      <section id="termene">
+        <span class="eyebrow">Termene</span>
+        <h2>Calculator termene juridice în insolvență</h2>
+        <p>Un <strong>calculator termene juridice</strong> te ajută să nu pierzi un drept procedural. În insolvență, un termen ratat poate însemna pierderea dreptului de a contesta, de a te înscrie la masa credală sau de a ataca un act. Termenele pe zile se calculează pe zile libere, iar multe curg de la publicarea în Buletinul procedurilor de insolvență (BPI).</p>
+        <p><a href="https://legislatie.just.ro/Public/DetaliiDocument/140271" target="_blank" rel="noopener">Codul de procedură civilă</a>, art. 181, prevede că la termenele pe zile nu intră în calcul nici ziua de la care începe să curgă, nici ziua în care se împlinește. Art. 182 prelungește termenul care se termină într-o zi nelucrătoare până la sfârșitul primei zile lucrătoare. Legea nr. 85/2014 adaugă termene speciale.</p>
+
+        <div class="t-grid">
+          <div class="t-card">
+            <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span>Termene pentru debitor</h3>
+            <ul>
+              <li><span class="d">30 zile</span><strong>Cererea de deschidere a procedurii:</strong> debitorul în insolvență trebuie să o depună în cel mult 30 de zile de la apariția stării de insolvență (art. 66 alin. (1) din Legea nr. 85/2014). Depunerea cu peste 6 luni întârziere poate fi încadrată ca bancrută simplă (art. 240 Cod penal).</li>
+              <li><strong>Depunerea documentelor:</strong> actele financiare și lista creditorilor se depun odată cu cererea. Un dosar incomplet întârzie procedura.</li>
+              <li><span class="d">10 zile</span><strong>Contestații și opoziții:</strong> dacă un creditor cere insolvența, debitorul poate contesta cererea în termen de 10 zile de la comunicare.</li>
+            </ul>
+          </div>
+          <div class="t-card">
+            <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>Termene pentru creditor</h3>
+            <ul>
+              <li><span class="d">60 zile · 50.000 lei</span><strong>Cererea creditorului:</strong> creanța trebuie să fie certă, lichidă, exigibilă, restantă de peste 60 de zile și peste 50.000 lei.</li>
+              <li><span class="d">max. 45 zile</span><strong>Înscrierea la masa credală:</strong> declarația de creanță se depune în termenul fixat de judecătorul-sindic, de cel mult 45 de zile de la deschiderea procedurii.</li>
+              <li><span class="d">7 zile</span><strong>Contestarea tabelului creditorilor:</strong> contestația la tabelul preliminar se face în 7 zile de la publicarea lui în BPI.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Exemplu practic de calcul al termenului</h4>
+        <div class="example">
+          <p>Primești miercuri, 7 octombrie 2026, un act cu termen de 10 zile. Ziua comunicării nu se numără. Termenul se împlinește pe 17 octombrie, iar pe sistemul zilelor libere actul poate fi depus și pe 18. Cum 18 octombrie este duminică, termenul se prelungește până luni, 19 octombrie.</p>
+          <button type="button" class="btn btn-line" data-goto="termen" style="margin-top:6px">Verifică în calculator</button>
+        </div>
+        <p>Termenul procedural diferă de cel contractual. Termenul de plată al unei facturi, de exemplu 30 de zile, vine din contract și din Codul civil. Termenul de contestație vine din lege și se calculează după regulile de procedură. Din experiența mea, aici se pierd cele mai multe drepturi, așa că le verific mereu separat, după data de pe dovada de comunicare.</p>
+        <div class="latin">„Vigilantibus, non dormientibus, jura subveniunt.”<small>Legea îi ajută pe cei vigilenți, nu pe cei care dorm. În insolvență, maxima romană este literă de lege.</small></div>
+      </section>
+
+      <section id="recuperare">
+        <span class="eyebrow">Creditori</span>
+        <h2>Calculator recuperare creanțe</h2>
+        <p>Un <strong>calculator recuperare creanțe</strong> arată ce drum are sens pentru o factură neplătită: negociere, ordonanță de plată, executare silită sau insolvență. Recuperarea creanței este o acțiune individuală. Insolvența este o procedură colectivă. Dacă debitorul intră în insolvență, drumul individual se oprește.</p>
+        <div class="t-grid">
+          <div class="t-card">
+            <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l3-3 4 4 3-3M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/></svg></span>Recuperare amiabilă</h3>
+            <ul>
+              <li><strong>Notificare:</strong> sumă, scadență, dobândă și termen clar de plată. Este primul pas pentru orice recuperare creanțe restante.</li>
+              <li><strong>Negociere:</strong> propunere scrisă, cu dovada trimiterii.</li>
+              <li><strong>Eșalonare:</strong> acord semnat, cu scadențe clare. O eșalonare semnată recunoaște datoria și întrerupe prescripția.</li>
+            </ul>
+          </div>
+          <div class="t-card">
+            <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Recuperare juridică</h3>
+            <ul>
+              <li><strong>Ordonanța de plată</strong> (Codul de procedură civilă, art. 1014–1025): pentru creanțe certe, lichide și exigibile, dovedite cu contract sau facturi.</li>
+              <li><strong>Acțiune în instanță</strong>, când debitorul contestă serios datoria.</li>
+              <li><strong>Executare silită</strong>, după obținerea titlului executoriu. Debitorul se poate apăra prin contestație la executare.</li>
+              <li><strong>Înscriere la masa credală</strong>, dacă debitorul este deja în insolvență.</li>
+            </ul>
+          </div>
+        </div>
+        <h4>Când recuperarea creanței devine dificilă</h4>
+        <ul class="chk">
+          <li><strong>Debitor în insolvență:</strong> de la deschiderea procedurii se suspendă de drept executările silite (art. 75 din Legea nr. 85/2014). Creanța se recuperează doar prin tabel.</li>
+          <li><strong>Lipsa bunurilor:</strong> un titlu executoriu fără bunuri urmăribile valorează puțin.</li>
+          <li><strong>Contestarea datoriei:</strong> ordonanța de plată nu mai e calea potrivită.</li>
+          <li><strong>Prescripția:</strong> termenul general este de 3 ani (Codul civil, art. 2517). După el, debitorul poate refuza plata.</li>
+        </ul>
+        <div class="note">Consultația noastră gratuită începe exact aici. <b>Trimite rezultatul calculatorului și actele principale</b>, iar noi îți spunem ce termen curge și ce pas are sens primul.</div>
+      </section>
+
+      <section id="interpretare">
+        <span class="eyebrow">Rezultate</span>
+        <h2>Cum interpretezi rezultatele calculatorului</h2>
+        <p>Rezultatele calculatorului sunt estimative și se citesc în trei scenarii: risc scăzut, moderat și ridicat. Scenariul moderat este cel mai periculos, pentru că pare gestionabil. În practică, firmele ajung de la galben la roșu în câteva săptămâni, când o singură poprire blochează contul.</p>
+        <div class="risk3">
+          <div class="risk"><h3><i class="g"></i>Rezultat cu risc scăzut</h3><p>Firma are lichidități. Datoriile sunt controlabile. Termenele de plată sunt respectate.</p><p class="do">Ce faci: monitorizezi lunar și urmărești încasările.</p></div>
+          <div class="risk"><h3><i class="r"></i>Rezultat cu risc ridicat</h3><p>Datoriile scadente sunt mari. Veniturile nu le acoperă. Există executări silite în curs.</p><p class="do">Ce faci: oprești plățile preferențiale, strângi actele și ceri o analiză juridică în aceeași săptămână.</p></div>
+        </div>
+        <p>Clienților le recomand de obicei să nu aștepte prima cerere a unui creditor.</p>
+        <h4>Ce trebuie verificat manual</h4>
+        <ul class="chk">
+          <li>Contractele: scadențe, penalități, garanții.</li>
+          <li>Facturile: acceptate sau contestate.</li>
+          <li>Notificările și somațiile primite.</li>
+          <li>Dosarele de executare: titlu, somație, popriri.</li>
+          <li>Situația financiară: balanța și cash-flow-ul pe 90 de zile.</li>
+        </ul>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/calculator-insolventa-semafor-risc.webp" width="1200" height="675" alt="Risc scăzut, moderat și ridicat de insolvență: semne și pași recomandați" loading="lazy">
+          <figcaption>Semaforul riscului de insolvență</figcaption>
+        </figure>
+      </section>
+
+      <section id="semne">
+        <span class="eyebrow">Semnale de alarmă</span>
+        <h2>Insolvența firmei și semnele de risc</h2>
+        <p>Semnele de insolvență apar înaintea cererii de deschidere: facturi plătite tot mai târziu, datorii la ANAF, popriri pe cont și cash-flow negativ mai multe luni la rând. Un singur semn nu înseamnă insolvență. Trei semne simultan înseamnă că firma trebuie analizată acum, nu la final de trimestru.</p>
+        <h3>Datorii restante și cash-flow negativ</h3>
+        <p>Când încasările nu mai acoperă plățile curente, firma se finanțează din datorii. Furnizorii devin creditori, iar ANAF adaugă accesorii în fiecare zi. Activitatea continuă, dar fiecare lună adâncește pasivul.</p>
+        <h3>Executări silite și popriri</h3>
+        <p>O poprire pe contul principal oprește plata salariilor și a furnizorilor. Dacă mai mulți creditori execută simultan, situația este gravă. Procedura insolvenței poate opri executările și poate da firmei timp pentru un plan de reorganizare.</p>
+        <h4>Diferența dintre dificultate temporară și insolvență reală</h4>
+        <p>Dificultatea temporară are o cauză și un termen: un client mare plătește peste 20 de zile, iar banii acoperă datoriile. Insolvența reală nu are această ieșire: nici încasările sigure nu acoperă datoriile scadente.</p>
+        <div class="note dark"><b>Greșeala pe care o văd des:</b> administratorul plătește doar creditorul care face cel mai mult zgomot și speră că restul vor aștepta. În insolvență, astfel de plăți pot fi anulate, iar pentru administrator pot crea risc de răspundere.</div>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Legislație aplicabilă și comentarii juridice</h2>
+        <p>Procedura insolvenței firmelor este reglementată de Legea nr. 85/2014. Termenele, ordonanța de plată, executarea silită și contestațiile vin din Codul de procedură civilă. Insolvența este o procedură colectivă pentru toți creditorii. Recuperarea individuală a creanței urmărește doar interesul unui creditor.</p>
+        <p>Art. 2 din Legea nr. 85/2014 stabilește scopul procedurii: acoperirea pasivului debitorului, cu șansa de redresare atunci când este posibil. Art. 133 cere ca planul de reorganizare să arate perspectivele reale de redresare. Art. 169 permite atragerea răspunderii celor care au contribuit la starea de insolvență.</p>
+        <h3>Compararea normelor aplicabile</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Cale</th><th>Bază legală</th><th>Tip</th><th>Cine o folosește</th><th>Când o alegi</th></tr></thead>
+          <tbody>
+            <tr><td>Insolvență</td><td>Legea nr. 85/2014</td><td>Colectivă</td><td>Debitorul sau creditorul cu creanță peste 50.000 lei, restantă de peste 60 de zile</td><td>Mulți creditori, bani insuficienți, executări multiple</td></tr>
+            <tr><td>Executare silită</td><td>Codul de procedură civilă</td><td>Individuală</td><td>Creditorul cu titlu executoriu</td><td>Debitorul are bunuri sau conturi cu bani</td></tr>
+            <tr><td>Ordonanță de plată</td><td>Codul de procedură civilă, art. 1014–1025</td><td>Individuală</td><td>Creditorul cu creanță certă, lichidă și exigibilă</td><td>Facturi clare, debitor fără apărări serioase</td></tr>
+            <tr><td>Recuperare amiabilă</td><td>Contract, Codul civil</td><td>Negociere</td><td>Ambele părți</td><td>Relație comercială de păstrat, debitor cooperant</td></tr>
+          </tbody>
+        </table></div>
+        <h4>Poziția juridică</h4>
+        <p>Calculatorul ajută la orientare. Decizia de a cere insolvența, de a contesta o creanță sau de a merge pe executare silită se ia după acte. Legea nr. 85/2014 stabilește pragul și termenele. Instanța verifică dacă creanța este certă. Eu aplic regula așa: dacă creanța este contestată serios, aleg mai întâi instanța de drept comun. Dacă este clară și peste prag, iar debitorul nu plătește nimănui, cererea de insolvență poate fi mai eficientă decât executarea.</p>
+      </section>
+
+      <section id="comparatie">
+        <span class="eyebrow">Comparație</span>
+        <h2>Tabel comparativ: calculator insolvență, termene juridice și recuperare creanțe</h2>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Instrument</th><th>Scop</th><th>Date introduse</th><th>Rezultat</th><th>Pentru debitor</th><th>Pentru creditor</th><th>Limite juridice</th><th>Când ceri avocat</th></tr></thead>
+          <tbody>
+            <tr><td>Calculator insolvență</td><td>Estimează riscul</td><td>Datorii, lichidități, creanțe, active</td><td>Risc scăzut, mediu, ridicat</td><td>Prevenție și reorganizare</td><td>Arată dacă debitorul mai poate plăti</td><td>Nu decide insolvența</td><td>La rezultat galben sau roșu</td></tr>
+            <tr><td>Calculator termene juridice</td><td>Estimează termene</td><td>Data comunicării, tipul actului</td><td>Ultima zi orientativă</td><td>Evită pierderea drepturilor</td><td>Contestații, declarații de creanță</td><td>Nu verifică dovada comunicării</td><td>Când termenul este sub 10 zile</td></tr>
+            <tr><td>Calculator recuperare creanțe</td><td>Estimează șansa de încasare</td><td>Facturi, contracte, garanții</td><td>Strategie posibilă</td><td>Planifică cash-flow-ul</td><td>Alege procedura</td><td>Nu garantează încasarea</td><td>Când debitorul contestă sau are popriri</td></tr>
+          </tbody>
+        </table></div>
+        <div class="trio">
+          <div><b>Calculator insolvență</b>arată riscul</div>
+          <div><b>Calculator termene</b>arată urgența</div>
+          <div><b>Calculator recuperare</b>arată strategia</div>
+        </div>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Din practică</span>
+        <h2>Practica judiciară și exemple relevante</h2>
+        <p>Litigiile tipice din insolvență privesc patru situații: deschiderea procedurii, contestarea creanțelor, înscrierea la masa credală și executările silite suspendate. Instanțele resping cererea creditorului când creanța este serios contestată sau sub prag. Contestațiile la tabel se pierd des din lipsa documentelor, nu pe fond.</p>
+        <div class="cases">
+          <div class="card"><span class="tag" style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--bronze-l);color:var(--bronze);margin-bottom:14px">Creditor</span><h3>Exemplu pentru creditor</h3><p>Un furnizor are o factură restantă de 70.000 lei, neplătită de 90 de zile. Debitorul are popriri și datorii la ANAF. Dacă factura este acceptată și nu există dispută, creditorul poate cere insolvența. Dacă debitorul este deja în procedură, creditorul depune declarația de creanță în termenul din hotărâre și urmărește tabelul preliminar în BPI.</p></div>
+          <div class="card"><span class="tag" style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--bronze-l);color:var(--bronze);margin-bottom:14px">Debitor</span><h3>Exemplu pentru debitor</h3><p>O firmă are datorii la furnizori, rate bancare și popriri. Pe hârtie are creanțe mari, dar în cont nu are bani. Calculatorul arată risc ridicat. Dacă cere procedura la timp, poate opri executările și poate propune un plan de reorganizare. Dacă așteaptă, riscă falimentul și răspunderea administratorului.</p></div>
+        </div>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Atenție</span>
+        <h2>Greșeli frecvente când folosești un calculator juridic</h2>
+        <ol class="num">
+          <li><strong>Date incomplete:</strong> lipsesc datoriile la ANAF sau ratele bancare.</li>
+          <li><strong>Confundarea termenelor:</strong> termen contractual tratat ca termen procedural.</li>
+          <li><strong>Ignorarea actelor primite:</strong> somația sau notificarea BPI rămâne nedeschisă.</li>
+          <li><strong>Rezultatul tratat ca verdict:</strong> calculatorul orientează, nu decide.</li>
+          <li><strong>Lipsa consultanței specializate:</strong> decizia se ia fără avocat sau practician.</li>
+        </ol>
+      </section>
+
+      <section id="avocat">
+        <span class="eyebrow">Consultanță</span>
+        <h2>Când ai nevoie de avocat sau practician în insolvență</h2>
+        <p>Ai nevoie de consultanță insolvență, adică de avocat sau de un practician în insolvență când rezultatul calculatorului este galben sau roșu și există cel puțin un act cu termen: somație, poprire, cerere de insolvență sau notificare BPI. În aceste situații, o zi de întârziere poate costa mai mult decât consultanța.</p>
+        <ul class="chk">
+          <li>Există executare silită sau poprire pe cont.</li>
+          <li>Un creditor a cerut deschiderea procedurii insolvenței.</li>
+          <li>Trebuie contestată o creanță sau tabelul preliminar.</li>
+          <li>Se pregătește planul de reorganizare.</li>
+        </ul>
+        <div class="author">
+          <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <div><b>[DE COMPLETAT: nume și prenume], avocat</b><span>Baroul […], nr. legitimație […] · […] ani de practică în insolvență și recuperare creanțe</span></div>
+        </div>
+      </section>
+
+      <section id="intrebari" class="faq-wide">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre calculator insolvență</h2>
+        <div class="faq">
+          <details open><summary>Ce este un calculator de insolvență?</summary><p>Este un instrument online care estimează riscul de insolvență pe baza datoriilor scadente, a banilor disponibili și a creanțelor de încasat. Rezultatul este orientativ și nu deschide procedura.</p></details>
+          <details><summary>Calculatorul de insolvență oferă un rezultat sigur?</summary><p>Nu. Rezultatul depinde de corectitudinea datelor introduse. Decizia juridică se ia după analiza actelor, a termenelor și a situației financiare reale.</p></details>
+          <details><summary>Pot calcula termenul pentru contestație?</summary><p>Da, orientativ. Termenele pe zile se calculează pe zile libere și se prelungesc dacă ultima zi este nelucrătoare. Verifică data de pe dovada de comunicare sau data publicării în BPI.</p></details>
+          <details><summary>Pot estima costurile unei proceduri de insolvență?</summary><p>Da, orientativ. Costurile includ taxe judiciare, onorariul administratorului judiciar sau al lichidatorului, onorariul avocatului, publicitate și evaluări. Suma finală depinde de complexitatea dosarului.</p></details>
+          <details><summary>Calculatorul ajută și creditorii?</summary><p>Da. Creditorul vede dacă are sens ordonanța de plată, executarea silită, cererea de insolvență sau înscrierea la masa credală. Pentru un creditor chirografar, viteza contează mult.</p></details>
+          <details><summary>Ce date trebuie introduse în calculator?</summary><p>Datoriile scadente, banii din cont și din casă, creanțele de încasat, activele, ratele, obligațiile fiscale și actele primite de la instanță sau executor.</p></details>
+          <details><summary>Care este diferența dintre calculator termene și calculator insolvență?</summary><p>Calculatorul insolvență arată riscul financiar și juridic al firmei. Calculatorul de termene arată ultima zi în care poți face un act procedural.</p></details>
+          <details><summary>Pot calcula recuperarea unei creanțe?</summary><p>Da, orientativ. Contează suma, scadența, documentele, garanțiile, prescripția și bunurile debitorului. Dacă debitorul este în insolvență, recuperarea se face doar prin tabelul creditorilor.</p></details>
+          <details><summary>Ce fac dacă rezultatul arată risc mare de insolvență?</summary><p>Nu amâna. Oprește plățile preferențiale, strânge actele și cere o analiză juridică. Debitorul are 30 de zile de la apariția insolvenței pentru a cere deschiderea procedurii.</p></details>
+          <details><summary>Când trebuie consultat un avocat?</summary><p>Când ai primit o somație, o poprire, o cerere de insolvență sau o notificare BPI. Și când trebuie contestată o creanță sau pregătit un plan de reorganizare.</p></details>
+        </div>
+      </section>
+
+      <section id="concluzie" style="padding-bottom:0">
+        <span class="eyebrow">Concluzie</span>
+        <h2>Concluzie: ce faci azi</h2>
+        <p>Un calculator insolvență este util dacă îl folosești la timp. Arată riscul firmei, termenele juridice, șansele de recuperare a creanțelor și costurile posibile. Nu decide însă în locul instanței și nu înlocuiește analiza juridică.</p>
+        <ol class="num">
+          <li>Introdu în calculator datoriile scadente și banii disponibili de azi.</li>
+          <li>Notează data fiecărui act primit: somație, poprire, notificare BPI.</li>
+          <li>Dacă rezultatul este galben sau roșu, trimite-ne actele pentru verificare.</li>
+        </ol>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:32px">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Consultație gratuită pentru firme și creditori</span>
+        <h2>Trimite rezultatul calculatorului</h2>
+        <p class="lead">Trimite rezultatul calculatorului și actele principale. Îți spunem ce termen curge, ce risc real există și ce pas are sens primul. Consultația nu te obligă la nimic.</p>
+        <div class="contact-points">
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>[Telefon]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>[E-mail]</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Programează consultația gratuită</h3>
+        <p>Vă răspundem în cel mai scurt timp.</p>
+<!-- FORM_SLOT -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Consultarius</a>
+    <nav class="nav"><a href="/">Acasă</a><a href="#calculator">Calculator</a><a href="#intrebari">Întrebări</a><a href="#contact">Contact</a></nav>
+    <span>© 2026 Consultarius. Rezultatele sunt orientative și nu constituie consultanță juridică.</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+
+  /* tabs */
+  var tabs=[$('t-risc'),$('t-termen')], panels=[$('p-risc'),$('p-termen')];
+  function show(i){tabs.forEach(function(t,j){t.setAttribute('aria-selected',i===j)});panels.forEach(function(p,j){p.hidden=i!==j})}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i)})});
+
+  /* numbers */
+  function num(id){var v=($(id).value||'').replace(/[\s.]/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  var fmt=new Intl.NumberFormat('ro-RO',{maximumFractionDigits:0});
+
+  /* risk calculator */
+  function risk(){
+    var d=num('c-datorii'),b=num('c-bani')||0,inc=num('c-incasari')||0,c=num('c-creanta'),z=num('c-zile');
+    var st=$('r-status'),dot=st.querySelector('i'),lbl=st.querySelector('span'),flag=$('r-flag');
+    if(!d||d<=0){$('r-pct').textContent='—';lbl.textContent='Introduceți datoriile scadente';dot.style.background='#555';$('r-dot').style.left='0';flag.hidden=true;$('r-cta').hidden=true;return}
+    var p=(b+inc)/d*100, col, txt;
+    if(p>100){col='#3F8F5A';lbl.textContent='Risc scăzut — verde';txt='Firma are lichidități pentru datoriile scadente. Ce faci: monitorizezi lunar și urmărești încasările.'}
+    else if(p>=50){col='#D9A520';lbl.textContent='Risc moderat — galben';txt='Scenariul care pare gestionabil, dar poate trece la roșu în câteva săptămâni, dacă o singură poprire blochează contul. Ce faci: verificare juridică urgentă.'}
+    else{col='#B9382F';lbl.textContent='Risc ridicat — roșu';txt='Banii disponibili și încasările sigure nu acoperă datoriile scadente. Ce faci: oprești plățile preferențiale, strângi actele și ceri o analiză juridică în aceeași săptămână.'}
+    $('r-pct').textContent=Math.round(p)+'%';dot.style.background=col;$('r-text').textContent=txt;
+    $('r-dot').style.left=Math.min(100,Math.max(0,p))+'%';
+    if(c!==null&&z!==null){
+      flag.hidden=false;
+      if(c>50000&&z>60){flag.className='flag warn';flag.textContent='Atenție: o creanță de '+fmt.format(c)+' lei, restantă de '+fmt.format(z)+' de zile, depășește pragul de 50.000 lei și termenul de 60 de zile. Creditorul poate cere deschiderea procedurii insolvenței.'}
+      else{flag.className='flag';flag.textContent='Creanța cea mai mare nu îndeplinește ambele condiții pentru cererea unui creditor (peste 50.000 lei și peste 60 de zile de întârziere). Verificați totuși și ceilalți creditori.'}
+    } else flag.hidden=true;
+    $('r-cta').hidden=p>100;
+  }
+  $('b-risc').addEventListener('click',risk);
+  ['c-datorii','c-bani','c-incasari','c-creanta','c-zile'].forEach(function(id){$(id).addEventListener('input',risk)});
+  $('b-ex').addEventListener('click',function(){$('c-datorii').value='180000';$('c-bani').value='25000';$('c-incasari').value='40000';$('c-creanta').value='60000';$('c-zile').value='75';risk()});
+
+  /* deadline calculator — zile libere (art. 181 CPC) + prelungire (art. 182) */
+  function easter(y){var a=y%4,b=y%7,c=y%19,d=(19*c+15)%30,e=(2*a+4*b-d+34)%7,m=Math.floor((d+e+114)/31),day=((d+e+114)%31)+1;var dt=new Date(Date.UTC(y,m-1,day));dt.setUTCDate(dt.getUTCDate()+13);return dt}
+  function key(d){return d.getUTCFullYear()+'-'+(d.getUTCMonth()+1)+'-'+d.getUTCDate()}
+  function holidays(y){
+    var h={};[[1,1],[1,2],[1,6],[1,7],[1,24],[5,1],[6,1],[8,15],[11,30],[12,1],[12,25],[12,26]].forEach(function(x){h[y+'-'+x[0]+'-'+x[1]]=1});
+    var e=easter(y);[-2,0,1,49,50].forEach(function(o){var d=new Date(e);d.setUTCDate(d.getUTCDate()+o);h[key(d)]=1});return h}
+  function free(d){var w=d.getUTCDay();return w===0||w===6||!!holidays(d.getUTCFullYear())[key(d)]}
+  var wd=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'],mo=['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'];
+  function ro(d){return wd[d.getUTCDay()]+', '+d.getUTCDate()+' '+mo[d.getUTCMonth()]+' '+d.getUTCFullYear()}
+  $('d-tip').addEventListener('change',function(){$('d-custom-wrap').hidden=this.value!=='custom'});
+  function term(){
+    var s=$('d-start').value, n=$('d-tip').value==='custom'?num('d-zile'):parseInt($('d-tip').value,10), flag=$('t-flag');
+    if(!s||!n){$('t-date').textContent='—';flag.hidden=true;return}
+    var p=s.split('-'), d0=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]));
+    var end=new Date(d0);end.setUTCDate(end.getUTCDate()+n);
+    var last=new Date(end);last.setUTCDate(last.getUTCDate()+1);
+    var moved=false;while(free(last)){last.setUTCDate(last.getUTCDate()+1);moved=true}
+    $('t-date').textContent=ro(last);
+    var msg='Termenul de '+n+' zile se împlinește pe '+ro(end)+'. Pe sistemul zilelor libere, actul poate fi depus și în ziua următoare.';
+    if(moved) msg+=' Ziua respectivă este nelucrătoare, așa că termenul se prelungește până la prima zi lucrătoare.';
+    $('t-text').textContent=msg;
+    var today=new Date();var t0=Date.UTC(today.getFullYear(),today.getMonth(),today.getDate());var left=Math.round((last.getTime()-t0)/864e5);
+    flag.hidden=false;
+    if(left<0){flag.className='flag warn';flag.textContent='Termenul pare să fi expirat. Contactați imediat un avocat pentru a verifica dovada comunicării și eventualele remedii.'}
+    else if(left<10){flag.className='flag warn';flag.textContent='Au mai rămas '+left+' zile. Termen sub 10 zile — cereți acum verificarea unui avocat.'}
+    else{flag.className='flag';flag.textContent='Au mai rămas '+left+' zile până la ultima zi orientativă.'}
+  }
+  $('b-termen').addEventListener('click',term);
+  ['d-start','d-tip','d-zile'].forEach(function(id){$(id).addEventListener('input',term);$(id).addEventListener('change',term)});
+  $('b-ex2').addEventListener('click',function(){$('d-start').value='2026-10-07';$('d-tip').value='10';$('d-custom-wrap').hidden=true;term()});
+  root.querySelectorAll('[data-goto="termen"]').forEach(function(b){b.addEventListener('click',function(){show(1);$('b-ex2').click();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Calculator insolvență","item":"https://chinsolvency.ro/calculator-insolventa/"}]},
+ {"@type":"WebApplication","name":"Calculator insolvență","url":"https://chinsolvency.ro/calculator-insolventa/","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ro","offers":{"@type":"Offer","price":"0","priceCurrency":"RON"}},
+ {"@type":"Article","headline":"Calculator insolvență pentru termene și recuperare creanțe","description":"Calculator insolvență: verifică riscul firmei, termenele din procedură și șansele de recuperare a creanțelor. Rezultat orientativ și consultație gratuită.","inLanguage":"ro","dateModified":"2026-10-08","mainEntityOfPage":"https://chinsolvency.ro/calculator-insolventa/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/calculator-insolventa-etape.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/calculator-insolventa-semafor-risc.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Insolvență","Recuperare creanțe","Legea nr. 85/2014"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Ce este un calculator de insolvență?","acceptedAnswer":{"@type":"Answer","text":"Este un instrument online care estimează riscul de insolvență pe baza datoriilor scadente, a banilor disponibili și a creanțelor de încasat. Rezultatul este orientativ și nu deschide procedura."}},
+  {"@type":"Question","name":"Calculatorul de insolvență oferă un rezultat sigur?","acceptedAnswer":{"@type":"Answer","text":"Nu. Rezultatul depinde de corectitudinea datelor introduse. Decizia juridică se ia după analiza actelor, a termenelor și a situației financiare reale."}},
+  {"@type":"Question","name":"Pot calcula termenul pentru contestație?","acceptedAnswer":{"@type":"Answer","text":"Da, orientativ. Termenele pe zile se calculează pe zile libere și se prelungesc dacă ultima zi este nelucrătoare. Verifică data de pe dovada de comunicare sau data publicării în BPI."}},
+  {"@type":"Question","name":"Pot estima costurile unei proceduri de insolvență?","acceptedAnswer":{"@type":"Answer","text":"Da, orientativ. Costurile includ taxe judiciare, onorariul administratorului judiciar sau al lichidatorului, onorariul avocatului, publicitate și evaluări. Suma finală depinde de complexitatea dosarului."}},
+  {"@type":"Question","name":"Calculatorul ajută și creditorii?","acceptedAnswer":{"@type":"Answer","text":"Da. Creditorul vede dacă are sens ordonanța de plată, executarea silită, cererea de insolvență sau înscrierea la masa credală. Pentru un creditor chirografar, viteza contează mult."}},
+  {"@type":"Question","name":"Ce date trebuie introduse în calculator?","acceptedAnswer":{"@type":"Answer","text":"Datoriile scadente, banii din cont și din casă, creanțele de încasat, activele, ratele, obligațiile fiscale și actele primite de la instanță sau executor."}},
+  {"@type":"Question","name":"Care este diferența dintre calculator termene și calculator insolvență?","acceptedAnswer":{"@type":"Answer","text":"Calculatorul insolvență arată riscul financiar și juridic al firmei. Calculatorul de termene arată ultima zi în care poți face un act procedural."}},
+  {"@type":"Question","name":"Pot calcula recuperarea unei creanțe?","acceptedAnswer":{"@type":"Answer","text":"Da, orientativ. Contează suma, scadența, documentele, garanțiile, prescripția și bunurile debitorului. Dacă debitorul este în insolvență, recuperarea se face doar prin tabelul creditorilor."}},
+  {"@type":"Question","name":"Ce fac dacă rezultatul arată risc mare de insolvență?","acceptedAnswer":{"@type":"Answer","text":"Nu amâna. Oprește plățile preferențiale, strânge actele și cere o analiză juridică. Debitorul are 30 de zile de la apariția insolvenței pentru a cere deschiderea procedurii."}},
+  {"@type":"Question","name":"Când trebuie consultat un avocat?","acceptedAnswer":{"@type":"Answer","text":"Când ai primit o somație, o poprire, o cerere de insolvență sau o notificare BPI. Și când trebuie contestată o creanță sau pregătit un plan de reorganizare."}}
+ ]}
+]}
+</script>
