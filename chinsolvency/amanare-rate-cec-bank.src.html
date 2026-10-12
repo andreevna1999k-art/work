@@ -1,0 +1,460 @@
+<!-- Consultarius — /amanare-rate-cec-bank/ (draft). Built by build.py: BRAND_CSS, ARTICLE_CSS, FORM_SLOT are injected. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*BRAND_CSS*/
+/*ARTICLE_CSS*/
+/* page: amânare rate CEC */
+.cbx .res-rows{display:grid;gap:8px;font-size:14px;color:rgba(255,255,255,.75)}
+.cbx .res-rows div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:8px}
+.cbx .res-rows b{color:#fff;font-weight:700;text-align:right}
+.cbx .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
+.cbx .opts div{background:var(--surface);border-radius:var(--radius-s);padding:14px;font-size:13px;color:var(--ink-2);line-height:1.4}
+.cbx .opts b{display:block;color:var(--ink);font-size:14px;margin-bottom:4px}
+.cbx .then-now{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.cbx .then-now .card{box-shadow:none}
+.cbx .then-now .card h3{margin:0 0 10px;font-size:19px}
+.cbx .then-now .card p{font-size:15px;margin:0}
+.cbx .then-now .card.old{background:var(--sand);border-style:dashed}
+.cbx .then-now .yr{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-bottom:12px;background:var(--bronze-l);color:var(--bronze)}
+.cbx .then-now .old .yr{background:#E9E2D6;color:var(--ink-3)}
+.cbx .tpl{background:var(--surface);border:1px dashed var(--bronze);border-radius:var(--radius);padding:24px 28px;font-size:16px;line-height:1.65;color:var(--ink);font-style:italic;margin:16px 0 8px}
+.cbx .tpl-btn{margin-bottom:16px}
+.cbx .todo{border:2px dashed #C0392B;background:#FDECEA;color:#922B21;border-radius:var(--radius-s);padding:10px 14px;font-size:14px;font-weight:600;margin:12px 0}
+@media (max-width:860px){.cbx .opts,.cbx .then-now{grid-template-columns:1fr}}
+.cbx .m2020{background:var(--ink);color:#fff;border-radius:var(--radius);padding:28px;margin:20px 0}
+.cbx .m2020 .hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.cbx .m2020 .hd b{font-size:40px;font-weight:800;color:#D9B878;letter-spacing:-.02em;line-height:1}
+.cbx .m2020 .hd span{font-size:14px;color:rgba(255,255,255,.7)}
+.cbx .m2020 ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cbx .m2020 li{padding-left:28px;position:relative;font-size:15px;color:rgba(255,255,255,.85);line-height:1.5}
+.cbx .m2020 li::before{content:"";position:absolute;left:4px;top:8px;width:10px;height:10px;border-radius:50%;background:#D9B878}
+.cbx .m2020 li.no::before{background:transparent;border:2px solid rgba(255,255,255,.4)}
+.cbx .double{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.cbx .double div{border-radius:var(--radius-s);padding:16px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.cbx .double b{display:block;font-size:26px;color:var(--ink);letter-spacing:-.02em;margin-top:4px}
+.cbx .double .hot{background:#FDECEA;border-color:#F3C4BE}
+.cbx .double .hot b{color:#B9382F}
+@media (max-width:860px){.cbx .double{grid-template-columns:1fr}}
+</style>
+
+<div class="cbx">
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+      Consultarius
+    </a>
+    <nav class="nav">
+      <a href="#calculator">Cât costă</a>
+      <a href="#conditii">Condiții</a>
+      <a href="#procedura">Procedura</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a href="#contact" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg><span>Consultație gratuită</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><a href="/amanare-rate-banca/">Amânare rate bancă</a><span>/</span><span>CEC Bank</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Credite CEC Bank · Actualizat 2026</span>
+          <h1>Amânare rate CEC Bank: <span class="accent">condiții, procedură și suspendare credit</span></h1>
+          <div class="lead">
+            <p>Rata la CEC vine pe 15, iar salariul a întârziat. Îți amintești că în 2020 CEC „a amânat ratele tuturor”. Mai merge și acum?</p>
+            <p>Pe scurt: nu automat. Mai jos vezi ce a fost atunci, ce poți cere azi pentru <strong>amânare rate CEC Bank</strong>, cum depui cererea și cât te costă, cu cifre.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 8 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Calcul în lei pentru credite CEC</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează cât te costă</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Amânare rate CEC Bank: răspuns rapid</h2>
+          <p>Da, poți cere amânarea ratelor la CEC Bank și în 2026, dar doar prin cerere individuală. Banca nu mai aplică o amânare automată și nicio lege nu o obligă să accepte. CEC analizează venitul, istoricul de plată și actele.</p>
+          <p>Dobânda curge și în perioada amânată.</p>
+          <div class="opts">
+            <div><b>Grație</b>negociată cu CEC</div>
+            <div><b>Restructurare</b>credit</div>
+            <div><b>Refinanțare</b>la altă bancă</div>
+            <div><b>Negociere</b>directă</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Cât te costă <span class="accent">amânarea la CEC</span></h2></div>
+      <p>Dobânda din lunile amânate trece în sold, iar rata se recalculează pe perioada rămasă. Simulare orientativă; cifrele exacte sunt cele din graficul emis de CEC Bank.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="a-sold">Sold rămas</label><div class="inp"><input id="a-sold" inputmode="decimal" placeholder="ex. 150 000"><span class="unit">lei</span></div></div>
+          <div class="field"><label for="a-dob">Dobânda anuală</label><div class="inp"><input id="a-dob" inputmode="decimal" placeholder="ex. 8"><span class="unit">%</span></div></div>
+          <div class="field"><label for="a-luni">Perioada rămasă</label><div class="inp"><input id="a-luni" inputmode="numeric" placeholder="ex. 300"><span class="unit">luni</span></div></div>
+          <div class="field full"><label for="a-am">Câte luni vrei să amâni</label><div class="inp"><input id="a-am" inputmode="numeric" placeholder="ex. 3"><span class="unit">luni</span></div><small>Perioadă scurtă și justificată = șanse mai mari.</small></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: ipotecar CEC</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Cost suplimentar estimat</span>
+          <div class="big" id="o-cost">—</div>
+          <div class="res-rows">
+            <div><span>Rata actuală</span><b id="o-r0">—</b></div>
+            <div><span>Dobândă capitalizată</span><b id="o-cap">—</b></div>
+            <div><span>Sold nou</span><b id="o-sold">—</b></div>
+            <div><span>Rata nouă</span><b id="o-r1">—</b></div>
+          </div>
+          <div class="flag" id="o-flag" hidden></div>
+          <a href="#contact" class="btn btn-primary">Verificare gratuită a graficului CEC</a>
+          <span class="disc">La amânările negociate, cere băncii să-ți spună în scris cum tratează dobânda. Nu opri plata până la aprobarea scrisă.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#covid">COVID vs prezent</a>
+      <a href="#ce-inseamna">Ce înseamnă amânarea la CEC</a>
+      <a href="#conditii">Condiții</a>
+      <a href="#procedura">Procedura pas cu pas</a>
+      <a href="#durata">Cât durează</a>
+      <a href="#prezent">Este posibilă în prezent?</a>
+      <a href="#alternative">Alternative</a>
+      <a href="#practica">Practica bancară</a>
+      <a href="#legislatie">Legislație aplicabilă</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#nu-poti-plati">Dacă nu poți plăti rata</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="covid">
+        <span class="eyebrow">2020–2022 vs acum</span>
+        <h2>COVID vs prezent</h2>
+        <div class="then-now">
+          <div class="card old"><span class="yr">2020–2022 · încheiat</span><h3>Măsuri temporare</h3><p>Pe 16 martie 2020, CEC Bank a fost printre primele bănci care au anunțat o măsură generală: 30 de zile de amânare pentru toate creditele persoanelor fizice, fără cerere. Apoi au urmat OUG nr. 37/2020 și, în 2022, OUG nr. 90/2022. Toate au fost temporare și s-au încheiat.</p></div>
+          <div class="card"><span class="yr">2026</span><h3>Opțiuni azi</h3><p>Perioadă de grație negociată, restructurare, refinanțare sau negociere directă.</p></div>
+        </div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/amanare-rate-cec-2020-vs-azi.webp" width="1200" height="675" alt="Amânare rate CEC Bank: măsura de 30 de zile din 2020 comparată cu cererea individuală de azi" loading="lazy">
+          <figcaption>Amânare rate CEC: 2020 vs azi</figcaption>
+        </figure>
+      </section>
+
+      <section id="ce-inseamna">
+        <span class="eyebrow">Ghid</span>
+        <h2>Ce înseamnă amânarea ratelor la CEC Bank</h2>
+        <p>Amânarea ratelor la CEC Bank înseamnă un acord cu banca prin care nu plătești rata, sau plătești mai puțin, pentru o perioadă scurtă. Datoria nu se reduce. Sumele se mută mai târziu în grafic și, de regulă, costă dobândă.</p>
+        <h3>Cum funcționează suspendarea ratelor</h3>
+        <div class="note dark">Azi, suspendarea plății creditului la CEC există doar după aprobarea scrisă a băncii. Simplul fapt că nu ai bani în cont la scadență nu mai declanșează nicio amânare. <b>Din a doua zi, rata e restantă.</b></div>
+        <h3>Ce se întâmplă cu dobânda</h3>
+        <p>Dobânda se calculează și pentru lunile amânate. În schema OUG nr. 90/2022, ea se capitaliza, adică se adăuga la sold. La amânările negociate, cere băncii să-ți spună în scris cum procedează.</p>
+        <h4>Impact pe termen lung</h4>
+        <div class="example">
+          <div class="t">Credit ipotecar CEC</div>
+          <p>Sold 150.000 lei, dobândă 8%, 25 de ani rămași, rata 1.157,72 lei. Amâni 3 luni. Dobânda acumulată, circa 3.000 lei, trece în sold.</p>
+          <span class="formula">Rata: 1.157,72 → ≈ 1.180,88 lei (+23 lei/lună) · cost total +≈ 6.950 lei</span>
+          <p><em>Simulare orientativă; cifrele exacte sunt cele din graficul emis de CEC Bank.</em></p>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="conditii">
+        <span class="eyebrow">Condiții</span>
+        <h2>Condiții pentru amânarea ratelor la CEC Bank</h2>
+        <p>CEC Bank nu publică o listă standard de condiții pentru amânare. În practică, o cerere are șanse când problema e temporară, este dovedită cu acte, perioada cerută e scurtă și nu există restanțe. O cerere vagă, fără documente, se respinge de obicei.</p>
+        <h3>Condiții generale</h3>
+        <p>Fără restanțe sau cu restanțe mici. Venit care a scăzut temporar, nu definitiv. Un plan clar de reluare a plății.</p>
+        <h3>Documente necesare</h3>
+        <ul class="chk">
+          <li>Act de identitate și numărul contractului de credit CEC.</li>
+          <li>Adeverință de venit sau extrase de cont recente.</li>
+          <li>Dovada problemei: concediere, concediu medical, scăderea salariului, cheltuieli urgente.</li>
+          <li>Pentru firme: balanță, facturi neîncasate, contracte.</li>
+          <li>Propunerea ta: câte luni, cât poți plăti în acest timp.</li>
+        </ul>
+        <h4>Condiții specifice CEC</h4>
+        <p>CEC are o rețea mare de sucursale, inclusiv în orașe mici, unde mulți clienți preferă depunerea fizică. Canalul exact și formularul le confirmi la bancă.</p>
+        <div class="todo">[DE VERIFICAT: canalul actual CEC pentru cereri de dificultate financiară — sucursală, CEC App, e-mail]</div>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Pas cu pas</span>
+        <h2>Procedura amânare rate CEC Bank pas cu pas</h2>
+        <p>Procedura are cinci pași: verifici contractul, pregătești actele, depui cererea cu număr de înregistrare, urmărești analiza și semnezi doar după ce vezi noul grafic. Nu te baza pe o discuție la ghișeu fără confirmare scrisă.</p>
+        <ol class="num">
+          <li>Citește în contract clauzele despre perioada de grație.</li>
+          <li>Stabilește realist câte luni îți trebuie.</li>
+          <li>Pregătește actele justificative.</li>
+          <li>Depune cererea la sucursală sau prin canalul indicat de bancă și păstrează dovada.</li>
+          <li>Semnează actul adițional doar după ce vezi rata nouă și suma totală.</li>
+        </ol>
+        <h3>Depunerea cererii</h3>
+        <p>Model scurt:</p>
+        <div class="tpl" id="tpl">„Solicit amânarea ratelor aferente contractului de credit CEC Bank nr. …, pentru … luni, începând cu …, din cauza … . Anexez documentele. Vă rog să îmi comunicați în scris efectele asupra dobânzii și noul grafic de rambursare.”</div>
+        <button type="button" class="btn btn-line tpl-btn" id="b-copy">Copiază modelul</button>
+        <div class="t-grid">
+          <div class="t-card"><h3>Analiza cererii</h3><ul><li>Banca verifică venitul, gradul de îndatorare, restanțele și datele din Biroul de Credit. Poate cere acte suplimentare.</li></ul></div>
+          <div class="t-card"><h3>Aprobare</h3><ul><li>CEC poate aproba, propune o perioadă mai scurtă, recomanda restructurarea sau refuza.</li></ul></div>
+        </div>
+        <h4>Modificarea contractului</h4>
+        <p>Spre deosebire de măsura din 2020, care nu cerea act adițional, o amânare negociată azi se formalizează în scris, cu grafic nou.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/amanare-rate-cec-bank-5-pasi.webp" width="1200" height="675" alt="Procedura amânare rate CEC Bank: contract, acte, cerere, analiză, act adițional" loading="lazy">
+          <figcaption>Amânarea ratelor la CEC Bank în 5 pași</figcaption>
+        </figure>
+      </section>
+
+      <section id="durata">
+        <span class="eyebrow">Durată</span>
+        <h2>Cât durează amânarea ratelor</h2>
+        <p>Durata nu mai e fixată de lege. O stabilește CEC Bank, de obicei pe câteva luni. Analiza cererii poate dura de la câteva zile la câteva săptămâni, în funcție de dosar.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Durata maximă</h3><ul><li>Repere istorice: 30 de zile în măsura CEC din martie 2020, maximum 9 luni prin OUG nr. 37/2020 și 1–9 luni prin OUG nr. 90/2022.</li></ul></div>
+          <div class="t-card"><h3>Perioada de grație</h3><ul><li>Poate însemna o rată redusă sau plata doar a dobânzii. Întreabă ce se întâmplă imediat după ea.</li></ul></div>
+        </div>
+        <h4>Ce se întâmplă după amânare</h4>
+        <p><strong>Lecția din 2020.</strong> La amânarea de 30 de zile, termenul creditului nu se schimba. Cine nu plătea, avea la scadența următoare două rate deodată. La creditul din exemplu:</p>
+        <div class="double">
+          <div>Rata obișnuită<b>1.158 lei</b></div>
+          <div class="hot">Luna următoare: două rate deodată<b>2.315 lei</b></div>
+        </div>
+        <p>De aceea, banca le recomanda clienților care puteau să plătească în continuare.</p>
+      </section>
+
+      <section id="prezent">
+        <span class="eyebrow">2026</span>
+        <h2>Este posibilă amânarea ratelor în prezent?</h2>
+        <p>Da, ca cerere individuală. Nu mai există o amânare generală, automată sau prevăzută de lege. Fiecare dosar se decide de bancă.</p>
+        <h3>Ce a fost măsura CEC din 2020</h3>
+        <div class="m2020">
+          <div class="hd"><b>30 de zile</b><span>amânare automată · anunțată pe 16 martie 2020</span></div>
+          <ul>
+            <li>Toate creditele persoanelor fizice: ipotecare, de consum, limite pe card.</li>
+            <li>Automată, pentru clienții care nu aveau bani în cont la scadență.</li>
+            <li>Plata se putea face oricând în 30 de zile de la scadență, fără penalități.</li>
+            <li>Fără raportare negativă în Biroul de Credit și fără act adițional.</li>
+            <li class="no">Firmele nu erau incluse; li s-au promis soluții individuale.</li>
+          </ul>
+        </div>
+        <h3>Situația actuală</h3>
+        <p>Azi decide politica băncii.</p>
+        <div class="todo">[DE VERIFICAT: dacă în 2026 există o schemă legală nouă de amânare]</div>
+        <h4>Ce opțiuni ai acum</h4>
+        <p>Amânare negociată, restructurare, refinanțare și, la datorii mari, insolvența persoanei fizice.</p>
+      </section>
+
+      <section id="alternative">
+        <span class="eyebrow">Alternative</span>
+        <h2>Alternative la amânarea ratelor la CEC Bank</h2>
+        <p>Dacă problema durează mai mult de câteva luni, amânarea doar o împinge mai încolo. Restructurarea sau refinanțarea pot fi soluții mai bune.</p>
+        <div class="risk3 three">
+          <div class="risk"><h3><i style="background:var(--bronze)"></i>Restructurare credit</h3><p>Prelungește creditul și scade rata. Costul total crește. Detalii în ghidul <a href="/restructurare-credit-vs-refinantare/">restructurare credit vs refinanțare</a>.</p></div>
+          <div class="risk"><h3><i style="background:var(--bronze)"></i>Refinanțare</h3><p>Muți creditul la o bancă cu dobândă mai mică. Merge doar fără restanțe și cu venit stabil.</p></div>
+          <div class="risk"><h3><i style="background:var(--bronze)"></i>Negociere cu banca</h3><p>Spune o sumă și o dată: „pot plăti 700 lei timp de 3 luni”. Pentru litigii, există CSALB.</p></div>
+        </div>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Criteriu</th><th>Amânare CEC</th><th>Restructurare</th><th>Refinanțare</th><th>Avantaje</th><th>Dezavantaje</th><th>Recomandare</th></tr></thead>
+          <tbody>
+            <tr><td>Problema</td><td>De câteva luni</td><td>De durată</td><td>Dobândă mare</td><td>Amânare: respiro rapid</td><td>Amânare: dobânda trece în sold</td><td>Venit întârziat temporar</td></tr>
+            <tr><td>Rata</td><td>Pauză, apoi puțin mai mare</td><td>Mai mică</td><td>Mai mică</td><td>Restructurare: rată suportabilă</td><td>Restructurare: cost total mai mare</td><td>Venit redus definitiv</td></tr>
+            <tr><td>Cine decide</td><td>CEC Bank</td><td>CEC Bank</td><td>Altă bancă</td><td>Refinanțare: economie</td><td>Refinanțare: condiții stricte</td><td>Venit stabil, istoric curat</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Din practică</span>
+        <h2>Practica bancară și cazuri reale</h2>
+        <p>În practica mea, cele mai multe probleme apar nu la cerere, ci după ea: clientul crede că a obținut amânarea, oprește plata și se trezește cu restanță. Confirmarea scrisă este esențială.</p>
+        <h3>Exemple CEC</h3>
+        <p>Situații tipice (anonimizate):</p>
+        <ul class="chk">
+          <li>Bugetar cu salariu întârziat o lună: o perioadă de grație scurtă e suficientă.</li>
+          <li>Client cu ipotecar Noua Casă și venit redus pe termen lung: restructurarea e mai potrivită decât amânarea.</li>
+          <li>Pensionar cu credit de consum și cheltuieli medicale: amânare de 2–3 luni, cu acte medicale atașate.</li>
+        </ul>
+        <div class="t-grid">
+          <div class="t-card"><h3>Probleme frecvente</h3><ul><li>Cereri verbale la ghișeu, fără număr de înregistrare. Lipsa actelor. Confuzia cu măsura automată din 2020.</li></ul></div>
+          <div class="t-card"><h3>Soluții aplicate</h3><ul><li>Cerere scrisă cu acte, perioadă scurtă și justificată, motivarea refuzului cerută în scris.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Legislație aplicabilă</h2>
+        <p>În 2026, amânarea ratelor la CEC Bank depinde de contract și de politica băncii. Se aplică regulile generale din OUG nr. 50/2010, OUG nr. 52/2016 și Legea nr. 193/2000.</p>
+        <h3>OUG 37 și modificări</h3>
+        <p>OUG nr. 37/2020 (norme: HG nr. 270/2020) a permis suspendarea până la 9 luni. OUG nr. 227/2020 a redeschis cererile până la 15 martie 2021. OUG nr. 90/2022 a oferit 1–9 luni, cu cereri până la 28 august 2022.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Reglementări actuale</h3><ul><li>Ai dreptul la informații clare despre cost și la un grafic actualizat înainte de semnare.</li></ul></div>
+          <div class="t-card"><h3>Drepturile clientului</h3><ul><li>Poți cere simularea costurilor, timp de gândire și motivarea refuzului în scris.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Atenție</span>
+        <h2>Greșeli frecvente</h2>
+        <p>Cele mai frecvente: confuzia cu amânarea automată din 2020, oprirea plății înainte de aprobare și semnarea fără graficul nou.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Aplicare incorectă</h3><ul><li>Cerere doar verbală, fără acte, fără perioadă.</li></ul></div>
+          <div class="t-card"><h3>Informații greșite</h3><ul><li>„CEC amână automat dacă nu ai bani” — asta a fost o măsură din martie 2020, valabilă 30 de zile.</li></ul></div>
+        </div>
+        <div class="note"><b>Recomandări:</b> totul în scris, cu acte, cu număr de înregistrare.</div>
+      </section>
+
+      <section id="nu-poti-plati">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce trebuie să faci dacă nu poți plăti rata la CEC Bank</h2>
+        <p>Mergi la bancă înainte de scadență, nu după. Cu cât restanța e mai veche, cu atât ai mai puține opțiuni.</p>
+        <h3>Pașii corecți</h3>
+        <ol class="num">
+          <li>Verifică soldul și contractul.</li>
+          <li>Calculează suma pe care o poți plăti.</li>
+          <li>Depune cererea scrisă cu acte.</li>
+          <li>Cere rata nouă și costul total în scris.</li>
+          <li>Plătește cât poți până la răspuns.</li>
+        </ol>
+        <div class="note dark"><b>Sfaturi utile:</b> dacă ai primit somație de la executor, verifică imediat termenul pentru contestație la executare cu <a href="/calculator-insolventa/#calculator" style="color:#D9B878">calculatorul de termene</a>.</div>
+        <div class="author">
+          <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <div><b>[DE COMPLETAT: nume și prenume], avocat</b><span>Baroul […], nr. legitimație […] · […] ani de practică în litigii bancare</span></div>
+        </div>
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre amânarea ratelor CEC Bank</h2>
+        <div class="faq">
+          <details open><summary>Mai pot amâna ratele la CEC Bank?</summary><p>Da, prin cerere individuală. Amânarea automată din 2020 nu mai există.</p></details>
+          <details><summary>Ce condiții trebuie îndeplinite?</summary><p>Problemă temporară, acte doveditoare, perioadă scurtă, ideal fără restanțe.</p></details>
+          <details><summary>Cât durează amânarea ratelor?</summary><p>Cât aprobă banca. În 2020, măsura CEC a fost de 30 de zile.</p></details>
+          <details><summary>Ce se întâmplă cu dobânda?</summary><p>Curge și de regulă intră în sold. La 150.000 lei, 3 luni pot costa circa 6.950 lei în plus pe toată durata.</p></details>
+          <details><summary>Pot depune cererea online?</summary><p>Verifică la bancă ce canal acceptă acum. Păstrează dovada depunerii.</p></details>
+          <details><summary>Este gratuit?</summary><p>Cererea, de regulă, da. Amânarea costă prin dobândă.</p></details>
+          <details><summary>Ce alternative există?</summary><p>Restructurare, refinanțare, negociere, insolvența persoanei fizice (Legea nr. 151/2015).</p></details>
+          <details><summary>Ce fac dacă cererea este respinsă?</summary><p>Ceri motivele în scris, completezi dosarul sau propui restructurarea. Poți apela la CSALB.</p></details>
+        </div>
+        <p style="margin-top:24px">Ghid general pentru toate băncile: <a href="/amanare-rate-banca/"><strong>amânare rate bancă</strong></a>.</p>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:32px">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Consultație gratuită</span>
+        <h2>Merită amânarea la CEC în cazul tău?</h2>
+        <p class="lead">Trimite contractul CEC și răspunsul băncii. Îți spunem dacă merită amânarea, cât te costă și ce alternativă e mai bună. Consultația nu te obligă la nimic.</p>
+        <div class="contact-points">
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>[Telefon]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>[E-mail]</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Programează consultația gratuită</h3>
+        <p>Vă răspundem în cel mai scurt timp.</p>
+<!-- FORM_SLOT -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Consultarius</a>
+    <nav class="nav"><a href="/">Acasă</a><a href="/amanare-rate-banca/">Amânare rate bancă</a><a href="#intrebari">Întrebări</a><a href="#contact">Contact</a></nav>
+    <span>© 2026 Consultarius. Consultarius nu este afiliat CEC Bank. Simulările sunt orientative.</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var m=new Intl.NumberFormat('ro-RO',{minimumFractionDigits:2,maximumFractionDigits:2});
+  var m0=new Intl.NumberFormat('ro-RO',{maximumFractionDigits:0});
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  function pmt(P,a,n){var r=a/1200;return r===0?P/n:P*r/(1-Math.pow(1+r,-n))}
+  function calc(){
+    var P=num('a-sold'),a=num('a-dob'),n=num('a-luni'),k=num('a-am'),flag=$('o-flag');
+    var ids=['o-r0','o-cap','o-sold','o-r1'];
+    if(!P||a===null||!n||!k){$('o-cost').textContent='—';ids.forEach(function(i){$(i).textContent='—'});flag.hidden=true;return}
+    var r0=pmt(P,a,n),cap=P*a/100*k/12,P1=P+cap,r1=pmt(P1,a,n),extra=(r1-r0)*n;
+    $('o-cost').textContent='+'+m0.format(extra)+' lei';
+    $('o-r0').textContent=m.format(r0)+' lei';
+    $('o-cap').textContent='+'+m.format(cap)+' lei';
+    $('o-sold').textContent=m.format(P1)+' lei';
+    $('o-r1').textContent=m.format(r1)+' lei (+'+m.format(r1-r0)+')';
+    flag.hidden=false;
+    flag.className=k>3?'flag warn':'flag';
+    flag.textContent=k>9?'Peste 9 luni: chiar și OUG nr. 37/2020 permitea cel mult 9 luni. Pentru o problemă de durată, cereți restructurarea.':(k>3?'O perioadă scurtă și justificată are mai multe șanse la CEC. Dacă problema durează, restructurarea poate fi mai potrivită.':'Pentru '+k+' '+(k===1?'lună':'luni')+' de amânare plătești în total cu '+m0.format(extra)+' lei mai mult. Cere în scris graficul nou înainte de semnare.');
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['a-sold','a-dob','a-luni','a-am'].forEach(function(id){$(id).addEventListener('input',calc)});
+  function ex(){['a-sold','a-dob','a-luni','a-am'].forEach(function(id,i){$(id).value=['150000','8','300','3'][i]});calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+  $('b-copy').addEventListener('click',function(){
+    var t=$('tpl').innerText.replace(/^„|”$/g,''),b=this;
+    function done(){b.textContent='Copiat ✓';setTimeout(function(){b.textContent='Copiază modelul'},2000)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+    else{var r=document.createRange();r.selectNodeContents($('tpl'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done()}catch(e){}}
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Amânare rate bancă","item":"https://chinsolvency.ro/amanare-rate-banca/"},{"@type":"ListItem","position":3,"name":"Amânare rate CEC Bank","item":"https://chinsolvency.ro/amanare-rate-cec-bank/"}]},
+ {"@type":"Article","headline":"Amânare rate CEC Bank: condiții, procedură și suspendare credit","description":"Mai poți amâna ratele la CEC Bank? Ce a fost amânarea de 30 de zile din 2020, ce condiții se aplică azi, cum depui cererea și cât costă (calcul în lei).","inLanguage":"ro","dateModified":"2026-10-08","mainEntityOfPage":"https://chinsolvency.ro/amanare-rate-cec-bank/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/amanare-rate-cec-2020-vs-azi.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/amanare-rate-cec-bank-5-pasi.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum ceri amânarea ratelor la CEC Bank","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/amanare-rate-cec-bank-5-pasi.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Citește contractul","text":"Citește în contract clauzele despre perioada de grație."},
+  {"@type":"HowToStep","position":2,"name":"Stabilește perioada","text":"Stabilește realist câte luni îți trebuie."},
+  {"@type":"HowToStep","position":3,"name":"Pregătește actele","text":"Pregătește actele justificative."},
+  {"@type":"HowToStep","position":4,"name":"Depune cererea","text":"Depune cererea la sucursală sau prin canalul indicat de bancă și păstrează dovada."},
+  {"@type":"HowToStep","position":5,"name":"Semnează actul adițional","text":"Semnează actul adițional doar după ce vezi rata nouă și suma totală."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Amânare rate CEC Bank","Restructurare credit","Litigii bancare"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Mai pot amâna ratele la CEC Bank?","acceptedAnswer":{"@type":"Answer","text":"Da, prin cerere individuală. Amânarea automată din 2020 nu mai există."}},
+  {"@type":"Question","name":"Ce condiții trebuie îndeplinite?","acceptedAnswer":{"@type":"Answer","text":"Problemă temporară, acte doveditoare, perioadă scurtă, ideal fără restanțe."}},
+  {"@type":"Question","name":"Cât durează amânarea ratelor?","acceptedAnswer":{"@type":"Answer","text":"Cât aprobă banca. În 2020, măsura CEC a fost de 30 de zile."}},
+  {"@type":"Question","name":"Ce se întâmplă cu dobânda?","acceptedAnswer":{"@type":"Answer","text":"Curge și de regulă intră în sold. La 150.000 lei, 3 luni pot costa circa 6.950 lei în plus pe toată durata."}},
+  {"@type":"Question","name":"Pot depune cererea online?","acceptedAnswer":{"@type":"Answer","text":"Verifică la bancă ce canal acceptă acum. Păstrează dovada depunerii."}},
+  {"@type":"Question","name":"Este gratuit?","acceptedAnswer":{"@type":"Answer","text":"Cererea, de regulă, da. Amânarea costă prin dobândă."}},
+  {"@type":"Question","name":"Ce alternative există?","acceptedAnswer":{"@type":"Answer","text":"Restructurare, refinanțare, negociere, insolvența persoanei fizice (Legea nr. 151/2015)."}},
+  {"@type":"Question","name":"Ce fac dacă cererea este respinsă?","acceptedAnswer":{"@type":"Answer","text":"Ceri motivele în scris, completezi dosarul sau propui restructurarea. Poți apela la CSALB."}}
+ ]}
+]}
+</script>
