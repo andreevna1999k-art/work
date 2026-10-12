@@ -9,7 +9,8 @@ FORM = '[sureforms id="1762"]'
 
 src = pathlib.Path(sys.argv[1]); out = pathlib.Path(sys.argv[2]); out.mkdir(parents=True, exist_ok=True)
 brand = (src.parent / 'brand.css').read_text(encoding='utf-8')
-html = src.read_text(encoding='utf-8').replace('/*BRAND_CSS*/', brand)
+article = (src.parent / 'article.css').read_text(encoding='utf-8')
+html = src.read_text(encoding='utf-8').replace('/*BRAND_CSS*/', brand).replace('/*ARTICLE_CSS*/', article)
 name = src.name.replace('.src.html', '')
 
 before, after = html.split('<!-- FORM_SLOT -->')

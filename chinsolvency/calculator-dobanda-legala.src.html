@@ -1,0 +1,424 @@
+<!-- Consultarius — /calculator-dobanda-legala/ (draft). Built by build.py: BRAND_CSS, ARTICLE_CSS, FORM_SLOT are injected. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*BRAND_CSS*/
+/*ARTICLE_CSS*/
+/* page: dobânda legală */
+.cbx .rates{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.cbx .rates div{background:var(--surface);border-radius:var(--radius-s);padding:14px;font-size:12px;font-weight:600;color:var(--ink-3);line-height:1.35}
+.cbx .rates b{display:block;font-size:22px;color:var(--bronze);letter-spacing:-.02em;margin-top:6px}
+.cbx .res-rows{display:grid;gap:8px;font-size:14px;color:rgba(255,255,255,.75)}
+.cbx .res-rows div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:8px}
+.cbx .res-rows b{color:#fff;font-weight:700;text-align:right}
+.cbx .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cbx .seg label{position:relative;cursor:pointer}
+.cbx .seg input{position:absolute;opacity:0}
+.cbx .seg span{display:block;border:1.5px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;font-size:14px;font-weight:700;color:var(--ink-2);background:var(--bg);line-height:1.3;height:100%}
+.cbx .seg span small{display:block;font-weight:500;font-size:12px;color:var(--ink-3);margin-top:2px}
+.cbx .seg input:checked+span{border-color:var(--bronze);background:var(--bronze-l);color:var(--ink)}
+.cbx .seg input:focus-visible+span{outline:2px solid var(--bronze);outline-offset:2px}
+@media (max-width:860px){.cbx .rates{grid-template-columns:1fr 1fr}.cbx .seg{grid-template-columns:1fr}}
+</style>
+
+<div class="cbx">
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+      Consultarius
+    </a>
+    <nav class="nav">
+      <a href="#calculator">Calculator</a>
+      <a href="#og-13-2011">Rate 2026</a>
+      <a href="#recuperare">Recuperare creanțe</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a href="#contact" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg><span>Consultație gratuită</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Calculator dobândă legală</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Instrument gratuit · OG nr. 13/2011</span>
+          <h1>Dobânda legală calculator pentru <span class="accent">creanțe și penalități</span></h1>
+          <div class="lead">
+            <p>O factură neplătită pierde din valoare în fiecare zi. Debitorul folosește banii tăi gratuit. Tu plătești salarii și taxe din alte surse.</p>
+            <p>Legea îți dă un instrument pentru asta: dobânda legală. Cu un instrument de tip <strong>dobânda legală calculator</strong> (calculator dobândă legală) afli suma în câteva secunde. Mai jos vezi formula, ratele valabile în 2026, două exemple calculate și greșeala care îi face pe mulți creditori să ceară de două ori mai puțin decât li se cuvine.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 8 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Rata BNR verificată la această dată: 6,50%</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează dobânda</a>
+            <a href="#contact" class="btn btn-ghost">Verificare gratuită a calculului <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Formula pe scurt</h2>
+          <p><strong>Dobânda = suma datorată × rata dobânzii × numărul de zile / 365</strong></p>
+          <p>Rata depinde de tipul dobânzii și de calitatea părților: între profesioniști sau nu.</p>
+          <div class="rates">
+            <div>Remuneratorie<b>6,50%</b></div>
+            <div>Penalizatoare, regula generală<b>10,50%</b></div>
+            <div>Penalizatoare între firme<b>14,50%</b></div>
+            <div>Penalizatoare, non-profesioniști<b>8,40%</b></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator online</span><h2>Calculează <span class="accent">dobânda legală</span></h2></div>
+      <p>Datele rămân în browserul dumneavoastră. Rezultatul este orientativ și nu înlocuiește verificarea actelor.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="i-suma">Suma datorată (debitul principal, fără penalități)</label><div class="inp"><input id="i-suma" inputmode="decimal" placeholder="ex. 10 000"><span class="unit">lei</span></div></div>
+          <div class="field"><label for="i-scad">Data scadenței</label><div class="inp"><input type="date" id="i-scad"></div><small>Din contract sau din factură — nu data emiterii facturii.</small></div>
+          <div class="field"><label for="i-plata">Data plății sau a calculului</label><div class="inp"><input type="date" id="i-plata"></div><small>Lăsați data de azi dacă nu s-a plătit.</small></div>
+          <div class="field full"><label>Tipul dobânzii și calitatea părților</label>
+            <div class="seg" role="radiogroup">
+              <label><input type="radio" name="tip" value="b2b" checked><span>Penalizatoare între profesioniști<small>rata de referință + 8 puncte</small></span></label>
+              <label><input type="radio" name="tip" value="gen"><span>Penalizatoare, regula generală<small>rata de referință + 4 puncte</small></span></label>
+              <label><input type="radio" name="tip" value="np"><span>Penalizatoare, non-profesioniști<small>(rata + 4 puncte) − 20%</small></span></label>
+              <label><input type="radio" name="tip" value="rem"><span>Remuneratorie<small>rata de referință (−20% non-profesioniști)</small></span></label>
+            </div>
+          </div>
+          <div class="field" id="rem-np-wrap" hidden><label for="i-remnp">Părțile sunt non-profesioniști?</label><div class="inp"><select id="i-remnp"><option value="0">Nu — 6,50%</option><option value="1">Da — reducere 20%</option></select></div></div>
+          <div class="field"><label for="i-bnr">Rata de referință BNR</label><div class="inp"><input id="i-bnr" inputmode="decimal" value="6,50"><span class="unit">%</span></div><small>Verificați rata pe bnr.ro înainte de calcul.</small></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: factură între firme</button>
+            <button type="button" class="btn btn-line" id="b-ex2">Exemplu: împrumut între persoane fizice</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Dobânda legală</span>
+          <div class="big" id="o-sum">—</div>
+          <div class="res-rows">
+            <div><span>Zile de întârziere</span><b id="o-zile">—</b></div>
+            <div><span>Rata anuală aplicată</span><b id="o-rata">—</b></div>
+            <div><span>Total (debit + dobândă)</span><b id="o-total">—</b></div>
+          </div>
+          <div class="flag" id="o-flag" hidden></div>
+          <div class="flag warn" id="o-mist" hidden></div>
+          <a href="#contact" class="btn btn-primary">Verificare gratuită a calculului</a>
+          <span class="disc">Calcul orientativ cu o singură rată de referință. Dacă întârzierea acoperă semestre cu rate BNR diferite, calculați separat fiecare perioadă (Legea nr. 72/2013).</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#ce-este">Ce este dobânda legală</a>
+      <a href="#cum-functioneaza">Cum funcționează calculatorul</a>
+      <a href="#og-13-2011">Dobânda legală conform OG nr. 13/2011</a>
+      <a href="#recuperare">Dobânda legală pentru recuperare creanțe</a>
+      <a href="#insolventa">Dobânda legală în insolvență</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#legislatie">Analiză juridică și legislație</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+      <a href="#concluzie">Concluzie</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="ce-este">
+        <span class="eyebrow">Ghid</span>
+        <h2>Ce este dobânda legală</h2>
+        <p>Dobânda legală este dobânda stabilită de lege pentru obligațiile bănești, atunci când părțile nu au fixat altă rată. Se aplică între creditor și debitor pentru creanțe neachitate, datorii, facturi și sume din litigii comerciale. Este reglementată de OG nr. 13/2011 și se calculează pornind de la rata dobânzii de referință a BNR.</p>
+        <p>Legea cunoaște două tipuri. Dobânda remuneratorie este prețul folosirii banilor până la scadență. Dobânda penalizatoare se datorează pentru întârzierea la plată, după scadență. În practica mea, la recuperarea creanțelor lucrez aproape mereu cu a doua: dobânda legală penalizatoare. Dobândă legală remuneratorie apare mai rar, la împrumuturi.</p>
+
+        <h3>Diferența dintre dobânda legală și dobânda contractuală</h3>
+        <p>Dobânda legală se aplică potrivit legii. O dobândă contractuală este stabilită de părți prin contract. Dacă obligația produce dobândă, dar contractul nu fixează rata, se plătește dobânda legală (art. 2 din OG nr. 13/2011). Între persoane care nu sunt profesioniști, dobânda contractuală nu poate depăși dobânda legală cu mai mult de 50% pe an.</p>
+
+        <h3>Diferența dintre dobânda legală și penalitățile de întârziere</h3>
+        <p>Dobânda legală vine din lege și se calculează după rata BNR. Penalitățile de întârziere vin din contract, printr-o clauză penală, de exemplu 0,1% pe zi. Ambele sancționează întârzierea la plată. Dacă le ceri pe amândouă pentru aceeași perioadă, instanța verifică dacă nu ceri de două ori aceeași despăgubire.</p>
+        <div class="latin">„Summum jus, summa injuria” <span style="font-weight:500;font-size:15px;color:var(--ink-3)">(Cicero, <em>De officiis</em>, I, 33)</span><small>Dreptul împins la extrem devine nedreptate. Penalitățile excesive se reduc des în instanță, iar o cerere moderată și bine calculată trece mai ușor.</small></div>
+      </section>
+
+      <section id="cum-functioneaza">
+        <span class="eyebrow">Calcul</span>
+        <h2>Dobânda legală calculator: cum funcționează</h2>
+        <p>Calculatorul înmulțește suma datorată cu rata anuală a dobânzii și cu numărul de zile de întârziere, apoi împarte la 365. Pentru un rezultat corect ai nevoie de cinci date: suma, data scadenței, data plății sau a calculului, rata aplicabilă și tipul raportului juridic, între profesioniști sau nu.</p>
+
+        <h3>Date necesare pentru calcul</h3>
+        <ul class="chk">
+          <li><strong>Suma datorată:</strong> debitul principal, fără penalități.</li>
+          <li><strong>Data scadenței:</strong> scadența plății din contract sau din factură.</li>
+          <li><strong>Data plății</strong> sau data la care faci calculul.</li>
+          <li><strong>Numărul de zile de întârziere</strong> dintre cele două date.</li>
+          <li><strong>Rata dobânzii aplicabile:</strong> depinde de tipul dobânzii și de calitatea părților.</li>
+        </ul>
+
+        <h3>Formula de calcul a dobânzii legale</h3>
+        <div class="note dark"><b>Dobânda = suma datorată × rata dobânzii × numărul de zile / 365</b></div>
+        <p>Dacă întârzierea acoperă mai multe semestre, calculezi separat fiecare perioadă. În contractele dintre profesioniști se aplică rata de referință în vigoare în prima zi a semestrului (Legea nr. 72/2013).</p>
+
+        <h3>Exemplu practic de calcul</h3>
+        <div class="example">
+          <div class="t">Factură neachitată între două firme</div>
+          <p>Suma: 10.000 lei. Scadența: 1 martie 2026. Plata: 30 aprilie 2026. Întârziere: 60 de zile. Între profesioniști, rata penalizatoare este 6,50% + 8 puncte = 14,50%.</p>
+          <span class="formula">10.000 × 14,50% × 60 / 365 = 238,36 lei</span>
+          <p>Creditorul profesionist poate cere în plus o sumă fixă de minimum echivalentul a 40 de euro pentru cheltuielile de recuperare (Legea nr. 72/2013).</p>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <div class="note"><b>Greșeala care costă:</b> din experiența mea, mulți creditori aplică direct 6,50%, rata BNR. Rezultatul ar fi 106,85 lei. Creditorul pierde 131,51 lei doar pe o factură de 10.000 lei.</div>
+        <div class="example">
+          <div class="t">Datorie civilă între persoane fizice</div>
+          <p>O persoană împrumută 20.000 lei. Restituirea trebuia făcută la 1 iunie 2026, dar banii vin la 1 septembrie 2026. Întârziere: 92 de zile. În afara activității profesionale, rata penalizatoare se reduce cu 20%: (6,50% + 4) × 0,8 = 8,40%.</p>
+          <span class="formula">20.000 × 8,40% × 92 / 365 = 423,45 lei</span>
+          <p>Contează dovada împrumutului și a scadenței. Fără ele, suma calculată nu ajută în instanță.</p>
+          <button type="button" class="btn btn-line" data-ex="2">Verifică în calculator</button>
+        </div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/dobanda-legala-formula-calcul.webp" width="1200" height="675" alt="Calcul dobândă legală: sumă datorată, data scadenței, zile de întârziere, rata dobânzii, rezultat" loading="lazy">
+          <figcaption>Formula dobânzii legale</figcaption>
+        </figure>
+      </section>
+
+      <section id="og-13-2011">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Dobânda legală conform OG nr. 13/2011</h2>
+        <p>OG nr. 13/2011 privind dobânda legală remuneratorie și penalizatoare pentru obligații bănești este actul de bază. Stabilește cele două tipuri de dobândă, legătura cu rata de referință a BNR și reducerea de 20% pentru raporturile care nu țin de activitatea unei întreprinderi. Atenție: actul este o ordonanță simplă, OG, nu o ordonanță de urgență.</p>
+        <h3>Ce reglementează OG nr. 13/2011</h3>
+        <p>Rata de referință este rata dobânzii de politică monetară a BNR. La 8 octombrie 2026 era 6,50%, nivel neschimbat din august 2024. Verifică rata pe <a href="https://www.bnr.ro" target="_blank" rel="noopener">site-ul BNR</a> înainte de fiecare calcul.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Tip dobândă (2026)</th><th>Regula din OG nr. 13/2011</th><th>Profesioniști</th><th>Non-profesioniști (−20%)</th></tr></thead>
+          <tbody>
+            <tr><td>Remuneratorie</td><td>Rata de referință (art. 3 alin. (1))</td><td>6,50%</td><td>5,20%</td></tr>
+            <tr><td>Penalizatoare, regula generală</td><td>Rata de referință + 4 puncte (art. 3 alin. (2))</td><td>10,50%</td><td>8,40%</td></tr>
+            <tr><td>Penalizatoare între profesioniști și cu autorități contractante</td><td>Rata de referință + 8 puncte (art. 3 alin. (2<sup>1</sup>))</td><td>14,50%</td><td>nu se aplică</td></tr>
+          </tbody>
+        </table></div>
+        <div class="t-grid">
+          <div class="t-card"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Dobânda legală remuneratorie</h3><ul><li>Dobânda remuneratorie se datorează pentru perioada de dinainte de scadență (art. 1 alin. (2)). O întâlnești la împrumuturi și la contractele în care cineva folosește banii altcuiva pentru o perioadă. Nu sancționează întârzierea. Plătește folosirea capitalului.</li></ul></div>
+          <div class="t-card"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9L2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>Dobânda legală penalizatoare</h3><ul><li>Dobânda penalizatoare se datorează pentru neplata la scadență (art. 1 alin. (3)). Curge, de regulă, din ziua următoare scadenței și până la plată. Pentru despăgubirile din fapte ilicite, ÎCCJ a stabilit în 2026 că dobânda curge de la data producerii prejudiciului.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="recuperare">
+        <span class="eyebrow">Creditori</span>
+        <h2>Dobânda legală pentru recuperare creanțe</h2>
+        <p>În recuperarea creanțelor, dobânda legală se cere în trei momente: în notificarea de plată, în cererea de chemare în judecată și în executarea silită. De fiecare dată trebuie să arăți suma principală, perioada, rata și temeiul legal. Un calcul clar scurtează discuția cu debitorul.</p>
+        <div class="risk3 three">
+          <div class="risk"><h3><i style="background:var(--bronze)"></i>În notificarea de plată</h3><p>Notificarea trebuie să separe debitul principal de dobândă și de penalități. Scrie scadența, perioada de calcul și rata. Debitorul care vede un calcul exact negociază mai repede decât cel care primește o sumă globală.</p></div>
+          <div class="risk"><h3><i style="background:var(--bronze)"></i>În instanță</h3><p>Dobânda legală se cere împreună cu debitul principal, în acțiunea de drept comun sau în ordonanța de plată (Codul de procedură civilă, art. 1014–1025). Atașează o anexă de calcul pe perioade. Judecătorul trebuie să vadă imediat de unde vine fiecare leu.</p></div>
+          <div class="risk"><h3><i style="background:var(--bronze)"></i>În executare silită</h3><p>După obținerea unui titlu executoriu, dobânda continuă să curgă dacă titlul o acordă până la plata efectivă. Executorul o actualizează în dosar. Debitorul care găsește o perioadă sau o rată greșită poate face contestație la executare.</p></div>
+        </div>
+        <div class="note">Pentru o verificare gratuită a calculului, <b>trimite-ne factura, contractul și dovada scadenței.</b> Îți spunem ce rată se aplică și ce sumă poți cere.</div>
+      </section>
+
+      <section id="insolventa">
+        <span class="eyebrow">Insolvență</span>
+        <h2>Dobânda legală în insolvență</h2>
+        <p>Dobândă în insolvență înseamnă un calcul oprit la o dată fixă. După deschiderea procedurii insolvenței, la creanțele născute înainte de deschidere nu se mai pot adăuga dobânzi, majorări sau penalități (art. 80 din Legea nr. 85/2014). Dobânda calculată până la data deschiderii se trece în declarația de creanță. Regula are excepții, mai ales pentru creanțele garantate.</p>
+        <h3>Ce se întâmplă cu dobânzile după deschiderea insolvenței</h3>
+        <p>Calculezi dobânda până în ziua dinaintea deschiderii procedurii. Separi principalul, dobânda și penalitățile în declarația de creanță. Administratorul judiciar verifică fiecare sumă. O creanță structurată pe componente este mai greu de contestat decât o sumă globală.</p>
+        <h3>Dobânzi pentru creanțe garantate și negarantate</h3>
+        <p>Creanțele garantate cu ipotecă sau gaj au o poziție mai bună, în limita valorii bunului. Creanțele bugetare, de exemplu cele ale ANAF, au o ordine proprie de plată. Creditorul chirografar, fără garanție, este plătit după creanțele garantate, salariale și bugetare și are cel mai mare risc. Pentru el, un calcul corect al dobânzii până la deschidere contează cel mai mult.</p>
+        <div class="note dark">Debitorul tău a intrat în insolvență? Folosește și <a href="/calculator-insolventa/" style="color:#D9B878">calculatorul de insolvență și termene</a> pentru a nu rata termenul declarației de creanță.</div>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Atenție</span>
+        <h2>Greșeli frecvente în calculul dobânzii legale</h2>
+        <p>Patru greșeli apar în majoritatea calculelor pe care le corectez. Clienților le recomand de obicei să verifice aceste puncte înainte de orice calcul dobândă legală. Fiecare poate reduce suma acordată sau poate duce la respingerea cererii de dobândă.</p>
+        <ol class="num">
+          <li><strong>Alegerea greșită a perioadei de calcul.</strong> Dobânda penalizatoare curge după scadență, nu de la data facturii. Verifică termenul de plată din contract.</li>
+          <li><strong>Aplicarea greșită a ratei dobânzii.</strong> Între firme se aplică 14,50%, nu 6,50%. Între persoane fizice se aplică reducerea de 20%.</li>
+          <li><strong>Confuzia dintre dobândă și penalități.</strong> Dobânda legală și clauza penală nu se adună automat. Citește contractul înainte de a le cumula.</li>
+          <li><strong>Lipsa documentelor justificative.</strong> Fără factură, contract, dovada scadenței și dovada comunicării, calculul rămâne doar o cifră.</li>
+        </ol>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/dobanda-legala-vs-contractuala-penalitati.webp" width="1200" height="675" alt="Comparație dobândă legală, dobândă contractuală și penalități de întârziere" loading="lazy">
+          <figcaption>Dobândă legală, dobândă contractuală, penalități</figcaption>
+        </figure>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Analiză juridică</span>
+        <h2>Analiză juridică și legislație aplicabilă</h2>
+        <p>Un calcul corect folosește patru acte: OG nr. 13/2011 pentru rata dobânzii, Codul civil pentru obligații și prescripție, Legea nr. 72/2013 pentru întârzierile dintre profesioniști și Legea nr. 85/2014 dacă debitorul intră în insolvență. Procedura în instanță și executarea urmează <a href="https://legislatie.just.ro/Public/DetaliiDocument/140271" target="_blank" rel="noopener">Codul de procedură civilă</a>.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>OG nr. 13/2011 privind dobânda legală</h3><ul><li>Stabilește tipurile de dobândă, ratele și reducerea pentru non-profesioniști. Pentru obligațiile în valută cu element de extraneitate, dobânda legală este de 6% pe an (art. 4).</li></ul></div>
+          <div class="t-card"><h3>Codul civil și obligațiile de plată</h3><ul><li>Art. 1535 din Codul civil dă dreptul la daune moratorii pentru neplata la scadență, fără ca creditorul să dovedească un prejudiciu. Dreptul la acțiune se prescrie, ca regulă, în 3 ani (art. 2517).</li></ul></div>
+          <div class="t-card"><h3>Combaterea întârzierii în plată</h3><ul><li>Legea nr. 72/2013 se aplică contractelor dintre profesioniști și dintre aceștia și autoritățile contractante. Dă dreptul la dobânda penalizatoare majorată și la suma fixă pentru cheltuielile de recuperare.</li></ul></div>
+          <div class="t-card"><h3>Comentarii juridice</h3><ul><li>Pentru o creanță contestată, nu folosi ordonanța de plată. Pentru un calcul greșit, executarea poate fi atacată. Penalitățile excesive pot fi reduse de instanță. Fără documente, nici calculul corect nu ajută.</li></ul></div>
+        </div>
+
+        <h3>Jurisprudență relevantă</h3>
+        <ul class="chk">
+          <li><strong>ÎCCJ, Decizia nr. 3/2026 (recurs în interesul legii, dosar nr. 2319/1/2025).</strong> Pentru despăgubirile acordate pentru fapte ilicite, dobânda legală penalizatoare curge de la data producerii prejudiciului, nu de la data hotărârii. <a href="https://www.iccj.ro/2026/02/23/minuta-deciziei-nr-3-din-23-februarie-2026/" target="_blank" rel="noopener">Minuta pe iccj.ro</a>.</li>
+          <li><strong>ÎCCJ, Secția I civilă, Decizia nr. 906/2019.</strong> Instanța a confirmat dreptul la dobânda penalizatoare după art. 3 alin. (2) din OG nr. 13/2011, dar a stabilit că aceasta curge de la scadența obligației din titlul executoriu, nu de la data introducerii cererii. Data de început a dobânzii schimbă substanțial suma.</li>
+        </ul>
+
+        <h3>Compararea normelor actuale</h3>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Tip</th><th>Când se aplică</th><th>Bază</th><th>Cine o cere</th><th>Documente</th><th>Avantaje</th><th>Riscuri</th><th>Exemplu</th></tr></thead>
+          <tbody>
+            <tr><td>Dobândă legală remuneratorie</td><td>Până la scadență</td><td>OG nr. 13/2011</td><td>Creditorul</td><td>Contract, dovada sumei</td><td>Plătește folosirea banilor</td><td>Confuzie cu dobânda contractuală</td><td>Împrumut fără rată stabilită</td></tr>
+            <tr><td>Dobândă legală penalizatoare</td><td>După scadență</td><td>OG nr. 13/2011</td><td>Creditorul</td><td>Factură, scadență, calcul</td><td>Nu cere dovada prejudiciului</td><td>Rată sau perioadă greșită</td><td>Factură neplătită între firme</td></tr>
+            <tr><td>Dobândă contractuală</td><td>Când părțile au fixat rata</td><td>Contract</td><td>Partea îndreptățită</td><td>Contract, grafic</td><td>Claritate</td><td>Plafon de +50% între non-profesioniști</td><td>Contract de împrumut</td></tr>
+            <tr><td>Penalități de întârziere</td><td>Când contractul le prevede</td><td>Clauză penală</td><td>Creditorul</td><td>Clauza, calculul</td><td>Presiune pentru plată</td><td>Reducere de către instanță</td><td>0,1% pe zi</td></tr>
+            <tr><td>Actualizarea creanței</td><td>Pentru păstrarea valorii reale</td><td>Lege, titlu</td><td>Creditorul</td><td>Titlu, indice de inflație</td><td>Protejează valoarea</td><td>Confuzie cu dobânda</td><td>Hotărâre executată după ani</td></tr>
+          </tbody>
+        </table></div>
+        <div class="author">
+          <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <div><b>[DE COMPLETAT: nume și prenume], avocat</b><span>Baroul […], nr. legitimație […] · […] ani de practică în recuperare creanțe</span></div>
+        </div>
+      </section>
+
+      <section id="intrebari" class="faq-wide">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre dobânda legală</h2>
+        <div class="faq">
+          <details open><summary>Ce este dobânda legală?</summary><p>Este dobânda stabilită de OG nr. 13/2011 pentru obligațiile bănești, când părțile nu au fixat altă rată. Se calculează pornind de la rata de referință a BNR.</p></details>
+          <details><summary>Cum se calculează dobânda legală?</summary><p>Suma datorată × rata anuală × numărul de zile de întârziere / 365. Rata depinde de tipul dobânzii și de calitatea părților.</p></details>
+          <details><summary>Ce este dobânda legală penalizatoare?</summary><p>Este dobânda pentru neplata la scadență. În 2026 este 10,50% ca regulă generală, 14,50% între profesioniști și 8,40% între non-profesioniști.</p></details>
+          <details><summary>Ce este dobânda legală remuneratorie?</summary><p>Este prețul folosirii banilor până la scadență. În 2026 este 6,50%, respectiv 5,20% între non-profesioniști.</p></details>
+          <details><summary>Care este diferența dintre dobânda legală și penalități?</summary><p>Dobânda legală vine din lege. Penalitățile vin din contract. Cumulul lor pentru aceeași perioadă se analizează atent, pentru că instanța poate reduce penalitățile excesive.</p></details>
+          <details><summary>Pot cere dobândă legală pentru o factură neplătită?</summary><p>Da, dacă factura este scadentă și neplătită. Între firme ceri 14,50% pe an și minimum echivalentul a 40 de euro pentru cheltuielile de recuperare.</p></details>
+          <details><summary>Dobânda legală poate fi cerută în instanță?</summary><p>Da, împreună cu debitul principal, inclusiv prin ordonanța de plată. Cererea trebuie să arate perioada, rata, formula și temeiul legal.</p></details>
+          <details><summary>Cum se aplică dobânda legală în executarea silită?</summary><p>Dacă titlul executoriu acordă dobânda până la plată, executorul o actualizează în dosar. Un calcul greșit poate fi atacat prin contestație la executare.</p></details>
+          <details><summary>Se poate calcula dobânda legală în insolvență?</summary><p>Da, dar numai până la deschiderea procedurii. După deschidere, la creanțele anterioare nu se mai adaugă dobânzi, cu excepțiile prevăzute de lege.</p></details>
+          <details><summary>Când trebuie verificat calculul de un avocat?</summary><p>Când suma este mare, există plăți parțiale, perioade din mai mulți ani, clauze penale, executare silită sau debitor în insolvență.</p></details>
+        </div>
+      </section>
+
+      <section id="concluzie" style="padding-bottom:0">
+        <span class="eyebrow">Concluzie</span>
+        <h2>Concluzie: ce faci azi</h2>
+        <p>Un calculator de dobândă legală este util pentru creanțe, facturi neplătite, litigii comerciale și executare silită. Diferența dintre un calcul bun și unul greșit este adesea rata aplicată și data de început. Pentru o factură între firme, diferența poate fi mai mare de 100%.</p>
+        <ol class="num">
+          <li>Verifică dacă tu și debitorul sunteți profesioniști: de asta depinde rata.</li>
+          <li>Calculează dobânda pe fiecare semestru, de la scadență până azi.</li>
+          <li>Trimite debitorului o notificare cu calculul detaliat.</li>
+        </ol>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:32px">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Consultație gratuită pentru creditori și debitori</span>
+        <h2>Verificăm calculul dobânzii</h2>
+        <p class="lead">Trimite factura sau titlul executoriu și calculul primit. Verificăm rata, perioada și suma. Îți spunem dacă poți cere mai mult sau dacă poți contesta. Consultația nu te obligă la nimic.</p>
+        <div class="contact-points">
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>[Telefon]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>[E-mail]</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Programează consultația gratuită</h3>
+        <p>Vă răspundem în cel mai scurt timp.</p>
+<!-- FORM_SLOT -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Consultarius</a>
+    <nav class="nav"><a href="/">Acasă</a><a href="/calculator-insolventa/">Calculator insolvență</a><a href="#intrebari">Întrebări</a><a href="#contact">Contact</a></nav>
+    <span>© 2026 Consultarius. Rezultatele sunt orientative și nu constituie consultanță juridică.</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var money=new Intl.NumberFormat('ro-RO',{minimumFractionDigits:2,maximumFractionDigits:2});
+  var pct=new Intl.NumberFormat('ro-RO',{minimumFractionDigits:2,maximumFractionDigits:2});
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  function utc(v){if(!v)return null;var p=v.split('-');return Date.UTC(+p[0],+p[1]-1,+p[2])}
+  function tip(){return root.querySelector('input[name="tip"]:checked').value}
+  var t=new Date();$('i-plata').value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+
+  function rate(bnr){
+    switch(tip()){
+      case 'b2b':return bnr+8;
+      case 'gen':return bnr+4;
+      case 'np':return (bnr+4)*0.8;
+      case 'rem':return $('i-remnp').value==='1'?bnr*0.8:bnr;
+    }
+  }
+  function calc(){
+    $('rem-np-wrap').hidden=tip()!=='rem';
+    var s=num('i-suma'),bnr=num('i-bnr'),a=utc($('i-scad').value),b=utc($('i-plata').value),flag=$('o-flag'),mist=$('o-mist');
+    if(s===null||bnr===null||a===null||b===null){$('o-sum').textContent='—';['o-zile','o-rata','o-total'].forEach(function(i){$(i).textContent='—'});flag.hidden=mist.hidden=true;return}
+    var z=Math.round((b-a)/864e5);
+    if(z<=0){$('o-sum').textContent='0,00 lei';$('o-zile').textContent='0';$('o-rata').textContent=pct.format(rate(bnr))+'%';$('o-total').textContent=money.format(s)+' lei';flag.hidden=false;flag.className='flag';flag.textContent='Data plății nu este după scadență, deci nu există zile de întârziere.';mist.hidden=true;return}
+    var r=rate(bnr), d=Math.round(s*r/100*z/365*100)/100;
+    $('o-sum').textContent=money.format(d)+' lei';
+    $('o-zile').textContent=z;
+    $('o-rata').textContent=pct.format(r)+'%';
+    $('o-total').textContent=money.format(s+d)+' lei';
+    flag.hidden=false;flag.className='flag';
+    flag.textContent={b2b:'Între profesioniști puteți cere în plus o sumă fixă de minimum echivalentul a 40 de euro pentru cheltuielile de recuperare (Legea nr. 72/2013).',gen:'Regula generală: rata de referință + 4 puncte (art. 3 alin. (2) din OG nr. 13/2011).',np:'În afara activității profesionale, rata penalizatoare se reduce cu 20%.',rem:'Dobânda remuneratorie se datorează pentru perioada de dinainte de scadență și nu sancționează întârzierea.'}[tip()];
+    if(tip()==='b2b'){var w=Math.round(s*bnr/100*z/365*100)/100;mist.hidden=false;mist.textContent='Greșeala care costă: cu rata BNR simplă ('+pct.format(bnr)+'%) ați obține doar '+money.format(w)+' lei și ați pierde '+money.format(d-w)+' lei.'}else mist.hidden=true;
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['i-suma','i-scad','i-plata','i-bnr','i-remnp'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  root.querySelectorAll('input[name="tip"]').forEach(function(r){r.addEventListener('change',calc)});
+  function ex(n){
+    if(n===1){$('i-suma').value='10000';$('i-scad').value='2026-03-01';$('i-plata').value='2026-04-30';root.querySelector('input[value="b2b"]').checked=true}
+    else{$('i-suma').value='20000';$('i-scad').value='2026-06-01';$('i-plata').value='2026-09-01';root.querySelector('input[value="np"]').checked=true}
+    $('i-bnr').value='6,50';calc();
+  }
+  $('b-ex1').addEventListener('click',function(){ex(1)});
+  $('b-ex2').addEventListener('click',function(){ex(2)});
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex(+b.getAttribute('data-ex'));$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Calculator dobândă legală","item":"https://chinsolvency.ro/calculator-dobanda-legala/"}]},
+ {"@type":"WebApplication","name":"Calculator dobândă legală","url":"https://chinsolvency.ro/calculator-dobanda-legala/","applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"ro","offers":{"@type":"Offer","price":"0","priceCurrency":"RON"}},
+ {"@type":"Article","headline":"Dobânda legală calculator pentru creanțe și penalități","description":"Calculează dobânda legală pentru creanțe și facturi neplătite: formula, ratele 2026 după OG nr. 13/2011, exemple și când o poți cere în instanță.","inLanguage":"ro","dateModified":"2026-10-08","mainEntityOfPage":"https://chinsolvency.ro/calculator-dobanda-legala/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/dobanda-legala-formula-calcul.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/dobanda-legala-vs-contractuala-penalitati.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Dobânda legală","Recuperare creanțe","OG nr. 13/2011"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Ce este dobânda legală?","acceptedAnswer":{"@type":"Answer","text":"Este dobânda stabilită de OG nr. 13/2011 pentru obligațiile bănești, când părțile nu au fixat altă rată. Se calculează pornind de la rata de referință a BNR."}},
+  {"@type":"Question","name":"Cum se calculează dobânda legală?","acceptedAnswer":{"@type":"Answer","text":"Suma datorată × rata anuală × numărul de zile de întârziere / 365. Rata depinde de tipul dobânzii și de calitatea părților."}},
+  {"@type":"Question","name":"Ce este dobânda legală penalizatoare?","acceptedAnswer":{"@type":"Answer","text":"Este dobânda pentru neplata la scadență. În 2026 este 10,50% ca regulă generală, 14,50% între profesioniști și 8,40% între non-profesioniști."}},
+  {"@type":"Question","name":"Ce este dobânda legală remuneratorie?","acceptedAnswer":{"@type":"Answer","text":"Este prețul folosirii banilor până la scadență. În 2026 este 6,50%, respectiv 5,20% între non-profesioniști."}},
+  {"@type":"Question","name":"Care este diferența dintre dobânda legală și penalități?","acceptedAnswer":{"@type":"Answer","text":"Dobânda legală vine din lege. Penalitățile vin din contract. Cumulul lor pentru aceeași perioadă se analizează atent, pentru că instanța poate reduce penalitățile excesive."}},
+  {"@type":"Question","name":"Pot cere dobândă legală pentru o factură neplătită?","acceptedAnswer":{"@type":"Answer","text":"Da, dacă factura este scadentă și neplătită. Între firme ceri 14,50% pe an și minimum echivalentul a 40 de euro pentru cheltuielile de recuperare."}},
+  {"@type":"Question","name":"Dobânda legală poate fi cerută în instanță?","acceptedAnswer":{"@type":"Answer","text":"Da, împreună cu debitul principal, inclusiv prin ordonanța de plată. Cererea trebuie să arate perioada, rata, formula și temeiul legal."}},
+  {"@type":"Question","name":"Cum se aplică dobânda legală în executarea silită?","acceptedAnswer":{"@type":"Answer","text":"Dacă titlul executoriu acordă dobânda până la plată, executorul o actualizează în dosar. Un calcul greșit poate fi atacat prin contestație la executare."}},
+  {"@type":"Question","name":"Se poate calcula dobânda legală în insolvență?","acceptedAnswer":{"@type":"Answer","text":"Da, dar numai până la deschiderea procedurii. După deschidere, la creanțele anterioare nu se mai adaugă dobânzi, cu excepțiile prevăzute de lege."}},
+  {"@type":"Question","name":"Când trebuie verificat calculul de un avocat?","acceptedAnswer":{"@type":"Answer","text":"Când suma este mare, există plăți parțiale, perioade din mai mulți ani, clauze penale, executare silită sau debitor în insolvență."}}
+ ]}
+]}
+</script>
