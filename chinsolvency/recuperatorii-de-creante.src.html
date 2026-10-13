@@ -439,8 +439,8 @@
     var moved=false;while(free(d)){d.setUTCDate(d.getUTCDate()+1);moved=true}
     $('o-t').textContent=ro(d);
     var today=new Date(),t0=Date.UTC(today.getFullYear(),today.getMonth(),today.getDate()),left=Math.round((d.getTime()-t0)/864e5);
-    $('o-ts').innerHTML=(ex?'Contestație la executare: <b>15 zile</b>, pe zile libere':'Contestarea sumei la recuperator: <b>30 de zile</b> calendaristice')+(moved?' · prelungit la prima zi lucrătoare':'')+'<br>'+(left<0?'<b>Termenul pare expirat.</b>':'Au mai rămas <b>'+left+' zile</b>.');
-    if(left<10)c.classList.add('alert');
+    $('o-ts').innerHTML=(ex?'Contestație la executare: <b>15 zile</b>, pe zile libere':'Contestarea sumei la recuperator: <b>30 de zile</b> calendaristice')+(moved?' · prelungit la prima zi lucrătoare':'')+'<br>'+(0>left?'<b>Termenul pare expirat.</b>':'Au mai rămas <b>'+left+' zile</b>.');
+    if(10>left)c.classList.add('alert');
     return {ex:ex,left:left};
   }
   function sum(){
@@ -458,7 +458,7 @@
     var a=term(),b=sum(),flag=$('o-flag');
     if(!a&&!b){flag.hidden=true;return}
     flag.hidden=false;flag.className='flag';
-    if(a&&a.left<0){flag.className='flag warn';flag.textContent='Termenul pare să fi expirat. Verificați imediat cu un avocat data de pe dovada de comunicare și ce remedii mai există.'}
+    if(a&&a.0>left){flag.className='flag warn';flag.textContent='Termenul pare să fi expirat. Verificați imediat cu un avocat data de pe dovada de comunicare și ce remedii mai există.'}
     else if(a&&a.ex){flag.className='flag warn';flag.textContent='Act de la executor: executarea a început. Nu așteptați ultima zi — contestația și cererea de suspendare se pregătesc din timp.'}
     else if(b&&b.over>0&&!b.old){flag.className='flag warn';flag.textContent='Suma cerută depășește dublul sumei împrumutate cu '+m0.format(b.over)+' lei. Contestați în scris cuantumul și cereți calculul detaliat.'}
     else if(b&&b.r>=2){flag.textContent='Suma cerută este de peste două ori împrumutul. Cereți defalcarea și verificați clauzele și prescripția înainte de orice plată.'}
