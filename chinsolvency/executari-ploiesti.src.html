@@ -1,0 +1,247 @@
+<!-- Consultarius — /executari-ploiesti/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#bunuri|Bunuri;#participare|Cum participi;#riscuri|Riscuri;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Licitații executări silite Prahova</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Prahova · licitații imobiliare · garanție 10%</span>
+          <h1>Licitații executări silite <span class="accent">Prahova</span> pentru case și apartamente</h1>
+          <div class="lead">
+            <p>Ploiești și Prahova au un număr mare de anunțuri de licitație imobiliară, iar diferența dintre o achiziție bună și una problematică stă în verificări. Aici vezi regulile din Codul de procedură civilă, pe care le poți aplica oricărui anunț.</p>
+            <p>Aici ai pașii, garanția, prețul pe termene, riscurile și instanțele relevante, cu un calculator pentru orice anunț de licitație.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Garanție: 10% din prețul de începere</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează garanția</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Licitația de executare silită este vânzarea publică a unui bun urmărit, făcută de executorul judecătoresc. Pentru un imobil, participi cu o ofertă însoțită de garanția de 10% din prețul de începere (art. 844 CPC), depusă cel mult în ziua dinaintea licitației. Termenul de vânzare este între 20 și 40 de zile de la publicație (art. 838), iar prețul se depune în 30 de zile de la adjudecare (art. 850).</p>
+          <div class="opts">
+            <div><b>Garanție</b>10% din prețul de începere</div>
+            <div><b>Al doilea termen</b>de la 75%</div>
+            <div><b>Preț</b>în 30 de zile</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Garanția și prețul pe termene, <span class="accent">pentru un imobil din Prahova</span></h2></div>
+      <p>Introdu prețul de începere din publicația de vânzare. Calculăm garanția de participare, prețul de la care începe al doilea termen și pragul minim, după art. 844 și art. 846 CPC.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Anunțul de licitație</div>
+          <div class="field full"><label for="f-v">Prețul de începere din publicație (lei)</label><div class="inp"><input id="f-v" inputmode="numeric" placeholder="300000"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: preț de începere 300.000 lei</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Garanție de participare (10%)</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Introdu prețul de începere.</span></div>
+            <div class="opt" id="c-m"><span class="k">Al doilea termen (75%)</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">Prețul de la care începe licitația (art. 846 alin. 8).</span></div>
+            <div class="opt" id="c-r"><span class="k">Preț minim cu 2+ licitatori (30%)</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Nu mai puțin de 30% din prețul primei licitații.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Calcul orientativ după CPC. Prețurile din exemple sunt ilustrative, nu date de piață. Verifică în publicație prețul exact, termenul și condițiile; cele 75% și 30% se aplică la termenele următoare, în condițiile art. 846 alin. 8.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#ce-este">Executarea bunurilor</a>
+      <a href="#bunuri">Bunuri</a>
+      <a href="#participare">Cum participi</a>
+      <a href="#pret">Prețul</a>
+      <a href="#riscuri">Riscuri</a>
+      <a href="#banci">Bănci și ANAF</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Licitații executări silite Prahova: răspuns rapid</h2>
+        <p>Licitația de executare silită este vânzarea publică a unui bun urmărit, făcută de executorul judecătoresc pentru plata creditorilor. Pentru un imobil din Ploiești și județul Prahova, participi cu o ofertă însoțită de garanția de 10% din prețul de începere, depusă cel mai târziu în ziua dinaintea licitației (art. 844 CPC). Termenul de vânzare este între 20 și 40 de zile de la afișarea publicației (art. 838). La adjudecare ai 30 de zile să depui prețul (art. 850).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel (exemplu ilustrativ)</div>
+          <p>Prețul de începere din publicație este 300.000 lei. Garanția este 10%: 30.000 lei. Dacă nu se oferă nici acest preț, licitația se amână cel mult 30 de zile și începe de la 75%: 225.000 lei. La același al doilea termen, cu cel puțin 2 licitatori, imobilul se poate vinde și la cel mai mare preț oferit, dar nu sub 30% din prețul primei licitații: 90.000 lei (art. 846 alin. 8).</p>
+          <span class="formula">300.000 × 10% = 30.000 lei garanție</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <p>Prețurile și imobilele concrete din Prahova se văd în publicațiile executorilor; aici ai regulile care se aplică oricărui anunț.</p>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Definiție</span>
+        <h2>Ce înseamnă executarea silită a bunurilor</h2>
+        <p>Executarea silită este recuperarea unei datorii prin executor judecătoresc, pe baza unui titlu executoriu (art. 632 CPC). Când debitorul nu plătește, executorul poate urmări imobilul: notează urmărirea în cartea funciară, fixează prețul de începere prin încheiere (art. 837) și îl vinde la licitație. Procedura generală este în ghidul <a href="/procedura-executare-silita-etape/">procedura executării silite</a>.</p>
+        <h3>Cine organizează licitațiile</h3>
+        <p>Licitația imobiliară o ține executorul judecătoresc, în baza unui titlu executoriu: o poate cere o bancă, un recuperator (cesionar), un alt creditor sau statul. Creanțele către buget se execută prin organele fiscale, după Codul de procedură fiscală, cu proceduri proprii; citește anunțul fiecărei vânzări, pentru că regulile de participare pot diferi.</p>
+        <h3>Instanțele din zonă</h3>
+        <p>Pentru Ploiești și județul Prahova, instanțele relevante sunt Judecătoria Ploiești, Tribunalul Prahova și Curtea de Apel Ploiești. Contestațiile la executare se depun, de regulă, la instanța de executare, adică judecătoria domiciliului sau sediului debitorului (art. 651 CPC); pentru urmărirea imobilelor, contestația se poate depune și la judecătoria de la locul imobilului, dacă acesta se află în circumscripția altei curți de apel (art. 714 alin. 2). Verifică denumirile și competența pe portalul instanțelor înainte de orice depunere.</p>
+      </section>
+
+      <section id="bunuri">
+        <span class="eyebrow">Tipuri de bunuri</span>
+        <h2>Ce poți cumpăra la o licitație de executare silită</h2>
+        <div class="tbl wide"><table>
+          <thead><tr><th></th><th>Apartamente</th><th>Case și vile</th><th>Terenuri</th></tr></thead>
+          <tbody>
+            <tr><td>Avantaj</td><td>Preț de pornire fixat prin încheiere</td><td>Preț de pornire fixat prin încheiere</td><td>Preț de pornire fixat prin încheiere</td></tr>
+            <tr><td>Verifici</td><td>Cartea funciară, sarcinile, locatarii</td><td>Cartea funciară, construcții intabulate, vecinătăți</td><td>Intravilan sau extravilan, acces, servituți</td></tr>
+            <tr><td>Documente</td><td>Act de identitate, garanție, ofertă</td><td>La fel</td><td>La fel</td></tr>
+            <tr><td>Costuri în plus</td><td>Notarea în cartea funciară, pe cheltuiala adjudecatarului (art. 849, 856)</td><td>La fel</td><td>La fel</td></tr>
+          </tbody>
+        </table></div>
+        <p>Bunurile mobile (mașini, echipamente) se vând după regulile urmăririi mobiliare; vezi <a href="/procedura-executare-silita-etape/">etapele executării</a> și art. 727 pentru bunurile neurmăribile. Prețul mediu nu poate fi dat pe baza legii: el depinde de evaluarea din dosar și de anunț.</p>
+      </section>
+
+      <section id="participare">
+        <span class="eyebrow">Procedura</span>
+        <h2>Cum participi la o licitație de executare silită, pas cu pas</h2>
+        <ol class="num">
+          <li><b>Citește publicația</b> de vânzare: imobilul, numărul cadastral, prețul de începere, locul și ora (art. 839).</li>
+          <li><b>Verifică imobilul</b> în cartea funciară și în dosarul de executare.</li>
+          <li><b>Consemnează garanția</b> de 10% din prețul de începere la dispoziția executorului (art. 844 alin. 1).</li>
+          <li><b>Depune oferta</b> cu dovada consemnării, cel târziu în ziua dinaintea licitației; ofertele cel puțin egale cu prețul de începere pot fi depuse și în ziua licitației.</li>
+          <li><b>La licitație,</b> executorul citește publicația și ofertele, apoi oferă imobilul prin 3 strigări succesive (art. 846).</li>
+          <li><b>Dacă adjudeci,</b> depui prețul în cel mult 30 de zile, ținând seama de garanție (art. 850); debitorul nu poate licita, nici prin persoane interpuse (art. 843 alin. 2).</li>
+        </ol>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/licitatie-imobiliara-prahova-pasii.webp" width="1200" height="675" alt="Cum participi la o licitație imobiliară în Prahova: publicație, garanție de 10%, ofertă, licitație, plata prețului în 30 de zile" loading="lazy">
+          <figcaption>Cum participi la licitație</figcaption>
+        </figure>
+      </section>
+
+      <section id="pret">
+        <span class="eyebrow">Prețul</span>
+        <h2>Prețul la licitație: primul și al doilea termen</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/pretul-la-licitatia-imobiliara-prahova.webp" width="1200" height="675" alt="Prețul la licitația imobiliară pe termene: 100% la primul termen, 75% la al doilea, minimum 30% cu cel puțin doi licitatori" loading="lazy">
+          <figcaption>Prețul pe termene</figcaption>
+        </figure>
+        <p>Prețul „sub piață” nu este garantat. Dacă la primul termen nu se oferă prețul de începere, vânzarea se amână cel mult 30 de zile, cu nouă publicație, iar la al doilea termen licitația începe de la 75% din prețul primei licitații. Dacă nici atunci nu se obține prețul de începere și sunt cel puțin 2 licitatori, bunul se vinde la cel mai mare preț oferit, dar nu mai puțin de 30% din prețul primei licitații (art. 846 alin. 8). O vânzare se amână, de asemenea, dacă nu au fost respectate termenele de înștiințare sau de publicitate (art. 845).</p>
+      </section>
+
+      <section id="riscuri">
+        <span class="eyebrow">Riscuri</span>
+        <h2>Riscurile licitațiilor de executare silită</h2>
+        <ul class="chk">
+          <li><b>Contestația:</b> procesul-verbal de licitație poate fi atacat prin contestație la executare, în termen de o lună de la înscrierea adjudecării în cartea funciară (art. 849 alin. 2); instanța poate suspenda eliberarea sumelor.</li>
+          <li><b>Nedepunerea prețului:</b> imobilul se scoate din nou în vânzare pe contul tău, iar tu plătești cheltuielile și eventuala diferență de preț (art. 851).</li>
+          <li><b>Sarcini și drepturi:</b> drepturile înscrise în cartea funciară după notarea urmăririi nu se opun adjudecatarului (art. 827); verifică restul.</li>
+          <li><b>Locatari:</b> adjudecatarul nu este ținut să respecte o locațiune încheiată la un preț cu o treime sub piață (art. 828).</li>
+          <li><b>Evaluarea:</b> un preț de pornire mic poate ascunde o problemă juridică sau tehnică.</li>
+        </ul>
+        <p>Vezi și <a href="/contestatie-la-executare/">contestația la executare</a> și <a href="/executare-silita-fara-somatie/">executarea fără somație</a>.</p>
+      </section>
+
+      <section id="banci">
+        <span class="eyebrow">Banci și ANAF</span>
+        <h2>Licitațiile bancare și cele ale ANAF</h2>
+        <p>Licitațiile cerute de bănci se desfășoară tot prin executor judecătoresc, după CPC, ca orice executare imobiliară. Creanțele fiscale se execută prin organele fiscale, după Codul de procedură fiscală; anunțurile lor pot avea condiții și termene proprii, pe care le citești în publicația fiecărei vânzări. Regula practică: cere publicația oficială, verifică titlul executoriu și imobilul, apoi consemnează garanția.</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente ale participanților</h2>
+        <ul class="chk">
+          <li>Nu verifici cartea funciară și sarcinile.</li>
+          <li>Consemnezi garanția după termenul-limită pentru ofertă.</li>
+          <li>Nu ai banii pentru preț în 30 de zile.</li>
+          <li>Te bazezi pe „prețul de piață” fără evaluare.</li>
+        </ul>
+        <p>Textele din CPC sunt cele publicate în Monitorul Oficial; verifică forma consolidată la data licitației.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Cum cumperi avantajos și sigur</h2>
+        <ol class="num">
+          <li>Cere publicația oficială și dosarul imobilului.</li>
+          <li>Verifică cartea funciară și calculează garanția (calculator).</li>
+          <li>Trimite-ne publicația în chat; îți spunem în aceeași zi ce verificări lipsesc.</li>
+        </ol>
+        <!--@author practice="executare silită" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre licitațiile de executare silită</h2>
+        <div class="faq">
+          <details open><summary>Ce sunt licitațiile de executare silită?</summary><p>Vânzări publice ale bunurilor urmărite, ținute de executorul judecătoresc pentru plata creditorilor, după regulile CPC.</p></details>
+          <details><summary>Cum pot participa la o licitație imobiliară?</summary><p>Consemnezi garanția de 10% din prețul de începere, depui oferta cu dovada consemnării și te prezinți la licitație (art. 844, 846 CPC).</p></details>
+          <details><summary>Ce documente sunt necesare pentru participare?</summary><p>Actul de identitate, dovada consemnării garanției, oferta de cumpărare și, dacă ești mandatar, procura specială autentică (art. 843, 844).</p></details>
+          <details><summary>Pot cumpăra un apartament executat silit?</summary><p>Da, dacă ai capacitate deplină de exercițiu; debitorul însuși nu poate licita, nici prin persoane interpuse (art. 843).</p></details>
+          <details><summary>Care sunt riscurile unei licitații?</summary><p>Contestația la executare, sarcinile imobilului, nedepunerea prețului în 30 de zile (art. 851) și o evaluare greșită.</p></details>
+          <details><summary>Cum verific actele unui imobil executat?</summary><p>Din cartea funciară, publicația de vânzare și dosarul de executare, la executor.</p></details>
+          <details><summary>Ce este garanția de participare?</summary><p>10% din prețul de începere a licitației, consemnată la dispoziția executorului și anexată ofertei (art. 844).</p></details>
+          <details><summary>Pot fi contestate licitațiile de executare?</summary><p>Da, procesul-verbal de licitație poate fi atacat în termen de o lună de la înscrierea adjudecării în cartea funciară (art. 849).</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Vrei să cumperi un imobil la licitație în Prahova?" lead="Trimite-ne publicația de vânzare și numărul dosarului de executare. Îți spunem în aceeași zi ce verificări lipsesc și ce termene curg. Consultația nu te obligă la nimic." nav="/|Acasă;/procedura-executare-silita-etape/|Procedura;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat executorilor sau băncilor. Calculele și exemplele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/[\s.]/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var p=num('f-v');
+    if(!(p>0)){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Introdu prețul de începere.';$('o-m').textContent='—';$('o-r').textContent='—';return}
+    $('o-t').textContent=lei(p*0.1);cls('c-t','alert');$('o-ts').textContent='Se consemnează la dispoziția executorului și se anexează ofertei (art. 844).';
+    $('o-m').textContent=lei(p*0.75);$('o-r').textContent=lei(p*0.3);
+  }
+  $('b-calc').addEventListener('click',calc);
+  $('f-v').addEventListener('input',calc);$('f-v').addEventListener('change',calc);
+  function ex(){$('f-v').value='300000';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Licitații executări silite Prahova", "item": "https://chinsolvency.ro/executari-ploiesti/"}]}, {"@type": "Article", "headline": "Licitații executări silite Prahova și imobile executate", "description": "Cum cumperi case, apartamente și imobile executate în Ploiești și Prahova prin licitație: garanția de 10%, prețul la a doua licitație, termene, riscuri și ANAF.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/executari-ploiesti/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/licitatie-imobiliara-prahova-pasii.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/pretul-la-licitatia-imobiliara-prahova.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum participi la o licitație imobiliară în Prahova", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Citești publicația", "text": "Imobil, preț de începere, loc și oră."}, {"@type": "HowToStep", "position": 2, "name": "Verifici imobilul", "text": "Carte funciară și dosar de executare."}, {"@type": "HowToStep", "position": 3, "name": "Consemnezi garanția", "text": "10% din prețul de începere."}, {"@type": "HowToStep", "position": 4, "name": "Depui oferta", "text": "Cu dovada consemnării, până în ziua dinaintea licitației."}, {"@type": "HowToStep", "position": 5, "name": "Plătești prețul", "text": "În cel mult 30 de zile de la adjudecare."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Executare silită", "Licitație imobiliară", "Garanție de participare", "Prahova"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce sunt licitațiile de executare silită?", "acceptedAnswer": {"@type": "Answer", "text": "Vânzări publice ale bunurilor urmărite, ținute de executorul judecătoresc pentru plata creditorilor, după regulile CPC."}}, {"@type": "Question", "name": "Cum pot participa la o licitație imobiliară?", "acceptedAnswer": {"@type": "Answer", "text": "Consemnezi garanția de 10% din prețul de începere, depui oferta cu dovada consemnării și te prezinți la licitație (art. 844, 846 CPC)."}}, {"@type": "Question", "name": "Ce documente sunt necesare pentru participare?", "acceptedAnswer": {"@type": "Answer", "text": "Actul de identitate, dovada consemnării garanției, oferta de cumpărare și, dacă ești mandatar, procura specială autentică (art. 843, 844)."}}, {"@type": "Question", "name": "Pot cumpăra un apartament executat silit?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dacă ai capacitate deplină de exercițiu; debitorul însuși nu poate licita, nici prin persoane interpuse (art. 843)."}}, {"@type": "Question", "name": "Care sunt riscurile unei licitații?", "acceptedAnswer": {"@type": "Answer", "text": "Contestația la executare, sarcinile imobilului, nedepunerea prețului în 30 de zile (art. 851) și o evaluare greșită."}}, {"@type": "Question", "name": "Cum verific actele unui imobil executat?", "acceptedAnswer": {"@type": "Answer", "text": "Din cartea funciară, publicația de vânzare și dosarul de executare, la executor."}}, {"@type": "Question", "name": "Ce este garanția de participare?", "acceptedAnswer": {"@type": "Answer", "text": "10% din prețul de începere a licitației, consemnată la dispoziția executorului și anexată ofertei (art. 844)."}}, {"@type": "Question", "name": "Pot fi contestate licitațiile de executare?", "acceptedAnswer": {"@type": "Answer", "text": "Da, procesul-verbal de licitație poate fi atacat în termen de o lună de la înscrierea adjudecării în cartea funciară (art. 849)."}}]}]}
+</script>
