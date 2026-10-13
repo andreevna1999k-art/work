@@ -49,7 +49,7 @@
 См. research-companies.md (источники, непроверенные пункты помечены).
 
 ## Примітки выполнены (13.10)
-- 1843 → 1837: генератор (#generator) и 3 модели (#model) перенесены в cerere-de-stergere-din-biroul-de-credit.src.html (второй калькулятор: кнопка примера #b-ex2). 6 внутренних ссылок /model-cerere-stergere-biroul-de-credit/ → /cerere-de-stergere-din-biroul-de-credit/#model (gdpr, firme-care, bucuresti, avocat, cat-dureaza). Черновики 1837, 1846, 1849, 1852, 1855, 1858 обновлены и проверены. 1843 — черновик, не публиковать, не удалять без согласия.
+- 1843 → 1837: генератор (#generator) и 3 модели (#model) перенесены в cerere-de-stergere-din-biroul-de-credit.src.html (второй калькулятор: кнопка примера #b-ex2). 6 внутренних ссылок /model-cerere-stergere-biroul-de-credit/ → /cerere-de-stergere-din-biroul-de-credit/#model (gdpr, firme-care, bucuresti, avocat, cat-dureaza). Черновики 1837, 1846, 1849, 1852, 1855, 1858 обновлены и проверены. 1843 перемещена в корзину WP 13.10 (по согласию пользователя; восстановима ~30 дней).
 - В 11 ТЗ-таблиц добавлена вкладка «Claude — доповнення» (чистая семантика, H1, H2, разграничение, [DE VERIFICAT]); для №52 insolventa sau faliment — полное новое ТЗ во вкладке «ТЗ (нове, Claude)». Оригинальные вкладки не трогались. При генерации текста брать сначала эти вкладки.
 - Конвеєр, колонка «Примітки»: статусы ✅/⏳ и ссылки на вкладки.
 - Открыто: №34/№36 — акценты при вёрстке; №8 (1813) — ссылка на №53 после его публикации.
