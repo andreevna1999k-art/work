@@ -1,0 +1,382 @@
+<!-- Consultarius — /firme-care-te-sterg-din-biroul-de-credit/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<style>
+.cbx .checks{grid-column:1/-1;display:grid;gap:8px}
+.cbx .checks label{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border:1.5px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;font-size:14.5px;line-height:1.45;color:var(--ink);cursor:pointer}
+.cbx .checks input{width:18px;height:18px;margin-top:2px;accent-color:var(--bronze);flex:none}
+</style>
+<div class="cbx">
+
+<!--@header nav="#calculator|Verifică oferta;#comparatie|Firmă sau avocat;#reclami|Unde reclami;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Firme care te șterg din Biroul de Credit</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legalitate · Riscuri · Soluții</span>
+          <h1>Firme care șterg Biroul de Credit: <span class="accent">legalitate, riscuri și soluții</span></h1>
+          <div class="lead">
+            <p>Ai semnat online cu o firmă care promitea să te scoată din Biroul de Credit. Au trecut trei luni. Raportul arată la fel, dar firma îți cere factura.</p>
+            <p>Aici afli ce sunt <strong>firmele care te șterg din Biroul de Credit</strong>, ce pot face legal și ce nu. Compari firma, avocatul și varianta „fac singur”. Vezi cum verifici o firmă înainte să semnezi și unde reclami dacă ai fost păcălit.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M12 8v5M12 16h.01"/></svg>CSALB: 9 din 10 cereri, respinse</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Verifică oferta firmei</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns clar</h2>
+          <p>Nicio firmă nu te poate șterge legal din Biroul de Credit dacă datele sunt corecte. O firmă poate doar să trimită, în numele tău, aceeași cerere pe care o poți trimite gratuit. Legea permite ștergerea numai pentru date greșite, raportate fără notificare sau păstrate peste 4 ani. Orice altă promisiune este marketing.</p>
+          <div class="opts">
+            <div><b>Legal</b>ceri corectarea unei erori, cu dovezi</div>
+            <div><b>Marketing</b>„ieșirea din Biroul de Credit” vândută ca produs</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Verificare</span><h2>Verifică oferta și <span class="accent">cât riști să plătești degeaba</span></h2></div>
+      <p>Bifează ce vezi în ofertă sau în contract. Introdu onorariul și, dacă ai semnat online, data semnării. Afli nivelul de risc, cât te poate costa și până când te poți retrage.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Semnale de alarmă</div>
+          <div class="checks">
+            <label><input type="checkbox" id="k1"> Promite rezultatul înainte să vadă raportul („garantat”, „orice restanță”)</label>
+            <label><input type="checkbox" id="k2"> Nu are CUI, adresă sau nume de avocat pe site</label>
+            <label><input type="checkbox" id="k3"> Cere copia CI și CNP-ul pe WhatsApp, fără contract</label>
+            <label><input type="checkbox" id="k4"> Spune că ștergerea „rezolvă și datoria”</label>
+            <label><input type="checkbox" id="k5"> În contract, „rezultatul” = trimiterea cererii</label>
+            <label><input type="checkbox" id="k6"> „Ofertă valabilă doar azi” sau altă presiune de timp</label>
+          </div>
+          <div class="grp">Contractul</div>
+          <div class="field"><label for="f-on">Onorariul cerut (lei)</label><div class="inp"><input id="f-on" inputmode="numeric" placeholder="1.500"></div></div>
+          <div class="field"><label for="f-sem">Data semnării (online / telefon)</label><div class="inp"><input type="date" id="f-sem"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Verifică</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu din ghid</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-v"><span class="k">Nivel de risc</span><span class="v" id="o-v">—</span><span class="s" id="o-vs">Bifează ce vezi în ofertă.</span></div>
+            <div class="opt" id="c-c"><span class="k">La 10 clienți ca tine</span><span class="v" id="o-c">—</span><span class="s" id="o-cs">Plătiți pentru cereri respinse (9 din 10, CSALB).</span></div>
+            <div class="opt ok" id="c-d"><span class="k">Cererea trimisă direct</span><span class="v">0 lei</span><span class="s">Plus un timbru, dacă trimiți prin poștă.</span></div>
+            <div class="opt full" id="c-r"><span class="k">Retragere din contract până la</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">14 zile, pentru contractele la distanță (OUG nr. 34/2014).</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Trimite-ne contractul la verificat</a>
+          <span class="disc">Rata de respingere: avertismentul CSALB din 2021. Termenul de retragere de 14 zile se aplică contractelor la distanță; excepția pentru serviciile prestate integral, cu acordul tău expres, se verifică în fiecare caz. Calcul orientativ.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#promit">Ce promit firmele</a>
+      <a href="#legale">Sunt legale?</a>
+      <a href="#comparatie">Legal vs înșelătorie</a>
+      <a href="#autoritati">Ce spun autoritățile</a>
+      <a href="#reclami">Unde reclami</a>
+      <a href="#procedura">Procedura reală</a>
+      <a href="#avocat">Ai nevoie de avocat?</a>
+      <a href="#practica">Practica judiciară</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#in-loc">Ce faci în loc</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="promit">
+        <span class="eyebrow">Oferte</span>
+        <h2>Ce promit firmele de ștergere Biroul de Credit</h2>
+        <p>Ofertele din căutări promit trei lucruri: ștergere rapidă, ștergere garantată și credit aprobat după aceea. Unele adaugă „fără avans” sau „100% legal”. Puține spun ce drept invocă și pentru ce date. Promisiunea este aceeași pentru orice client, indiferent dacă restanța e reală sau greșită.</p>
+        <h3>Promisiuni frecvente</h3>
+        <ul class="ban">
+          <li><b>Ștergere rapidă: „în 7 zile”</b>Banca are însă o lună să răspundă, prelungibilă cu încă două.</li>
+          <li><b>Ștergere garantată</b>Nimeni nu poate garanta ștergerea unor date corecte.</li>
+        </ul>
+        <h3>Tehnici de marketing</h3>
+        <p><strong>„100% legal”:</strong> dreptul de a cere rectificarea este, într-adevăr, legal. Dar îl ai oricum, gratuit. Legea nr. 363/2007 interzice prezentarea drepturilor legale ale consumatorului ca avantaj special al unei oferte. <strong>„Gratuit”:</strong> de multe ori e gratuită doar „analiza”. Costul apare în contract, la „rezultat”. Modelul de plată amânată e explicat în ghidul <a href="/stergere-biroul-de-credit-fara-avans/">ștergerea din Biroul de Credit fără avans</a>.</p>
+        <h3>De ce sunt atractive aceste oferte</h3>
+        <p><strong>Frica utilizatorilor.</strong> Ai fost refuzat la credit și ai nevoie de bani acum. O ofertă care promite „rezolvăm tot” sună ca o ieșire. Firmele mizează exact pe această urgență.</p>
+      </section>
+
+      <section id="legale">
+        <span class="eyebrow">Legalitate</span>
+        <h2>Sunt legale firmele care șterg Biroul de Credit</h2>
+        <p>O firmă poate funcționa legal dacă oferă servicii reale, cu contract clar. Nu este legal să promită un rezultat imposibil sau să inducă clientul în eroare. Asistența juridică și reprezentarea sunt, ca regulă, activități rezervate avocaților (Legea nr. 51/1995). Firma trebuie să spună cine face efectiv analiza.</p>
+        <div class="todo">[DE VERIFICAT: limitele activităților pe care le poate desfășura o firmă de consultanță fără avocat, raportat la Legea nr. 51/1995 și art. 348 Cod penal]</div>
+        <h3>Ce spune legislația</h3>
+        <p><strong>GDPR</strong> (Regulamentul UE 2016/679) îți dă drept de acces (art. 15), rectificare (art. 16) și ștergere (art. 17). <strong>Prelucrare date:</strong> datele corecte se păstrează pe baza interesului legitim al băncilor. De aceea art. 17 nu șterge o restanță reală. Analiza completă e în ghidul <a href="/stergere-biroul-de-credit-gdpr/">ștergere Biroul de Credit GDPR</a>.</p>
+        <h3>Când este posibilă ștergerea</h3>
+        <p><strong>Doar în anumite condiții:</strong> date eronate, raportare fără notificarea de cel puțin 15 zile (Decizia ANSPDCP nr. 105/2007), date păstrate peste 4 ani de la plată sau închidere (vezi <a href="/cat-dureaza-stergerea-din-biroul-de-credit/">cât durează ștergerea</a>).</p>
+        <h3>Ce NU este legal</h3>
+        <p><strong>Promisiuni false:</strong> „nu contează datoria”, „avem relații la Biroul de Credit”, „ofertă valabilă doar azi”. Anexa 1 a Legii nr. 363/2007 enumeră presiunea falsă de timp printre practicile înșelătoare.</p>
+      </section>
+
+      <section id="comparatie">
+        <span class="eyebrow">Comparație</span>
+        <h2>Diferența între ștergere legală și înșelătorie</h2>
+        <p>Ștergerea legală pornește de la o eroare dovedită și se cere participantului care a raportat. Înșelătoria pornește de la plată și promite rezultatul înainte să vadă raportul. Tabelul de mai jos compară cele trei variante reale: tu singur, avocatul și firma intermediară. Ultimul rând arată oferta „garantată”.</p>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Tip serviciu</th><th>Legalitate</th><th>Cost</th><th>Risc</th><th>Șanse de reușită</th><th>Recomandare</th></tr></thead>
+          <tbody>
+            <tr><td>Tu singur</td><td>Legal</td><td>Gratuit</td><td>Cerere prea vagă</td><td>Bune pentru erori simple, documentate</td><td>Primul pas</td></tr>
+            <tr><td>Avocat</td><td>Legal</td><td>Onorariu prin contract scris</td><td>Cost fără garanție de rezultat</td><td>Depind de probe; util la refuz și în instanță</td><td>La refuz, cesiune, daune</td></tr>
+            <tr><td>Firmă intermediară</td><td>Legală, dacă e transparentă</td><td>Variabil, uneori amânat</td><td>Cereri standard, date expuse</td><td>Aceleași ca ale tale</td><td>Doar după verificare</td></tr>
+            <tr><td>Ofertă „garantată”</td><td>Suspectă</td><td>Ascuns în contract</td><td>Proces pentru onorariu</td><td>Nu crește șansele</td><td>Evită</td></tr>
+          </tbody>
+        </table></div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/firma-avocat-sau-tu-singur.webp" width="1200" height="675" alt="firme care te șterg din Biroul de Credit — comparație cu avocatul și procedura proprie" loading="lazy">
+          <figcaption>Firmă, avocat sau tu singur</figcaption>
+        </figure>
+        <h3>Ștergere legală</h3>
+        <p><strong>Erori:</strong> credit care nu e al tău, restanță dublată. <strong>Date incorecte:</strong> sumă greșită, plată neactualizată, credit închis afișat ca activ.</p>
+        <h3>Servicii înșelătoare</h3>
+        <p><strong>Plată fără rezultat:</strong> contractul definește „rezultatul” ca trimiterea cererii. Datele rămân, dar factura vine.</p>
+        <h3>Cum recunoști un scam</h3>
+        <ul class="ban">
+          <li>Promite rezultatul înainte să vadă raportul.</li>
+          <li>Nu are CUI, adresă sau nume de avocat pe site.</li>
+          <li>Cere copia CI și CNP-ul pe WhatsApp, fără contract.</li>
+          <li>Spune că ștergerea „rezolvă și datoria”.</li>
+        </ul>
+      </section>
+
+      <section id="autoritati">
+        <span class="eyebrow">Autorități</span>
+        <h2>Ce spun autoritățile despre aceste firme</h2>
+        <p>CSALB, centrul pentru litigii bancare, a avertizat în 2021 în privința firmelor care promit ștergerea din Biroul de Credit. Potrivit CSALB, 9 din 10 cereri de ștergere ajunse la centru au fost respinse de bănci. Recomandarea lui: adresează-te direct băncii sau IFN-ului. Evită intermediarii care garantează radierea.</p>
+        <div class="caps">
+          <div>Cereri respinse<b>9 din 10</b></div>
+          <div>Sumă tipică în procese<b>1.500 lei</b></div>
+          <div>Cererea directă<b>0 lei</b></div>
+        </div>
+        <h3>Avertismente oficiale</h3>
+        <p><strong>Protecția consumatorului:</strong> CSALB a semnalat că unele firme își dau clienții în judecată după ce promit ștergerea. Sumele cerute sunt cel mai des de 1.500 de lei. În unele cazuri s-a ajuns la executare silită.</p>
+        <h3>Recomandări</h3>
+        <p><strong>Evitarea intermediarilor:</strong> băncile pot doar verifica dacă înregistrarea e corectă. Nu „negociază” ștergerea unor date reale. Un intermediar nu are mai multă putere decât tine.</p>
+        <h3>Riscuri pentru clienți</h3>
+        <div class="roles">
+          <div><b>Pierdere bani</b>Onorariu pentru o cerere pe care o puteai trimite gratuit, plus proces pentru plata lui.</div>
+          <div><b>Date personale</b>CNP, copie CI, extrase și raport ajung la persoane neverificate.</div>
+        </div>
+      </section>
+
+      <section id="reclami">
+        <span class="eyebrow">Reclamații</span>
+        <h2>Unde reclami</h2>
+        <div class="rights">
+          <div><span class="n">1</span><b>ANPC</b>Pentru reclamă sau practică comercială înșelătoare (Legea nr. 363/2007).</div>
+          <div><span class="n">2</span><b>ANSPDCP</b>Dacă firma ți-a folosit datele fără temei. Plângerea este gratuită (art. 57 alin. 3 GDPR).</div>
+          <div><span class="n">3</span><b>Poliție</b>Prin plângere penală, dacă ai fost indus în eroare ca să plătești (art. 244 Cod penal, înșelăciunea).</div>
+          <div><span class="n">4</span><b>Instanță</b>Pentru restituirea banilor. Până la 10.000 de lei există procedura cererii cu valoare redusă.</div>
+        </div>
+        <p>Dacă ai semnat la distanță, online sau la telefon, verifică dreptul de retragere de 14 zile (OUG nr. 34/2014).</p>
+        <div class="todo">[DE VERIFICAT: aplicarea excepției pentru serviciile deja prestate integral, cu acordul tău expres]</div>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura reală</span>
+        <h2>Procedura reală de ștergere din Biroul de Credit</h2>
+        <p>Procedura reală nu trece printr-o firmă. Verifici raportul, trimiți cererea direct participantului care a raportat și aștepți răspunsul în cel mult o lună. Toți pașii sunt gratuiți. Dacă primești refuz nejustificat, ai două căi: plângere la ANSPDCP sau acțiune în instanță.</p>
+        <ol class="num">
+          <li><strong>Verificarea raportului.</strong> Raportul se obține online pe birouldecredit.ro, gratuit o dată pe an. Ghidul <a href="/verificare-online-biroul-de-credit/">verificare online Biroul de Credit</a> explică fiecare ecran.</li>
+          <li><strong>Redactarea cererii.</strong> Ce trebuie inclus: datele tale, participantul, contractul, înregistrarea contestată, motivul și dovada. Modele complete găsești în <a href="/model-cerere-stergere-biroul-de-credit/">model cerere de ștergere din Biroul de Credit</a>.</li>
+          <li><strong>Trimiterea solicitării.</strong> Direct la banca sau IFN-ul care a raportat. Trimite cu confirmare de primire și păstrează dovada. Pașii sunt detaliați în ghidul <a href="/cerere-de-stergere-din-biroul-de-credit/">cerere de ștergere din Biroul de Credit</a>.</li>
+          <li><strong>Termene legale.</strong> 30 de zile pentru răspuns (art. 12 GDPR), prelungibil cu două luni pentru cereri complexe.</li>
+        </ol>
+      </section>
+
+      <section id="avocat">
+        <span class="eyebrow">Avocat</span>
+        <h2>Ai nevoie de avocat sau nu</h2>
+        <p>Pentru o eroare simplă, documentată, nu ai nevoie de avocat și nici de firmă. Avocatul devine util la refuz nejustificat sau lipsă de răspuns. La fel când există cesiune ori fraudă de identitate. Și dacă ceri despăgubiri sau banii înapoi de la o firmă. Diferența față de firmă: avocatul răspunde disciplinar în fața baroului.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Când este util avocatul</h3><ul><li>Plângere la ANSPDCP.</li><li>Acțiune contra băncii.</li><li>Apărare când o firmă te dă în judecată pentru onorariu.</li></ul></div>
+          <div class="t-card"><h3>Când nu este necesar</h3><ul><li>Plată neactualizată.</li><li>Credit închis afișat ca activ.</li><li>Ai dovada băncii.</li></ul></div>
+        </div>
+        <p>Detalii în ghidul <a href="/avocat-stergere-biroul-de-credit/">avocat ștergere Biroul de Credit</a>.</p>
+        <h3>Costuri vs beneficii</h3>
+        <p><strong>Analiza:</strong> plătești un avocat pentru strategie și reprezentare, nu pentru „ștergere garantată”. Onorariul se stabilește în contract scris. Statutul profesiei interzice onorariul care depinde integral de rezultat (pactul de quota litis).</p>
+        <div class="todo">[DE VERIFICAT: articolul din Statutul profesiei de avocat, în redacția actuală]</div>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Instanță</span>
+        <h2>Practica judiciară și cazuri reale</h2>
+        <p>În litigiile despre Biroul de Credit apar două tipuri de procese. Clientul acționează banca pentru date greșite sau raportare fără notificare. Firma acționează clientul pentru onorariu. În ambele, instanța citește documentele: raportul, contractul, notificările, definiția „rezultatului” din contract. Promisiunile verbale contează puțin.</p>
+        <h3>Exemple de litigii</h3>
+        <p>Situații tipice (anonimizate):</p>
+        <div class="roles">
+          <div><b>Client vs bancă</b>Restanța a fost plătită, dar raportată în continuare ca activă. Proba decisivă este extrasul de plată.</div>
+          <div><b>Firmă vs client</b>Firma cere onorariul după ce a trimis o cerere standard, respinsă. Discuția se poartă despre clauza de rezultat.</div>
+        </div>
+        <h3>Rezultate obținute</h3>
+        <p><strong>Ștergeri reale</strong> apar acolo unde datele erau greșite sau păstrate peste termen. Nu există hotărâri care să șteargă o restanță reală doar pentru că o firmă a fost plătită.</p>
+        <h3>Interpretări instanțe</h3>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Legislație aplicabilă</h2>
+        <p>Ștergerea se judecă după GDPR, Legea nr. 190/2018 și Decizia ANSPDCP nr. 105/2007. Firmele se judecă după alte legi. Legea nr. 363/2007 privește practicile comerciale înșelătoare. OUG nr. 34/2014 privește contractele la distanță. Legea nr. 51/1995 privește profesia de avocat. Combinate, ele arată ce poate și ce nu poate face o firmă.</p>
+        <h3>GDPR vs reguli bancare</h3>
+        <p><strong>Comparație:</strong> GDPR îți dă dreptul să ceri corectarea. Regulile Biroului de Credit spun cât timp se păstrează datele corecte: 4 ani. Nicio firmă nu poate scurta acest termen.</p>
+        <h3>Obligații ale instituțiilor</h3>
+        <p><strong>Responsabilități:</strong> băncile și IFN-urile raportează date exacte și actualizează statusul după plată. Te notifică cu cel puțin 15 zile înainte de prima raportare negativă. Autoritățile au amendat bănci pentru raportări eronate.</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente ale persoanelor</h2>
+        <p>Cele mai frecvente greșeli sunt două. Unii aleg o firmă după reclamă, fără să o verifice. Alții semnează fără să afle că procedura e gratuită și că datele corecte rămân 4 ani oricum. Rezultatul: bani plătiți, date expuse și, uneori, un proces pentru onorariu.</p>
+        <h3>Alegerea firmelor false</h3>
+        <p><strong>Pierderi:</strong> din experiența mea, clienții vin la avocat abia când primesc cererea de chemare în judecată pentru onorariu. Atunci opțiunile sunt mai puține.</p>
+        <h3>Lipsa informării</h3>
+        <p><strong>Decizii greșite:</strong> mulți nu știu că primul raport din an e gratuit și că pot scrie singuri băncii.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>CSALB a raportat 9 respingeri la 10 cereri de ștergere. Ipotetic, 10 clienți semnează fiecare un contract de 1.500 de lei. Dacă proporția se păstrează, 9 rămân cu aceleași date. Asta înseamnă 13.500 de lei plătiți pentru cereri respinse. Cererea trimisă direct băncii costă 0 lei.</p>
+          <span class="formula">9 × 1.500 lei = 13.500 lei · cererea directă = 0 lei</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <h3>Recomandări practice</h3>
+        <p><strong>Ce trebuie făcut:</strong> citește contractul înainte de semnătură. Caută definiția „rezultatului” și suma datorată la refuz.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cum-verifici-o-firma-inainte-sa-semnezi.webp" width="1200" height="675" alt="checklist verificare firme care te șterg din Biroul de Credit" loading="lazy">
+          <figcaption>Cum verifici o firmă înainte să semnezi</figcaption>
+        </figure>
+      </section>
+
+      <section id="in-loc">
+        <span class="eyebrow">Alternativa</span>
+        <h2>Ce trebuie să faci în loc să apelezi la firme</h2>
+        <p>În loc să plătești o firmă, verifici singur raportul și scrii direct băncii pentru erorile găsite. Dacă banca refuză fără motiv, mergi la ANSPDCP sau la un avocat. Dacă totuși vrei o firmă, verifică-o înainte să semnezi. Verificarea durează sub o oră și te poate scuti de un proces.</p>
+        <h3>Pașii corecți</h3>
+        <p><strong>Procedura reală:</strong> raport gratuit, cerere la participant, răspuns în o lună, ANSPDCP sau instanță la refuz.</p>
+        <h3>Sfaturi utile</h3>
+        <ul class="chk">
+          <li>Caută firma după CUI la Registrul Comerțului. Verifică vechimea și activitatea declarată.</li>
+          <li>Cere numele avocatului și verifică-l în tabloul baroului.</li>
+          <li>Cere contractul înainte de orice act personal.</li>
+          <li>Caută numele firmei împreună cu „judecată” sau „reclamație”.</li>
+        </ul>
+        <div class="todo">[DE VERIFICAT: adresa tabloului național online al avocaților, UNBR]</div>
+        <div class="note dark"><b>Poziția juridică.</b> În practica mea, o firmă care nu poate spune ce articol din GDPR invocă nu vinde un serviciu juridic. Vinde o speranță, cu factură. Consider că dreptul tău la rectificare nu ar trebui să coste mai mult decât un timbru.</div>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Descarcă raportul gratuit și verifică dacă datele negative sunt corecte.</li>
+          <li>Dacă găsești o eroare, scrie direct băncii sau IFN-ului care a raportat, cu dovada atașată.</li>
+          <li>Dacă ai deja un contract cu o firmă, verifică CUI-ul, clauza de „rezultat” și termenul de retragere de 14 zile.</li>
+        </ol>
+        <!--@author practice="protecția datelor și dreptul consumatorului" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre firmele care șterg Biroul de Credit</h2>
+        <div class="faq">
+          <details open><summary>Există firme care pot șterge legal datele?</summary><p>Nicio firmă nu poate șterge date corecte. O firmă poate trimite, în numele tău, o cerere pentru date greșite. Aceeași cerere o poți trimite singur, gratuit.</p></details>
+          <details><summary>Este ștergerea garantată?</summary><p>Nu. Ștergerea depinde de date și de probe. O garanție dată înainte de analiza raportului este un semnal de alarmă.</p></details>
+          <details><summary>Cât costă aceste servicii?</summary><p>Prețurile variază și apar în contract. CSALB a semnalat procese ale firmelor contra clienților, cel mai des pentru 1.500 de lei. Procedura proprie este gratuită.</p></details>
+          <details><summary>Sunt aceste firme legale?</summary><p>Pot fi, dacă oferă servicii reale, cu contract clar. Promisiunea unui rezultat imposibil poate fi practică comercială înșelătoare.</p></details>
+          <details><summary>Cum pot face singur ștergerea?</summary><p>Scoți raportul, identifici eroarea și trimiți cererea participantului care a raportat, cu dovezile atașate.</p></details>
+          <details><summary>Când este necesar avocatul?</summary><p>La refuz nejustificat, lipsă de răspuns, cesiune, fraudă de identitate, despăgubiri sau când o firmă te dă în judecată.</p></details>
+          <details><summary>Pot recupera banii dacă am fost înșelat?</summary><p>Poți încerca. Verifică dreptul de retragere de 14 zile, reclamă la ANPC și cere restituirea în instanță. Dacă ai fost indus în eroare intenționat, poți depune plângere penală.</p></details>
+          <details><summary>Cum verific dacă o firmă este legitimă?</summary><p>Verifici CUI-ul la Registrul Comerțului, numele avocatului în tabloul baroului și contractul. Lipsa oricăruia este un semn de risc.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai o ofertă sau un contract semnat?" lead="Ai o ofertă de la o firmă sau un contract deja semnat? Îl citim împreună cu raportul tău și îți spunem ce poți face singur și ce riscuri ai. Consultația nu te obligă la nimic." nav="/|Acasă;/stergere-biroul-de-credit-fara-avans/|Ștergere fără avans;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat Biroului de Credit. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var K=['k1','k2','k3','k4','k5','k6'];
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function th(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+  function today(){var t=new Date();return Date.UTC(t.getFullYear(),t.getMonth(),t.getDate())}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var n=K.filter(function(k){return $(k).checked}).length;
+    if(n===0){$('o-v').textContent='Fără semnale bifate';cls('c-v','ok');$('o-vs').textContent='Verifică totuși CUI-ul, avocatul numit și ce plătești la refuz. Aceeași cerere o poți trimite singur, gratuit.'}
+    else if(n>=3){$('o-v').textContent='Risc mare: evită';cls('c-v','alert');$('o-vs').textContent=n+' semnale de alarmă. Nu trimite acte personale și nu semna. Poate fi practică comercială înșelătoare (Legea nr. 363/2007).'}
+    else{$('o-v').textContent='Risc: verifică înainte';cls('c-v','alert');$('o-vs').textContent=n+(n===1?' semnal':' semnale')+' de alarmă. Cere contractul și definiția „rezultatului” înainte de orice plată sau act personal.'}
+    var on=parseFloat(($('f-on').value||'').replace(/\./g,'').replace(',','.').replace(/[^\d.]/g,''));
+    if(on){$('o-c').textContent=th(on*9)+' lei';$('o-cs').textContent='9 din 10 × '+th(on)+' lei, plătiți pentru cereri respinse (CSALB).';cls('c-c','alert')}
+    else{$('o-c').textContent='—';cls('c-c');$('o-cs').textContent='Plătiți pentru cereri respinse (9 din 10, CSALB).'}
+    var s=$('f-sem').value;
+    if(s){var d=new Date(dt(s).getTime()+14*864e5),l=Math.round((d.getTime()-today())/864e5);$('o-r').textContent=fmt(d);
+      if(0>l){cls('c-r','alert');$('o-rs').textContent='Termenul de 14 zile a trecut. Rămân ANPC, ANSPDCP, plângerea penală sau instanța.'}
+      else{cls('c-r','ok');$('o-rs').textContent='Mai ai '+l+(l===1?' zi':' zile')+'. Trimite notificarea de retragere în scris, cu dovadă (OUG nr. 34/2014).'}}
+    else{$('o-r').textContent='—';cls('c-r');$('o-rs').textContent='14 zile, pentru contractele la distanță (OUG nr. 34/2014).'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  K.concat(['f-on','f-sem']).forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){K.forEach(function(k){$(k).checked=false});$('k1').checked=true;$('k5').checked=true;$('k6').checked=true;$('f-on').value='1500';$('f-sem').value='';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Firme care te șterg din Biroul de Credit","item":"https://chinsolvency.ro/firme-care-te-sterg-din-biroul-de-credit/"}]},
+ {"@type":"Article","headline":"Firme care te șterg din Biroul de Credit: legal sau nu?","description":"Ce pot și ce nu pot face firmele care te șterg din Biroul de Credit, cum verifici o firmă și unde reclami dacă ai plătit degeaba.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/firme-care-te-sterg-din-biroul-de-credit/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/firma-avocat-sau-tu-singur.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/cum-verifici-o-firma-inainte-sa-semnezi.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum verifici o firmă care promite ștergerea din Biroul de Credit","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/cum-verifici-o-firma-inainte-sa-semnezi.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"CUI-ul firmei","text":"Cauți firma după CUI la Registrul Comerțului și verifici vechimea și activitatea declarată."},
+  {"@type":"HowToStep","position":2,"name":"Avocatul numit","text":"Ceri numele avocatului și îl verifici în tabloul baroului."},
+  {"@type":"HowToStep","position":3,"name":"Contractul","text":"Ceri contractul înainte de orice act personal și cauți definiția „rezultatului” și suma datorată la refuz."},
+  {"@type":"HowToStep","position":4,"name":"Promisiunile","text":"„Garantat” sau „orice restanță” înseamnă că eviți oferta."},
+  {"@type":"HowToStep","position":5,"name":"Reputația","text":"Cauți numele firmei împreună cu „judecată” sau „reclamație”."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Biroul de Credit","GDPR","Protecția consumatorului","Protecția datelor"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Există firme care pot șterge legal datele?","acceptedAnswer":{"@type":"Answer","text":"Nicio firmă nu poate șterge date corecte. O firmă poate trimite, în numele tău, o cerere pentru date greșite. Aceeași cerere o poți trimite singur, gratuit."}},
+  {"@type":"Question","name":"Este ștergerea garantată?","acceptedAnswer":{"@type":"Answer","text":"Nu. Ștergerea depinde de date și de probe. O garanție dată înainte de analiza raportului este un semnal de alarmă."}},
+  {"@type":"Question","name":"Cât costă aceste servicii?","acceptedAnswer":{"@type":"Answer","text":"Prețurile variază și apar în contract. CSALB a semnalat procese ale firmelor contra clienților, cel mai des pentru 1.500 de lei. Procedura proprie este gratuită."}},
+  {"@type":"Question","name":"Sunt aceste firme legale?","acceptedAnswer":{"@type":"Answer","text":"Pot fi, dacă oferă servicii reale, cu contract clar. Promisiunea unui rezultat imposibil poate fi practică comercială înșelătoare."}},
+  {"@type":"Question","name":"Cum pot face singur ștergerea?","acceptedAnswer":{"@type":"Answer","text":"Scoți raportul, identifici eroarea și trimiți cererea participantului care a raportat, cu dovezile atașate."}},
+  {"@type":"Question","name":"Când este necesar avocatul?","acceptedAnswer":{"@type":"Answer","text":"La refuz nejustificat, lipsă de răspuns, cesiune, fraudă de identitate, despăgubiri sau când o firmă te dă în judecată."}},
+  {"@type":"Question","name":"Pot recupera banii dacă am fost înșelat?","acceptedAnswer":{"@type":"Answer","text":"Poți încerca. Verifică dreptul de retragere de 14 zile, reclamă la ANPC și cere restituirea în instanță. Dacă ai fost indus în eroare intenționat, poți depune plângere penală."}},
+  {"@type":"Question","name":"Cum verific dacă o firmă este legitimă?","acceptedAnswer":{"@type":"Answer","text":"Verifici CUI-ul la Registrul Comerțului, numele avocatului în tabloul baroului și contractul. Lipsa oricăruia este un semn de risc."}}
+ ]}
+]}
+</script>
