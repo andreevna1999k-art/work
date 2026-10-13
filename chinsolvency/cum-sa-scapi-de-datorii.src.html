@@ -1,0 +1,270 @@
+<!-- Consultarius — /cum-sa-scapi-de-datorii/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#plan|Plan;#metode|Metode;#juridic|Soluții juridice;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Cum să scapi de datorii</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Datorii · Snowball · Avalanche · soluții juridice</span>
+          <h1>Cum să scapi de datorii și să ajungi la <span class="accent">libertate financiară</span></h1>
+          <div class="lead">
+            <p>Ratele s-au adunat, dobânzile cresc și nu mai știi pe ce să plătești întâi. Cea mai mare greșeală este să aștepți: fiecare lună de întârziere adaugă dobânzi, iar actele de executare vin cu termene scurte.</p>
+            <p>Aici ai planul, două metode de plată cu un calculator care le compară pe cifrele tale și soluțiile juridice, de la negociere la contestarea executării și insolvență.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Contestație la executare: 15 zile</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Compară metodele</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Ca să scapi de datorii, listezi toate datoriile (sold, dobândă, rată), faci un buget realist, alegi o metodă de plată (Snowball: întâi soldul mic; Avalanche: întâi dobânda mare), negociezi cu creditorii în scris și, dacă nu mai ajungi, verifici soluțiile juridice. Dacă primești acte de executare, contestația se face, în general, în 15 zile (art. 715 CPC).</p>
+          <div class="opts">
+            <div><b>Snowball</b>soldul mic întâi</div>
+            <div><b>Avalanche</b>dobânda mare întâi</div>
+            <div><b>Executare</b>contestație în 15 zile</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Cât durează să plătești datoriile: <span class="accent">Snowball sau Avalanche</span></h2></div>
+      <p>Introdu până la trei datorii (sold, dobândă anuală și rată minimă) și o sumă suplimentară lunară. Simulăm lună cu lună ambele metode și îți arătăm durata și dobânda totală.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Datoriile tale</div>
+          <div class="field"><label for="d1b">Datoria 1: sold (lei)</label><div class="inp"><input id="d1b" inputmode="numeric" placeholder="3000"></div></div>
+          <div class="field"><label for="d1r">Dobândă anuală (%)</label><div class="inp"><input id="d1r" inputmode="decimal" placeholder="25"></div></div>
+          <div class="field"><label for="d1m">Rată minimă lunară (lei)</label><div class="inp"><input id="d1m" inputmode="numeric" placeholder="150"></div></div>
+          <div class="field"><label for="d2b">Datoria 2: sold (lei)</label><div class="inp"><input id="d2b" inputmode="numeric" placeholder="10000"></div></div>
+          <div class="field"><label for="d2r">Dobândă anuală (%)</label><div class="inp"><input id="d2r" inputmode="decimal" placeholder="18"></div></div>
+          <div class="field"><label for="d2m">Rată minimă lunară (lei)</label><div class="inp"><input id="d2m" inputmode="numeric" placeholder="400"></div></div>
+          <div class="field"><label for="d3b">Datoria 3: sold (lei)</label><div class="inp"><input id="d3b" inputmode="numeric" placeholder="25000"></div></div>
+          <div class="field"><label for="d3r">Dobândă anuală (%)</label><div class="inp"><input id="d3r" inputmode="decimal" placeholder="9"></div></div>
+          <div class="field"><label for="d3m">Rată minimă lunară (lei)</label><div class="inp"><input id="d3m" inputmode="numeric" placeholder="700"></div></div>
+          <div class="grp">Bugetul</div>
+          <div class="field full"><label for="f-x">Sumă suplimentară pe lună, peste ratele minime (lei)</label><div class="inp"><input id="f-x" inputmode="numeric" placeholder="300"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: 3 datorii și 300 lei în plus pe lună</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Metoda Avalanche (dobânda cea mai mare întâi)</span><span class="v" id="o-t" style="font-size:19px">—</span><span class="s" id="o-ts">Introdu cel puțin o datorie.</span></div>
+            <div class="opt" id="c-m"><span class="k">Metoda Snowball (soldul cel mai mic întâi)</span><span class="v" id="o-m" style="font-size:17px">—</span><span class="s" id="o-ms"> </span></div>
+            <div class="opt" id="c-r"><span class="k">Diferență de dobândă</span><span class="v" id="o-r" style="font-size:17px">—</span><span class="s" id="o-rs">Avalanche față de Snowball.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Simulare orientativă: dobânda se calculează lunar (dobândă anuală ÷ 12), iar rata minimă și suma suplimentară se plătesc după calcularea dobânzii. Nu include comisioane, penalități sau modificări de dobândă. Nu este sfat financiar personalizat.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#cauze">Cauze</a>
+      <a href="#plan">Plan</a>
+      <a href="#metode">Metode</a>
+      <a href="#buget">Buget</a>
+      <a href="#juridic">Soluții juridice</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#dupa">După datorii</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Cum scapi de datorii: răspuns rapid</h2>
+        <p>Ca să scapi de datorii ai nevoie de patru lucruri, în ordine: o listă completă a datoriilor (sold, dobândă, rată), un buget realist, o metodă de plată (Snowball sau Avalanche) și, dacă nu mai ajungi, soluții juridice: negociere cu creditorii, contestarea unei executări nelegale sau insolvența persoanei fizice (Legea nr. 151/2015). Nu aștepta actele de executare: contestația se face, în general, în 15 zile (art. 715 CPC).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Ai trei datorii: 3.000 lei la 25% pe an, 10.000 lei la 18% și 25.000 lei la 9%, cu rate minime de 150, 400 și 700 lei, plus 300 lei în plus pe lună. Simularea din calculator arată în câte luni le stingi cu fiecare metodă și cât plătești în dobânzi. Dacă ordinea contează, diferența dintre cele două metode este exact dobânda totală.</p>
+          <span class="formula">rate minime + 300 lei = suma lunară totală pentru datorii</span>
+          <button type="button" class="btn btn-line" data-ex="1">Vezi în calculator</button>
+        </div>
+      </section>
+
+      <section id="cauze">
+        <span class="eyebrow">Cauze</span>
+        <h2>De ce apar datoriile și cum le recunoști</h2>
+        <p>Datoriile apar din venituri care scad, cheltuieli neprevăzute, credite luate pentru a plăti alte credite și din dobânzi care se adună. Cele mai frecvente tipuri sunt creditele bancare, cardurile de credit, împrumuturile de la IFN-uri, datoriile fiscale și facturile neplătite.</p>
+        <h3>Semne că situația devine periculoasă</h3>
+        <ul class="chk">
+          <li>Întârzieri repetate la plată și penalități care cresc.</li>
+          <li>Refinanțări repetate fără strategie.</li>
+          <li>Folosești cardul de credit pentru nevoi curente.</li>
+          <li>Ai primit somație sau acte de la executor.</li>
+        </ul>
+      </section>
+
+      <section id="plan">
+        <span class="eyebrow">Plan</span>
+        <h2>Cum scapi de datorii, pas cu pas</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/pasii-pentru-a-scapa-de-datorii.webp" width="1200" height="675" alt="Pașii pentru a scăpa de datorii: listă, buget, metodă, negociere, verificarea drepturilor, soluții juridice" loading="lazy">
+          <figcaption>Pașii ca să scapi de datorii</figcaption>
+        </figure>
+        <ol class="num">
+          <li><b>Listează toate datoriile:</b> creditor, sold, dobândă anuală, rată, scadență.</li>
+          <li><b>Fă un buget realist:</b> venituri minus cheltuieli esențiale. O regulă generală este 50/30/20: 50% nevoi, 30% dorințe, 20% economii și plata datoriilor; adaptează-o, nu o aplica orbește.</li>
+          <li><b>Alege metoda:</b> Snowball sau Avalanche (vezi mai jos).</li>
+          <li><b>Negociază cu creditorii:</b> reducerea ratei, restructurare, eșalonare; acordul trebuie să fie în scris. Vezi <a href="/restructurare-credit-vs-refinantare/">restructurare sau refinanțare</a>.</li>
+          <li><b>Verifică-ți drepturile:</b> dacă ai acte de executare, vezi mai jos.</li>
+        </ol>
+      </section>
+
+      <section id="metode">
+        <span class="eyebrow">Metode</span>
+        <h2>Snowball sau Avalanche: care e mai bună</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/snowball-sau-avalanche.webp" width="1200" height="675" alt="Metoda Snowball și metoda Avalanche pentru plata datoriilor: ordinea plății, avantaj, dezavantaj și când se potrivesc" loading="lazy">
+          <figcaption>Snowball sau Avalanche</figcaption>
+        </figure>
+        <p>Snowball plătește întâi datoria cu soldul cel mai mic, ceea ce dă rezultate rapide și motivație. Avalanche plătește întâi datoria cu dobânda cea mai mare, ceea ce reduce, de regulă, costul total. Calculatorul de mai sus arată diferența pe cifrele tale. Refinanțarea sau consolidarea creditelor poate scădea rata, dar verifică costul total și comisioanele.</p>
+      </section>
+
+      <section id="buget">
+        <span class="eyebrow">Buget</span>
+        <h2>Cum reduci cheltuielile și îți crești veniturile</h2>
+        <ul class="chk">
+          <li><b>Elimină ce nu e esențial:</b> abonamente nefolosite, cumpărături impulsive.</li>
+          <li><b>Renegociază facturile:</b> telefonie, internet, asigurări.</li>
+          <li><b>Venituri suplimentare:</b> activități pe cont propriu, vânzarea bunurilor nefolosite, program extra.</li>
+          <li><b>Automatizează:</b> plata ratelor și un transfer lunar către economii, imediat după salariu.</li>
+        </ul>
+      </section>
+
+      <section id="juridic">
+        <span class="eyebrow">Juridic</span>
+        <h2>Soluții juridice pentru datorii mari</h2>
+        <h3>Executarea silită și drepturile tale</h3>
+        <p>Executarea silită se face numai pe baza unui titlu executoriu (art. 632 CPC). Salariul și pensia pot fi urmărite până la o treime din venitul net la datorii obișnuite, iar la mai multe urmăriri până la jumătate (art. 729); alocațiile de stat și indemnizațiile pentru copii nu pot fi urmărite (art. 729 alin. 7). Poți contesta executarea, în general în 15 zile (art. 712, 715), poți cere suspendarea cu cauțiune (art. 719) sau poți opri măsurile consemnând toată datoria (art. 721). Dreptul de a cere executarea se prescrie în 3 ani, dar prescripția trebuie invocată (art. 706–707). Detalii: <a href="/procedura-executare-silita-etape/">procedura executării silite</a>, <a href="/contestatie-la-executare/">contestația la executare</a>, <a href="/poprire-cont/">poprirea pe cont</a>.</p>
+        <h3>Insolvența persoanei fizice</h3>
+        <p>Persoanele fizice neprofesioniste au o procedură separată, Legea nr. 151/2015, depusă la judecătorie (art. 10), cu posibilitatea eliberării de datoriile reziduale. Condițiile exacte nu sunt reproduse aici și trebuie verificate în textul consolidat și cu un specialist. Pentru firme și profesioniști se aplică Legea nr. 85/2014: vezi <a href="/insolventa/">insolvența explicată simplu</a>.</p>
+        <h3>Drepturile consumatorului</h3>
+        <p>Clauzele abuzive din contractul de credit pot fi contestate în instanță; vezi <a href="/avocat-clauze-abuzive/">avocat clauze abuzive</a>. Dacă ești contactat de recuperatori, vezi <a href="/legea-impotriva-recuperatorilor-de-credite/">legea împotriva recuperatorilor</a>.</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli care te mențin în datorii</h2>
+        <ul class="chk">
+          <li>Folosești cardul de credit pentru cheltuieli curente.</li>
+          <li>Refinanțezi continuu, fără strategie și fără să calculezi costul total.</li>
+          <li>Nu ai un fond de urgență, așa că orice cheltuială neprevăzută devine datorie nouă.</li>
+          <li>Ignori actele de executare sau depășești termenul de contestație.</li>
+        </ul>
+      </section>
+
+      <section id="dupa">
+        <span class="eyebrow">După datorii</span>
+        <h2>Cum ajungi la libertate financiară</h2>
+        <p>După ce achiți datoriile, mută rata în economii: construiește un fond de siguranță (de regulă 3–6 luni de cheltuieli, ca regulă generală, nu ca obligație legală), apoi economisește și investește treptat. Păstrează bugetul lunar și un plafon pentru cheltuieli pe card. Informațiile financiare de aici sunt generale și nu constituie sfat de investiții.</p>
+        <!--@author practice="datorii persoane fizice" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre scăparea de datorii</h2>
+        <div class="faq">
+          <details open><summary>Cum pot scăpa rapid de datorii?</summary><p>Listezi toate datoriile, faci un buget, alegi o metodă (Snowball sau Avalanche), negociezi cu creditorii și, dacă nu ajunge, verifici soluțiile juridice.</p></details>
+          <details><summary>Care este cea mai eficientă metodă pentru plata datoriilor?</summary><p>Nu există una singură. Avalanche reduce, de regulă, dobânda totală; Snowball oferă rezultate rapide și motivație. Calculatorul îți arată diferența pe cifrele tale.</p></details>
+          <details><summary>Ce este metoda Snowball?</summary><p>Plătești rata minimă la toate datoriile și restul banilor merg la datoria cu soldul cel mai mic; apoi treci la următoarea.</p></details>
+          <details><summary>Ce este metoda Avalanche?</summary><p>Plătești rata minimă la toate și restul banilor merg la datoria cu dobânda cea mai mare.</p></details>
+          <details><summary>Cum negociez cu creditorii?</summary><p>Ceri în scris reducerea ratei, restructurarea sau eșalonarea, cu dovada veniturilor și un plan realist; orice acord se face în scris.</p></details>
+          <details><summary>Ce se întâmplă dacă nu mai pot plăti ratele?</summary><p>Creditorul poate trimite somație și, dacă are titlu executoriu, poate cere executarea silită. Ai drept de contestație, în general în 15 zile (art. 715 CPC).</p></details>
+          <details><summary>Pot intra în insolvență ca persoană fizică?</summary><p>Persoanele fizice neprofesioniste pot folosi Legea nr. 151/2015, cu condiții pe care trebuie să le verifici în textul consolidat și cu un specialist.</p></details>
+          <details><summary>Cum evit să mă îndatorez din nou?</summary><p>Un buget lunar, un fond de siguranță, un plafon pentru card și un calcul al costului total înainte de orice credit nou.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai datorii pe care nu le mai poți plăti?" lead="Trimite-ne lista datoriilor și actele primite de la creditori sau de la executor. Îți spunem în aceeași zi ce termene curg și ce soluții ai. Consultația nu te obligă la nimic." nav="/|Acasă;/contestatie-la-executare/|Contestație la executare;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat creditorilor, executorilor sau băncilor. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(',','.');return v===''?0:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function sim(ds,extra,mode){
+    var b=ds.map(function(d){return d.b}),r=ds.map(function(d){return d.r/1200}),m=ds.map(function(d){return d.m});
+    var tot=0,ti=0,mo=0,n=ds.length,i;
+    for(i=0;i<n;i++){tot+=b[i]}
+    while(tot>0.5){
+      mo++;if(mo>600){return null}
+      var pool=extra;
+      for(i=0;i<n;i++){if(b[i]>0){var it=b[i]*r[i];b[i]+=it;ti+=it}}
+      for(i=0;i<n;i++){if(b[i]>0){var p=Math.min(m[i],b[i]);b[i]-=p}else{pool+=m[i]}}
+      while(pool>0.01){
+        var k=-1;
+        for(i=0;i<n;i++){if(b[i]>0.005){
+          if(k<0){k=i}
+          else if(mode==='a'){if(r[i]>r[k]){k=i}}
+          else{if(b[k]>b[i]){k=i}}
+        }}
+        if(k<0){break}
+        var q=Math.min(pool,b[k]);b[k]-=q;pool-=q;
+      }
+      tot=0;for(i=0;i<n;i++){tot+=Math.max(b[i],0)}
+    }
+    return {mo:mo,int:ti};
+  }
+  function calc(){
+    var ds=[],i;
+    for(i=1;i<=3;i++){var b=num('d'+i+'b');if(b>0){ds.push({b:b,r:num('d'+i+'r'),m:num('d'+i+'m')})}}
+    var x=num('f-x');
+    if(ds.length===0){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Introdu cel puțin o datorie.';$('o-m').textContent='—';$('o-r').textContent='—';return}
+    var bad=false;if(0>=x){bad=ds.some(function(d){return 0>=d.m})}
+    if(bad){$('o-t').textContent='Completează rata minimă sau suma suplimentară';cls('c-t','alert');$('o-m').textContent='—';$('o-r').textContent='—';return}
+    var A=sim(ds,x,'a'),S=sim(ds,x,'s');
+    if(!A||!S){$('o-t').textContent='Peste 50 de ani: ratele nu acoperă dobânda';cls('c-t','alert');$('o-ts').textContent='Mărește suma lunară sau negociază dobânda.';$('o-m').textContent='—';$('o-r').textContent='—';return}
+    $('o-t').textContent=A.mo+' luni, dobândă totală '+lei(A.int);cls('c-t','ok');$('o-ts').textContent='Dobânda cea mai mare se plătește prima.';
+    $('o-m').textContent=S.mo+' luni, dobândă '+lei(S.int);$('o-ms').textContent='Soldul cel mai mic se plătește primul.';
+    var dif=S.int-A.int;$('o-r').textContent=(dif>0?lei(dif)+' mai puțin cu Avalanche':'Fără diferență semnificativă');cls('c-r',dif>0?'ok':'');
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['d1b','d1r','d1m','d2b','d2r','d2m','d3b','d3r','d3m','f-x'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){var v={d1b:3000,d1r:25,d1m:150,d2b:10000,d2r:18,d2m:400,d3b:25000,d3r:9,d3m:700,'f-x':300};Object.keys(v).forEach(function(k){$(k).value=v[k]});calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Cum să scapi de datorii", "item": "https://chinsolvency.ro/cum-sa-scapi-de-datorii/"}]}, {"@type": "Article", "headline": "Cum să scapi de datorii: metode, buget și soluții juridice", "description": "Cum scapi de datorii: lista datoriilor, buget, metoda Snowball sau Avalanche (cu calculator), negociere cu creditorii și soluții juridice: executare silită, contestație, insolvență.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/cum-sa-scapi-de-datorii/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/snowball-sau-avalanche.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/pasii-pentru-a-scapa-de-datorii.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum scapi de datorii", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Listezi datoriile", "text": "Sold, dobândă anuală, rată, scadență."}, {"@type": "HowToStep", "position": 2, "name": "Faci bugetul", "text": "Venituri minus cheltuieli esențiale."}, {"@type": "HowToStep", "position": 3, "name": "Alegi metoda", "text": "Snowball sau Avalanche."}, {"@type": "HowToStep", "position": 4, "name": "Negociezi", "text": "Cu creditorii, în scris."}, {"@type": "HowToStep", "position": 5, "name": "Verifici drepturile", "text": "Contestație la executare în 15 zile; soluții juridice dacă nu mai ajungi."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Datorii", "Snowball", "Avalanche", "Executare silită", "Insolvență persoane fizice"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Cum pot scăpa rapid de datorii?", "acceptedAnswer": {"@type": "Answer", "text": "Listezi toate datoriile, faci un buget, alegi o metodă (Snowball sau Avalanche), negociezi cu creditorii și, dacă nu ajunge, verifici soluțiile juridice."}}, {"@type": "Question", "name": "Care este cea mai eficientă metodă pentru plata datoriilor?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există una singură. Avalanche reduce, de regulă, dobânda totală; Snowball oferă rezultate rapide și motivație. Calculatorul îți arată diferența pe cifrele tale."}}, {"@type": "Question", "name": "Ce este metoda Snowball?", "acceptedAnswer": {"@type": "Answer", "text": "Plătești rata minimă la toate datoriile și restul banilor merg la datoria cu soldul cel mai mic; apoi treci la următoarea."}}, {"@type": "Question", "name": "Ce este metoda Avalanche?", "acceptedAnswer": {"@type": "Answer", "text": "Plătești rata minimă la toate și restul banilor merg la datoria cu dobânda cea mai mare."}}, {"@type": "Question", "name": "Cum negociez cu creditorii?", "acceptedAnswer": {"@type": "Answer", "text": "Ceri în scris reducerea ratei, restructurarea sau eșalonarea, cu dovada veniturilor și un plan realist; orice acord se face în scris."}}, {"@type": "Question", "name": "Ce se întâmplă dacă nu mai pot plăti ratele?", "acceptedAnswer": {"@type": "Answer", "text": "Creditorul poate trimite somație și, dacă are titlu executoriu, poate cere executarea silită. Ai drept de contestație, în general în 15 zile (art. 715 CPC)."}}, {"@type": "Question", "name": "Pot intra în insolvență ca persoană fizică?", "acceptedAnswer": {"@type": "Answer", "text": "Persoanele fizice neprofesioniste pot folosi Legea nr. 151/2015, cu condiții pe care trebuie să le verifici în textul consolidat și cu un specialist."}}, {"@type": "Question", "name": "Cum evit să mă îndatorez din nou?", "acceptedAnswer": {"@type": "Answer", "text": "Un buget lunar, un fond de siguranță, un plafon pentru card și un calcul al costului total înainte de orice credit nou."}}]}]}
+</script>

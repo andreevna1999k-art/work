@@ -1,0 +1,250 @@
+<!-- Consultarius — /rabon-credit-solutions-executare-silita/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#cesiune|Cesiunea;#contestatie|Contestația;#optiuni|Opțiuni;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Rabon Credit Solutions</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Ghid pentru debitori · cesiune · executare silită</span>
+          <h1><span class="accent">Rabon Credit Solutions</span>: ce faci dacă ai primit o notificare</h1>
+          <div class="lead">
+            <p>Ai primit o scrisoare sau un telefon despre o datorie preluată de Rabon Credit Solutions și nu știi ce urmează. Nu panica, dar nu ignora actele: unele au termene scurte.</p>
+            <p>Aici vezi ce înseamnă cesiunea, ce verifici, cum contești executarea și un calculator pentru termenul de 15 zile.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>CPC art. 712, 715, 719</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează termenul</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Dacă ai primit o notificare de la Rabon Credit Solutions România, cesiunea nu schimbă faptul că verifici suma, documentele și prescripția. Dacă a început executarea silită, contestația se face în general în 15 zile de la luarea la cunoștință de actul de executare (art. 715 CPC), iar instanța poate suspenda executarea cu cauțiune (art. 719).</p>
+          <div class="opts">
+            <div><b>Contestație</b>15 zile (art. 715)</div>
+            <div><b>Suspendare</b>cu cauțiune (art. 719)</div>
+            <div><b>Prescripție</b>3 ani pentru executare (art. 706)</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Termenul contestației la executare <span class="accent">de la primirea actului</span></h2></div>
+      <p>Introdu data la care ai luat cunoștință de actul de executare (somație, poprire). Calculăm termenul de 15 zile din art. 715 CPC, pe zile libere.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">Actul primit</label><div class="inp"><select id="f-s"><option value="0">Somație sau alt act de executare propriu-zisă</option><option value="1">Înștiințare de înființare a popririi</option></select></div></div>
+          <div class="field full"><label for="f-d">Data primirii actului</label><div class="inp"><input type="date" id="f-d"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: act primit la 1 octombrie 2026</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Contestația, cel târziu</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completează data.</span></div>
+            <div class="opt" id="c-c"><span class="k">Înainte de prelungire</span><span class="v" id="o-c">—</span><span class="s" id="o-cs">Data calculată.</span></div>
+            <div class="opt" id="c-r"><span class="k">Zile rămase</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Până la ultima zi.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Calcul orientativ: 15 zile libere, mutate la prima zi lucrătoare dacă ultima zi este nelucrătoare. Termenul poate diferi în alte situații (art. 715, 716); verifică actul concret.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#cine">Cine este</a>
+      <a href="#cesiune">Cesiunea</a>
+      <a href="#notificare">Notificarea</a>
+      <a href="#verificare">Verificarea</a>
+      <a href="#contestatie">Contestația</a>
+      <a href="#optiuni">Opțiuni</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Rabon Credit Solutions: răspuns rapid</h2>
+        <p>Rabon Credit Solutions România SRL este, potrivit datelor publice din registre, o societate cu obiect de activitate legat de recuperarea creanțelor (CAEN 8291), cunoscută ca cesionar al unor credite bancare. Dacă ai primit o notificare, nu se schimbă existența datoriei prin simplul fapt al cesiunii, dar ai dreptul să verifici suma, documentele și prescripția. Dacă a început executarea silită, termenul pentru contestație este în general de 15 zile de la luarea la cunoștință de actul de executare (art. 715 CPC).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Primești o somație la 1 octombrie 2026. Termenul de 15 zile, calculat pe zile libere, se încheie sâmbătă, 17 octombrie, deci se mută luni, 19 octombrie 2026. Dacă ratezi termenul, pierzi, de regulă, contestația pentru acel act.</p>
+          <span class="formula">1.10.2026 + 16 zile = 17.10 (sâmbătă) → 19.10.2026</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="cine">
+        <span class="eyebrow">Cine</span>
+        <h2>Cine este Rabon Credit Solutions România (doar date publice)</h2>
+        <p>Date din registre publice: Rabon Credit Solutions România SRL, CUI 26394839, fostă Rabon Expert SRL, cu activitate principală CAEN 8291 (activități ale agențiilor de colectare). Se menționează public ca achizitor și recuperator de credite, în special foste credite ipotecare. Statutul curent al societății se verifică la Registrul Comerțului la data la care citești. Nu evaluăm compania; ne interesează drepturile tale ca debitor.</p>
+      </section>
+
+      <section id="cesiune">
+        <span class="eyebrow">Cesiunea</span>
+        <h2>Ce înseamnă că datoria ta a fost cesionată</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cesiunea-creantei-rabon.webp" width="1200" height="675" alt="Cesiunea creanței: banca vinde creanța, debitorul este înștiințat, verifică suma, actele și prescripția și răspunde în termen" loading="lazy">
+          <figcaption>Cesiunea creanței pas cu pas</figcaption>
+        </figure>
+        <p>Cesiunea de creanță este transmiterea dreptului de a cere plata de la creditorul inițial (banca) către un alt creditor (cesionarul). Datoria rămâne aceeași ca întindere: cesionarul nu poate cere mai mult decât avea banca, dar poate cere ce era datorat valabil. Regulile cesiunii sunt în Codul civil; numerele articolelor se verifică în textul consolidat.</p>
+        <p>Verifică: cine este creditorul acum, dacă ai primit notificarea de cesiune, ce sumă se cere (capital, dobânzi, penalități) și pe ce document. Detalii despre recuperatori găsești la <a href="/recuperatorii-de-creante/">recuperatorii de creanțe</a> și la <a href="/legea-impotriva-recuperatorilor-de-credite/">legea împotriva recuperatorilor de credite</a>.</p>
+      </section>
+
+      <section id="notificare">
+        <span class="eyebrow">Notificarea</span>
+        <h2>Notificarea de scadență anticipată: ce verifici</h2>
+        <ul class="chk">
+          <li><b>Expeditorul:</b> cine a trimis-o și în ce calitate (creditor, cesionar, mandatar).</li>
+          <li><b>Contractul de credit și actul de cesiune:</b> ai dreptul să ceri copii ale documentelor pe care se bazează cererea.</li>
+          <li><b>Suma:</b> defalcare pe capital, dobândă, comisioane, penalități și plățile făcute de tine.</li>
+          <li><b>Termenul de plată</b> din notificare și consecințele anunțate.</li>
+          <li><b>Răspunsul scris:</b> trimite-l cu confirmare de primire, fără să recunoști suma înainte de verificare.</li>
+        </ul>
+      </section>
+
+      <section id="verificare">
+        <span class="eyebrow">Verificarea</span>
+        <h2>Cum verifici suma cerută și prescripția</h2>
+        <p>Cere extrasul de cont al creditului și calculul sumei. Compară cu ce ai plătit. Dreptul de a obține executarea silită se prescrie în 3 ani, dacă legea nu prevede altfel (art. 706 CPC); termenul începe când se naște dreptul de a obține executarea. Prescripția dreptului la acțiune și întreruperea ei sunt reglementate în Codul civil; calculul concret depinde de data scadenței și de actele întreruptive, de aceea se verifică cu un jurist.</p>
+        <p>Vezi și <a href="/perimarea-executarii-silite/">perimarea executării silite</a>.</p>
+      </section>
+
+      <section id="contestatie">
+        <span class="eyebrow">Executarea</span>
+        <h2>Contestația la executare dacă a început executarea</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/contestatia-la-executare-pasii-rabon.webp" width="1200" height="675" alt="Pașii contestației la executare: actul de executare, termenul de 15 zile, cererea la instanță, suspendarea cu cauțiune și soluția" loading="lazy">
+          <figcaption>Pașii contestației la executare</figcaption>
+        </figure>
+        <p>Împotriva executării silite și a oricărui act de executare se poate face contestație de către cei interesați sau vătămați (art. 712 CPC). Termenul este de 15 zile de la luarea la cunoștință de actul contestat, ori de la primirea înștiințării despre poprire, dacă legea nu prevede altfel (art. 715). Până la soluționare, instanța poate suspenda executarea pentru motive temeinice, cu cauțiune stabilită procentual din valoarea obiectului contestației (art. 719).</p>
+        <p>Pe larg: <a href="/contestatie-la-executare/">contestația la executare</a> și <a href="/termen-contestatie-la-executare/">termenul contestației</a>. Dacă ai cont blocat: <a href="/poprire-cont/">poprirea contului</a>.</p>
+      </section>
+
+      <section id="optiuni">
+        <span class="eyebrow">Opțiuni</span>
+        <h2>Darea în plată (Legea 77/2016) și alte opțiuni</h2>
+        <ul class="chk">
+          <li><b>Negociere:</b> eșalonare, reducerea dobânzilor sau achitarea unei sume globale, convenite în scris.</li>
+          <li><b>Darea în plată a imobilului ipotecat:</b> Legea nr. 77/2016 reglementează darea în plată pentru anumite credite garantate cu ipotecă; condițiile (sume, tipul creditului, calitatea creditorului) se verifică în textul actual al legii și pentru situația ta concretă.</li>
+          <li><b>Insolvența persoanei fizice:</b> Legea nr. 151/2015 pentru debitori neprofesioniști, cu condiții de verificat.</li>
+          <li><b>Contestația la executare</b>, dacă executarea nu este legală sau suma este greșită.</li>
+        </ul>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente ale debitorilor</h2>
+        <ul class="chk">
+          <li>Ignorarea actelor de executare: termenul de 15 zile curge din ziua în care ai luat cunoștință.</li>
+          <li>Plata unei sume fără a verifica calculul și documentele.</li>
+          <li>Recunoașterea datoriei în convorbiri, fără răspuns scris.</li>
+          <li>Pierderea termenului pentru contestație.</li>
+        </ul>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Notează data la care ai primit fiecare act și calculează cele 15 zile.</li>
+          <li>Cere în scris contractul, actul de cesiune și calculul sumei.</li>
+          <li>Trimite-ne documentele în chat; îți spunem în aceeași zi ce pași se potrivesc.</li>
+        </ol>
+        <!--@author practice="recuperare creanțe" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre Rabon Credit Solutions</h2>
+        <div class="faq">
+          <details open><summary>Cine este Rabon Credit Solutions România?</summary><p>O societate cu răspundere limitată, CUI 26394839, cu activitate principală legată de recuperarea creanțelor, potrivit datelor din registre publice; statutul se verifică la Registrul Comerțului.</p></details>
+          <details><summary>Ce este recuperarea creanțelor?</summary><p>Procesul prin care un creditor sau un cesionar cere plata unei datorii, amiabil sau pe cale judiciară.</p></details>
+          <details><summary>Poate un recuperator să înceapă executarea silită?</summary><p>Executarea silită se face de executor judecătoresc, pe baza unui titlu executoriu; un recuperator poate cere executarea doar dacă are calitatea de creditor și un titlu executoriu.</p></details>
+          <details><summary>Cum contest executarea silită?</summary><p>Prin contestație la executare, în general în 15 zile de la luarea la cunoștință de actul de executare (art. 712, 715 CPC).</p></details>
+          <details><summary>Ce este cesiunea de creanță?</summary><p>Transmiterea dreptului de a cere plata de la creditorul inițial către un alt creditor; datoria nu devine mai mare prin cesiune.</p></details>
+          <details><summary>Pot suspenda executarea silită?</summary><p>Instanța poate suspenda executarea, la cerere și pentru motive temeinice, cu cauțiune (art. 719 CPC).</p></details>
+          <details><summary>Cum verific dacă datoria este prescrisă?</summary><p>Se verifică data scadenței și actele întreruptive; dreptul de a obține executarea se prescrie în 3 ani, dacă legea nu prevede altfel (art. 706 CPC). Cere un calcul concret unui jurist.</p></details>
+          <details><summary>Ce drepturi are debitorul?</summary><p>Să primească notificarea, să ceară documentele și calculul sumei, să conteste executarea și să negocieze sau să ceară soluții legale.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai primit o notificare sau un act de executare?" lead="Trimite-ne documentele în chat. Îți spunem în aceeași zi ce termene curg și ce pași se potrivesc. Consultația nu te obligă la nimic." nav="/|Acasă;/recuperatorii-de-creante/|Recuperatori;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat Rabon Credit Solutions. Informațiile sunt generale și orientative; nu evaluăm compania." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var ZI=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function key(d){return d.getUTCFullYear()+'-'+(d.getUTCMonth()+1)+'-'+d.getUTCDate()}
+  function addD(d,n){var x=new Date(d.getTime());x.setUTCDate(x.getUTCDate()+n);return x}
+  function easter(y){var a=y%4,b=y%7,c=y%19,d=(19*c+15)%30,e=(2*a+4*b-d+34)%7,m=Math.floor((d+e+114)/31),day=((d+e+114)%31)+1;return addD(new Date(Date.UTC(y,m-1,day)),13)}
+  function hol(y){var s={},add=function(m,d){s[y+'-'+m+'-'+d]=1},E=easter(y);
+    [[1,1],[1,2],[1,6],[1,7],[1,24],[5,1],[6,1],[8,15],[11,30],[12,1],[12,25],[12,26]].forEach(function(x){add(x[0],x[1])});
+    [-2,0,1,49,50].forEach(function(n){s[key(addD(E,n))]=1});return s}
+  function off(d){var w=d.getUTCDay();if(w===0||w===6)return true;return !!hol(d.getUTCFullYear())[key(d)]}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function addM(d,y,m){var x=new Date(Date.UTC(d.getUTCFullYear()+y,d.getUTCMonth()+m,d.getUTCDate()));return x}
+  var EX=["Contestația se face în 15 zile de la data când ai luat cunoștință de actul contestat (art. 715 alin. 1 pct. 1).", "Termenul curge de la primirea înștiințării; la venituri periodice, cel mai târziu de la prima reținere (art. 715 alin. 1 pct. 2)."],DL=[16, 16];
+  function calc(){
+    var v=$('f-d').value,s=parseInt($('f-s').value,10);
+    if(!v){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Completează data.';$('o-c').textContent='—';$('o-r').textContent='—';return}
+    var st=dt(v),e=addD(addM(st,0,0),DL[s]),raw=e,moved=[];
+    while(off(e)){moved.push(fmt(e));e=addD(e,1)}
+    $('o-c').textContent=fmt(raw)+' ('+ZI[raw.getUTCDay()]+')';
+    $('o-cs').textContent=moved.length?'Zi nelucrătoare: se prelungește.':'Zi lucrătoare.';
+    $('o-t').textContent=fmt(e)+' ('+ZI[e.getUTCDay()]+')';cls('c-t','alert');
+    $('o-ts').textContent=EX[s];
+    var t=new Date();var today=new Date(Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()));
+    var left=Math.round((e.getTime()-today.getTime())/864e5);
+    if(0>left){$('o-r').textContent='Termen trecut';cls('c-r','alert');$('o-rs').textContent='Verifică dovada comunicării, întreruperile sau repunerea în termen.'}
+    else{$('o-r').textContent=left+' zile';cls('c-r',left<=3?'alert':'ok');$('o-rs').textContent=left<=3?'Acționează cât mai repede.':'Până la ultima zi.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-s').value='0';$('f-d').value='2026-10-01';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Rabon Credit Solutions", "item": "https://chinsolvency.ro/rabon-credit-solutions-executare-silita/"}]}, {"@type": "Article", "headline": "Rabon Credit Solutions: executare silită și contestație", "description": "Ai primit o notificare de la Rabon Credit Solutions? Cesiunea creanței, verificarea sumei și a prescripției, contestația la executare în 15 zile și drepturile debitorului.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/rabon-credit-solutions-executare-silita/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/cesiunea-creantei-rabon.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/contestatia-la-executare-pasii-rabon.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Ce faci dacă ai primit o notificare de la un cesionar", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Notezi datele", "text": "Data primirii fiecărui act."}, {"@type": "HowToStep", "position": 2, "name": "Ceri documentele", "text": "Contract, cesiune, calculul sumei."}, {"@type": "HowToStep", "position": 3, "name": "Verifici suma și prescripția", "text": "Cu un calcul concret."}, {"@type": "HowToStep", "position": 4, "name": "Calculezi termenul de 15 zile", "text": "Dacă a început executarea."}, {"@type": "HowToStep", "position": 5, "name": "Contești sau negociezi", "text": "În scris, cu probe."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Cesiune de creanță", "Executare silită", "Contestație la executare", "Recuperare creanțe"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Cine este Rabon Credit Solutions România?", "acceptedAnswer": {"@type": "Answer", "text": "O societate cu răspundere limitată, CUI 26394839, cu activitate principală legată de recuperarea creanțelor, potrivit datelor din registre publice; statutul se verifică la Registrul Comerțului."}}, {"@type": "Question", "name": "Ce este recuperarea creanțelor?", "acceptedAnswer": {"@type": "Answer", "text": "Procesul prin care un creditor sau un cesionar cere plata unei datorii, amiabil sau pe cale judiciară."}}, {"@type": "Question", "name": "Poate un recuperator să înceapă executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Executarea silită se face de executor judecătoresc, pe baza unui titlu executoriu; un recuperator poate cere executarea doar dacă are calitatea de creditor și un titlu executoriu."}}, {"@type": "Question", "name": "Cum contest executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Prin contestație la executare, în general în 15 zile de la luarea la cunoștință de actul de executare (art. 712, 715 CPC)."}}, {"@type": "Question", "name": "Ce este cesiunea de creanță?", "acceptedAnswer": {"@type": "Answer", "text": "Transmiterea dreptului de a cere plata de la creditorul inițial către un alt creditor; datoria nu devine mai mare prin cesiune."}}, {"@type": "Question", "name": "Pot suspenda executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Instanța poate suspenda executarea, la cerere și pentru motive temeinice, cu cauțiune (art. 719 CPC)."}}, {"@type": "Question", "name": "Cum verific dacă datoria este prescrisă?", "acceptedAnswer": {"@type": "Answer", "text": "Se verifică data scadenței și actele întreruptive; dreptul de a obține executarea se prescrie în 3 ani, dacă legea nu prevede altfel (art. 706 CPC). Cere un calcul concret unui jurist."}}, {"@type": "Question", "name": "Ce drepturi are debitorul?", "acceptedAnswer": {"@type": "Answer", "text": "Să primească notificarea, să ceară documentele și calculul sumei, să conteste executarea și să negocieze sau să ceară soluții legale."}}]}]}
+</script>

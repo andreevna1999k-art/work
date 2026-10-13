@@ -1,0 +1,262 @@
+<!-- Consultarius — /insolventa-iasi/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#rol|Rolul;#procedura|Procedura;#alegere|Cum alegi;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Practician în insolvență Iași</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legea 85/2014 · Iași · administrator · lichidator</span>
+          <h1>Practician în insolvență <span class="accent">Iași</span> pentru firme și persoane</h1>
+          <div class="lead">
+            <p>Firma ta din Iași are datorii scadente și ai auzit că „te preia un practician”. Practicianul în insolvență nu este avocatul tău: este un specialist numit în procedură, cu atribuții și termene stabilite de lege.</p>
+            <p>Aici vezi rolul fiecăruia, procedura, termenele din lege, cum alegi specialistul și un calculator pentru termenul care contează.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Legea nr. 85/2014</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează termenul</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Practicianul în insolvență este specialistul numit în procedură ca administrator judiciar sau lichidator judiciar (art. 73 din Legea nr. 85/2014). Administratorul depune rapoarte în maximum 20, respectiv 40 de zile de la desemnare (art. 58), iar lichidatorul vinde bunurile, sub controlul judecătorului-sindic (art. 154). Nu este avocatul debitorului și este desemnat de judecătorul-sindic.</p>
+          <div class="opts">
+            <div><b>Raport</b>20 / 40 de zile (art. 58)</div>
+            <div><b>Plan</b>max. 3 ani</div>
+            <div><b>Executări</b>suspendate de drept</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Termenele administratorului judiciar <span class="accent">de la numire</span></h2></div>
+      <p>Introdu data la care a fost desemnat administratorul judiciar. Calculăm termenele maxime pentru cele două rapoarte din art. 58 alin. 1 din Legea nr. 85/2014, pe zile libere.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">Raportul</label><div class="inp"><select id="f-s"><option value="0">Raportul asupra situației economice (art. 58 alin. 1 lit. a)</option><option value="1">Raportul asupra cauzelor insolvenței și șanselor de reorganizare (art. 58 alin. 1 lit. b)</option></select></div></div>
+          <div class="field full"><label for="f-d">Data desemnării administratorului judiciar</label><div class="inp"><input type="date" id="f-d"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: desemnat la 1 octombrie 2026</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Termen maxim pentru raport</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completează data.</span></div>
+            <div class="opt" id="c-c"><span class="k">Înainte de prelungire</span><span class="v" id="o-c">—</span><span class="s" id="o-cs">Data calculată.</span></div>
+            <div class="opt" id="c-r"><span class="k">Zile rămase</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Până la ultima zi.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Calcul orientativ: judecătorul-sindic stabilește termenul concret, care nu poate depăși 20, respectiv 40 de zile de la desemnare. Se calculează pe zile libere și se mută la prima zi lucrătoare.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#rol">Rolul</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#procedura">Procedura</a>
+      <a href="#alegere">Cum alegi</a>
+      <a href="#diferenta">Reorganizare sau faliment</a>
+      <a href="#licitatii">Licitații</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Practician în insolvență: răspuns rapid</h2>
+        <p>Practicianul în insolvență este specialistul numit în procedură ca administrator judiciar sau ca lichidator judiciar (art. 73). Administratorul examinează situația debitorului și depune rapoarte în termene de până la 20, respectiv 40 de zile de la desemnare (art. 58); lichidatorul vinde bunurile, sub controlul judecătorului-sindic (art. 154). Nu este avocatul debitorului și nu poate fi ales liber de acesta, pentru că este desemnat de judecătorul-sindic.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Administratorul este desemnat la 1 octombrie 2026. Raportul asupra situației economice poate fi cerut în maximum 20 de zile, deci până la 22 octombrie (pe zile libere, art. 58 alin. 1 lit. a), iar raportul asupra cauzelor insolvenței, în maximum 40 de zile, deci până la 11 noiembrie.</p>
+          <span class="formula">1.10.2026 + 21 zile = 22.10.2026</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="rol">
+        <span class="eyebrow">Rolul</span>
+        <h2>Ce face un practician în insolvență</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/rolul-practicianului-iasi.webp" width="1200" height="675" alt="Cine face ce în procedura de insolvență: judecătorul-sindic, administratorul judiciar, lichidatorul, creditorii, debitorul și consultantul" loading="lazy">
+          <figcaption>Cine face ce în procedură</figcaption>
+        </figure>
+        <p>Competența aparține tribunalului (sau secției de insolvență, dacă există) în a cărui circumscripție debitorul și-a avut sediul social cel puțin 6 luni înainte de sesizare (art. 41 alin. 1). Pentru debitorii cu sediul în Iași, aceasta înseamnă Tribunalul Iași; apelul merge la Curtea de Apel Iași. Verifică pe portalul instanțelor existența și denumirea secției de insolvență.</p>
+        <h3>Administratorul judiciar</h3>
+        <p>Examinează situația economică a debitorului și actele depuse (art. 67, 74), propune procedura simplificată sau continuarea observației, întocmește raportul asupra cauzelor insolvenței și a șanselor de reorganizare și supraveghează activitatea (art. 58).</p>
+        <h3>Lichidatorul judiciar</h3>
+        <p>Examinează activitatea debitorului în procedura simplificată, conduce activitatea debitorului, inventariază bunurile, introduce acțiuni pentru anularea actelor frauduloase și valorifică averea (art. 64, 154).</p>
+        <h3>Practician sau avocat</h3>
+        <p>Practicianul este numit de judecătorul-sindic și acționează în interesul procedurii colective, nu al debitorului. Avocatul reprezintă clientul în instanță. Poți avea nevoie de ambii: practicianul conduce procedura, avocatul îți apără interesele.</p>
+      </section>
+
+      <section id="servicii">
+        <span class="eyebrow">Servicii</span>
+        <h2>Servicii: reorganizare, faliment și consultanță</h2>
+        <ul class="chk">
+          <li><b>Reorganizare judiciară:</b> planul cuprinde obligatoriu programul de plată a creanțelor și nu poate depăși 3 ani de la confirmare (art. 133). Vezi <a href="/plan-reorganizare-insolventa/">planul de reorganizare</a>.</li>
+          <li><b>Faliment și lichidare:</b> vânzarea bunurilor în bloc sau individual, distribuirea sumelor după art. 159 pentru bunurile grevate. Vezi <a href="/insolventa-sau-faliment/">insolvență sau faliment</a>.</li>
+          <li><b>Consultanță:</b> analiza situației financiare, a riscului de insolvență (prezumție după 60 de zile de la scadență, art. 5 pct. 29), soluții preventive (mandat ad-hoc, concordat preventiv, art. 66 alin. 3).</li>
+          <li><b>Persoane fizice:</b> insolvența persoanelor fizice neprofesioniste este în Legea nr. 151/2015; condițiile se verifică în textul consolidat.</li>
+        </ul>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Cum funcționează procedura de insolvență</h2>
+        <ol class="num">
+          <li><b>Cererea:</b> debitorul, în 30 de zile (art. 66), sau un creditor cu creanță peste valoarea-prag de 40.000 lei (art. 70).</li>
+          <li><b>Deschiderea:</b> judecătorul-sindic pronunță încheierea și desemnează administratorul sau lichidatorul provizoriu (art. 71, 73); executările se suspendă de drept (art. 75).</li>
+          <li><b>Creanțele:</b> creditorii depun cereri de admitere (art. 104); se întocmesc tabelele (art. 112).</li>
+          <li><b>Reorganizare sau faliment</b> (art. 132, 145).</li>
+        </ol>
+        <p>Detalii: <a href="/procedura-insolventei-etape/">etapele procedurii insolvenței</a> și <a href="/deschiderea-procedurii-insolventei/">deschiderea procedurii</a>.</p>
+      </section>
+
+      <section id="alegere">
+        <span class="eyebrow">Alegerea specialistului</span>
+        <h2>Cum alegi practicianul</h2>
+        <ul class="chk">
+          <li><b>Experiență documentată</b> în proceduri similare.</li>
+          <li><b>Calitatea de practician în insolvență:</b> cere dovada autorizării și a apartenenței la Uniunea Națională a Practicienilor în Insolvență din România (UNPIR); verifică-o la UNPIR.</li>
+          <li><b>Contract scris</b> cu serviciile, onorariul și etapele.</li>
+          <li><b>Fără promisiuni de rezultat:</b> nimeni nu poate garanta reorganizarea sau recuperarea creanțelor.</li>
+        </ul>
+        <p>Atenție: în procedură, practicianul este desemnat de judecătorul-sindic după verificarea incompatibilităților (art. 45 alin. 1 lit. d), nu ales liber de debitor.</p>
+      </section>
+
+      <section id="diferenta">
+        <span class="eyebrow">Reorganizare sau faliment</span>
+        <h2>Diferența dintre reorganizare și faliment</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/reorganizare-sau-faliment-iasi.webp" width="1200" height="675" alt="Reorganizare judiciară sau faliment: scop, durata planului, rolul practicianului și efectul pentru debitor" loading="lazy">
+          <figcaption>Reorganizare sau faliment</figcaption>
+        </figure>
+        <p>Reorganizarea este recomandată când activitatea are perspective și creditorii acceptă un plan (art. 139). Falimentul urmează când nu s-a propus un plan, planul nu a fost acceptat și confirmat sau nu este respectat (art. 145).</p>
+      </section>
+
+      <section id="licitatii">
+        <span class="eyebrow">Licitații</span>
+        <h2>Lichidarea activelor și licitațiile în insolvență</h2>
+        <p>Bunurile din averea debitorului pot fi vândute în bloc sau individual. Tipul de vânzare (licitație publică, negociere directă sau combinație) și regulamentul de vânzare sunt aprobate de adunarea creditorilor, la propunerea lichidatorului; în cazul licitației publice, publicitatea se face și pe site-ul UNPIR. Bunurile se evaluează de evaluatori membri ANEVAR (art. 154). Raportul de evaluare se publică în BPI (art. 155), iar adunarea creditorilor se convocă în maximum 15 zile de la depunerea lui (art. 156 alin. 1). Procesul-verbal de adjudecare semnat de lichidator constituie titlu de proprietate (art. 158 alin. 2). Sumele se distribuie creditorilor în ordinea legii (art. 159).</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente în procedurile de insolvență</h2>
+        <ul class="chk">
+          <li>Depunerea tardivă a cererii (30 de zile, art. 66).</li>
+          <li>Lipsa documentelor financiare (art. 67).</li>
+          <li>Nerespectarea obligațiilor din procedură: actele în 10 zile (art. 74).</li>
+          <li>Colaborarea cu persoane neautorizate care promit „rezolvarea” procedurii.</li>
+        </ul>
+        <p>Textele din Legea nr. 85/2014 sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Stabilește dacă firma este în stare de insolvență și calculează termenul de 30 de zile.</li>
+          <li>Strânge situațiile financiare, lista bunurilor, a creditorilor și a plăților din ultimele 6 luni.</li>
+          <li>Trimite-ne datele în chat; îți spunem în aceeași zi ce procedură se potrivește.</li>
+        </ol>
+        <!--@author practice="insolvență" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre insolvență</h2>
+        <div class="faq">
+          <details open><summary>Ce face un practician în insolvență?</summary><p>Este numit ca administrator judiciar sau lichidator judiciar: supraveghează sau lichidează averea debitorului, sub controlul judecătorului-sindic (art. 58, 64, 154).</p></details>
+          <details><summary>Cum aleg un practician?</summary><p>Verifici autorizarea și apartenența la UNPIR, experiența, contractul scris și lipsa promisiunilor de rezultat.</p></details>
+          <details><summary>Care este diferența dintre reorganizare și faliment?</summary><p>Reorganizarea înseamnă plata creanțelor prin plan, de maximum 3 ani; falimentul înseamnă lichidarea averii și, pentru persoane juridice, dizolvarea (art. 133, 145).</p></details>
+          <details><summary>Ce servicii oferă un lichidator judiciar?</summary><p>Inventariază și evaluează bunurile, le vinde în bloc sau individual și distribuie sumele creditorilor (art. 154–159).</p></details>
+          <details><summary>Cât durează procedura de insolvență?</summary><p>Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3).</p></details>
+          <details><summary>Ce rol are administratorul judiciar?</summary><p>Examinează situația economică și cauzele insolvenței și supraveghează activitatea debitorului; rapoartele se depun în maximum 20, respectiv 40 de zile de la desemnare (art. 58).</p></details>
+          <details><summary>Se suspendă executarea silită în insolvență?</summary><p>Da, de la deschiderea procedurii, de drept (art. 75).</p></details>
+          <details><summary>Ce este masa credală?</summary><p>Totalitatea creditorilor cu creanțe admise în tabel, plătiți în cadrul procedurii.</p></details>
+          <details><summary>Poate o persoană fizică intra în insolvență?</summary><p>Persoanele fizice neprofesioniste pot folosi Legea nr. 151/2015, cu condiții de verificat în textul consolidat.</p></details>
+          <details><summary>Ce acte sunt necesare pentru deschiderea procedurii?</summary><p>La cererea debitorului, actele din art. 67: situații financiare, lista bunurilor și a creditorilor, plăți din ultimele 6 luni, declarații.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Firma ta are datorii scadente?" lead="Trimite-ne situația financiară și lista creditorilor. Îți spunem în aceeași zi ce procedură se potrivește și ce termene curg. Consultația nu te obligă la nimic." nav="/|Acasă;/insolventa/|Insolvența;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat tribunalelor, UNPIR sau practicienilor. Informațiile sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var ZI=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function key(d){return d.getUTCFullYear()+'-'+(d.getUTCMonth()+1)+'-'+d.getUTCDate()}
+  function addD(d,n){var x=new Date(d.getTime());x.setUTCDate(x.getUTCDate()+n);return x}
+  function easter(y){var a=y%4,b=y%7,c=y%19,d=(19*c+15)%30,e=(2*a+4*b-d+34)%7,m=Math.floor((d+e+114)/31),day=((d+e+114)%31)+1;return addD(new Date(Date.UTC(y,m-1,day)),13)}
+  function hol(y){var s={},add=function(m,d){s[y+'-'+m+'-'+d]=1},E=easter(y);
+    [[1,1],[1,2],[1,6],[1,7],[1,24],[5,1],[6,1],[8,15],[11,30],[12,1],[12,25],[12,26]].forEach(function(x){add(x[0],x[1])});
+    [-2,0,1,49,50].forEach(function(n){s[key(addD(E,n))]=1});return s}
+  function off(d){var w=d.getUTCDay();if(w===0||w===6)return true;return !!hol(d.getUTCFullYear())[key(d)]}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function addM(d,y,m){var x=new Date(Date.UTC(d.getUTCFullYear()+y,d.getUTCMonth()+m,d.getUTCDate()));return x}
+  var EX=["Maximum 20 de zile de la desemnare, termen stabilit de judecătorul-sindic (art. 58 alin. 1 lit. a).", "Maximum 40 de zile de la desemnare, termen stabilit de judecătorul-sindic (art. 58 alin. 1 lit. b)."],DL=[21, 41];
+  function calc(){
+    var v=$('f-d').value,s=parseInt($('f-s').value,10);
+    if(!v){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Completează data.';$('o-c').textContent='—';$('o-r').textContent='—';return}
+    var st=dt(v),e=addD(addM(st,0,0),DL[s]),raw=e,moved=[];
+    while(off(e)){moved.push(fmt(e));e=addD(e,1)}
+    $('o-c').textContent=fmt(raw)+' ('+ZI[raw.getUTCDay()]+')';
+    $('o-cs').textContent=moved.length?'Zi nelucrătoare: se prelungește.':'Zi lucrătoare.';
+    $('o-t').textContent=fmt(e)+' ('+ZI[e.getUTCDay()]+')';cls('c-t','alert');
+    $('o-ts').textContent=EX[s];
+    var t=new Date();var today=new Date(Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()));
+    var left=Math.round((e.getTime()-today.getTime())/864e5);
+    if(0>left){$('o-r').textContent='Termen trecut';cls('c-r','alert');$('o-rs').textContent='Verifică dovada comunicării, întreruperile sau repunerea în termen.'}
+    else{$('o-r').textContent=left+' zile';cls('c-r',left<=3?'alert':'ok');$('o-rs').textContent=left<=3?'Acționează cât mai repede.':'Până la ultima zi.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-s').value='0';$('f-d').value='2026-10-01';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Practician în insolvență Iași", "item": "https://chinsolvency.ro/insolventa-iasi/"}]}, {"@type": "Article", "headline": "Practician în insolvență Iași: servicii, reorganizare firme", "description": "Ce face un practician în insolvență din Iași: administrator judiciar, lichidator, termene din Legea 85/2014, reorganizare sau faliment și cum alegi un specialist.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/insolventa-iasi/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/rolul-practicianului-iasi.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/reorganizare-sau-faliment-iasi.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum afli ce specialist ai nevoie în insolvență", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Stabilești situația", "text": "Insolvență, procedură deschisă sau faliment."}, {"@type": "HowToStep", "position": 2, "name": "Verifici termenele", "text": "30 de zile pentru cerere; 20 și 40 de zile pentru rapoartele administratorului."}, {"@type": "HowToStep", "position": 3, "name": "Distingi rolurile", "text": "Practicianul este numit de judecătorul-sindic; avocatul și consultantul te asistă."}, {"@type": "HowToStep", "position": 4, "name": "Verifici autorizarea", "text": "La UNPIR, pentru practicieni."}, {"@type": "HowToStep", "position": 5, "name": "Încheii contract scris", "text": "Cu servicii, onorariu și etape."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Insolvență", "Practician în insolvență", "Legea 85/2014", "Reorganizare judiciară", "Faliment"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce face un practician în insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Este numit ca administrator judiciar sau lichidator judiciar: supraveghează sau lichidează averea debitorului, sub controlul judecătorului-sindic (art. 58, 64, 154)."}}, {"@type": "Question", "name": "Cum aleg un practician?", "acceptedAnswer": {"@type": "Answer", "text": "Verifici autorizarea și apartenența la UNPIR, experiența, contractul scris și lipsa promisiunilor de rezultat."}}, {"@type": "Question", "name": "Care este diferența dintre reorganizare și faliment?", "acceptedAnswer": {"@type": "Answer", "text": "Reorganizarea înseamnă plata creanțelor prin plan, de maximum 3 ani; falimentul înseamnă lichidarea averii și, pentru persoane juridice, dizolvarea (art. 133, 145)."}}, {"@type": "Question", "name": "Ce servicii oferă un lichidator judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Inventariază și evaluează bunurile, le vinde în bloc sau individual și distribuie sumele creditorilor (art. 154–159)."}}, {"@type": "Question", "name": "Cât durează procedura de insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3)."}}, {"@type": "Question", "name": "Ce rol are administratorul judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Examinează situația economică și cauzele insolvenței și supraveghează activitatea debitorului; rapoartele se depun în maximum 20, respectiv 40 de zile de la desemnare (art. 58)."}}, {"@type": "Question", "name": "Se suspendă executarea silită în insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Da, de la deschiderea procedurii, de drept (art. 75)."}}, {"@type": "Question", "name": "Ce este masa credală?", "acceptedAnswer": {"@type": "Answer", "text": "Totalitatea creditorilor cu creanțe admise în tabel, plătiți în cadrul procedurii."}}, {"@type": "Question", "name": "Poate o persoană fizică intra în insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Persoanele fizice neprofesioniste pot folosi Legea nr. 151/2015, cu condiții de verificat în textul consolidat."}}, {"@type": "Question", "name": "Ce acte sunt necesare pentru deschiderea procedurii?", "acceptedAnswer": {"@type": "Answer", "text": "La cererea debitorului, actele din art. 67: situații financiare, lista bunurilor și a creditorilor, plăți din ultimele 6 luni, declarații."}}]}]}
+</script>
