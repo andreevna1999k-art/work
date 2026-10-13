@@ -1,0 +1,402 @@
+<!-- Consultarius — /model-cerere-stergere-biroul-de-credit/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<style>
+.cbx .gen{background:#fff;color:var(--ink);border-radius:var(--radius-s);padding:18px 20px;font-size:13.5px;line-height:1.6;white-space:pre-wrap;max-height:520px;overflow:auto;font-family:var(--font)}
+.cbx .gen b{font-weight:800}
+.cbx .model{background:var(--surface);border:1px dashed var(--bronze);border-radius:var(--radius);padding:22px 24px;margin:12px 0 8px;font-size:15px;line-height:1.65;color:var(--ink)}
+.cbx .model p{margin:0 0 10px}
+.cbx .model ol{margin:0 0 10px;padding-left:20px}
+.cbx .model .to{font-style:italic;color:var(--ink-2)}
+.cbx .model h4{margin:6px 0 12px;font-size:15px;letter-spacing:.02em}
+.cbx .copy-m{margin-bottom:18px}
+.cbx [data-m]{display:none}
+.cbx .m1 [data-m~="1"],.cbx .m2 [data-m~="2"],.cbx .m3 [data-m~="3"]{display:flex}
+</style>
+<div class="cbx">
+
+<!--@header nav="#generator|Generator;#modele|3 modele;#depunere|Depunere;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><a href="/cerere-de-stergere-din-biroul-de-credit/">Ștergere Biroul de Credit</a><span>/</span><span>Model cerere</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">3 modele gratuite · GDPR</span>
+          <h1>Model cerere de ștergere <span class="accent">din Biroul de Credit</span></h1>
+          <div class="lead">
+            <p>Ai găsit eroarea în raport. Acum stai în fața unei foi goale. Nu știi cui o adresezi, ce articol citezi și ce pui în plic.</p>
+            <p>Mai jos ai trei modele complete, gata de copiat: pentru date eronate, pentru lipsa notificării de 15 zile și pentru acces la date. Pentru fiecare afli cum îl completezi, ce anexezi și cum îl trimiți. Dacă vrei întâi să afli dacă ai temei de ștergere, citește ghidul <a href="/cerere-de-stergere-din-biroul-de-credit/">cerere de ștergere din Biroul de Credit</a>.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Datele introduse rămân în browserul tău</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#generator" class="btn btn-primary">Completează modelul</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce model alegi</h2>
+          <p>Folosește modelul 1 pentru o eroare în raport, modelul 2 când nu ai primit notificarea cu 15 zile înainte de raportare și modelul 3 când vrei să afli ce date există și cine le-a transmis. Toate se trimit participantului care a raportat. Modelul 3 merge și direct la Biroul de Credit.</p>
+          <div class="opts">
+            <div><b>Rectificare</b>corectează o informație greșită (art. 16 GDPR)</div>
+            <div><b>Ștergere</b>o elimină complet (art. 17 GDPR)</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GENERATOR -->
+<section id="generator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Generator</span><h2>Completează cererea <span class="accent">direct pe pagină</span></h2></div>
+      <p>Alegi modelul, completezi câmpurile și copiezi textul gata. Câmpurile goale rămân între paranteze. Nimic nu se trimite: datele rămân doar în browserul tău.</p>
+    </div>
+    <div class="calc">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="1" type="button">Modelul 1 · Date eronate</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2" type="button">Modelul 2 · Fără notificare</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="3" type="button">Modelul 3 · Acces la date</button>
+      </div>
+      <div class="panel m1" id="gpanel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Datele tale</div>
+          <div class="field"><label for="g-nume">Nume și prenume</label><div class="inp"><input id="g-nume" autocomplete="off"></div></div>
+          <div class="field"><label for="g-cnp">CNP</label><div class="inp"><input id="g-cnp" inputmode="numeric" autocomplete="off"></div></div>
+          <div class="field full"><label for="g-adr">Domiciliul</label><div class="inp"><input id="g-adr" autocomplete="off"></div></div>
+          <div class="field"><label for="g-mail">E-mail pentru răspuns</label><div class="inp"><input id="g-mail" autocomplete="off"></div></div>
+          <div class="field" data-m="1"><label for="g-tel">Telefon</label><div class="inp"><input id="g-tel" autocomplete="off"></div></div>
+          <div class="grp">Din raportul de credit</div>
+          <div class="field"><label for="g-part">Participantul (banca / IFN)</label><div class="inp"><input id="g-part" autocomplete="off"></div></div>
+          <div class="field" data-m="1 2"><label for="g-contr">Nr. contract</label><div class="inp"><input id="g-contr" autocomplete="off"></div></div>
+          <div class="field" data-m="1 2"><label for="g-rap">Data raportului</label><div class="inp"><input type="date" id="g-rap"></div></div>
+          <div class="field full" data-m="1"><label for="g-desc">Ce figurează în raport</label><div class="inp"><input id="g-desc" placeholder="restanță de 2.180 lei, 45 zile, status activ" autocomplete="off"></div></div>
+          <div class="field full" data-m="1"><label for="g-motiv">De ce e inexact</label><div class="inp"><input id="g-motiv" placeholder="am achitat integral suma pe 22.05.2025, conform extrasului anexat" autocomplete="off"></div></div>
+          <div class="field" data-m="2"><label for="g-prima">Data primei raportări</label><div class="inp"><input type="date" id="g-prima"></div></div>
+          <div class="field" data-m="2"><label for="g-sms">SMS primit (dacă ai primit)</label><div class="inp"><input type="date" id="g-sms"></div></div>
+          <div class="field" data-m="3"><label for="g-luni">Interogări din ultimele</label><div class="inp"><input id="g-luni" inputmode="numeric" value="6"><span class="unit">luni</span></div></div>
+          <div class="grp">Trimitere</div>
+          <div class="field full"><label for="g-trim">Data la care participantul primește cererea</label><div class="inp"><input type="date" id="g-trim"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-copy">Copiază cererea</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu completat</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Cererea ta</span>
+          <div class="gen" id="gen"></div>
+          <div class="opt" id="c-t"><span class="k">Termenul de răspuns</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completați data primirii cererii.</span></div>
+          <span class="disc">Semnează cererea înainte de trimitere. La poștă atașezi copia actului de identitate. Modelele nu înlocuiesc analiza juridică a cazului tău.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#ce-este">Când ai nevoie de model</a>
+      <a href="#modele">Cele 3 modele</a>
+      <a href="#completare">Cum completezi</a>
+      <a href="#depunere">Cum depui cererea</a>
+      <a href="#procedura">Procedura și termene</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#nu">Când NU se aprobă</a>
+      <a href="#sfaturi">Sfaturi</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="ce-este">
+        <span class="eyebrow">Context</span>
+        <h2>Ce este Biroul de Credit și când ai nevoie de ștergere</h2>
+        <p>Biroul de Credit este baza de date în care băncile și IFN-urile raportează creditele și întârzierile tale. Ai nevoie de un model de cerere când raportul conține o eroare, o raportare făcută fără notificarea de 15 zile sau date ținute peste termen. Pentru o restanță reală și raportată corect, niciun model nu ajută.</p>
+        <div class="trio">
+          <div><b>Credite active</b>Sold, rată, scadențe.</div>
+          <div><b>Restanțe</b>Întârzieri de peste 30 de zile, la sume de peste 10 lei.</div>
+          <div><b>Istoric negativ</b>Restanțe achitate, păstrate 4 ani de la plată.</div>
+        </div>
+        <h3>Diferența între ștergere și rectificare</h3>
+        <p>Rectificarea corectează o informație greșită (art. 16 GDPR). Ștergerea o elimină complet (art. 17 GDPR). Dacă ai plătit, dar raportul arată restanță activă, ceri rectificare. Dacă nu trebuia să fii raportat deloc, ceri ștergere. Alegerea corectă decide modelul.</p>
+      </section>
+
+      <section id="modele">
+        <span class="eyebrow">Modele</span>
+        <h2>Model cerere ștergere Biroul de Credit</h2>
+        <h3>Modelul 1: cerere de rectificare și ștergere a datelor eronate</h3>
+        <div class="model" id="m1">
+          <p class="to">Către: [Denumirea băncii / IFN-ului], în atenția Responsabilului cu protecția datelor (DPO)<br>Adresa: [sediul sau adresa de e-mail a DPO]</p>
+          <h4>CERERE de rectificare și ștergere a datelor raportate în Biroul de Credit</h4>
+          <p>Subsemnatul/Subsemnata [nume și prenume], CNP [CNP], domiciliat(ă) în [adresa], telefon [telefon], e-mail [e-mail], în calitate de persoană vizată, vă solicit următoarele.</p>
+          <p>În raportul meu de credit emis de Biroul de Credit la data de [data raportului], la participantul [denumire], contractul nr. [număr], figurează: [descrierea exactă: „restanță de … lei, … zile, status activ”].</p>
+          <p>Informația este inexactă, deoarece [motivul: „am achitat integral suma pe data de …, conform extrasului anexat”].</p>
+          <p>În temeiul art. 16 și art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, vă solicit:</p>
+          <ol>
+            <li>rectificarea datelor, astfel încât raportul să reflecte situația reală: [„restanță achitată la data de …”];</li>
+            <li>ștergerea înregistrărilor care nu corespund realității;</li>
+            <li>transmiterea datelor corectate către Biroul de Credit SA;</li>
+            <li>comunicarea răspunsului scris în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament, la adresa de e-mail de mai sus.</li>
+          </ol>
+          <p>Anexez: copie act de identitate; raportul de credit din [data]; [extras de cont / chitanță / adeverință de închidere].</p>
+          <p>Data: [zz.ll.aaaa] | Semnătura: [semnătura]</p>
+        </div>
+        <button type="button" class="btn btn-line copy-m" data-copy="m1">Copiază modelul 1</button>
+
+        <h3>Modelul 2: cerere de ștergere pentru lipsa notificării de 15 zile</h3>
+        <div class="model" id="m2">
+          <p class="to">Către: [Denumirea băncii / IFN-ului / firmei de recuperare], în atenția DPO</p>
+          <h4>CERERE de ștergere a datelor negative raportate fără informare prealabilă</h4>
+          <p>Subsemnatul/Subsemnata [nume și prenume], CNP [CNP], domiciliat(ă) în [adresa], e-mail [e-mail], vă solicit următoarele.</p>
+          <p>În raportul meu de credit din [data] figurează date negative transmise de dumneavoastră pentru contractul nr. [număr], cu data primei raportări [data].</p>
+          <p>Nu am primit nicio informare cu cel puțin 15 zile calendaristice înainte de prima raportare a datelor negative, așa cum prevede Decizia ANSPDCP nr. 105/2007. [Variantă: „Am primit un SMS pe data de …, cu doar … zile înainte de raportare.”]</p>
+          <p>În consecință, vă solicit:</p>
+          <ol>
+            <li>să îmi comunicați dovada informării prealabile: data, canalul (scrisoare, SMS, e-mail) și adresa sau numărul folosit;</li>
+            <li>în lipsa acestei dovezi, ștergerea datelor negative raportate, în temeiul art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, întrucât au fost prelucrate nelegal;</li>
+            <li>transmiterea ștergerii către Biroul de Credit SA;</li>
+            <li>răspuns scris în termen de o lună, conform art. 12 alin. (3) din Regulament.</li>
+          </ol>
+          <p>Anexez: copie act de identitate; raportul de credit din [data]; [capturi cu mesajele primite, dacă există].</p>
+          <p>Data: [zz.ll.aaaa] | Semnătura: [semnătura]</p>
+        </div>
+        <button type="button" class="btn btn-line copy-m" data-copy="m2">Copiază modelul 2</button>
+
+        <h3>Modelul 3: cerere de acces la date (art. 15 GDPR)</h3>
+        <div class="model" id="m3">
+          <p class="to">Către: Biroul de Credit SA sau [denumirea participantului], în atenția DPO</p>
+          <h4>CERERE de acces la datele cu caracter personal</h4>
+          <p>Subsemnatul/Subsemnata [nume și prenume], CNP [CNP], domiciliat(ă) în [adresa], în temeiul art. 15 din Regulamentul (UE) 2016/679, vă solicit să îmi comunicați:</p>
+          <ol>
+            <li>datele mele prelucrate în sistemul Biroului de Credit (raportul de credit complet);</li>
+            <li>participanții care au transmis datele și data fiecărei raportări;</li>
+            <li>participanții care au consultat datele mele în ultimele [6] luni și scopul consultării;</li>
+            <li>perioada de stocare pentru fiecare categorie de date.</li>
+          </ol>
+          <p>Vă rog să îmi trimiteți răspunsul [prin scrisoare recomandată la adresa de mai sus / pe e-mail], în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament.</p>
+          <p>Anexez: copie act de identitate.</p>
+          <p>Data: [zz.ll.aaaa] | Semnătura: [semnătura]</p>
+        </div>
+        <button type="button" class="btn btn-line copy-m" data-copy="m3">Copiază modelul 3</button>
+        <div class="todo">[DE VERIFICAT: adresa și programul de lucru cu publicul ale Biroului de Credit, de pe birouldecredit.ro]</div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/3-modele-de-cerere-si-cand-le-folosesti.webp" width="1200" height="675" alt="model cerere ștergere Biroul de Credit: date eronate, lipsa notificării, acces la date" loading="lazy">
+          <figcaption>3 modele de cerere și când le folosești</figcaption>
+        </figure>
+      </section>
+
+      <section id="completare">
+        <span class="eyebrow">Completare</span>
+        <h2>Cum se completează corect cererea</h2>
+        <div class="rights">
+          <div><span class="n">1</span><b>Date personale</b>Nume și CNP exact ca în actul de identitate. Lasă un e-mail: răspunsul vine mai repede.</div>
+          <div><span class="n">2</span><b>Date creditor</b>Copiază denumirea participantului din raport, nu din memorie. După o cesiune, raportează recuperatorul, nu banca.</div>
+          <div><span class="n">3</span><b>Motivul solicitării</b>Un fapt și o dovadă. Fără adjective.</div>
+          <div><span class="n">4</span><b>Anexe și semnătură</b>Copie CI, raport, extras sau adeverință.</div>
+        </div>
+        <h4>Exemple de formulări corecte</h4>
+        <div class="quote">„Raportul din 02.10.2026 arată contractul nr. 88412/2022 cu status «activ», deși a fost închis pe 30.06.2025 (adeverința nr. … anexată).”</div>
+        <div class="quote">„Suma raportată, 2.180 lei, diferă de soldul de 0 lei din extrasul de cont din 31.05.2025.”</div>
+        <div class="quote">„Vă rog să îmi comunicați data și canalul notificării prealabile prevăzute de Decizia ANSPDCP nr. 105/2007.”</div>
+        <h4>Greșeli frecvente</h4>
+        <ul class="ban">
+          <li>Lipsa datelor: fără număr de contract sau sumă, cererea primește un răspuns-tip.</li>
+          <li>Cerere incompletă: nesemnată, fără copia actului de identitate (la cererile prin poștă).</li>
+          <li>Toate cele trei modele într-o singură scrisoare. Trimite-le separat, pe rând.</li>
+        </ul>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cum-completezi-modelul-de-cerere.webp" width="1200" height="675" alt="model cerere de ștergere din Biroul de Credit, cum se completează" loading="lazy">
+          <figcaption>Cum completezi modelul de cerere</figcaption>
+        </figure>
+      </section>
+
+      <section id="depunere">
+        <span class="eyebrow">Depunere</span>
+        <h2>Cum depui cererea de ștergere</h2>
+        <p>Ai trei căi: online, direct la bancă sau IFN și prin poștă. Pentru oricare, păstrezi o dovadă cu dată, pentru că de la ea curge termenul de răspuns de o lună. Cea mai sigură cale pentru modelele 1 și 2 e e-mailul către DPO, urmat de o copie prin recomandată.</p>
+        <div class="stages">
+          <div><span class="k">Online</span><b>Contul tău</b>Din contul de pe birouldecredit.ro trimiți solicitări și contestații. Atașezi modelul completat, în PDF, semnat. Salvezi numărul solicitării. Cum îți faci contul: <a href="/verificare-online-biroul-de-credit/">verificare online Biroul de Credit</a>.</div>
+          <div><span class="k">Bancă sau IFN</span><b>La agenție</b>Mergi cu două exemplare. Pe al tău ceri număr de înregistrare și ștampilă. Sau trimiți pe e-mail la adresa DPO din politica de confidențialitate a băncii.</div>
+          <div><span class="k">Poștă</span><b>Recomandată</b>Cu confirmare de primire: cererea semnată (original), copia CI, pagina relevantă din raport, copiile dovezilor.</div>
+        </div>
+        <p>La cererile prin poștă către Biroul de Credit, răspunsul vine tot prin scrisoare recomandată.</p>
+        <div class="todo">[DE VERIFICAT: modalitatea actuală de răspuns la cererile primite prin poștă, pe birouldecredit.ro]</div>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Model</th><th>Când îl folosești</th><th>Metodă de depunere</th><th>Anexe</th><th>Cost</th><th>Șanse</th><th>Risc</th></tr></thead>
+          <tbody>
+            <tr><td>1. Date eronate</td><td>Sumă, status sau dată greșită</td><td>E-mail DPO / agenție</td><td>Raport, extras, adeverință</td><td>Gratuit</td><td>Mari, cu dovadă clară</td><td>Refuz dacă dovada e neclară</td></tr>
+            <tr><td>2. Lipsa notificării</td><td>N-ai primit avertizarea cu 15 zile înainte</td><td>Recomandată / e-mail DPO</td><td>Raport, mesajele primite</td><td>Gratuit</td><td>Medii, depind de dovada băncii</td><td>Banca are o notificare validă</td></tr>
+            <tr><td>3. Acces la date</td><td>Nu știi cine și ce a raportat</td><td>Online / poștă la Biroul de Credit</td><td>Copie act de identitate</td><td>Gratuit (1 raport pe an)</td><td>Foarte mari</td><td>Nu șterge nimic, doar informează</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Procedura legală de ștergere</h2>
+        <p>După depunere, participantul verifică datele, decide și îți răspunde în scris în cel mult o lună. Dacă admite cererea, transmite corecția la Biroul de Credit. Dacă o respinge, trebuie să motiveze. Tu verifici apoi raportul și, la nevoie, treci la plângere.</p>
+        <ol class="num">
+          <li><strong>Analiză:</strong> participantul înregistrează cererea și caută evidențele.</li>
+          <li><strong>Verificare:</strong> compară plățile și notificările cu raportarea.</li>
+          <li><strong>Răspuns:</strong> admitere, respingere motivată sau anunț de prelungire.</li>
+        </ol>
+        <h3>Termene legale</h3>
+        <p>Termenul e de o lună de la primire, prelungibil cu două luni pentru cereri complexe (art. 12 GDPR).</p>
+        <div class="example">
+          <div class="t">Cifra pe șervețel</div>
+          <p>Ai trimis modelul 1 pe e-mail, iar banca l-a primit pe 12.10.2026. Răspunsul trebuie să vină până pe 12.11.2026. Dacă banca anunță prelungirea, termenul maxim devine 12.01.2027. Restanța ta de 2.180 lei a fost achitată pe 22.05.2025. Chiar dacă banca corectează statusul, întârzierea reală rămâne vizibilă până pe 22.05.2029. De aceea, în modelul 1 ceri actualizare, nu ștergerea întregului istoric.</p>
+          <span class="formula">12.10.2026 → 12.11.2026 (cu prelungire: 12.01.2027)</span>
+          <button type="button" class="btn btn-line" data-ex="1">Vezi exemplul în generator</button>
+        </div>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Analiză juridică și legislație</h2>
+        <p>Fiecare model se sprijină pe alt articol. Modelul 1 pe art. 16 și 17 GDPR, modelul 2 pe Decizia ANSPDCP nr. 105/2007 combinată cu art. 17, modelul 3 pe art. 15. Toate folosesc termenul de răspuns din art. 12. Legea nr. 190/2018 aplică GDPR în România.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Drepturile conform GDPR</h3><ul><li><strong>Dreptul la ștergere</strong> e limitat: nu acoperă o restanță reală, raportată legal.</li><li><strong>Dreptul la rectificare</strong> e mai larg și mai ușor de dovedit.</li></ul></div>
+          <div class="t-card"><h3>Reglementări naționale</h3><ul><li>Notificare cu 15 zile înainte de prima raportare negativă, raportare doar după 30 de zile de întârziere, actualizare după plată.</li><li>Dacă ai notificat darea în plată (Legea nr. 77/2016), adaugi în model: „am transmis notificarea de dare în plată la data de …”.</li></ul></div>
+        </div>
+        <div class="note dark"><b>Poziția juridică.</b> În practica mea, modelul 2 e cel mai subestimat. Oamenii nu cer dovada notificării, deși sarcina de a o arăta e a băncii. O cerere care întreabă exact „când, cum și unde m-ați anunțat?” obligă participantul să caute în propriile evidențe.</div>
+        <h3>Jurisprudență relevantă</h3>
+        <p>În litigiile pe acest subiect, instanțele cer, de regulă, cererea prealabilă trimisă participantului și răspunsul lui. Un model completat și trimis corect devine prima probă din dosar.</p>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <h3>Compararea legislației</h3>
+        <p>GDPR e identic în toată UE, deci modelele 1 și 3 urmează logica oricărei cereri europene. Modelul 2 e specific României: regula celor 15 zile vine din Decizia nr. 105/2007.</p>
+      </section>
+
+      <section id="nu">
+        <span class="eyebrow">Limite</span>
+        <h2>Când NU se aprobă ștergerea</h2>
+        <p>Cererea se respinge legal când datele sunt exacte, notificarea a fost trimisă la timp și nu au trecut 4 ani de la plată sau închidere. Un model bine scris nu schimbă faptele. Dacă banca îți arată o notificare validă și o restanță reală, ce poți cere e doar o actualizare.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Date corecte și justificate</h3><ul><li>Raportarea unei restanțe reale are la bază interesul legitim al creditorilor. Formularea modelului nu poate anula acest temei.</li></ul></div>
+          <div class="t-card"><h3>Perioada legală de stocare</h3><ul><li>4 ani de la plata restanței sau de la închiderea produsului. Până atunci, datele corecte rămân.</li></ul></div>
+        </div>
+        <h3>Diferența între ștergere și expirare automată</h3>
+        <p>Modelele de pe această pagină servesc ștergerii anticipate, adică înainte de termen, pe motiv de eroare sau nelegalitate. Expirarea nu are nevoie de model: datele corecte dispar singure după 4 ani. Dacă apar și după termen, trimiți modelul 1 adaptat, cu data plății. Termenul curge de la data plății sau a închiderii, nu de la prima întârziere. Scrie această dată în cerere.</p>
+      </section>
+
+      <section id="sfaturi">
+        <span class="eyebrow">Sfaturi</span>
+        <h2>Sfaturi pentru aprobarea cererii</h2>
+        <p>O cerere aprobată are un singur obiect, o dovadă clară și o solicitare concretă. Completează modelul pe calculator, semnează-l, atașează doar documentele relevante și păstrează dovada trimiterii. Din experiența mea, o pagină bine completată valorează mai mult decât cinci pagini de explicații.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Ce trebuie inclus</h3><ul><li>Data raportului de credit pe care te bazezi.</li><li>Numărul contractului și denumirea participantului, exact ca în raport.</li><li>Articolul invocat și măsura cerută.</li><li>Adresa de e-mail pentru răspuns.</li></ul></div>
+          <div class="t-card"><h3>Ce trebuie evitat</h3><ul><li>Raportul complet trimis oricui: atașează doar pagina relevantă.</li><li>Cereri copiate de pe forumuri, cu articole care nu se potrivesc situației tale.</li><li>Plata pentru „modele premium”. Modelele de aici sunt gratuite. Vezi și <a href="/stergere-biroul-de-credit-fara-avans/">ștergere fără avans: ce e legal</a>.</li></ul></div>
+        </div>
+        <h3>Avantajele ștergerii din Biroul de Credit</h3>
+        <p>Un raport corectat îți scoate din dosar un motiv nejustificat de refuz și îți poate crește scorul FICO, calculat pe scara 300–850. Efectul apare după ce participantul transmite corecția, nu în ziua în care trimiți modelul. Creditul rămâne decizia băncii.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Alege modelul: 1 pentru eroare, 2 pentru lipsa notificării, 3 dacă nu știi încă ce s-a raportat.</li>
+          <li>Completează câmpurile din paranteze cu datele din raport și semnează.</li>
+          <li>Trimite-l pe e-mail la DPO-ul participantului și notează data. Peste o lună verifici răspunsul.</li>
+        </ol>
+        <!--@author practice="drept bancar și protecția datelor" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente</h2>
+        <div class="faq">
+          <details open><summary>Cum completez o cerere de ștergere din Biroul de Credit?</summary><p>Copiezi unul dintre cele trei modele și înlocuiești câmpurile din paranteze cu datele din raport: participant, contract, sumă, dată. Adaugi motivul într-o frază și dovada în anexă.</p></details>
+          <details><summary>În cât timp se șterg datele?</summary><p>Participantul răspunde în cel mult o lună de la primirea modelului. Corecția apare în raport după ce o transmite la Biroul de Credit.</p></details>
+          <details><summary>Pot șterge orice informație negativă?</summary><p>Nu. Modelele funcționează pentru erori, raportări fără notificare și date ținute peste termen. O restanță reală rămâne 4 ani de la plată.</p></details>
+          <details><summary>Este gratuită procedura?</summary><p>Da. Modelele sunt gratuite, iar cererea nu are taxă. Plătești doar recomandata, dacă trimiți prin poștă.</p></details>
+          <details><summary>Ce fac dacă cererea este respinsă?</summary><p>Atașezi modelul trimis și răspunsul primit la o plângere către ANSPDCP sau la o acțiune în instanță.</p></details>
+          <details><summary>Pot corecta datele greșite?</summary><p>Da, cu modelul 1. Bifezi doar punctul de rectificare dacă nu ceri ștergerea niciunei înregistrări.</p></details>
+          <details><summary>Cât timp rămân datele în Biroul de Credit?</summary><p>Datele negative corecte rămân 4 ani de la plata restanței sau închiderea creditului. Datele pozitive rămân cât timp îți menții acordul.</p></details>
+          <details><summary>Unde depun cererea?</summary><p>La participantul care a raportat datele: pe e-mail la DPO, la agenție sau prin poștă. Modelul 3 îl poți trimite și direct Biroului de Credit.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Nu ești sigur de temei?" lead="Ai completat modelul și nu ești sigur că ai ales temeiul corect? Trimite-ne cererea și raportul, iar noi îți spunem ce să corectezi înainte să o depui. Consultația nu te obligă la nimic." nav="/|Acasă;/cerere-de-stergere-din-biroul-de-credit/|Cerere de ștergere;/verificare-online-biroul-de-credit/|Verificare raport;#contact|Contact" note="Consultarius nu este afiliat Biroului de Credit. Modelele au caracter informativ." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var model=1;
+  function v(id,ph){var x=($(id).value||'').trim();return x||'['+ph+']'}
+  function d(id,ph){var x=$(id).value;if(!x)return '['+ph+']';var p=x.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(x){return ('0'+x.getUTCDate()).slice(-2)+'.'+('0'+(x.getUTCMonth()+1)).slice(-2)+'.'+x.getUTCFullYear()}
+  function today(){var t=new Date();return ('0'+t.getDate()).slice(-2)+'.'+('0'+(t.getMonth()+1)).slice(-2)+'.'+t.getFullYear()}
+  function txt(){
+    var who=v('g-nume','nume și prenume')+', CNP '+v('g-cnp','CNP')+', domiciliat(ă) în '+v('g-adr','adresa');
+    var part=v('g-part','denumirea participantului'),end='\n\nData: '+today()+' | Semnătura: [semnătura]';
+    if(model===1)return 'Către: '+part+', în atenția Responsabilului cu protecția datelor (DPO)\n\n**CERERE de rectificare și ștergere a datelor raportate în Biroul de Credit**\n\nSubsemnatul/Subsemnata '+who+', telefon '+v('g-tel','telefon')+', e-mail '+v('g-mail','e-mail')+', în calitate de persoană vizată, vă solicit următoarele.\n\nÎn raportul meu de credit emis de Biroul de Credit la data de '+d('g-rap','data raportului')+', la participantul '+part+', contractul nr. '+v('g-contr','număr')+', figurează: '+v('g-desc','descrierea exactă')+'.\n\nInformația este inexactă, deoarece '+v('g-motiv','motivul')+'.\n\nÎn temeiul art. 16 și art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, vă solicit:\n1. rectificarea datelor, astfel încât raportul să reflecte situația reală;\n2. ștergerea înregistrărilor care nu corespund realității;\n3. transmiterea datelor corectate către Biroul de Credit SA;\n4. comunicarea răspunsului scris în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament, la adresa de e-mail de mai sus.\n\nAnexez: copie act de identitate; raportul de credit din '+d('g-rap','data')+'; [extras de cont / chitanță / adeverință de închidere].'+end;
+    if(model===2){var sms=$('g-sms').value,pr=$('g-prima').value,info='Nu am primit nicio informare cu cel puțin 15 zile calendaristice înainte de prima raportare a datelor negative, așa cum prevede Decizia ANSPDCP nr. 105/2007.';
+      if(sms&&pr){var g=Math.round((dt(pr).getTime()-dt(sms).getTime())/864e5);info='Am primit un SMS pe data de '+d('g-sms','')+', cu doar '+g+' zile înainte de raportare, deși Decizia ANSPDCP nr. 105/2007 cere o informare cu cel puțin 15 zile calendaristice înainte de prima raportare a datelor negative.'}
+      return 'Către: '+part+', în atenția DPO\n\n**CERERE de ștergere a datelor negative raportate fără informare prealabilă**\n\nSubsemnatul/Subsemnata '+who+', e-mail '+v('g-mail','e-mail')+', vă solicit următoarele.\n\nÎn raportul meu de credit din '+d('g-rap','data')+' figurează date negative transmise de dumneavoastră pentru contractul nr. '+v('g-contr','număr')+', cu data primei raportări '+d('g-prima','data')+'.\n\n'+info+'\n\nÎn consecință, vă solicit:\n1. să îmi comunicați dovada informării prealabile: data, canalul (scrisoare, SMS, e-mail) și adresa sau numărul folosit;\n2. în lipsa acestei dovezi, ștergerea datelor negative raportate, în temeiul art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, întrucât au fost prelucrate nelegal;\n3. transmiterea ștergerii către Biroul de Credit SA;\n4. răspuns scris în termen de o lună, conform art. 12 alin. (3) din Regulament.\n\nAnexez: copie act de identitate; raportul de credit din '+d('g-rap','data')+'; [capturi cu mesajele primite, dacă există].'+end}
+    return 'Către: '+(($('g-part').value||'').trim()||'Biroul de Credit SA')+', în atenția DPO\n\n**CERERE de acces la datele cu caracter personal**\n\nSubsemnatul/Subsemnata '+who+', în temeiul art. 15 din Regulamentul (UE) 2016/679, vă solicit să îmi comunicați:\n1. datele mele prelucrate în sistemul Biroului de Credit (raportul de credit complet);\n2. participanții care au transmis datele și data fiecărei raportări;\n3. participanții care au consultat datele mele în ultimele '+v('g-luni','6')+' luni și scopul consultării;\n4. perioada de stocare pentru fiecare categorie de date.\n\nVă rog să îmi trimiteți răspunsul pe e-mail, la '+v('g-mail','e-mail')+', în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament.\n\nAnexez: copie act de identitate.'+end;
+  }
+  function render(){
+    var g=$('gen');while(g.firstChild)g.removeChild(g.firstChild);
+    txt().split('**').forEach(function(part,i){if(i%2){var b=document.createElement('b');b.textContent=part;g.appendChild(b)}else g.appendChild(document.createTextNode(part))});
+    var s=$('g-trim').value,c=$('c-t');c.classList.remove('alert','ok');
+    if(s){var a=dt(s),b=dt(s);a.setUTCMonth(a.getUTCMonth()+1);b.setUTCMonth(b.getUTCMonth()+3);$('o-t').textContent='până la '+fmt(a);$('o-ts').innerHTML='Cu prelungire pentru cereri complexe: <b>'+fmt(b)+'</b>. Fără răspuns? Plângere la ANSPDCP.'}
+    else{$('o-t').textContent='—';$('o-ts').textContent='Completați data primirii cererii.'}
+  }
+  var tabs=[].slice.call(root.querySelectorAll('[data-tab]'));
+  function show(n){model=n;tabs.forEach(function(t){t.setAttribute('aria-selected',+t.getAttribute('data-tab')===n)});$('gpanel').className='panel m'+n;render()}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(+t.getAttribute('data-tab'))})});
+  root.querySelectorAll('#gpanel input').forEach(function(i){i.addEventListener('input',render);i.addEventListener('change',render)});
+  function copyText(t,b,label){function done(){b.textContent='Copiat ✓';setTimeout(function(){b.textContent=label},2000)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+    else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(a)}}
+  $('b-copy').addEventListener('click',function(){copyText(txt().replace(/\*\*/g,''),this,'Copiază cererea')});
+  root.querySelectorAll('[data-copy]').forEach(function(b){var l=b.textContent;b.addEventListener('click',function(){copyText($(b.getAttribute('data-copy')).innerText,b,l)})});
+  function ex(){show(1);var e={'g-nume':'Ion Popescu','g-cnp':'1800101123456','g-adr':'București, str. Exemplu nr. 1','g-mail':'ion.popescu@exemplu.ro','g-tel':'07xx xxx xxx','g-part':'Banca X SA','g-contr':'88412/2022','g-rap':'2026-10-02','g-desc':'restanță de 2.180 lei, status activ','g-motiv':'am achitat integral suma pe data de 22.05.2025, conform extrasului anexat','g-trim':'2026-10-12'};
+    Object.keys(e).forEach(function(k){$(k).value=e[k]});render()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('generator').scrollIntoView({behavior:'smooth'})})});
+  render();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Ștergere Biroul de Credit","item":"https://chinsolvency.ro/cerere-de-stergere-din-biroul-de-credit/"},{"@type":"ListItem","position":3,"name":"Model cerere ștergere Biroul de Credit","item":"https://chinsolvency.ro/model-cerere-stergere-biroul-de-credit/"}]},
+ {"@type":"Article","headline":"Model cerere ștergere Biroul de Credit: 3 modele gata","description":"Model cerere de ștergere din Biroul de Credit: 3 texte gata de completat (date eronate, lipsa notificării, acces la date), anexe și cum le trimiți.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/model-cerere-stergere-biroul-de-credit/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/cum-completezi-modelul-de-cerere.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/3-modele-de-cerere-si-cand-le-folosesti.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum completezi modelul de cerere de ștergere din Biroul de Credit","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/cum-completezi-modelul-de-cerere.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Date personale","text":"Nume și CNP exact ca în actul de identitate."},
+  {"@type":"HowToStep","position":2,"name":"Date din raport","text":"Participant, contract, sumă, dată."},
+  {"@type":"HowToStep","position":3,"name":"Motivul","text":"Un fapt verificabil, într-o singură frază."},
+  {"@type":"HowToStep","position":4,"name":"Temeiul","text":"Art. 16, art. 17 sau art. 15 GDPR."},
+  {"@type":"HowToStep","position":5,"name":"Anexe și semnătură","text":"Copie CI, raport, extras sau adeverință."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Biroul de Credit","Model cerere GDPR","Ștergere date","Drept bancar"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Cum completez o cerere de ștergere din Biroul de Credit?","acceptedAnswer":{"@type":"Answer","text":"Copiezi unul dintre cele trei modele și înlocuiești câmpurile din paranteze cu datele din raport: participant, contract, sumă, dată. Adaugi motivul într-o frază și dovada în anexă."}},
+  {"@type":"Question","name":"În cât timp se șterg datele?","acceptedAnswer":{"@type":"Answer","text":"Participantul răspunde în cel mult o lună de la primirea modelului. Corecția apare în raport după ce o transmite la Biroul de Credit."}},
+  {"@type":"Question","name":"Pot șterge orice informație negativă?","acceptedAnswer":{"@type":"Answer","text":"Nu. Modelele funcționează pentru erori, raportări fără notificare și date ținute peste termen. O restanță reală rămâne 4 ani de la plată."}},
+  {"@type":"Question","name":"Este gratuită procedura?","acceptedAnswer":{"@type":"Answer","text":"Da. Modelele sunt gratuite, iar cererea nu are taxă. Plătești doar recomandata, dacă trimiți prin poștă."}},
+  {"@type":"Question","name":"Ce fac dacă cererea este respinsă?","acceptedAnswer":{"@type":"Answer","text":"Atașezi modelul trimis și răspunsul primit la o plângere către ANSPDCP sau la o acțiune în instanță."}},
+  {"@type":"Question","name":"Pot corecta datele greșite?","acceptedAnswer":{"@type":"Answer","text":"Da, cu modelul 1. Bifezi doar punctul de rectificare dacă nu ceri ștergerea niciunei înregistrări."}},
+  {"@type":"Question","name":"Cât timp rămân datele în Biroul de Credit?","acceptedAnswer":{"@type":"Answer","text":"Datele negative corecte rămân 4 ani de la plata restanței sau închiderea creditului. Datele pozitive rămân cât timp îți menții acordul."}},
+  {"@type":"Question","name":"Unde depun cererea?","acceptedAnswer":{"@type":"Answer","text":"La participantul care a raportat datele: pe e-mail la DPO, la agenție sau prin poștă. Modelul 3 îl poți trimite și direct Biroului de Credit."}}
+ ]}
+]}
+</script>
