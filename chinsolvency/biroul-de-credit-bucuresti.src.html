@@ -1,0 +1,367 @@
+<!-- Consultarius — /biroul-de-credit-bucuresti/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Unde scrii;#contact-bc|Contact;#drepturi|Drepturi;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Biroul de Credit București</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Sector 3 · Raport · Cereri</span>
+          <h1>Biroul de Credit București: <span class="accent">contact, verificare raport și acces la date</span></h1>
+          <div class="lead">
+            <p>Ai sunat la bancă și ți s-a spus „vedeți la Biroul de Credit”. Ai căutat un număr și o adresă. Nu știi dacă trebuie să mergi la sediu sau să scrii.</p>
+            <p>Aici afli unde este <strong>Biroul de Credit în București</strong>, ce canale de contact are și cum ceri raportul: online, prin poștă sau prin bancă. Vezi ce scrii în cerere, în cât timp primești răspuns și unde reclami în București dacă nu primești.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Sediul: sector 3, București</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Unde scrii și până când</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce este Biroul de Credit și ce rol are</h2>
+          <p>Biroul de Credit SA (căutat adesea ca „biroul de credite”) este o societate privată cu sediul în București. Acționarii sunt 18 bănci, iar participanții sunt peste 100: bănci, IFN-uri, firme de leasing, asigurători și recuperatori. Nu e instituție publică. Nu decide creditele. Păstrează istoricul de plată și îl pune la dispoziția participanților.</p>
+          <div class="opts">
+            <div><b>Online</b>raportul vine în aceeași zi</div>
+            <div><b>Prin poștă</b>răspuns în cel mult o lună</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Unde scrii</span><h2>Cui trimiți cererea și <span class="accent">până când primești răspuns</span></h2></div>
+      <p>Alege problema, metoda și data trimiterii. Afli destinatarul, ce temei invoci și termenele de răspuns, cu ziua săptămânii.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Situația ta</div>
+          <div class="field"><label for="f-pb">Problema</label><div class="inp"><select id="f-pb">
+            <option value="r">Vreau raportul</option>
+            <option value="g">Date greșite în raport</option>
+            <option value="n">Fără răspuns în o lună</option>
+            <option value="f">Refuz și prejudiciu</option>
+          </select></div></div>
+          <div class="field"><label for="f-met">Metoda</label><div class="inp"><select id="f-met">
+            <option value="o">Online (portal, e-mail)</option>
+            <option value="p" selected>Recomandată cu confirmare</option>
+            <option value="b">Prin bancă</option>
+          </select></div></div>
+          <div class="grp">Termene</div>
+          <div class="field"><label for="f-trim">Data trimiterii</label><div class="inp"><input type="date" id="f-trim"></div></div>
+          <div class="field"><label for="f-zile">Zile până la primire (poștă)</label><div class="inp"><input id="f-zile" inputmode="numeric" value="2"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu din ghid</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-u"><span class="k">Unde scrii</span><span class="v" id="o-u">—</span><span class="s" id="o-us">Alege problema.</span></div>
+            <div class="opt" id="c-a"><span class="k">Cererea ajunge</span><span class="v" id="o-a">—</span><span class="s" id="o-as">De atunci curge termenul.</span></div>
+            <div class="opt" id="c-t"><span class="k">Termen de răspuns</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">O lună (art. 12 GDPR).</span></div>
+            <div class="opt full" id="c-m"><span class="k">Termen maxim, cu prelungire</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">Încă două luni, doar dacă ești anunțat.</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Trimite-ne raportul și corespondența</a>
+          <span class="disc">Termenul curge de la primirea cererii, nu de la trimitere. Prelungirea cu două luni e posibilă doar la cereri complexe și cu informarea ta. Calcul orientativ.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#functionare">Cum funcționează</a>
+      <a href="#contact-bc">Contact oficial</a>
+      <a href="#raport">Cum verifici raportul</a>
+      <a href="#scor">Scorul de credit</a>
+      <a href="#drepturi">Drepturile tale</a>
+      <a href="#stergere">Ștergerea datelor</a>
+      <a href="#practica">Practica judiciară</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="functionare">
+        <span class="eyebrow">Mecanism</span>
+        <h2>Cum funcționează Biroul de Credit</h2>
+        <p>Participanții raportează lunar creditele și plățile tale. Când ceri un credit, banca consultă raportul. Biroul de Credit nu modifică singur datele raportate de o bancă. Corecturile pornesc de la participantul care le-a transmis.</p>
+        <h3>Ce tipuri de date sunt stocate</h3>
+        <div class="stages">
+          <div><span class="k">Date negative</span><b>30 zile · 10 lei</b>Întârzieri de peste 30 de zile, pentru sume de peste 10 lei.</div>
+          <div><span class="k">Date pozitive</span><b>Cu acordul tău</b>Credite plătite la timp.</div>
+          <div><span class="k">Istoric</span><b>Închise · interogări</b>Credite închise, interogări, calitatea de garant.</div>
+        </div>
+      </section>
+
+      <section id="contact-bc">
+        <span class="eyebrow">Contact</span>
+        <h2>Biroul de Credit contact: metode oficiale</h2>
+        <p>Biroul de Credit are sediul în București, sector 3. Canalele principale sunt portalul birouldecredit.ro, e-mailul, telefonul și poșta. Pentru orice problemă juridică, scrie: o cerere înregistrată e probă, un apel nu. Pentru drepturile privind datele personale, folosești adresa responsabilului cu protecția datelor.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Canal</th><th>Date de contact</th><th>Când îl folosești</th></tr></thead>
+          <tbody>
+            <tr><td>Sediu și poștă</td><td>Str. Sfânta Vineri nr. 29, et. 4, sector 3, București</td><td>Cereri scrise, recomandată</td></tr>
+            <tr><td>Telefon</td><td>+40 21 300 49 00</td><td>Întrebări generale</td></tr>
+            <tr><td>E-mail general</td><td>office@birouldecredit.ro</td><td>Solicitări scrise simple</td></tr>
+            <tr><td>Protecția datelor (DPO)</td><td>rpd@birouldecredit.ro</td><td>Acces, rectificare, ștergere</td></tr>
+            <tr><td>Portal online</td><td>birouldecredit.ro</td><td>Raport, scor, contestații</td></tr>
+          </tbody>
+        </table></div>
+        <div class="todo">[DE VERIFICAT: adresa, programul de lucru cu publicul, telefonul și e-mailul general, pe birouldecredit.ro]</div>
+        <h3>Cum trimiți o solicitare corectă</h3>
+        <p>O cerere bună are cinci elemente: nume și CNP, adresă de corespondență, ce ceri, de ce ceri și ce atașezi. Semnezi și pui copia actului de identitate.</p>
+        <div class="quote">„Solicit, în baza art. 15 GDPR, o copie a raportului meu de credit.”</div>
+        <div class="quote">„Restanța raportată de banca X pentru contractul Y a fost plătită pe data Z. Atașez extrasul.”</div>
+        <p>Texte complete găsești în <a href="/model-cerere-stergere-biroul-de-credit/">modelul de cerere</a>.</p>
+        <h3>Termene legale de răspuns</h3>
+        <p>Operatorul răspunde în cel mult o lună de la primirea cererii (art. 12 GDPR). La cereri complexe poate prelungi cu încă două luni, dar trebuie să te anunțe.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Trimiți cererea luni, 2 noiembrie 2026, prin recomandată cu confirmare de primire. Ajunge miercuri, 4 noiembrie. Termenul de o lună expiră vineri, 4 decembrie 2026. Cu prelungire, termenul maxim este joi, 4 februarie 2027. Online ai raportul în aceeași zi.</p>
+          <span class="formula">04.11.2026 + 1 lună = 04.12.2026 · + 3 luni = 04.02.2027</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="raport">
+        <span class="eyebrow">Raportul</span>
+        <h2>Cum verifici raportul de la Biroul de Credit</h2>
+        <p>Din București ai trei variante: online, pe birouldecredit.ro; prin scrisoare recomandată la sediul din sectorul 3; prin banca la care ai credit activ, care îți poate da codul de înrolare. Online e cea mai rapidă. Prin poștă primești răspunsul în cel mult o lună. Primul raport din an e gratuit.</p>
+        <h3>Verificare online</h3>
+        <p>Îți faci cont cu e-mail, telefon și CNP și confirmi identitatea prin SMS. Descarci raportul în PDF. Pașii detaliați și cum citești raportul sunt în ghidul <a href="/verificare-online-biroul-de-credit/">verificare online Biroul de Credit</a>.</p>
+        <h3>Verificare prin cerere scrisă</h3>
+        <p>Ai nevoie de cererea semnată și de copia actului de identitate. Trimite recomandat, cu confirmare de primire, și păstrează recipisa. Depunerea personală la sediu nu e garantată pentru public.</p>
+        <div class="todo">[DE VERIFICAT: dacă sediul primește cereri la ghișeu și în ce program]</div>
+        <h3>Cât durează obținerea raportului</h3>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/raportul-de-credit-online-posta-sau-banca.webp" width="1200" height="675" alt="Biroul de Credit București: metode de obținere a raportului de credit comparate" loading="lazy">
+          <figcaption>Raportul de credit: online, poștă sau bancă</figcaption>
+        </figure>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Metodă</th><th>Timp</th><th>Cost</th><th>Documente</th><th>Dificultate</th><th>Avantaj / dezavantaj</th></tr></thead>
+          <tbody>
+            <tr><td>Online</td><td>Aceeași zi</td><td>1 raport gratuit pe an</td><td>E-mail, telefon, CNP</td><td>Mică</td><td>Rapid / cere confirmare prin SMS</td></tr>
+            <tr><td>Prin poștă</td><td>Până la o lună, plus livrarea</td><td>Gratuit, plus taxa poștală</td><td>Cerere semnată, copie CI</td><td>Medie</td><td>Fără cont / lent</td></tr>
+            <tr><td>Prin bancă</td><td>Variabil</td><td>Gratuit</td><td>Act de identitate</td><td>Mică</td><td>Primești codul de înrolare / doar dacă ai credit activ</td></tr>
+          </tbody>
+        </table></div>
+        <p>Rapoartele suplimentare din același an costă 6 lei.</p>
+        <div class="todo">[DE VERIFICAT: tariful actual]</div>
+      </section>
+
+      <section id="scor">
+        <span class="eyebrow">Scor FICO</span>
+        <h2>Scorul de credit explicat</h2>
+        <p>Scorul FICO este un număr între 300 și 850, calculat din istoricul tău de plată. Cu cât e mai mare, cu atât banca te vede ca risc mai mic. Intervalul 651–750 este considerat „bun”. Scorul e un indicator, nu o decizie: banca se uită și la venit și la gradul de îndatorare.</p>
+        <div class="caps">
+          <div>Scala FICO<b>300–850</b></div>
+          <div>Interval „bun”<b>651–750</b></div>
+          <div>Raport gratuit<b>1 / an</b></div>
+        </div>
+        <h3>Cum se calculează scorul</h3>
+        <p>Contează punctualitatea plăților, nivelul datoriilor, vechimea istoricului și numărul de cereri recente. Întârzierile au cel mai mare efect.</p>
+        <h3>Cum îți îmbunătățești scorul</h3>
+        <p>Plătește la timp, redu soldurile cardurilor și evită cereri multiple de credit în aceeași lună. Erorile le corectezi prin cerere la participant.</p>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">GDPR</span>
+        <h2>Drepturile tale conform legislației</h2>
+        <p>Ai patru drepturi principale din GDPR (Regulamentul UE 2016/679), aplicat în România prin Legea nr. 190/2018: acces la date, rectificare, ștergere în cazuri limitate și opoziție. Le exerciți gratuit, în scris, la Biroul de Credit sau la participantul care a raportat. Răspunsul vine în cel mult o lună.</p>
+        <div class="rights">
+          <div><span class="n">15</span><b>Dreptul de acces</b>Afli ce date are Biroul de Credit despre tine și primești o copie. Un raport pe an este gratuit.</div>
+          <div><span class="n">16</span><b>Dreptul de rectificare</b>Ceri corectarea datelor greșite. Cererea merge la participantul care le-a raportat. Biroul de Credit intervine pentru propriile erori și în procedura de corectare.</div>
+          <div><span class="n">17</span><b>Dreptul de ștergere</b>Se aplică limitat: date inexacte, prelucrate nelegal sau păstrate peste termen.</div>
+          <div><span class="n">21</span><b>Dreptul de opoziție</b>Te poți opune prelucrării în cazurile prevăzute de lege.</div>
+        </div>
+      </section>
+
+      <section id="stergere">
+        <span class="eyebrow">Ștergere</span>
+        <h2>Ștergerea datelor din Biroul de Credit</h2>
+        <p><strong>Mitul:</strong> dacă mergi la sediul din București, „te scot din sistem”. <strong>Realitatea:</strong> datele corecte nu pot fi șterse legal înainte de 4 ani de la plata restanței sau închiderea creditului. Poți obține ștergerea doar pentru date eronate, raportate fără notificarea de 15 zile sau păstrate peste termen.</p>
+        <h3>Când poți solicita ștergerea</h3>
+        <ul class="chk">
+          <li>când participantul nu poate dovedi notificarea cu 15 zile înainte de prima raportare negativă (Decizia ANSPDCP nr. 105/2007);</li>
+          <li>când datele sunt greșite;</li>
+          <li>când au trecut 4 ani de la plată sau închidere.</li>
+        </ul>
+        <h3>Procedura corectă</h3>
+        <p>Ceri raportul, identifici participantul, îi scrii cu dovezi și aștepți o lună. Pașii compleți sunt în ghidul <a href="/cerere-de-stergere-din-biroul-de-credit/">cerere de ștergere din Biroul de Credit</a>, iar textele în <a href="/model-cerere-stergere-biroul-de-credit/">model cerere de ștergere din Biroul de Credit</a>. Dacă ai o restanță pe care nu o poți achita integral, vezi și <a href="/stergere-biroul-de-credit-fara-avans/">ștergerea fără avans</a>.</p>
+        <h3>Riscuri și greșeli frecvente</h3>
+        <p>În București activează firme care promit „ștergere rapidă” contra cost. Nimeni nu poate șterge legal date corecte.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/unde-te-adresezi-in-bucuresti.webp" width="1200" height="675" alt="Biroul de Credit București: unde depui cererea, plângerea și acțiunea" loading="lazy">
+          <figcaption>Unde te adresezi în București</figcaption>
+        </figure>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Instanță</span>
+        <h2>Practica judiciară și cazuri reale</h2>
+        <p>Dacă participantul refuză corectarea, ai două căi: plângere la ANSPDCP, care are sediul în București, și acțiune în instanță. Pentru bucureșteni, acțiunea împotriva băncii se judecă de regulă la judecătoria sectorului sau la Tribunalul București, după valoare și natura cererii. GDPR (art. 79) îți permite să acționezi la instanța din statul tău de reședință.</p>
+        <div class="todo">[DE VERIFICAT: instanța competentă material și teritorial în speță; adresa ANSPDCP (B-dul G-ral Gheorghe Magheru nr. 28–30, sector 1) și instanța care judecă plângerile împotriva deciziilor ANSPDCP]</div>
+        <h3>Spețe privind corectarea datelor</h3>
+        <p><strong>Situații tipice (anonimizate):</strong></p>
+        <ul class="ban">
+          <li>O persoană din sectorul 6 trimite cerere de ștergere direct Biroului de Credit. Răspunsul o trimite la bancă, iar ea pierde o lună.</li>
+          <li>Un credit plătit integral apare cu restanță după cesiune. Recuperatorul nu actualizează datele.</li>
+          <li>Banca nu poate prezenta dovada notificării de 15 zile înainte de raportare.</li>
+        </ul>
+        <h3>Interpretări ale instanțelor</h3>
+        <p>Instanțele verifică exactitatea datelor și dovezile participantului, nu doar existența datoriei.</p>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <div class="note dark"><b>Poziția juridică.</b> Din experiența mea cu clienți din București, drumul la sediul din sectorul 3 rareori rezolvă ceva. Cererea scrisă, trimisă participantului corect și dublată de portalul Biroului de Credit, rezolvă mai mult într-o lună decât trei vizite.</div>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Legislație actualizată privind Biroul de Credit</h2>
+        <p>Baza este GDPR, aplicat prin Legea nr. 190/2018. Regulile speciale vin din Decizia ANSPDCP nr. 105/2007: notificare cu 15 zile înainte de raportare și păstrare 4 ani. Pentru darea în plată, Legea nr. 77/2016 interzice înscrierea în Biroul de Credit pentru acel credit, de la notificare și pe durata procedurii.</p>
+        <h3>Comparație între norme</h3>
+        <p>GDPR dă drepturile generale: acces, rectificare, ștergere, termen de o lună. Normele naționale dau termenele concrete: pragul de 30 de zile și 10 lei, notificarea de 15 zile, păstrarea 4 ani.</p>
+        <h3>Obligațiile instituțiilor financiare</h3>
+        <p>Participanții trebuie să raporteze date exacte, să te notifice înainte de prima raportare negativă, să actualizeze datele după plată și să răspundă cererilor în termen.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Sistem</th><th>Ce urmărește</th><th>Unde se află</th><th>Cum verifici</th></tr></thead>
+          <tbody>
+            <tr><td>Biroul de Credit</td><td>Istoric de plată, restanțe, scor</td><td>Sector 3, București</td><td>Online, poștă, prin bancă</td></tr>
+            <tr><td>Centrala Riscului de Credit</td><td>Expuneri de peste 20.000 lei</td><td>BNR, București</td><td>Raport gratuit la BNR</td></tr>
+            <tr><td>ANAF</td><td>Obligații fiscale</td><td>Organul fiscal de domiciliu</td><td>SPV</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente ale utilizatorilor</h2>
+        <p>Cele mai multe probleme vin din adresarea greșită și din lipsa dovezilor. Oamenii scriu Biroului de Credit în loc de bancă, merg la sediu fără cerere scrisă sau nu păstrează recipisa. Alții confundă Biroul de Credit cu CRC sau cu ANAF. Fiecare greșeală costă de obicei o lună.</p>
+        <p>În practica mea, jumătate din cererile respinse pe care le văd au fost trimise destinatarului greșit.</p>
+        <h3>Recomandări practice</h3>
+        <ul class="chk">
+          <li>Verifică raportul înainte de orice cerere de credit.</li>
+          <li>Trimite cererile recomandat sau prin portal și păstrează dovada.</li>
+          <li>Notează data primirii. De atunci curge termenul de o lună.</li>
+          <li>Nu plăti firme care promit ștergerea datelor corecte.</li>
+        </ul>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Alege metoda: online, dacă ai telefonul raportat de o bancă, sau scrisoare recomandată la sediul din sectorul 3.</li>
+          <li>Descarcă sau cere raportul și identifică participantul care a raportat fiecare rând problematic.</li>
+          <li>Trimite cererea de rectificare participantului, cu dovezi, și notează data. Peste o lună știi dacă mergi la ANSPDCP.</li>
+        </ol>
+        <!--@author practice="drept bancar și protecția datelor" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre Biroul de Credit</h2>
+        <div class="faq">
+          <details open><summary>Ce este Biroul de Credit?</summary><p>O societate privată din București, deținută de bănci, care păstrează istoricul de plată al clienților de credite.</p></details>
+          <details><summary>Cum pot obține raportul de credit gratuit?</summary><p>Online, pe birouldecredit.ro, sau prin cerere scrisă. Primul raport din fiecare an este gratuit.</p></details>
+          <details><summary>Cât durează verificarea datelor?</summary><p>Online, aceeași zi. O cerere scrisă primește răspuns în cel mult o lună, prelungibil cu două luni.</p></details>
+          <details><summary>Pot șterge istoricul negativ?</summary><p>Doar dacă e greșit, nenotificat sau mai vechi de 4 ani de la plată. Datele corecte rămân până la termen.</p></details>
+          <details><summary>Cum contactez Biroul de Credit?</summary><p>Prin portalul birouldecredit.ro, prin e-mail, telefonic sau prin poștă, la sediul din sectorul 3. Pentru date personale scrii la rpd@birouldecredit.ro.</p></details>
+          <details><summary>Ce înseamnă scorul de credit?</summary><p>Un număr FICO între 300 și 850 care estimează riscul de neplată. 651–750 este considerat bun.</p></details>
+          <details><summary>Cine are acces la datele mele?</summary><p>Tu și participanții care au un motiv legitim, de regulă o cerere de credit. Fiecare acces apare în raport.</p></details>
+          <details><summary>Ce fac dacă datele sunt greșite?</summary><p>Scrii participantului care le-a raportat, cu dovezi. Dacă nu răspunde în o lună, faci plângere la ANSPDCP.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai primit un răspuns negativ?" lead="Ești din București și ai primit un răspuns negativ de la bancă sau de la Biroul de Credit? Trimite-ne raportul și corespondența, iar un avocat îți spune unde depui cererea sau plângerea. Consultația nu te obligă la nimic." nav="/|Acasă;/verificare-online-biroul-de-credit/|Verificare online;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat Biroului de Credit. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var ZI=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
+  var U={
+    r:['Biroul de Credit, sector 3','Cerere de acces, art. 15 GDPR. Online pe birouldecredit.ro sau recomandat la Str. Sfânta Vineri nr. 29.'],
+    g:['Banca sau IFN-ul care a raportat','Cerere de rectificare, art. 16 GDPR, cu dovezi. Nu Biroului de Credit: el nu modifică singur datele participanților.'],
+    n:['ANSPDCP, online sau prin poștă','Plângere, art. 77 GDPR. Atașezi cererea inițială și dovada primirii ei.'],
+    f:['Instanța competentă din București','Acțiune pentru rectificare și despăgubiri. Competența depinde de valoare și natura cererii: verifică înainte de depunere.']
+  };
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function zi(d){return ZI[d.getUTCDay()]+', '+fmt(d)}
+  function addM(d,n){var x=new Date(d.getTime()),day=x.getUTCDate();x.setUTCDate(1);x.setUTCMonth(x.getUTCMonth()+n);var last=new Date(Date.UTC(x.getUTCFullYear(),x.getUTCMonth()+1,0)).getUTCDate();x.setUTCDate(Math.min(day,last));return x}
+  function addD(d,n){return new Date(d.getTime()+n*864e5)}
+  function today(){var t=new Date();return Date.UTC(t.getFullYear(),t.getMonth(),t.getDate())}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var pb=$('f-pb').value,met=$('f-met').value,u=U[pb];
+    $('o-u').textContent=u[0];$('o-us').textContent=u[1];cls('c-u',pb==='f'?'alert':'ok');
+    var t=$('f-trim').value;
+    if(pb==='f'){$('o-a').textContent='—';$('o-as').textContent='În instanță curg termenele procedurale.';$('o-t').textContent='—';$('o-ts').textContent='Nu se aplică termenul de o lună.';$('o-m').textContent='—';$('o-ms').textContent='Cere o consultație înainte de a depune acțiunea.';cls('c-t');cls('c-m');return}
+    if(!t){$('o-a').textContent='—';$('o-as').textContent='Introdu data trimiterii.';$('o-t').textContent='—';$('o-ts').textContent='O lună (art. 12 GDPR).';$('o-m').textContent='—';$('o-ms').textContent='Încă două luni, doar dacă ești anunțat.';cls('c-t');cls('c-m');return}
+    var d=dt(t),n=parseInt(($('f-zile').value||'0').replace(/\D/g,''),10);if(isNaN(n))n=0;
+    var a=met==='p'?addD(d,n):d;
+    $('o-a').textContent=zi(a);
+    $('o-as').textContent=met==='o'?(pb==='r'?'Online, raportul vine în aceeași zi.':'Online, cererea e primită în ziua trimiterii.'):met==='b'?'Prin bancă durata e variabilă; banca îți poate da codul de înrolare.':'Data din confirmarea de primire. De atunci curge termenul.';
+    if(pb==='n'){$('o-t').textContent='—';$('o-ts').textContent='ANSPDCP are propriile termene de soluționare.';$('o-m').textContent='—';$('o-ms').textContent='Păstrează dovada plângerii și numărul de înregistrare.';cls('c-t');cls('c-m');return}
+    var d1=addM(a,1),d3=addM(a,3),l=Math.round((d1.getTime()-today())/864e5);
+    $('o-t').textContent=zi(d1);
+    if(0>l){cls('c-t','alert');$('o-ts').textContent='Termenul a trecut. Fără răspuns? Plângere la ANSPDCP (art. 77 GDPR).'}
+    else{cls('c-t');$('o-ts').textContent='O lună de la primire (art. 12 GDPR).'}
+    $('o-m').textContent=zi(d3);cls('c-m');$('o-ms').textContent='Doar la cereri complexe și dacă ești anunțat în prima lună.';
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-pb','f-met','f-trim','f-zile'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-pb').value='g';$('f-met').value='p';$('f-trim').value='2026-11-02';$('f-zile').value='2';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+  calc();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Biroul de Credit București","item":"https://chinsolvency.ro/biroul-de-credit-bucuresti/"}]},
+ {"@type":"Article","headline":"Biroul de Credit București: contact, raport și cereri","description":"Sediul Biroului de Credit din București, cum ceri raportul online, prin poștă sau prin bancă, în cât timp primești răspuns și unde reclami. Pași practici.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/biroul-de-credit-bucuresti/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/raportul-de-credit-online-posta-sau-banca.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/unde-te-adresezi-in-bucuresti.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":{"@type":"City","name":"București"},"knowsAbout":["Biroul de Credit","GDPR","Drept bancar","Protecția datelor"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Ce este Biroul de Credit?","acceptedAnswer":{"@type":"Answer","text":"O societate privată din București, deținută de bănci, care păstrează istoricul de plată al clienților de credite."}},
+  {"@type":"Question","name":"Cum pot obține raportul de credit gratuit?","acceptedAnswer":{"@type":"Answer","text":"Online, pe birouldecredit.ro, sau prin cerere scrisă. Primul raport din fiecare an este gratuit."}},
+  {"@type":"Question","name":"Cât durează verificarea datelor?","acceptedAnswer":{"@type":"Answer","text":"Online, aceeași zi. O cerere scrisă primește răspuns în cel mult o lună, prelungibil cu două luni."}},
+  {"@type":"Question","name":"Pot șterge istoricul negativ?","acceptedAnswer":{"@type":"Answer","text":"Doar dacă e greșit, nenotificat sau mai vechi de 4 ani de la plată. Datele corecte rămân până la termen."}},
+  {"@type":"Question","name":"Cum contactez Biroul de Credit?","acceptedAnswer":{"@type":"Answer","text":"Prin portalul birouldecredit.ro, prin e-mail, telefonic sau prin poștă, la sediul din sectorul 3. Pentru date personale scrii la rpd@birouldecredit.ro."}},
+  {"@type":"Question","name":"Ce înseamnă scorul de credit?","acceptedAnswer":{"@type":"Answer","text":"Un număr FICO între 300 și 850 care estimează riscul de neplată. 651–750 este considerat bun."}},
+  {"@type":"Question","name":"Cine are acces la datele mele?","acceptedAnswer":{"@type":"Answer","text":"Tu și participanții care au un motiv legitim, de regulă o cerere de credit. Fiecare acces apare în raport."}},
+  {"@type":"Question","name":"Ce fac dacă datele sunt greșite?","acceptedAnswer":{"@type":"Answer","text":"Scrii participantului care le-a raportat, cu dovezi. Dacă nu răspunde în o lună, faci plângere la ANSPDCP."}}
+ ]}
+]}
+</script>
