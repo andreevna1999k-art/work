@@ -29,12 +29,16 @@ html = re.sub(r'<!--@(\w+)(.*?)-->', _inc, html, flags=re.S)
 html = html.replace('/*BRAND_CSS*/', brand).replace('/*ARTICLE_CSS*/', article).replace('/*KIT_CSS*/', kit)
 name = src.name.replace('.src.html', '')
 
-before, after = html.split('<!-- FORM_SLOT -->')
-(out / f'{name}.wp.txt').write_text(
-    f'<!-- wp:html -->\n{before}\n<!-- /wp:html -->\n\n'
-    f'<!-- wp:shortcode -->\n{FORM}\n<!-- /wp:shortcode -->\n\n'
-    f'<!-- wp:html -->\n{after}\n<!-- /wp:html -->', encoding='utf-8')
-stub = '<div style="height:260px;border:1px dashed #ccc;border-radius:12px;display:grid;place-items:center;color:#999">[SureForms]</div>'
+if '<!-- FORM_SLOT -->' in html:
+    before, after = html.split('<!-- FORM_SLOT -->')
+    (out / f'{name}.wp.txt').write_text(
+        f'<!-- wp:html -->\n{before}\n<!-- /wp:html -->\n\n'
+        f'<!-- wp:shortcode -->\n{FORM}\n<!-- /wp:shortcode -->\n\n'
+        f'<!-- wp:html -->\n{after}\n<!-- /wp:html -->', encoding='utf-8')
+    stub = '<div style="height:260px;border:1px dashed #ccc;border-radius:12px;display:grid;place-items:center;color:#999">[SureForms]</div>'
+else:  # no form: CTA links go to the chat, whole page is one HTML block
+    before, after, stub = html, '', ''
+    (out / f'{name}.wp.txt').write_text(f'<!-- wp:html -->\n{html}\n<!-- /wp:html -->', encoding='utf-8')
 (out / f'{name}.html').write_text(
     '<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
     '<style>body{margin:0}</style></head><body>' + before + stub + after + '</body></html>', encoding='utf-8')
