@@ -1,0 +1,361 @@
+<!-- Consultarius — /birou-de-credit-brd/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#contestare|Contestare;#date|Ce raportează;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Birou de Credit BRD</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Drept bancar · Protecția datelor</span>
+          <h1>Birou de Credit BRD: <span class="accent">verificare raport și ștergerea datelor</span></h1>
+          <div class="lead">
+            <p>Consilierul BRD îți spune că dosarul de credit nu trece „din cauza Biroului de Credit”. Nu primești alte detalii. Tu știi că ai plătit tot.</p>
+            <p>Aici afli ce date transmite BRD la <strong>Biroul de Credit</strong>, cum te verifică banca la o cerere de credit și cât rămâne o restanță după plată. Afli și cum contești o raportare BRD greșită: cui scrii, ce atașezi și ce faci dacă banca refuză.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>GDPR · Decizia ANSPDCP nr. 105/2007</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Până când rămâne restanța?</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce este Biroul de Credit</h2>
+          <p>Biroul de Credit SA este o bază de date privată a băncilor și IFN-urilor. Are peste 100 de participanți, iar acționarii sunt 18 bănci. BRD este participant: transmite date despre creditele clienților și consultă raportul când ceri un împrumut. Biroul de Credit doar administrează baza. Decizia de creditare aparține băncii.</p>
+          <div class="opts">
+            <div><b>Peste 30 de zile</b>și peste 10 lei: întârzierea devine dată negativă</div>
+            <div><b>4 ani</b>de la plată sau închidere rămân datele negative</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>E raportată restanța și <span class="accent">până când rămâne</span>?</h2></div>
+      <p>Verifici dacă o întârziere trece pragul pentru date negative, până când poate apărea în raport și până când trebuie să-ți răspundă BRD la o cerere de corectare.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Întârzierea</div>
+          <div class="field"><label for="b-zile">Zile de întârziere</label><div class="inp"><input id="b-zile" inputmode="numeric" placeholder="ex. 40"><span class="unit">zile</span></div></div>
+          <div class="field"><label for="b-suma">Suma restantă</label><div class="inp"><input id="b-suma" inputmode="decimal" placeholder="ex. 1 150"><span class="unit">lei</span></div></div>
+          <div class="field full"><label for="b-plata">Data plății restanței sau a închiderii produsului</label><div class="inp"><input type="date" id="b-plata"></div></div>
+          <div class="grp">Cererea către BRD (opțional)</div>
+          <div class="field full"><label for="b-cerere">Data la care BRD a primit cererea</label><div class="inp"><input type="date" id="b-cerere"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Verifică</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: rată 1.150 lei, 40 de zile</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="tri">
+            <div class="opt" id="c-n"><span class="k">Dată negativă?</span><span class="v" id="o-n">—</span><span class="s" id="o-ns">Completați zilele și suma.</span></div>
+            <div class="opt" id="c-p"><span class="k">Vizibilă în raport până la</span><span class="v" id="o-p">—</span><span class="s" id="o-ps">Completați data plății.</span></div>
+            <div class="opt" id="c-r"><span class="k">Răspunsul BRD</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Completați data primirii cererii, dacă ai trimis-o.</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Trimite raportul la verificat</a>
+          <span class="disc">Prag: peste 30 de zile calendaristice și peste 10 lei. Termen de păstrare: 4 ani de la plată sau închidere. Răspuns: o lună, prelungibil cu două luni (art. 12 GDPR). Calcul orientativ.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#date">Ce raportează BRD</a>
+      <a href="#raport">Raportul gratuit</a>
+      <a href="#inscriere">Înscrierea negativă</a>
+      <a href="#stergere">Când se poate șterge</a>
+      <a href="#contestare">Contestare pas cu pas</a>
+      <a href="#instanta">Instanță și practică</a>
+      <a href="#drepturi">Drepturile tale</a>
+      <a href="#comparatie">Singur sau cu avocat</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="date">
+        <span class="eyebrow">Ce raportează BRD</span>
+        <h2>Ce tipuri de date transmite BRD</h2>
+        <p>Potrivit notei de informare BRD privind Biroul de Credit, banca transmite:</p>
+        <ul class="chk">
+          <li>date de identificare: nume, CNP, adrese, telefon, angajator;</li>
+          <li>date despre produs: tip, sumă, sold, stare, data închiderii;</li>
+          <li>întârzieri: număr de zile și categoria de întârziere;</li>
+          <li>evenimente: restructurare, refinanțare, dare în plată, cesiune;</li>
+          <li>calitatea de codebitor sau garant și date despre insolvență;</li>
+          <li>numărul de interogări ale raportului.</li>
+        </ul>
+        <p>Temeiul indicat de BRD este interesul legitim: creditare responsabilă și prevenirea supraîndatorării.</p>
+        <h3>Cine transmite informații către Biroul de Credit</h3>
+        <p>Raportează băncile, IFN-urile, firmele de leasing, unii asigurători și firmele de recuperare a creanțelor. De aceea, un refuz la BRD nu înseamnă că BRD a raportat problema. Restanța poate veni de la un IFN sau de la un <a href="/recuperatorii-de-creante/">recuperator</a>. Centrala Riscului de Credit (CRC) de la BNR este o bază separată, pentru expuneri de peste 20.000 lei.</p>
+      </section>
+
+      <section id="raport">
+        <span class="eyebrow">Raportul</span>
+        <h2>Cum verifici raportul de credit gratuit</h2>
+        <p>Ai dreptul la un raport gratuit pe an, direct pe birouldecredit.ro, cu cont confirmat prin SMS. Ca client BRD, poți cere băncii și o copie a raportului folosit în decizia de creditare. Rapoartele suplimentare din același an costă 6 lei.</p>
+        <div class="todo">[DE VERIFICAT: tariful actual al rapoartelor suplimentare]</div>
+        <h3>Verificare raport credit online pas cu pas</h3>
+        <ol class="num">
+          <li>Îți faci cont pe birouldecredit.ro cu e-mail, telefon și CNP.</li>
+          <li>Confirmi identitatea prin codul primit prin SMS.</li>
+          <li>Descarci raportul și îl salvezi în PDF.</li>
+          <li>Cauți toate rândurile unde participantul este BRD.</li>
+        </ol>
+        <h3>Ce informații conține raportul de credit</h3>
+        <p>Pentru fiecare produs BRD vezi tipul, data acordării, soldul, starea (activ sau închis) și istoricul întârzierilor. Separat apar interogările: fiecare cerere de credit lasă o urmă. Dacă ai fost doar garant la un credit BRD, și acesta apare în raport.</p>
+        <h4>Interpretarea scorului de credit</h4>
+        <p>Scorul FICO are valori între 300 și 850. Intervalul 651–750 este considerat „bun”. Aplicația YOU BRD poate afișa scorul. BRD nu decide doar după scor. Contează și venitul, gradul de îndatorare și politica internă de risc.</p>
+        <div class="todo">[DE VERIFICAT: dacă aplicația BRD afișează scorul FICO și în ce condiții]</div>
+      </section>
+
+      <section id="inscriere">
+        <span class="eyebrow">Date negative</span>
+        <h2>Ce înseamnă înscrierea în Biroul de Credit</h2>
+        <p>Înscrierea negativă înseamnă că participantul a raportat o întârziere de peste 30 de zile calendaristice, pentru o sumă restantă de peste 10 lei. Înainte de prima raportare negativă, BRD trebuie să te informeze cu cel puțin 15 zile (Decizia ANSPDCP nr. 105/2007). Datele unei cereri de credit respinse rămân 6 luni.</p>
+        <p>Regula celor 6 luni apare în nota de informare BRD. Ea privește doar cererea respinsă sau retrasă, nu și o restanță.</p>
+        <div class="caps">
+          <div>Prag pentru date negative<b>30+ zile</b></div>
+          <div>Sumă minimă<b>10+ lei</b></div>
+          <div>Informare prealabilă<b>15 zile</b></div>
+          <div>Păstrare după plată<b>4 ani</b></div>
+        </div>
+        <h3>Cât timp rămân datele în Biroul de Credit</h3>
+        <p>Datele negative se păstrează 4 ani. Termenul curge de la data plății restanței sau a închiderii produsului, adică de la ultima actualizare. Nu curge de la prima întârziere.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Rata BRD este de 1.150 lei. Dacă întârzii 25 de zile, nu treci pragul de 30 de zile pentru date negative. Dacă întârzii 40 de zile și plătești pe 10.09.2026, restanța poate rămâne vizibilă până pe 10.09.2030. Dacă o vezi în raport în octombrie 2030, ai motiv de contestare.</p>
+          <span class="formula">Plată 10.09.2026 + 4 ani = 10.09.2030</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/restanta-brd-de-la-intarziere-la-stergere.webp" width="1200" height="675" alt="birou de credit BRD: cât rămâne o restanță în raport după plată" loading="lazy">
+          <figcaption>Restanța BRD: de la întârziere la ștergere</figcaption>
+        </figure>
+      </section>
+
+      <section id="stergere">
+        <span class="eyebrow">Ștergere</span>
+        <h2>Ștergere Biroul de Credit: când este posibilă</h2>
+        <p>Datele corecte nu pot fi șterse legal înainte de 4 ani, nici de BRD, nici de Biroul de Credit. Poți obține corectarea sau ștergerea doar dacă datele sunt eronate, au fost raportate fără notificarea de 15 zile sau au depășit termenul. Cererea o adresezi participantului care a raportat, adică BRD.</p>
+        <div class="note"><b>Caz special:</b> dacă ai notificat BRD pentru dare în plată (Legea nr. 77/2016), banca nu are voie să te înscrie în Biroul de Credit pentru acel credit, pe durata procedurii.</div>
+        <h3>Ștergere date incorecte sau abuzive</h3>
+        <ul class="ban">
+          <li>Restanța plătită apare încă activă.</li>
+          <li>Cardul de credit închis apare deschis.</li>
+          <li>Creditul cesionat apare de două ori: la BRD și la recuperator.</li>
+          <li>Suma sau numărul de zile de întârziere nu corespund extrasului.</li>
+          <li>BRD nu poate dovedi notificarea de 15 zile.</li>
+        </ul>
+        <h3>Ștergere în baza GDPR</h3>
+        <p>GDPR îți dă dreptul la rectificare (art. 16) și la ștergere (art. 17). Ștergerea funcționează limitat: pentru date inexacte, prelucrate nelegal sau păstrate peste termen.</p>
+        <h4>Ce spune legislația GDPR</h4>
+        <p>Pe scurt: banca poate raporta o restanță reală, pe temeiul interesului legitim. Nu poate raporta date greșite sau incomplete. Legea nr. 190/2018 aplică GDPR în România. Art. 17 nu „șterge” o întârziere care a existat.</p>
+      </section>
+
+      <section id="contestare">
+        <span class="eyebrow">Pas cu pas</span>
+        <h2>Procedura de contestare a unei raportări BRD pas cu pas</h2>
+        <p>Procedura are patru pași: descarci raportul, identifici rândul greșit raportat de BRD, trimiți o cerere scrisă cu dovezi și aștepți răspunsul. BRD are o lună să răspundă, cu prelungire de încă două luni pentru cereri complexe. Dacă refuză sau tace, faci plângere la ANSPDCP sau mergi în instanță.</p>
+        <h3>Pasul 1: verificare raport</h3>
+        <p>Descarci raportul complet și marchezi rândurile BRD. Păstrează PDF-ul cu data descărcării.</p>
+        <h3>Pasul 2: identificare problemă</h3>
+        <p>Compari fiecare rând cu contractul, scadențarul și extrasele. Notezi exact ce e greșit: suma, zilele de întârziere, starea sau lipsa notificării.</p>
+        <h3>Pasul 3: trimitere cerere</h3>
+        <p>Trimiți cererea către responsabilul cu protecția datelor din BRD: dataprotection@brd.ro sau prin poștă la Bd. Ion Mihalache nr. 1-7, sector 1, Turn BRD, București. Poți depune cererea și în agenție, cu număr de înregistrare. Ca alternativă, folosești portalul Biroului de Credit.</p>
+        <div class="todo">[DE VERIFICAT: datele de contact DPO din nota de informare BRD în vigoare]</div>
+        <h3>Pasul 4: răspunsul băncii</h3>
+        <p>Termenul este de o lună de la primire (art. 12 GDPR). Dacă BRD corectează datele, descarci un raport nou și verifici. Dacă refuză, ai plângere la ANSPDCP (art. 77 GDPR) sau acțiune în instanță.</p>
+        <h4>Model de cerere către BRD</h4>
+        <p>Structura minimă: datele tale, produsul vizat, informația contestată exact cum apare în raport, motivul, cererea și anexele. Completează modelul de mai jos:</p>
+        <div class="tpl" id="tpl">„Subsemnatul/a [nume], CNP [CNP], domiciliat/ă în [adresă], telefon [telefon], vă solicit, în temeiul art. 16 și 17 GDPR, [rectificarea / actualizarea / ștergerea] informației raportate de BRD la Biroul de Credit pentru [contractul nr. / cardul nr.], care apare în raport astfel: [informația contestată]. Motivul: [eroare / lipsa notificării prealabile de 15 zile / termen de păstrare expirat]. Vă rog să-mi comunicați și dovada notificării de 15 zile. Anexez raportul de credit, extrasele de cont și adresa de închidere.”</div>
+        <button type="button" class="btn btn-line tpl-btn" id="b-copy">Copiază modelul</button>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cum-contesti-o-raportare-brd.webp" width="1200" height="675" alt="birou de credit BRD: pașii de contestare a unei raportări greșite" loading="lazy">
+          <figcaption>Cum contești o raportare BRD</figcaption>
+        </figure>
+      </section>
+
+      <section id="instanta">
+        <span class="eyebrow">Instanță</span>
+        <h2>Ștergere prin instanță și practică judiciară</h2>
+        <p>Instanța devine necesară când BRD refuză corectarea unor date dovedit greșite sau când raportarea ți-a produs un prejudiciu: un credit pierdut, o refinanțare respinsă. Poți cere rectificarea, ștergerea și despăgubiri. Ai nevoie de raport, cererea trimisă, răspunsul băncii și dovada refuzului de credit.</p>
+        <h3>Când este necesară acțiunea în instanță</h3>
+        <p>După un refuz scris, după o lună fără răspuns sau când ANSPDCP nu rezolvă problema. Instanța nu șterge o restanță reală. Verifică exactitatea datelor și legalitatea raportării.</p>
+        <h3>Exemple de cazuri reale</h3>
+        <p>Situații tipice (anonimizate):</p>
+        <ul class="chk">
+          <li>Un client închide cardul de credit, cu sold zero. Raportul îl arată activ doi ani.</li>
+          <li>Un credit trece la un recuperator. Datoria apare dublu, iar scorul scade.</li>
+          <li>O restanță e raportată fără ca omul să fi primit vreo informare prealabilă.</li>
+        </ul>
+        <h3>Decizii favorabile consumatorilor</h3>
+        <p>Soluțiile favorabile apar de regulă când banca nu poate dovedi notificarea sau exactitatea datelor. Presa a relatat amenzi aplicate unor bănci de ANPC și ANSPDCP pentru raportări eronate.</p>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">Drepturi</span>
+        <h2>Drepturile persoanelor conform legislației</h2>
+        <p>Față de BRD și de Biroul de Credit ai patru drepturi principale din GDPR, plus dreptul la informare înainte de raportare și plângerea la ANSPDCP.</p>
+        <div class="rights">
+          <div><span class="n">1</span><b>Acces la date</b>Art. 15 GDPR: afli ce date are BRD și ce a transmis.</div>
+          <div><span class="n">2</span><b>Rectificare</b>Art. 16 GDPR: corectarea datelor inexacte.</div>
+          <div><span class="n">3</span><b>Ștergere</b>Art. 17 GDPR: doar în cazurile limitate de lege.</div>
+          <div><span class="n">4</span><b>Opoziție</b>Art. 21 GDPR: te opui prelucrării bazate pe interes legitim.</div>
+        </div>
+        <div class="note dark"><b>Poziția juridică.</b> Din experiența mea, la clienții refuzați de BRD, problema vine des de la alt participant, nu de la BRD. Prima întrebare corectă nu e „cum mă șterge BRD”. Este „cine a raportat rândul care mă blochează”.</div>
+      </section>
+
+      <section id="comparatie">
+        <span class="eyebrow">Comparație</span>
+        <h2>Comparație: contestare singur vs avocat</h2>
+        <p>Pentru o eroare simplă, cu dovadă clară, poți scrie singur către BRD. Avocatul ajută când ai raportări multiple, cesiuni, un refuz motivat formal sau un prejudiciu de recuperat în instanță. Costul real nu e doar onorariul. E și timpul pierdut cu cereri respinse.</p>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Metodă</th><th>Durată orientativă</th><th>Cost</th><th>Dificultate</th><th>Când se potrivește</th></tr></thead>
+          <tbody>
+            <tr><td>Cerere directă la BRD</td><td>Până la o lună</td><td>Gratuit</td><td>Mică</td><td>Eroare simplă, dovadă clară</td></tr>
+            <tr><td>Cerere GDPR și plângere ANSPDCP</td><td>Câteva luni</td><td>Gratuit</td><td>Medie</td><td>Refuz sau lipsă de răspuns</td></tr>
+            <tr><td>Acțiune în instanță</td><td>Luni sau ani</td><td>Taxe judiciare</td><td>Mare</td><td>Prejudiciu, refuz nejustificat</td></tr>
+            <tr><td>Prin avocat</td><td>Depinde de cale</td><td>Onorariu</td><td>Preluată de avocat</td><td>Dosar complex, miză mare</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Atenție</span>
+        <h2>Greșeli frecvente în ștergerea datelor</h2>
+        <p>Cele mai multe cereri sunt respinse din trei motive: sunt trimise destinatarului greșit, nu au dovezi sau cer ștergerea unor date corecte. Altă greșeală: aplici la alte trei bănci după refuzul BRD. Fiecare cerere lasă o interogare nouă în raport.</p>
+        <ul class="ban">
+          <li>Scrii Biroului de Credit, deși eroarea e a BRD.</li>
+          <li>Nu ceri dovada notificării de 15 zile.</li>
+          <li>Nu păstrezi numărul de înregistrare al cererii.</li>
+          <li>Plătești unei firme care promite „ștergere garantată”.</li>
+        </ul>
+        <h3>Recomandări pentru îmbunătățirea scorului de credit</h3>
+        <p>Scorul se reface prin plăți la timp și prin timp. Plătește ratele înainte de scadență și păstrează dovezile. Închide produsele nefolosite și cere confirmare scrisă. Evită cererile multiple de credit în aceeași lună. Verifică raportul cu două-trei luni înainte de un credit mare.</p>
+        <div class="note dark">În practica mea, cei care verifică raportul înainte de cererea la BRD au timp să corecteze erorile. Cei care află la ghișeu pierd de obicei câteva luni.</div>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Descarcă raportul gratuit de pe birouldecredit.ro și marchează rândurile BRD.</li>
+          <li>Pune lângă fiecare rând contractul și extrasul. Notează ce nu se potrivește.</li>
+          <li>Dacă găsești o eroare, trimite cererea scrisă către DPO-ul BRD și notează data. Termenul de o lună curge de atunci.</li>
+        </ol>
+        <!--@author practice="drept bancar și protecția datelor" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre Biroul de Credit</h2>
+        <div class="faq">
+          <details open><summary>Cum pot face ștergere din Biroul de Credit pentru un credit BRD?</summary><p>Doar dacă datele sunt greșite, nenotificate sau păstrate peste 4 ani. Trimiți cererea către BRD, cu dovezi.</p></details>
+          <details><summary>Cât durează ștergerea datelor?</summary><p>BRD are o lună să răspundă, prelungibil cu două luni. După corectare, verifici raportul din nou.</p></details>
+          <details><summary>Pot șterge o datorie reală?</summary><p>Nu. O restanță reală, raportată legal, rămâne 4 ani de la plată sau închidere.</p></details>
+          <details><summary>Cum verific raportul de credit gratuit?</summary><p>Pe birouldecredit.ro, o dată pe an, gratuit. Poți cere și BRD copia raportului folosit în decizia de credit.</p></details>
+          <details><summary>Ce este scorul de credit?</summary><p>Scorul FICO, între 300 și 850, estimează riscul de neplată. BRD îl folosește alături de venit și grad de îndatorare.</p></details>
+          <details><summary>Datele se șterg automat după 4 ani?</summary><p>Da, în principiu. Dacă rămân mai mult, ceri ștergerea pe motiv de termen expirat.</p></details>
+          <details><summary>Pot face contestarea fără avocat?</summary><p>Da, pentru erori simple. Pentru instanță sau dosare complexe, un avocat te ajută.</p></details>
+          <details><summary>Ce fac dacă BRD refuză ștergerea?</summary><p>Ceri motivarea în scris. Apoi depui plângere la ANSPDCP sau acțiune în instanță.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="BRD te-a refuzat din cauza Biroului de Credit?" lead="Trimite-ne raportul de credit și răspunsul primit de la BRD, iar un avocat îți spune dacă raportarea se poate contesta și pe ce cale. Consultația nu te obligă la nimic." nav="/|Acasă;/amanare-rate-brd/|Amânare rate BRD;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat BRD sau Biroului de Credit. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var m0=new Intl.NumberFormat('ro-RO',{maximumFractionDigits:0});
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function today(){var t=new Date();return Date.UTC(t.getFullYear(),t.getMonth(),t.getDate())}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var z=num('b-zile'),s=num('b-suma'),neg=null;
+    if(z!==null&&s!==null){neg=z>30&&s>10;
+      if(neg){$('o-n').textContent='Da';cls('c-n','alert');$('o-ns').innerHTML='Peste 30 de zile și peste 10 lei. BRD trebuia să te informeze cu <b>cel puțin 15 zile</b> înainte de prima raportare negativă.'}
+      else{$('o-n').textContent='Nu';cls('c-n','ok');$('o-ns').innerHTML=(z>30?'Suma de cel mult 10 lei':'Întârziere de cel mult 30 de zile')+': nu trece pragul pentru date negative.'}}
+    else{$('o-n').textContent='—';cls('c-n');$('o-ns').textContent='Completați zilele și suma.'}
+    var p=$('b-plata').value;
+    if(p&&neg!==false){var d=dt(p);d.setUTCFullYear(d.getUTCFullYear()+4);var left=Math.round((d.getTime()-today())/864e5);
+      $('o-p').textContent=fmt(d);
+      if(0>left){cls('c-p','alert');$('o-ps').innerHTML='<b>Termenul de 4 ani a trecut.</b> Dacă restanța apare încă în raport, ceri ștergerea pentru termen expirat.'}
+      else{cls('c-p');$('o-ps').innerHTML='4 ani de la plată sau închidere. Dacă o vezi după această dată, ai motiv de contestare.'}}
+    else if(p){$('o-p').textContent='Nu se raportează';cls('c-p','ok');$('o-ps').textContent='Sub prag nu există dată negativă de păstrat.'}
+    else{$('o-p').textContent='—';cls('c-p');$('o-ps').textContent='Completați data plății.'}
+    var c=$('b-cerere').value;
+    if(c){var d1=dt(c),d3=dt(c);d1.setUTCMonth(d1.getUTCMonth()+1);d3.setUTCMonth(d3.getUTCMonth()+3);var l1=Math.round((d1.getTime()-today())/864e5);
+      $('o-r').textContent='până la '+fmt(d1);
+      if(0>l1){cls('c-r','alert');$('o-rs').innerHTML='Termenul de o lună a trecut. Dacă BRD nu a răspuns sau nu a anunțat prelungirea, poți face plângere la ANSPDCP. Prelungirea maximă: <b>'+fmt(d3)+'</b>.'}
+      else{cls('c-r');$('o-rs').innerHTML='O lună de la primire. Pentru cereri complexe, BRD poate prelungi până la <b>'+fmt(d3)+'</b>, cu informarea ta.'}}
+    else{$('o-r').textContent='—';cls('c-r');$('o-rs').textContent='Completați data primirii cererii, dacă ai trimis-o.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['b-zile','b-suma','b-plata','b-cerere'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('b-zile').value='40';$('b-suma').value='1150';$('b-plata').value='2026-09-10';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+  $('b-copy').addEventListener('click',function(){
+    var t=$('tpl').innerText.replace(/^„|”$/g,''),b=this;
+    function done(){b.textContent='Copiat ✓';setTimeout(function(){b.textContent='Copiază modelul'},2000)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+    else{var r=document.createRange();r.selectNodeContents($('tpl'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done()}catch(e){}}
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Birou de Credit BRD","item":"https://chinsolvency.ro/birou-de-credit-brd/"}]},
+ {"@type":"Article","headline":"Birou de Credit BRD: ce raportează banca și cum contești","description":"Ce date transmite BRD la Biroul de Credit, cât rămân după plată și cum contești o raportare greșită: cerere către BRD, termen de o lună, ANSPDCP.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/birou-de-credit-brd/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/cum-contesti-o-raportare-brd.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/restanta-brd-de-la-intarziere-la-stergere.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum contești o raportare BRD la Biroul de Credit","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/cum-contesti-o-raportare-brd.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Verifică raportul","text":"Descarci raportul complet și marchezi rândurile BRD."},
+  {"@type":"HowToStep","position":2,"name":"Identifică problema","text":"Compari fiecare rând cu contractul, scadențarul și extrasele și notezi exact ce e greșit."},
+  {"@type":"HowToStep","position":3,"name":"Trimite cererea","text":"Trimiți cererea scrisă, cu dovezi, către responsabilul cu protecția datelor din BRD."},
+  {"@type":"HowToStep","position":4,"name":"Așteaptă răspunsul","text":"BRD are o lună să răspundă, prelungibil cu două luni. Dacă refuză, faci plângere la ANSPDCP sau acțiune în instanță."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Biroul de Credit","GDPR","Drept bancar","Ștergere date Biroul de Credit"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Cum pot face ștergere din Biroul de Credit pentru un credit BRD?","acceptedAnswer":{"@type":"Answer","text":"Doar dacă datele sunt greșite, nenotificate sau păstrate peste 4 ani. Trimiți cererea către BRD, cu dovezi."}},
+  {"@type":"Question","name":"Cât durează ștergerea datelor?","acceptedAnswer":{"@type":"Answer","text":"BRD are o lună să răspundă, prelungibil cu două luni. După corectare, verifici raportul din nou."}},
+  {"@type":"Question","name":"Pot șterge o datorie reală?","acceptedAnswer":{"@type":"Answer","text":"Nu. O restanță reală, raportată legal, rămâne 4 ani de la plată sau închidere."}},
+  {"@type":"Question","name":"Cum verific raportul de credit gratuit?","acceptedAnswer":{"@type":"Answer","text":"Pe birouldecredit.ro, o dată pe an, gratuit. Poți cere și BRD copia raportului folosit în decizia de credit."}},
+  {"@type":"Question","name":"Ce este scorul de credit?","acceptedAnswer":{"@type":"Answer","text":"Scorul FICO, între 300 și 850, estimează riscul de neplată. BRD îl folosește alături de venit și grad de îndatorare."}},
+  {"@type":"Question","name":"Datele se șterg automat după 4 ani?","acceptedAnswer":{"@type":"Answer","text":"Da, în principiu. Dacă rămân mai mult, ceri ștergerea pe motiv de termen expirat."}},
+  {"@type":"Question","name":"Pot face contestarea fără avocat?","acceptedAnswer":{"@type":"Answer","text":"Da, pentru erori simple. Pentru instanță sau dosare complexe, un avocat te ajută."}},
+  {"@type":"Question","name":"Ce fac dacă BRD refuză ștergerea?","acceptedAnswer":{"@type":"Answer","text":"Ceri motivarea în scris. Apoi depui plângere la ANSPDCP sau acțiune în instanță."}}
+ ]}
+]}
+</script>

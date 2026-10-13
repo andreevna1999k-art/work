@@ -18,6 +18,15 @@ import re
 for js in re.findall(r'<script>(.*?)</script>', html, re.S):
     bad = re.findall(r'[\w)\]]<=?[\d(.]|[\w)\]]<=?[a-z]+[.)\]]', js)
     if bad: print(f'WARNING: inline JS has "<" comparisons, may break in WordPress: {bad[:5]}')
+# partials: <!--@name key="value" key2="a|Label;b|Label" --> ; nav values become <a href> lists
+def _nav(v): return ''.join(f'<a href="{h}">{t}</a>' for h, t in (x.split('|', 1) for x in v.split(';') if x))
+def _inc(m):
+    t = (src.parent / 'partials' / f'{m.group(1)}.html').read_text(encoding='utf-8')
+    for k, v in re.findall(r'(\w+)="([^"]*)"', m.group(2)):
+        t = t.replace('{' + k + '}', _nav(v) if k == 'nav' else v)
+    return t
+html = re.sub(r'<!--@(\w+)(.*?)-->', _inc, html, flags=re.S)
+html = html.replace('/*BRAND_CSS*/', brand).replace('/*ARTICLE_CSS*/', article).replace('/*KIT_CSS*/', kit)
 name = src.name.replace('.src.html', '')
 
 before, after = html.split('<!-- FORM_SLOT -->')
