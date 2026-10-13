@@ -1,0 +1,362 @@
+<!-- Consultarius — /cerere-de-stergere-din-biroul-de-credit/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#verificare|Ai temei?;#model|Model;#depunere|Depunere;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><a href="/verificare-online-biroul-de-credit/">Biroul de Credit</a><span>/</span><span>Cerere de ștergere</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Biroul de Credit · GDPR</span>
+          <h1>Cerere de ștergere din Biroul de Credit: <span class="accent">procedura completă</span></h1>
+          <div class="lead">
+            <p>Ai depus actele pentru un credit. După două zile, banca te refuză. Motivul: „date negative în Biroul de Credit”. Tu știi că ai plătit tot.</p>
+            <p>Aici afli când o <strong>cerere de ștergere din Biroul de Credit</strong> are șanse legale, cui o trimiți, ce motive funcționează și în cât timp trebuie să primești răspuns. Afli și ce faci dacă banca refuză.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Decizia ANSPDCP nr. 105/2007 · art. 16–17 GDPR</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#verificare" class="btn btn-primary">Verifică dacă ai temei</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Când e necesară ștergerea datelor</h2>
+          <p>Biroul de Credit SA este o bază de date privată a băncilor și IFN-urilor. Ștergerea datelor e necesară doar când informația e greșită, a fost raportată fără notificarea legală sau e ținută peste termen. O restanță reală, raportată corect, nu se șterge la cerere.</p>
+          <div class="opts">
+            <div><b>Ștergere</b>elimină o înregistrare greșită sau nelegală</div>
+            <div><b>Actualizare</b>o aduce la zi, de exemplu „restanță achitată”</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFICARE -->
+<section id="verificare" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Verificare</span><h2>Ai temei pentru <span class="accent">cererea de ștergere</span>?</h2></div>
+      <p>Introdu datele din raport și din mesajele băncii. Verificăm pragul de 30 de zile, notificarea de 15 zile și termenul de 4 ani.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Restanța</div>
+          <div class="field"><label for="s-scad">Scadența ratei neplătite</label><div class="inp"><input type="date" id="s-scad"></div></div>
+          <div class="field"><label for="s-rap">Data raportării (din raport)</label><div class="inp"><input type="date" id="s-rap"></div></div>
+          <div class="field"><label for="s-not">Data notificării primite (SMS, scrisoare)</label><div class="inp"><input type="date" id="s-not"></div><small>Lasă gol dacă nu ai primit nimic.</small></div>
+          <div class="field"><label for="s-plata">Data plății restanței (opțional)</label><div class="inp"><input type="date" id="s-plata"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-ver">Verifică</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: SMS cu 7 zile înainte</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="tri">
+            <div class="opt" id="c-a"><span class="k">Pragul de 30 de zile</span><span class="v" id="o-a">—</span><span class="s" id="o-as">Completați scadența.</span></div>
+            <div class="opt" id="c-b"><span class="k">Notificarea de 15 zile</span><span class="v" id="o-b">—</span><span class="s" id="o-bs">Completați data raportării.</span></div>
+            <div class="opt" id="c-c"><span class="k">Termenul de 4 ani</span><span class="v" id="o-c">—</span><span class="s" id="o-cs">Completați data plății, dacă ai plătit.</span></div>
+          </div>
+          <div class="flag" id="o-flag" hidden></div>
+          <a href="#contact" class="btn btn-primary">Trimite raportul la verificat</a>
+          <span class="disc">Reguli: raportare doar după 30 de zile de întârziere și peste 10 lei; notificare cu cel puțin 15 zile înainte de prima raportare negativă (Decizia ANSPDCP nr. 105/2007); păstrare 4 ani de la plată sau închidere. Calcul orientativ.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#ce-este">Date negative</a>
+      <a href="#temei">Când ai dreptul</a>
+      <a href="#model">Model de cerere</a>
+      <a href="#depunere">Cum depui cererea</a>
+      <a href="#procedura">Procedura și termene</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#nu">Când NU se poate</a>
+      <a href="#expirare">Ștergere vs expirare</a>
+      <a href="#sfaturi">Sfaturi practice</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="ce-este">
+        <span class="eyebrow">Context</span>
+        <h2>Ce este Biroul de Credit și ce înseamnă date negative</h2>
+        <p>Sistemul are peste 100 de participanți: bănci, IFN-uri, firme de leasing, asigurători și firme de recuperare creanțe. Acționarii sunt 18 bănci. Biroul nu decide creditul. Decizia o ia banca, pe baza raportului și a propriului scoring.</p>
+        <p><strong>Ștergere sau actualizare?</strong> Ștergerea elimină o înregistrare. Actualizarea o aduce la zi, de exemplu „restanță achitată”. Dacă ai plătit, de cele mai multe ori ceri actualizare, nu ștergere.</p>
+        <h3>Ce înseamnă date negative în Biroul de Credit</h3>
+        <p>Date negative sunt întârzierile de peste 30 de zile calendaristice, când suma restantă depășește 10 lei. Intră aici restanțele, creditele neplătite și creditele cesionate unui recuperator. Datele pozitive (rate plătite la timp) se transmit doar cu acordul tău. Cum descarci și citești raportul afli în ghidul <a href="/verificare-online-biroul-de-credit/">verificare online Biroul de Credit</a>.</p>
+      </section>
+
+      <section id="temei">
+        <span class="eyebrow">Temei legal</span>
+        <h2>Când ai dreptul să ceri ștergerea datelor</h2>
+        <p>Ai temei legal în patru situații:</p>
+        <div class="rights">
+          <div><span class="n">1</span><b>Eroare în raport</b>Sumă greșită, credit care nu e al tău, restanță plătită afișată ca activă.</div>
+          <div><span class="n">2</span><b>Lipsa notificării</b>Participantul nu te-a informat cu cel puțin 15 zile înainte de prima raportare negativă (Decizia ANSPDCP nr. 105/2007).</div>
+          <div><span class="n">3</span><b>Termen depășit</b>Datele negative rămân 4 ani de la plata restanței sau de la închiderea creditului. După aceea nu mai au temei.</div>
+          <div><span class="n">4</span><b>Prelucrare nelegală</b>De exemplu, raportare înainte de 30 de zile de întârziere.</div>
+        </div>
+        <div class="note"><b>Prescripția.</b> Dacă datoria s-a prescris (3 ani, art. 2517 Cod civil), creditorul nu o mai poate executa silit. Raportarea însă nu dispare automat. Prescripția e un argument de analizat, nu un motiv automat de ștergere.</div>
+      </section>
+
+      <section id="model">
+        <span class="eyebrow">Model</span>
+        <h2>Model cerere ștergere Biroul de Credit</h2>
+        <p>Cererea are cinci elemente obligatorii: cine ești, ce date contești, cine le-a raportat, de ce sunt greșite și ce ceri concret. Lipsa unuia dintre ele duce, de regulă, la un răspuns formal.</p>
+        <h3>Model complet de cerere: structura</h3>
+        <ol class="num">
+          <li><strong>Destinatar:</strong> banca sau IFN-ul care a raportat (participantul).</li>
+          <li><strong>Identificare:</strong> nume, CNP, adresă, e-mail pentru răspuns.</li>
+          <li><strong>Obiect:</strong> „Cerere de rectificare / ștergere a datelor raportate în Biroul de Credit”.</li>
+          <li><strong>Datele contestate:</strong> contract, sumă, dată, status, așa cum apar în raport.</li>
+          <li><strong>Motivul și temeiul:</strong> eroare (art. 16 GDPR), lipsa notificării de 15 zile, termen expirat (art. 17 GDPR).</li>
+          <li><strong>Ce soliciți:</strong> rectificare, actualizare sau ștergere, plus răspuns scris.</li>
+          <li><strong>Anexe, dată, semnătură.</strong></li>
+        </ol>
+        <h3>Cum se completează corect cererea</h3>
+        <div class="t-grid">
+          <div class="t-card"><h3>Date personale</h3><ul><li>Scrie-le exact ca în actul de identitate. Dacă trimiți prin poștă, atașează copia actului și semnează.</li></ul></div>
+          <div class="t-card"><h3>Date creditor</h3><ul><li>Copiază din raport denumirea participantului și numărul contractului. Nu scrie „banca mea”.</li></ul></div>
+        </div>
+        <p><strong>Motivul solicitării.</strong> O singură frază, verificabilă:</p>
+        <div class="quote">„Restanța de 1.250 lei apare activă, deși am achitat-o pe 14.02.2025 (extras anexat).”</div>
+        <h4>Greșeli frecvente în completare</h4>
+        <ul class="ban">
+          <li>Lipsesc contractul sau suma: participantul nu are ce verifica.</li>
+          <li>Formulare de tipul „vreau să fiu scos din Biroul de Credit”: nu e un temei juridic.</li>
+          <li>Ceri ștergere când problema e o actualizare: primești refuz pe bună dreptate.</li>
+        </ul>
+      </section>
+
+      <section id="depunere">
+        <span class="eyebrow">Depunere</span>
+        <h2>Cum depui cererea de ștergere</h2>
+        <p>Cererea o depui la participantul care a raportat datele: online, la sediu sau prin poștă. Biroul de Credit nu poate modifica singur datele unei bănci. El primește cereri prin site și le transmite spre verificare. Contează să păstrezi dovada depunerii, cu dată.</p>
+        <h3>Depunere online</h3>
+        <ol class="num">
+          <li>Intri în contul tău de pe birouldecredit.ro (cont creat cu e-mail, telefon, CNP și confirmare prin SMS).</li>
+          <li>Descarci raportul și notezi rândul contestat.</li>
+          <li>Folosești secțiunea de solicitări/contestații și atașezi dovezile.</li>
+          <li>Salvezi confirmarea și numărul solicitării.</li>
+        </ol>
+        <div class="todo">[DE VERIFICAT: denumirea actuală a secțiunii de contestații din contul online]</div>
+        <div class="t-grid">
+          <div class="t-card"><h3>Direct la bancă sau IFN</h3><ul><li>Depui cererea la registratură sau la responsabilul cu protecția datelor (DPO) al participantului. Ceri număr de înregistrare pe copia ta. Multe bănci acceptă și e-mail la adresa DPO.</li></ul></div>
+          <div class="t-card"><h3>Prin poștă</h3><ul><li>Scrisoare recomandată cu confirmare de primire: cererea semnată, copia actului de identitate și copiile dovezilor. Data de pe confirmare marchează începutul termenului de răspuns.</li></ul></div>
+        </div>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Tip cerere</th><th>Metodă depunere</th><th>Durată proces</th><th>Cost</th><th>Șanse de aprobare</th><th>Documente necesare</th><th>Riscuri</th></tr></thead>
+          <tbody>
+            <tr><td>Rectificare (eroare)</td><td>Participant / online</td><td>Răspuns în 1 lună</td><td>Gratuit</td><td>Mari, dacă ai dovada</td><td>Raport, extras, chitanță</td><td>Refuz dacă dovada lipsește</td></tr>
+            <tr><td>Ștergere (lipsă notificare 15 zile)</td><td>Participant</td><td>Răspuns în 1 lună</td><td>Gratuit</td><td>Medii, depinde ce poate dovedi banca</td><td>Raport, cerere de dovadă a notificării</td><td>Banca prezintă o notificare validă</td></tr>
+            <tr><td>Ștergere (termen expirat)</td><td>Participant / online</td><td>Răspuns în 1 lună</td><td>Gratuit</td><td>Mari</td><td>Raport, dovada datei plății</td><td>Calcul greșit al datei</td></tr>
+            <tr><td>Ștergere date corecte, în termen</td><td>Oricare</td><td>—</td><td>Gratuit</td><td>Practic nule</td><td>—</td><td>Timp pierdut, oferte înșelătoare</td></tr>
+            <tr><td>Plângere ANSPDCP</td><td>Formular online / poștă</td><td>Luni</td><td>Fără taxă</td><td>Depinde de probe</td><td>Cererea, răspunsul, dovezi</td><td>Nu obligă banca la credit</td></tr>
+            <tr><td>Acțiune în instanță</td><td>Cerere de chemare în judecată</td><td>Luni–ani</td><td>Taxă de timbru, onorariu</td><td>Depinde de probe</td><td>Dosar complet</td><td>Costuri, durată</td></tr>
+          </tbody>
+        </table></div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cererea-de-stergere-in-5-pasi.webp" width="1200" height="675" alt="cerere de ștergere din Biroul de Credit, pașii procedurii" loading="lazy">
+          <figcaption>Cererea de ștergere în 5 pași</figcaption>
+        </figure>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Procedura legală de ștergere a datelor</h2>
+        <p>Procedura are patru etape: verifici raportul, trimiți cererea la participant, aștepți răspunsul în termen de o lună, apoi verifici din nou raportul. Dacă răspunsul lipsește sau e un refuz nemotivat, mergi la ANSPDCP sau în instanță. Nu ai nevoie de intermediari pentru niciuna dintre etape.</p>
+        <h3>Termene legale de răspuns</h3>
+        <p>Participantul răspunde în cel mult o lună de la primirea cererii (art. 12 GDPR). Mulți spun „30 de zile”, dar termenul legal e de o lună calendaristică. Pentru cereri complexe se poate prelungi cu încă două luni. Banca trebuie să te anunțe de prelungire în prima lună și să explice de ce.</p>
+        <h3>Ce se întâmplă după depunere</h3>
+        <div class="stages">
+          <div><span class="k">Pasul 1</span><b>Analiză</b>Participantul compară raportarea cu evidențele lui: plăți, notificări, date.</div>
+          <div><span class="k">Pasul 2</span><b>Aprobare</b>Corectează sau șterge datele și le retransmite. Verifică raportul după 2–3 săptămâni.</div>
+          <div><span class="k">Sau</span><b>Respingere</b>Trebuie motivată. Un răspuns de tipul „datele sunt corecte”, fără acte, poate fi contestat.</div>
+        </div>
+        <div class="todo">[DE VERIFICAT: intervalul în care modificarea transmisă de participant apare în raportul Biroului de Credit]</div>
+        <div class="example">
+          <div class="t">Cifra pe șervețel</div>
+          <p>Rata ta era scadentă pe 10.03.2026 și n-ai plătit-o. Întârzierea trece de 30 de zile începând cu 10.04.2026. Banca te raportează pe 15.04.2026. Notificarea trebuia trimisă cel târziu pe 31.03.2026 (15 zile înainte). Dacă SMS-ul de avertizare are data de 08.04.2026, ai primit doar 7 zile. Ai un motiv concret pentru o cerere de ștergere.</p>
+          <span class="formula">15.04.2026 − 08.04.2026 = 7 zile, sub cele 15 cerute</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Analiză juridică și legislație aplicabilă</h2>
+        <p>Cererea se sprijină pe două niveluri de reguli. Regulamentul UE 2016/679 (GDPR) îți dă drepturile de acces, rectificare și ștergere. Decizia ANSPDCP nr. 105/2007 fixează regulile Biroului de Credit: raportare după 30 de zile, notificare cu 15 zile înainte, păstrare 4 ani. Legea nr. 190/2018 aplică GDPR în România.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Dreptul la rectificare (art. 16)</h3><ul><li>Ceri corectarea datelor inexacte. E temeiul cel mai des câștigător.</li></ul></div>
+          <div class="t-card"><h3>Dreptul la ștergere (art. 17)</h3><ul><li>Funcționează limitat: date inexacte, prelucrate nelegal sau ținute după termen.</li></ul></div>
+        </div>
+        <h3>Legislația din România privind Biroul de Credit</h3>
+        <p>Participanții au trei obligații-cheie: să te notifice cu 15 zile înainte de prima raportare negativă, să raporteze doar întârzieri de peste 30 de zile și peste 10 lei și să actualizeze datele după plată. Legea nr. 77/2016 adaugă o regulă: de la notificarea de dare în plată și pe durata soluționării, banca nu te poate înscrie în Biroul de Credit pentru acel credit.</p>
+        <h3>Comentarii juridice</h3>
+        <div class="note dark"><b>Poziția juridică.</b> Din experiența mea, cererile câștigate nu sunt cele mai lungi, ci cele care pun banca să dovedească ceva. Cel mai bun exemplu e notificarea de 15 zile: sarcina de a arăta când și cum te-a anunțat revine participantului. Dacă nu are dovada, cererea de ștergere are temei serios.</div>
+        <p>Situații tipice (anonimizate):</p>
+        <ul class="chk">
+          <li>Credit de consum închis anticipat, raportat în continuare „activ”. Soluția corectă: actualizare, cu adeverința de închidere.</li>
+          <li>Card de cumpărături cu un sold uitat de 38 lei, raportat după 45 de zile, fără niciun SMS anterior. Temei: lipsa notificării.</li>
+          <li>Restanță reală, plătită în 2024, pentru care persoana cere ștergere în 2026. Termenul de 4 ani curge încă. Cererea nu are temei.</li>
+        </ul>
+        <h3>Jurisprudență relevantă</h3>
+        <p>Instanțele analizează, de regulă, trei lucruri: dacă datele erau exacte, dacă notificarea a fost dovedită și dacă refuzul de credit e legat de raportare. ANSPDCP a amendat mai multe bănci și IFN-uri (2016) pentru raportări fără dovada informării prealabile sau înainte de 30 de zile de întârziere.</p>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <h3>Compararea normelor actuale: România vs UE</h3>
+        <p>GDPR se aplică direct în toate statele UE și dă aceleași drepturi. Termenele concrete ale birourilor de credit diferă însă de la stat la stat. În România le fixează Decizia nr. 105/2007, nu GDPR. De aceea, în cerere citezi ambele.</p>
+      </section>
+
+      <section id="nu">
+        <span class="eyebrow">Limite</span>
+        <h2>Când NU se poate face ștergerea</h2>
+        <p>Ștergerea înainte de termen nu e posibilă când datele sunt corecte, ai fost notificat la timp și cei 4 ani nu au trecut. Nici plata restanței, nici nevoia urgentă de credit, nici un scor FICO mic nu sunt motive legale. Orice ofertă care promite contrariul merită verificată atent.</p>
+        <h3>Date corecte și legitime</h3>
+        <p>Raportarea unei restanțe reale se bazează pe interesul legitim al creditorilor de a evalua riscul. Dreptul la ștergere din GDPR nu anulează acest temei. De aceea, firmele care promit „ștergere garantată” vând, de obicei, aceeași cerere pe care o poți trimite singur.</p>
+        <h3>Perioada de stocare legală</h3>
+        <p>Standardul este de 4 ani de la data plății restanței sau a închiderii creditului. Atenție: termenul curge după ce ai achitat, nu de la prima întârziere.</p>
+      </section>
+
+      <section id="expirare">
+        <span class="eyebrow">Diferență</span>
+        <h2>Diferența între ștergere și expirarea datelor</h2>
+        <p>Ștergerea e un rezultat pe care îl obții prin cerere, înainte de termen, pentru că datele sunt greșite sau nelegale. Expirarea înseamnă că datele corecte dispar singure, după 4 ani de la plată sau închidere. Prima cere probe. A doua cere doar răbdare și o verificare a raportului.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Ștergere anticipată</h3><ul><li>O obții doar cu temei: eroare, lipsa notificării de 15 zile, raportare nelegală. Sarcina de a convinge îți revine prin documente.</li></ul></div>
+          <div class="t-card"><h3>Ștergere automată</h3><ul><li>Se face fără cerere. Dacă datele apar și după 4 ani, trimiți o cerere scurtă cu data plății și dovada ei.</li></ul></div>
+        </div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cui-trimiti-cererea-de-stergere.webp" width="1200" height="675" alt="cui adresezi cererea de ștergere din Biroul de Credit în funcție de problemă" loading="lazy">
+          <figcaption>Cui trimiți cererea de ștergere</figcaption>
+        </figure>
+      </section>
+
+      <section id="sfaturi">
+        <span class="eyebrow">Sfaturi</span>
+        <h2>Sfaturi practice pentru succesul cererii</h2>
+        <p>O cerere reușită e scurtă, precisă și documentată. Pornește de la un raport recent, contestă un singur rând pe cerere și cere o măsură concretă. Păstrează dovada depunerii. Dacă nu primești răspuns în termen, revino o dată în scris, apoi mergi la ANSPDCP.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Ce trebuie să incluzi</h3><ul><li>Raportul de credit (sau pagina relevantă).</li><li>Dovada plății sau adeverința de închidere.</li><li>Solicitarea expresă: „Vă rog să îmi comunicați dovada notificării transmise înainte de raportare.”</li><li>Termenul de răspuns: „în termenul de o lună prevăzut de art. 12 GDPR”.</li></ul></div>
+          <div class="t-card"><h3>Ce să eviți</h3><ul><li>Amenințări și ton agresiv: slăbesc cererea.</li><li>Aceeași cerere trimisă la zece instituții: creează confuzie.</li><li>Plata unor „taxe de ștergere” către terți înainte să vezi raportul.</li></ul></div>
+        </div>
+        <h3>Avantajele ștergerii din Biroul de Credit</h3>
+        <p>Un raport corectat îți scoate din dosar un motiv nejustificat de refuz. Băncile văd o imagine reală a riscului, iar scorul FICO (scara 300–850) poate crește după ce eroarea dispare. Ștergerea nu garantează însă creditul: banca analizează și venitul, și gradul de îndatorare.</p>
+        <ul class="chk">
+          <li><strong>Acces mai ușor la credite:</strong> dispare o restanță care nu era a ta sau nu mai era actuală.</li>
+          <li><strong>Îmbunătățirea scorului:</strong> în practica mea, efectul se vede după actualizarea raportului, nu imediat după răspunsul băncii.</li>
+        </ul>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Descarcă raportul gratuit de pe birouldecredit.ro și marchează rândul pe care îl contești.</li>
+          <li>Caută dovada: extras, chitanță, adeverință de închidere, SMS-urile primite de la bancă.</li>
+          <li>Trimite cererea la participant, cu recomandată sau la DPO, și notează data. Peste o lună verifici răspunsul.</li>
+        </ol>
+        <!--@author practice="drept bancar și protecția datelor" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente</h2>
+        <div class="faq">
+          <details open><summary>Cum pot face o cerere de ștergere din Biroul de Credit?</summary><p>Descarci raportul, identifici participantul care a raportat și îi trimiți o cerere scrisă cu datele contestate, motivul și dovezile. O poți depune online, la sediu sau prin poștă.</p></details>
+          <details><summary>În cât timp se șterg datele?</summary><p>Dacă cererea e admisă, participantul trebuie să răspundă în cel mult o lună (prelungibil cu două luni). Datele corecte expiră singure după 4 ani de la plată sau închidere.</p></details>
+          <details><summary>Pot șterge un credit restant?</summary><p>Nu, cât timp restanța e reală și ai fost notificat legal. Poți cere doar corectarea erorilor. După plată, termenul de 4 ani începe să curgă.</p></details>
+          <details><summary>Este gratuită ștergerea?</summary><p>Da. Cererea către participant, contestația prin Biroul de Credit și plângerea la ANSPDCP nu au taxă. Plătești doar dacă alegi un avocat sau mergi în instanță.</p></details>
+          <details><summary>Ce fac dacă cererea este respinsă?</summary><p>Citește motivarea. Dacă e nejustificată, depui plângere la ANSPDCP (art. 77 GDPR) sau acțiune în instanță.</p></details>
+          <details><summary>Pot corecta datele greșite?</summary><p>Da. Dreptul la rectificare (art. 16 GDPR) e cel mai solid temei. Atașezi documentul care arată situația reală.</p></details>
+          <details><summary>Cât timp rămân datele în Biroul de Credit?</summary><p>Datele negative rămân 4 ani de la data plății restanței sau de la închiderea creditului. Datele pozitive rămân cât timp ți-ai dat acordul.</p></details>
+          <details><summary>Pot face cererea online?</summary><p>Da, din contul tău de pe birouldecredit.ro sau pe e-mail la DPO-ul băncii. Păstrează confirmarea de trimitere.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Banca ți-a răspuns formal?" lead="Dacă nu știi pe ce temei să ceri ștergerea sau banca ți-a răspuns formal, trimite-ne raportul și răspunsul primit. Îți spunem dacă cererea are temei și ce pas urmează. Consultația nu te obligă la nimic." nav="/|Acasă;/verificare-online-biroul-de-credit/|Verificare Biroul de Credit;/birou-de-credit-brd/|Birou de Credit BRD;#contact|Contact" note="Consultarius nu este afiliat Biroului de Credit. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function addD(d,n){var x=new Date(d.getTime());x.setUTCDate(x.getUTCDate()+n);return x}
+  function days(a,b){return Math.round((b.getTime()-a.getTime())/864e5)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function run(){
+    var sc=$('s-scad').value,rp=$('s-rap').value,nt=$('s-not').value,pl=$('s-plata').value,hits=[],any=false;
+    if(sc){any=true;var d30=addD(dt(sc),31);$('o-a').textContent='din '+fmt(d30);
+      if(rp&&d30.getTime()>dt(rp).getTime()){cls('c-a','ok');$('o-as').innerHTML='Raportat pe <b>'+fmt(dt(rp))+'</b>, înainte de 30 de zile de întârziere: <b>raportare prematură</b>.';hits.push('raportare înainte de 30 de zile')}
+      else{cls('c-a');$('o-as').textContent='Întârzierea trece de 30 de zile de la această dată. Abia apoi poate fi raportată ca dată negativă.'}}
+    else{$('o-a').textContent='—';cls('c-a');$('o-as').textContent='Completați scadența.'}
+    if(rp){any=true;var lim=addD(dt(rp),-15);
+      if(nt){var g=days(dt(nt),dt(rp));$('o-b').textContent=g+' zile';
+        if(15>g){cls('c-b','ok');$('o-bs').innerHTML='Notificarea trebuia trimisă cel târziu pe <b>'+fmt(lim)+'</b>. Ai primit doar '+g+' zile: <b>temei pentru ștergere</b>.';hits.push('notificare cu mai puțin de 15 zile')}
+        else{cls('c-b');$('o-bs').innerHTML='Cel puțin 15 zile înainte de raportare: notificarea pare în regulă.'}}
+      else{$('o-b').textContent='Nicio notificare';cls('c-b','ok');$('o-bs').innerHTML='Termen-limită pentru notificare: <b>'+fmt(lim)+'</b>. Cere băncii dovada notificării: sarcina îi revine.';hits.push('lipsa notificării')}}
+    else{$('o-b').textContent='—';cls('c-b');$('o-bs').textContent='Completați data raportării.'}
+    if(pl){any=true;var exp=dt(pl);exp.setUTCFullYear(exp.getUTCFullYear()+4);var t=new Date(),left=Math.round((exp.getTime()-Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()))/864e5);
+      $('o-c').textContent='până la '+fmt(exp);
+      if(0>left){cls('c-c','ok');$('o-cs').innerHTML='Termenul de 4 ani a trecut: <b>temei pentru ștergere</b>.';hits.push('termen de 4 ani expirat')}
+      else{cls('c-c');$('o-cs').textContent='Termenul curge încă. Dacă datele sunt corecte, cererea nu are temei pe acest motiv.'}}
+    else{$('o-c').textContent='—';cls('c-c');$('o-cs').textContent='Completați data plății, dacă ai plătit.'}
+    var f=$('o-flag');if(!any){f.hidden=true;return}f.hidden=false;
+    if(hits.length){f.className='flag';f.innerHTML='Ai temei pentru cererea de ștergere: <b>'+hits.join('; ')+'</b>. Trimite cererea participantului care a raportat, cu dovezile.'}
+    else{f.className='flag warn';f.textContent='Pe datele introduse nu apare un temei de ștergere. Verifică totuși exactitatea sumei și a statusului: o eroare se corectează prin rectificare.'}
+  }
+  $('b-ver').addEventListener('click',run);
+  ['s-scad','s-rap','s-not','s-plata'].forEach(function(id){$(id).addEventListener('input',run);$(id).addEventListener('change',run)});
+  function ex(){$('s-scad').value='2026-03-10';$('s-rap').value='2026-04-15';$('s-not').value='2026-04-08';$('s-plata').value='';run()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('verificare').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Biroul de Credit","item":"https://chinsolvency.ro/verificare-online-biroul-de-credit/"},{"@type":"ListItem","position":3,"name":"Cerere de ștergere din Biroul de Credit","item":"https://chinsolvency.ro/cerere-de-stergere-din-biroul-de-credit/"}]},
+ {"@type":"Article","headline":"Cerere de ștergere din Biroul de Credit: procedura","description":"Cerere de ștergere din Biroul de Credit: când e legală, cui o trimiți, ce motive invoci, termenul de răspuns de o lună și ce faci dacă banca refuză.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/cerere-de-stergere-din-biroul-de-credit/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/cererea-de-stergere-in-5-pasi.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/cui-trimiti-cererea-de-stergere.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum faci cererea de ștergere din Biroul de Credit","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/cererea-de-stergere-in-5-pasi.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Descarci raportul","text":"Gratuit, o dată pe an, pe birouldecredit.ro."},
+  {"@type":"HowToStep","position":2,"name":"Alegi temeiul","text":"Eroare, lipsa notificării de 15 zile sau termen expirat."},
+  {"@type":"HowToStep","position":3,"name":"Găsești destinatarul","text":"Banca sau IFN-ul care te-a raportat."},
+  {"@type":"HowToStep","position":4,"name":"Trimiți cererea","text":"E-mail la DPO, agenție sau scrisoare recomandată."},
+  {"@type":"HowToStep","position":5,"name":"Urmărești răspunsul","text":"Maximum o lună, prelungibil cu încă două."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Biroul de Credit","Ștergere date","GDPR","Drept bancar"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Cum pot face o cerere de ștergere din Biroul de Credit?","acceptedAnswer":{"@type":"Answer","text":"Descarci raportul, identifici participantul care a raportat și îi trimiți o cerere scrisă cu datele contestate, motivul și dovezile. O poți depune online, la sediu sau prin poștă."}},
+  {"@type":"Question","name":"În cât timp se șterg datele?","acceptedAnswer":{"@type":"Answer","text":"Dacă cererea e admisă, participantul trebuie să răspundă în cel mult o lună (prelungibil cu două luni). Datele corecte expiră singure după 4 ani de la plată sau închidere."}},
+  {"@type":"Question","name":"Pot șterge un credit restant?","acceptedAnswer":{"@type":"Answer","text":"Nu, cât timp restanța e reală și ai fost notificat legal. Poți cere doar corectarea erorilor. După plată, termenul de 4 ani începe să curgă."}},
+  {"@type":"Question","name":"Este gratuită ștergerea?","acceptedAnswer":{"@type":"Answer","text":"Da. Cererea către participant, contestația prin Biroul de Credit și plângerea la ANSPDCP nu au taxă. Plătești doar dacă alegi un avocat sau mergi în instanță."}},
+  {"@type":"Question","name":"Ce fac dacă cererea este respinsă?","acceptedAnswer":{"@type":"Answer","text":"Citește motivarea. Dacă e nejustificată, depui plângere la ANSPDCP (art. 77 GDPR) sau acțiune în instanță."}},
+  {"@type":"Question","name":"Pot corecta datele greșite?","acceptedAnswer":{"@type":"Answer","text":"Da. Dreptul la rectificare (art. 16 GDPR) e cel mai solid temei. Atașezi documentul care arată situația reală."}},
+  {"@type":"Question","name":"Cât timp rămân datele în Biroul de Credit?","acceptedAnswer":{"@type":"Answer","text":"Datele negative rămân 4 ani de la data plății restanței sau de la închiderea creditului. Datele pozitive rămân cât timp ți-ai dat acordul."}},
+  {"@type":"Question","name":"Pot face cererea online?","acceptedAnswer":{"@type":"Answer","text":"Da, din contul tău de pe birouldecredit.ro sau pe e-mail la DPO-ul băncii. Păstrează confirmarea de trimitere."}}
+ ]}
+]}
+</script>
