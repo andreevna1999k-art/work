@@ -1,0 +1,286 @@
+<!-- Consultarius — /procedura-executare-silita-etape/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#etape|Etape;#drepturi|Drepturi debitor;#durata|Durată și costuri;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Procedura executării silite</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Cod procedură civilă · etape · drepturi</span>
+          <h1>Executarea silită: <span class="accent">procedura pe etape, drepturile debitorului și ale creditorului</span></h1>
+          <div class="lead">
+            <p>Ai primit o încheiere de încuviințare, o somație sau o adresă de la bancă și nu știi ce urmează. Sau ești creditor și vrei să afli cât de repede ajungi la bani. Executarea silită este o succesiune de pași cu termene stricte, iar cel mai scump lucru pe care îl poți face ca debitor este să aștepți.</p>
+            <p>Mai jos ai procedura în ordinea în care se întâmplă, cu articolele din Codul de procedură civilă și un calculator pentru cât se poate reține din venit.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Contestație: 15 zile libere</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează reținerea</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Executarea silită este procedura prin care un executor judecătoresc recuperează o datorie pe baza unui titlu executoriu, fără acordul debitorului: creditorul depune cererea, executorul o încuviințează în 3 zile, debitorul primește somația, apoi încep popririle și sechestrele. Debitorul are, de regulă, 15 zile să conteste (art. 715 CPC).</p>
+          <div class="opts">
+            <div><b>Încuviințare</b>3 zile, fără citare</div>
+            <div><b>Contestație</b>15 zile libere</div>
+            <div><b>Poprire salariu</b>max. 1/3 din net</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Cât se poate reține din venit <span class="accent">și cât durează plata</span></h2></div>
+      <p>Introdu venitul net lunar, datoria și tipul urmăririi. Vezi suma maximă pe care o poate reține terțul poprit (art. 729 CPC) și în câte luni se stinge datoria, fără dobânzi și cheltuieli.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Situația ta</div>
+          <div class="field full"><label for="f-s">Tipul urmăririi</label><div class="inp"><select id="f-s">
+            <option value="0">O singură poprire, datorie obișnuită (credit, utilități)</option>
+            <option value="1">Mai multe popriri pe același venit</option>
+            <option value="2">Pensie de întreținere sau alocație pentru copii</option>
+          </select></div></div>
+          <div class="grp">Sume</div>
+          <div class="field"><label for="f-v">Venit net lunar (lei)</label><div class="inp"><input id="f-v" inputmode="numeric" placeholder="3600"></div></div>
+          <div class="field"><label for="f-d">Datoria totală (lei)</label><div class="inp"><input id="f-d" inputmode="numeric" placeholder="30000"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: 3.600 lei, datorie 30.000 lei</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Reținere maximă pe lună</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completează venitul net.</span></div>
+            <div class="opt" id="c-m"><span class="k">Durata aproximativă</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">Fără dobânzi și cheltuieli.</span></div>
+            <div class="opt" id="c-r"><span class="k">Îți rămâne pe lună</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Din venitul net.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele de executare</a>
+          <span class="disc">Calcul orientativ după art. 729 CPC (o treime din venitul net; jumătate pentru mai multe urmăriri sau pensie de întreținere). Dacă venitul e sub salariul minim net, se urmărește doar partea care depășește jumătate din acest nivel (art. 729 alin. 3); calculatorul nu aplică această regulă. Dobânzile și cheltuielile de executare se adaugă la datorie.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#ce-este">Ce este</a>
+      <a href="#etape">Etape</a>
+      <a href="#tipuri">Tipuri</a>
+      <a href="#procedura">Procedura</a>
+      <a href="#drepturi">Drepturile debitorului</a>
+      <a href="#creditor">Creditorul</a>
+      <a href="#durata">Durată și costuri</a>
+      <a href="#pozitia">Poziția juridică</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Executarea silită pe scurt: răspuns rapid</h2>
+        <p>Executarea silită este procedura prin care un executor judecătoresc recuperează o datorie pe baza unui titlu executoriu, fără acordul debitorului. Creditorul depune cererea, executorul o încuviințează în 3 zile, debitorul primește somația, apoi încep popririle și sechestrele. Debitorul are, de regulă, 15 zile să conteste.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Datorie de 30.000 lei, salariu net de 3.600 lei. Poprirea pe salariu ia cel mult o treime: 1.200 lei pe lună. 30.000 ÷ 1.200 = 25 de luni, fără dobânzi și cheltuieli. Dacă mai există o poprire, totalul nu depășește jumătate din salariu (1.800 lei).</p>
+          <span class="formula">30.000 ÷ (3.600 × 1/3) = 25 de luni</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Definiție</span>
+        <h2>Ce înseamnă executarea silită și cine participă</h2>
+        <p>Executarea silită este constrângerea statului pusă în slujba unui drept deja recunoscut. Participă trei persoane: creditorul (cel care are de primit), debitorul (cel urmărit) și executorul judecătoresc, singurul care face acte de executare (art. 623 CPC). Instanța intervine doar pentru încuviințare, contestații, suspendări și validarea popririi.</p>
+        <h3>Titlul executoriu: fără el nu există executare</h3>
+        <p>Executarea silită se face numai în baza unui titlu executoriu (art. 632 CPC). Sunt titluri hotărârile judecătorești executorii sau definitive (art. 633–634) și alte înscrisuri pe care legea le declară executorii. Exemplu frecvent: contractul de credit bancar, pe care legea specială (OUG nr. 99/2006) îl tratează ca titlu executoriu, de aceea băncile pot porni executarea fără proces. Contractele cu IFN-urile sau cu recuperatorii nu au, de regulă, această forță: acolo creditorul are nevoie de o hotărâre.</p>
+        <h3>Creanța trebuie să fie certă, lichidă și exigibilă</h3>
+        <p>Art. 663 CPC cere trei condiții: suma sau obligația să fie certă (existența ei nu se contestă), lichidă (cuantumul e determinat sau determinabil) și exigibilă (scadența a trecut). Dacă una lipsește, ai motiv de contestație.</p>
+      </section>
+
+      <section id="etape">
+        <span class="eyebrow">Etape</span>
+        <h2>Etapele executării silite, în ordine</h2>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Etapa</th><th>Cine acționează</th><th>Termen</th><th>Temei</th></tr></thead>
+          <tbody>
+            <tr><td>1. Cererea de executare</td><td>Creditorul, la executor</td><td>În termenul de prescripție: 3 ani (10 ani pentru drepturi reale)</td><td>Art. 664, 706</td></tr>
+            <tr><td>2. Încuviințarea</td><td>Executorul, prin încheiere, fără citare</td><td>3 zile; motivare în 7 zile</td><td>Art. 666</td></tr>
+            <tr><td>3. Comunicarea actelor</td><td>Executorul către debitor</td><td>După încuviințare</td><td>Art. 667–668</td></tr>
+            <tr><td>4. Măsurile de executare</td><td>Executorul</td><td>Imediat sau după somație</td><td>Art. 666 alin. 4, 781</td></tr>
+            <tr><td>5. Distribuirea banilor</td><td>Executorul</td><td>După consemnare sau vânzare</td><td>Art. 864 și urm.</td></tr>
+            <tr><td>6. Încetarea executării</td><td>Executorul, prin încheiere</td><td>La plata integrală sau alt caz legal</td><td>Art. 703</td></tr>
+          </tbody>
+        </table></div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-executarii-silite.webp" width="1200" height="675" alt="etapele executării silite: cerere, încuviințare în 3 zile, somație, poprire sau sechestru, încetare" loading="lazy">
+          <figcaption>Etapele executării silite, de la cerere la încetare</figcaption>
+        </figure>
+        <h3>1–2. Cererea și încuviințarea</h3>
+        <p>Creditorul depune cererea cu titlul executoriu la executorul competent. Executorul o soluționează în cel mult 3 zile, fără să te cheme, iar motivarea încheierii vine în cel mult 7 zile (art. 666 alin. 1–2). Încuviințarea îi permite creditorului să ceară toate modalitățile de executare, simultan sau succesiv, pe tot teritoriul țării (art. 666 alin. 4).</p>
+        <h3>3. Somația și comunicarea titlului</h3>
+        <p>Primești o copie a încheierii, o copie certificată a titlului executoriu și, de regulă, o somație prin care ești chemat să plătești (art. 667–668). Lipsa comunicării, când legea o cere, atrage nulitatea executării (art. 667 alin. 2). Excepție: poprirea se înființează fără somație (art. 783 alin. 1), deci primul semn poate fi chiar contul blocat.</p>
+        <h3>4. Modalitățile de executare</h3>
+        <p>La cererea creditorului, executorul alege între poprire (conturi, salariu, pensie, chirii), urmărirea bunurilor mobile și urmărirea imobilelor. Poți fi urmărit prin toate în același timp, dar executorul trebuie să respecte limitele legii.</p>
+      </section>
+
+      <section id="tipuri">
+        <span class="eyebrow">Tipuri</span>
+        <h2>Tipurile de executare: poprire, bunuri mobile, imobile</h2>
+        <div class="t-grid">
+          <div class="t-card"><h4>Poprirea</h4><p>Vizează sumele datorate debitorului de un terț: bancă, angajator, chiriaș. Se înființează fără somație; sumele sunt indisponibilizate din momentul comunicării către terț (art. 781, 784). Terțul consemnează suma în 5 zile (art. 787).</p></div>
+          <div class="t-card"><h4>Bunuri mobile</h4><p>Executorul sechestrează și vinde la licitație mașini, echipamente, bunuri de valoare. Unele bunuri sunt neurmăribile: cele de uz personal indispensabile, alimentele pe 3 luni, combustibilul pe iarnă (art. 727).</p></div>
+          <div class="t-card"><h4>Imobile</h4><p>Urmărirea se notează în cartea funciară, iar imobilul se vinde la licitație. Este modalitatea cea mai lentă și mai scumpă, dar și cea cu miza cea mai mare pentru debitor.</p></div>
+        </div>
+        <p>Pentru cel mai frecvent caz, vezi ghidul despre <a href="/poprire-cont/">poprirea pe cont</a>.</p>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Procedura pas cu pas, dacă ești debitorul</h2>
+        <ol class="num">
+          <li><b>Citește ce ai primit și notează data.</b> Termenul de 15 zile curge, de regulă, de la primirea încheierii ori a somației sau de la primul act de executare (art. 715 alin. 1 pct. 3). La poprire, termenul curge de la comunicarea înființării popririi, iar la veniturile periodice cel mai târziu de la prima reținere (pct. 2).</li>
+          <li><b>Cere dosarul de executare.</b> Ai dreptul să vezi titlul, calculul sumei și actele executorului.</li>
+          <li><b>Verifică titlul și calculul.</b> Este executoriu? Creanța e scadentă? Dobânzile și cheltuielile sunt corecte?</li>
+          <li><b>Alege între plată, înțelegere și contestație.</b> Plata imediată, după somație, reduce cheltuielile la actele efectiv făcute și la onorariile proporționale (art. 670 alin. 2).</li>
+          <li><b>Depune contestația la instanța de executare</b> și, dacă ai motive temeinice, cere în același timp suspendarea (art. 712, 719).</li>
+        </ol>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">Debitor</span>
+        <h2>Drepturile debitorului</h2>
+        <ul class="chk">
+          <li><b>Contestația la executare</b> împotriva executării însăși, a oricărui act de executare sau a încheierilor executorului (art. 712). Termen general: 15 zile (art. 715). Vezi <a href="/contestatie-la-executare/">contestația la executare</a> și <a href="/termen-contestatie-la-executare/">termenul de contestație</a>.</li>
+          <li><b>Suspendarea executării</b> până la soluționarea contestației, în schimbul unei cauțiuni (art. 719). Detalii în <a href="/amanare-executare-silita/">amânarea și suspendarea executării silite</a>.</li>
+          <li><b>Protecția veniturilor:</b> salariul și pensia se urmăresc până la o treime din venitul net, iar la mai multe urmăriri până la jumătate (art. 729). Alocațiile de stat, indemnizațiile pentru copii și bursele nu pot fi urmărite pentru nicio datorie (art. 729 alin. 7).</li>
+          <li><b>Desființarea măsurilor prin consemnare:</b> poți depune întreaga creanță, cu accesorii și cheltuieli, la dispoziția executorului (art. 721).</li>
+          <li><b>Restrângerea executării</b> când creditorul urmărește bunuri cu valoare vădit excesivă față de creanță (art. 702).</li>
+          <li><b>Prescripția:</b> dreptul de a cere executarea se prescrie în 3 ani (art. 706), dar doar dacă o invoci (art. 707 alin. 1).</li>
+          <li><b>Întoarcerea executării</b> dacă titlul sau executarea se desființează (art. 723).</li>
+        </ul>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/drepturile-debitorului-executare-silita.webp" width="1200" height="675" alt="drepturile debitorului în executarea silită: contestație în 15 zile, suspendare, plafon de o treime din salariu, prescripție de 3 ani" loading="lazy">
+          <figcaption>Drepturile debitorului, pe scurt</figcaption>
+        </figure>
+      </section>
+
+      <section id="creditor">
+        <span class="eyebrow">Creditor</span>
+        <h2>Drepturile și obligațiile creditorului</h2>
+        <p>Creditorul alege executorul, cere modalitățile de executare și poate indica bunurile urmărite (art. 731). Cheltuielile executării cad, de regulă, în sarcina debitorului (art. 670 alin. 2). Are însă și obligații: dacă lasă să treacă 6 luni fără să facă un act cerut în scris de executor, executarea se perimă de drept (art. 697), iar actele de executare se desființează, cu excepția celor care au dus deja la recuperarea unei părți din creanță (art. 698 alin. 2). Suspendarea cerută de creditor nu oprește termenul de perimare (art. 697 alin. 2).</p>
+      </section>
+
+      <section id="durata">
+        <span class="eyebrow">Durată și costuri</span>
+        <h2>Cât durează și cât costă executarea silită</h2>
+        <h3>Durata</h3>
+        <p>Legea nu fixează o durată totală, ci termene pentru fiecare act. Încuviințarea se dă în 3 zile. Poprirea pe cont produce efecte din ziua comunicării către bancă, iar terțul consemnează în 5 zile (art. 787). Vânzarea unui imobil poate dura luni sau ani, cu licitații repetate. Bunurile mobile nevalorificate rămân indisponibilizate cel mult un an (art. 780 alin. 1). Orientativ, o poprire pe salariu durează cât plata ratelor reținute lunar (vezi calculatorul).</p>
+        <h3>Costurile</h3>
+        <p>Cheltuielile le plătește, de regulă, debitorul: taxele de timbru, onorariul executorului (între un minim și un maxim stabilite prin ordin al ministrului justiției), onorariul avocatului creditorului și costul actelor (art. 670 alin. 3). Ele se adaugă la datorie, deci o plată rapidă costă mai puțin: dacă plătești de îndată după somație, datorezi doar actele efectiv făcute și onorariile proporționale (art. 670 alin. 2). Pentru o contestație, ia în calcul taxa de timbru de cel mult 1.000 lei (art. 10 OUG 80/2013) și cauțiunea pentru suspendare.</p>
+        <h3>Exemplu practic: de la somație la poprire</h3>
+        <div class="example">
+          <div class="t">Exemplu orientativ</div>
+          <p>O bancă are un credit scadent, cu soldul de 30.000 lei, și depune cerere de executare. În 3 zile, executorul o încuviințează. Primești încheierea și somația pe 5 martie. Cele 15 zile libere se termină pe 21 martie (data primirii + 16 zile, mutată în prima zi lucrătoare dacă cade în weekend). Între timp, executorul trimite poprirea către angajator: din aprilie se rețin 1.200 lei lunar din salariul net de 3.600 lei. Dacă contești la timp și ceri suspendarea, cauțiunea la 30.000 lei contestați este 1.000 + 5% × 20.000 = 2.000 lei.</p>
+        </div>
+      </section>
+
+      <section id="pozitia">
+        <span class="eyebrow">Poziția juridică</span>
+        <h2>Poziția juridică: unde apar problemele</h2>
+        <p>Textele citate din CPC sunt cele publicate în Monitorul Oficial; verifică forma consolidată la data la care acționezi. Trei probleme revin des în practică. Debitorul așteaptă „să se lămurească” și pierde cele 15 zile. În contestație se invocă motive care puteau fi ridicate în procesul inițial, iar art. 713 alin. 1 le interzice. Se cere suspendarea fără cauțiune pregătită, deși art. 719 alin. 2 o cere în prealabil.</p>
+        <h3>Greșeli frecvente</h3>
+        <ul class="chk">
+          <li>Ignori actele executorului, pentru că „oricum nu am bani”.</li>
+          <li>Muți bani sau bunuri fără să cunoști regulile: plata sau cesiunea creanței poprite nu se opune creditorului (art. 784 alin. 4).</li>
+          <li>Contești după cele 15 zile.</li>
+          <li>Plătești ce îți cere executorul fără să ceri calculul.</li>
+          <li>Negociezi cu executorul în loc de creditor: executorul nu poate anula datoria, o poate doar executa.</li>
+        </ul>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Fotografiază toate actele primite și notează data primirii fiecăruia.</li>
+          <li>Calculează ultima zi de contestație: 15 zile libere, adică data actului + 16 zile, mutată în prima zi lucrătoare dacă cade în weekend.</li>
+          <li>Trimite-ne actele în chat, ca să-ți spunem în aceeași zi dacă merită contestația, suspendarea sau o negociere cu creditorul.</li>
+        </ol>
+        <!--@author practice="executare silită" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre executarea silită</h2>
+        <div class="faq">
+          <details open><summary>Ce este executarea silită?</summary><p>Procedura prin care executorul recuperează o creanță pe baza unui titlu executoriu, prin poprire, sechestru și vânzarea bunurilor, fără acordul debitorului.</p></details>
+          <details><summary>Poate fi pornită executarea fără proces?</summary><p>Da, dacă creditorul are deja un titlu executoriu, cum este contractul de credit bancar sau o hotărâre definitivă. Pentru alte creanțe e nevoie, de regulă, de o hotărâre.</p></details>
+          <details><summary>Cât timp am să contest?</summary><p>În general 15 zile (art. 715 CPC), de la primirea încheierii, a somației sau a înștiințării despre poprire. Termenul se calculează pe zile libere.</p></details>
+          <details><summary>Poate executorul să-mi blocheze contul fără să mă anunțe?</summary><p>Da, poprirea se înființează fără somație (art. 783). Ești înștiințat după, prin copia adresei de înființare.</p></details>
+          <details><summary>Cât din salariu se poate reține?</summary><p>Maximum o treime din venitul net pentru datorii obișnuite și maximum jumătate dacă sunt mai multe urmăriri (art. 729 alin. 1–2). Pentru pensie de întreținere plafonul este jumătate.</p></details>
+          <details><summary>Pot opri executarea în timp ce contest?</summary><p>Doar dacă instanța dispune suspendarea, în schimbul unei cauțiuni (art. 719). Contestația singură nu suspendă executarea.</p></details>
+          <details><summary>Cine plătește cheltuielile executării?</summary><p>De regulă debitorul (art. 670), cu excepția cazului în care creditorul renunță la executare.</p></details>
+          <details><summary>Când se prescrie executarea silită?</summary><p>Dreptul de a cere executarea se prescrie în 3 ani, dacă legea nu prevede altfel (10 ani pentru drepturi reale). Prescripția nu operează de drept: trebuie invocată (art. 706–707).</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai primit acte de executare?" lead="Trimite-ne încheierea, somația sau adresa de poprire. Îți spunem în aceeași zi ce termene curg și ce poți face. Consultația nu te obligă la nimic." nav="/|Acasă;/contestatie-la-executare/|Contestație la executare;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat executorilor sau băncilor. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/[\s.]/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var s=parseInt($('f-s').value,10),v=num('f-v'),d=num('f-d');
+    if(!(v>0)){$('o-t').textContent='—';$('o-ts').textContent='Completează venitul net.';$('o-m').textContent='—';$('o-r').textContent='—';cls('c-t');return}
+    var f=(s===0)?1/3:1/2,r=v*f;
+    $('o-t').textContent=lei(r);cls('c-t','alert');
+    $('o-ts').textContent=(s===0?'O treime':'Jumătate')+' din venitul net (art. 729 alin. '+(s===0?'1 lit. b':(s===1?'2':'1 lit. a'))+').';
+    $('o-r').textContent=lei(v-r);cls('c-r','ok');
+    if(d>0){var m=Math.ceil(d/r);$('o-m').textContent=m+' luni';$('o-ms').textContent='Aprox. '+(m>=24?(Math.round(m/12*10)/10+' ani'):'sub 2 ani')+', fără dobânzi și cheltuieli.'}
+    else{$('o-m').textContent='—';$('o-ms').textContent='Introdu datoria.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-v','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-s').value='0';$('f-v').value='3600';$('f-d').value='30000';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Procedura executării silite", "item": "https://chinsolvency.ro/procedura-executare-silita-etape/"}]}, {"@type": "Article", "headline": "Executare silită: etape, drepturi debitor și creditor", "description": "Cum decurge executarea silită pas cu pas: cerere, încuviințare, somație, poprire sau sechestru, termene de 15 zile pentru contestație și drepturile debitorului și ale creditorului.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/procedura-executare-silita-etape/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-executarii-silite.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/drepturile-debitorului-executare-silita.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum reacționezi la o executare silită", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Notezi data primirii", "text": "Termenul de 15 zile curge, de regulă, de la primirea actului."}, {"@type": "HowToStep", "position": 2, "name": "Ceri dosarul de executare", "text": "Verifici titlul, calculul și comunicările."}, {"@type": "HowToStep", "position": 3, "name": "Verifici titlul și calculul", "text": "Titlu executoriu, creanță certă, lichidă, exigibilă."}, {"@type": "HowToStep", "position": 4, "name": "Alegi calea", "text": "Plată, înțelegere cu creditorul sau contestație."}, {"@type": "HowToStep", "position": 5, "name": "Depui contestația și suspendarea", "text": "La instanța de executare, cu cauțiune pentru suspendare."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Executare silită", "Poprire", "Titlu executoriu", "Contestație la executare", "Cod procedură civilă"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce este executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Procedura prin care executorul recuperează o creanță pe baza unui titlu executoriu, prin poprire, sechestru și vânzarea bunurilor, fără acordul debitorului."}}, {"@type": "Question", "name": "Poate fi pornită executarea fără proces?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dacă creditorul are deja un titlu executoriu, cum este contractul de credit bancar sau o hotărâre definitivă. Pentru alte creanțe e nevoie, de regulă, de o hotărâre."}}, {"@type": "Question", "name": "Cât timp am să contest?", "acceptedAnswer": {"@type": "Answer", "text": "În general 15 zile (art. 715 CPC), de la primirea încheierii, a somației sau a înștiințării despre poprire. Termenul se calculează pe zile libere."}}, {"@type": "Question", "name": "Poate executorul să-mi blocheze contul fără să mă anunțe?", "acceptedAnswer": {"@type": "Answer", "text": "Da, poprirea se înființează fără somație (art. 783). Ești înștiințat după, prin copia adresei de înființare."}}, {"@type": "Question", "name": "Cât din salariu se poate reține?", "acceptedAnswer": {"@type": "Answer", "text": "Maximum o treime din venitul net pentru datorii obișnuite și maximum jumătate dacă sunt mai multe urmăriri (art. 729 alin. 1–2). Pentru pensie de întreținere plafonul este jumătate."}}, {"@type": "Question", "name": "Pot opri executarea în timp ce contest?", "acceptedAnswer": {"@type": "Answer", "text": "Doar dacă instanța dispune suspendarea, în schimbul unei cauțiuni (art. 719). Contestația singură nu suspendă executarea."}}, {"@type": "Question", "name": "Cine plătește cheltuielile executării?", "acceptedAnswer": {"@type": "Answer", "text": "De regulă debitorul (art. 670), cu excepția cazului în care creditorul renunță la executare."}}, {"@type": "Question", "name": "Când se prescrie executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Dreptul de a cere executarea se prescrie în 3 ani, dacă legea nu prevede altfel (10 ani pentru drepturi reale). Prescripția nu operează de drept: trebuie invocată (art. 706–707)."}}]}]}
+</script>
