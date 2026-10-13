@@ -1,0 +1,508 @@
+<!-- Consultarius — /recuperatorii-de-creante/ (draft). Built by build.py: BRAND_CSS, ARTICLE_CSS, FORM_SLOT are injected. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*BRAND_CSS*/
+/*ARTICLE_CSS*/
+/* page: recuperatori de creanțe */
+.cbx .grp{grid-column:1/-1;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);padding-top:8px;border-top:1px solid var(--line);margin-top:4px}
+.cbx .grp:first-child{border-top:0;padding-top:0;margin-top:0}
+.cbx .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbx .opt{background:rgba(255,255,255,.06);border-radius:var(--radius-s);padding:16px;display:flex;flex-direction:column;gap:6px}
+.cbx .opt .k{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#D9B878}
+.cbx .opt .v{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cbx .opt .s{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.cbx .opt .s b{color:#fff}
+.cbx .opt.alert{background:rgba(185,56,47,.22)}
+.cbx .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
+.cbx .opts div{background:var(--surface);border-radius:var(--radius-s);padding:14px;font-size:13px;color:var(--ink-2);line-height:1.4}
+.cbx .opts b{display:block;color:var(--ink);font-size:14px;margin-bottom:4px}
+.cbx .rule{display:flex;gap:14px;align-items:flex-start;background:var(--ink);color:#fff;border-radius:var(--radius);padding:20px 22px;margin:20px 0}
+.cbx .rule .ic{flex:none;background:rgba(217,184,120,.18);color:#D9B878}
+.cbx .rule p{margin:0;font-size:16px;line-height:1.55;color:rgba(255,255,255,.88)}
+.cbx .rule b{color:#D9B878}
+.cbx .scm{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.cbx .scm div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);padding:16px;font-size:14px;color:var(--ink-2);line-height:1.5}
+.cbx .scm b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+.cbx .scm .k{font-size:28px;font-weight:800;color:var(--bronze);letter-spacing:-.02em;display:block;margin-bottom:4px}
+.cbx .ban{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbx .ban li{position:relative;background:#FDECEA;border:1px solid #F3C4BE;border-radius:var(--radius-s);padding:12px 14px 12px 42px;font-size:14.5px;color:var(--ink);line-height:1.45}
+.cbx .ban li::before{content:"";position:absolute;left:14px;top:14px;width:16px;height:16px;border-radius:50%;border:2px solid #B9382F;background:linear-gradient(45deg,transparent 45%,#B9382F 45%,#B9382F 58%,transparent 58%)}
+.cbx .tpl{background:var(--surface);border:1px dashed var(--bronze);border-radius:var(--radius);padding:24px 28px;font-size:16px;line-height:1.65;color:var(--ink);font-style:italic;margin:16px 0 8px}
+.cbx .tpl-btn{margin-bottom:16px}
+.cbx .todo{border:2px dashed #C0392B;background:#FDECEA;color:#922B21;border-radius:var(--radius-s);padding:10px 14px;font-size:14px;font-weight:600;margin:12px 0}
+@media (max-width:860px){.cbx .duo,.cbx .opts,.cbx .scm,.cbx .ban{grid-template-columns:1fr}}
+</style>
+
+<div class="cbx">
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+      Consultarius
+    </a>
+    <nav class="nav">
+      <a href="#verificare">Verificare</a>
+      <a href="#drepturi">Drepturi</a>
+      <a href="#pasi">Pași</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a href="#contact" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg><span>Consultație gratuită</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Recuperatorii de creanțe</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Executare silită · Credite cesionate</span>
+          <h1>Recuperatorii de creanțe: <span class="accent">ce drepturi au și cum te aperi</span></h1>
+          <div class="lead">
+            <p>Ai primit o scrisoare de la o firmă de care n-ai auzit niciodată. Scrie că banca ți-a vândut creditul și că datorezi de două ori mai mult decât ai împrumutat. Termenul de plată: 7 zile.</p>
+            <p>Respiră. <strong>Recuperatorii de creanțe</strong> pot cere bani, dar nu pot face orice. Mai jos vezi ce au voie, ce acte trebuie să-ți arate, când pot ajunge la executare silită și cum contești o sumă greșită pentru un <strong>credit cesionat</strong> de o bancă sau un IFN.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 8 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>OUG nr. 52/2016 · Cod procedură civilă</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#verificare" class="btn btn-primary">Verifică notificarea</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Regula de bază</h2>
+          <p>Nu plăti și nu semna nimic până nu vezi actele. O plată făcută din frică se recuperează greu.</p>
+          <p>Pentru tine, ca <strong>debitor consumator</strong>, contează trei lucruri: cine cere banii, în ce calitate și pe baza căror acte.</p>
+          <div class="opts">
+            <div><b>30 de zile</b>să contești suma după notificarea cesiunii</div>
+            <div><b>15 zile</b>pentru contestația la executare, după actele executorului</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFICARE -->
+<section id="verificare" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Verificare rapidă</span><h2>Ce termen ai și <span class="accent">cât poți contesta</span></h2></div>
+      <p>Introdu data primirii și sumele din scrisoare. Afli până când poți contesta și dacă suma depășește plafonul legal pentru creditele IFN. Calcul orientativ.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Ce ai primit</div>
+          <div class="field"><label for="v-data">Data primirii (de pe plic)</label><div class="inp"><input type="date" id="v-data"></div></div>
+          <div class="field"><label for="v-act">Tipul actului</label><div class="inp"><select id="v-act">
+            <option value="n">Notificare de cesiune / scrisoare de la recuperator</option>
+            <option value="e">Act de la executor (somație, poprire)</option>
+          </select></div></div>
+          <div class="grp">Suma</div>
+          <div class="field"><label for="v-imp">Suma împrumutată inițial</label><div class="inp"><input id="v-imp" inputmode="decimal" placeholder="ex. 3 000"><span class="unit">lei</span></div></div>
+          <div class="field"><label for="v-cer">Suma cerută acum</label><div class="inp"><input id="v-cer" inputmode="decimal" placeholder="ex. 9 400"><span class="unit">lei</span></div></div>
+          <div class="field full"><label for="v-tip">Tipul creditului</label><div class="inp"><select id="v-tip">
+            <option value="ifn">IFN, contract încheiat după 11.11.2024</option>
+            <option value="ifnv">IFN, contract încheiat înainte de 11.11.2024</option>
+            <option value="b">Bancă</option>
+          </select></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-ver">Verifică</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: IFN 3.000 lei</button>
+            <button type="button" class="btn btn-line" id="b-ex2">Exemplu: act de la executor</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt" id="c-t"><span class="k">Ultima zi pentru contestare</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Introduceți data primirii.</span></div>
+            <div class="opt" id="c-s"><span class="k">Suma de discutat</span><span class="v" id="o-s">—</span><span class="s" id="o-ss">Introduceți sumele.</span></div>
+          </div>
+          <div class="flag" id="o-flag" hidden></div>
+          <a href="#contact" class="btn btn-primary">Trimite notificarea la verificat</a>
+          <span class="disc">Notificarea cesiunii: 30 de zile calendaristice (art. 59–60 din OUG nr. 52/2016). Contestația la executare: 15 zile, pe zile libere (art. 715 și 181 C. proc. civ.). Ultima zi nelucrătoare se prelungește. Nu înlocuiește verificarea dovezii de comunicare.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#ce-sunt">Ce sunt recuperatorii</a>
+      <a href="#cesiune">Cesiunea de creanță</a>
+      <a href="#executare">Pot executa silit?</a>
+      <a href="#contestare">Când se contestă</a>
+      <a href="#drepturi">Drepturile debitorului</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#practica">Practică judiciară</a>
+      <a href="#pasi">Cum te aperi: 5 pași</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="ce-sunt">
+        <span class="eyebrow">Ghid</span>
+        <h2>Ce sunt recuperatorii de creanțe și ce rol au</h2>
+        <p>Recuperatorii de creanțe sunt firme care încasează datorii fie în numele creditorului, fie în nume propriu, după ce au cumpărat creanța. De obicei apar după ce un credit de la bancă sau IFN a ajuns în restanță. Faptul că datoria a fost transmisă nu face automat corecte toate sumele cerute.</p>
+        <p>Când un <strong>credit este vândut la recuperatori</strong>, se face o <strong>cesiune de creanță</strong>: creditorul inițial transferă dreptul de a încasa banii către altă entitate. Noul titular se numește <strong>creditor cesionar</strong>. Băncile vând astfel portofolii întregi de credite neperformante, de regulă la un preț mult sub valoarea nominală.</p>
+        <h3>Diferența dintre bancă, IFN, recuperator și executor judecătoresc</h3>
+        <div class="tbl"><table>
+          <thead><tr><th>Cine</th><th>Ce face</th><th>Ce nu poate face</th></tr></thead>
+          <tbody>
+            <tr><td>Bancă / IFN</td><td>Acordă creditul, calculează ratele, poate cesiona creanța</td><td>Nu execută singură silit, fără executor</td></tr>
+            <tr><td>Recuperator de creanțe</td><td>Cere plata, negociază, poate cere executarea prin executor</td><td>Nu pune poprire, nu ridică bunuri, nu intră în casă</td></tr>
+            <tr><td>Administrator de credite</td><td>Administrează creditul pentru un cumpărător (OUG nr. 15/2024)</td><td>Nu poate primi sau păstra banii debitorilor în nume propriu</td></tr>
+            <tr><td>Executor judecătoresc</td><td>Face executarea silită: somație, poprire, urmărirea bunurilor</td><td>Nu execută fără titlu executoriu (art. 632 Cod procedură civilă)</td></tr>
+          </tbody>
+        </table></div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/recuperatori-creante-cine-e-cine.webp" width="1200" height="675" alt="Diferența dintre bancă, IFN, recuperator de creanțe și executor judecătoresc: ce pot și ce nu pot face" loading="lazy">
+          <figcaption>Cine e cine: bancă, recuperator, executor</figcaption>
+        </figure>
+      </section>
+
+      <section id="cesiune">
+        <span class="eyebrow">Cesiunea</span>
+        <h2>Ce înseamnă cesiunea de creanță când creditul este vândut</h2>
+        <p>Cesiunea de creanță este contractul prin care creditorul inițial transmite datoria ta altcuiva (art. 1566 și urm. Cod civil). Cesiunea nu îți ia apărările. Tot ce puteai opune băncii, poți opune și recuperatorului: plăți făcute, calcul greșit, clauze abuzive, prescripție.</p>
+        <p>Pentru creditele de consum și imobiliare, OUG nr. 52/2016 a introdus reguli clare. Cesiunea îți este opozabilă doar după ce ești notificat. <strong>Notificarea cesiunii</strong> se trimite prin scrisoare recomandată cu confirmare de primire, în 10 zile calendaristice de la semnarea contractului de cesiune. Ea trebuie să arate cine e noul creditor, data cesiunii și suma datorată, cu acte justificative.</p>
+        <div class="scm">
+          <div><span class="k">10 zile</span><b>Trimiterea notificării</b>de la semnarea contractului de cesiune, recomandat cu confirmare</div>
+          <div><span class="k">30 de zile</span><b>Contestarea ta</b>a existenței sau a cuantumului datoriei, de la primire</div>
+          <div><span class="k">30 de zile</span><b>Răspunsul recuperatorului</b>timp în care nu are voie să continue recuperarea</div>
+        </div>
+        <div class="note"><b>Cel mai important drept:</b> dacă nu contești în 30 de zile, asta nu înseamnă că recunoști suma și nu pierzi dreptul de a merge în instanță (art. 59–60 din OUG nr. 52/2016).</div>
+        <h3>Ce documente trebuie verificate după cesiune</h3>
+        <ul class="chk">
+          <li>Contractul de credit inițial și actele adiționale.</li>
+          <li><strong>Dovada cesiunii</strong>: contractul de cesiune sau un extras care să arate că datoria ta e inclusă.</li>
+          <li>Notificarea cesiunii și data la care ai primit-o.</li>
+          <li>Soldul la data cesiunii și <strong>calculul datoriei</strong> după cesiune.</li>
+          <li>Defalcarea pe principal, dobânzi, <strong>penalități de întârziere</strong> și comisioane.</li>
+          <li>Istoricul plăților făcute de tine.</li>
+          <li>Actele de executare, dacă există.</li>
+        </ul>
+      </section>
+
+      <section id="executare">
+        <span class="eyebrow">Executare silită</span>
+        <h2>Recuperatorii de creanțe pot începe executarea silită?</h2>
+        <p>Nu singuri. Executarea silită se face numai prin executor judecătoresc și numai pe baza unui <strong>titlu executoriu</strong>: o hotărâre judecătorească sau alt act căruia legea îi dă această putere. Recuperatorul poate cere executarea, dar executorul și instanța verifică dacă sunt îndeplinite condițiile.</p>
+        <p>Un detaliu important pentru credite cesionate: în cazurile reglementate de OUG nr. 52/2016, contractul de credit nu mai constituie titlu executoriu atunci când cesionarul este o entitate de recuperare creanțe. Atunci recuperatorul trebuie, în principiu, să obțină mai întâi o hotărâre în instanță.</p>
+        <div class="todo">[DE VERIFICAT: aplicarea în timp a acestei reguli și practica ÎCCJ pentru creditele de consum din OUG nr. 50/2010]</div>
+        <div class="t-grid">
+          <div class="t-card"><h3>Somația recuperatorului</h3><ul><li>Nu este act de executare. Verifici în liniște, ceri actele, contești suma în scris.</li></ul></div>
+          <div class="t-card"><h3>Somația executorului</h3><ul><li>Este act de executare. Acționezi în zilele următoare: termenul de 15 zile curge.</li></ul></div>
+        </div>
+        <h3>Ce înseamnă creanță certă, lichidă și exigibilă</h3>
+        <p>Executarea silită cere o <strong>creanță certă, lichidă și exigibilă</strong>.</p>
+        <div class="trio">
+          <div><b>Certă</b>Existența datoriei rezultă din acte.</div>
+          <div><b>Lichidă</b>Suma e exactă sau se poate calcula din acte.</div>
+          <div><b>Exigibilă</b>Termenul de plată a trecut.</div>
+        </div>
+        <p>Dacă suma e neclară, dobânzile nu se pot verifica sau lipsesc actele, aici apare o apărare serioasă.</p>
+      </section>
+
+      <section id="contestare">
+        <span class="eyebrow">Apărare</span>
+        <h2>Când executarea silită pornită de recuperatori poate fi contestată</h2>
+        <p>Executarea poate fi contestată când lipsesc documentele creanței, cesiunea nu e dovedită, suma e calculată greșit, s-a împlinit prescripția sau creditul conține clauze abuzive. Nu orice executare este nelegală, dar orice executare trebuie verificată, și repede.</p>
+        <p>Motive frecvente:</p>
+        <ul class="chk">
+          <li>Notificarea cesiunii lipsește sau nu ți-a fost comunicată.</li>
+          <li>Nu există dovada că datoria ta a fost inclusă în cesiune.</li>
+          <li><strong>Dobânzi penalizatoare</strong> sau comisioane fără bază în contract ori în lege.</li>
+          <li>Penalități disproporționate față de suma împrumutată.</li>
+          <li><strong>Prescripția dreptului de executare</strong>: în general 3 ani pentru datorii bănești (art. 706 Cod procedură civilă).</li>
+          <li><strong>Clauze abuzive</strong> în contractul inițial (Legea nr. 193/2000).</li>
+          <li>Executare pornită fără titlu executoriu valabil.</li>
+        </ul>
+        <div class="example">
+          <div class="t">Cifra pe șervețel</div>
+          <p>Ai luat de la un IFN 3.000 lei după 11 noiembrie 2024. Legea nr. 243/2024 prevede că, la creditele de consum de la IFN-uri, suma totală de plată nu poate depăși dublul sumei împrumutate: aici, 6.000 lei. Dacă recuperatorul îți cere 9.400 lei, ai cel puțin 3.400 lei de discutat.</p>
+          <span class="formula">9.400 − 2 × 3.000 = 3.400 lei de contestat</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <div class="todo">[DE VERIFICAT: aplicarea plafonului pentru contractele încheiate înainte de 11.11.2024]</div>
+        <h3>Contestația la executare</h3>
+        <p><strong>Contestația la executare</strong> este cererea prin care ceri instanței să anuleze executarea sau anumite acte ale executorului (art. 712 și urm. Cod procedură civilă). Se depune la instanța de executare, de regulă judecătoria de la domiciliul tău. Termenul general este de <strong>15 zile</strong> (art. 715). Termenul e scurt, deci plicul și data primirii contează.</p>
+        <p>Poți cere și suspendarea executării până la judecarea contestației (art. 719). Instanța cere de regulă o cauțiune.</p>
+        <h4>Ce trebuie verificat înainte de contestație</h4>
+        <ul class="chk">
+          <li>Data la care ai primit actele (păstrează plicul).</li>
+          <li>Numele creditorului din actele executorului și dacă e același cu cel din notificare.</li>
+          <li>Suma, dobânzile și cheltuielile de executare.</li>
+          <li>Titlul executoriu folosit.</li>
+          <li>Actele cesiunii.</li>
+          <li>Termenul de prescripție.</li>
+        </ul>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">Drepturi</span>
+        <h2>Ce drepturi are debitorul față de recuperatorii de creanțe</h2>
+        <p>Ai dreptul să știi cine îți cere banii, să primești actele datoriei, să contești suma în 30 de zile de la notificarea cesiunii și să nu fii hărțuit. Dacă recuperatorul nu respectă aceste reguli, poți face plângere la ANPC și poți folosi abaterile ca argument în instanță.</p>
+        <p>OUG nr. 52/2016 interzice entităților de recuperare creanțe, printre altele:</p>
+        <ul class="ban">
+          <li>să te contacteze între orele 20:00 și 9:00;</li>
+          <li>să te caute la locul de muncă;</li>
+          <li>să vorbească despre datorie cu rudele, vecinii sau colegii;</li>
+          <li>să lipească notificări pe ușa apartamentului sau a blocului;</li>
+          <li>să-ți perceapă comisioane, dobânzi sau costuri de recuperare (cu excepția dobânzii penalizatoare legale și a cheltuielilor de executare);</li>
+          <li>să folosească amenințări sau tehnici agresive.</li>
+        </ul>
+        <p>Mai mult, de la 1 ianuarie 2017, activitatea de recuperare creanțe pentru consumatori poate fi desfășurată doar de entitățile înregistrate la ANPC. Verifică firma în lista publicată de ANPC.</p>
+        <h3>Ce nu ar trebui să facă debitorul</h3>
+        <ul class="chk">
+          <li>Să plătească „ceva, ca să-i liniștească”. O plată parțială poate întrerupe prescripția (art. 2537 Cod civil).</li>
+          <li>Să semneze un nou <strong>grafic de plată</strong> sau o recunoaștere de datorie fără analiză.</li>
+          <li>Să negocieze doar la telefon.</li>
+          <li>Să ignore actele de la executor.</li>
+          <li>Să trimită originale în loc de copii.</li>
+        </ul>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Ce spune legislația despre recuperarea creanțelor</h2>
+        <p>Nu există o singură lege. Se aplică împreună Codul civil (cesiune, prescripție), Codul de procedură civilă (executare, contestație), OUG nr. 50/2010 și OUG nr. 52/2016 (credite pentru consumatori), Legea nr. 193/2000 (clauze abuzive), Legea nr. 243/2024 (costul creditelor IFN) și OUG nr. 15/2024 (administratori și cumpărători de credite).</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Act normativ</th><th>Ce te ajută să verifici</th></tr></thead>
+          <tbody>
+            <tr><td>Codul civil</td><td>Cesiunea de creanță, prescripția de 3 ani (art. 2517), întreruperea prescripției</td></tr>
+            <tr><td>Codul de procedură civilă</td><td>Titlul executoriu, contestația la executare, suspendarea, poprirea pe cont</td></tr>
+            <tr><td>OUG nr. 50/2010 și OUG nr. 52/2016</td><td>Notificarea cesiunii, termenul de 30 de zile, interdicțiile pentru recuperatori</td></tr>
+            <tr><td>Legea nr. 193/2000</td><td>Clauzele abuzive din contractul inițial</td></tr>
+            <tr><td>Legea nr. 243/2024</td><td>Plafonul DAE și al costului total la creditele IFN</td></tr>
+            <tr><td>OUG nr. 15/2024</td><td>Cine are voie să administreze și să cumpere credite neperformante</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Comparație între regulile vechi și cele actuale</h3>
+        <p>Până în 2016, recuperatorii lucrau aproape fără reguli speciale. OUG nr. 52/2016 a adus notificarea obligatorie, termenul de contestare, interdicțiile de contact și înregistrarea la ANPC. Legea nr. 243/2024 a plafonat costul creditelor IFN, iar OUG nr. 15/2024 a reglementat administratorii și cumpărătorii de credite. Totuși, nicio lege nu verifică dosarul tău în locul tău.</p>
+        <h4>De ce contează autorizarea și supravegherea</h4>
+        <p>Potrivit OUG nr. 15/2024, administratorii de credite cu sediul în România sunt autorizați de ANPC. BNR are un rol consultativ asupra procedurilor interne. Pentru tine, întrebarea practică rămâne: cine e creditorul, cine administrează creditul și cine are dreptul să încaseze.</p>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Din instanță</span>
+        <h2>Practică judiciară privind recuperatorii de creanțe și executarea silită</h2>
+        <p>Instanțele verifică în principal dacă recuperatorul a dovedit că a dobândit creanța, dacă debitorul a fost notificat, dacă suma e certă și calculată corect și dacă executarea are titlu valabil. Dosarele în care cesiunea nu e dovedită cu acte se pierd des de către recuperator.</p>
+        <h3>Exemple de probleme analizate de instanțe</h3>
+        <ul class="chk">
+          <li>Executare pornită pentru o creanță cesionată, fără dovada că acel credit e inclus în cesiune.</li>
+          <li>Lipsa notificării debitorului înainte de executare.</li>
+          <li>Dobânzi și penalități calculate neclar după cesiune.</li>
+          <li>Contract de credit cu comisioane posibil abuzive.</li>
+          <li>Prescripția dreptului de executare.</li>
+          <li>Lipsa calității de creditor a celui care a cerut executarea.</li>
+        </ul>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <div class="note dark"><b>Poziția juridică.</b> Din experiența mea, primul lucru pe care îl cer într-un astfel de dosar este extrasul din contractul de cesiune în care apare creditul clientului. Fără el, discuția despre sumă vine abia pe locul doi.</div>
+      </section>
+
+      <section id="pasi">
+        <span class="eyebrow">Pas cu pas</span>
+        <h2>Cum te poți apăra dacă ai primit notificare de la recuperator</h2>
+        <p>Ia-o în cinci pași: afli cine îți cere banii, ceri actele în scris, verifici suma, verifici dacă există executare și abia apoi decizi dacă plătești, negociezi sau contești. Totul în scris, cu dovadă de trimitere.</p>
+        <h3>Pasul 1: verifică cine cere plata</h3>
+        <p>E creditorul cesionar, un administrator de credite, un recuperator mandatat sau un executor? Verifică firma în lista ANPC.</p>
+        <h3>Pasul 2: cere documentele datoriei</h3>
+        <p>Model scurt, de trimis recomandat cu confirmare de primire:</p>
+        <div class="tpl" id="tpl">„Vă rog să-mi comunicați contractul de credit, dovada cesiunii, notificarea cesiunii și calculul detaliat al sumei pretinse. Contest cuantumul până la primirea acestor documente.”</div>
+        <button type="button" class="btn btn-line tpl-btn" id="b-copy">Copiază modelul</button>
+        <h3>Pasul 3: verifică suma, dobânzile și penalitățile</h3>
+        <p>Compară suma cerută cu suma împrumutată, cu ce ai plătit deja și cu plafonul din Legea nr. 243/2024, dacă e credit IFN.</p>
+        <h3>Pasul 4: verifică dacă există executare silită</h3>
+        <p>Notificarea de la recuperator nu e executare. Somația, încheierea de încuviințare sau o <strong>poprire pe cont</strong> înseamnă executare, iar termenul de 15 zile curge.</p>
+        <h3>Pasul 5: cere o analiză juridică înainte de plată sau semnare</h3>
+        <p>Mai ales dacă datoria e veche, suma pare umflată sau ai deja poprire.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/recuperatori-creante-notificare-5-pasi.webp" width="1200" height="675" alt="Pașii pentru debitor după notificarea de la recuperatorii de creanțe: verificare, documente, sumă, executare, analiză" loading="lazy">
+          <figcaption>Ai primit notificare de la recuperator? 5 pași</figcaption>
+        </figure>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Atenție</span>
+        <h2>Greșeli frecvente când datoria ajunge la recuperatori</h2>
+        <p>În practica mea, cele mai scumpe greșeli sunt plata parțială pentru o datorie poate prescrisă, semnarea unui grafic nou fără analiză și ignorarea actelor de la executor până expiră termenul de contestație.</p>
+        <ul class="ban">
+          <li>Plată fără verificare.</li>
+          <li>Recunoașterea datoriei în scris, „ca să scap de telefoane”.</li>
+          <li>Comunicare doar telefonică, fără urme.</li>
+          <li>Trimiterea documentelor originale.</li>
+          <li>Verificarea prescripției după ce ai plătit deja.</li>
+        </ul>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Pune plicul și notificarea deoparte și notează data primirii.</li>
+          <li>Trimite recuperatorului cererea de documente și contestarea sumei, cu confirmare de primire.</li>
+          <li>Dacă ai acte de la executor, cere azi o analiză: termenul de contestație este de 15 zile.</li>
+        </ol>
+        <div class="author">
+          <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <div><b>[DE COMPLETAT: nume și prenume], avocat</b><span>Baroul […], nr. legitimație […] · […] ani de practică în executare silită și litigii bancare</span></div>
+        </div>
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre recuperatorii de creanțe</h2>
+        <div class="faq">
+          <details open><summary>Ce este un recuperator de creanțe?</summary><p>O firmă care încasează datorii pentru un creditor sau în nume propriu, după ce a cumpărat creanța, de obicei de la o bancă sau un IFN.</p></details>
+          <details><summary>Recuperatorii de creanțe pot executa silit un debitor?</summary><p>Nu direct. Executarea se face doar prin executor judecătoresc, pe baza unui titlu executoriu.</p></details>
+          <details><summary>Ce fac dacă banca a vândut creditul la recuperatori?</summary><p>Ceri dovada cesiunii și calculul sumei, verifici prescripția și contești în 30 de zile de la notificare dacă suma e greșită.</p></details>
+          <details><summary>Pot contesta executarea silită începută de recuperatori?</summary><p>Da, prin contestație la executare, în general în 15 zile, dacă există motive: sumă greșită, lipsa titlului, prescripție, clauze abuzive.</p></details>
+          <details><summary>Ce înseamnă creanță certă, lichidă și exigibilă?</summary><p>Datoria e dovedită cu acte, suma e determinată, iar termenul de plată a trecut.</p></details>
+          <details><summary>Recuperatorii pot cere dobânzi și penalități?</summary><p>Nu pot adăuga comisioane sau costuri de recuperare. Pot cere sumele din contract și dobânda penalizatoare legală, dacă sunt justificate.</p></details>
+          <details><summary>Este obligatoriu să plătesc recuperatorului imediat?</summary><p>Nu. Mai întâi verifici cine cere banii, pe ce bază și cât datorezi de fapt.</p></details>
+          <details><summary>Ce documente trebuie să cer de la recuperatorul de creanțe?</summary><p>Contractul de credit, dovada și notificarea cesiunii, calculul detaliat al datoriei și actele de executare, dacă există.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:32px">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Consultație gratuită</span>
+        <h2>Ai primit notificare de la recuperator?</h2>
+        <p class="lead">Trimite notificarea și actele primite. Îți spunem dacă suma se poate contesta, dacă datoria e prescrisă și ce faci în următoarele zile. Consultația nu te obligă la nimic.</p>
+        <div class="contact-points">
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>[Telefon]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>[E-mail]</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Programează consultația gratuită</h3>
+        <p>Vă răspundem în cel mai scurt timp.</p>
+<!-- FORM_SLOT -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Consultarius</a>
+    <nav class="nav"><a href="/">Acasă</a><a href="/calculator-insolventa/">Calculator termene</a><a href="#intrebari">Întrebări</a><a href="#contact">Contact</a></nav>
+    <span>© 2026 Consultarius. Informațiile au caracter general și nu înlocuiesc consultanța juridică. Calculele sunt orientative.</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var m0=new Intl.NumberFormat('ro-RO',{maximumFractionDigits:0});
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  function easter(y){var a=y%4,b=y%7,c=y%19,d=(19*c+15)%30,e=(2*a+4*b-d+34)%7,m=Math.floor((d+e+114)/31),day=((d+e+114)%31)+1;var dt=new Date(Date.UTC(y,m-1,day));dt.setUTCDate(dt.getUTCDate()+13);return dt}
+  function key(d){return d.getUTCFullYear()+'-'+(d.getUTCMonth()+1)+'-'+d.getUTCDate()}
+  function holidays(y){
+    var h={};[[1,1],[1,2],[1,6],[1,7],[1,24],[5,1],[6,1],[8,15],[11,30],[12,1],[12,25],[12,26]].forEach(function(x){h[y+'-'+x[0]+'-'+x[1]]=1});
+    var e=easter(y);[-2,0,1,49,50].forEach(function(o){var d=new Date(e);d.setUTCDate(d.getUTCDate()+o);h[key(d)]=1});return h}
+  function free(d){var w=d.getUTCDay();return w===0||w===6||!!holidays(d.getUTCFullYear())[key(d)]}
+  var wd=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'],mo=['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'];
+  function ro(d){return wd[d.getUTCDay()]+', '+d.getUTCDate()+' '+mo[d.getUTCMonth()]+' '+d.getUTCFullYear()}
+  function term(){
+    var s=$('v-data').value,ex=$('v-act').value==='e',c=$('c-t');
+    c.classList.remove('alert');
+    if(!s){$('o-t').textContent='—';$('o-ts').textContent='Introduceți data primirii.';return null}
+    var p=s.split('-'),d=new Date(Date.UTC(+p[0],+p[1]-1,+p[2])),n=ex?15:30;
+    /* 30 zile calendaristice: ziua primirii nu se numără; 15 zile CPC: zile libere (+1) */
+    d.setUTCDate(d.getUTCDate()+n+(ex?1:0));
+    var moved=false;while(free(d)){d.setUTCDate(d.getUTCDate()+1);moved=true}
+    $('o-t').textContent=ro(d);
+    var today=new Date(),t0=Date.UTC(today.getFullYear(),today.getMonth(),today.getDate()),left=Math.round((d.getTime()-t0)/864e5);
+    $('o-ts').innerHTML=(ex?'Contestație la executare: <b>15 zile</b>, pe zile libere':'Contestarea sumei la recuperator: <b>30 de zile</b> calendaristice')+(moved?' · prelungit la prima zi lucrătoare':'')+'<br>'+(left<0?'<b>Termenul pare expirat.</b>':'Au mai rămas <b>'+left+' zile</b>.');
+    if(left<10)c.classList.add('alert');
+    return {ex:ex,left:left};
+  }
+  function sum(){
+    var I=num('v-imp'),C=num('v-cer'),t=$('v-tip').value,c=$('c-s');
+    c.classList.remove('alert');
+    if(!I||!C){$('o-s').textContent='—';$('o-ss').textContent='Introduceți sumele.';return null}
+    var r=C/I;
+    if(t==='b'){$('o-s').textContent='×'+r.toFixed(1).replace('.',',')+' față de împrumut';$('o-ss').innerHTML='Plafonul din Legea nr. 243/2024 nu se aplică creditelor bancare. Cereți defalcarea pe principal, dobânzi și penalități.';return {over:0,bank:true,r:r}}
+    var cap=2*I,over=C-cap;
+    if(over>0){$('o-s').textContent=m0.format(over)+' lei';c.classList.add('alert');$('o-ss').innerHTML='Plafon: 2 × '+m0.format(I)+' = <b>'+m0.format(cap)+' lei</b>. Cerut: <b>'+m0.format(C)+' lei</b>'+(t==='ifnv'?'<br>Contract vechi: plafonul se aplică doar dacă legea o permite. De verificat.':'');}
+    else{$('o-s').textContent='0 lei peste plafon';$('o-ss').innerHTML='Suma cerută este sub plafonul de <b>'+m0.format(cap)+' lei</b>. Verificați totuși calculul și plățile făcute.'}
+    return {over:over,old:t==='ifnv',r:r};
+  }
+  function run(){
+    var a=term(),b=sum(),flag=$('o-flag');
+    if(!a&&!b){flag.hidden=true;return}
+    flag.hidden=false;flag.className='flag';
+    if(a&&a.left<0){flag.className='flag warn';flag.textContent='Termenul pare să fi expirat. Verificați imediat cu un avocat data de pe dovada de comunicare și ce remedii mai există.'}
+    else if(a&&a.ex){flag.className='flag warn';flag.textContent='Act de la executor: executarea a început. Nu așteptați ultima zi — contestația și cererea de suspendare se pregătesc din timp.'}
+    else if(b&&b.over>0&&!b.old){flag.className='flag warn';flag.textContent='Suma cerută depășește dublul sumei împrumutate cu '+m0.format(b.over)+' lei. Contestați în scris cuantumul și cereți calculul detaliat.'}
+    else if(b&&b.r>=2){flag.textContent='Suma cerută este de peste două ori împrumutul. Cereți defalcarea și verificați clauzele și prescripția înainte de orice plată.'}
+    else flag.textContent='Cereți în scris actele datoriei și nu plătiți până nu verificați calculul.';
+  }
+  $('b-ver').addEventListener('click',run);
+  ['v-data','v-act','v-imp','v-cer','v-tip'].forEach(function(id){$(id).addEventListener('input',run);$(id).addEventListener('change',run)});
+  function iso(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+  function ex(n){var t=new Date();t.setDate(t.getDate()-2);$('v-data').value=iso(t);
+    if(n===1){$('v-act').value='n';$('v-imp').value='3000';$('v-cer').value='9400';$('v-tip').value='ifn'}
+    else{$('v-act').value='e';$('v-imp').value='20000';$('v-cer').value='31500';$('v-tip').value='b'}
+    run()}
+  $('b-ex1').addEventListener('click',function(){ex(1)});
+  $('b-ex2').addEventListener('click',function(){ex(2)});
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex(+b.getAttribute('data-ex'));$('verificare').scrollIntoView({behavior:'smooth'})})});
+  $('b-copy').addEventListener('click',function(){
+    var t=$('tpl').innerText.replace(/^„|”$/g,''),b=this;
+    function done(){b.textContent='Copiat ✓';setTimeout(function(){b.textContent='Copiază modelul'},2000)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+    else{var r=document.createRange();r.selectNodeContents($('tpl'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done()}catch(e){}}
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Recuperatorii de creanțe","item":"https://chinsolvency.ro/recuperatorii-de-creante/"}]},
+ {"@type":"Article","headline":"Recuperatorii de creanțe: executare silită și credite","description":"Ce pot face recuperatorii de creanțe, când pot cere executare silită, ce acte să le ceri și cum contești o sumă greșită. Termene, exemple și pași concreți.","inLanguage":"ro","dateModified":"2026-10-08","mainEntityOfPage":"https://chinsolvency.ro/recuperatorii-de-creante/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/recuperatori-creante-cine-e-cine.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/recuperatori-creante-notificare-5-pasi.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum te aperi după notificarea de la recuperatorul de creanțe","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/recuperatori-creante-notificare-5-pasi.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Verifică cine cere plata","text":"Creditor cesionar, administrator de credite, recuperator mandatat sau executor. Verifică firma în lista ANPC."},
+  {"@type":"HowToStep","position":2,"name":"Cere documentele datoriei","text":"Cere în scris contractul de credit, dovada cesiunii, notificarea cesiunii și calculul detaliat al sumei pretinse."},
+  {"@type":"HowToStep","position":3,"name":"Verifică suma","text":"Compară suma cerută cu suma împrumutată, cu ce ai plătit deja și cu plafonul din Legea nr. 243/2024, dacă e credit IFN."},
+  {"@type":"HowToStep","position":4,"name":"Verifică dacă există executare silită","text":"Somația executorului, încheierea de încuviințare sau poprirea pe cont înseamnă executare: termenul de 15 zile curge."},
+  {"@type":"HowToStep","position":5,"name":"Cere o analiză juridică","text":"Înainte de orice plată sau semnătură, mai ales dacă datoria e veche sau suma pare umflată."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Recuperatori de creanțe","Cesiune de creanță","Executare silită","Contestație la executare"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Ce este un recuperator de creanțe?","acceptedAnswer":{"@type":"Answer","text":"O firmă care încasează datorii pentru un creditor sau în nume propriu, după ce a cumpărat creanța, de obicei de la o bancă sau un IFN."}},
+  {"@type":"Question","name":"Recuperatorii de creanțe pot executa silit un debitor?","acceptedAnswer":{"@type":"Answer","text":"Nu direct. Executarea se face doar prin executor judecătoresc, pe baza unui titlu executoriu."}},
+  {"@type":"Question","name":"Ce fac dacă banca a vândut creditul la recuperatori?","acceptedAnswer":{"@type":"Answer","text":"Ceri dovada cesiunii și calculul sumei, verifici prescripția și contești în 30 de zile de la notificare dacă suma e greșită."}},
+  {"@type":"Question","name":"Pot contesta executarea silită începută de recuperatori?","acceptedAnswer":{"@type":"Answer","text":"Da, prin contestație la executare, în general în 15 zile, dacă există motive: sumă greșită, lipsa titlului, prescripție, clauze abuzive."}},
+  {"@type":"Question","name":"Ce înseamnă creanță certă, lichidă și exigibilă?","acceptedAnswer":{"@type":"Answer","text":"Datoria e dovedită cu acte, suma e determinată, iar termenul de plată a trecut."}},
+  {"@type":"Question","name":"Recuperatorii pot cere dobânzi și penalități?","acceptedAnswer":{"@type":"Answer","text":"Nu pot adăuga comisioane sau costuri de recuperare. Pot cere sumele din contract și dobânda penalizatoare legală, dacă sunt justificate."}},
+  {"@type":"Question","name":"Este obligatoriu să plătesc recuperatorului imediat?","acceptedAnswer":{"@type":"Answer","text":"Nu. Mai întâi verifici cine cere banii, pe ce bază și cât datorezi de fapt."}},
+  {"@type":"Question","name":"Ce documente trebuie să cer de la recuperatorul de creanțe?","acceptedAnswer":{"@type":"Answer","text":"Contractul de credit, dovada și notificarea cesiunii, calculul detaliat al datoriei și actele de executare, dacă există."}}
+ ]}
+]}
+</script>
