@@ -1,0 +1,252 @@
+<!-- Consultarius — /insolventa-voluntara/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#cerere|Cererea;#procedura|Procedura;#reorganizare|Reorganizare și faliment;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Insolvența voluntară</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legea 85/2014 · art. 66 · cererea debitorului</span>
+          <h1>Intrarea în insolvență voluntară: <span class="accent">procedură, termen de 30 de zile și faliment</span></h1>
+          <div class="lead">
+            <p>Firma nu mai poate plăti datoriile scadente și te întrebi dacă trebuie să ceri tu insolvența sau să aștepți un creditor. Legea îți dă un termen scurt, iar întârzierea are urmări.</p>
+            <p>Aici afli când apare obligația, ce acte pui în dosar, ce urmează după deschidere și cum diferă reorganizarea de faliment, cu un calculator pentru ultima zi de depunere.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Cerere: maximum 30 de zile</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează termenul</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Insolvența voluntară este deschiderea procedurii la cererea debitorului. Debitorul aflat în stare de insolvență trebuie să adreseze tribunalului cererea în maximum 30 de zile de la apariția insolvenței, cu notificarea organului fiscal (art. 66 din Legea nr. 85/2014). După deschidere, executările individuale se suspendă de drept (art. 75).</p>
+          <div class="opts">
+            <div><b>Cerere</b>30 de zile (art. 66)</div>
+            <div><b>Dacă negociezi</b>5 zile de la eșuare</div>
+            <div><b>Efect</b>executări suspendate</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Până când depui <span class="accent">cererea de insolvență</span></h2></div>
+      <p>Alege situația și data de la care curge termenul. Vezi ultima zi pentru cererea debitorului către tribunal, după art. 66 din Legea nr. 85/2014 și regula zilelor libere (art. 181 CPC).</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">De când curge termenul</label><div class="inp"><select id="f-s"><option value="0">De la apariția stării de insolvență</option><option value="1">De la eșuarea negocierilor extrajudiciare, când debitorul negociază cu bună-credință</option></select></div></div>
+          <div class="field full"><label for="f-d">Data de la care curge termenul</label><div class="inp"><input type="date" id="f-d"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: insolvență apărută la 1 octombrie 2026</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Ultima zi pentru cererea de deschidere</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completează data.</span></div>
+            <div class="opt" id="c-c"><span class="k">Înainte de prelungire</span><span class="v" id="o-c">—</span><span class="s" id="o-cs">Data calculată.</span></div>
+            <div class="opt" id="c-r"><span class="k">Zile rămase</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Până la ultima zi.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Calcul orientativ. Starea de insolvență se prezumă după 60 de zile de la scadență fără plată (art. 5 pct. 29), prezumție relativă. Data exactă a apariției insolvenței se stabilește din situația financiară; verifică cu un specialist înainte de depunere. Termenul se calculează pe zile libere (+1 zi) și se mută la prima zi lucrătoare.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#ce-este">Ce este</a>
+      <a href="#cerere">Cererea</a>
+      <a href="#procedura">Procedura</a>
+      <a href="#reorganizare">Reorganizare și faliment</a>
+      <a href="#drepturi">Drepturi</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Intrarea în insolvență voluntară: răspuns rapid</h2>
+        <p>Insolvența „voluntară” este deschiderea procedurii la cererea debitorului. Debitorul aflat în stare de insolvență trebuie să ceară tribunalului deschiderea procedurii în cel mult 30 de zile de la apariția stării de insolvență, cu notificarea organului fiscal (art. 66 alin. 1 din Legea nr. 85/2014). Judecătorul-sindic deschide procedura generală sau simplificată (art. 71), iar de la deschidere executările individuale se suspendă de drept (art. 75).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Starea de insolvență apare la 1 octombrie 2026. Termenul de 30 de zile se calculează pe zile libere: 1 octombrie + 31 zile = 1 noiembrie 2026, care este duminică, deci termenul se mută luni, 2 noiembrie 2026. Dacă firma negociază cu bună-credință un acord extrajudiciar și negocierile eșuează, cererea se depune în 5 zile de la eșuare (art. 66 alin. 2).</p>
+          <span class="formula">1.10.2026 + 31 zile = 1.11 (duminică) → 2.11.2026</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Definiție</span>
+        <h2>Ce este insolvența și când apare</h2>
+        <p>Legea o definește ca starea patrimoniului debitorului caracterizată prin insuficiența fondurilor bănești disponibile pentru plata datoriilor certe, lichide și exigibile (art. 5 pct. 29). Insolvența se prezumă atunci când debitorul nu a plătit o datorie după 60 de zile de la scadență; prezumția este relativă, deci poate fi răsturnată cu probe. Insolvența este iminentă când se dovedește că debitorul nu va putea plăti la scadență datoriile exigibile cu fondurile disponibile atunci. În acest caz, debitorul poate cere deschiderea procedurii (art. 66 alin. 4), dar nu este obligat.</p>
+        <h3>Cine intră sub Legea nr. 85/2014</h3>
+        <p>Legea se aplică debitorilor profesioniști (societăți, persoane fizice autorizate etc.). Persoanele fizice neprofesioniste au un regim separat, Legea nr. 151/2015. Pentru restructurarea înainte de insolvență, vezi <a href="/reorganizare-judiciara/">reorganizarea judiciară</a>.</p>
+      </section>
+
+      <section id="cerere">
+        <span class="eyebrow">Cererea debitorului</span>
+        <h2>Deschiderea procedurii la cererea debitorului</h2>
+        <p>Cererea se adresează tribunalului. Dacă debitorul negociază cu bună-credință, la data expirării termenului, un acord extrajudiciar, cererea se depune în 5 zile de la eșuarea negocierilor (art. 66 alin. 2). Cererile persoanelor juridice sunt semnate de persoanele care le reprezintă potrivit actelor constitutive, fără hotărâre a asociaților (art. 66 alin. 5).</p>
+        <h3>Actele cererii (art. 67)</h3>
+        <ul class="chk">
+          <li>Ultima situație financiară anuală, certificată de administrator și cenzor sau auditor, și balanța de verificare din luna precedentă.</li>
+          <li>Lista completă a bunurilor, cu toate conturile și băncile, și datele din registrele de publicitate pentru bunurile grevate.</li>
+          <li>Lista creditorilor, cu sumele, cauzele și drepturile de preferință.</li>
+          <li>Lista plăților și transferurilor din ultimele 6 luni, contul de profit și pierdere pe anul anterior.</li>
+          <li>Declarația privind intrarea în procedura simplificată sau în reorganizare pe bază de plan, și descrierea sumară a modalităților de reorganizare.</li>
+          <li>Declarații pe propria răspundere (autentificate sau certificate de avocat) despre o eventuală reorganizare în ultimii 5 ani și despre condamnările definitive.</li>
+        </ul>
+        <p>Debitorul depune actele și informațiile din art. 67 alin. 1 în dosar în termen de 10 zile de la deschiderea procedurii (art. 74).</p>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Procedura pas cu pas</h2>
+        <ol class="num">
+          <li><b>Cererea</b> la tribunal, în maximum 30 de zile de la apariția insolvenței, cu dovada notificării organului fiscal (art. 66 alin. 1).</li>
+          <li><b>Încheierea de deschidere:</b> procedură generală sau simplificată (art. 71). Simplificată se aplică, de pildă, persoanelor fizice profesioniste înregistrate, întreprinderilor familiale sau debitorilor fără bunuri ori fără sediu (art. 38 alin. 2).</li>
+          <li><b>Administratorul judiciar provizoriu</b> (procedura generală) sau lichidatorul judiciar provizoriu (cea simplificată) este numit prin sentința de deschidere (art. 73).</li>
+          <li><b>Suspendarea executărilor:</b> toate acțiunile și măsurile de executare pentru realizarea creanțelor asupra averii debitorului se suspendă de drept (art. 75).</li>
+          <li><b>Creditorii</b> își depun cererile de admitere a creanțelor în procedură.</li>
+          <li><b>Reorganizare sau faliment:</b> debitorul propune un plan sau se trece la lichidare.</li>
+        </ol>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/intrarea-in-insolventa-pasii.webp" width="1200" height="675" alt="Intrarea în insolvență la cererea debitorului: starea de insolvență, cerere în 30 de zile, acte, deschidere, efecte" loading="lazy">
+          <figcaption>Intrarea în insolvență, pas cu pas</figcaption>
+        </figure>
+      </section>
+
+      <section id="reorganizare">
+        <span class="eyebrow">Reorganizare și faliment</span>
+        <h2>Reorganizarea judiciară și falimentul</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/reorganizare-sau-faliment.webp" width="1200" height="675" alt="Reorganizare judiciară sau faliment: scop, durata planului, rolul debitorului și al creditorilor" loading="lazy">
+          <figcaption>Reorganizare sau faliment</figcaption>
+        </figure>
+        <p>Planul de reorganizare cuprinde obligatoriu programul de plată a creanțelor (art. 133 alin. 2), iar executarea lui nu poate depăși 3 ani de la confirmare (art. 133 alin. 3). Nu pot fi supuși reorganizării debitorii persoane juridice care în ultimii 5 ani au mai fost supuși unei proceduri de reorganizare (art. 69). Dacă nu există plan sau planul eșuează, se trece la lichidarea averii și distribuirea sumelor creditorilor. Detalii în ghidul despre <a href="/reorganizare-judiciara/">reorganizarea judiciară</a>.</p>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">Drepturi</span>
+        <h2>Drepturile și obligațiile debitorului și ale creditorilor</h2>
+        <ul class="chk">
+          <li><b>Debitorul:</b> beneficiază de suspendarea executărilor (art. 75), dar trebuie să depună actele (art. 74) și să respecte planul; poate fi supus unor restricții privind administrarea averii.</li>
+          <li><b>Furnizorii de utilități:</b> nu pot întrerupe serviciile către debitorul consumator captiv în perioada de observație și reorganizare, iar debitorul plătește în 90 de zile (art. 77).</li>
+          <li><b>Creditorii:</b> își valorifică drepturile numai în procedură, prin cerere de admitere a creanței (art. 75); creditorul cu garanție poate cere ridicarea suspendării în condițiile art. 78.</li>
+        </ul>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente și cum previi insolvența</h2>
+        <ul class="chk">
+          <li><b>Depui cererea târziu:</b> obligația este de 30 de zile de la apariția insolvenței (art. 66).</li>
+          <li><b>Lipsesc actele contabile:</b> situația financiară și lista creditorilor sunt obligatorii (art. 67).</li>
+          <li><b>Administrezi riscant averea</b> după apariția insolvenței.</li>
+        </ul>
+        <p>Înainte de insolvență, există variante de restructurare: negocierea cu creditorii și procedurile preventive (mandat ad-hoc, concordat preventiv, art. 66 alin. 3). Pentru creditele bancare, vezi <a href="/restructurare-credit-vs-refinantare/">restructurare credit</a>. Textele din Legea nr. 85/2014 sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci dacă firma intră în insolvență</h2>
+        <ol class="num">
+          <li>Stabilește data la care a apărut starea de insolvență și calculează ultima zi pentru cerere (calculator).</li>
+          <li>Strânge situația financiară, lista bunurilor, a creditorilor și a plăților din ultimele 6 luni.</li>
+          <li>Trimite-ne datele în chat; îți spunem în aceeași zi ce procedură se potrivește.</li>
+        </ol>
+        <!--@author practice="insolvență" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre insolvența voluntară</h2>
+        <div class="faq">
+          <details open><summary>Ce înseamnă insolvența voluntară?</summary><p>Deschiderea procedurii insolvenței la cererea debitorului, nu a creditorului. Debitorul în stare de insolvență trebuie să o ceară în maximum 30 de zile (art. 66 din Legea nr. 85/2014).</p></details>
+          <details><summary>Cine poate cere deschiderea procedurii?</summary><p>Debitorul (art. 66) sau un creditor îndreptățit (art. 70). Cererea se adresează tribunalului.</p></details>
+          <details><summary>Care este pragul pentru insolvență?</summary><p>Legea nu fixează o sumă; insolvența se prezumă după 60 de zile de la scadență fără plată (art. 5 pct. 29), prezumție relativă.</p></details>
+          <details><summary>Ce diferență există între reorganizare și faliment?</summary><p>Reorganizarea urmărește redresarea pe baza unui plan, de maximum 3 ani; falimentul înseamnă lichidarea averii și plata creditorilor.</p></details>
+          <details><summary>Ce face administratorul judiciar?</summary><p>Este numit prin sentința de deschidere (art. 73) și supraveghează administrarea averii și realizarea planului, sub controlul judecătorului-sindic.</p></details>
+          <details><summary>Pot creditorii recupera datoriile?</summary><p>Își valorifică creanțele numai în procedură, prin cerere de admitere (art. 75); sumele se distribuie după ordinea legii.</p></details>
+          <details><summary>Cât durează procedura?</summary><p>Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3).</p></details>
+          <details><summary>Cum poate fi prevenit falimentul?</summary><p>Prin negocieri cu creditorii, mandat ad-hoc sau concordat preventiv, urmărirea fluxului de numerar și depunerea la timp a cererii.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Firma are datorii scadente?" lead="Trimite-ne situația financiară și lista creditorilor. Îți spunem în aceeași zi dacă ești în insolvență, ce termen curge și ce procedură se potrivește. Consultația nu te obligă la nimic." nav="/|Acasă;/reorganizare-judiciara/|Reorganizare judiciară;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat tribunalelor sau administratorilor judiciari. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var ZI=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function key(d){return d.getUTCFullYear()+'-'+(d.getUTCMonth()+1)+'-'+d.getUTCDate()}
+  function addD(d,n){var x=new Date(d.getTime());x.setUTCDate(x.getUTCDate()+n);return x}
+  function easter(y){var a=y%4,b=y%7,c=y%19,d=(19*c+15)%30,e=(2*a+4*b-d+34)%7,m=Math.floor((d+e+114)/31),day=((d+e+114)%31)+1;return addD(new Date(Date.UTC(y,m-1,day)),13)}
+  function hol(y){var s={},add=function(m,d){s[y+'-'+m+'-'+d]=1},E=easter(y);
+    [[1,1],[1,2],[1,6],[1,7],[1,24],[5,1],[6,1],[8,15],[11,30],[12,1],[12,25],[12,26]].forEach(function(x){add(x[0],x[1])});
+    [-2,0,1,49,50].forEach(function(n){s[key(addD(E,n))]=1});return s}
+  function off(d){var w=d.getUTCDay();if(w===0||w===6)return true;return !!hol(d.getUTCFullYear())[key(d)]}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function addM(d,y,m){var x=new Date(Date.UTC(d.getUTCFullYear()+y,d.getUTCMonth()+m,d.getUTCDate()));return x}
+  var EX=["30 de zile libere de la apariția stării de insolvență (art. 66 alin. 1).", "5 zile libere de la eșuarea negocierilor (art. 66 alin. 2)."],DL=[31, 6];
+  function calc(){
+    var v=$('f-d').value,s=parseInt($('f-s').value,10);
+    if(!v){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Completează data.';$('o-c').textContent='—';$('o-r').textContent='—';return}
+    var st=dt(v),e=addD(addM(st,0,0),DL[s]),raw=e,moved=[];
+    while(off(e)){moved.push(fmt(e));e=addD(e,1)}
+    $('o-c').textContent=fmt(raw)+' ('+ZI[raw.getUTCDay()]+')';
+    $('o-cs').textContent=moved.length?'Zi nelucrătoare: se prelungește.':'Zi lucrătoare.';
+    $('o-t').textContent=fmt(e)+' ('+ZI[e.getUTCDay()]+')';cls('c-t','alert');
+    $('o-ts').textContent=EX[s];
+    var t=new Date();var today=new Date(Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()));
+    var left=Math.round((e.getTime()-today.getTime())/864e5);
+    if(0>left){$('o-r').textContent='Termen trecut';cls('c-r','alert');$('o-rs').textContent='Verifică dovada comunicării, întreruperile sau repunerea în termen.'}
+    else{$('o-r').textContent=left+' zile';cls('c-r',left<=3?'alert':'ok');$('o-rs').textContent=left<=3?'Acționează cât mai repede.':'Până la ultima zi.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-s').value='0';$('f-d').value='2026-10-01';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Insolvența voluntară", "item": "https://chinsolvency.ro/insolventa-voluntara/"}]}, {"@type": "Article", "headline": "Insolvență voluntară: cerere în 30 de zile, procedură", "description": "Cum intri în insolvență la cererea debitorului: termenul de 30 de zile, actele cererii, deschiderea procedurii, suspendarea executărilor și diferența dintre reorganizare și faliment.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/insolventa-voluntara/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/intrarea-in-insolventa-pasii.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/reorganizare-sau-faliment.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum intri în insolvență la cererea debitorului", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Stabilești starea de insolvență", "text": "Fonduri insuficiente pentru datorii certe, lichide și exigibile."}, {"@type": "HowToStep", "position": 2, "name": "Notifici organul fiscal", "text": "Dovada se atașează cererii."}, {"@type": "HowToStep", "position": 3, "name": "Depui cererea la tribunal", "text": "În maximum 30 de zile (art. 66)."}, {"@type": "HowToStep", "position": 4, "name": "Depui actele din art. 67", "text": "Situații financiare, bunuri, creditori, plăți."}, {"@type": "HowToStep", "position": 5, "name": "Aștepți încheierea", "text": "Procedură generală sau simplificată; executările se suspendă (art. 75)."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Insolvență", "Legea 85/2014", "Reorganizare judiciară", "Faliment"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce înseamnă insolvența voluntară?", "acceptedAnswer": {"@type": "Answer", "text": "Deschiderea procedurii insolvenței la cererea debitorului, nu a creditorului. Debitorul în stare de insolvență trebuie să o ceară în maximum 30 de zile (art. 66 din Legea nr. 85/2014)."}}, {"@type": "Question", "name": "Cine poate cere deschiderea procedurii?", "acceptedAnswer": {"@type": "Answer", "text": "Debitorul (art. 66) sau un creditor îndreptățit (art. 70). Cererea se adresează tribunalului."}}, {"@type": "Question", "name": "Care este pragul pentru insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Legea nu fixează o sumă; insolvența se prezumă după 60 de zile de la scadență fără plată (art. 5 pct. 29), prezumție relativă."}}, {"@type": "Question", "name": "Ce diferență există între reorganizare și faliment?", "acceptedAnswer": {"@type": "Answer", "text": "Reorganizarea urmărește redresarea pe baza unui plan, de maximum 3 ani; falimentul înseamnă lichidarea averii și plata creditorilor."}}, {"@type": "Question", "name": "Ce face administratorul judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Este numit prin sentința de deschidere (art. 73) și supraveghează administrarea averii și realizarea planului, sub controlul judecătorului-sindic."}}, {"@type": "Question", "name": "Pot creditorii recupera datoriile?", "acceptedAnswer": {"@type": "Answer", "text": "Își valorifică creanțele numai în procedură, prin cerere de admitere (art. 75); sumele se distribuie după ordinea legii."}}, {"@type": "Question", "name": "Cât durează procedura?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3)."}}, {"@type": "Question", "name": "Cum poate fi prevenit falimentul?", "acceptedAnswer": {"@type": "Answer", "text": "Prin negocieri cu creditorii, mandat ad-hoc sau concordat preventiv, urmărirea fluxului de numerar și depunerea la timp a cererii."}}]}]}
+</script>

@@ -1,0 +1,216 @@
+<!-- Consultarius — /insolventa/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Ce lege ți se aplică;#raspuns|Răspuns rapid;#etape|Etape;#drepturi|Drepturi;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Insolvența</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legea 85/2014 · Legea 151/2015 · etape</span>
+          <h1>Insolvența explicată simplu: <span class="accent">lege, etape și drepturi</span></h1>
+          <div class="lead">
+            <p>Datoriile s-au adunat, executorii bat la ușă și auzi „insolvență” ca soluție sau ca amenințare. Ce înseamnă, de fapt, și ce lege ți se aplică depinde de cine ești: firmă, profesionist sau persoană fizică.</p>
+            <p>Aici afli, pe scurt, definiția legală, etapele procedurii, efectul asupra executărilor și drepturile fiecărei părți, cu un instrument care îți arată legea aplicabilă.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Executări suspendate de drept (art. 75)</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Vezi legea aplicabilă</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Insolvența este starea în care fondurile disponibile nu ajung pentru plata datoriilor certe, lichide și exigibile (art. 5 pct. 29 din Legea nr. 85/2014); se prezumă după 60 de zile de la scadență fără plată. Procedura poate duce la reorganizare pe bază de plan sau la faliment. De la deschidere, executările individuale se suspendă de drept (art. 75). Persoanele fizice neprofesioniste au Legea nr. 151/2015.</p>
+          <div class="opts">
+            <div><b>Prezumție</b>60 de zile de la scadență</div>
+            <div><b>Cerere debitor</b>30 de zile</div>
+            <div><b>Efect</b>executări suspendate</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Ce lege <span class="accent">ți se aplică</span></h2></div>
+      <p>Alege cine ești. Îți arătăm legea aplicabilă, la ce instanță se depune cererea și primul pas.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">Cine este debitorul</label><div class="inp"><select id="f-s"><option value="0">Societate comercială sau alt profesionist</option><option value="1">Persoană fizică autorizată sau întreprindere familială</option><option value="2">Regie autonomă</option><option value="3">Profesie liberală (avocat, medic, arhitect etc.)</option><option value="4">Persoană fizică neprofesionistă, cu datorii personale</option></select></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Vezi rezultatul</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: societate comercială</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Legea aplicabilă</span><span class="v" id="o-t" style="font-size:19px">—</span><span class="s" id="o-ts">Alege o variantă.</span></div>
+            <div class="opt" id="c-m"><span class="k">Instanța</span><span class="v" id="o-m" style="font-size:17px">—</span><span class="s" id="o-ms"> </span></div>
+            <div class="opt" id="c-r"><span class="k">Primul pas</span><span class="v" id="o-r" style="font-size:17px">—</span><span class="s" id="o-rs"> </span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Orientativ. Lista categoriilor de debitori și regimurile speciale sunt în Legea nr. 85/2014, art. 3; pentru persoane fizice, în Legea nr. 151/2015. Verifică forma consolidată.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#ce-este">Ce este</a>
+      <a href="#firme">Firme</a>
+      <a href="#fizice">Persoane fizice</a>
+      <a href="#etape">Etape</a>
+      <a href="#drepturi">Drepturi</a>
+      <a href="#riscuri">Riscuri</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Insolvența explicată simplu: răspuns rapid</h2>
+        <p>Insolvența este starea patrimoniului debitorului în care fondurile bănești disponibile nu ajung pentru plata datoriilor certe, lichide și exigibile (art. 5 pct. 29 din Legea nr. 85/2014). Insolvența se prezumă după 60 de zile de la scadență fără plată, prezumție relativă. Nu înseamnă automat faliment: procedura poate duce la reorganizare pe bază de plan sau la lichidare. Legea nr. 85/2014 se aplică profesioniștilor; persoanele fizice neprofesioniste au Legea nr. 151/2015.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>O societate nu a plătit un furnizor la scadență, 1 august. După 60 de zile, adică la 30 septembrie, insolvența se prezumă (art. 5 pct. 29). Debitorul are obligația să ceară deschiderea procedurii în 30 de zile de la apariția stării de insolvență (art. 66).</p>
+          <span class="formula">scadență + 60 de zile = prezumția de insolvență</span>
+          <button type="button" class="btn btn-line" data-ex="1">Vezi legea aplicabilă</button>
+        </div>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Definiție</span>
+        <h2>Ce este insolvența și cum se deosebește de faliment</h2>
+        <p>Insolvența este o stare financiară; falimentul este o formă a procedurii. Legea distinge insolvența vădită de cea iminentă: aceasta din urmă apare când se dovedește că debitorul nu va putea plăti la scadență datoriile exigibile cu fondurile disponibile atunci (art. 5 pct. 29 lit. b). Procedura colectivă urmărește acoperirea pasivului debitorului, iar judecătorul-sindic o conduce sub controlul instanței. Pentru diferența practică, vezi <a href="/insolventa-sau-faliment/">insolvență sau faliment</a>.</p>
+        <h3>Cine intră sub lege</h3>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cine-intra-sub-legea-insolventei.webp" width="1200" height="675" alt="Care lege de insolvență se aplică: profesioniști, regii autonome, profesii liberale și persoane fizice neprofesioniste" loading="lazy">
+          <figcaption>Care lege de insolvență se aplică</figcaption>
+        </figure>
+      </section>
+
+      <section id="firme">
+        <span class="eyebrow">Firme</span>
+        <h2>Insolvența firmelor: obligații și reorganizare</h2>
+        <p>Administratorii firmei în insolvență trebuie să ceară deschiderea procedurii în 30 de zile de la apariția stării de insolvență, cu notificarea organului fiscal (art. 66 alin. 1). Cererea se depune la tribunal. După deschidere, executările individuale se suspendă de drept (art. 75) și creditorii își depun cererile de admitere a creanțelor. Debitorul persoană juridică poate propune un plan de reorganizare; dacă nu există plan sau acesta eșuează, se trece la faliment (art. 145). Despre cerere și termen, vezi <a href="/insolventa-voluntara/">insolvența voluntară</a>.</p>
+      </section>
+
+      <section id="fizice">
+        <span class="eyebrow">Persoane fizice</span>
+        <h2>Persoanele fizice neprofesioniste</h2>
+        <p>Pentru persoanele fizice care nu sunt profesioniști, insolvența este reglementată de Legea nr. 151/2015 privind procedura insolvenței persoanelor fizice, cu organe proprii (comisia de insolvență) și cu posibilitatea eliberării de datoriile reziduale. Cererea se depune la judecătorie, nu la tribunal (art. 10). Condițiile exacte (praguri, bunuri, plan de rambursare) trebuie verificate în textul consolidat al acelei legi; nu le preluăm aici din memorie.</p>
+      </section>
+
+      <section id="etape">
+        <span class="eyebrow">Etape</span>
+        <h2>Etapele procedurii de insolvență (Legea 85/2014)</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-insolventei-pe-scurt.webp" width="1200" height="675" alt="Etapele insolvenței pe scurt: cerere, deschidere, suspendarea executărilor, cereri de admitere a creanțelor, plan sau faliment" loading="lazy">
+          <figcaption>Etapele insolvenței pe scurt</figcaption>
+        </figure>
+        <ol class="num">
+          <li><b>Cererea:</b> a debitorului (art. 66) sau a creditorului (art. 70).</li>
+          <li><b>Deschiderea:</b> judecătorul-sindic pronunță încheierea de deschidere (procedură generală sau simplificată, art. 71) și desemnează un administrator judiciar provizoriu sau un lichidator (art. 73).</li>
+          <li><b>Suspendarea executărilor</b> de drept (art. 75).</li>
+          <li><b>Creanțele:</b> creditorii depun cererile de admitere (art. 104), apoi se întocmesc tabelele de creanțe.</li>
+          <li><b>Soluția:</b> plan de reorganizare (art. 132 și urm.) sau faliment, cu lichidarea averii (art. 154 și urm.).</li>
+          <li><b>Închiderea procedurii.</b></li>
+        </ol>
+        <p>Pe larg: <a href="/procedura-insolventei-etape/">procedura insolvenței, etapele</a>.</p>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">Drepturi</span>
+        <h2>Drepturile debitorului și ale creditorilor</h2>
+        <ul class="chk">
+          <li><b>Debitorul:</b> beneficiază de suspendarea executărilor (art. 75), dar depune actele (art. 74) și respectă planul. Furnizorii de utilități nu îi pot întrerupe serviciile în observație și reorganizare dacă e consumator captiv (art. 77).</li>
+          <li><b>Creditorii:</b> își valorifică creanțele numai în procedură (art. 75). Creditorul cu cauză de preferință poate cere ridicarea suspendării în condițiile art. 78. Votează planul (art. 139).</li>
+          <li><b>Ordinea de plată:</b> la distribuire, sumele se plătesc în ordinea legii (art. 159 pentru bunurile grevate de garanții).</li>
+        </ul>
+      </section>
+
+      <section id="riscuri">
+        <span class="eyebrow">Riscuri</span>
+        <h2>Avantaje, riscuri și greșeli frecvente</h2>
+        <ul class="chk">
+          <li><b>Avantaj:</b> executările se opresc și creditorii intră într-o procedură colectivă.</li>
+          <li><b>Risc:</b> pierderea administrării averii în faliment (art. 145 alin. 2) și dizolvarea persoanei juridice.</li>
+          <li><b>Greșeli:</b> depunerea tardivă a cererii (termen de 30 de zile), lipsa actelor contabile, ascunderea bunurilor.</li>
+        </ul>
+        <p>Textele din Legea nr. 85/2014 sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Cum te pregătești</h2>
+        <ol class="num">
+          <li>Stabilește dacă ești profesionist sau persoană fizică neprofesionistă (calculator).</li>
+          <li>Strânge situațiile financiare, lista bunurilor, a creditorilor și a plăților din ultimele 6 luni (art. 67).</li>
+          <li>Trimite-ne datele în chat; îți spunem în aceeași zi ce procedură se potrivește.</li>
+        </ol>
+        <!--@author practice="insolvență" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre insolvență</h2>
+        <div class="faq">
+          <details open><summary>Ce înseamnă insolvența?</summary><p>Starea patrimoniului în care fondurile disponibile nu ajung pentru plata datoriilor certe, lichide și exigibile (art. 5 pct. 29 din Legea nr. 85/2014).</p></details>
+          <details><summary>Care este diferența dintre insolvență și faliment?</summary><p>Insolvența este starea financiară; falimentul este o formă a procedurii, cu lichidarea averii, când nu există plan de reorganizare sau acesta eșuează (art. 145).</p></details>
+          <details><summary>Cine poate intra în insolvență personală?</summary><p>Persoanele fizice neprofesioniste, potrivit Legii nr. 151/2015; Legea nr. 85/2014 se aplică profesioniștilor.</p></details>
+          <details><summary>Se suspendă executările silite în insolvență?</summary><p>Da, de la deschiderea procedurii, toate acțiunile și măsurile de executare pentru realizarea creanțelor asupra averii debitorului se suspendă de drept (art. 75).</p></details>
+          <details><summary>Pot păstra locuința în procedura de insolvență?</summary><p>Depinde de procedură și de regimul garanțiilor; la persoane fizice se aplică Legea nr. 151/2015, ale cărei condiții trebuie verificate în textul consolidat.</p></details>
+          <details><summary>Cât durează procedura de insolvență?</summary><p>Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3).</p></details>
+          <details><summary>Ce rol are administratorul judiciar?</summary><p>Este desemnat prin sentința de deschidere (art. 73) și supraveghează administrarea averii și realizarea planului.</p></details>
+          <details><summary>Pot creditorii contesta procedura?</summary><p>Pot depune opoziție la sentința de deschidere în termenul din notificare (art. 100) și pot contesta tabelele de creanțe, în condițiile legii.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai datorii pe care nu le mai poți plăti?" lead="Trimite-ne situația financiară și lista creditorilor. Îți spunem în aceeași zi ce lege se aplică și ce procedură se potrivește. Consultația nu te obligă la nimic." nav="/|Acasă;/insolventa-voluntara/|Insolvența voluntară;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat tribunalelor sau administratorilor judiciari. Informațiile sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var D=[["Legea nr. 85/2014, procedura generală sau simplificată.", "Tribunalul (cererea debitorului: art. 66 alin. 1).", "Stabilește starea de insolvență și termenul de 30 de zile."], ["Legea nr. 85/2014, de regulă procedura simplificată (art. 38 alin. 2).", "Tribunalul.", "Verifică dacă ești profesionist înregistrat și adună situația financiară."], ["Legea nr. 85/2014 (art. 3 alin. 2).", "Tribunalul.", "Verifică regimul special aplicabil regiilor."], ["Nu se aplică Legea 85/2014 (art. 3 alin. 1).", "Depinde de legea specială; întreabă un specialist.", "Verifică regimul propriu profesiei."], ["Legea nr. 151/2015 (insolvența persoanelor fizice).", "Judecătoria (art. 10 din Legea 151/2015).", "Verifică condițiile și comisia de insolvență din Legea 151/2015."]];
+  function calc(){var d=D[parseInt($('f-s').value,10)];$('o-t').textContent=d[0];$('o-m').textContent=d[1];$('o-r').textContent=d[2];$('c-t').classList.add('alert')}
+  $('b-calc').addEventListener('click',calc);
+  $('f-s').addEventListener('change',calc);
+  function ex(){$('f-s').value='0';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Insolvența", "item": "https://chinsolvency.ro/insolventa/"}]}, {"@type": "Article", "headline": "Insolvență: ce înseamnă, cine intră sub lege, etape", "description": "Ce este insolvența, cum se deosebește de faliment, cine intră sub Legea 85/2014 sau Legea 151/2015, etapele procedurii, suspendarea executărilor și drepturile debitorilor și creditorilor.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/insolventa/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/cine-intra-sub-legea-insolventei.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-insolventei-pe-scurt.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum afli ce procedură de insolvență ți se aplică", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Stabilești statutul", "text": "Profesionist sau persoană fizică neprofesionistă."}, {"@type": "HowToStep", "position": 2, "name": "Verifici starea de insolvență", "text": "Fonduri insuficiente pentru datorii certe, lichide, exigibile."}, {"@type": "HowToStep", "position": 3, "name": "Alegi legea", "text": "Legea 85/2014 sau Legea 151/2015."}, {"@type": "HowToStep", "position": 4, "name": "Depui cererea", "text": "La tribunal sau la judecătorie, după caz."}, {"@type": "HowToStep", "position": 5, "name": "Urmezi procedura", "text": "Suspendarea executărilor, creanțe, plan sau faliment."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Insolvență", "Legea 85/2014", "Legea 151/2015", "Reorganizare judiciară", "Faliment"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce înseamnă insolvența?", "acceptedAnswer": {"@type": "Answer", "text": "Starea patrimoniului în care fondurile disponibile nu ajung pentru plata datoriilor certe, lichide și exigibile (art. 5 pct. 29 din Legea nr. 85/2014)."}}, {"@type": "Question", "name": "Care este diferența dintre insolvență și faliment?", "acceptedAnswer": {"@type": "Answer", "text": "Insolvența este starea financiară; falimentul este o formă a procedurii, cu lichidarea averii, când nu există plan de reorganizare sau acesta eșuează (art. 145)."}}, {"@type": "Question", "name": "Cine poate intra în insolvență personală?", "acceptedAnswer": {"@type": "Answer", "text": "Persoanele fizice neprofesioniste, potrivit Legii nr. 151/2015; Legea nr. 85/2014 se aplică profesioniștilor."}}, {"@type": "Question", "name": "Se suspendă executările silite în insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Da, de la deschiderea procedurii, toate acțiunile și măsurile de executare pentru realizarea creanțelor asupra averii debitorului se suspendă de drept (art. 75)."}}, {"@type": "Question", "name": "Pot păstra locuința în procedura de insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Depinde de procedură și de regimul garanțiilor; la persoane fizice se aplică Legea nr. 151/2015, ale cărei condiții trebuie verificate în textul consolidat."}}, {"@type": "Question", "name": "Cât durează procedura de insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3)."}}, {"@type": "Question", "name": "Ce rol are administratorul judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Este desemnat prin sentința de deschidere (art. 73) și supraveghează administrarea averii și realizarea planului."}}, {"@type": "Question", "name": "Pot creditorii contesta procedura?", "acceptedAnswer": {"@type": "Answer", "text": "Pot depune opoziție la sentința de deschidere în termenul din notificare (art. 100) și pot contesta tabelele de creanțe, în condițiile legii."}}]}]}
+</script>

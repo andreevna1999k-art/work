@@ -1,0 +1,236 @@
+<!-- Consultarius — /durata-de-recuperare-a-creantelor/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#calcul|Formula;#juridic|Termene legale;#reducere|Reducere;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Durata de recuperare a creanțelor</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">DSO · termen de încasare · termene legale</span>
+          <h1>Durata de recuperare a creanțelor: <span class="accent">calcul și termene de încasare</span></h1>
+          <div class="lead">
+            <p>Facturile sunt emise, banii nu vin, iar „în câte zile încasez” rămâne o presupunere. Aceeași expresie înseamnă două lucruri: un indicator al firmei și durata procedurii legale, iar amândouă merită calculate separat.</p>
+            <p>Aici ai formula indicatorului, un calculator pentru întârzierea medie și termenele legale de la somație la executare, ca să știi în ce fază pierzi timp.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Formula: creanțe ÷ vânzări × zile</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează durata</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Durata medie de recuperare (DSO) se calculează ca creanțe de încasat ÷ vânzări în perioadă × numărul de zile. În procedura legală nu există o durată totală, ci termene pe etape: încuviințarea executării în 3 zile (art. 666 CPC), consemnarea de către terțul poprit în 5 zile (art. 787), contestația în general în 15 zile (art. 715) și prescripția executării în 3 ani (art. 706).</p>
+          <div class="opts">
+            <div><b>DSO</b>creanțe ÷ vânzări × zile</div>
+            <div><b>Încuviințare</b>3 zile</div>
+            <div><b>Prescripție</b>3 ani</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Durata medie de recuperare <span class="accent">a creanțelor (DSO)</span></h2></div>
+      <p>Calculează în câte zile încasezi, în medie, facturile emise, și cât depășești termenul din contract. Formula este un indicator financiar, nu un termen din lege.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Datele firmei</div>
+          <div class="field"><label for="f-v">Creanțe de încasat, sold (lei)</label><div class="inp"><input id="f-v" inputmode="numeric" placeholder="120000"></div></div>
+          <div class="field"><label for="f-d">Vânzări în perioadă (lei)</label><div class="inp"><input id="f-d" inputmode="numeric" placeholder="600000"></div></div>
+          <div class="field"><label for="f-s">Perioada</label><div class="inp"><select id="f-s"><option value="365">12 luni (365 de zile)</option><option value="90">Trimestru (90 de zile)</option><option value="30">Lună (30 de zile)</option></select></div></div>
+          <div class="field"><label for="f-t">Termenul de plată din contract (zile)</label><div class="inp"><input id="f-t" inputmode="numeric" placeholder="30"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: 120.000 lei / 600.000 lei / 12 luni</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Durata medie de recuperare</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Introdu creanțele și vânzările.</span></div>
+            <div class="opt" id="c-m"><span class="k">Întârziere medie</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">Față de termenul din contract.</span></div>
+            <div class="opt" id="c-r"><span class="k">Creanțe ca % din vânzări</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Sold ÷ vânzări.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Indicator orientativ: creanțe ÷ vânzări × zile. Termenele legale de recuperare (somație, executare, prescripție) sunt separate și le găsești în ghid.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#calcul">Cum se calculează</a>
+      <a href="#factori">Factori</a>
+      <a href="#amiabil">Amiabil</a>
+      <a href="#juridic">Recuperare juridică</a>
+      <a href="#reducere">Cum reduci durata</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Durata de recuperare a creanțelor: răspuns rapid</h2>
+        <p>„Durata de recuperare” are două sensuri. Primul este un indicator financiar: în câte zile încasezi, în medie, facturile emise (DSO). Al doilea este durata procedurii de recuperare, care nu are o limită totală în lege, ci termene pe etape: executorul încuviințează executarea în 3 zile (art. 666 CPC), terțul poprit consemnează în 5 zile (art. 787), contestația se face în general în 15 zile (art. 715), iar dreptul de a cere executarea se prescrie în 3 ani (art. 706).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Creanțe de încasat de 120.000 lei, vânzări de 600.000 lei pe an. Durata medie de recuperare este 120.000 ÷ 600.000 × 365 = 73 de zile. Dacă termenul din contract este de 30 de zile, întârzierea medie este de 43 de zile.</p>
+          <span class="formula">120.000 ÷ 600.000 × 365 = 73 de zile</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="calcul">
+        <span class="eyebrow">Indicator</span>
+        <h2>Cum se calculează durata medie de recuperare</h2>
+        <p>Formula obișnuită este: creanțe de încasat ÷ vânzări în perioadă × numărul de zile din perioadă. Rezultatul îți arată câte zile de vânzări ai blocate la clienți. Compară-l cu termenul de plată din contract: diferența este întârzierea medie.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/formula-durata-de-recuperare.webp" width="1200" height="675" alt="Formula duratei medii de recuperare a creanțelor: creanțe împărțite la vânzări, înmulțite cu zilele din perioadă, exemplu 73 de zile" loading="lazy">
+          <figcaption>Formula duratei de recuperare (DSO)</figcaption>
+        </figure>
+        <h3>Cum interpretezi rezultatul</h3>
+        <ul class="chk">
+          <li>O durată apropiată de termenul din contract înseamnă că încasezi, în medie, în termen.</li>
+          <li>O durată mult mai mare înseamnă lichiditate blocată: clienți rău-platnici sau facturare întârziată.</li>
+          <li>Urmărește indicatorul lunar, nu doar anual: mediile anuale ascund vârfurile.</li>
+        </ul>
+        <p>Valoarea „bună” depinde de domeniu și de termenele contractuale; nu există un prag legal.</p>
+      </section>
+
+      <section id="factori">
+        <span class="eyebrow">Factori</span>
+        <h2>Factorii care influențează recuperarea creanțelor</h2>
+        <ul class="chk">
+          <li><b>Clienții:</b> istoricul de plată și solvabilitatea.</li>
+          <li><b>Contractele:</b> termene clare de plată, dobânzi pentru întârziere, un titlu executoriu acolo unde legea îl permite.</li>
+          <li><b>Procedurile interne:</b> facturare la timp, urmărirea scadențelor, o somație imediat după scadență.</li>
+          <li><b>Prescripția:</b> dreptul de a cere executarea se stinge în 3 ani, dacă debitorul o invocă (art. 706–707 CPC).</li>
+        </ul>
+      </section>
+
+      <section id="amiabil">
+        <span class="eyebrow">Amiabil</span>
+        <h2>Recuperarea amiabilă a creanțelor</h2>
+        <p>Amiabil înseamnă somație cu dovadă de primire, negociere și, dacă e nevoie, un plan de plată în scris. Este cea mai rapidă și mai ieftină cale, dar nu are forță coercitivă. Plata voluntară sau recunoașterea datoriei de către debitor întrerupe prescripția (art. 709 alin. 1 pct. 1 CPC). Externalizarea către o firmă de recuperare presupune cesiunea creanței sau un mandat; verifică autorizarea firmei. Vezi <a href="/societati-recuperare-creante/">societățile de recuperare creanțe</a>.</p>
+      </section>
+
+      <section id="juridic">
+        <span class="eyebrow">Juridic</span>
+        <h2>Recuperarea juridică: termene și costuri</h2>
+        <p>Dacă nu ai titlu executoriu, ai nevoie de o hotărâre sau de o ordonanță de plată (art. 1013 CPC), care cere o somație prealabilă. Cu titlu în mână, depui cererea la executor, care o încuviințează în 3 zile (art. 666). Poprirea produce efecte din ziua în care banca primește adresa, iar terțul consemnează în 5 zile (art. 787). Vânzarea unui imobil poate dura luni sau ani. Cheltuielile de executare sunt, de regulă, în sarcina debitorului (art. 670), dar le avansezi tu.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-si-termenele-recuperarii.webp" width="1200" height="675" alt="Etapele și termenele recuperării juridice: somație, titlu, încuviințare în 3 zile, poprire în 5 zile, prescripție 3 ani" loading="lazy">
+          <figcaption>Etapele și termenele recuperării</figcaption>
+        </figure>
+        <p>Perimarea: dacă lași 6 luni fără un act cerut în scris de executor, executarea se perimă (art. 697). Vezi <a href="/perimarea-executarii-silite/">perimarea executării silite</a> și <a href="/lege-recuperare-creante/">legea recuperării creanțelor</a>.</p>
+      </section>
+
+      <section id="reducere">
+        <span class="eyebrow">Reducere</span>
+        <h2>Cum reduci durata de recuperare</h2>
+        <ul class="chk">
+          <li>Verifică clientul înainte de contract: istoric, garanții, avans.</li>
+          <li>Pune în contract termene clare de plată și consecințele întârzierii.</li>
+          <li>Trimite somația imediat după scadență, cu dovadă de primire.</li>
+          <li>Urmărește scadențarul lunar și acționează înainte de prescripție.</li>
+          <li>Când ai titlu executoriu, cere executarea fără întârziere.</li>
+        </ul>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente în recuperarea creanțelor</h2>
+        <ul class="chk">
+          <li>Lipsa unui contract clar sau a dovezii livrării.</li>
+          <li>Amânarea acțiunii până se apropie prescripția.</li>
+          <li>Dependența de câțiva clienți rău-platnici.</li>
+          <li>Executare începută, apoi lăsată fără acte 6 luni: riscul perimării.</li>
+        </ul>
+        <p>Textele din CPC sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Calculează durata medie de recuperare și întârzierea față de contract.</li>
+          <li>Listează facturile scadente peste 60 de zile și trimite somații cu dovadă de primire.</li>
+          <li>Trimite-ne dosarul în chat; îți spunem în aceeași zi ce cale se potrivește.</li>
+        </ol>
+        <!--@author practice="recuperare creanțe" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre durata de recuperare a creanțelor</h2>
+        <div class="faq">
+          <details open><summary>Ce este durata de recuperare a creanțelor?</summary><p>Un indicator financiar (DSO): în câte zile încasezi, în medie, facturile emise. Se calculează ca creanțe ÷ vânzări × zile.</p></details>
+          <details><summary>Cum se calculează perioada de încasare?</summary><p>Împarți soldul creanțelor la vânzările din perioadă și înmulțești cu numărul de zile din perioadă.</p></details>
+          <details><summary>Care este durata optimă de recuperare?</summary><p>Nu există un prag legal. Compară-o cu termenul de plată din contract: o diferență mare indică întârzieri.</p></details>
+          <details><summary>Ce înseamnă recuperarea amiabilă?</summary><p>Somație, negociere și plan de plată în scris, fără proces. Este rapidă, dar nu are forță coercitivă.</p></details>
+          <details><summary>Când este necesară executarea silită?</summary><p>Când debitorul nu plătește după somație și ai un titlu executoriu; fără titlu, ai nevoie întâi de o hotărâre sau de o ordonanță de plată.</p></details>
+          <details><summary>Cum pot reduce riscul de neplată?</summary><p>Verifici clientul, ceri avans sau garanții, ai contracte clare și acționezi imediat după scadență.</p></details>
+          <details><summary>Ce documente sunt necesare?</summary><p>Contractul, facturile, dovada livrării sau a prestării, corespondența și dovada primirii somației.</p></details>
+          <details><summary>Care sunt costurile recuperării juridice?</summary><p>Taxe de timbru, onorariul executorului și al avocatului. Cheltuielile de executare sunt, de regulă, în sarcina debitorului, dar le avansezi tu (art. 670 CPC).</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai facturi neîncasate?" lead="Trimite-ne facturile scadente, contractul și datele clientului. Îți spunem în aceeași zi ce cale se potrivește și ce termene curg. Consultația nu te obligă la nimic." nav="/|Acasă;/lege-recuperare-creante/|Legea recuperării;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat executorilor sau băncilor. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function num(id){var v=($(id).value||'').replace(/[\s.]/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var c=num('f-v'),v=num('f-d'),z=parseInt($('f-s').value,10),t=num('f-t');
+    if(!(c>=0)||!(v>0)){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Introdu creanțele și vânzările.';$('o-m').textContent='—';$('o-r').textContent='—';return}
+    var d=Math.round(c/v*z);
+    $('o-t').textContent=d+' zile';cls('c-t','alert');$('o-ts').textContent='Creanțe ÷ vânzări × '+z+' de zile.';
+    $('o-r').textContent=(Math.round(c/v*1000)/10).toString().replace('.',',')+'%';
+    if(t>0){var i=d-t;$('o-m').textContent=(i>0?i+' zile':'0 zile');cls('c-m',i>0?'alert':'ok');$('o-ms').textContent=i>0?'Încasezi, în medie, peste termenul din contract.':'Încasezi în medie în termen.'}
+    else{$('o-m').textContent='—';$('o-ms').textContent='Introdu termenul de plată din contract.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-v','f-d','f-t'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-v').value='120000';$('f-d').value='600000';$('f-s').value='365';$('f-t').value='30';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Durata de recuperare a creanțelor", "item": "https://chinsolvency.ro/durata-de-recuperare-a-creantelor/"}]}, {"@type": "Article", "headline": "Durata de recuperare a creanțelor: calcul, termene legale", "description": "Cum calculezi durata medie de recuperare a creanțelor (DSO), ce termene legale au etapele de recuperare (3 zile, 5 zile, 15 zile, 3 ani) și cum reduci întârzierile la încasare.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/durata-de-recuperare-a-creantelor/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/formula-durata-de-recuperare.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-si-termenele-recuperarii.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum calculezi durata medie de recuperare", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Soldul creanțelor", "text": "Suma facturilor neîncasate la sfârșitul perioadei."}, {"@type": "HowToStep", "position": 2, "name": "Vânzările din perioadă", "text": "Cifra de afaceri pe aceeași perioadă."}, {"@type": "HowToStep", "position": 3, "name": "Aplici formula", "text": "Creanțe ÷ vânzări × zile."}, {"@type": "HowToStep", "position": 4, "name": "Compari cu contractul", "text": "Diferența este întârzierea medie."}, {"@type": "HowToStep", "position": 5, "name": "Acționezi", "text": "Somație imediată după scadență, apoi executare dacă ai titlu."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Recuperare creanțe", "DSO", "Executare silită", "Prescripție"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce este durata de recuperare a creanțelor?", "acceptedAnswer": {"@type": "Answer", "text": "Un indicator financiar (DSO): în câte zile încasezi, în medie, facturile emise. Se calculează ca creanțe ÷ vânzări × zile."}}, {"@type": "Question", "name": "Cum se calculează perioada de încasare?", "acceptedAnswer": {"@type": "Answer", "text": "Împarți soldul creanțelor la vânzările din perioadă și înmulțești cu numărul de zile din perioadă."}}, {"@type": "Question", "name": "Care este durata optimă de recuperare?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există un prag legal. Compară-o cu termenul de plată din contract: o diferență mare indică întârzieri."}}, {"@type": "Question", "name": "Ce înseamnă recuperarea amiabilă?", "acceptedAnswer": {"@type": "Answer", "text": "Somație, negociere și plan de plată în scris, fără proces. Este rapidă, dar nu are forță coercitivă."}}, {"@type": "Question", "name": "Când este necesară executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Când debitorul nu plătește după somație și ai un titlu executoriu; fără titlu, ai nevoie întâi de o hotărâre sau de o ordonanță de plată."}}, {"@type": "Question", "name": "Cum pot reduce riscul de neplată?", "acceptedAnswer": {"@type": "Answer", "text": "Verifici clientul, ceri avans sau garanții, ai contracte clare și acționezi imediat după scadență."}}, {"@type": "Question", "name": "Ce documente sunt necesare?", "acceptedAnswer": {"@type": "Answer", "text": "Contractul, facturile, dovada livrării sau a prestării, corespondența și dovada primirii somației."}}, {"@type": "Question", "name": "Care sunt costurile recuperării juridice?", "acceptedAnswer": {"@type": "Answer", "text": "Taxe de timbru, onorariul executorului și al avocatului. Cheltuielile de executare sunt, de regulă, în sarcina debitorului, dar le avansezi tu (art. 670 CPC)."}}]}]}
+</script>

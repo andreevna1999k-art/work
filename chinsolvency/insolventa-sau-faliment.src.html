@@ -1,0 +1,203 @@
+<!-- Consultarius — /insolventa-sau-faliment/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Ce urmează;#raspuns|Răspuns rapid;#diferenta|Diferența;#procedura|Generală sau simplificată;#faliment|Faliment;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Insolvență sau faliment</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legea 85/2014 · art. 38, 133, 145</span>
+          <h1>Insolvență sau faliment: <span class="accent">diferența și procedura simplificată</span></h1>
+          <div class="lead">
+            <p>Auzi „firma e în insolvență” și „firma a intrat în faliment” ca și cum ar fi același lucru. Nu sunt: unul este o stare financiară, celălalt o cale a procedurii, iar între ele există reorganizarea.</p>
+            <p>Aici vezi diferențele, cazurile în care se ajunge la faliment, cum diferă procedura generală de cea simplificată și ce poți face în fiecare situație.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Reorganizare: maximum 3 ani</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Vezi ce urmează</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Insolvența este starea financiară în care fondurile nu ajung pentru datoriile certe, lichide și exigibile (art. 5 pct. 29 din Legea nr. 85/2014). Falimentul este calea procedurii care înseamnă lichidarea averii și, pentru persoanele juridice, dizolvarea (art. 145). Cealaltă cale este reorganizarea judiciară, pe bază de plan de cel mult 3 ani (art. 133). Procedura poate fi generală sau simplificată (art. 38).</p>
+          <div class="opts">
+            <div><b>Insolvență</b>starea financiară</div>
+            <div><b>Reorganizare</b>plan, max. 3 ani</div>
+            <div><b>Faliment</b>lichidarea averii</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Reorganizare sau faliment: <span class="accent">ce urmează?</span></h2></div>
+      <p>Alege situația procedurii. Îți arătăm calea probabilă, temeiul din Legea nr. 85/2014 și efectul pentru debitor.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">Situația procedurii</label><div class="inp"><select id="f-s"><option value="0">Debitorul nu a declarat intenția de reorganizare</option><option value="1">Debitorul a declarat intenția de a intra în procedura simplificată</option><option value="2">Nimeni nu a propus un plan sau niciun plan nu a fost acceptat și confirmat</option><option value="3">Planul confirmat este respectat</option><option value="4">Debitorul nu respectă planul sau acumulează pierderi</option></select></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Vezi rezultatul</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: nu s-a depus plan</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Calea probabilă</span><span class="v" id="o-t" style="font-size:19px">—</span><span class="s" id="o-ts">Alege o variantă.</span></div>
+            <div class="opt" id="c-m"><span class="k">Temei</span><span class="v" id="o-m" style="font-size:17px">—</span><span class="s" id="o-ms"> </span></div>
+            <div class="opt" id="c-r"><span class="k">Efect</span><span class="v" id="o-r" style="font-size:17px">—</span><span class="s" id="o-rs"> </span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Orientativ, după art. 141, 143 și 145 din Legea nr. 85/2014. Soluția concretă o stabilește judecătorul-sindic, în funcție de dosar.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#diferenta">Diferența</a>
+      <a href="#procedura">Generală sau simplificată</a>
+      <a href="#cine">Cine intră</a>
+      <a href="#faliment">Faliment</a>
+      <a href="#drepturi">Drepturi</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Insolvență sau faliment: răspuns rapid</h2>
+        <p>Insolvența este starea financiară în care fondurile disponibile nu ajung pentru datoriile certe, lichide și exigibile (art. 5 pct. 29 din Legea nr. 85/2014). Falimentul este una dintre căile procedurii: lichidarea averii și, pentru persoanele juridice, dizolvarea (art. 145). Cealaltă cale este reorganizarea judiciară, pe bază de plan, de cel mult 3 ani (art. 133 alin. 3). Procedura poate fi generală sau simplificată (art. 38).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Debitorul nu a declarat intenția de reorganizare în cererea lui. Chiar dacă a intrat în insolvență, judecătorul-sindic decide intrarea în faliment (art. 145 alin. 1 lit. A, pct. b). Dacă, în schimb, un plan este confirmat în ziua 100 a procedurii și respectat, activitatea continuă, iar falimentul nu mai este pe agendă (art. 141).</p>
+          <span class="formula">fără intenție de reorganizare → faliment (art. 145)</span>
+          <button type="button" class="btn btn-line" data-ex="1">Vezi în calculator</button>
+        </div>
+      </section>
+
+      <section id="diferenta">
+        <span class="eyebrow">Diferența</span>
+        <h2>Diferența dintre insolvență, reorganizare și faliment</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/insolventa-faliment-reorganizare.webp" width="1200" height="675" alt="Insolvență, reorganizare judiciară și faliment: ce sunt, cine conduce afacerea, efectele și rolul creditorilor" loading="lazy">
+          <figcaption>Insolvență, reorganizare, faliment</figcaption>
+        </figure>
+        <p>Reorganizarea judiciară este procedura aplicabilă debitorului persoană juridică aflat în insolvență, care presupune un plan de reorganizare, cu programul de plată a creanțelor (art. 5 pct. 54, art. 133 alin. 2). În faliment, judecătorul-sindic pronunță dizolvarea persoanei juridice, ridică dreptul de administrare al debitorului și desemnează un lichidator judiciar (art. 145 alin. 2). Vezi <a href="/reorganizare-judiciara/">reorganizarea judiciară</a>.</p>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Procedura generală și procedura simplificată</h2>
+        <p>Procedura generală se aplică debitorilor din art. 3, cu excepția celor cărora li se aplică procedura simplificată (art. 38 alin. 1). Procedura simplificată se aplică, printre altele, profesioniștilor persoane fizice înregistrați la registrul comerțului (fără profesii liberale), întreprinderilor familiale, debitorilor care nu au bunuri, nu au acte constitutive sau contabile, nu au administrator sau nu mai au sediul și celor care au declarat prin cerere intenția de a intra în procedura simplificată (art. 38 alin. 2).</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/procedura-generala-sau-simplificata.webp" width="1200" height="675" alt="Procedura generală și procedura simplificată de insolvență: cui se aplică, organul desemnat și calea tipică" loading="lazy">
+          <figcaption>Procedura generală sau simplificată</figcaption>
+        </figure>
+        <p>Judecătorul-sindic deschide procedura generală sau simplificată prin încheierea de deschidere (art. 71) și desemnează administratorul judiciar provizoriu, respectiv lichidatorul judiciar provizoriu (art. 73). Detalii despre cerere: <a href="/deschiderea-procedurii-insolventei/">deschiderea procedurii insolvenței</a>.</p>
+      </section>
+
+      <section id="cine">
+        <span class="eyebrow">Cine intră</span>
+        <h2>Cine poate beneficia de procedură</h2>
+        <p>Legea nr. 85/2014 se aplică profesioniștilor, cu excepția celor care exercită profesii liberale, și regiilor autonome (art. 3). Persoanele fizice neprofesioniste au o lege separată, Legea nr. 151/2015, cu condiții proprii pe care trebuie să le verifici în textul consolidat. Pentru panoramă, vezi <a href="/insolventa/">insolvența explicată simplu</a>.</p>
+      </section>
+
+      <section id="faliment">
+        <span class="eyebrow">Faliment</span>
+        <h2>Când se ajunge la faliment și ce urmează</h2>
+        <ul class="chk">
+          <li>Debitorul nu a declarat intenția de reorganizare sau a declarat intenția de procedură simplificată (art. 145 alin. 1 lit. A).</li>
+          <li>Nu s-a propus un plan sau niciunul nu a fost acceptat și confirmat.</li>
+          <li>Debitorul nu respectă planul sau activitatea produce pierderi (art. 143, 145 alin. 1 lit. C).</li>
+        </ul>
+        <p>Urmează lichidarea bunurilor de către lichidatorul judiciar, sub controlul judecătorului-sindic (art. 154), vândute în bloc sau individual, apoi distribuirea sumelor. Pentru bunurile grevate de garanții, sumele se distribuie în ordinea din art. 159 alin. 1: întâi taxele și cheltuielile vânzării, apoi creditorii titulari ai cauzelor de preferință. Procedura se închide când nu mai există bunuri ori acestea nu acoperă cheltuielile și niciun creditor nu avansează sumele (art. 174).</p>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">Drepturi</span>
+        <h2>Drepturile și obligațiile debitorului și ale creditorilor</h2>
+        <ul class="chk">
+          <li><b>Debitorul:</b> executările se suspendă de drept (art. 75); depune actele din art. 67 în 10 zile de la deschidere (art. 74).</li>
+          <li><b>Creditorii:</b> se înscriu prin cerere de admitere (art. 104), votează planul (art. 139), pot cere falimentul dacă planul nu este respectat (art. 143).</li>
+          <li><b>Creditorul curent</b> cu creanță certă, lichidă, exigibilă, mai veche de 60 de zile și peste valoarea-prag poate cere trecerea la faliment în timpul planului (art. 143 alin. 3).</li>
+        </ul>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente și cum alegi un specialist</h2>
+        <ul class="chk">
+          <li>Documentație incompletă la cerere (art. 67).</li>
+          <li>Întârzierea cererii: termen de 30 de zile (art. 66).</li>
+          <li>Creanțe neînscrise la timp în procedură.</li>
+          <li>Plan lipsit de viabilitate: judecătorul verifică legalitatea și viabilitatea (art. 139 alin. 1 lit. F).</li>
+        </ul>
+        <p>Alege un practician sau un avocat cu experiență în insolvență, cu contract scris și fără promisiuni de rezultat garantat. Textele din Legea nr. 85/2014 sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+        <!--@author practice="insolvență" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre insolvență și faliment</h2>
+        <div class="faq">
+          <details open><summary>Care este diferența dintre insolvență și faliment?</summary><p>Insolvența este starea financiară; falimentul este calea procedurii care duce la lichidarea averii și, pentru persoane juridice, la dizolvare (art. 145).</p></details>
+          <details><summary>Ce este procedura simplificată de insolvență?</summary><p>Procedura aplicată categoriilor din art. 38 alin. 2 (PFA înregistrați, întreprinderi familiale, debitori fără bunuri sau fără sediu etc.), cu lichidator judiciar provizoriu.</p></details>
+          <details><summary>Cine poate intra în procedura simplificată?</summary><p>Debitorii din art. 38 alin. 2 din Legea nr. 85/2014, inclusiv cei care au declarat în cerere intenția de a intra în procedura simplificată.</p></details>
+          <details><summary>Ce condiții trebuie îndeplinite pentru a intra în insolvență?</summary><p>Stare de insolvență (prezumată după 60 de zile de la scadență) și, pentru creditor, valoarea-prag de 40.000 lei (art. 5 pct. 29 și 72).</p></details>
+          <details><summary>Cât durează procedura?</summary><p>Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3).</p></details>
+          <details><summary>Se suspendă executarea silită?</summary><p>Da, de la deschiderea procedurii, de drept (art. 75).</p></details>
+          <details><summary>Ce rol are administratorul judiciar?</summary><p>Supraveghează administrarea și planul; în procedura simplificată, atribuțiile revin lichidatorului judiciar (art. 73).</p></details>
+          <details><summary>Ce acte sunt necesare?</summary><p>La cererea debitorului, actele din art. 67: situații financiare, lista bunurilor și a creditorilor, plăți din ultimele 6 luni, declarații.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Firma ta riscă falimentul?" lead="Trimite-ne situația financiară și datele procedurii. Îți spunem în aceeași zi ce cale este probabilă și ce poți face. Consultația nu te obligă la nimic." nav="/|Acasă;/insolventa/|Insolvența;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat tribunalelor sau administratorilor judiciari. Informațiile sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var D=[["Faliment", "Art. 145 alin. 1 lit. A, pct. b", "Se ridică dreptul de administrare și se numește lichidator (art. 145 alin. 2)."], ["Faliment, prin procedura simplificată", "Art. 145 alin. 1 lit. A, pct. a", "Lichidatorul judiciar conduce lichidarea."], ["Faliment", "Art. 145 alin. 1 lit. A, pct. c", "Dizolvarea persoanei juridice și lichidarea averii."], ["Reorganizare continuă", "Art. 141 alin. 1", "Debitorul conduce activitatea sub supravegherea administratorului judiciar."], ["Creditorii pot cere falimentul", "Art. 143 alin. 1 și art. 145 alin. 1 lit. C", "Judecătorul-sindic judecă cererea de urgență și cu precădere."]];
+  function calc(){var d=D[parseInt($('f-s').value,10)];$('o-t').textContent=d[0];$('o-m').textContent=d[1];$('o-r').textContent=d[2];$('c-t').classList.add('alert')}
+  $('b-calc').addEventListener('click',calc);
+  $('f-s').addEventListener('change',calc);
+  function ex(){$('f-s').value='0';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Insolvență sau faliment", "item": "https://chinsolvency.ro/insolventa-sau-faliment/"}]}, {"@type": "Article", "headline": "Insolvență sau faliment: diferența și procedura simplificată", "description": "Care este diferența dintre insolvență, reorganizare judiciară și faliment, când se ajunge la faliment (art. 145) și cum diferă procedura generală de cea simplificată (art. 38) în Legea 85/2014.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/insolventa-sau-faliment/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/insolventa-faliment-reorganizare.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/procedura-generala-sau-simplificata.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum afli dacă procedura duce la reorganizare sau la faliment", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Verifici declarația debitorului", "text": "Intenția de reorganizare sau de procedură simplificată."}, {"@type": "HowToStep", "position": 2, "name": "Verifici planul", "text": "Propus, acceptat de creditori și confirmat."}, {"@type": "HowToStep", "position": 3, "name": "Verifici respectarea planului", "text": "Plăți îndeplinite, fără pierderi."}, {"@type": "HowToStep", "position": 4, "name": "Citești încheierea", "text": "Judecătorul-sindic decide faliment sau reorganizare."}, {"@type": "HowToStep", "position": 5, "name": "Urmezi etapele", "text": "Lichidare și distribuire sau continuarea activității."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Insolvență", "Faliment", "Reorganizare judiciară", "Procedura simplificată", "Legea 85/2014"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Care este diferența dintre insolvență și faliment?", "acceptedAnswer": {"@type": "Answer", "text": "Insolvența este starea financiară; falimentul este calea procedurii care duce la lichidarea averii și, pentru persoane juridice, la dizolvare (art. 145)."}}, {"@type": "Question", "name": "Ce este procedura simplificată de insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Procedura aplicată categoriilor din art. 38 alin. 2 (PFA înregistrați, întreprinderi familiale, debitori fără bunuri sau fără sediu etc.), cu lichidator judiciar provizoriu."}}, {"@type": "Question", "name": "Cine poate intra în procedura simplificată?", "acceptedAnswer": {"@type": "Answer", "text": "Debitorii din art. 38 alin. 2 din Legea nr. 85/2014, inclusiv cei care au declarat în cerere intenția de a intra în procedura simplificată."}}, {"@type": "Question", "name": "Ce condiții trebuie îndeplinite pentru a intra în insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Stare de insolvență (prezumată după 60 de zile de la scadență) și, pentru creditor, valoarea-prag de 40.000 lei (art. 5 pct. 29 și 72)."}}, {"@type": "Question", "name": "Cât durează procedura?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3)."}}, {"@type": "Question", "name": "Se suspendă executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Da, de la deschiderea procedurii, de drept (art. 75)."}}, {"@type": "Question", "name": "Ce rol are administratorul judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Supraveghează administrarea și planul; în procedura simplificată, atribuțiile revin lichidatorului judiciar (art. 73)."}}, {"@type": "Question", "name": "Ce acte sunt necesare?", "acceptedAnswer": {"@type": "Answer", "text": "La cererea debitorului, actele din art. 67: situații financiare, lista bunurilor și a creditorilor, plăți din ultimele 6 luni, declarații."}}]}]}
+</script>

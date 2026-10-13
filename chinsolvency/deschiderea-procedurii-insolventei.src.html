@@ -1,0 +1,231 @@
+<!-- Consultarius — /deschiderea-procedurii-insolventei/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#cine|Cine cere;#procedura|Procedura;#efecte|Efecte;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Deschiderea procedurii insolvenței</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legea 85/2014 · art. 66–76 · valoarea-prag 40.000 lei</span>
+          <h1>Deschiderea procedurii insolvenței: <span class="accent">cine cere, condiții și efecte</span></h1>
+          <div class="lead">
+            <p>Un client nu plătește sau firma ta nu mai poate plăti, și întrebarea este cine poate deschide procedura, ce condiții contează și ce se schimbă imediat după încheiere.</p>
+            <p>Aici ai pașii la tribunal, valoarea-prag, cauțiunea posibilă și efectele deschiderii, cu un instrument care îți spune dacă, ca și creditor, poți depune cererea.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Prag: 40.000 lei</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Verifică-ți creanța</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Procedura se deschide prin încheierea judecătorului-sindic de la tribunal, la cererea debitorului (obligatorie în 30 de zile de la insolvență, art. 66) sau a unui creditor cu creanță peste valoarea-prag de 40.000 lei (art. 70, art. 5 pct. 72). De la deschidere, executările individuale se suspendă de drept (art. 75), iar creditorii își depun cererile de admitere.</p>
+          <div class="opts">
+            <div><b>Debitor</b>30 de zile (art. 66)</div>
+            <div><b>Creditor</b>prag 40.000 lei</div>
+            <div><b>Efect</b>executări suspendate</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Poți cere tu <span class="accent">deschiderea procedurii?</span></h2></div>
+      <p>Ca creditor, introdu valoarea creanței și zilele de la scadență. Verificăm valoarea-prag de 40.000 lei (art. 5 pct. 72), prezumția de insolvență după 60 de zile și cauțiunea posibilă (art. 72 din Legea nr. 85/2014).</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Creanța ta</div>
+          <div class="field"><label for="f-v">Valoarea creanței (lei)</label><div class="inp"><input id="f-v" inputmode="numeric" placeholder="120000"></div></div>
+          <div class="field"><label for="f-d">Zile de la scadență, fără plată</label><div class="inp"><input id="f-d" inputmode="numeric" placeholder="75"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: creanță de 120.000 lei, 75 de zile</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Poți cere deschiderea procedurii?</span><span class="v" id="o-t" style="font-size:19px">—</span><span class="s" id="o-ts">Introdu valoarea și zilele.</span></div>
+            <div class="opt" id="c-m"><span class="k">Cauțiune maximă, dacă ți se cere</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">Până la 10%, maximum 40.000 lei (art. 72).</span></div>
+            <div class="opt" id="c-r"><span class="k">Prezumția de insolvență</span><span class="v" id="o-r" style="font-size:19px">—</span><span class="s" id="o-rs">După 60 de zile de la scadență (art. 5 pct. 29).</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Calcul orientativ pentru creanțe de altă natură decât cele salariale; pentru salariați valoarea-prag este de 6 salarii medii brute (art. 5 pct. 72). Insolvența se prezumă după 60 de zile de la scadență, prezumție relativă; judecătorul-sindic verifică în fond starea de insolvență.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#cine">Cine cere</a>
+      <a href="#conditii">Condiții</a>
+      <a href="#procedura">Procedura</a>
+      <a href="#efecte">Efecte</a>
+      <a href="#dupa">După deschidere</a>
+      <a href="#greseli">Greșeli și pași</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Deschiderea procedurii insolvenței: răspuns rapid</h2>
+        <p>Procedura se deschide prin încheierea judecătorului-sindic de la tribunal, la cererea debitorului (obligatorie în 30 de zile de la apariția insolvenței, art. 66) sau a unui creditor a cărui creanță depășește valoarea-prag de 40.000 lei (art. 70 și art. 5 pct. 72). De la deschidere, executările silite și acțiunile pentru realizarea creanțelor asupra averii debitorului se suspendă de drept (art. 75), iar creditorii își valorifică drepturile prin cereri de admitere.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Un furnizor are o creanță de 120.000 lei, neplătită de 75 de zile. Peste valoarea-prag de 40.000 lei și peste 60 de zile de la scadență, insolvența se prezumă (art. 5 pct. 29). Dacă debitorul cere, judecătorul-sindic poate impune o cauțiune de până la 10% din creanță, dar nu mai mult de 40.000 lei: aici, 10% = 12.000 lei, consemnată în 5 zile (art. 72).</p>
+          <span class="formula">min(10% × 120.000; 40.000) = 12.000 lei</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="cine">
+        <span class="eyebrow">Cine cere</span>
+        <h2>Cine poate cere deschiderea procedurii</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cererea-debitorului-sau-a-creditorului.webp" width="1200" height="675" alt="Cererea debitorului și cererea creditorului: temei, termen, acte și cauțiune în deschiderea procedurii de insolvență" loading="lazy">
+          <figcaption>Cererea debitorului sau a creditorului</figcaption>
+        </figure>
+        <h3>Cererea debitorului</h3>
+        <p>Debitorul în stare de insolvență trebuie să ceară deschiderea procedurii în maximum 30 de zile de la apariția insolvenței, cu dovada notificării organului fiscal (art. 66 alin. 1). Dacă insolvența este doar iminentă, poate cere, dar nu este obligat (art. 66 alin. 4). Detalii: <a href="/insolventa-voluntara/">insolvența voluntară</a>.</p>
+        <h3>Cererea creditorului</h3>
+        <p>Creditorul precizează cuantumul și temeiul creanței, eventualul drept de preferință și intenția de a participa la reorganizare și anexează documentele justificative și dovada codului unic de înregistrare al debitorului (art. 70). Dacă mai mulți creditori depun cereri, ele se înregistrează în același dosar (art. 70 alin. 3–4).</p>
+      </section>
+
+      <section id="conditii">
+        <span class="eyebrow">Condiții</span>
+        <h2>Condițiile pentru deschiderea procedurii</h2>
+        <ul class="chk">
+          <li><b>Starea de insolvență:</b> fonduri insuficiente pentru datorii certe, lichide și exigibile; prezumție după 60 de zile de la scadență, relativă (art. 5 pct. 29).</li>
+          <li><b>Valoarea-prag:</b> 40.000 lei pentru creditori și debitor, pentru creanțe de altă natură decât cele salariale; la salariați, 6 salarii medii brute (art. 5 pct. 72).</li>
+          <li><b>Actele:</b> la cererea debitorului, cele din art. 67 (situații financiare, lista bunurilor și a creditorilor, plăți din ultimele 6 luni, declarații); la cererea creditorului, dovada creanței și CUI-ul debitorului.</li>
+          <li><b>Instanța:</b> tribunalul; judecătorul-sindic.</li>
+        </ul>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Procedura deschiderii, pas cu pas</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/pasii-deschiderii-procedurii.webp" width="1200" height="675" alt="Deschiderea procedurii de insolvență: cerere, 10 zile pentru debitor, încheiere, opoziții, suspendarea executărilor" loading="lazy">
+          <figcaption>Deschiderea procedurii, pas cu pas</figcaption>
+        </figure>
+        <ol class="num">
+          <li><b>Cererea</b> se depune la tribunal.</li>
+          <li><b>La cererea creditorului,</b> instanța o comunică debitorului și organului fiscal în 48 de ore; debitorul are 10 zile să conteste sau să recunoască insolvența, cu probă doar prin înscrisuri (art. 72 alin. 2–3).</li>
+          <li><b>Cauțiunea:</b> la cererea debitorului, judecătorul-sindic poate cere creditorului până la 10% din creanță, maximum 40.000 lei, în 5 zile, sub sancțiunea respingerii (art. 72 alin. 1).</li>
+          <li><b>Încheierea de deschidere:</b> procedură generală sau simplificată (art. 71).</li>
+          <li><b>Notificări și opoziții:</b> creditorii se pot opune în 10 zile de la notificare; judecătorul ține o ședință în 5 zile (art. 71 alin. 2).</li>
+        </ol>
+      </section>
+
+      <section id="efecte">
+        <span class="eyebrow">Efecte</span>
+        <h2>Efectele deschiderii procedurii</h2>
+        <ul class="chk">
+          <li><b>Suspendarea executărilor</b> și a acțiunilor individuale, de drept (art. 75); hotărârea de deschidere se comunică instanțelor și băncilor (art. 76).</li>
+          <li><b>Administrator judiciar provizoriu</b> sau lichidator, numit prin sentința de deschidere (art. 73).</li>
+          <li><b>Actele debitorului:</b> în 10 zile de la deschidere depune în dosar actele din art. 67 alin. 1 (art. 74).</li>
+          <li><b>Utilitățile:</b> furnizorii nu pot întrerupe serviciile către consumatorul captiv în observație și reorganizare; plata se face în 90 de zile (art. 77).</li>
+          <li><b>Creditorii cu garanții</b> pot cere ridicarea suspendării în condițiile art. 78.</li>
+        </ul>
+      </section>
+
+      <section id="dupa">
+        <span class="eyebrow">După deschidere</span>
+        <h2>Creditorii, reorganizarea și falimentul</h2>
+        <p>Creditorii își depun cererile de admitere (art. 104), apar în tabele și votează planul. Dacă se propune un plan de reorganizare și este acceptat și confirmat, activitatea continuă sub supraveghere, cel mult 3 ani (art. 133 alin. 3); altfel, se ajunge la faliment (art. 145). Vezi <a href="/plan-reorganizare-insolventa/">planul de reorganizare</a> și <a href="/insolventa-sau-faliment/">insolvență sau faliment</a>.</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente și ce faci acum</h2>
+        <ul class="chk">
+          <li>Depui cererea de creditor sub valoarea-prag (se respinge).</li>
+          <li>Debitorul depune cererea după termenul de 30 de zile.</li>
+          <li>Lipsesc documentele justificative sau CUI-ul debitorului.</li>
+          <li>Debitorul nu conteste în 10 zile o cerere nefondată.</li>
+        </ul>
+        <ol class="num">
+          <li>Verifică valoarea-prag și zilele de la scadență (calculator).</li>
+          <li>Strânge actele creanței sau situația financiară, după caz.</li>
+          <li>Trimite-ne datele în chat; îți spunem în aceeași zi dacă poți depune cererea.</li>
+        </ol>
+        <p>Textele din Legea nr. 85/2014 sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+        <!--@author practice="insolvență" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre deschiderea procedurii insolvenței</h2>
+        <div class="faq">
+          <details open><summary>Cine poate cere deschiderea procedurii insolvenței?</summary><p>Debitorul (art. 66) sau un creditor îndreptățit, cu creanță peste valoarea-prag (art. 70).</p></details>
+          <details><summary>Ce condiții trebuie îndeplinite?</summary><p>Stare de insolvență (prezumată după 60 de zile de la scadență) și, pentru creditor, o creanță de cel puțin 40.000 lei (art. 5 pct. 29 și 72).</p></details>
+          <details><summary>Ce efecte are deschiderea procedurii?</summary><p>Executările se suspendă de drept (art. 75), se numește un administrator judiciar sau lichidator (art. 73) și creditorii își depun cererile de admitere.</p></details>
+          <details><summary>Se suspendă executările silite?</summary><p>Da, toate acțiunile și măsurile de executare pentru realizarea creanțelor asupra averii debitorului, de la data deschiderii (art. 75).</p></details>
+          <details><summary>Ce este masa credală?</summary><p>Totalitatea creditorilor ale căror creanțe sunt admise în tabelul creanțelor, care se plătesc în cadrul procedurii.</p></details>
+          <details><summary>Cât durează procedura insolvenței?</summary><p>Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3).</p></details>
+          <details><summary>Ce rol are administratorul judiciar?</summary><p>Este desemnat prin sentința de deschidere (art. 73) și supraveghează averea și, dacă e cazul, planul.</p></details>
+          <details><summary>Poate creditorul deschide insolvența firmei?</summary><p>Da, dacă are o creanță peste valoarea-prag, iar insolvența se dovedește; debitorul poate contesta în 10 zile, iar judecătorul-sindic poate cere o cauțiune (art. 72).</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Vrei să deschizi sau să eviți o insolvență?" lead="Trimite-ne creanța sau situația financiară a firmei. Îți spunem în aceeași zi ce condiții sunt îndeplinite și ce termene curg. Consultația nu te obligă la nimic." nav="/|Acasă;/insolventa-voluntara/|Insolvența voluntară;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat tribunalelor sau administratorilor judiciari. Informațiile sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/[\s.]/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var v=num('f-v'),z=num('f-d');
+    if(!(v>0)){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Introdu valoarea și zilele.';$('o-m').textContent='—';$('o-r').textContent='—';return}
+    var ok=v>=40000;
+    $('o-t').textContent=ok?'Da, creanța depășește valoarea-prag':'Nu, sub valoarea-prag de 40.000 lei';cls('c-t',ok?'ok':'alert');
+    $('o-ts').textContent=ok?'Valoarea-prag este de 40.000 lei pentru creanțe de altă natură decât cele salariale (art. 5 pct. 72).':'Cererea de deschidere nu poate fi introdusă pentru o creanță sub valoarea-prag.';
+    $('o-m').textContent=lei(Math.min(0.1*v,40000));
+    if(z>=0&&z!==null){var p=z>60;$('o-r').textContent=p?'Se prezumă':'Încă nu';cls('c-r',p?'ok':'alert');$('o-rs').textContent=p?'Au trecut peste 60 de zile de la scadență: prezumție relativă (art. 5 pct. 29).':'Mai trebuie '+(61-z)+' zile până la prezumție.'}
+    else{$('o-r').textContent='—'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-v','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-v').value='120000';$('f-d').value='75';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Deschiderea procedurii insolvenței", "item": "https://chinsolvency.ro/deschiderea-procedurii-insolventei/"}]}, {"@type": "Article", "headline": "Deschiderea procedurii insolvenței: cerere, condiții, efecte", "description": "Cum se deschide procedura insolvenței: cererea debitorului sau a creditorului, valoarea-prag de 40.000 lei, cauțiunea, pașii la tribunal și efectele (suspendarea executărilor).", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/deschiderea-procedurii-insolventei/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/cererea-debitorului-sau-a-creditorului.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/pasii-deschiderii-procedurii.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum se deschide procedura insolvenței", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Verifici condițiile", "text": "Insolvență și valoarea-prag de 40.000 lei pentru creditor."}, {"@type": "HowToStep", "position": 2, "name": "Depui cererea", "text": "La tribunal, cu actele din art. 67 sau art. 70."}, {"@type": "HowToStep", "position": 3, "name": "Debitorul răspunde", "text": "În 10 zile, la cererea creditorului."}, {"@type": "HowToStep", "position": 4, "name": "Încheierea de deschidere", "text": "Procedură generală sau simplificată."}, {"@type": "HowToStep", "position": 5, "name": "Notificări și opoziții", "text": "10 zile pentru opoziții, ședință în 5 zile."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Insolvență", "Deschiderea procedurii", "Legea 85/2014", "Valoarea-prag"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Cine poate cere deschiderea procedurii insolvenței?", "acceptedAnswer": {"@type": "Answer", "text": "Debitorul (art. 66) sau un creditor îndreptățit, cu creanță peste valoarea-prag (art. 70)."}}, {"@type": "Question", "name": "Ce condiții trebuie îndeplinite?", "acceptedAnswer": {"@type": "Answer", "text": "Stare de insolvență (prezumată după 60 de zile de la scadență) și, pentru creditor, o creanță de cel puțin 40.000 lei (art. 5 pct. 29 și 72)."}}, {"@type": "Question", "name": "Ce efecte are deschiderea procedurii?", "acceptedAnswer": {"@type": "Answer", "text": "Executările se suspendă de drept (art. 75), se numește un administrator judiciar sau lichidator (art. 73) și creditorii își depun cererile de admitere."}}, {"@type": "Question", "name": "Se suspendă executările silite?", "acceptedAnswer": {"@type": "Answer", "text": "Da, toate acțiunile și măsurile de executare pentru realizarea creanțelor asupra averii debitorului, de la data deschiderii (art. 75)."}}, {"@type": "Question", "name": "Ce este masa credală?", "acceptedAnswer": {"@type": "Answer", "text": "Totalitatea creditorilor ale căror creanțe sunt admise în tabelul creanțelor, care se plătesc în cadrul procedurii."}}, {"@type": "Question", "name": "Cât durează procedura insolvenței?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există o durată fixă; planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3)."}}, {"@type": "Question", "name": "Ce rol are administratorul judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Este desemnat prin sentința de deschidere (art. 73) și supraveghează averea și, dacă e cazul, planul."}}, {"@type": "Question", "name": "Poate creditorul deschide insolvența firmei?", "acceptedAnswer": {"@type": "Answer", "text": "Da, dacă are o creanță peste valoarea-prag, iar insolvența se dovedește; debitorul poate contesta în 10 zile, iar judecătorul-sindic poate cere o cauțiune (art. 72)."}}]}]}
+</script>

@@ -1,0 +1,248 @@
+<!-- Consultarius — /avocat-recuperari-creante/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#servicii|Servicii;#procedura|Procedura;#costuri|Costuri;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Avocat recuperări creanțe</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Avocat · creditor · executare silită</span>
+          <h1>Avocat pentru recuperări creanțe: <span class="accent">servicii, procedură și onorarii</span></h1>
+          <div class="lead">
+            <p>Ai facturi neplătite sau un împrumut dat și debitorul nu mai răspunde. Întrebarea nu e doar „cine mă ajută”, ci „ce pot face legal, în ce ordine și până când”, pentru că prescripția nu așteaptă.</p>
+            <p>Aici afli ce face un avocat în fiecare etapă, cât durează, cum se stabilesc onorariile și cum diferă de o firmă de recuperare, plus un instrument care îți arată calea potrivită.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Prescripție: 3 ani</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Alege situația ta</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Un avocat pentru recuperări creanțe analizează titlul și prescripția, trimite somația, obține un titlu executoriu dacă nu ai unul, depune cererea de executare (încuviințată în 3 zile, art. 666 CPC) și te reprezintă în instanță și în insolvență. Rezultatul depinde de titlu, de documente și de bunurile debitorului; nu poate fi garantat.</p>
+          <div class="opts">
+            <div><b>Titlu</b>hotărâre, contract bancar, ordonanță</div>
+            <div><b>Încuviințare</b>3 zile</div>
+            <div><b>Prescripție</b>3 ani</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Ce cale se potrivește <span class="accent">creanței tale</span></h2></div>
+      <p>Alege situația în care ești. Îți arătăm calea cea mai scurtă, termenul care contează și primul pas, după regulile din CPC.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">Situația creanței</label><div class="inp"><select id="f-s"><option value="0">Am o hotărâre judecătorească definitivă</option><option value="1">Am un contract de credit bancar sau alt înscris executoriu</option><option value="2">Am doar o factură sau un contract civil</option><option value="3">Debitorul a intrat în insolvență</option><option value="4">Datoria este veche, mai mult de 3 ani</option></select></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Vezi rezultatul</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: am o hotărâre definitivă</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Calea recomandată</span><span class="v" id="o-t" style="font-size:19px">—</span><span class="s" id="o-ts">Alege o variantă.</span></div>
+            <div class="opt" id="c-m"><span class="k">Termenul care contează</span><span class="v" id="o-m" style="font-size:17px">—</span><span class="s" id="o-ms"> </span></div>
+            <div class="opt" id="c-r"><span class="k">Primul pas</span><span class="v" id="o-r" style="font-size:17px">—</span><span class="s" id="o-rs"> </span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Orientativ, după CPC și Legea 85/2014. Alegerea finală depinde de dosar și de documente; cere o analiză a actelor înainte de a acționa.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#ce-este">Ce este</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#procedura">Procedura</a>
+      <a href="#costuri">Durată și costuri</a>
+      <a href="#sanse">Șanse</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Avocat pentru recuperări creanțe: răspuns rapid</h2>
+        <p>Un avocat pentru recuperarea creanțelor analizează titlul și prescripția, trimite somația, obține un titlu executoriu dacă nu ai unul, depune cererea de executare și te reprezintă în instanță, la contestații și în insolvență. Rezultatul depinde de titlu, de documente și de ce bunuri are debitorul. Nu există garanția că banii se recuperează; există însă pași cu termene clare, iar cel mai scump lucru este să aștepți.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Dacă ai o hotărâre definitivă din 15 februarie 2024, poți cere executarea până la 15 februarie 2027 (3 ani, art. 706 CPC). Cererea de executare întrerupe prescripția și începe un nou termen de 3 ani (art. 709). Dacă mai aștepți, riști să pierzi dreptul de a executa.</p>
+          <span class="formula">15.02.2024 + 3 ani = 15.02.2027</span>
+          <button type="button" class="btn btn-line" data-ex="1">Vezi în calculator</button>
+        </div>
+        <p>Pentru traseul complet al legii, vezi ghidul despre <a href="/lege-recuperare-creante/">legea recuperării creanțelor</a>.</p>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Definiție</span>
+        <h2>Ce înseamnă recuperarea creanțelor</h2>
+        <p>Recuperarea creanțelor înseamnă obținerea sumelor care ți se datorează: facturi neplătite, împrumuturi, daune, chirii. Poate fi amiabilă (notificare și negociere) sau juridică (proces și executare silită). Majoritatea dosarelor încep amiabil, dar ajung la instanță când debitorul nu răspunde sau contestă datoria.</p>
+        <h3>Tipuri de creanțe</h3>
+        <div class="roles">
+          <div><b>Comerciale</b>Facturi între firme, contracte de furnizare, servicii.</div>
+          <div><b>Civile</b>Împrumuturi între persoane, chirii, despăgubiri.</div>
+          <div><b>Bancare</b>Credite neplătite; contractul bancar este, prin lege specială, titlu executoriu.</div>
+          <div><b>Salariale și de întreținere</b>Au reguli proprii la executare (art. 729 CPC).</div>
+        </div>
+        <h3>Recuperare amiabilă sau juridică</h3>
+        <p>Amiabil: somație, negociere, plan de plată în scris. Juridic: ordonanță de plată sau acțiune, apoi executare silită. Amiabila este mai ieftină, dar nu are forță dacă debitorul refuză. Procesul devine necesar când debitorul tace, contestă sau când se apropie termenul de prescripție.</p>
+      </section>
+
+      <section id="servicii">
+        <span class="eyebrow">Servicii</span>
+        <h2>Ce servicii oferă avocatul de recuperări creanțe</h2>
+        <ul class="chk">
+          <li><b>Analiza cazului:</b> titlul, scadența, dobânzile, prescripția, bunurile debitorului.</li>
+          <li><b>Notificarea debitorului:</b> somație cu dovadă de primire, prima etapă.</li>
+          <li><b>Negocierea:</b> eșalonare scrisă, reducerea dobânzilor, garanții.</li>
+          <li><b>Acțiunea în instanță:</b> ordonanță de plată (art. 1013 CPC) sau acțiune obișnuită, dacă nu ai titlu.</li>
+          <li><b>Executarea silită:</b> cererea la executor, poprire, bunuri mobile și imobile.</li>
+          <li><b>Insolvența debitorului:</b> cerere de admitere a creanței (art. 75 și urm., Legea 85/2014).</li>
+        </ul>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Procedura</span>
+        <h2>Procedura de recuperare, pas cu pas</h2>
+        <ol class="num">
+          <li><b>Analiza actelor.</b> Titlu, scadență, calcul, prescripție.</li>
+          <li><b>Notificarea.</b> Somație cu suma, temeiul și un termen de plată.</li>
+          <li><b>Titlul executoriu.</b> Dacă nu ai unul: ordonanță de plată sau acțiune.</li>
+          <li><b>Cererea de executare.</b> Executorul decide în 3 zile (art. 666 CPC).</li>
+          <li><b>Măsurile.</b> Poprire pe conturi și venituri (art. 781 CPC), sechestru, vânzare.</li>
+          <li><b>Distribuirea.</b> Sumele ajung la tine prin executor (art. 864 CPC).</li>
+        </ol>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/avocat-recuperari-creante-pasii.webp" width="1200" height="675" alt="Pașii recuperării unei creanțe prin avocat: analiză, notificare, titlu executoriu, executare, încasare" loading="lazy">
+          <figcaption>Pașii recuperării prin avocat</figcaption>
+        </figure>
+        <p>Detalii pe etape: <a href="/procedura-executare-silita-etape/">procedura executării silite</a>.</p>
+      </section>
+
+      <section id="costuri">
+        <span class="eyebrow">Durată și costuri</span>
+        <h2>Cât durează și cât costă</h2>
+        <h3>Durata</h3>
+        <p>Nu există o durată fixă. Încuviințarea executării se dă în 3 zile, poprirea produce efecte din ziua în care banca primește adresa, iar terțul consemnează în 5 zile (art. 787 CPC). Procesul pentru obținerea titlului și vânzarea imobilelor durează mai mult și depind de instanță și de contestații.</p>
+        <h3>Onorariile</h3>
+        <p>Onorariul se stabilește prin contract scris. Formele uzuale sunt onorariul fix, onorariul pe etape sau un onorariu de succes (procent din suma recuperată). Cere o ofertă în scris, cu ce include și ce nu: taxe de timbru, onorariul executorului, expertize. Cheltuielile de executare sunt, de regulă, în sarcina debitorului (art. 670 CPC), dar tu le avansezi.</p>
+        <h3>Avocat sau firmă de recuperare</h3>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/avocat-sau-firma-de-recuperare.webp" width="1200" height="675" alt="Comparație avocat și firmă de recuperare creanțe: ce poate face fiecare, răspundere și cost" loading="lazy">
+          <figcaption>Avocat sau firmă de recuperare</figcaption>
+        </figure>
+      </section>
+
+      <section id="sanse">
+        <span class="eyebrow">Șanse</span>
+        <h2>Șansele de recuperare: ce contează</h2>
+        <p>Nimeni nu poate promite un procent de recuperare. Contează trei lucruri: titlul (hotărâre sau contract executoriu), documentele (contract, facturi, dovada livrării) și solvabilitatea debitorului (venituri, conturi, bunuri). Un titlu executoriu fără bunuri urmăribile nu aduce bani; invers, un debitor solvabil cu un titlu slab se poate apăra.</p>
+        <h3>Riscuri</h3>
+        <ul class="chk">
+          <li>Prescripția: dreptul de a cere executarea se stinge în 3 ani, dacă debitorul o invocă (art. 706–707 CPC).</li>
+          <li>Perimarea: 6 luni fără un act cerut de executor (art. 697 CPC).</li>
+          <li>Insolvența debitorului: executările se suspendă și te înscrii la masa credală (art. 75, Legea 85/2014).</li>
+          <li>Contestațiile debitorului, în general în 15 zile (art. 715 CPC).</li>
+        </ul>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Legislație</span>
+        <h2>Legislația aplicabilă</h2>
+        <p>Codul civil reglementează obligațiile, prescripția și cesiunea creanței. Codul de procedură civilă reglementează ordonanța de plată (art. 1013 și urm.) și executarea silită (art. 622 și urm.). Legea nr. 85/2014 intervine când debitorul intră în insolvență. Drepturile creditorului: să ceară toate modalitățile de executare, simultan sau succesiv (art. 666 alin. 4 CPC), și să indice bunurile urmărite (art. 731 CPC).</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente și cum alegi avocatul</h2>
+        <ul class="chk">
+          <li><b>Amâni acțiunea</b> până se apropie prescripția.</li>
+          <li><b>Lipsesc documentele:</b> contractul, facturile, corespondența, dovada primirii somației.</li>
+          <li><b>Alegi un avocat fără contract clar</b> de onorarii și fără explicații despre riscuri.</li>
+          <li><b>Plătești comisioane</b> unor firme fără autorizare verificată.</li>
+        </ul>
+        <h3>Cum alegi avocatul</h3>
+        <p>Cere experiență pe recuperări și executări, un contract scris cu onorariu și etape, explicații despre prescripție și riscuri și rapoarte periodice. Fii atent la promisiuni de rezultat garantat: legea nu permite să garantezi un rezultat într-un proces.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci dacă nu îți recuperezi banii</h2>
+        <ol class="num">
+          <li>Strânge titlul, contractul, facturile și dovezile de comunicare.</li>
+          <li>Calculează ultima zi a termenului de prescripție (folosește calculatorul din <a href="/lege-recuperare-creante/">ghidul despre legea recuperării</a>).</li>
+          <li>Trimite-ne actele în chat; îți spunem în aceeași zi calea și primul pas.</li>
+        </ol>
+        <!--@author practice="recuperare creanțe" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre recuperări creanțe</h2>
+        <div class="faq">
+          <details open><summary>Ce face un avocat de recuperări creanțe?</summary><p>Analizează titlul și prescripția, trimite somația, obține titlul executoriu dacă nu ai unul, cere executarea și te reprezintă în instanță.</p></details>
+          <details><summary>Cât durează recuperarea unei datorii?</summary><p>Nu există o durată fixă. Încuviințarea executării se dă în 3 zile; procesul și vânzarea bunurilor pot dura luni sau ani.</p></details>
+          <details><summary>Cât costă serviciile?</summary><p>Onorariul se stabilește prin contract: fix, pe etape sau de succes. La cheltuielile de executare se adaugă taxele și onorariul executorului.</p></details>
+          <details><summary>Pot recupera orice datorie?</summary><p>Doar creanțe certe, lichide și exigibile, în termenul de prescripție. Datoria prescrisă nu mai poate fi executată dacă debitorul invocă prescripția.</p></details>
+          <details><summary>Ce șanse am să recuperez banii?</summary><p>Depind de titlu, documente și de bunurile debitorului. Nimeni nu poate garanta un procent.</p></details>
+          <details><summary>Este obligatoriu procesul?</summary><p>Nu, dacă ai deja un titlu executoriu sau debitorul plătește după somație. Altfel poți avea nevoie de ordonanță de plată sau de acțiune.</p></details>
+          <details><summary>Ce înseamnă executarea silită?</summary><p>Recuperarea datoriei prin executor judecătoresc, pe baza unui titlu executoriu: poprire, sechestru, vânzarea bunurilor.</p></details>
+          <details><summary>Cum aleg un avocat bun?</summary><p>Verifică experiența, contractul de onorarii, transparența și lipsa promisiunilor de rezultat garantat.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai o creanță de recuperat?" lead="Trimite-ne titlul, contractul sau factura și datele debitorului. Îți spunem în aceeași zi ce cale se potrivește și cât mai ai din prescripție. Consultația nu te obligă la nimic." nav="/|Acasă;/lege-recuperare-creante/|Legea recuperării;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat executorilor sau băncilor. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var D=[["Cerere de executare la executorul judecătoresc, direct.", "Prescripția executării: 3 ani de la rămânerea definitivă (art. 706).", "Depune cererea de executare cu hotărârea; ea întrerupe prescripția (art. 709)."], ["Cerere de executare, fără proces prealabil.", "3 ani de la nașterea dreptului de a cere executarea (art. 706).", "Verifică dacă legea declară înscrisul executoriu (art. 632)."], ["Somație, apoi ordonanță de plată sau acțiune obișnuită.", "Prescripția dreptului la acțiune este de 3 ani (Codul civil); verifică scadența.", "Trimite o somație cu dovadă de primire."], ["Cerere de admitere a creanței în procedură.", "Executările se suspendă de drept (art. 75, Legea 85/2014).", "Depune cererea de admitere la administratorul judiciar sau lichidator."], ["Analiză a întreruperilor și suspendărilor de prescripție.", "Prescripția nu operează de drept; o invocă debitorul (art. 707).", "Caută acte de plată, recunoaștere sau acte de executare (art. 709)."]];
+  function calc(){var d=D[parseInt($('f-s').value,10)];$('o-t').textContent=d[0];$('o-m').textContent=d[1];$('o-r').textContent=d[2];$('c-t').classList.add('alert')}
+  $('b-calc').addEventListener('click',calc);
+  $('f-s').addEventListener('change',calc);
+  function ex(){$('f-s').value='0';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Avocat recuperări creanțe", "item": "https://chinsolvency.ro/avocat-recuperari-creante/"}]}, {"@type": "Article", "headline": "Avocat recuperări creanțe: servicii, onorarii, procedură", "description": "Cum te ajută un avocat să recuperezi o creanță: analiză, notificare, titlu executoriu, executare silită, prescripție de 3 ani, onorarii și diferența față de o firmă de recuperare.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/avocat-recuperari-creante/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/avocat-recuperari-creante-pasii.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/avocat-sau-firma-de-recuperare.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum recuperezi o creanță cu avocat", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Analiza cazului", "text": "Titlu, scadență, prescripție."}, {"@type": "HowToStep", "position": 2, "name": "Notificarea", "text": "Somație cu dovadă de primire."}, {"@type": "HowToStep", "position": 3, "name": "Titlul executoriu", "text": "Ordonanță de plată sau acțiune, dacă nu ai deja un titlu."}, {"@type": "HowToStep", "position": 4, "name": "Executarea", "text": "Cerere la executor, poprire, sechestru."}, {"@type": "HowToStep", "position": 5, "name": "Încasarea", "text": "Sumele se distribuie prin executor."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Recuperare creanțe", "Executare silită", "Prescripție", "Ordonanță de plată"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce face un avocat de recuperări creanțe?", "acceptedAnswer": {"@type": "Answer", "text": "Analizează titlul și prescripția, trimite somația, obține titlul executoriu dacă nu ai unul, cere executarea și te reprezintă în instanță."}}, {"@type": "Question", "name": "Cât durează recuperarea unei datorii?", "acceptedAnswer": {"@type": "Answer", "text": "Nu există o durată fixă. Încuviințarea executării se dă în 3 zile; procesul și vânzarea bunurilor pot dura luni sau ani."}}, {"@type": "Question", "name": "Cât costă serviciile?", "acceptedAnswer": {"@type": "Answer", "text": "Onorariul se stabilește prin contract: fix, pe etape sau de succes. La cheltuielile de executare se adaugă taxele și onorariul executorului."}}, {"@type": "Question", "name": "Pot recupera orice datorie?", "acceptedAnswer": {"@type": "Answer", "text": "Doar creanțe certe, lichide și exigibile, în termenul de prescripție. Datoria prescrisă nu mai poate fi executată dacă debitorul invocă prescripția."}}, {"@type": "Question", "name": "Ce șanse am să recuperez banii?", "acceptedAnswer": {"@type": "Answer", "text": "Depind de titlu, documente și de bunurile debitorului. Nimeni nu poate garanta un procent."}}, {"@type": "Question", "name": "Este obligatoriu procesul?", "acceptedAnswer": {"@type": "Answer", "text": "Nu, dacă ai deja un titlu executoriu sau debitorul plătește după somație. Altfel poți avea nevoie de ordonanță de plată sau de acțiune."}}, {"@type": "Question", "name": "Ce înseamnă executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Recuperarea datoriei prin executor judecătoresc, pe baza unui titlu executoriu: poprire, sechestru, vânzarea bunurilor."}}, {"@type": "Question", "name": "Cum aleg un avocat bun?", "acceptedAnswer": {"@type": "Answer", "text": "Verifică experiența, contractul de onorarii, transparența și lipsa promisiunilor de rezultat garantat."}}]}]}
+</script>

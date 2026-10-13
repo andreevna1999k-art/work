@@ -1,0 +1,216 @@
+<!-- Consultarius — /procedura-insolventei-etape/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|În ce etapă ești;#raspuns|Răspuns rapid;#etape|Etape;#actori|Actori;#drepturi|Drepturi;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Etapele procedurii insolvenței</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legea 85/2014 · etape · observație · lichidare</span>
+          <h1>Etapele procedurii insolvenței: <span class="accent">pas cu pas pentru firme și creditori</span></h1>
+          <div class="lead">
+            <p>Procedura de insolvență pare un labirint: termene scurte, tabele, planuri, voturi. În realitate are o ordine clară, iar cine o cunoaște știe unde se află și ce are de făcut.</p>
+            <p>Aici ai etapele în ordine cronologică, cine face ce, drepturile creditorilor și ale debitorului, plus un instrument care îți arată ce urmează în etapa în care te afli.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Plan: maximum 3 ani</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Vezi etapa ta</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Procedura insolvenței urmează, de regulă: cererea (a debitorului sau a unui creditor), deschiderea de către judecătorul-sindic, perioada de observație cu verificarea creanțelor, apoi reorganizarea pe bază de plan sau falimentul cu lichidarea averii, și închiderea procedurii (Legea nr. 85/2014). De la deschidere, executările silite se suspendă de drept (art. 75), iar planul nu poate depăși 3 ani de la confirmare.</p>
+          <div class="opts">
+            <div><b>Cerere debitor</b>30 de zile</div>
+            <div><b>Executări</b>suspendate de drept</div>
+            <div><b>Plan</b>maximum 3 ani</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>În ce etapă <span class="accent">ești?</span></h2></div>
+      <p>Alege etapa în care se află procedura. Îți arătăm cine acționează, ce urmează și temeiul din Legea nr. 85/2014.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">Etapa procedurii</label><div class="inp"><select id="f-s"><option value="0">Insolvență apărută, procedură încă nedeschisă</option><option value="1">Procedura a fost deschisă (încheiere / sentință)</option><option value="2">Perioada de observație: creanțe și tabele</option><option value="3">Se propune un plan de reorganizare</option><option value="4">Faliment și lichidare</option></select></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Vezi rezultatul</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: insolvență apărută, procedură nedeschisă</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Ce se întâmplă</span><span class="v" id="o-t" style="font-size:19px">—</span><span class="s" id="o-ts">Alege o variantă.</span></div>
+            <div class="opt" id="c-m"><span class="k">Cine acționează / termen</span><span class="v" id="o-m" style="font-size:17px">—</span><span class="s" id="o-ms"> </span></div>
+            <div class="opt" id="c-r"><span class="k">Ce faci tu</span><span class="v" id="o-r" style="font-size:17px">—</span><span class="s" id="o-rs"> </span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Orientativ, după Legea nr. 85/2014. Termenele concrete se stabilesc prin încheieri și prin BPI; verifică dosarul.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#ce-este">Ce este</a>
+      <a href="#etape">Etape</a>
+      <a href="#actori">Actori</a>
+      <a href="#drepturi">Drepturi</a>
+      <a href="#solutii">Reorganizare sau faliment</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Etapele procedurii insolvenței: răspuns rapid</h2>
+        <p>Procedura insolvenței urmează, de regulă: cererea (a debitorului sau a unui creditor), deschiderea procedurii de către judecătorul-sindic, perioada de observație cu verificarea creanțelor, apoi un plan de reorganizare sau falimentul cu lichidarea averii, și în final închiderea procedurii (Legea nr. 85/2014). De la deschidere, executările silite se suspendă de drept (art. 75). Planul de reorganizare nu poate depăși 3 ani de la confirmare (art. 133 alin. 3).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Un debitor devine insolvent la 1 octombrie: are 30 de zile să ceară deschiderea procedurii (art. 66). După deschidere depune actele în 10 zile (art. 74), creditorii se pot opune în 10 zile de la notificare, iar tabelul definitiv fixează masa credală. Planul se propune în 30 de zile de la publicarea lui (art. 132) și se execută în maximum 3 ani.</p>
+          <span class="formula">30 zile (cerere) + 10 zile (acte) + 30 zile (plan) + max. 3 ani (executare)</span>
+          <button type="button" class="btn btn-line" data-ex="1">Vezi în calculator</button>
+        </div>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Definiție</span>
+        <h2>Ce este procedura insolvenței și cine intră în ea</h2>
+        <p>Insolvența este starea în care fondurile disponibile nu ajung pentru datoriile certe, lichide și exigibile; se prezumă după 60 de zile de la scadență fără plată (art. 5 pct. 29). Legea nr. 85/2014 se aplică profesioniștilor, cu excepția profesiilor liberale, și regiilor autonome (art. 3). Pentru persoane fizice neprofesioniste, vezi Legea nr. 151/2015. Panoramă: <a href="/insolventa/">insolvența explicată simplu</a>.</p>
+      </section>
+
+      <section id="etape">
+        <span class="eyebrow">Etape</span>
+        <h2>Etapele procedurii, pe rând</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-procedurii-insolventei-cronologic.webp" width="1200" height="675" alt="Etapele procedurii insolvenței în ordine cronologică: cerere, deschidere, observație, creanțe, plan sau faliment, închidere" loading="lazy">
+          <figcaption>Etapele insolvenței, cronologic</figcaption>
+        </figure>
+        <ol class="num">
+          <li><b>Cererea.</b> Debitorul, în 30 de zile de la insolvență (art. 66), sau creditorul cu creanță peste valoarea-prag (art. 70). Vezi <a href="/deschiderea-procedurii-insolventei/">deschiderea procedurii</a>.</li>
+          <li><b>Deschiderea.</b> Judecătorul-sindic pronunță încheierea sau sentința; desemnează administratorul judiciar provizoriu sau lichidatorul (art. 71, 73). Notificările către creditori se fac cu cel puțin 10 zile înainte de termenul-limită pentru cererile de admitere (art. 100).</li>
+          <li><b>Suspendarea executărilor</b> de drept (art. 75), cu comunicarea către instanțe și bănci (art. 76).</li>
+          <li><b>Perioada de observație</b> durează de la deschidere până la confirmarea planului sau intrarea în faliment (art. 5 pct. 42).</li>
+          <li><b>Masa credală.</b> Creditorii depun cereri de admitere cu documentele justificative (art. 104); se întocmesc tabelul preliminar și cel definitiv (art. 112).</li>
+          <li><b>Reorganizarea:</b> plan propus, votat și confirmat (art. 132–139); <b>sau falimentul</b> (art. 145).</li>
+          <li><b>Lichidarea:</b> bunurile se vând în bloc sau individual (art. 154), iar sumele se distribuie în ordinea legii (art. 159 pentru bunurile grevate de garanții).</li>
+          <li><b>Închiderea:</b> când nu există bunuri sau sunt insuficiente pentru cheltuieli și niciun creditor nu avansează sumele (art. 174), ori când creditorii sunt plătiți integral în observație (art. 178).</li>
+        </ol>
+      </section>
+
+      <section id="actori">
+        <span class="eyebrow">Actori</span>
+        <h2>Rolul administratorului judiciar și al celorlalți</h2>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cine-face-ce-in-procedura-insolventei.webp" width="1200" height="675" alt="Cine face ce în procedura insolvenței: judecătorul-sindic, administratorul judiciar, lichidatorul, debitorul, creditorii și comitetul creditorilor" loading="lazy">
+          <figcaption>Cine face ce în insolvență</figcaption>
+        </figure>
+        <p>Administratorul judiciar este numit provizoriu prin sentința de deschidere (art. 73). Supraveghează activitatea debitorului, administrează averea dacă dreptul de administrare i s-a ridicat debitorului și raportează creditorilor și instanței. În procedura simplificată, lichidatorul judiciar preia lichidarea. Vezi <a href="/insolventa-sau-faliment/">insolvență sau faliment</a>.</p>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">Drepturi</span>
+        <h2>Drepturile creditorilor și ale debitorului</h2>
+        <ul class="chk">
+          <li><b>Creditorii:</b> își depun cererea de admitere (art. 104), contestă creanțele și tabelele, votează planul (art. 139) și pot cere falimentul dacă planul nu este respectat (art. 143).</li>
+          <li><b>Debitorul:</b> beneficiază de suspendarea executărilor (art. 75) și de continuarea serviciilor de utilități în observație și reorganizare, dacă e consumator captiv, cu plata în 90 de zile (art. 77); trebuie să depună actele (art. 74) și să colaboreze.</li>
+          <li><b>Creditorii garantați</b> pot cere ridicarea suspendării în condițiile art. 78 și primesc sumele din bunurile grevate în ordinea art. 159.</li>
+        </ul>
+      </section>
+
+      <section id="solutii">
+        <span class="eyebrow">Soluții</span>
+        <h2>Reorganizare sau faliment</h2>
+        <p>Reorganizarea ține afacerea în viață pe baza unui plan confirmat, de maximum 3 ani; falimentul duce la lichidarea averii și, pentru persoanele juridice, la dizolvare (art. 145 alin. 2). Detalii: <a href="/plan-reorganizare-insolventa/">planul de reorganizare</a> și <a href="/reorganizare-judiciara/">reorganizarea judiciară</a>. Pentru bunurile date în plată sau preluate de creditori, vezi <a href="/darea-in-plata-in-procedura-insolventei/">darea în plată în insolvență</a>.</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente și cum eviți falimentul</h2>
+        <ul class="chk">
+          <li>Depunerea tardivă a cererii (termen de 30 de zile).</li>
+          <li>Lipsa documentelor justificative (art. 67, art. 104).</li>
+          <li>Nerespectarea obligațiilor din procedură: actele în 10 zile (art. 74).</li>
+        </ul>
+        <p>Falimentul se poate evita prin restructurare financiară, negocieri cu creditorii (mandat ad-hoc, concordat preventiv, art. 66 alin. 3) și un plan realist. Pentru creditele bancare, vezi <a href="/restructurare-credit-vs-refinantare/">restructurare credit</a>. Textele din Legea nr. 85/2014 sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Stabilește în ce etapă se află procedura (calculator).</li>
+          <li>Notează termenele care curg: 30 de zile pentru cerere, 10 zile pentru actele din art. 74, 30 de zile pentru plan.</li>
+          <li>Trimite-ne hotărârea sau notificarea primită în chat; îți spunem în aceeași zi ce faci mai departe.</li>
+        </ol>
+        <!--@author practice="insolvență" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre procedura insolvenței</h2>
+        <div class="faq">
+          <details open><summary>Ce este procedura insolvenței?</summary><p>Procedura colectivă prin care creditorii sunt plătiți dintr-o avere comună, sub conducerea judecătorului-sindic, prin reorganizare sau lichidare (Legea nr. 85/2014).</p></details>
+          <details><summary>Care sunt etapele procedurii insolvenței?</summary><p>Cererea, deschiderea, perioada de observație cu verificarea creanțelor, plan de reorganizare sau faliment, lichidare și închiderea procedurii.</p></details>
+          <details><summary>Care este diferența dintre insolvență și faliment?</summary><p>Insolvența este starea financiară; falimentul este calea procedurii care duce la lichidarea averii (art. 145).</p></details>
+          <details><summary>Cine poate cere deschiderea procedurii?</summary><p>Debitorul (obligatoriu în 30 de zile, art. 66) sau un creditor cu creanță peste valoarea-prag de 40.000 lei (art. 70).</p></details>
+          <details><summary>Ce este masa credală?</summary><p>Totalitatea creditorilor cu creanțe admise în tabelul creanțelor, plătiți în cadrul procedurii.</p></details>
+          <details><summary>Ce rol are administratorul judiciar?</summary><p>Supraveghează activitatea debitorului și administrarea averii și raportează creditorilor și instanței; este numit provizoriu prin sentința de deschidere (art. 73).</p></details>
+          <details><summary>Se suspendă executarea silită în insolvență?</summary><p>Da, de la deschiderea procedurii, de drept (art. 75).</p></details>
+          <details><summary>Ce este perioada de observație?</summary><p>Perioada dintre deschiderea procedurii și confirmarea planului de reorganizare sau intrarea în faliment (art. 5 pct. 42).</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ești într-o procedură de insolvență?" lead="Trimite-ne încheierea, notificarea sau tabelul de creanțe. Îți spunem în aceeași zi în ce etapă ești și ce termene curg. Consultația nu te obligă la nimic." nav="/|Acasă;/insolventa/|Insolvența;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat tribunalelor sau administratorilor judiciari. Informațiile sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var D=[["Debitorul trebuie să ceară deschiderea în 30 de zile (art. 66); un creditor poate cere cu creanță de minimum 40.000 lei (art. 70).", "Cerere la tribunal.", "Strânge actele din art. 67 sau dovada creanței."], ["Executările se suspendă de drept (art. 75); se numește administrator judiciar sau lichidator (art. 73).", "Debitorul depune actele în 10 zile (art. 74).", "Creditorii își depun cererile de admitere (art. 104)."], ["Se verifică creanțele și se întocmesc tabelele; perioada durează până la confirmarea planului sau intrarea în faliment (art. 5 pct. 42).", "Administratorul judiciar și judecătorul-sindic.", "Contestă creanțele, dacă e cazul, și pregătește planul."], ["Planul se depune în 30 de zile de la publicarea tabelului definitiv (art. 132), se votează și se confirmă (art. 139).", "Debitor, administrator judiciar sau creditori cu minimum 20%.", "Executarea planului: maximum 3 ani (art. 133 alin. 3)."], ["Judecătorul-sindic decide falimentul (art. 145), ridică dreptul de administrare și numește lichidator.", "Lichidatorul judiciar (art. 154).", "Distribuirea sumelor în ordinea legii (art. 159), apoi închiderea (art. 174)."]];
+  function calc(){var d=D[parseInt($('f-s').value,10)];$('o-t').textContent=d[0];$('o-m').textContent=d[1];$('o-r').textContent=d[2];$('c-t').classList.add('alert')}
+  $('b-calc').addEventListener('click',calc);
+  $('f-s').addEventListener('change',calc);
+  function ex(){$('f-s').value='0';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Etapele procedurii insolvenței", "item": "https://chinsolvency.ro/procedura-insolventei-etape/"}]}, {"@type": "Article", "headline": "Etapele procedurii insolvenței: pas cu pas, art. 66–174", "description": "Etapele procedurii insolvenței în Legea 85/2014: cerere, deschidere, suspendarea executărilor, perioada de observație, masa credală, plan sau faliment, lichidare și închidere.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/procedura-insolventei-etape/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/etapele-procedurii-insolventei-cronologic.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/cine-face-ce-in-procedura-insolventei.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Etapele procedurii insolvenței", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Cererea", "text": "Debitorul în 30 de zile sau creditorul cu creanță peste 40.000 lei."}, {"@type": "HowToStep", "position": 2, "name": "Deschiderea", "text": "Judecătorul-sindic; executările se suspendă."}, {"@type": "HowToStep", "position": 3, "name": "Observația", "text": "Cereri de admitere și tabele de creanțe."}, {"@type": "HowToStep", "position": 4, "name": "Planul sau falimentul", "text": "Reorganizare, maximum 3 ani, sau lichidare."}, {"@type": "HowToStep", "position": 5, "name": "Închiderea", "text": "Plata creditorilor sau lipsa bunurilor."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Insolvență", "Procedura insolvenței", "Legea 85/2014", "Reorganizare judiciară", "Faliment"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce este procedura insolvenței?", "acceptedAnswer": {"@type": "Answer", "text": "Procedura colectivă prin care creditorii sunt plătiți dintr-o avere comună, sub conducerea judecătorului-sindic, prin reorganizare sau lichidare (Legea nr. 85/2014)."}}, {"@type": "Question", "name": "Care sunt etapele procedurii insolvenței?", "acceptedAnswer": {"@type": "Answer", "text": "Cererea, deschiderea, perioada de observație cu verificarea creanțelor, plan de reorganizare sau faliment, lichidare și închiderea procedurii."}}, {"@type": "Question", "name": "Care este diferența dintre insolvență și faliment?", "acceptedAnswer": {"@type": "Answer", "text": "Insolvența este starea financiară; falimentul este calea procedurii care duce la lichidarea averii (art. 145)."}}, {"@type": "Question", "name": "Cine poate cere deschiderea procedurii?", "acceptedAnswer": {"@type": "Answer", "text": "Debitorul (obligatoriu în 30 de zile, art. 66) sau un creditor cu creanță peste valoarea-prag de 40.000 lei (art. 70)."}}, {"@type": "Question", "name": "Ce este masa credală?", "acceptedAnswer": {"@type": "Answer", "text": "Totalitatea creditorilor cu creanțe admise în tabelul creanțelor, plătiți în cadrul procedurii."}}, {"@type": "Question", "name": "Ce rol are administratorul judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Supraveghează activitatea debitorului și administrarea averii și raportează creditorilor și instanței; este numit provizoriu prin sentința de deschidere (art. 73)."}}, {"@type": "Question", "name": "Se suspendă executarea silită în insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Da, de la deschiderea procedurii, de drept (art. 75)."}}, {"@type": "Question", "name": "Ce este perioada de observație?", "acceptedAnswer": {"@type": "Answer", "text": "Perioada dintre deschiderea procedurii și confirmarea planului de reorganizare sau intrarea în faliment (art. 5 pct. 42)."}}]}]}
+</script>

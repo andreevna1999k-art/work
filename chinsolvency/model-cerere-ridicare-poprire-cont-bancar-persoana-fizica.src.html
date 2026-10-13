@@ -1,0 +1,225 @@
+<!-- Consultarius — /model-cerere-ridicare-poprire-cont-bancar-persoana-fizica/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Ce ceri;#raspuns|Răspuns rapid;#cand|Când se ridică;#model1|Modele;#anaf|ANAF;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Model cerere ridicare poprire</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Model cerere · poprire cont · art. 703, 721 CPC</span>
+          <h1>Model de cerere pentru ridicarea popririi pe cont bancar <span class="accent">(persoană fizică)</span></h1>
+          <div class="lead">
+            <p>Ai plătit datoria sau vrei să consemnezi suma, dar contul rămâne blocat. Banca spune că ridică poprirea doar la cererea executorului, iar executorul cere acte. Aici ai trei modele gata de completat și instrumentul care îți arată ce ceri și cui.</p>
+            <p>Modelele se adaptează după dosar și nu înlocuiesc consultanța juridică.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Se ridică prin executor</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Vezi ce ceri</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>Poprirea pe cont o ridică executorul judecătoresc, nu banca: după plata integrală, consemnarea creanței (art. 721 CPC), renunțarea creditorului sau anularea executării (art. 703). Cererea se adresează executorului, cu dovada plății sau recipisa de consemnare. Dacă poprirea este nelegală, depui contestație la instanța de executare, în general în 15 zile (art. 715).</p>
+          <div class="opts">
+            <div><b>Cui</b>executorului</div>
+            <div><b>Dovadă</b>plată sau consemnare</div>
+            <div><b>Dacă e nelegală</b>contestație, 15 zile</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Ce ceri pentru <span class="accent">ridicarea popririi</span></h2></div>
+      <p>Alege motivul pentru care vrei ridicarea. Îți arătăm cui te adresezi, ce dovezi atașezi și temeiul din CPC.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="field full"><label for="f-s">Motivul ridicării</label><div class="inp"><select id="f-s"><option value="0">Am plătit integral datoria, cu cheltuieli</option><option value="1">Vreau să consemnez toată datoria</option><option value="2">Poprirea vizează sume nepopribile (alocații, burse)</option><option value="3">Titlul nu e executoriu sau datoria e prescrisă</option><option value="4">Creditorul renunță la executare</option></select></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Vezi rezultatul</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: am plătit integral</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Ce ceri</span><span class="v" id="o-t" style="font-size:19px">—</span><span class="s" id="o-ts">Alege o variantă.</span></div>
+            <div class="opt" id="c-m"><span class="k">Cui te adresezi</span><span class="v" id="o-m" style="font-size:17px">—</span><span class="s" id="o-ms"> </span></div>
+            <div class="opt" id="c-r"><span class="k">Ce dovezi atașezi</span><span class="v" id="o-r" style="font-size:17px">—</span><span class="s" id="o-rs"> </span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne actele în chat</a>
+          <span class="disc">Orientativ, după CPC. Pentru poprirea ANAF se aplică Codul de procedură fiscală, cu proceduri și termene proprii; verifică actul de poprire și cere sfatul unui specialist.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#ce-este">Ce este</a>
+      <a href="#cand">Când se ridică</a>
+      <a href="#model1">Model: după plată</a>
+      <a href="#model2">Model: consemnare</a>
+      <a href="#model3">Model: contestație</a>
+      <a href="#anaf">ANAF</a>
+      <a href="#greseli">Greșeli</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Model cerere de ridicare a popririi: răspuns rapid</h2>
+        <p>Poprirea pe cont nu o ridică banca, ci executorul judecătoresc, după ce datoria este plătită, consemnată sau executarea este anulată ori încetează (art. 703, 721 CPC). Cererea se adresează executorului, cu dovada plății sau recipisa de consemnare. Dacă poprirea este nelegală, ai nevoie de o contestație la instanța de executare, nu doar de o cerere. Mai jos ai trei modele și instrumentul care îți arată ce ceri.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Datorie de 20.000 lei, cheltuieli de executare 1.500 lei, dobânzi 800 lei. Consemnezi 22.300 lei la dispoziția executorului (art. 721): creanța, accesoriile și cheltuielile. Cât timp nu consemnezi toate sumele pentru care s-a înființat poprirea, indisponibilizarea nu încetează (art. 784 alin. 6).</p>
+          <span class="formula">20.000 + 800 + 1.500 = 22.300 lei de consemnat</span>
+          <button type="button" class="btn btn-line" data-ex="1">Vezi ce ceri</button>
+        </div>
+      </section>
+
+      <section id="ce-este">
+        <span class="eyebrow">Definiție</span>
+        <h2>Ce este poprirea bancară și cine o poate înființa</h2>
+        <p>Poprirea indisponibilizează sumele din conturi (soldul și încasările viitoare, art. 781 alin. 2 CPC), din momentul comunicării adresei către bancă (art. 784 alin. 1). O înființează un executor judecătoresc, la cererea creditorului cu titlu executoriu; datoriile către stat se execută prin organele fiscale, după Codul de procedură fiscală. Ghidul complet: <a href="/poprire-cont/">poprirea pe cont</a>.</p>
+      </section>
+
+      <section id="cand">
+        <span class="eyebrow">Când se ridică</span>
+        <h2>Când poate fi ridicată poprirea</h2>
+        <ul class="chk">
+          <li><b>Datoria este achitată integral</b>, cu accesorii și cheltuieli: executarea încetează (art. 703 alin. 1 pct. 1).</li>
+          <li><b>Consemnezi toată creanța</b> la dispoziția executorului, până la adjudecare: măsurile se desființează (art. 721).</li>
+          <li><b>Creditorul renunță</b> la executare (art. 703 alin. 1 pct. 3).</li>
+          <li><b>Titlul sau executarea sunt desființate</b> de instanță (art. 703 alin. 1 pct. 4–5, art. 720).</li>
+          <li><b>Suspendarea executării</b>, dar atenție: suspendarea simplă păstrează blocajul, dacă nu se dispune altfel (art. 701 alin. 3).</li>
+          <li><b>Prescripția</b> dreptului de a cere executarea, invocată de tine (art. 706–707).</li>
+        </ul>
+        <p>După încetare, executorul întocmește încheierea de încetare, motivată, și o comunică de îndată creditorului și debitorului (art. 703 alin. 2).</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/ridicare-suspendare-contestatie.webp" width="1200" height="675" alt="Ridicare, suspendare sau contestație: când se folosesc, cui se adresează, cost și efect" loading="lazy">
+          <figcaption>Ridicare, suspendare sau contestație</figcaption>
+        </figure>
+      </section>
+
+      <section id="model1">
+        <span class="eyebrow">Model 1</span>
+        <h2>Model: cerere de ridicare a popririi după plată</h2>
+        <p>Folosește-l când ai achitat întreaga datorie. Completează datele din dosarul de executare.</p>
+        <div class="quote">„Către Biroul Executorului Judecătoresc [__]. Dosar de executare nr. [__]. Subsemnatul/a [nume, CNP, domiciliu], în calitate de debitor în dosarul menționat, vă solicit, în temeiul art. 703 alin. 1 pct. 1 CPC, constatarea încetării executării silite și ridicarea popririi înființate asupra conturilor mele deschise la [bancă], întrucât am achitat integral creanța, dobânzile și cheltuielile de executare. Anexez: dovada plății din data de [__], extrasul de cont, calculul sumei comunicat de executor. Vă rog să comunicați de îndată băncii și mie încheierea de încetare. Data, semnătura.”</div>
+        <h3>Date care trebuie completate</h3>
+        <ul class="chk">
+          <li>Numărul dosarului de executare și datele executorului (din încheiere sau adresa de poprire).</li>
+          <li>Datele tale de identificare și contul vizat.</li>
+          <li>Suma plătită și data plății, cu documentele.</li>
+        </ul>
+      </section>
+
+      <section id="model2">
+        <span class="eyebrow">Model 2</span>
+        <h2>Model: consemnarea creanței și cererea de desființare a măsurilor</h2>
+        <div class="quote">„Către Biroul Executorului Judecătoresc [__]. Dosar nr. [__]. Subsemnatul/a [nume], debitor, am consemnat la [unitatea de consemnare], la dispoziția dumneavoastră, suma de [__] lei, reprezentând creanța, accesoriile și cheltuielile de executare, conform art. 721 CPC. Vă solicit desființarea măsurilor de executare, inclusiv ridicarea popririi asupra conturilor mele, și înștiințarea de îndată a terțului poprit. Anexez recipisa de consemnare. Data, semnătura.”</div>
+        <p>Executorul se pronunță de urgență, prin încheiere dată cu citarea părților (art. 721 alin. 2). Recipisa o depui la executor, care îl înștiințează de îndată pe terțul poprit (art. 784 alin. 6).</p>
+      </section>
+
+      <section id="model3">
+        <span class="eyebrow">Model 3</span>
+        <h2>Model: contestație la executare pentru anularea popririi</h2>
+        <p>Dacă poprirea este nelegală (sume nepopribile, titlu neexecutoriu, prescripție, executor necompetent), cererea la executor nu ajunge: depui contestație la instanța de executare, în general în 15 zile (art. 712, 715).</p>
+        <div class="quote">„Către Judecătoria [__]. Contestator: [nume]. Intimat: [creditor]. Prin prezenta contestație la executare, în baza art. 712 CPC, solicit anularea popririi înființate în dosarul de executare nr. [__] asupra contului [__], în măsura în care vizează sume nepopribile, potrivit art. 729 alin. 7 CPC, și suspendarea executării până la soluționare, conform art. 719 CPC, cauțiunea fiind consemnată (se anexează dovada). Motive: [__]. Probe: extrasul de cont, dovada originii sumelor, actele de executare. Data, semnătura.”</div>
+        <p>Detalii și modele: <a href="/contestatie-la-executare/">contestația la executare</a>, <a href="/amanare-executare-silita/">suspendarea executării</a>, <a href="/termen-contestatie-la-executare/">termenul contestației</a>.</p>
+      </section>
+
+      <section id="anaf">
+        <span class="eyebrow">ANAF</span>
+        <h2>Poprirea ANAF: ce diferă</h2>
+        <p>Datoriile către stat se execută prin organele fiscale, după Codul de procedură fiscală, nu prin executor judecătoresc. Cererea de ridicare se adresează organului fiscal care a înființat poprirea, cu dovada plății sau a stingerii obligației. Termenele și căile de contestare sunt cele din legislația fiscală, nu cele din CPC. Verifică actul care fundamentează poprirea și cere sfatul unui specialist înainte să depui.</p>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente când ceri ridicarea popririi</h2>
+        <ul class="chk">
+          <li>Trimiți cererea doar băncii: banca nu poate ridica singură poprirea.</li>
+          <li>Plătești o parte și crezi că s-a ridicat: executarea încetează doar la plata integrală, cu cheltuieli (art. 703).</li>
+          <li>Nu atașezi calculul sumei sau dovada plății.</li>
+          <li>Aștepți și ratezi cele 15 zile pentru contestație.</li>
+        </ul>
+        <p>Textele din CPC sunt cele publicate în Monitorul Oficial; verifică forma consolidată.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Cere executorului calculul exact al sumei de plată sau de consemnat.</li>
+          <li>Plătește sau consemnează și păstrează dovada.</li>
+          <li>Trimite-ne dosarul în chat; îți spunem în aceeași zi ce model folosești.</li>
+        </ol>
+        <!--@author practice="executare silită" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre ridicarea popririi</h2>
+        <div class="faq">
+          <details open><summary>Cum se face o cerere de ridicare a popririi?</summary><p>Se adresează executorului judecătoresc, cu dovada plății integrale sau recipisa de consemnare, și cere încetarea executării sau desființarea măsurilor (art. 703, 721 CPC).</p></details>
+          <details><summary>Cui se transmite cererea?</summary><p>Executorului din dosarul de executare. Banca nu ridică singură poprirea; executorul o înștiințează.</p></details>
+          <details><summary>Cât durează ridicarea popririi bancare?</summary><p>Legea nu fixează o durată. La consemnare, executorul se pronunță de urgență, prin încheiere dată cu citarea părților (art. 721 alin. 2).</p></details>
+          <details><summary>Cum se ridică poprirea ANAF?</summary><p>Cu cerere la organul fiscal care a înființat-o, cu dovada stingerii obligației, după Codul de procedură fiscală; termenele sunt cele fiscale.</p></details>
+          <details><summary>Pot suspenda executarea silită?</summary><p>Da, instanța o poate suspenda cu cauțiune (art. 719 CPC), dar suspendarea simplă nu ridică singură blocajul (art. 701 alin. 3).</p></details>
+          <details><summary>Când poate fi anulată poprirea?</summary><p>Când titlul nu e executoriu, datoria e prescrisă, executorul e necompetent, actele nu ți-au fost comunicate sau se poprește peste limita legii.</p></details>
+          <details><summary>Ce documente sunt necesare?</summary><p>Dovada plății sau recipisa de consemnare, extrasul de cont, calculul sumei de la executor și actele de executare primite.</p></details>
+          <details><summary>Cum contest poprirea bancară?</summary><p>Prin contestație la executare la instanța de executare, în general în 15 zile (art. 712, 715 CPC).</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai contul poprit?" lead="Trimite-ne adresa de poprire și dovada plății. Îți spunem în aceeași zi ce cerere depui și cui. Consultația nu te obligă la nimic." nav="/|Acasă;/poprire-cont/|Poprire cont;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat executorilor sau băncilor. Modelele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var D=[["Cerere de încetare a executării / ridicare a popririi, la executor.", "Executorului judecătoresc (art. 703 alin. 1 pct. 1)", "Dovada plății, extras de cont, calculul sumei de la executor."], ["Cerere de desființare a măsurilor prin consemnare, la executor.", "Executorului; recipisa o depui la el (art. 721, 784 alin. 6)", "Recipisa de consemnare cu afectațiune specială, calculul creanței și al cheltuielilor."], ["Contestație la executare, cu cerere de suspendare.", "Instanței de executare (art. 712, 714 CPC)", "Extras de cont, dovada originii sumelor (art. 729 alin. 7)."], ["Contestație la executare pentru anularea executării.", "Instanței de executare; 15 zile în general (art. 715)", "Titlul, actele de executare, dovada comunicărilor."], ["Cerere de încetare a executării, cu acordul creditorului.", "Executorului (art. 703 alin. 1 pct. 3)", "Înscris de renunțare semnat de creditor."]];
+  function calc(){var d=D[parseInt($('f-s').value,10)];$('o-t').textContent=d[0];$('o-m').textContent=d[1];$('o-r').textContent=d[2];$('c-t').classList.add('alert')}
+  $('b-calc').addEventListener('click',calc);
+  $('f-s').addEventListener('change',calc);
+  function ex(){$('f-s').value='0';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Model cerere ridicare poprire", "item": "https://chinsolvency.ro/model-cerere-ridicare-poprire-cont-bancar-persoana-fizica/"}]}, {"@type": "Article", "headline": "Model cerere ridicare poprire cont bancar (persoană fizică)", "description": "Modele de cerere pentru ridicarea popririi pe cont: după plata datoriei, prin consemnare (art. 721 CPC) și contestație. Cui o trimiți, ce acte atașezi și ce diferă la ANAF.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/model-cerere-ridicare-poprire-cont-bancar-persoana-fizica/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/cum-ridici-poprirea-pasii.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/ridicare-suspendare-contestatie.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum ridici poprirea pe cont", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Plătești sau consemnezi", "text": "Toată creanța, cu accesorii și cheltuieli."}, {"@type": "HowToStep", "position": 2, "name": "Depui cererea la executor", "text": "Cu dovada plății sau recipisa."}, {"@type": "HowToStep", "position": 3, "name": "Aștepți încheierea", "text": "Executorul se pronunță de urgență."}, {"@type": "HowToStep", "position": 4, "name": "Banca este înștiințată", "text": "De executor, nu de tine."}, {"@type": "HowToStep", "position": 5, "name": "Verifici contul", "text": "Dacă blocajul persistă, contești."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Poprire", "Ridicare poprire", "Executare silită", "Model cerere"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Cum se face o cerere de ridicare a popririi?", "acceptedAnswer": {"@type": "Answer", "text": "Se adresează executorului judecătoresc, cu dovada plății integrale sau recipisa de consemnare, și cere încetarea executării sau desființarea măsurilor (art. 703, 721 CPC)."}}, {"@type": "Question", "name": "Cui se transmite cererea?", "acceptedAnswer": {"@type": "Answer", "text": "Executorului din dosarul de executare. Banca nu ridică singură poprirea; executorul o înștiințează."}}, {"@type": "Question", "name": "Cât durează ridicarea popririi bancare?", "acceptedAnswer": {"@type": "Answer", "text": "Legea nu fixează o durată. La consemnare, executorul se pronunță de urgență, prin încheiere dată cu citarea părților (art. 721 alin. 2)."}}, {"@type": "Question", "name": "Cum se ridică poprirea ANAF?", "acceptedAnswer": {"@type": "Answer", "text": "Cu cerere la organul fiscal care a înființat-o, cu dovada stingerii obligației, după Codul de procedură fiscală; termenele sunt cele fiscale."}}, {"@type": "Question", "name": "Pot suspenda executarea silită?", "acceptedAnswer": {"@type": "Answer", "text": "Da, instanța o poate suspenda cu cauțiune (art. 719 CPC), dar suspendarea simplă nu ridică singură blocajul (art. 701 alin. 3)."}}, {"@type": "Question", "name": "Când poate fi anulată poprirea?", "acceptedAnswer": {"@type": "Answer", "text": "Când titlul nu e executoriu, datoria e prescrisă, executorul e necompetent, actele nu ți-au fost comunicate sau se poprește peste limita legii."}}, {"@type": "Question", "name": "Ce documente sunt necesare?", "acceptedAnswer": {"@type": "Answer", "text": "Dovada plății sau recipisa de consemnare, extrasul de cont, calculul sumei de la executor și actele de executare primite."}}, {"@type": "Question", "name": "Cum contest poprirea bancară?", "acceptedAnswer": {"@type": "Answer", "text": "Prin contestație la executare la instanța de executare, în general în 15 zile (art. 712, 715 CPC)."}}]}]}
+</script>
