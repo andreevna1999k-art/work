@@ -1,0 +1,233 @@
+<!-- Consultarius — /darea-in-plata-in-procedura-insolventei/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Calculator;#raspuns|Răspuns rapid;#plan|Dare în plată prin plan;#adjudecare|Adjudecare;#insolventa|Insolvență;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Darea în plată în insolvență</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Legea 85/2014 · art. 133 · art. 771 și 779 CPC</span>
+          <h1>Darea în plată în procedura insolvenței <span class="accent">și adjudecarea în contul creanței</span></h1>
+          <div class="lead">
+            <p>Auzi „dare în plată specială” și „adjudecare în contul creanței” și nu e clar dacă sunt același lucru, dacă sunt în Legea insolvenței sau în Codul de procedură civilă. De confuzia asta depinde dacă un creditor poate sau nu să ia un bun în locul banilor.</p>
+            <p>Aici despărțim mecanismele reale, cu articolele verificate, și îți dăm un calculator pentru diferența pe care o depune creditorul adjudecatar.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 13 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Diferența se depune în 5 zile</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează diferența</a>
+            <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Răspuns rapid</h2>
+          <p>În Legea nr. 85/2014 nu există o „dare în plată specială” separată. Există darea în plată prin planul de reorganizare (art. 133 alin. 5 lit. E, doar cu acordul scris al creditorilor), adjudecarea în contul creanței în executarea silită (art. 771 CPC) și preluarea bunului mobil nevândut (art. 779 CPC). După deschiderea insolvenței, executările se suspendă de drept (art. 75).</p>
+          <div class="opts">
+            <div><b>Prin plan</b>acord scris al creditorilor</div>
+            <div><b>Adjudecare</b>diferența în 5 zile</div>
+            <div><b>Insolvență</b>executări suspendate</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Adjudecare în contul creanței: <span class="accent">cât depui în plus</span></h2></div>
+      <p>Introdu prețul de adjudecare și valoarea creanței tale. Vezi diferența pe care creditorul adjudecatar trebuie să o depună în cel mult 5 zile (art. 771 alin. 2 CPC) sau cât din creanță rămâne neacoperită.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Sume</div>
+          <div class="field"><label for="f-v">Prețul de adjudecare (lei)</label><div class="inp"><input id="f-v" inputmode="numeric" placeholder="80000"></div></div>
+          <div class="field"><label for="f-d">Valoarea creanței (lei)</label><div class="inp"><input id="f-d" inputmode="numeric" placeholder="60000"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: preț 80.000 lei, creanță 60.000 lei</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Diferență de depus în maximum 5 zile</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Introdu prețul și creanța.</span></div>
+            <div class="opt" id="c-m"><span class="k">Creanță acoperită prin adjudecare</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">Din creanța ta.</span></div>
+            <div class="opt" id="c-r"><span class="k">Creanță rămasă de recuperat</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Rămâne urmăribilă.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne dosarul</a>
+          <span class="disc">Calcul orientativ după art. 771 alin. 2 CPC: creditorul urmăritor care adjudecă poate depune creanța în contul prețului doar dacă nu participă alți creditori sau aceștia au rang inferior; dacă prețul depășește creanța, diferența se depune de îndată sau în cel mult 5 zile de la licitație. Nu include cheltuielile de executare și eventualele creanțe prioritare.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raspuns">Răspuns rapid</a>
+      <a href="#termeni">Termeni</a>
+      <a href="#plan">Dare în plată prin plan</a>
+      <a href="#adjudecare">Adjudecare în contul creanței</a>
+      <a href="#insolventa">În insolvență</a>
+      <a href="#riscuri">Avantaje și riscuri</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raspuns">
+        <span class="eyebrow">Pe scurt</span>
+        <h2>Darea în plată în insolvență: răspuns rapid</h2>
+        <p>În Legea nr. 85/2014 nu există o „dare în plată specială” ca instituție separată. Există, în schimb, trei mecanisme care se confundă des: darea în plată a bunurilor către creditori prin planul de reorganizare (art. 133 alin. 5 lit. E, doar cu acordul scris al creditorilor), adjudecarea în contul creanței în executarea silită (art. 771 CPC) și preluarea unui bun mobil nevândut în contul creanței (art. 779 CPC). De la deschiderea insolvenței, executările individuale se suspendă de drept (art. 75).</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Creditorul tău are o creanță de 60.000 lei și adjudecă imobilul cu 80.000 lei, în executare silită. Poate depune creanța în contul prețului, dar trebuie să depună diferența de 20.000 lei de îndată sau în cel mult 5 zile de la licitație (art. 771 alin. 2). Dacă nu o depune, licitația se reia.</p>
+          <span class="formula">80.000 − 60.000 = 20.000 lei de depus în maximum 5 zile</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="termeni">
+        <span class="eyebrow">Termeni</span>
+        <h2>Ce înseamnă darea în plată și adjudecarea în contul creanței</h2>
+        <p>Darea în plată înseamnă că debitorul își stinge datoria predând creditorului un alt bun decât suma de bani. Adjudecarea în contul creanței înseamnă că tocmai creditorul care a pornit executarea cumpără bunul la licitație și „plătește” prețul, în tot sau în parte, cu propria creanță. Sunt lucruri diferite, cu reguli diferite.</p>
+        <div class="tbl wide"><table>
+          <thead><tr><th></th><th>Dare în plată prin plan</th><th>Adjudecare în contul creanței</th><th>Preluarea bunului mobil nevândut</th></tr></thead>
+          <tbody>
+            <tr><td>Unde se întâmplă</td><td>Procedura de reorganizare</td><td>Executarea silită, la licitație</td><td>Executarea silită, după licitații eșuate</td></tr>
+            <tr><td>Temei</td><td>Art. 133 alin. 5 lit. E, Legea nr. 85/2014</td><td>Art. 771 alin. 2 CPC</td><td>Art. 779 CPC</td></tr>
+            <tr><td>Condiție</td><td>Acordul scris al creditorilor care primesc bunurile</td><td>Nu participă alți creditori sau au rang inferior</td><td>Bunul sechestrat nu s-a putut vinde</td></tr>
+            <tr><td>Prețul</td><td>Stabilit prin plan</td><td>Prețul de adjudecare; diferența se depune în 5 zile</td><td>Prețul din ultimul anunț de vânzare</td></tr>
+            <tr><td>Efect</td><td>Creanța se stinge în măsura valorii bunurilor</td><td>Creanța se stinge până la prețul adjudecat</td><td>Creanța se stinge până la valoarea preluată</td></tr>
+          </tbody>
+        </table></div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/dare-in-plata-adjudecare-si-executare-comparatie.webp" width="1200" height="675" alt="dare în plată, adjudecare în contul creanței și executare silită clasică: temei, condiții, preț și efect" loading="lazy">
+          <figcaption>Trei mecanisme diferite, des confundate</figcaption>
+        </figure>
+      </section>
+
+      <section id="plan">
+        <span class="eyebrow">În plan</span>
+        <h2>Darea în plată prin planul de reorganizare</h2>
+        <p>Planul de reorganizare poate prevedea lichidarea bunurilor debitorului sau darea lor în plată către creditori, în contul creanțelor pe care aceștia le au față de avere. Darea în plată se poate face doar cu acordul scris prealabil al creditorilor, cu privire la această modalitate de stingere a creanței (art. 133 alin. 5 lit. E din Legea nr. 85/2014).</p>
+        <h3>Ce trebuie să știi</h3>
+        <ul class="chk">
+          <li>Planul trebuie să cuprindă programul de plată a creanțelor (art. 133 alin. 2).</li>
+          <li>Executarea planului nu poate depăși 3 ani de la confirmare (art. 133 alin. 3).</li>
+          <li>Planul se supune votului creditorilor și confirmării judecătorului-sindic; regulile de vot sunt în art. 139. Vezi <a href="/reorganizare-judiciara/">reorganizarea judiciară</a>.</li>
+          <li>Creditorul care nu consimte în scris nu poate fi obligat să primească bunul în loc de bani.</li>
+        </ul>
+        <p>Administratorul judiciar supraveghează realizarea planului, sub controlul judecătorului-sindic.</p>
+      </section>
+
+      <section id="adjudecare">
+        <span class="eyebrow">În executare</span>
+        <h2>Adjudecarea în contul creanței în executarea silită</h2>
+        <p>În urmărirea silită, după adjudecare, adjudecatarul trebuie să depună de îndată întregul preț sau, la cerere acceptată de creditor, în cel mult 5 zile de la licitație (art. 771 alin. 1). Dacă adjudecatar este chiar creditorul urmăritor și nu participă alți creditori, sau cei care participă au rang inferior, el poate depune în contul prețului creanța sa, în tot sau în parte (art. 771 alin. 2). Dacă prețul este mai mare decât creanța, depune diferența în același termen.</p>
+        <h3>Ce se întâmplă dacă nu depune diferența</h3>
+        <p>Dacă prețul sau diferența nu se depune, licitația se reia sau se alege altă modalitate de valorificare, iar primul adjudecatar răspunde de scăderea prețului obținut la a doua vânzare și de cheltuielile făcute (art. 771 alin. 3).</p>
+        <h3>Diferența față de executarea clasică</h3>
+        <p>În executarea clasică, bunul se vinde unui terț, iar banii ajung la creditor prin distribuire. În adjudecarea în contul creanței, creditorul ia bunul și își stinge creanța prin compensare cu prețul, fără ca banii să circule, în măsura creanței.</p>
+        <h3>Preluarea bunului mobil nevândut</h3>
+        <p>Dacă bunul mobil sechestrat nu s-a putut vinde, orice creditor care putea urmări bunurile mobile îl poate prelua în contul creanței, la prețul din publicațiile pentru ultimul termen de licitație. Dacă prețul depășește creanța, preia bunul numai dacă depune diferența (art. 779 alin. 1). Între mai mulți creditori, bunul se atribuie după ordinea de preferință din art. 865 și 867 (art. 779 alin. 2). Bunurile nevândute rămân indisponibilizate cel mult un an de la sechestru (art. 780 alin. 1).</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/adjudecare-in-contul-creantei-exemplu.webp" width="1200" height="675" alt="adjudecare în contul creanței: exemplu cu preț de 80.000 lei, creanță de 60.000 lei și diferență de 20.000 lei în 5 zile" loading="lazy">
+          <figcaption>Exemplu: adjudecare în contul creanței</figcaption>
+        </figure>
+      </section>
+
+      <section id="insolventa">
+        <span class="eyebrow">Insolvență</span>
+        <h2>De ce adjudecarea clasică nu merge după deschiderea insolvenței</h2>
+        <p>De la data deschiderii procedurii se suspendă de drept toate acțiunile judiciare, extrajudiciare sau măsurile de executare silită pentru realizarea creanțelor asupra averii debitorului. Valorificarea drepturilor se face numai în cadrul procedurii insolvenței, prin cereri de admitere a creanțelor (art. 75 din Legea nr. 85/2014). În practică, mecanismele din CPC se aplică înainte de insolvență, iar în insolvență ai dare în plată prin plan sau valorificarea bunurilor în procedură.</p>
+        <h3>Drepturile creditorilor</h3>
+        <p>Creditorii își depun creanțele în procedură, votează planul și pot accepta sau refuza darea în plată. Creditorii care au o cauză de preferință rămân protejați: sumele obținute din vânzarea bunurilor asupra cărora poartă garanții se distribuie obligatoriu titularilor acelor cauze (art. 133 alin. 5 lit. F).</p>
+        <h3>Obligațiile și protecția debitorului</h3>
+        <p>Debitorul respectă planul și programul de plată. Darea în plată nu poate fi impusă fără acordul scris al creditorului care primește bunul.</p>
+      </section>
+
+      <section id="riscuri">
+        <span class="eyebrow">Avantaje și riscuri</span>
+        <h2>Avantajele și riscurile pentru creditor și debitor</h2>
+        <ul class="chk">
+          <li><b>Pentru creditor:</b> recuperare mai rapidă, fără să aștepți vânzarea către un terț; riscul este să preiei un bun greu de vândut mai departe.</li>
+          <li><b>Pentru debitor:</b> își stinge datoria fără să plătească în bani, dar pierde bunul; evaluarea corectă contează.</li>
+          <li><b>Probleme frecvente:</b> evaluare greșită, lipsa acordului scris al creditorului, contestații împotriva vânzării.</li>
+        </ul>
+        <p>Pentru o vânzare silită greșită, debitorul poate contesta executarea în 15 zile (art. 715 CPC). Vezi <a href="/contestatie-la-executare/">contestația la executare</a>.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Stabilește în ce etapă ești: executare silită sau insolvență deschisă (hotărârea de deschidere).</li>
+          <li>Dacă ești creditor, verifică dacă ai rang suficient pentru adjudecare în contul creanței (art. 771 alin. 2) și calculează diferența.</li>
+          <li>Trimite-ne dosarul în chat; îți spunem în aceeași zi ce mecanism se potrivește.</li>
+        </ol>
+        <!--@author practice="insolvență" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre darea în plată și adjudecare</h2>
+        <div class="faq">
+          <details open><summary>Ce este darea în plată în insolvență?</summary><p>Predarea unor bunuri ale debitorului către creditori, în contul creanțelor, prin planul de reorganizare, doar cu acordul scris al creditorilor (art. 133 alin. 5 lit. E, Legea nr. 85/2014).</p></details>
+          <details><summary>Există o „dare în plată specială” în lege?</summary><p>Legea nr. 85/2014 nu folosește această denumire. Mecanismele reale sunt darea în plată prin plan, adjudecarea în contul creanței (art. 771 CPC) și preluarea bunului mobil nevândut (art. 779 CPC).</p></details>
+          <details><summary>Ce înseamnă adjudecarea în contul creanței?</summary><p>Creditorul urmăritor care adjudecă bunul depune creanța sa în contul prețului, în tot sau în parte, dacă nu participă alți creditori sau aceștia au rang inferior (art. 771 alin. 2).</p></details>
+          <details><summary>Când poate creditorul prelua bunurile debitorului?</summary><p>Bunurile mobile nevândute pot fi preluate în contul creanței, la prețul ultimului termen de licitație (art. 779). În plan, cu acordul scris al creditorilor.</p></details>
+          <details><summary>Care este diferența dintre adjudecare și executare silită?</summary><p>Executarea clasică vinde bunul unui terț și distribuie banii. În adjudecarea în contul creanței creditorul ia bunul și își compensează creanța cu prețul.</p></details>
+          <details><summary>Ce rol are administratorul judiciar?</summary><p>Supraveghează realizarea planului de reorganizare și a măsurilor din procedură, sub controlul judecătorului-sindic.</p></details>
+          <details><summary>Poate fi contestată adjudecarea?</summary><p>Da, executarea și actele ei pot fi contestate în general în 15 zile (art. 715 CPC). Când adjudecatar a fost creditorul, vânzarea se poate desființa dacă există temei de nulitate.</p></details>
+          <details><summary>Ce se întâmplă cu executările după deschiderea insolvenței?</summary><p>Se suspendă de drept, iar creditorul își valorifică dreptul prin cerere de admitere a creanței (art. 75 din Legea nr. 85/2014).</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ești creditor sau debitor într-o insolvență?" lead="Trimite-ne hotărârea de deschidere, planul sau dosarul de executare. Îți spunem în aceeași zi ce mecanism se aplică și ce drepturi ai. Consultația nu te obligă la nimic." nav="/|Acasă;/reorganizare-judiciara/|Reorganizare judiciară;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat executorilor sau administratorilor judiciari. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/[\s.]/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var p=num('f-v'),c=num('f-d');
+    if(!(p>0)||!(c>0)){$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Introdu prețul și creanța.';$('o-m').textContent='—';$('o-r').textContent='—';return}
+    if(p>c){$('o-t').textContent=lei(p-c);cls('c-t','alert');$('o-ts').textContent='Prețul depășește creanța: diferența se depune de îndată sau în cel mult 5 zile.';$('o-m').textContent=lei(c);$('o-r').textContent=lei(0);cls('c-r','ok')}
+    else{$('o-t').textContent=lei(0);cls('c-t','ok');$('o-ts').textContent='Prețul nu depășește creanța: nu depui nicio diferență.';$('o-m').textContent=lei(p);$('o-r').textContent=lei(c-p);cls('c-r',c>p?'alert':'ok')}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-v','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-v').value='80000';$('f-d').value='60000';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://chinsolvency.ro/"}, {"@type": "ListItem", "position": 2, "name": "Darea în plată în insolvență", "item": "https://chinsolvency.ro/darea-in-plata-in-procedura-insolventei/"}]}, {"@type": "Article", "headline": "Darea în plată în insolvență: adjudecare, drepturi", "description": "Cum funcționează darea în plată și adjudecarea în contul creanței: art. 133 din Legea 85/2014, art. 771 și 779 CPC, diferența de 5 zile, drepturile creditorilor.", "inLanguage": "ro", "dateModified": "2026-10-13", "mainEntityOfPage": "https://chinsolvency.ro/darea-in-plata-in-procedura-insolventei/", "image": ["https://chinsolvency.ro/wp-content/uploads/2026/10/dare-in-plata-adjudecare-si-executare-comparatie.webp", "https://chinsolvency.ro/wp-content/uploads/2026/10/adjudecare-in-contul-creantei-exemplu.webp"], "author": {"@type": "Organization", "name": "Consultarius"}, "publisher": {"@type": "Organization", "name": "Consultarius"}}, {"@type": "HowTo", "name": "Cum se face adjudecarea în contul creanței", "inLanguage": "ro", "step": [{"@type": "HowToStep", "position": 1, "name": "Verifici condițiile", "text": "Creditor urmăritor; nu participă alți creditori sau au rang inferior."}, {"@type": "HowToStep", "position": 2, "name": "Participi la licitație", "text": "Adjudeci bunul la prețul de adjudecare."}, {"@type": "HowToStep", "position": 3, "name": "Depui creanța în contul prețului", "text": "În tot sau în parte."}, {"@type": "HowToStep", "position": 4, "name": "Depui diferența", "text": "Dacă prețul depășește creanța, de îndată sau în maximum 5 zile."}, {"@type": "HowToStep", "position": 5, "name": "Primești actul de adjudecare", "text": "La imobile, exemplarul predat adjudecatarului îi servește ca titlu de proprietate (art. 855 CPC)."}]}, {"@type": "LegalService", "name": "Consultarius", "url": "https://chinsolvency.ro/", "areaServed": "RO", "knowsAbout": ["Insolvență", "Dare în plată", "Adjudecare în contul creanței", "Executare silită", "Legea 85/2014"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce este darea în plată în insolvență?", "acceptedAnswer": {"@type": "Answer", "text": "Predarea unor bunuri ale debitorului către creditori, în contul creanțelor, prin planul de reorganizare, doar cu acordul scris al creditorilor (art. 133 alin. 5 lit. E, Legea nr. 85/2014)."}}, {"@type": "Question", "name": "Există o „dare în plată specială” în lege?", "acceptedAnswer": {"@type": "Answer", "text": "Legea nr. 85/2014 nu folosește această denumire. Mecanismele reale sunt darea în plată prin plan, adjudecarea în contul creanței (art. 771 CPC) și preluarea bunului mobil nevândut (art. 779 CPC)."}}, {"@type": "Question", "name": "Ce înseamnă adjudecarea în contul creanței?", "acceptedAnswer": {"@type": "Answer", "text": "Creditorul urmăritor care adjudecă bunul depune creanța sa în contul prețului, în tot sau în parte, dacă nu participă alți creditori sau aceștia au rang inferior (art. 771 alin. 2)."}}, {"@type": "Question", "name": "Când poate creditorul prelua bunurile debitorului?", "acceptedAnswer": {"@type": "Answer", "text": "Bunurile mobile nevândute pot fi preluate în contul creanței, la prețul ultimului termen de licitație (art. 779). În plan, cu acordul scris al creditorilor."}}, {"@type": "Question", "name": "Care este diferența dintre adjudecare și executare silită?", "acceptedAnswer": {"@type": "Answer", "text": "Executarea clasică vinde bunul unui terț și distribuie banii. În adjudecarea în contul creanței creditorul ia bunul și își compensează creanța cu prețul."}}, {"@type": "Question", "name": "Ce rol are administratorul judiciar?", "acceptedAnswer": {"@type": "Answer", "text": "Supraveghează realizarea planului de reorganizare și a măsurilor din procedură, sub controlul judecătorului-sindic."}}, {"@type": "Question", "name": "Poate fi contestată adjudecarea?", "acceptedAnswer": {"@type": "Answer", "text": "Da, executarea și actele ei pot fi contestate în general în 15 zile (art. 715 CPC). Când adjudecatar a fost creditorul, vânzarea se poate desființa dacă există temei de nulitate."}}, {"@type": "Question", "name": "Ce se întâmplă cu executările după deschiderea insolvenței?", "acceptedAnswer": {"@type": "Answer", "text": "Se suspendă de drept, iar creditorul își valorifică dreptul prin cerere de admitere a creanței (art. 75 din Legea nr. 85/2014)."}}]}]}
+</script>
