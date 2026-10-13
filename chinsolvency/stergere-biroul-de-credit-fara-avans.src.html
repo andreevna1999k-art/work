@@ -1,0 +1,341 @@
+<!-- Consultarius — /stergere-biroul-de-credit-fara-avans/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<style>
+.cbx .checks{grid-column:1/-1;display:grid;gap:8px}
+.cbx .checks label{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border:1.5px solid var(--line);border-radius:var(--radius-s);padding:12px 14px;font-size:14.5px;line-height:1.45;color:var(--ink);cursor:pointer}
+.cbx .checks input{width:18px;height:18px;margin-top:2px;accent-color:var(--bronze);flex:none}
+</style>
+<div class="cbx">
+
+<!--@header nav="#verificare|Verifică oferta;#legal|Ce e legal;#procedura|Procedura gratuită;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><a href="/cerere-de-stergere-din-biroul-de-credit/">Ștergere Biroul de Credit</a><span>/</span><span>Fără avans</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Protecția consumatorului · Biroul de Credit</span>
+          <h1>Ștergere din Biroul de Credit: <span class="accent">servicii reale și procedură legală</span></h1>
+          <div class="lead">
+            <p>Banca ți-a refuzat creditul. Seara vezi o reclamă: „Te ștergem din Biroul de Credit. Fără avans. Plătești doar la rezultat.” Pare că nu ai nimic de pierdut.</p>
+            <p>Aici afli ce poate fi șters legal și ce nu. Vezi cum funcționează plata „la succes” și ce clauze verifici în contract. Afli și ce poți face singur, fără niciun cost.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>GDPR · Legea nr. 363/2007</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#verificare" class="btn btn-primary">Verifică oferta primită</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce înseamnă ștergerea din Biroul de Credit</h2>
+          <p>Ștergerea din Biroul de Credit înseamnă eliminarea unor date raportate de o bancă sau un IFN. Este posibilă doar pentru date greșite, raportate fără notificare sau păstrate peste termen. O restanță reală, raportată corect, rămâne 4 ani de la plată. Niciun serviciu, cu sau fără avans, nu schimbă această regulă.</p>
+          <div class="opts">
+            <div><b>„Fără avans”</b>e o condiție de plată, nu o garanție juridică</div>
+            <div><b>0 lei</b>costă raportul anual, cererea către bancă și plângerea la ANSPDCP</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFICARE -->
+<section id="verificare" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Verificare</span><h2>Merită oferta <span class="accent">„fără avans”</span>?</h2></div>
+      <p>Introdu data plății restanței și prețul ofertei. Bifează ce scrie în contract. Vezi cât timp rămân datele oricum și câte semnale de alarmă are oferta.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Situația ta</div>
+          <div class="field"><label for="v-plata">Data plății restanței</label><div class="inp"><input type="date" id="v-plata"></div></div>
+          <div class="field"><label for="v-cost">Prețul ofertei „la rezultat”</label><div class="inp"><input id="v-cost" inputmode="decimal" placeholder="ex. 1 500"><span class="unit">lei</span></div></div>
+          <div class="field full"><label for="v-date">Datele din raport sunt</label><div class="inp"><select id="v-date">
+            <option value="ok">Corecte (restanța a existat, am fost notificat)</option>
+            <option value="err">Greșite (sumă, status, credit care nu e al meu)</option>
+            <option value="notif">Raportate fără notificarea de 15 zile</option>
+          </select></div></div>
+          <div class="grp">Ce scrie în contract</div>
+          <div class="checks">
+            <label><input type="checkbox" id="k1"> „Rezultatul” = ștergerea efectivă din raport (nu simpla trimitere a cererii)</label>
+            <label><input type="checkbox" id="k2"> La refuz plătesc 0 lei sau o sumă clară, mică</label>
+            <label><input type="checkbox" id="k3"> Firma are CUI și adresă, lucrează un avocat numit</label>
+            <label><input type="checkbox" id="k4"> Promite doar ștergerea datelor greșite, nu „orice restanță”</label>
+          </div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-ver">Verifică</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: 1.500 lei, plată 15.03.2025</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="tri">
+            <div class="opt" id="c-a"><span class="k">Datele corecte rămân până la</span><span class="v" id="o-a">—</span><span class="s" id="o-as">Completați data plății.</span></div>
+            <div class="opt" id="c-b"><span class="k">Ce câștigi plătind</span><span class="v" id="o-b">—</span><span class="s" id="o-bs">Alegeți situația datelor.</span></div>
+            <div class="opt" id="c-c"><span class="k">Semnale de alarmă în contract</span><span class="v" id="o-c">—</span><span class="s" id="o-cs">Bifați ce scrie în contract.</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Trimite contractul la verificat</a>
+          <span class="disc">Datele negative corecte rămân 4 ani de la plată sau închidere, indiferent cum plătești un serviciu. Cererea către bancă și plângerea la ANSPDCP sunt gratuite (art. 12 alin. 5 și art. 57 alin. 3 GDPR).</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#legal">Ce se poate șterge</a>
+      <a href="#servicii">Servicii de ștergere</a>
+      <a href="#fara-avans">„Fără avans” în realitate</a>
+      <a href="#procedura">Procedura reală</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#riscuri">Riscuri și fraude</a>
+      <a href="#cost">Cât durează și costă</a>
+      <a href="#alternative">Alternative</a>
+      <a href="#sfaturi">Serviciu sigur</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="legal">
+        <span class="eyebrow">Ce e legal</span>
+        <h2>Ce date pot fi șterse legal</h2>
+        <p>Biroul de Credit SA este o bază de date privată a băncilor și IFN-urilor. Are peste 100 de participanți. Se raportează întârzierile de peste 30 de zile, dacă suma restantă depășește 10 lei.</p>
+        <p>Ștergerea nu este același lucru cu corectarea. Dacă suma este greșită, ceri rectificare. Dacă ai plătit, dar raportul arată restanță activă, ceri actualizare. Doar când datele nu au temei ceri ștergere.</p>
+        <div class="trio">
+          <div><b>Erori</b>Credit care nu e al tău, confuzie de persoană, restanță dublată.</div>
+          <div><b>Date incorecte</b>Sumă greșită, dată greșită a restanței, credit închis afișat ca activ.</div>
+          <div><b>Situații speciale</b>Raportare fără notificarea de 15 zile (Decizia ANSPDCP nr. 105/2007); date păstrate după 4 ani; credit pentru care ai notificat darea în plată (Legea nr. 77/2016).</div>
+        </div>
+        <h3>Ce NU poate fi șters</h3>
+        <p>Nu se șterge o <strong>datorie reală</strong> doar pentru că îți blochează un credit nou. Nu se șterge o <strong>restanță confirmată</strong> doar pentru că ai plătit-o. Plata nu șterge istoricul. Plata pornește termenul de 4 ani.</p>
+      </section>
+
+      <section id="servicii">
+        <span class="eyebrow">Piața</span>
+        <h2>Servicii de ștergere din Biroul de Credit</h2>
+        <p>Pe piață există trei tipuri de servicii. Consultanța juridică analizează raportul și redactează cereri. Intermediarii trimit formulare standard în numele tău. Ofertele „garantate” promit un rezultat înainte să vadă datele. Doar primul tip lucrează cu temei legal. Formula „fără avans” poate apărea la oricare dintre ele.</p>
+        <div class="stages">
+          <div><span class="k">Cu temei legal</span><b>Consultanță juridică</b>Analizează raportul și redactează cereri pe drepturile de acces, rectificare sau ștergere.</div>
+          <div><span class="k">Formular standard</span><b>Intermediari</b>Trimit cereri generale în numele tău. Le puteai trimite singur, gratuit.</div>
+          <div><span class="k">Semnal de alarmă</span><b>„Garantat”</b>Promit rezultatul înainte să vadă datele. Cer repede semnătura.</div>
+        </div>
+        <h3>Servicii legale vs servicii înșelătoare</h3>
+        <p>Un serviciu legal cere întâi raportul de credit. Spune ce drept invocă: acces, rectificare sau ștergere. Îți spune și când nu se poate face nimic. Un serviciu înșelător vinde rezultatul. Nu cere acte, dar cere repede semnătura pe contract.</p>
+        <ul class="ban">
+          <li>„Avem relații la Biroul de Credit”.</li>
+          <li>„Nu contează datoria”.</li>
+          <li>Ofertă valabilă „doar azi”.</li>
+          <li>Cerere de copie CI și CNP fără contract și fără politică de confidențialitate.</li>
+        </ul>
+      </section>
+
+      <section id="fara-avans">
+        <span class="eyebrow">Plata la succes</span>
+        <h2>Ce înseamnă „fără avans” în realitate</h2>
+        <p>„Fără avans” este o condiție de plată, nu o garanție juridică. Înseamnă doar că plătești mai târziu. Întrebarea este pentru ce plătești. Unele contracte numesc „rezultat” simpla trimitere a cererii sau primirea unui răspuns. Atunci plătești și când datele rămân exact cum erau.</p>
+        <div class="note"><b>Riscuri:</b> costul amânat devine datorie contractuală. În 2021, Centrul de Soluționare Alternativă a Litigiilor în domeniul Bancar (CSALB) a dat un avertisment. Unele firme care promit ștergerea își dau clienții în judecată, cel mai des pentru 1.500 de lei. În unele cazuri s-a ajuns la executare silită.</div>
+        <p>Pentru avocați există o regulă clară. Statutul profesiei interzice pactul de quota litis: onorariul nu poate depinde integral de rezultat. Onorariul de succes este permis doar pe lângă un onorariu fix.</p>
+        <div class="todo">[DE VERIFICAT: articolul din Statutul profesiei de avocat, în redacția actuală]</div>
+        <h4>Promisiuni false frecvente</h4>
+        <div class="rights">
+          <div><span class="n">1</span><b>„Garantat”</b>Nimeni nu poate garanta ștergerea unor date corecte.</div>
+          <div><span class="n">2</span><b>„Ștergere rapidă”</b>Banca are o lună să răspundă, prelungibilă cu încă două.</div>
+          <div><span class="n">3</span><b>„100% succes”</b>Un rezultat juridic nu poate fi garantat înainte de analiza raportului și a actelor.</div>
+        </div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/fara-avans-ce-platesti-de-fapt.webp" width="1200" height="675" alt="ștergere Biroul de Credit fără avans — clauze de verificat în contract" loading="lazy">
+          <figcaption>Fără avans: ce plătești de fapt</figcaption>
+        </figure>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Gratuit</span>
+        <h2>Procedura reală de ștergere a datelor</h2>
+        <p>Procedura reală are trei pași: verifici raportul, trimiți cererea băncii sau IFN-ului care a raportat, aștepți răspunsul. Toți trei sunt gratuiți. Raportul se obține o dată pe an fără cost. Cererea către participant nu are taxă. Banca răspunde, în principiu, în cel mult o lună.</p>
+        <h3>Analiza situației clientului</h3>
+        <p><strong>Verificare raport.</strong> Raportul se cere online pe birouldecredit.ro, cu cont confirmat prin SMS. Primul raport din an este gratuit. Pașii sunt explicați în ghidul <a href="/verificare-online-biroul-de-credit/">verificare online Biroul de Credit</a>. Notezi participantul, suma, data restanței și statusul.</p>
+        <div class="todo">[DE VERIFICAT: tariful actual al rapoartelor suplimentare, menționat ca 6 lei]</div>
+        <h3>Depunerea cererii</h3>
+        <p><strong>Documente necesare:</strong> copia raportului, dovada plății, contractul sau confirmarea de închidere. Dacă nu ai primit notificarea de 15 zile, ceri participantului dovada ei. Cererea o adresezi băncii sau IFN-ului care a raportat. Structura completă a cererii e în ghidul <a href="/cerere-de-stergere-din-biroul-de-credit/">cerere de ștergere din Biroul de Credit</a>.</p>
+        <h3>Răspunsul instituțiilor</h3>
+        <p><strong>Aprobare sau respingere.</strong> Dacă datele sunt greșite, participantul le corectează sau le șterge. Dacă sunt corecte, cererea se respinge cu motivare. La lipsă de răspuns sau refuz nejustificat, poți depune plângere la ANSPDCP. A doua cale este instanța.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/ce-faci-singur-gratuit-inainte-sa-platesti.webp" width="1200" height="675" alt="pași gratuiți pentru ștergere din Biroul de Credit fără avans" loading="lazy">
+          <figcaption>Ce faci singur, gratuit, înainte să plătești</figcaption>
+        </figure>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Analiză juridică și legislație aplicabilă</h2>
+        <p>Regulile vin din GDPR (Regulamentul UE 2016/679), Legea nr. 190/2018 și Decizia ANSPDCP nr. 105/2007. GDPR îți dă drept de acces, rectificare și ștergere. Decizia stabilește notificarea de 15 zile și termenul de 4 ani. Nicio lege nu prevede ștergerea unor date corecte în schimbul unei plăți.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Reglementări GDPR</h3><ul><li><strong>Dreptul la ștergere</strong> (art. 17) funcționează limitat: date inexacte, prelucrate nelegal sau păstrate după termen. Datele corecte se prelucrează pe interes legitim.</li><li><strong>Dreptul la rectificare</strong> (art. 16) este calea pentru sume și statusuri greșite.</li><li>Exercitarea acestor drepturi este, în principiu, gratuită (art. 12 alin. 5).</li></ul></div>
+          <div class="t-card"><h3>Legislația privind Biroul de Credit</h3><ul><li><strong>Obligații instituții:</strong> date exacte, actualizare după plată, notificare cu cel puțin 15 zile înainte de prima raportare negativă.</li><li><strong>Drepturi consumatori:</strong> raport gratuit anual, cerere de corectare, plângere gratuită la ANSPDCP (art. 57 alin. 3 GDPR).</li></ul></div>
+        </div>
+        <h3>Comentarii juridice</h3>
+        <div class="note dark"><b>Poziția juridică.</b> Din experiența mea, „fără avans” mută riscul de la firmă la client. Firma nu pierde nimic dacă trimite o cerere standard. Clientul semnează însă o obligație de plată pentru un „rezultat” definit de firmă. Consider că o clauză care definește rezultatul drept „trimiterea cererii” poate fi analizată ca practică comercială înșelătoare (Legea nr. 363/2007).</div>
+        <p>Anexa 1 a Legii nr. 363/2007 interzice prezentarea drepturilor legale ale consumatorului ca avantaj special al ofertei. Dreptul de a cere rectificarea îl ai oricum, gratuit.</p>
+        <h3>Jurisprudență relevantă</h3>
+        <p>Instanțele verifică exactitatea datelor, dovada notificării de 15 zile și prejudiciul. Litigiile dintre firme și clienți pornesc, de regulă, de la clauza de onorariu.</p>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <h3>Compararea normelor actuale</h3>
+        <p><strong>România vs UE:</strong> GDPR se aplică direct în toate statele UE. Termenul de 4 ani și pragul de 30 de zile sunt reguli românești. Pe 7 decembrie 2023, Curtea de Justiție a UE a judecat cauzele C-26/22 și C-64/22. A decis că un birou de credit privat nu poate păstra anumite date mai mult decât registrul public din care provin. <strong>Diferențe de aplicare:</strong> deciziile CJUE privesc situații germane. Efectul asupra practicii românești trebuie analizat caz cu caz.</p>
+      </section>
+
+      <section id="riscuri">
+        <span class="eyebrow">Atenție</span>
+        <h2>Riscurile serviciilor de ștergere din Biroul de Credit</h2>
+        <p>Riscurile sunt trei. Plătești pentru o cerere pe care o puteai trimite gratuit. Dai CNP-ul, copia CI și extrasele unor persoane necunoscute. Pierzi timp cu o cerere generală, respinsă formal. Dacă datele erau corecte, rezultatul este același: ele rămân în raport până la expirarea celor 4 ani.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Fraude frecvente</h3><ul><li><strong>Site-uri fake:</strong> pagini fără CUI, fără adresă și fără nume de avocat. Comunicare doar pe WhatsApp.</li><li><strong>Promisiuni nereale:</strong> „scor FICO mare în 7 zile”, „credit aprobat după ștergere”. Scorul FICO (300–850) se calculează din date. Dacă datele sunt corecte, scorul rămâne același.</li></ul></div>
+          <div class="t-card"><h3>Cum identifici un serviciu legitim</h3><ul><li>Firmă identificabilă după CUI la Registrul Comerțului.</li><li>Avocat înscris în tabloul baroului.</li><li>Contract scris care descrie exact serviciul.</li><li>Explicații despre protecția datelor tale.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="cost">
+        <span class="eyebrow">Durată și cost</span>
+        <h2>Cât durează și cât costă ștergerea</h2>
+        <p>Banca sau IFN-ul trebuie să răspundă în cel mult o lună (art. 12 GDPR). Pentru cereri complexe, termenul se poate prelungi cu încă două luni. Raportul anual, cererea și plângerea la ANSPDCP sunt gratuite. Costă doar asistența juridică, dacă o alegi, și instanța.</p>
+        <p><strong>O lună standard</strong> pentru răspuns. Atenție: termenul este pentru răspuns, nu pentru ștergere. După răspuns, verifici raportul din nou.</p>
+        <div class="example">
+          <div class="t">Cifra pe șervețel</div>
+          <p>Ai achitat restanța pe 15.03.2025. Datele negative corecte pot rămâne până pe 15.03.2029. Azi, 9 octombrie 2026, mai sunt 888 de zile, adică circa 29 de luni. Un contract „fără avans, 1.500 lei la rezultat” nu scurtează nicio zi din cele 888. Cererea făcută de tine costă 0 lei și are același efect juridic.</p>
+          <span class="formula">15.03.2025 + 4 ani = 15.03.2029</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Tip serviciu</th><th>Legalitate</th><th>Cost</th><th>Durată</th><th>Riscuri</th><th>Șanse reale de succes</th><th>Transparență</th></tr></thead>
+          <tbody>
+            <tr><td>Raport de credit</td><td>Legal</td><td>Gratuit o dată pe an</td><td>Online, aceeași zi</td><td>Citire greșită</td><td>Diagnostic, nu ștergere</td><td>Mare</td></tr>
+            <tr><td>Cerere proprie la bancă/IFN</td><td>Legal</td><td>Gratuit</td><td>Răspuns în 1 lună (+2)</td><td>Cerere vagă</td><td>Bune doar pentru date greșite</td><td>Mare</td></tr>
+            <tr><td>Plângere ANSPDCP</td><td>Legal</td><td>Gratuit</td><td>Variabilă</td><td>Nu aprobă creditul</td><td>Depind de încălcarea GDPR</td><td>Mare</td></tr>
+            <tr><td>Avocat</td><td>Legal</td><td>Onorariu prin contract</td><td>Variabilă</td><td>Cost fără garanție</td><td>Depind de probe</td><td>Mare, dacă explică riscurile</td></tr>
+            <tr><td>Ofertă „fără avans, garantat”</td><td>Suspectă</td><td>Amânat sau ascuns</td><td>Promite „rapid”</td><td>Proces pentru onorariu, date expuse</td><td>Nu crește șansele</td><td>Mică</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>Gratuit vs servicii plătite:</strong> plătești pentru analiză și reprezentare, nu pentru dreptul în sine.</p>
+      </section>
+
+      <section id="alternative">
+        <span class="eyebrow">Alternative</span>
+        <h2>Alternative la ștergere</h2>
+        <p>Dacă datele sunt corecte, ștergerea nu e o opțiune. Rămân două alternative reale. Îți îmbunătățești comportamentul de plată de acum, ca băncile să vadă istoric pozitiv. Sau aștepți expirarea celor 4 ani și verifici atunci dacă datele au dispărut. În ambele cazuri, raportul anual gratuit este instrumentul tău.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Îmbunătățirea scorului</h3><ul><li>Plătește la timp creditele active.</li><li>Nu depune multe cereri de credit în câteva săptămâni: fiecare cerere poate genera o interogare.</li><li>Cere actualizarea statusului imediat după plată.</li></ul></div>
+          <div class="t-card"><h3>Așteptarea expirării datelor</h3><ul><li>Notează în calendar data plății plus 4 ani.</li><li>După acea dată, scoți raportul.</li><li>Dacă datele sunt încă acolo, ceri ștergerea pentru depășirea termenului: o cerere cu temei solid.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="sfaturi">
+        <span class="eyebrow">Sfaturi</span>
+        <h2>Sfaturi pentru alegerea unui serviciu sigur</h2>
+        <p>Un serviciu sigur pornește de la raport, nu de la promisiune. Are contract scris, explică temeiul legal și spune deschis când nu se poate face nimic. Înainte să semnezi un contract „fără avans”, citește definiția rezultatului. Citește și suma datorată la refuz. Acolo stă costul real.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Ce trebuie să verifici</h3><ul><li>Cine prestează: CUI, adresă, nume de avocat.</li><li>Ce înseamnă „rezultat”: ștergere efectivă în raport sau doar trimiterea cererii.</li><li>Cât plătești dacă cererea este respinsă.</li><li>Cine are acces la CNP-ul și raportul tău și cât timp.</li></ul></div>
+          <div class="t-card"><h3>Ce trebuie să eviți</h3><ul><li>Garanții de ștergere pentru datorii reale.</li><li>Contracte semnate sub presiune, „doar azi”.</li><li>Trimiterea actelor pe chat, fără contract.</li><li>Plata unei „taxe de dosar” către persoane fizice.</li></ul></div>
+        </div>
+        <div class="note dark">În practica mea, cele mai multe dosare cu date greșite se rezolvă printr-o cerere precisă, cu dovada plății atașată. Nu e nevoie de intermediari pentru asta.</div>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Descarcă raportul gratuit de pe birouldecredit.ro și notează participantul, suma și data restanței.</li>
+          <li>Compară raportul cu dovezile tale de plată. Dacă găsești o eroare, trimite cerere băncii sau IFN-ului care a raportat.</li>
+          <li>Dacă ai deja un contract „fără avans”, recitește definiția „rezultatului” și suma datorată la refuz, înainte de orice plată.</li>
+        </ol>
+        <!--@author practice="protecția datelor și litigii bancare" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente</h2>
+        <div class="faq">
+          <details open><summary>Se poate face ștergerea din Biroul de Credit fără avans?</summary><p>Poți găsi oferte fără avans, dar plata doar se amână. Dacă datele sunt corecte, ele nu se șterg indiferent cum plătești. Cererea pentru date greșite o poți trimite singur, gratuit.</p></details>
+          <details><summary>Este legală ștergerea datelor negative?</summary><p>Da, dar numai pentru date greșite, raportate fără notificarea de 15 zile sau păstrate peste 4 ani. Ștergerea înainte de termen a datelor corecte nu este posibilă legal.</p></details>
+          <details><summary>Cât durează procesul de ștergere?</summary><p>Banca răspunde în cel mult o lună, cu posibilă prelungire de două luni. Datele corecte rămân 4 ani de la plată.</p></details>
+          <details><summary>Ce servicii sunt sigure?</summary><p>Cele care cer întâi raportul, au contract scris, explică temeiul legal și nu garantează rezultatul. Un avocat înscris în barou poate fi verificat în tabloul baroului.</p></details>
+          <details><summary>Pot șterge orice datorie?</summary><p>Nu. Ștergerea din raport nu stinge datoria. O restanță reală, raportată corect, rămâne în raport pe perioada legală.</p></details>
+          <details><summary>Cum evit fraudele?</summary><p>Nu trimite CNP, copie CI sau extrase fără contract. Verifică CUI-ul firmei. Refuză orice ofertă care spune „nu contează datoria”.</p></details>
+          <details><summary>Există garanții de succes?</summary><p>Nu există garanții pentru ștergerea datelor corecte. Rezultatul depinde de date, de probe și de temeiul legal.</p></details>
+          <details><summary>Ce fac dacă sunt refuzat?</summary><p>Citește motivul refuzului. Dacă este nejustificat sau nu primești răspuns într-o lună, depune plângere gratuită la ANSPDCP sau analizează acțiunea în instanță.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Ai primit o ofertă „fără avans”?" lead="Dacă ai primit o ofertă „fără avans” sau ai deja un contract semnat, îl putem citi împreună cu raportul tău de credit. Îți spunem ce poți face singur și ce nu se poate face deloc. Consultația nu te obligă la nimic." nav="/|Acasă;/cerere-de-stergere-din-biroul-de-credit/|Cerere de ștergere;/verificare-online-biroul-de-credit/|Verificare raport;#contact|Contact" note="Consultarius nu este afiliat Biroului de Credit. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var m0=new Intl.NumberFormat('ro-RO',{maximumFractionDigits:0});
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function run(){
+    var p=$('v-plata').value,cost=num('v-cost'),st=$('v-date').value;
+    if(p){var e=dt(p);e.setUTCFullYear(e.getUTCFullYear()+4);var t=new Date(),left=Math.round((e.getTime()-Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()))/864e5);
+      $('o-a').textContent=fmt(e);
+      if(0>left){cls('c-a','ok');$('o-as').innerHTML='Termenul a trecut. Dacă datele apar încă, ceri gratuit ștergerea pentru termen expirat.'}
+      else{cls('c-a');$('o-as').innerHTML='Mai sunt <b>'+m0.format(left)+' zile</b> (circa '+Math.round(left/30.4)+' luni). Niciun contract nu scurtează acest termen pentru date corecte.'}}
+    else{$('o-a').textContent='—';cls('c-a');$('o-as').textContent='Completați data plății.'}
+    var c=cost?m0.format(cost)+' lei':'prețul ofertei';
+    if(st==='ok'){$('o-b').textContent='Nimic';cls('c-b','alert');$('o-bs').innerHTML='Datele corecte nu se șterg înainte de termen. Plătind '+c+' nu câștigi nicio zi.'}
+    else{$('o-b').textContent='Nimic în plus';cls('c-b','ok');$('o-bs').innerHTML='Ai temei ('+(st==='err'?'rectificare, art. 16 GDPR':'lipsa notificării de 15 zile')+'). Cererea o trimiți singur, <b>0 lei</b>, cu același efect juridic. Plătești doar dacă vrei analiză și reprezentare.'}
+    var n=0;['k1','k2','k3','k4'].forEach(function(k){if(!$(k).checked)n++});
+    $('o-c').textContent=n+' din 4';cls('c-c',n?(n>1?'alert':null):'ok');
+    $('o-cs').textContent=n===0?'Contractul trece verificarea de bază. Citește totuși clauzele despre datele tale personale.':(n>1?'Prea multe semnale de alarmă. Nu semna și nu plăti înainte de o verificare juridică.':'Un semnal de alarmă: cere clarificare în scris înainte să semnezi.');
+  }
+  $('b-ver').addEventListener('click',run);
+  ['v-plata','v-cost','v-date','k1','k2','k3','k4'].forEach(function(id){$(id).addEventListener('input',run);$(id).addEventListener('change',run)});
+  function ex(){$('v-plata').value='2025-03-15';$('v-cost').value='1500';$('v-date').value='ok';['k1','k2','k3','k4'].forEach(function(k){$(k).checked=false});run()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('verificare').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Ștergere Biroul de Credit","item":"https://chinsolvency.ro/cerere-de-stergere-din-biroul-de-credit/"},{"@type":"ListItem","position":3,"name":"Ștergere Biroul de Credit fără avans","item":"https://chinsolvency.ro/stergere-biroul-de-credit-fara-avans/"}]},
+ {"@type":"Article","headline":"Ștergere Biroul de Credit fără avans: ce e legal","description":"Ștergere din Biroul de Credit fără avans: ce date se pot șterge legal, ce înseamnă plata la succes și ce poți face singur, gratuit.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/stergere-biroul-de-credit-fara-avans/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/fara-avans-ce-platesti-de-fapt.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/ce-faci-singur-gratuit-inainte-sa-platesti.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Ce faci singur, gratuit, înainte să plătești un serviciu de ștergere","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/ce-faci-singur-gratuit-inainte-sa-platesti.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Raportul de credit","text":"Gratuit o dată pe an, online pe birouldecredit.ro."},
+  {"@type":"HowToStep","position":2,"name":"Compari cu actele","text":"Contract, dovada plății, confirmarea de închidere."},
+  {"@type":"HowToStep","position":3,"name":"Cerere la bancă/IFN","text":"Fără taxă; atașezi dovada erorii."},
+  {"@type":"HowToStep","position":4,"name":"Aștepți răspunsul","text":"Cel mult o lună, prelungibil cu încă două."},
+  {"@type":"HowToStep","position":5,"name":"Plângere ANSPDCP","text":"Gratuită, dacă refuzul e nejustificat."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Biroul de Credit","Protecția consumatorului","GDPR","Practici comerciale înșelătoare"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Se poate face ștergerea din Biroul de Credit fără avans?","acceptedAnswer":{"@type":"Answer","text":"Poți găsi oferte fără avans, dar plata doar se amână. Dacă datele sunt corecte, ele nu se șterg indiferent cum plătești. Cererea pentru date greșite o poți trimite singur, gratuit."}},
+  {"@type":"Question","name":"Este legală ștergerea datelor negative?","acceptedAnswer":{"@type":"Answer","text":"Da, dar numai pentru date greșite, raportate fără notificarea de 15 zile sau păstrate peste 4 ani. Ștergerea înainte de termen a datelor corecte nu este posibilă legal."}},
+  {"@type":"Question","name":"Cât durează procesul de ștergere?","acceptedAnswer":{"@type":"Answer","text":"Banca răspunde în cel mult o lună, cu posibilă prelungire de două luni. Datele corecte rămân 4 ani de la plată."}},
+  {"@type":"Question","name":"Ce servicii sunt sigure?","acceptedAnswer":{"@type":"Answer","text":"Cele care cer întâi raportul, au contract scris, explică temeiul legal și nu garantează rezultatul. Un avocat înscris în barou poate fi verificat în tabloul baroului."}},
+  {"@type":"Question","name":"Pot șterge orice datorie?","acceptedAnswer":{"@type":"Answer","text":"Nu. Ștergerea din raport nu stinge datoria. O restanță reală, raportată corect, rămâne în raport pe perioada legală."}},
+  {"@type":"Question","name":"Cum evit fraudele?","acceptedAnswer":{"@type":"Answer","text":"Nu trimite CNP, copie CI sau extrase fără contract. Verifică CUI-ul firmei. Refuză orice ofertă care spune „nu contează datoria”."}},
+  {"@type":"Question","name":"Există garanții de succes?","acceptedAnswer":{"@type":"Answer","text":"Nu există garanții pentru ștergerea datelor corecte. Rezultatul depinde de date, de probe și de temeiul legal."}},
+  {"@type":"Question","name":"Ce fac dacă sunt refuzat?","acceptedAnswer":{"@type":"Answer","text":"Citește motivul refuzului. Dacă este nejustificat sau nu primești răspuns într-o lună, depune plângere gratuită la ANSPDCP sau analizează acțiunea în instanță."}}
+ ]}
+]}
+</script>
