@@ -1,0 +1,435 @@
+<!-- Consultarius — /societati-recuperare-creante/ (draft). Built by build.py: BRAND_CSS, ARTICLE_CSS, FORM_SLOT are injected. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*BRAND_CSS*/
+/*ARTICLE_CSS*/
+/* page: societăți recuperare creanțe */
+.cbx .grp{grid-column:1/-1;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);padding-top:8px;border-top:1px solid var(--line);margin-top:4px}
+.cbx .grp:first-child{border-top:0;padding-top:0;margin-top:0}
+.cbx .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbx .opt{background:rgba(255,255,255,.06);border-radius:var(--radius-s);padding:16px;display:flex;flex-direction:column;gap:6px}
+.cbx .opt .k{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#D9B878}
+.cbx .opt .v{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cbx .opt .s{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.cbx .opt .s b{color:#fff}
+.cbx .opt.alert{background:rgba(185,56,47,.22)}
+.cbx .opt.full{grid-column:1/-1}
+.cbx .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
+.cbx .opts div{background:var(--surface);border-radius:var(--radius-s);padding:14px;font-size:13px;color:var(--ink-2);line-height:1.4}
+.cbx .opts b{display:block;color:var(--ink);font-size:14px;margin-bottom:4px}
+.cbx .roles{display:grid;gap:8px;margin:16px 0}
+.cbx .roles div{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 18px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.cbx .roles b{color:var(--ink);font-size:15px}
+.cbx .stages{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.cbx .stages div{border-radius:var(--radius);padding:20px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--ink-2);line-height:1.5}
+.cbx .stages div:nth-child(2){background:var(--bronze-l);border-color:transparent}
+.cbx .stages div:nth-child(3){background:var(--ink);color:rgba(255,255,255,.75);border-color:transparent}
+.cbx .stages .k{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px}
+.cbx .stages div:nth-child(3) .k{color:#D9B878}
+.cbx .stages b{display:block;font-size:22px;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
+.cbx .stages div:nth-child(3) b{color:#fff}
+.cbx .ban{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbx .ban li{position:relative;background:#FDECEA;border:1px solid #F3C4BE;border-radius:var(--radius-s);padding:12px 14px 12px 42px;font-size:14.5px;color:var(--ink);line-height:1.45}
+.cbx .ban li::before{content:"";position:absolute;left:14px;top:14px;width:16px;height:16px;border-radius:50%;border:2px solid #B9382F;background:linear-gradient(45deg,transparent 45%,#B9382F 45%,#B9382F 58%,transparent 58%)}
+.cbx .todo{border:2px dashed #C0392B;background:#FDECEA;color:#922B21;border-radius:var(--radius-s);padding:10px 14px;font-size:14px;font-weight:600;margin:12px 0}
+@media (max-width:860px){.cbx .duo,.cbx .opts,.cbx .stages,.cbx .ban{grid-template-columns:1fr}.cbx .roles div{grid-template-columns:1fr;gap:4px}}
+</style>
+
+<div class="cbx">
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+      Consultarius
+    </a>
+    <nav class="nav">
+      <a href="#calculator">Calculator</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#anpc">Lista ANPC</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a href="#contact" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg><span>Consultație gratuită</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><a href="/recuperatorii-de-creante/">Recuperatorii de creanțe</a><span>/</span><span>Societăți de recuperare</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Creditori și debitori · Actualizat 2026</span>
+          <h1>Societăți recuperare creanțe: <span class="accent">firme, servicii și reguli legale</span></h1>
+          <div class="lead">
+            <p>Ai trei facturi neîncasate de patru luni și clientul nu mai răspunde la telefon. Sau ești de partea cealaltă: o firmă necunoscută îți cere bani pentru un credit vechi.</p>
+            <p>În ambele cazuri ai nevoie de același lucru: să știi ce pot face <strong>societățile de recuperare creanțe</strong>, ce nu au voie și cum verifici o firmă înainte să semnezi sau să plătești. Mai jos găsești serviciile, costurile, verificarea în lista ANPC și limitele legale ale <strong>firmelor de recuperare creanțe</strong>.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 8 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Legea nr. 72/2013 · OUG nr. 52/2016</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează ce recuperezi</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce sunt societățile de recuperare creanțe</h2>
+          <p>Firme care ajută creditorii să încaseze datorii: facturi neplătite între firme, credite restante, abonamente. Lucrează fie pe mandat de la creditor, fie în nume propriu, după ce cumpără creanța. Nu sunt nici instanță, nici executor judecătoresc.</p>
+          <div class="opts">
+            <div><b>Pot</b>analiza dosarul, notifica, negocia un grafic de plată, pregăti dosarul pentru avocat</div>
+            <div><b>Nu pot</b>pune poprire, ridica bunuri sau executa silit</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Pentru creditori</span><h2>Merită o firmă de recuperare <span class="accent">pentru factura ta</span>?</h2></div>
+      <p>Calculează dobânda penalizatoare legală între profesioniști (Legea nr. 72/2013), costul firmei de recuperare și data la care se prescrie factura.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Factura</div>
+          <div class="field"><label for="f-suma">Valoarea facturii</label><div class="inp"><input id="f-suma" inputmode="decimal" placeholder="ex. 20 000"><span class="unit">lei</span></div></div>
+          <div class="field"><label for="f-zile">Zile de întârziere</label><div class="inp"><input id="f-zile" inputmode="numeric" placeholder="ex. 120"><span class="unit">zile</span></div></div>
+          <div class="field"><label for="f-dob">Dobânda penalizatoare anuală</label><div class="inp"><input id="f-dob" inputmode="decimal" placeholder="14,50"><span class="unit">%</span></div><small>Rata BNR + 8 puncte. 14,50% în 2026.</small></div>
+          <div class="field"><label for="f-scad">Data scadenței (opțional)</label><div class="inp"><input type="date" id="f-scad"></div></div>
+          <div class="grp">Firma de recuperare</div>
+          <div class="field"><label for="f-com">Comision de succes</label><div class="inp"><input id="f-com" inputmode="decimal" placeholder="ex. 15"><span class="unit">%</span></div></div>
+          <div class="field"><label for="f-fix">Tarif fix</label><div class="inp"><input id="f-fix" inputmode="decimal" placeholder="ex. 0"><span class="unit">lei</span></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: factură 20.000 lei</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt"><span class="k">Dobânda penalizatoare</span><span class="v" id="o-dob">—</span><span class="s" id="o-dobs">plus compensația de minimum 40 €</span></div>
+            <div class="opt"><span class="k">Costul firmei</span><span class="v" id="o-cost">—</span><span class="s" id="o-costs">Completați comisionul sau tariful.</span></div>
+            <div class="opt full" id="c-pr"><span class="k">Prescripția facturii (3 ani)</span><span class="v" id="o-pr">—</span><span class="s" id="o-prs">Completați data scadenței, dacă o știți.</span></div>
+          </div>
+          <div class="flag" id="o-flag" hidden></div>
+          <a href="#contact" class="btn btn-primary">Compară cu ordonanța de plată</a>
+          <span class="disc">Dobânda: suma × rata × zile / 365. Comisionul ipotetic se aplică doar la principal; verificați baza de calcul în contract. Taxele de instanță și onorariul executorului se plătesc separat. Prescripția (art. 2517 C. civ.) poate fi întreruptă de o plată parțială sau o recunoaștere.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#ce-sunt">Ce sunt și ce fac</a>
+      <a href="#servicii">Servicii: 3 etape</a>
+      <a href="#cand">Când are sens</a>
+      <a href="#alegere">Cum alegi o firmă</a>
+      <a href="#anpc">Lista ANPC</a>
+      <a href="#interdictii">Ce nu au voie</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#practica">Practică judiciară</a>
+      <a href="#avocat">Firmă sau avocat?</a>
+      <a href="#cost">Cât costă</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="ce-sunt">
+        <span class="eyebrow">Ghid</span>
+        <h2>Ce sunt societățile de recuperare creanțe</h2>
+        <p>Clienții lor sunt bănci, IFN-uri, furnizori de utilități, telecom și firme cu facturi neîncasate. O societate de recuperare creanțe poate analiza dosarul, trimite notificări, negocia un <strong>grafic de plată</strong>, monitoriza încasările și pregăti dosarul pentru avocat. Nu poate pune poprire și nu poate ridica bunuri.</p>
+        <h3>Diferența dintre societate de recuperare, firmă de colectare și recuperator</h3>
+        <div class="roles">
+          <div><b>Societate / firmă de recuperare creanțe</b>Denumirea comercială a aceleiași activități.</div>
+          <div><b>Firmă de colectare</b>De regulă doar etapa amiabilă: apeluri, scrisori, negociere.</div>
+          <div><b>Recuperator / creditor cesionar</b>Cel care a cumpărat creanța și o încasează în nume propriu.</div>
+          <div><b>Administrator de credite</b>Rol reglementat de OUG nr. 15/2024, autorizat de ANPC.</div>
+          <div><b>Executor judecătoresc</b>Singurul care face executare silită, pe bază de titlu executoriu.</div>
+        </div>
+      </section>
+
+      <section id="servicii">
+        <span class="eyebrow">Servicii</span>
+        <h2>Ce servicii oferă societățile de recuperare creanțe</h2>
+        <p>Serviciile de recuperare creanțe au trei etape: recuperarea amiabilă (notificări și negociere), recuperarea judiciară (ordonanță de plată sau proces) și sprijin în executarea silită, prin executor. Multe firme fac doar prima etapă și colaborează cu avocați pentru celelalte.</p>
+        <div class="stages">
+          <div><span class="k">Firma de recuperare</span><b>Amiabilă</b>Notificări, negociere, grafic de plată. Cel mai mic cost. Pentru datorii clare.</div>
+          <div><span class="k">Avocat și instanță</span><b>Judiciară</b>Ordonanță de plată (art. 1014 CPC) sau proces obișnuit. Rezultat: titlu executoriu.</div>
+          <div><span class="k">Executor judecătoresc</span><b>Executare silită</b>Doar cu titlu executoriu. Poprire, urmărirea bunurilor. Firma de recuperare nu o poate face.</div>
+        </div>
+        <h3>Recuperare amiabilă a creanțelor</h3>
+        <p>Etapa fără instanță: verificarea documentelor, notificarea debitorului, apeluri, propunerea unui grafic de plată, verificarea solvabilității. Este cea mai ieftină și rapidă cale când datoria e clară și debitorul poate plăti.</p>
+        <h3>Recuperare judiciară a creanțelor</h3>
+        <p>Dacă debitorul nu plătește, creditorul merge în instanță. Pentru creanțe certe, lichide și exigibile există <strong>ordonanța de plată</strong> (art. 1014–1025 Cod procedură civilă), o procedură mai rapidă. Pentru datorii contestate se merge pe procesul obișnuit. Ambele se încheie, dacă reușesc, cu un titlu executoriu.</p>
+        <h3>Executare silită după obținerea titlului executoriu</h3>
+        <p>Doar cu titlu executoriu creditorul poate cere executarea silită, prin executor judecătoresc (art. 632 Cod procedură civilă). Firma de recuperare nu poate sări peste această etapă.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/recuperare-creante-amiabila-judiciara-executare.webp" width="1200" height="675" alt="Etapele recuperării creanțelor: amiabilă, judiciară și executare silită prin executor judecătoresc" loading="lazy">
+          <figcaption>Recuperare amiabilă, judiciară, executare silită</figcaption>
+        </figure>
+      </section>
+
+      <section id="cand">
+        <span class="eyebrow">Când</span>
+        <h2>Când are sens să apelezi la societăți de recuperare creanțe</h2>
+        <p>Are sens când ai facturi întârziate peste 30–60 de zile, debitorul nu răspunde, datoria e dovedită cu contract, factură și dovada livrării, iar tu nu ai timp sau oameni pentru urmărire. Dacă datoria e contestată serios, ai nevoie de avocat, nu doar de colectare.</p>
+        <h3>Pentru firme și persoane juridice</h3>
+        <p>Cazurile tipice: facturi neachitate, comenzi livrate și neplătite, servicii prestate, contracte B2B, penalități contractuale. Între profesioniști, la întârziere se aplică automat dobânda penalizatoare legală (rata BNR + 8 puncte, adică 14,50% pe an în 2026) și o compensație de minimum 40 de euro pentru costurile de recuperare (Legea nr. 72/2013).</p>
+        <div class="example">
+          <div class="t">Cifra pe șervețel</div>
+          <p>Factură de 20.000 lei, întârziere 120 de zile. Dobânda penalizatoare legală: 20.000 × 14,50% × 120 / 365 = <strong>953,42 lei</strong>, plus minimum 40 de euro. Dacă firma de recuperare lucrează cu un comision de succes de 15% (exemplu ipotetic), costul ei este de 3.000 lei.</p>
+          <span class="formula">20.000 × 14,50% × 120 / 365 = 953,42 lei</span>
+          <p>Calculează înainte dacă merită firma, avocatul sau ordonanța de plată. Detalii despre calcul în ghidul <a href="/calculator-dobanda-legala/">dobânda legală calculator</a>.</p>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <h3>Pentru persoane fizice</h3>
+        <p>Dacă ești persoană fizică și primești cereri de plată, ești de cealaltă parte. Pentru credite de consum se aplică regulile de protecție a consumatorilor (OUG nr. 50/2010, OUG nr. 52/2016). Detalii în ghidul <a href="/recuperatorii-de-creante/">recuperatorii de creanțe: drepturile debitorului</a>.</p>
+      </section>
+
+      <section id="alegere">
+        <span class="eyebrow">Alegere</span>
+        <h2>Cum alegi o firmă de recuperare creanțe</h2>
+        <p>Alegi după patru criterii: specializarea (B2B sau consumatori), contractul scris cu costuri clare, colaborarea cu avocați pentru etapa judiciară și metodele de lucru legale. O firmă care promite recuperare garantată fără să vadă actele este un semnal de alarmă.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Ce verifici înainte de colaborare</h3><ul><li>Denumirea, CUI-ul și sediul (în registrul comerțului).</li><li>Înregistrarea la ANPC, dacă lucrează cu datorii ale consumatorilor.</li><li>Contractul: servicii, cost, etape, cine plătește taxele de instanță.</li><li>Dacă are avocat colaborator și cum ajunge dosarul în instanță.</li><li>Cum raportează: cât de des și ce primești.</li><li>Cum comunică cu debitorii.</li></ul></div>
+          <div class="t-card"><h3>Semne de risc</h3><ul><li>Promite „100% recuperare”.</li><li>Nu explică costurile sau nu dă contract.</li><li>Cere plata înainte, fără să descrie serviciile.</li><li>Folosește presiuni ilegale asupra debitorilor (și te expune și pe tine).</li><li>Amestecă rolurile: se prezintă drept executor sau avocat.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="anpc">
+        <span class="eyebrow">Autorizare</span>
+        <h2>Societăți de recuperare creanțe autorizate și lista ANPC</h2>
+        <p>De la 1 ianuarie 2017, recuperarea creanțelor de la consumatori poate fi făcută doar de entitățile înregistrate la ANPC (OUG nr. 52/2016). ANPC publică lista entităților care figurează în evidența sa. Lista confirmă că firma e înregistrată. Nu confirmă că suma cerută unui debitor e corectă.</p>
+        <h3>Ce înseamnă înregistrarea la ANPC</h3>
+        <p>Este o evidență administrativă. Ajută la transparență și la control. Nu înlocuiește verificarea contractului, a cesiunii, a dobânzilor și a prescripției.</p>
+        <h3>Cum poate debitorul verifica o firmă de recuperare</h3>
+        <ol class="num">
+          <li>Caută denumirea exactă în lista ANPC.</li>
+          <li>Verifică CUI-ul și sediul.</li>
+          <li>Cere în scris baza pretenției: contract, cesiune, calcul.</li>
+          <li>Compară suma cu contractul și cu plățile tale.</li>
+          <li>Nu plăti până nu primești actele.</li>
+        </ol>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cum-verifici-firma-recuperare-creante.webp" width="1200" height="675" alt="Cum verifici o firmă de recuperare creanțe: lista ANPC, CUI, contract, cesiune, calculul sumei" loading="lazy">
+          <figcaption>Cum verifici o firmă de recuperare creanțe</figcaption>
+        </figure>
+      </section>
+
+      <section id="interdictii">
+        <span class="eyebrow">Limite</span>
+        <h2>Ce nu au voie să facă firmele de recuperare creanțe</h2>
+        <p>În recuperarea datoriilor consumatorilor, OUG nr. 52/2016 interzice:</p>
+        <ul class="ban">
+          <li>contactarea între 20:00 și 9:00;</li>
+          <li>contactarea la locul de muncă sau a altor persoane decât debitorul;</li>
+          <li>afișarea notificărilor pe ușă;</li>
+          <li>amenințările;</li>
+          <li>perceperea de comisioane sau costuri de recuperare.</li>
+        </ul>
+        <p>De asemenea, după notificarea cesiunii, debitorul are 30 de zile să conteste existența sau cuantumul datoriei, iar în acest timp recuperarea se oprește până la răspuns. Încălcările se sancționează de ANPC. Amenințările pot fi și infracțiuni.</p>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Ce spune legislația despre recuperarea creanțelor</h2>
+        <p>Recuperarea creanțelor se sprijină pe Codul civil (contracte, cesiune, prescripție), Codul de procedură civilă (ordonanță de plată, executare), Legea nr. 72/2013 (întârzierea plăților între profesioniști) și, pentru consumatori, pe OUG nr. 50/2010, OUG nr. 52/2016, Legea nr. 193/2000 și Legea nr. 243/2024.</p>
+        <div class="note"><b>Prescripția.</b> Termenul general este de 3 ani de la scadență (art. 2517 Cod civil). O plată parțială sau o recunoaștere a datoriei întrerupe termenul (art. 2537). Pentru creditor, asta înseamnă să nu lase facturile să îmbătrânească. Pentru debitor, înseamnă să nu semneze nimic în grabă.</div>
+        <h3>Diferența dintre recuperare amiabilă, judiciară și executare silită</h3>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Etapă</th><th>Cine o face</th><th>Documente</th><th>Durată</th><th>Risc pentru debitor</th></tr></thead>
+          <tbody>
+            <tr><td>Amiabilă</td><td>Creditorul sau firma de recuperare</td><td>Contract, factură, notificare</td><td>Zile–săptămâni</td><td>Recunoașterea datoriei fără verificare</td></tr>
+            <tr><td>Judiciară</td><td>Creditorul, prin avocat</td><td>Dovada creanței, calcul, somație</td><td>Luni</td><td>Hotărâre și cheltuieli de judecată</td></tr>
+            <tr><td>Executare silită</td><td>Executorul judecătoresc</td><td>Titlu executoriu, încuviințare</td><td>Poate fi rapidă</td><td>Poprire, urmărirea bunurilor</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Comparație între regulile vechi și normele actuale</h3>
+        <p>Înainte de 2016 piața era puțin reglementată. Azi există înregistrare la ANPC, notificare obligatorie, interdicții de contact, plafonarea costurilor IFN (Legea nr. 243/2024) și reguli pentru cumpărătorii de credite (OUG nr. 15/2024). Fiecare dosar se verifică însă separat.</p>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Din instanță</span>
+        <h2>Practica judiciară privind societățile de recuperare creanțe</h2>
+        <p>Instanțele verifică dacă datoria există și e dovedită, dacă cesiunea e probată, dacă suma e certă și corect calculată și dacă nu s-a prescris. Simpla factură nu ajunge mereu: trebuie dovedite livrarea sau prestarea și acceptarea.</p>
+        <h3>Probleme frecvente analizate de instanțe</h3>
+        <ul class="chk">
+          <li>Lipsa documentelor sau a dovezii livrării.</li>
+          <li>Lipsa notificării cesiunii.</li>
+          <li>Calcul neclar al datoriei, dobânzi disproporționate.</li>
+          <li>Prescripția dreptului la acțiune.</li>
+          <li>Executare pentru o sumă incorectă.</li>
+          <li>Lipsa calității de creditor.</li>
+        </ul>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <div class="note dark"><b>Comentariu juridic.</b> Din experiența mea, creditorii pierd timp cel mai des la ordonanța de plată depusă cu un dosar incomplet: debitorul formulează o apărare, iar creditorul ajunge oricum în procesul obișnuit. Un dosar pregătit de la început (contract, factură, dovada livrării, confirmare de sold) scurtează drumul.</div>
+      </section>
+
+      <section id="avocat">
+        <span class="eyebrow">Alegere</span>
+        <h2>Societate de recuperare creanțe sau avocat?</h2>
+        <p>Firma de recuperare e potrivită pentru datorii clare, necontestate, unde contează insistența și negocierea. Avocatul e necesar când datoria e contestată, trebuie mers în instanță, apare prescripția sau trebuie atacată ori susținută o executare silită.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Firma de recuperare</h3><ul><li>Datorii clare, necontestate.</li><li>Insistență, notificări, negociere.</li><li>Grafic de plată.</li></ul></div>
+          <div class="t-card"><h3>Avocatul este necesar când</h3><ul><li>Datoria e contestată sau suma e discutabilă.</li><li>Trebuie depusă ordonanță de plată sau cerere de chemare în judecată.</li><li>Trebuie formulată contestație la executare.</li><li>Apar clauze abuzive sau prescripția.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="cost">
+        <span class="eyebrow">Costuri</span>
+        <h2>Cât costă serviciile de recuperare creanțe</h2>
+        <p>Firmele lucrează cu tarif fix, comision de succes din suma recuperată sau o combinație. Taxele de instanță și onorariul executorului se plătesc separat. Toate condițiile trebuie scrise în contract, inclusiv la ce se aplică procentul: doar la principal sau și la penalități.</p>
+        <h3>Ce trebuie să conțină contractul cu firma de recuperare</h3>
+        <ul class="chk">
+          <li>Serviciile incluse și etapele.</li>
+          <li>Prețul, comisionul și baza de calcul.</li>
+          <li>Cine plătește taxele judiciare și executorul.</li>
+          <li>Frecvența rapoartelor.</li>
+          <li>Răspunderea pentru metodele de lucru față de debitori.</li>
+          <li>Cum se încheie colaborarea.</li>
+        </ul>
+        <h3>Greșeli frecvente când alegi societăți de recuperare creanțe</h3>
+        <p>În practica mea, văd cel mai des: alegerea doar după preț, colaborarea fără contract, documente incomplete predate firmei și facturi lăsate să treacă de termenul de prescripție de 3 ani.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Dacă ești creditor: strânge contractul, facturile, dovada livrării și corespondența pentru fiecare debitor.</li>
+          <li>Verifică în lista ANPC și în registrul comerțului firma cu care vrei să lucrezi sau care îți cere bani.</li>
+          <li>Calculează dobânda legală și compară costul firmei cu cel al unei ordonanțe de plată.</li>
+        </ol>
+        <div class="author">
+          <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <div><b>[DE COMPLETAT: nume și prenume], avocat</b><span>Baroul […], nr. legitimație […] · […] ani de practică în recuperări creanțe și executare silită</span></div>
+        </div>
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre societăți recuperare creanțe</h2>
+        <div class="faq">
+          <details open><summary>Ce sunt societățile de recuperare creanțe?</summary><p>Firme care ajută creditorii să încaseze datorii prin notificări, negociere și pregătirea dosarului pentru instanță.</p></details>
+          <details><summary>Cum aleg o firmă de recuperare creanțe?</summary><p>După specializare, contract scris cu costuri clare, înregistrare la ANPC (pentru consumatori), avocat colaborator și metode legale.</p></details>
+          <details><summary>Societățile de recuperare creanțe pot executa silit debitorul?</summary><p>Nu. Executarea silită se face doar prin executor judecătoresc, pe baza unui titlu executoriu.</p></details>
+          <details><summary>Ce diferență este între firma de recuperare și avocat?</summary><p>Firma negociază și colectează. Avocatul face analiza juridică și te reprezintă în instanță și în executare.</p></details>
+          <details><summary>Ce înseamnă recuperare amiabilă a creanțelor?</summary><p>Încercarea de a încasa datoria fără instanță: notificări, negociere, grafic de plată.</p></details>
+          <details><summary>Ce este recuperarea judiciară a creanțelor?</summary><p>Mersul în instanță prin ordonanță de plată sau proces, pentru a obține un titlu executoriu.</p></details>
+          <details><summary>Ce documente sunt necesare pentru recuperarea unei creanțe?</summary><p>Contract, facturi, dovada livrării sau prestării, corespondență, confirmare de sold, calculul datoriei.</p></details>
+          <details><summary>Ce este termenul de prescripție pentru creanțe?</summary><p>Termenul general este de 3 ani de la scadență (art. 2517 Cod civil). O plată parțială sau o recunoaștere îl întrerupe.</p></details>
+          <details><summary>Pot fi contestate cererile unei societăți de recuperare creanțe?</summary><p>Da: dacă suma nu e dovedită, lipsesc actele, datoria e prescrisă sau conține costuri nelegale. Consumatorii au 30 de zile de la notificarea cesiunii.</p></details>
+          <details><summary>Unde verific societățile de recuperare creanțe autorizate?</summary><p>În lista publicată de ANPC și în registrul comerțului, după denumire și CUI.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:32px">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Consultație gratuită</span>
+        <h2>Ai de încasat sau ți se cer bani?</h2>
+        <p class="lead">Fie că ai de încasat, fie că ți se cer bani: trimite actele și îți spunem care e calea cea mai ieftină și ce riscuri ai. Consultația nu te obligă la nimic.</p>
+        <div class="contact-points">
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>[Telefon]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>[E-mail]</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Programează consultația gratuită</h3>
+        <p>Vă răspundem în cel mai scurt timp.</p>
+<!-- FORM_SLOT -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Consultarius</a>
+    <nav class="nav"><a href="/">Acasă</a><a href="/recuperatorii-de-creante/">Recuperatorii de creanțe</a><a href="/calculator-dobanda-legala/">Dobânda legală</a><a href="#contact">Contact</a></nav>
+    <span>© 2026 Consultarius. Informațiile au caracter general și nu înlocuiesc consultanța juridică. Calculele sunt orientative.</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var m=new Intl.NumberFormat('ro-RO',{minimumFractionDigits:2,maximumFractionDigits:2});
+  var m0=new Intl.NumberFormat('ro-RO',{maximumFractionDigits:0});
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  var mo=['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'];
+  function calc(){
+    var P=num('f-suma'),z=num('f-zile'),r=num('f-dob'),c=num('f-com'),fx=num('f-fix')||0,flag=$('o-flag');
+    if(r===null)r=14.5;
+    var dob=null,cost=null;
+    if(P&&z!==null){dob=P*r/100*z/365;$('o-dob').textContent=m.format(dob)+' lei';$('o-dobs').innerHTML=m0.format(P)+' × '+String(r).replace('.',',')+'% × '+z+' / 365<br>plus compensația de minimum <b>40 €</b>'}
+    else{$('o-dob').textContent='—';$('o-dobs').textContent='plus compensația de minimum 40 €'}
+    if(P&&(c||fx)){cost=P*(c||0)/100+fx;$('o-cost').textContent=m0.format(cost)+' lei';$('o-costs').innerHTML=(c?String(c).replace('.',',')+'% din '+m0.format(P)+' lei':'')+(c&&fx?' + ':'')+(fx?m0.format(fx)+' lei fix':'')+'<br>Încasezi net: <b>'+m0.format(P-cost)+' lei</b> din principal'}
+    else{$('o-cost').textContent='—';$('o-costs').textContent='Completați comisionul sau tariful.'}
+    var s=$('f-scad').value,cp=$('c-pr'),left=null;cp.classList.remove('alert');
+    if(s){var p=s.split('-'),d=new Date(Date.UTC(+p[0]+3,+p[1]-1,+p[2]));
+      var t=new Date(),t0=Date.UTC(t.getFullYear(),t.getMonth(),t.getDate());left=Math.round((d.getTime()-t0)/864e5);
+      $('o-pr').textContent=d.getUTCDate()+' '+mo[d.getUTCMonth()]+' '+d.getUTCFullYear();
+      $('o-prs').innerHTML=0>left?'<b>Termenul de 3 ani pare împlinit.</b> Verificați dacă a fost întrerupt de o plată sau o recunoaștere.':'Au mai rămas <b>'+m0.format(left)+' zile</b>. Termenul se întrerupe prin plată parțială, recunoaștere sau cerere în instanță.';
+      if(180>left)cp.classList.add('alert')}
+    else{$('o-pr').textContent='—';$('o-prs').textContent='Completați data scadenței, dacă o știți.'}
+    if(dob===null&&cost===null&&left===null){flag.hidden=true;return}
+    flag.hidden=false;flag.className='flag';
+    if(left!==null&&180>left){flag.className='flag warn';flag.textContent=0>left?'Factura poate fi prescrisă. Înainte de orice demers, cereți o analiză a întreruperii prescripției.':'Mai puțin de 6 luni până la prescripție. Nu mai așteptați negocierea: pregătiți ordonanța de plată sau cererea în instanță.'}
+    else if(dob!==null&&cost!==null){flag.textContent=cost>dob?'Costul firmei ('+m0.format(cost)+' lei) depășește dobânda penalizatoare ('+m.format(dob)+' lei). Comparați cu ordonanța de plată, unde taxele pot fi recuperate de la debitor.':'Dobânda penalizatoare acoperă costul firmei. Verificați în contract la ce se aplică procentul.'}
+    else flag.textContent='Pe lângă principal, poți cere dobânda penalizatoare și compensația de minimum 40 € (Legea nr. 72/2013).';
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-suma','f-zile','f-dob','f-scad','f-com','f-fix'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){var d=new Date();d.setDate(d.getDate()-120);
+    var v={'f-suma':'20000','f-zile':'120','f-dob':'14,5','f-com':'15','f-fix':'0','f-scad':d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)};
+    Object.keys(v).forEach(function(k){$(k).value=v[k]});calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Recuperatorii de creanțe","item":"https://chinsolvency.ro/recuperatorii-de-creante/"},{"@type":"ListItem","position":3,"name":"Societăți recuperare creanțe","item":"https://chinsolvency.ro/societati-recuperare-creante/"}]},
+ {"@type":"Article","headline":"Societăți recuperare creanțe: firme și soluții legale","description":"Cum lucrează societățile și firmele de recuperare creanțe, ce servicii oferă, cât costă, cum verifici o firmă în lista ANPC și ce nu au voie să facă.","inLanguage":"ro","dateModified":"2026-10-08","mainEntityOfPage":"https://chinsolvency.ro/societati-recuperare-creante/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/recuperare-creante-amiabila-judiciara-executare.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/cum-verifici-firma-recuperare-creante.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Recuperare creanțe","Ordonanță de plată","Executare silită","Legea nr. 72/2013"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Ce sunt societățile de recuperare creanțe?","acceptedAnswer":{"@type":"Answer","text":"Firme care ajută creditorii să încaseze datorii prin notificări, negociere și pregătirea dosarului pentru instanță."}},
+  {"@type":"Question","name":"Cum aleg o firmă de recuperare creanțe?","acceptedAnswer":{"@type":"Answer","text":"După specializare, contract scris cu costuri clare, înregistrare la ANPC (pentru consumatori), avocat colaborator și metode legale."}},
+  {"@type":"Question","name":"Societățile de recuperare creanțe pot executa silit debitorul?","acceptedAnswer":{"@type":"Answer","text":"Nu. Executarea silită se face doar prin executor judecătoresc, pe baza unui titlu executoriu."}},
+  {"@type":"Question","name":"Ce diferență este între firma de recuperare și avocat?","acceptedAnswer":{"@type":"Answer","text":"Firma negociază și colectează. Avocatul face analiza juridică și te reprezintă în instanță și în executare."}},
+  {"@type":"Question","name":"Ce înseamnă recuperare amiabilă a creanțelor?","acceptedAnswer":{"@type":"Answer","text":"Încercarea de a încasa datoria fără instanță: notificări, negociere, grafic de plată."}},
+  {"@type":"Question","name":"Ce este recuperarea judiciară a creanțelor?","acceptedAnswer":{"@type":"Answer","text":"Mersul în instanță prin ordonanță de plată sau proces, pentru a obține un titlu executoriu."}},
+  {"@type":"Question","name":"Ce documente sunt necesare pentru recuperarea unei creanțe?","acceptedAnswer":{"@type":"Answer","text":"Contract, facturi, dovada livrării sau prestării, corespondență, confirmare de sold, calculul datoriei."}},
+  {"@type":"Question","name":"Ce este termenul de prescripție pentru creanțe?","acceptedAnswer":{"@type":"Answer","text":"Termenul general este de 3 ani de la scadență (art. 2517 Cod civil). O plată parțială sau o recunoaștere îl întrerupe."}},
+  {"@type":"Question","name":"Pot fi contestate cererile unei societăți de recuperare creanțe?","acceptedAnswer":{"@type":"Answer","text":"Da: dacă suma nu e dovedită, lipsesc actele, datoria e prescrisă sau conține costuri nelegale. Consumatorii au 30 de zile de la notificarea cesiunii."}},
+  {"@type":"Question","name":"Unde verific societățile de recuperare creanțe autorizate?","acceptedAnswer":{"@type":"Answer","text":"În lista publicată de ANPC și în registrul comerțului, după denumire și CUI."}}
+ ]}
+]}
+</script>
