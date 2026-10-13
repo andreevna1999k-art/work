@@ -1,0 +1,328 @@
+<!-- Consultarius — /verificare-online-biroul-de-credit/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Planificator;#pasi|Pas cu pas;#erori|5 erori;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Verificare online Biroul de Credit</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Raport gratuit · Scor FICO</span>
+          <h1>Biroul de Credit: <span class="accent">verificare raport și situație personală online</span></h1>
+          <div class="lead">
+            <p>Vrei să aplici pentru un credit luna viitoare. Nu știi ce vede banca despre tine. O restanță uitată de acum trei ani poate decide totul.</p>
+            <p>Aici afli cum faci <strong>verificarea online la Biroul de Credit</strong> pas cu pas, gratuit. Vezi cum citești raportul și scorul FICO, ce erori cauți și ce faci dacă găsești una. Durează în jur de 15 minute.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Un raport gratuit pe an</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Când să verifici raportul</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce este Biroul de Credit și cum funcționează</h2>
+          <p>Biroul de Credit SA este o bază de date privată a băncilor și IFN-urilor, cu peste 100 de participanți. Aceștia raportează cum îți plătești creditele, iar la o nouă cerere consultă raportul. Datele negative apar după întârzieri de peste 30 de zile, pentru sume de peste 10 lei. Datele pozitive se transmit cu acordul tău.</p>
+          <div class="opts">
+            <div><b>Date pozitive</b>credite plătite la timp</div>
+            <div><b>Date negative</b>restanțe; ambele intră în calculul scorului</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Planificator</span><h2>Scorul tău și <span class="accent">când să verifici raportul</span></h2></div>
+      <p>Introdu ce știi: scorul FICO, data plății unei restanțe, luna în care vrei credit sau data unei cereri de corectare. Primești datele-cheie.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Raportul tău</div>
+          <div class="field"><label for="f-scor">Scor FICO (opțional)</label><div class="inp"><input id="f-scor" inputmode="numeric" placeholder="300–850"></div></div>
+          <div class="field"><label for="f-plata">Data plății unei restanțe</label><div class="inp"><input type="date" id="f-plata"></div></div>
+          <div class="grp">Planurile tale</div>
+          <div class="field"><label for="f-credit">Când vrei să ceri credit</label><div class="inp"><input type="date" id="f-credit"></div></div>
+          <div class="field"><label for="f-cerere">Data trimiterii cererii de corectare</label><div class="inp"><input type="date" id="f-cerere"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu din ghid</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt" id="c-s"><span class="k">Scorul FICO</span><span class="v" id="o-s">—</span><span class="s" id="o-ss">Opțional.</span></div>
+            <div class="opt" id="c-p"><span class="k">Restanța rămâne până la</span><span class="v" id="o-p">—</span><span class="s" id="o-ps">4 ani de la plată.</span></div>
+            <div class="opt" id="c-c"><span class="k">Verifică raportul până la</span><span class="v" id="o-c">—</span><span class="s" id="o-cs">Cu 3 luni înainte de credit.</span></div>
+            <div class="opt" id="c-r"><span class="k">Răspunsul la cerere</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">O lună, maximum 3.</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Trimite raportul la verificat</a>
+          <span class="disc">Interval „bun” FICO: 651–750 (scala 300–850). Datele negative: 4 ani de la plată sau închidere. Răspunsul participantului: o lună, prelungibil cu două luni (art. 12 GDPR). Calcul orientativ.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#raport">Ce apare în raport</a>
+      <a href="#pasi">Verificare pas cu pas</a>
+      <a href="#cost">Cât durează și costă</a>
+      <a href="#citire">Cum citești raportul</a>
+      <a href="#scor">Scorul negativ</a>
+      <a href="#erori">Corectare: 5 erori</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#sfaturi">Scor mai bun</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="raport">
+        <span class="eyebrow">Raportul</span>
+        <h2>Ce informații apar în raportul de credit</h2>
+        <ul class="chk">
+          <li>date personale: nume, CNP, adrese;</li>
+          <li>credite active și închise, cu sold și scadențe;</li>
+          <li>întârzieri la plată: număr de zile și sumă;</li>
+          <li>interogări: cine ți-a consultat raportul și când;</li>
+          <li>scorul FICO, dacă îl soliciți.</li>
+        </ul>
+        <h3>Cine are acces la datele tale</h3>
+        <p>Tu, oricând, prin dreptul de acces (art. 15 GDPR). Participanții, doar când au un motiv: o cerere de credit sau administrarea unui credit existent. Fiecare consultare apare la secțiunea interogări. Dacă vezi o interogare pe care nu o recunoști, cere explicații.</p>
+      </section>
+
+      <section id="pasi">
+        <span class="eyebrow">Pas cu pas</span>
+        <h2>Cum faci verificare la Biroul de Credit</h2>
+        <p>Ai trei căi: online, pe birouldecredit.ro sau în aplicația mobilă; prin cerere scrisă trimisă la sediul Biroului de Credit; prin banca la care ai credit. Online e cea mai rapidă: raportul vine în aceeași zi. Primul raport din an este gratuit. Cererea scrisă durează mai mult, dar nu cere cont.</p>
+        <h3>Verificare online gratuită pas cu pas</h3>
+        <ol class="num">
+          <li><strong>Creezi contul.</strong> Pe birouldecredit.ro introduci e-mailul, telefonul și CNP-ul.</li>
+          <li><strong>Confirmi identitatea.</strong> Primești un cod prin SMS. Codul vine automat doar dacă telefonul tău a fost raportat de o bancă. Altfel ceri un cod de înrolare la banca unde ai credit activ sau încarci copia actului de identitate.</li>
+          <li><strong>Ceri raportul.</strong> Alegi raportul de credit și, separat, scorul FICO.</li>
+          <li><strong>Îl descarci.</strong> Salvezi PDF-ul cu data din nume, de exemplu „raport-2026-10-09.pdf”.</li>
+          <li><strong>Îl citești.</strong> Treci prin fiecare secțiune cu lista de erori de mai jos.</li>
+        </ol>
+        <div class="todo">[DE VERIFICAT: variantele actuale de confirmare a identității pe birouldecredit.ro]</div>
+        <p>Aceiași pași îi faci și în aplicația mobilă a Biroului de Credit.</p>
+        <div class="todo">[DE VERIFICAT: numele actual al aplicației și funcțiile ei]</div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/raportul-de-credit-online-in-4-pasi.webp" width="1200" height="675" alt="verificare online Biroul de Credit pas cu pas: cont, cod SMS, raport, scor" loading="lazy">
+          <figcaption>Raportul de credit online în 4 pași</figcaption>
+        </figure>
+        <h3>Verificare prin cerere oficială</h3>
+        <p>Trimiți o cerere semnată, cu copia actului de identitate, prin scrisoare recomandată la sediul Biroului de Credit. Termenul de răspuns este de o lună de la primire (art. 12 GDPR).</p>
+      </section>
+
+      <section id="cost">
+        <span class="eyebrow">Comparație</span>
+        <h2>Cât durează și cât costă verificarea</h2>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Metodă</th><th>Cost</th><th>Durată</th><th>Documente</th><th>Avantaj</th><th>Dezavantaj</th></tr></thead>
+          <tbody>
+            <tr><td>Online / aplicație</td><td>1 raport gratuit pe an</td><td>Aceeași zi</td><td>E-mail, telefon, CNP</td><td>Rapid, PDF imediat</td><td>Cere confirmare de identitate</td></tr>
+            <tr><td>Cerere scrisă</td><td>Gratuit, plus poșta</td><td>Până la o lună</td><td>Cerere semnată, copie CI</td><td>Nu ai nevoie de cont</td><td>Lent</td></tr>
+            <tr><td>Prin bancă</td><td>Gratuit</td><td>Variabil</td><td>Act de identitate</td><td>Primești copia raportului folosit la decizie</td><td>Doar unde ai relație</td></tr>
+          </tbody>
+        </table></div>
+        <p>Rapoartele suplimentare din același an costă 6 lei.</p>
+        <div class="todo">[DE VERIFICAT: tariful actual pe birouldecredit.ro]</div>
+      </section>
+
+      <section id="citire">
+        <span class="eyebrow">Interpretare</span>
+        <h2>Cum obții și cum citești raportul</h2>
+        <p>Raportul vine ca fișier PDF, cu secțiuni fixe: date de identificare, credite active, credite închise, istoric de plăți, interogări și, separat, scorul FICO. Îl descarci din cont imediat după confirmarea identității. Păstrează fiecare raport. Comparând două rapoarte, vezi dacă o corectare a fost făcută.</p>
+        <h3>Ce conține raportul complet</h3>
+        <p>Pentru fiecare credit vezi participantul, tipul, data acordării, suma, soldul și starea. Istoricul de plăți arată lunar dacă ai plătit la timp. La interogări vezi cine a cerut raportul în ultima perioadă. Un rând cu întârziere are numărul de zile și suma restantă.</p>
+        <h3>Cum interpretezi scorul de credit</h3>
+        <p>Scorul FICO are valori între 300 și 850. Cu cât e mai mare, cu atât riscul estimat e mai mic. Intervalul 651–750 este considerat „bun”. Sub acest interval, băncile cer de obicei mai multe garanții sau refuză.</p>
+        <div class="caps">
+          <div>Scala FICO<b>300–850</b></div>
+          <div>Interval „bun”<b>651–750</b></div>
+          <div>Raport gratuit<b>1 / an</b></div>
+        </div>
+        <div class="todo">[DE VERIFICAT: denumirea și limitele celorlalte intervale de scor, conform birouldecredit.ro]</div>
+      </section>
+
+      <section id="scor">
+        <span class="eyebrow">Scor slab</span>
+        <h2>Ce înseamnă un scor negativ și cum te afectează</h2>
+        <p>Un scor slab înseamnă că, pe baza istoricului tău, riscul de neplată pare ridicat. Efectul practic: refuz, dobândă mai mare sau cerere de garanții. Scorul nu e o decizie de credit. Banca se uită și la venit și la gradul de îndatorare. Dar un scor slab te scoate des din calcul de la primul filtru.</p>
+        <h3>De ce apare un scor negativ</h3>
+        <div class="rights">
+          <div><span class="n">1</span><b>Întârzieri</b>Chiar și o restanță mică, repetată, contează.</div>
+          <div><span class="n">2</span><b>Neplată</b>Un credit cesionat unui <a href="/recuperatorii-de-creante/">recuperator</a> rămâne în istoric.</div>
+          <div><span class="n">3</span><b>Erori</b>O plată neactualizată sau un credit închis care apare activ.</div>
+          <div><span class="n">4</span><b>Interogări multe</b>Zece cereri de credit într-o lună arată nevoie urgentă de bani.</div>
+        </div>
+      </section>
+
+      <section id="erori">
+        <span class="eyebrow">Corectare</span>
+        <h2>Cum poți șterge sau corecta datele din Biroul de Credit</h2>
+        <p>Datele corecte nu pot fi șterse înainte de termen. Restanțele rămân 4 ani de la data plății sau a închiderii. Poți obține corectarea sau ștergerea datelor eronate, a celor raportate fără notificarea prealabilă de 15 zile sau a celor păstrate peste termen. Cererea o adresezi băncii sau IFN-ului care a raportat.</p>
+        <h3>Procedura de ștergere a datelor</h3>
+        <p>Procedura are patru pași: raport, identificarea participantului, cerere scrisă cu dovezi, răspuns în termen de o lună. Un exemplu complet, pentru o bancă, găsești în ghidul <a href="/birou-de-credit-brd/">Birou de Credit BRD</a>.</p>
+        <h3>Corectarea datelor greșite: 5 erori de căutat</h3>
+        <p>Ai dreptul la rectificarea datelor inexacte (art. 16 GDPR). În raport cauți cinci erori:</p>
+        <ol class="num">
+          <li>CNP sau adresă greșită: poate fi dosarul altei persoane.</li>
+          <li>Credit închis care apare activ.</li>
+          <li>Restanță plătită care apare neplătită.</li>
+          <li>Aceeași datorie raportată de două ori, la bancă și la recuperator.</li>
+          <li>Restanță mai veche de 4 ani de la plată.</li>
+        </ol>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Ai plătit restanța la un card pe 20.06.2024. Datele negative pot rămâne până pe 20.06.2028. Dacă în raportul descărcat în iulie 2028 restanța apare încă, e eroarea nr. 5.</p>
+          <p>Al doilea calcul privește momentul verificării. Vrei credit ipotecar în martie 2027? Verifică în decembrie 2026. O cerere trimisă pe 5 ianuarie are termen de răspuns 5 februarie sau, cu prelungire, 5 aprilie.</p>
+          <span class="formula">20.06.2024 + 4 ani = 20.06.2028</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în planificator</button>
+        </div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/5-erori-de-cautat-in-raportul-de-credit.webp" width="1200" height="675" alt="verificare online Biroul de Credit: erorile din raportul de credit și cum le corectezi" loading="lazy">
+          <figcaption>5 erori de căutat în raportul de credit</figcaption>
+        </figure>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Analiză legislativă și practică juridică</h2>
+        <p>Dreptul de a-ți vedea raportul vine din GDPR (Regulamentul UE 2016/679), aplicat în România prin Legea nr. 190/2018. Regulile specifice pentru Biroul de Credit sunt în Decizia ANSPDCP nr. 105/2007: notificare cu 15 zile înainte de prima raportare negativă și păstrare 4 ani. Dacă participantul nu răspunde, faci plângere la ANSPDCP.</p>
+        <h3>Reglementări privind protecția datelor</h3>
+        <p>Art. 15 GDPR îți dă acces la date și la o copie. Art. 16 îți dă dreptul la rectificare. Art. 12 obligă operatorul să răspundă în cel mult o lună. Art. 77 îți permite plângerea la ANSPDCP.</p>
+        <h3>Jurisprudență relevantă</h3>
+        <p>Litigiile tipice privesc raportări fără notificare, restanțe plătite și neactualizate și refuzul de a corecta datele. Instanța verifică exactitatea datelor și dovezile participantului.</p>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <h3>Compararea normelor actuale</h3>
+        <p>GDPR se aplică direct în toată Uniunea. Termenele concrete pentru Biroul de Credit (15 zile, 4 ani) sunt reguli naționale. Centrala Riscului de Credit a BNR are alte reguli (Regulamentul BNR nr. 2/2012): expuneri de peste 20.000 lei și raport gratuit la BNR. Noua directivă europeană privind creditul de consum, Directiva (UE) 2023/2225, întărește evaluarea bonității.</p>
+        <div class="todo">[DE VERIFICAT: stadiul transpunerii Directivei (UE) 2023/2225 în România]</div>
+        <div class="note dark"><b>Poziția juridică.</b> În practica mea, cele mai multe erori din rapoarte sunt banale: o plată neactualizată, un card închis care apare activ. Ele nu se rezolvă singure. Le rezolvă cel care descarcă raportul la timp și scrie participantului cu dovada în mână.</div>
+      </section>
+
+      <section id="sfaturi">
+        <span class="eyebrow">Sfaturi</span>
+        <h2>Sfaturi pentru îmbunătățirea scorului de credit</h2>
+        <p>Scorul crește prin plăți la timp, datorii mai mici și răbdare. Nu există o metodă rapidă și legală de a-l „repara”. Ce poți face imediat: corectezi erorile, închizi produsele nefolosite și eviți cererile multiple. Efectul se vede în lunile următoare, pe măsură ce istoricul pozitiv crește.</p>
+        <div class="t-grid">
+          <div class="t-card"><h3>Ce să faci</h3><ul><li>Plătește ratele înainte de scadență.</li><li>Redu soldul cardurilor de credit.</li><li>Cere confirmare scrisă la închiderea unui credit.</li></ul></div>
+          <div class="t-card"><h3>Ce să eviți</h3><ul><li>Întârzieri, chiar de câteva zile, care se repetă.</li><li>Mai multe cereri de credit în aceeași lună.</li><li>Firme care promit ștergerea contra cost.</li></ul></div>
+        </div>
+        <h3>Avantajele verificării regulate</h3>
+        <p>Verificarea anuală, gratuită, îți dă control asupra istoricului și te protejează de fraude. Vezi la timp un credit deschis pe numele tău, o interogare necunoscută sau o eroare a băncii. Ai și timp să corectezi datele înainte de o cerere importantă. Din experiența mea, două-trei luni de avans sunt suficiente pentru o corectare.</p>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Creează contul pe birouldecredit.ro și descarcă primul raport gratuit din acest an.</li>
+          <li>Verifică cele cinci erori din listă și interogările din ultimele luni.</li>
+          <li>Dacă găsești o eroare, scrie participantului care a raportat-o și atașează raportul și dovada.</li>
+        </ol>
+        <!--@author practice="drept bancar și protecția datelor" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente</h2>
+        <div class="faq">
+          <details open><summary>Cum verific dacă sunt în Biroul de Credit gratuit?</summary><p>Îți faci cont pe birouldecredit.ro și descarci raportul. Primul raport din fiecare an este gratuit.</p></details>
+          <details><summary>Cât durează obținerea raportului?</summary><p>Online, aceeași zi, după confirmarea identității. Prin cerere scrisă, până la o lună.</p></details>
+          <details><summary>Pot șterge datele negative din Biroul de Credit?</summary><p>Doar dacă sunt eronate, nenotificate sau mai vechi de 4 ani de la plată. Datele corecte rămân până la termen.</p></details>
+          <details><summary>Ce scor de credit este considerat bun?</summary><p>În scala FICO de 300–850, intervalul 651–750 este considerat bun.</p></details>
+          <details><summary>Cine poate vedea raportul meu?</summary><p>Tu și participanții care au un motiv legitim, de regulă o cerere de credit. Fiecare acces apare la interogări.</p></details>
+          <details><summary>De câte ori pot solicita raportul gratuit?</summary><p>O dată pe an, gratuit. Rapoartele suplimentare din același an se plătesc.</p></details>
+          <details><summary>Ce fac dacă datele sunt greșite?</summary><p>Ceri rectificarea de la banca sau IFN-ul care a raportat. Dacă nu răspunde în o lună, faci plângere la ANSPDCP.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Nu înțelegi un rând din raport?" lead="Ai descărcat raportul și nu înțelegi un rând sau crezi că e o eroare? Trimite-ni-l, iar un avocat îți spune dacă se poate corecta și cui scrii. Consultația nu te obligă la nimic." nav="/|Acasă;/birou-de-credit-brd/|Birou de Credit BRD;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat Biroului de Credit. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function addM(s,n){var d=dt(s);d.setUTCMonth(d.getUTCMonth()+n);return d}
+  function today(){var t=new Date();return Date.UTC(t.getFullYear(),t.getMonth(),t.getDate())}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var sc=num('f-scor');
+    if(sc!==null&&sc>=300&&850>=sc){
+      if(sc>750){$('o-s').textContent=sc+': peste „bun”';cls('c-s','ok');$('o-ss').textContent='Peste intervalul 651–750. Banca decide însă și după venit și grad de îndatorare.'}
+      else if(sc>=651){$('o-s').textContent=sc+': bun';cls('c-s','ok');$('o-ss').textContent='În intervalul 651–750, considerat bun.'}
+      else{$('o-s').textContent=sc+': sub „bun”';cls('c-s','alert');$('o-ss').textContent='Sub 651, băncile cer de obicei garanții suplimentare sau refuză. Verifică erorile din raport.'}}
+    else{$('o-s').textContent='—';cls('c-s');$('o-ss').textContent=sc===null?'Opțional.':'Scorul FICO e între 300 și 850.'}
+    var p=$('f-plata').value;
+    if(p){var d=addM(p,48),l=Math.round((d.getTime()-today())/864e5);$('o-p').textContent=fmt(d);
+      if(0>l){cls('c-p','alert');$('o-ps').textContent='Termenul de 4 ani a trecut. Dacă restanța apare încă în raport, e eroarea nr. 5: ceri ștergerea.'}
+      else{cls('c-p');$('o-ps').textContent='Dacă o vezi după această dată, ceri ștergerea pentru termen expirat.'}}
+    else{$('o-p').textContent='—';cls('c-p');$('o-ps').textContent='4 ani de la plată.'}
+    var c=$('f-credit').value;
+    if(c){var d2=addM(c,-3),l2=Math.round((d2.getTime()-today())/864e5);$('o-c').textContent=fmt(d2);
+      if(0>l2){cls('c-c','alert');$('o-cs').textContent='Ai mai puțin de 3 luni până la credit. Descarcă raportul azi: o corectare durează până la o lună, uneori trei.'}
+      else{cls('c-c','ok');$('o-cs').textContent='Cu 3 luni înainte de cerere ai timp pentru o eventuală corectare.'}}
+    else{$('o-c').textContent='—';cls('c-c');$('o-cs').textContent='Cu 3 luni înainte de credit.'}
+    var r=$('f-cerere').value;
+    if(r){var d1=addM(r,1),d3=addM(r,3),l3=Math.round((d1.getTime()-today())/864e5);$('o-r').textContent=fmt(d1);
+      cls('c-r',0>l3?'alert':null);$('o-rs').innerHTML='Cu prelungire: <b>'+fmt(d3)+'</b>.'+(0>l3?' Fără răspuns? Plângere la ANSPDCP.':'')}
+    else{$('o-r').textContent='—';cls('c-r');$('o-rs').textContent='O lună, maximum 3.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-scor','f-plata','f-credit','f-cerere'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-scor').value='';$('f-plata').value='2024-06-20';$('f-credit').value='2027-03-01';$('f-cerere').value='2027-01-05';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Verificare online Biroul de Credit","item":"https://chinsolvency.ro/verificare-online-biroul-de-credit/"}]},
+ {"@type":"Article","headline":"Verificare online Biroul de Credit: raport și scor FICO","description":"Obține gratuit raportul de la Biroul de Credit în 15 minute: cont, cod SMS, descărcare. Cum citești scorul FICO și ce erori cauți înainte de credit.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/verificare-online-biroul-de-credit/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/raportul-de-credit-online-in-4-pasi.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/5-erori-de-cautat-in-raportul-de-credit.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum obții online raportul de la Biroul de Credit","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/raportul-de-credit-online-in-4-pasi.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Creezi contul","text":"Pe birouldecredit.ro introduci e-mailul, telefonul și CNP-ul."},
+  {"@type":"HowToStep","position":2,"name":"Confirmi identitatea","text":"Primești un cod prin SMS sau ceri un cod de înrolare la bancă."},
+  {"@type":"HowToStep","position":3,"name":"Ceri raportul","text":"Alegi raportul de credit și, separat, scorul FICO."},
+  {"@type":"HowToStep","position":4,"name":"Îl descarci","text":"Salvezi PDF-ul cu data din nume."},
+  {"@type":"HowToStep","position":5,"name":"Îl citești","text":"Treci prin fiecare secțiune și cauți cele cinci erori frecvente."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Biroul de Credit","Scor FICO","GDPR","Drept bancar"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Cum verific dacă sunt în Biroul de Credit gratuit?","acceptedAnswer":{"@type":"Answer","text":"Îți faci cont pe birouldecredit.ro și descarci raportul. Primul raport din fiecare an este gratuit."}},
+  {"@type":"Question","name":"Cât durează obținerea raportului?","acceptedAnswer":{"@type":"Answer","text":"Online, aceeași zi, după confirmarea identității. Prin cerere scrisă, până la o lună."}},
+  {"@type":"Question","name":"Pot șterge datele negative din Biroul de Credit?","acceptedAnswer":{"@type":"Answer","text":"Doar dacă sunt eronate, nenotificate sau mai vechi de 4 ani de la plată. Datele corecte rămân până la termen."}},
+  {"@type":"Question","name":"Ce scor de credit este considerat bun?","acceptedAnswer":{"@type":"Answer","text":"În scala FICO de 300–850, intervalul 651–750 este considerat bun."}},
+  {"@type":"Question","name":"Cine poate vedea raportul meu?","acceptedAnswer":{"@type":"Answer","text":"Tu și participanții care au un motiv legitim, de regulă o cerere de credit. Fiecare acces apare la interogări."}},
+  {"@type":"Question","name":"De câte ori pot solicita raportul gratuit?","acceptedAnswer":{"@type":"Answer","text":"O dată pe an, gratuit. Rapoartele suplimentare din același an se plătesc."}},
+  {"@type":"Question","name":"Ce fac dacă datele sunt greșite?","acceptedAnswer":{"@type":"Answer","text":"Ceri rectificarea de la banca sau IFN-ul care a raportat. Dacă nu răspunde în o lună, faci plângere la ANSPDCP."}}
+ ]}
+]}
+</script>
