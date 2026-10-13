@@ -1,0 +1,396 @@
+<!-- Consultarius — /verificare-datorii-anaf-persoane-juridice/ (draft). Built by build.py: BRAND_CSS, ARTICLE_CSS, KIT_CSS, FORM_SLOT are injected. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*BRAND_CSS*/
+/*ARTICLE_CSS*/
+/*KIT_CSS*/
+</style>
+
+<div class="cbx">
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="/" class="logo">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>
+      Consultarius
+    </a>
+    <nav class="nav">
+      <a href="#calculator">Calculator</a>
+      <a href="#verificare">Verificare</a>
+      <a href="#lista">Lista ANAF</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a href="#contact" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg><span>Consultație gratuită</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Verificare datorii ANAF</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Drept fiscal · Persoane juridice</span>
+          <h1>Verificare datorii ANAF online <span class="accent">pentru firme și persoane</span></h1>
+          <div class="lead">
+            <p>Banca îți spune că pe contul firmei e o poprire ANAF. Salariile trebuie plătite vineri. Contabilul jură că totul era la zi.</p>
+            <p>Aici afli cum faci <strong>verificare datorii ANAF pentru persoane juridice</strong>, în ordinea corectă. Vezi ce arată SPV, lista datornicilor, lista albă și certificatul fiscal. Afli cum verifici un partener după CUI și ce faci dacă suma există sau e greșită.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Codul de procedură fiscală</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Calculează accesoriile</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce înseamnă verificare datorii ANAF</h2>
+          <p>Verificarea datoriilor ANAF înseamnă să afli dacă o firmă are obligații fiscale restante la bugetul de stat: impozite, taxe, contribuții și accesorii neplătite la scadență. Pentru firma ta folosești SPV și certificatul fiscal. Pentru un partener folosești sursele publice după CUI. Absența din lista publică nu dovedește lipsa datoriilor.</p>
+          <div class="opts">
+            <div><b>Firma ta</b>SPV: fișa sintetică totală și certificatul de atestare fiscală</div>
+            <div><b>Un partener</b>anaf.ro după CUI, lista datornicilor, lista albă</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Cât crește restanța și <span class="accent">apari pe listă</span>?</h2></div>
+      <p>Dobânda de 0,02% pe zi și penalitatea de întârziere de 0,01% pe zi (art. 174 și 176 Cod procedură fiscală), pragul de publicare și termenul de contestație de 45 de zile.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Restanța</div>
+          <div class="field"><label for="a-suma">Suma restantă (principal)</label><div class="inp"><input id="a-suma" inputmode="decimal" placeholder="ex. 80 000"><span class="unit">lei</span></div></div>
+          <div class="field"><label for="a-zile">Zile de întârziere</label><div class="inp"><input id="a-zile" inputmode="numeric" placeholder="ex. 90"><span class="unit">zile</span></div></div>
+          <div class="field full"><label for="a-cat">Categoria contribuabilului</label><div class="inp"><select id="a-cat">
+            <option value="100000">Altă persoană juridică (prag 100.000 lei)</option>
+            <option value="250000">Contribuabil mijlociu (prag 250.000 lei)</option>
+            <option value="500000">Mare contribuabil (prag 500.000 lei)</option>
+          </select></div></div>
+          <div class="grp">Actul primit în SPV (opțional)</div>
+          <div class="field full"><label for="a-data">Data comunicării deciziei</label><div class="inp"><input type="date" id="a-data"></div><small>Data comunicării electronice în SPV, nu data la care ai citit mesajul.</small></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: TVA 80.000 lei, 90 de zile</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt"><span class="k">Dobânzi (0,02%/zi)</span><span class="v" id="o-dob">—</span></div>
+            <div class="opt"><span class="k">Penalități (0,01%/zi)</span><span class="v" id="o-pen">—</span></div>
+            <div class="opt full"><span class="k">Datoria totală</span><span class="v" id="o-tot">—</span><span class="s" id="o-tots">Completați suma și zilele.</span></div>
+            <div class="opt full" id="c-l"><span class="k">Lista datornicilor</span><span class="v" id="o-l">—</span><span class="s" id="o-ls">Comparăm totalul cu pragul categoriei.</span></div>
+            <div class="opt full" id="c-t"><span class="k">Contestație: 45 de zile</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completați data comunicării, dacă ai primit o decizie.</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Plătesc, eșalonez sau contest?</a>
+          <span class="disc">Calcul orientativ, pe zile calendaristice, pentru o singură obligație. Fișa sintetică din SPV arată suma exactă. Termenul de 45 de zile e calculat pe zile libere, cu prelungire până la prima zi lucrătoare.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#ce-inseamna">Ce înseamnă</a>
+      <a href="#verificare">Cum verifici online</a>
+      <a href="#lista">Lista datornicilor</a>
+      <a href="#lista-alba">Lista albă</a>
+      <a href="#ce-faci">Dacă ai datorii</a>
+      <a href="#cadru">Cadru legal</a>
+      <a href="#practica">Practică judiciară</a>
+      <a href="#comparatie">Comparație metode</a>
+      <a href="#greseli">Greșeli frecvente</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="ce-inseamna">
+        <span class="eyebrow">Ghid</span>
+        <h2>Ce înseamnă verificare datorii ANAF</h2>
+        <p><strong>Obligațiile fiscale restante</strong> sunt sume ajunse la scadență și neachitate. Aici intră impozitul pe profit, TVA, contribuțiile reținute și accesoriile. ANAF (Agenția Națională de Administrare Fiscală) le administrează și le poate executa silit.</p>
+        <p>Diferența dintre persoane fizice și juridice e mare. Situația fiscală a unei persoane fizice e protejată de secretul fiscal (art. 11 Cod procedură fiscală). Restanțele firmelor peste anumite praguri sunt publice.</p>
+      </section>
+
+      <section id="verificare">
+        <span class="eyebrow">Pas cu pas</span>
+        <h2>Cum verifici dacă ai datorii la ANAF online</h2>
+        <p>Situația completă a firmei o vezi în Spațiul Privat Virtual (SPV): ceri fișa sintetică totală și citești actele comunicate. Pentru un document oficial ceri certificatul de atestare fiscală. Pentru un partener verifici public pe anaf.ro după CUI. Ai nevoie de acces SPV al firmei sau de un împuternicit.</p>
+        <h3>Verificare datorii ANAF pentru persoane fizice</h3>
+        <p>O persoană fizică își vede situația doar în SPV, cu cont propriu. Nu există căutare publică după CNP. Nu poți afla datoriile fiscale ale altei persoane fizice. Asta e regula secretului fiscal, nu o lipsă a site-ului.</p>
+        <h3>Verificare datorii ANAF pentru firme</h3>
+        <p>Pentru firma ta, ordinea este:</p>
+        <ol class="num">
+          <li>Intri în SPV cu certificatul digital al firmei sau al împuternicitului.</li>
+          <li>Ceri fișa sintetică totală (situația obligațiilor de plată).</li>
+          <li>Citești mesajele: decizii, somații, notificări, titluri executorii.</li>
+          <li>Ceri certificatul de atestare fiscală (CAF), dacă ai nevoie de un act oficial.</li>
+          <li>Compari cu fișa analitică din contabilitate.</li>
+        </ol>
+        <p>Pentru un partener comercial, folosești surse publice. Pe anaf.ro, la informații despre contribuabili, introduci CUI-ul. Vezi datele generale, înregistrarea în scopuri de TVA și starea fiscală. Apoi verifici lista datornicilor, Registrul Comerțului și Buletinul procedurilor de insolvență.</p>
+        <h4>Verificare pe site-ul ANAF restanțe</h4>
+        <p>Lista se află pe anaf.ro, secțiunea „restanțe”. Cauți după denumire sau CUI. Atenție la data de referință: lista arată situația la sfârșitul unui trimestru. Greșeala tipică: cauți după un nume incomplet și concluzionezi că firma „e curată”.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/verificare-datorii-anaf-in-5-pasi.webp" width="1200" height="675" alt="verificare datorii ANAF persoane juridice pas cu pas: SPV, fișă sintetică, certificat fiscal" loading="lazy">
+          <figcaption>Verificare datorii ANAF în 5 pași</figcaption>
+        </figure>
+      </section>
+
+      <section id="lista">
+        <span class="eyebrow">Lista publică</span>
+        <h2>Lista datornicilor ANAF: ce este și cum funcționează</h2>
+        <p>Lista datornicilor ANAF este lista publică a firmelor cu obligații fiscale restante peste un prag. Se publică trimestrial, în temeiul art. 162 din Codul de procedură fiscală. Cuprinde obligațiile notificate, existente la sfârșitul trimestrului și neachitate până la publicare. Sub prag, firma nu apare, deși poate avea datorii.</p>
+        <h3>Cine apare pe lista ANAF</h3>
+        <p>Pragurile afișate pe anaf.ro (verificate la 9 octombrie 2026) sunt:</p>
+        <div class="caps">
+          <div>Mari contribuabili<b>500.000 lei</b></div>
+          <div>Contribuabili mijlocii<b>250.000 lei</b></div>
+          <div>Alte persoane juridice<b>100.000 lei</b></div>
+        </div>
+        <div class="todo">[DE VERIFICAT: numărul și data ordinului ANAF care stabilește pragurile actuale; procedura inițială era în OPANAF nr. 558/2016]</div>
+        <p>Înainte de publicare, ANAF notifică debitorul. Potrivit procedurii, notificarea se face până pe 15 ale primei luni din trimestrul următor. Firma poate cere corecții la organul fiscal în 5 zile. După plata integrală, ANAF actualizează lista din oficiu în 15 zile.</p>
+        <div class="todo">[DE VERIFICAT: termenele de notificare, corecție și actualizare în procedura în vigoare]</div>
+        <h3>Ce datorii sunt publicate</h3>
+        <p>Se publică totalul obligațiilor restante, defalcat pe tipuri de buget. Intră principalul și accesoriile. Nu apar sumele contestate cu executare suspendată și nici cele eșalonate, cu ratele plătite la zi.</p>
+        <div class="todo">[DE VERIFICAT: excluderile exacte din procedura de publicare]</div>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Firma are TVA restant de 80.000 lei, cu 90 de zile întârziere. Dobânda: 80.000 × 0,02% × 90 = 1.440 lei. Penalitatea de întârziere: 80.000 × 0,01% × 90 = 720 lei. Datoria totală: 82.160 lei (art. 174 și 176 Cod procedură fiscală).</p>
+          <span class="formula">80.000 + 1.440 + 720 = 82.160 lei</span>
+          <p>E sub pragul de 100.000 lei. Firma nu apare pe listă, dar poate primi poprire oricând.</p>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+      </section>
+
+      <section id="lista-alba">
+        <span class="eyebrow">Lista albă</span>
+        <h2>Lista albă ANAF: firme fără datorii</h2>
+        <p>Lista albă ANAF cuprinde contribuabilii care, la sfârșitul trimestrului, au depus toate declarațiile, au plătit la termen și nu au restanțe. Se publică trimestrial pe anaf.ro, lângă lista datornicilor. Nu te înscrii prin cerere. Ajungi pe listă automat, dacă îndeplinești cumulativ cele trei condiții.</p>
+        <div class="todo">[DE VERIFICAT: actul normativ care reglementează lista albă și condițiile actuale]</div>
+        <h3>Avantaje pentru firme fără datorii</h3>
+        <ul class="chk">
+          <li>Partenerii și băncile văd public disciplina fiscală.</li>
+          <li>Ai un argument simplu în negocieri și în due diligence.</li>
+          <li>Lista nu înlocuiește certificatul fiscal cerut la licitații sau finanțări.</li>
+        </ul>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/lista-datornicilor-vs-lista-alba-anaf.webp" width="1200" height="675" alt="lista datornicilor ANAF comparată cu lista albă: verificare datorii ANAF persoane juridice" loading="lazy">
+          <figcaption>Lista datornicilor vs lista albă ANAF</figcaption>
+        </figure>
+      </section>
+
+      <section id="ce-faci">
+        <span class="eyebrow">Soluții</span>
+        <h2>Ce faci dacă ai datorii la ANAF</h2>
+        <p>Mai întâi afli de unde vine suma: declarație proprie, decizie de impunere, accesorii sau plată nealocată. Dacă suma e corectă, o plătești sau ceri eșalonare. Dacă e greșită, ceri corectarea evidenței sau depui contestație în 45 de zile de la comunicare. Dacă ai poprire, verifici actele de executare.</p>
+        <div class="stages">
+          <div><span class="k">Suma e corectă</span><b>Plata</b>Prin ordin de plată din contul firmei sau prin Ghișeul.ro. Folosește codul fiscal corect și verifică alocarea în fișa sintetică după câteva zile. Plățile nealocate sunt o cauză frecventă a somațiilor „din senin”.</div>
+          <div><span class="k">Suma e corectă, banii lipsesc</span><b>Eșalonare</b>Se cere la organul fiscal (art. 184 și urm. Cod procedură fiscală). Durata poate ajunge la 5 ani. Pierzi eșalonarea dacă nu plătești ratele sau obligațiile curente.</div>
+          <div><span class="k">Suma e greșită</span><b>Contestație</b>Contești decizia de impunere sau alt act administrativ fiscal (art. 268–270). Termenul: 45 de zile de la comunicare. Contestația nu oprește automat executarea.</div>
+        </div>
+        <div class="todo">[DE VERIFICAT: durata maximă a eșalonării și condițiile de garantare actuale]</div>
+        <div class="note"><b>Suspendarea executării</b> se cere separat, la instanța de contencios administrativ. Cere eșalonarea doar cu un cash-flow realist.</div>
+      </section>
+
+      <section id="cadru">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Cadru legal și legislație fiscală actuală</h2>
+        <p>Baza este Codul de procedură fiscală (Legea nr. 207/2015). Art. 11 protejează secretul fiscal. Art. 158 reglementează certificatul de atestare fiscală. Art. 162 permite publicarea debitorilor. Art. 268–270 reglementează contestația. Ai dreptul să fii notificat și să contești. Ai obligația să declari și să plătești la termen.</p>
+        <h3>Reglementări privind publicarea listelor ANAF</h3>
+        <p>Publicarea e o excepție de la secretul fiscal. De aceea e limitată la praguri, la obligații notificate și la persoane juridice. Pagina ANAF afișează astăzi praguri doar pentru persoane juridice. Insolvența are reguli proprii: creditorul poate cere deschiderea procedurii pentru o creanță de peste 50.000 lei (Legea nr. 85/2014). Estimează riscul cu <a href="/calculator-insolventa/">calculator insolvență</a>.</p>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Din instanță</span>
+        <h2>Practică judiciară și cazuri reale</h2>
+        <p>Litigiile fiscale ale firmelor privesc trei teme: decizii de impunere după inspecție, accesorii calculate greșit și executări începute pe sume deja plătite. Instanța de contencios verifică actul, probele și termenele. O contestație depusă după 45 de zile e respinsă fără analiza fondului, oricât de bune ar fi argumentele.</p>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <h3>Situații tipice (anonimizate)</h3>
+        <ul class="chk">
+          <li>Firma plătește TVA, dar plata ajunge pe alt cod. Fișa arată restanță și apare somația.</li>
+          <li>Administratorul nu citește SPV. Termenul de contestație curge de la comunicarea electronică.</li>
+          <li>Un partener nu apare pe listă. Are însă 90.000 lei restanți, sub prag, și intră în insolvență.</li>
+        </ul>
+        <div class="note dark"><b>Poziția juridică.</b> În practica mea, cele mai multe popriri pe care le văd nu vin din sume uriașe. Vin din acte necitite în SPV și din plăți alocate greșit. Firma care verifică trimestrial fișa sintetică are aproape mereu timp pentru eșalonare sau contestație.</div>
+      </section>
+
+      <section id="comparatie">
+        <span class="eyebrow">Comparație</span>
+        <h2>Comparație metode verificare datorii</h2>
+        <p>Nicio sursă unică nu arată tot. Lista datornicilor e publică, dar limitată de praguri și de data trimestrului. SPV și certificatul fiscal sunt complete, dar doar pentru firma ta. Site-urile private preiau date publice, uneori cu întârziere. Pentru decizii importante, combini minimum două surse oficiale.</p>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Metodă</th><th>Sursă</th><th>Pentru cine</th><th>Acuratețe și actualizare</th><th>Cost</th><th>Limită</th></tr></thead>
+          <tbody>
+            <tr><td>Lista datornicilor</td><td>ANAF</td><td>Oricine, despre o firmă</td><td>Oficială, trimestrială</td><td>Gratuit</td><td>Doar peste prag</td></tr>
+            <tr><td>Lista albă</td><td>ANAF</td><td>Oricine, despre o firmă</td><td>Oficială, trimestrială</td><td>Gratuit</td><td>Nu e act oficial</td></tr>
+            <tr><td>Date contribuabil după CUI</td><td>ANAF</td><td>Oricine</td><td>Oficială, curentă</td><td>Gratuit</td><td>Nu arată sume</td></tr>
+            <tr><td>Fișa sintetică în SPV</td><td>ANAF</td><td>Firma sau împuternicitul</td><td>Completă, curentă</td><td>Gratuit</td><td>Cere acces SPV</td></tr>
+            <tr><td>Certificat de atestare fiscală</td><td>ANAF</td><td>Firma sau împuternicitul</td><td>Oficial, la data emiterii</td><td>Gratuit [DE VERIFICAT]</td><td>Îl ceri tu</td></tr>
+            <tr><td>Agregatoare private</td><td>Site privat</td><td>Oricine</td><td>Preluată, cu întârzieri</td><td>Variabil</td><td>Erori de preluare</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Atenție</span>
+        <h2>Greșeli frecvente la verificarea datoriilor</h2>
+        <p>Cele mai multe erori vin din interpretare, nu din lipsa datelor. Oamenii caută după un nume greșit, citesc o listă veche sau confundă lista cu certificatul fiscal. Alții tratează absența de pe listă ca dovadă de „zero datorii”. Verifică data de referință și sursa fiecărei informații.</p>
+        <ul class="ban">
+          <li>Cauți după denumire, nu după CUI, și găsești altă firmă.</li>
+          <li>Citești lista trimestrului trecut după o plată recentă.</li>
+          <li>Confunzi lista datornicilor cu cazierul fiscal.</li>
+          <li>Ignori accesoriile, care cresc lunar.</li>
+          <li>Nu citești SPV și pierzi termenul de 45 de zile.</li>
+        </ul>
+        <h3>Recomandări pentru contribuabili</h3>
+        <p>Disciplina fiscală e mai ieftină decât orice contestație. Stabilește o persoană responsabilă de SPV. Verifică fișa sintetică lunar și înainte de orice contract mare. Verifică partenerii înainte de livrări pe credit. Dacă vezi o restanță, acționează în aceeași săptămână, nu după somație.</p>
+        <div class="note dark">Din experiența mea, o simplă rutină lunară de 10 minute în SPV evită majoritatea urgențelor fiscale.</div>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Intră în SPV și cere fișa sintetică totală a firmei.</li>
+          <li>Caută CUI-ul firmei și al principalilor parteneri în lista datornicilor și în lista albă.</li>
+          <li>Dacă găsești o sumă neclară, notează actul-sursă și data comunicării. Termenul de 45 de zile poate curge deja.</li>
+        </ol>
+        <div class="author">
+          <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <div><b>[DE COMPLETAT: nume și prenume], avocat</b><span>Baroul […], nr. legitimație […] · […] ani de practică în drept fiscal și insolvență</span></div>
+        </div>
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre verificare datorii ANAF</h2>
+        <div class="faq">
+          <details open><summary>Cum verific dacă am datorii la ANAF online?</summary><p>Prin SPV. Firma cere fișa sintetică totală și citește actele comunicate. Pentru un document oficial, ceri certificatul de atestare fiscală.</p></details>
+          <details><summary>Pot verifica datoriile după CNP?</summary><p>Doar pe ale tale, în SPV. Nu există căutare publică după CNP, din cauza secretului fiscal.</p></details>
+          <details><summary>Cum aflu dacă firma are datorii la stat?</summary><p>Caută CUI-ul pe anaf.ro: date despre contribuabil, lista datornicilor și lista albă. Pentru siguranță, cere partenerului un certificat de atestare fiscală recent.</p></details>
+          <details><summary>Ce este lista datornicilor ANAF?</summary><p>Lista publică, trimestrială, a persoanelor juridice cu restanțe notificate peste prag: 500.000, 250.000 sau 100.000 lei, după categorie.</p></details>
+          <details><summary>Cum scap de datorii la ANAF?</summary><p>Prin plată, compensare sau eșalonare, dacă suma e corectă. Prin contestație, dacă actul e greșit. Dacă firma nu mai poate plăti, analizezi și insolvența.</p></details>
+          <details><summary>Cât de des se actualizează datele ANAF?</summary><p>SPV și certificatul fiscal arată situația curentă. Listele publice se actualizează trimestrial. După plata integrală, ANAF scoate firma de pe listă din oficiu.</p></details>
+          <details><summary>Pot contesta datoriile fiscale?</summary><p>Da. Contești actul care a stabilit suma, în 45 de zile de la comunicare. Contestația nu suspendă automat executarea.</p></details>
+          <details><summary>Există aplicație pentru verificare datorii?</summary><p>Accesul oficial e SPV, inclusiv de pe telefon. Aplicațiile private doar preiau datele publice.</p></details>
+        </div>
+        <div class="todo">[DE VERIFICAT: aplicația mobilă ANAF disponibilă în prezent pentru persoane juridice]</div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:32px">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Consultație gratuită</span>
+        <h2>Ai o sumă neclară în SPV?</h2>
+        <p class="lead">Trimite-ne fișa sintetică sau actul primit în SPV, iar un avocat îți spune dacă suma se plătește, se eșalonează sau se contestă. Consultația nu te obligă la nimic.</p>
+        <div class="contact-points">
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>[Telefon]</div>
+          <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>[E-mail]</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Programează consultația gratuită</h3>
+        <p>Vă răspundem în cel mai scurt timp.</p>
+<!-- FORM_SLOT -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <a href="/" class="logo"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0L5 7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span>Consultarius</a>
+    <nav class="nav"><a href="/">Acasă</a><a href="/calculator-insolventa/">Calculator insolvență</a><a href="#intrebari">Întrebări</a><a href="#contact">Contact</a></nav>
+    <span>© 2026 Consultarius. Consultarius nu este afiliat ANAF. Calculele sunt orientative și nu înlocuiesc fișa sintetică din SPV.</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var m=new Intl.NumberFormat('ro-RO',{minimumFractionDigits:2,maximumFractionDigits:2});
+  var m0=new Intl.NumberFormat('ro-RO',{maximumFractionDigits:0});
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');var n=parseFloat(v);return isNaN(n)?null:n}
+  function key(d){return d.getUTCFullYear()+'-'+(d.getUTCMonth()+1)+'-'+d.getUTCDate()}
+  function easter(y){var a=y%4,b=y%7,c=y%19,d=(19*c+15)%30,e=(2*a+4*b-d+34)%7,mm=Math.floor((d+e+114)/31),day=((d+e+114)%31)+1;var dt=new Date(Date.UTC(y,mm-1,day));dt.setUTCDate(dt.getUTCDate()+13);return dt}
+  function holidays(y){var h={};[[1,1],[1,2],[1,6],[1,7],[1,24],[5,1],[6,1],[8,15],[11,30],[12,1],[12,25],[12,26]].forEach(function(x){h[y+'-'+x[0]+'-'+x[1]]=1});
+    var e=easter(y);[-2,0,1,49,50].forEach(function(o){var d=new Date(e);d.setUTCDate(d.getUTCDate()+o);h[key(d)]=1});return h}
+  function free(d){var w=d.getUTCDay();return w===0||w===6||!!holidays(d.getUTCFullYear())[key(d)]}
+  var wd=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'],mo=['ianuarie','februarie','martie','aprilie','mai','iunie','iulie','august','septembrie','octombrie','noiembrie','decembrie'];
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var P=num('a-suma'),z=num('a-zile'),prag=+$('a-cat').value;
+    if(P&&z!==null){
+      var dob=P*0.0002*z,pen=P*0.0001*z,tot=P+dob+pen;
+      $('o-dob').textContent=m.format(dob)+' lei';$('o-pen').textContent=m.format(pen)+' lei';
+      $('o-tot').textContent=m.format(tot)+' lei';
+      $('o-tots').innerHTML='Accesoriile cresc cu <b>'+m.format(P*0.0003*30)+' lei</b> la fiecare 30 de zile.';
+      if(tot>=prag){$('o-l').textContent='Peste prag';cls('c-l','alert');$('o-ls').innerHTML='Pragul categoriei este <b>'+m0.format(prag)+' lei</b>. Restanța notificată și neplătită poate fi publicată la finalul trimestrului.'}
+      else{$('o-l').textContent='Sub prag';cls('c-l','ok');$('o-ls').innerHTML='Mai sunt <b>'+m0.format(prag-tot)+' lei</b> până la pragul de '+m0.format(prag)+' lei. Atenție: sub prag nu apari pe listă, dar ANAF poate pune oricând poprire.'}
+    }else{['o-dob','o-pen','o-tot','o-l'].forEach(function(i){$(i).textContent='—'});$('o-tots').textContent='Completați suma și zilele.';cls('c-l')}
+    var s=$('a-data').value;
+    if(s){var p=s.split('-'),d=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]+46));while(free(d))d.setUTCDate(d.getUTCDate()+1);
+      var t=new Date(),left=Math.round((d.getTime()-Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()))/864e5);
+      $('o-t').textContent=wd[d.getUTCDay()]+', '+d.getUTCDate()+' '+mo[d.getUTCMonth()]+' '+d.getUTCFullYear();
+      if(0>left){cls('c-t','alert');$('o-ts').innerHTML='<b>Termenul pare depășit.</b> Contestația tardivă se respinge fără analiza fondului. Verificați data exactă a comunicării.'}
+      else{cls('c-t',10>left?'alert':null);$('o-ts').innerHTML='Au mai rămas <b>'+left+' zile</b>. Contestația nu suspendă executarea: suspendarea se cere separat.'}}
+    else{$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='Completați data comunicării, dacă ai primit o decizie.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['a-suma','a-zile','a-cat','a-data'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('a-suma').value='80000';$('a-zile').value='90';$('a-cat').value='100000';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Verificare datorii ANAF persoane juridice","item":"https://chinsolvency.ro/verificare-datorii-anaf-persoane-juridice/"}]},
+ {"@type":"Article","headline":"Verificare datorii ANAF persoane juridice: ghid online","description":"Verifici în 10 minute dacă firma ta sau un partener are datorii la ANAF: SPV, lista datornicilor, lista albă, certificat fiscal. Pași și soluții.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/verificare-datorii-anaf-persoane-juridice/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/verificare-datorii-anaf-in-5-pasi.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/lista-datornicilor-vs-lista-alba-anaf.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum verifici datoriile ANAF ale firmei","inLanguage":"ro","image":"https://chinsolvency.ro/wp-content/uploads/2026/10/verificare-datorii-anaf-in-5-pasi.webp","step":[
+  {"@type":"HowToStep","position":1,"name":"Intră în SPV","text":"Intri în SPV cu certificatul digital al firmei sau al împuternicitului."},
+  {"@type":"HowToStep","position":2,"name":"Cere fișa sintetică totală","text":"Ceri fișa sintetică totală (situația obligațiilor de plată)."},
+  {"@type":"HowToStep","position":3,"name":"Citește mesajele","text":"Citești deciziile, somațiile, notificările și titlurile executorii comunicate."},
+  {"@type":"HowToStep","position":4,"name":"Cere certificatul de atestare fiscală","text":"Ceri certificatul de atestare fiscală, dacă ai nevoie de un act oficial."},
+  {"@type":"HowToStep","position":5,"name":"Compară cu contabilitatea","text":"Compari cu fișa analitică din contabilitate."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Datorii ANAF","Contestație fiscală","Eșalonare ANAF","Insolvență"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Cum verific dacă am datorii la ANAF online?","acceptedAnswer":{"@type":"Answer","text":"Prin SPV. Firma cere fișa sintetică totală și citește actele comunicate. Pentru un document oficial, ceri certificatul de atestare fiscală."}},
+  {"@type":"Question","name":"Pot verifica datoriile după CNP?","acceptedAnswer":{"@type":"Answer","text":"Doar pe ale tale, în SPV. Nu există căutare publică după CNP, din cauza secretului fiscal."}},
+  {"@type":"Question","name":"Cum aflu dacă firma are datorii la stat?","acceptedAnswer":{"@type":"Answer","text":"Caută CUI-ul pe anaf.ro: date despre contribuabil, lista datornicilor și lista albă. Pentru siguranță, cere partenerului un certificat de atestare fiscală recent."}},
+  {"@type":"Question","name":"Ce este lista datornicilor ANAF?","acceptedAnswer":{"@type":"Answer","text":"Lista publică, trimestrială, a persoanelor juridice cu restanțe notificate peste prag: 500.000, 250.000 sau 100.000 lei, după categorie."}},
+  {"@type":"Question","name":"Cum scap de datorii la ANAF?","acceptedAnswer":{"@type":"Answer","text":"Prin plată, compensare sau eșalonare, dacă suma e corectă. Prin contestație, dacă actul e greșit. Dacă firma nu mai poate plăti, analizezi și insolvența."}},
+  {"@type":"Question","name":"Cât de des se actualizează datele ANAF?","acceptedAnswer":{"@type":"Answer","text":"SPV și certificatul fiscal arată situația curentă. Listele publice se actualizează trimestrial. După plata integrală, ANAF scoate firma de pe listă din oficiu."}},
+  {"@type":"Question","name":"Pot contesta datoriile fiscale?","acceptedAnswer":{"@type":"Answer","text":"Da. Contești actul care a stabilit suma, în 45 de zile de la comunicare. Contestația nu suspendă automat executarea."}},
+  {"@type":"Question","name":"Există aplicație pentru verificare datorii?","acceptedAnswer":{"@type":"Answer","text":"Accesul oficial e SPV, inclusiv de pe telefon. Aplicațiile private doar preiau datele publice."}}
+ ]}
+]}
+</script>

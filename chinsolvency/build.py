@@ -10,7 +10,14 @@ FORM = '[sureforms id="1762"]'
 src = pathlib.Path(sys.argv[1]); out = pathlib.Path(sys.argv[2]); out.mkdir(parents=True, exist_ok=True)
 brand = (src.parent / 'brand.css').read_text(encoding='utf-8')
 article = (src.parent / 'article.css').read_text(encoding='utf-8')
-html = src.read_text(encoding='utf-8').replace('/*BRAND_CSS*/', brand).replace('/*ARTICLE_CSS*/', article)
+kit = (src.parent / 'kit.css').read_text(encoding='utf-8')
+html = (src.read_text(encoding='utf-8').replace('/*BRAND_CSS*/', brand)
+        .replace('/*ARTICLE_CSS*/', article).replace('/*KIT_CSS*/', kit))
+# wptexturize treats a bare '<' in inline JS as a tag start and then mangles '&&' — fail early.
+import re
+for js in re.findall(r'<script>(.*?)</script>', html, re.S):
+    bad = re.findall(r'[\w)\]]<=?[\d(.]|[\w)\]]<=?[a-z]+[.)\]]', js)
+    if bad: print(f'WARNING: inline JS has "<" comparisons, may break in WordPress: {bad[:5]}')
 name = src.name.replace('.src.html', '')
 
 before, after = html.split('<!-- FORM_SLOT -->')

@@ -1,0 +1,43 @@
+/* kit.css — shared page components (calculator result cards, lists, callouts). Injected by build.py at KIT_CSS. */
+.cbx .grp{grid-column:1/-1;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);padding-top:8px;border-top:1px solid var(--line);margin-top:4px}
+.cbx .grp:first-child{border-top:0;padding-top:0;margin-top:0}
+.cbx .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbx .tri{display:grid;grid-template-columns:1fr;gap:10px}
+.cbx .opt{background:rgba(255,255,255,.06);border-radius:var(--radius-s);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.cbx .opt.full{grid-column:1/-1}
+.cbx .opt .k{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#D9B878}
+.cbx .opt .v{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.cbx .opt .s{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
+.cbx .opt .s b{color:#fff}
+.cbx .opt.alert{background:rgba(185,56,47,.22)}
+.cbx .opt.ok{background:rgba(63,143,90,.2)}
+.cbx .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
+.cbx .opts div{background:var(--surface);border-radius:var(--radius-s);padding:14px;font-size:13px;color:var(--ink-2);line-height:1.4}
+.cbx .opts b{display:block;color:var(--ink);font-size:14px;margin-bottom:4px}
+.cbx .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.cbx .caps div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);padding:14px;font-size:13px;color:var(--ink-2);line-height:1.4}
+.cbx .caps b{display:block;font-size:24px;color:var(--bronze);letter-spacing:-.02em;margin-top:4px}
+.cbx .ban{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cbx .ban li{position:relative;background:#FDECEA;border:1px solid #F3C4BE;border-radius:var(--radius-s);padding:12px 14px 12px 42px;font-size:14.5px;color:var(--ink);line-height:1.45}
+.cbx .ban li b{display:block}
+.cbx .ban li::before{content:"";position:absolute;left:14px;top:14px;width:16px;height:16px;border-radius:50%;border:2px solid #B9382F;background:linear-gradient(45deg,transparent 45%,#B9382F 45%,#B9382F 58%,transparent 58%)}
+.cbx .rights{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+.cbx .rights div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);padding:18px;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.cbx .rights b{display:block;color:var(--ink);font-size:16px;margin-bottom:6px}
+.cbx .rights .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--bronze-l);color:var(--bronze-d);font-weight:800;font-size:13px;margin-bottom:8px}
+.cbx .stages{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.cbx .stages div{border-radius:var(--radius);padding:20px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--ink-2);line-height:1.5}
+.cbx .stages div:nth-child(2){background:var(--bronze-l);border-color:transparent}
+.cbx .stages div:nth-child(3){background:var(--ink);color:rgba(255,255,255,.75);border-color:transparent}
+.cbx .stages .k{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px}
+.cbx .stages div:nth-child(3) .k{color:#D9B878}
+.cbx .stages b{display:block;font-size:22px;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
+.cbx .stages div:nth-child(3) b{color:#fff}
+.cbx .roles{display:grid;gap:8px;margin:16px 0}
+.cbx .roles div{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 18px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.cbx .roles b{color:var(--ink);font-size:15px}
+.cbx .quote{border-left:3px solid var(--bronze);padding:6px 0 6px 16px;margin:14px 0;font-style:italic;color:var(--ink);font-size:16px}
+.cbx .tpl{background:var(--surface);border:1px dashed var(--bronze);border-radius:var(--radius);padding:24px 28px;font-size:16px;line-height:1.65;color:var(--ink);font-style:italic;margin:16px 0 8px}
+.cbx .tpl-btn{margin-bottom:16px}
+.cbx .todo{border:2px dashed #C0392B;background:#FDECEA;color:#922B21;border-radius:var(--radius-s);padding:10px 14px;font-size:14px;font-weight:600;margin:12px 0}
+@media (max-width:860px){.cbx .duo,.cbx .opts,.cbx .ban,.cbx .rights,.cbx .stages{grid-template-columns:1fr}.cbx .roles div{grid-template-columns:1fr;gap:4px}}
