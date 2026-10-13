@@ -458,7 +458,7 @@
     var a=term(),b=sum(),flag=$('o-flag');
     if(!a&&!b){flag.hidden=true;return}
     flag.hidden=false;flag.className='flag';
-    if(a&&a.0>left){flag.className='flag warn';flag.textContent='Termenul pare să fi expirat. Verificați imediat cu un avocat data de pe dovada de comunicare și ce remedii mai există.'}
+    if(a&&0>a.left){flag.className='flag warn';flag.textContent='Termenul pare să fi expirat. Verificați imediat cu un avocat data de pe dovada de comunicare și ce remedii mai există.'}
     else if(a&&a.ex){flag.className='flag warn';flag.textContent='Act de la executor: executarea a început. Nu așteptați ultima zi — contestația și cererea de suspendare se pregătesc din timp.'}
     else if(b&&b.over>0&&!b.old){flag.className='flag warn';flag.textContent='Suma cerută depășește dublul sumei împrumutate cu '+m0.format(b.over)+' lei. Contestați în scris cuantumul și cereți calculul detaliat.'}
     else if(b&&b.r>=2){flag.textContent='Suma cerută este de peste două ori împrumutul. Cereți defalcarea și verificați clauzele și prescripția înainte de orice plată.'}
