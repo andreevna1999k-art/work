@@ -1,8 +1,20 @@
 <!-- Consultarius — /cerere-de-stergere-din-biroul-de-credit/ (draft). Built by build.py (partials + CSS injection). -->
 <!--@head -->
+<style>
+.cbx .gen{background:#fff;color:var(--ink);border-radius:var(--radius-s);padding:18px 20px;font-size:13.5px;line-height:1.6;white-space:pre-wrap;max-height:520px;overflow:auto;font-family:var(--font)}
+.cbx .gen b{font-weight:800}
+.cbx .model{background:var(--surface);border:1px dashed var(--bronze);border-radius:var(--radius);padding:22px 24px;margin:12px 0 8px;font-size:15px;line-height:1.65;color:var(--ink)}
+.cbx .model p{margin:0 0 10px}
+.cbx .model ol{margin:0 0 10px;padding-left:20px}
+.cbx .model .to{font-style:italic;color:var(--ink-2)}
+.cbx .model h4{margin:6px 0 12px;font-size:15px;letter-spacing:.02em}
+.cbx .copy-m{margin-bottom:18px}
+.cbx [data-m]{display:none}
+.cbx .m1 [data-m~="1"],.cbx .m2 [data-m~="2"],.cbx .m3 [data-m~="3"]{display:flex}
+</style>
 <div class="cbx">
 
-<!--@header nav="#verificare|Ai temei?;#model|Model;#depunere|Depunere;#intrebari|Întrebări" -->
+<!--@header nav="#verificare|Ai temei?;#generator|Generator;#model|3 modele;#depunere|Depunere;#intrebari|Întrebări" -->
 
 <!-- HERO -->
 <section class="hero a-hero">
@@ -69,6 +81,53 @@
           <div class="flag" id="o-flag" hidden></div>
           <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite raportul la verificat</a>
           <span class="disc">Reguli: raportare doar după 30 de zile de întârziere și peste 10 lei; notificare cu cel puțin 15 zile înainte de prima raportare negativă (Decizia ANSPDCP nr. 105/2007); păstrare 4 ani de la plată sau închidere. Calcul orientativ.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="generator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Generator</span><h2>Completează cererea <span class="accent">direct pe pagină</span></h2></div>
+      <p>Alegi modelul, completezi câmpurile și copiezi textul gata. Câmpurile goale rămân între paranteze. Nimic nu se trimite: datele rămân doar în browserul tău.</p>
+    </div>
+    <div class="calc">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="1" type="button">Modelul 1 · Date eronate</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="2" type="button">Modelul 2 · Fără notificare</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="3" type="button">Modelul 3 · Acces la date</button>
+      </div>
+      <div class="panel m1" id="gpanel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Datele tale</div>
+          <div class="field"><label for="g-nume">Nume și prenume</label><div class="inp"><input id="g-nume" autocomplete="off"></div></div>
+          <div class="field"><label for="g-cnp">CNP</label><div class="inp"><input id="g-cnp" inputmode="numeric" autocomplete="off"></div></div>
+          <div class="field full"><label for="g-adr">Domiciliul</label><div class="inp"><input id="g-adr" autocomplete="off"></div></div>
+          <div class="field"><label for="g-mail">E-mail pentru răspuns</label><div class="inp"><input id="g-mail" autocomplete="off"></div></div>
+          <div class="field" data-m="1"><label for="g-tel">Telefon</label><div class="inp"><input id="g-tel" autocomplete="off"></div></div>
+          <div class="grp">Din raportul de credit</div>
+          <div class="field"><label for="g-part">Participantul (banca / IFN)</label><div class="inp"><input id="g-part" autocomplete="off"></div></div>
+          <div class="field" data-m="1 2"><label for="g-contr">Nr. contract</label><div class="inp"><input id="g-contr" autocomplete="off"></div></div>
+          <div class="field" data-m="1 2"><label for="g-rap">Data raportului</label><div class="inp"><input type="date" id="g-rap"></div></div>
+          <div class="field full" data-m="1"><label for="g-desc">Ce figurează în raport</label><div class="inp"><input id="g-desc" placeholder="restanță de 2.180 lei, 45 zile, status activ" autocomplete="off"></div></div>
+          <div class="field full" data-m="1"><label for="g-motiv">De ce e inexact</label><div class="inp"><input id="g-motiv" placeholder="am achitat integral suma pe 22.05.2025, conform extrasului anexat" autocomplete="off"></div></div>
+          <div class="field" data-m="2"><label for="g-prima">Data primei raportări</label><div class="inp"><input type="date" id="g-prima"></div></div>
+          <div class="field" data-m="2"><label for="g-sms">SMS primit (dacă ai primit)</label><div class="inp"><input type="date" id="g-sms"></div></div>
+          <div class="field" data-m="3"><label for="g-luni">Interogări din ultimele</label><div class="inp"><input id="g-luni" inputmode="numeric" value="6"><span class="unit">luni</span></div></div>
+          <div class="grp">Trimitere</div>
+          <div class="field full"><label for="g-trim">Data la care participantul primește cererea</label><div class="inp"><input type="date" id="g-trim"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-copy">Copiază cererea</button>
+            <button type="button" class="btn btn-line" id="b-ex2">Exemplu completat</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Cererea ta</span>
+          <div class="gen" id="gen"></div>
+          <div class="opt" id="c-t"><span class="k">Termenul de răspuns</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completați data primirii cererii.</span></div>
+          <span class="disc">Semnează cererea înainte de trimitere. La poștă atașezi copia actului de identitate. Modelele nu înlocuiesc analiza juridică a cazului tău.</span>
         </div>
       </div>
     </div>
@@ -144,6 +203,67 @@
           <li>Formulare de tipul „vreau să fiu scos din Biroul de Credit”: nu e un temei juridic.</li>
           <li>Ceri ștergere când problema e o actualizare: primești refuz pe bună dreptate.</li>
         </ul>
+              <h3>3 modele gata de completat</h3>
+        <p>Alege modelul potrivit situației tale. Îl poți completa automat în <a href="#generator">generatorul de mai sus</a> sau îl copiezi și înlocuiești câmpurile dintre paranteze.</p>
+        <h3>Modelul 1: cerere de rectificare și ștergere a datelor eronate</h3>
+        <div class="model" id="m1">
+          <p class="to">Către: [Denumirea băncii / IFN-ului], în atenția Responsabilului cu protecția datelor (DPO)<br>Adresa: [sediul sau adresa de e-mail a DPO]</p>
+          <h4>CERERE de rectificare și ștergere a datelor raportate în Biroul de Credit</h4>
+          <p>Subsemnatul/Subsemnata [nume și prenume], CNP [CNP], domiciliat(ă) în [adresa], telefon [telefon], e-mail [e-mail], în calitate de persoană vizată, vă solicit următoarele.</p>
+          <p>În raportul meu de credit emis de Biroul de Credit la data de [data raportului], la participantul [denumire], contractul nr. [număr], figurează: [descrierea exactă: „restanță de … lei, … zile, status activ”].</p>
+          <p>Informația este inexactă, deoarece [motivul: „am achitat integral suma pe data de …, conform extrasului anexat”].</p>
+          <p>În temeiul art. 16 și art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, vă solicit:</p>
+          <ol>
+            <li>rectificarea datelor, astfel încât raportul să reflecte situația reală: [„restanță achitată la data de …”];</li>
+            <li>ștergerea înregistrărilor care nu corespund realității;</li>
+            <li>transmiterea datelor corectate către Biroul de Credit SA;</li>
+            <li>comunicarea răspunsului scris în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament, la adresa de e-mail de mai sus.</li>
+          </ol>
+          <p>Anexez: copie act de identitate; raportul de credit din [data]; [extras de cont / chitanță / adeverință de închidere].</p>
+          <p>Data: [zz.ll.aaaa] | Semnătura: [semnătura]</p>
+        </div>
+        <button type="button" class="btn btn-line copy-m" data-copy="m1">Copiază modelul 1</button>
+
+        <h3>Modelul 2: cerere de ștergere pentru lipsa notificării de 15 zile</h3>
+        <div class="model" id="m2">
+          <p class="to">Către: [Denumirea băncii / IFN-ului / firmei de recuperare], în atenția DPO</p>
+          <h4>CERERE de ștergere a datelor negative raportate fără informare prealabilă</h4>
+          <p>Subsemnatul/Subsemnata [nume și prenume], CNP [CNP], domiciliat(ă) în [adresa], e-mail [e-mail], vă solicit următoarele.</p>
+          <p>În raportul meu de credit din [data] figurează date negative transmise de dumneavoastră pentru contractul nr. [număr], cu data primei raportări [data].</p>
+          <p>Nu am primit nicio informare cu cel puțin 15 zile calendaristice înainte de prima raportare a datelor negative, așa cum prevede Decizia ANSPDCP nr. 105/2007. [Variantă: „Am primit un SMS pe data de …, cu doar … zile înainte de raportare.”]</p>
+          <p>În consecință, vă solicit:</p>
+          <ol>
+            <li>să îmi comunicați dovada informării prealabile: data, canalul (scrisoare, SMS, e-mail) și adresa sau numărul folosit;</li>
+            <li>în lipsa acestei dovezi, ștergerea datelor negative raportate, în temeiul art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, întrucât au fost prelucrate nelegal;</li>
+            <li>transmiterea ștergerii către Biroul de Credit SA;</li>
+            <li>răspuns scris în termen de o lună, conform art. 12 alin. (3) din Regulament.</li>
+          </ol>
+          <p>Anexez: copie act de identitate; raportul de credit din [data]; [capturi cu mesajele primite, dacă există].</p>
+          <p>Data: [zz.ll.aaaa] | Semnătura: [semnătura]</p>
+        </div>
+        <button type="button" class="btn btn-line copy-m" data-copy="m2">Copiază modelul 2</button>
+
+        <h3>Modelul 3: cerere de acces la date (art. 15 GDPR)</h3>
+        <div class="model" id="m3">
+          <p class="to">Către: Biroul de Credit SA sau [denumirea participantului], în atenția DPO</p>
+          <h4>CERERE de acces la datele cu caracter personal</h4>
+          <p>Subsemnatul/Subsemnata [nume și prenume], CNP [CNP], domiciliat(ă) în [adresa], în temeiul art. 15 din Regulamentul (UE) 2016/679, vă solicit să îmi comunicați:</p>
+          <ol>
+            <li>datele mele prelucrate în sistemul Biroului de Credit (raportul de credit complet);</li>
+            <li>participanții care au transmis datele și data fiecărei raportări;</li>
+            <li>participanții care au consultat datele mele în ultimele [6] luni și scopul consultării;</li>
+            <li>perioada de stocare pentru fiecare categorie de date.</li>
+          </ol>
+          <p>Vă rog să îmi trimiteți răspunsul [prin scrisoare recomandată la adresa de mai sus / pe e-mail], în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament.</p>
+          <p>Anexez: copie act de identitate.</p>
+          <p>Data: [zz.ll.aaaa] | Semnătura: [semnătura]</p>
+        </div>
+        <button type="button" class="btn btn-line copy-m" data-copy="m3">Copiază modelul 3</button>
+        <div class="todo">[DE VERIFICAT: adresa și programul de lucru cu publicul ale Biroului de Credit, de pe birouldecredit.ro]</div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/3-modele-de-cerere-si-cand-le-folosesti.webp" width="1200" height="675" alt="model cerere ștergere Biroul de Credit: date eronate, lipsa notificării, acces la date" loading="lazy">
+          <figcaption>3 modele de cerere și când le folosești</figcaption>
+        </figure>
       </section>
 
       <section id="depunere">
@@ -334,6 +454,47 @@
   function ex(){$('s-scad').value='2026-03-10';$('s-rap').value='2026-04-15';$('s-not').value='2026-04-08';$('s-plata').value='';run()}
   $('b-ex1').addEventListener('click',ex);
   root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('verificare').scrollIntoView({behavior:'smooth'})})});
+})();
+</script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var model=1;
+  function v(id,ph){var x=($(id).value||'').trim();return x||'['+ph+']'}
+  function d(id,ph){var x=$(id).value;if(!x)return '['+ph+']';var p=x.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(x){return ('0'+x.getUTCDate()).slice(-2)+'.'+('0'+(x.getUTCMonth()+1)).slice(-2)+'.'+x.getUTCFullYear()}
+  function today(){var t=new Date();return ('0'+t.getDate()).slice(-2)+'.'+('0'+(t.getMonth()+1)).slice(-2)+'.'+t.getFullYear()}
+  function txt(){
+    var who=v('g-nume','nume și prenume')+', CNP '+v('g-cnp','CNP')+', domiciliat(ă) în '+v('g-adr','adresa');
+    var part=v('g-part','denumirea participantului'),end='\n\nData: '+today()+' | Semnătura: [semnătura]';
+    if(model===1)return 'Către: '+part+', în atenția Responsabilului cu protecția datelor (DPO)\n\n**CERERE de rectificare și ștergere a datelor raportate în Biroul de Credit**\n\nSubsemnatul/Subsemnata '+who+', telefon '+v('g-tel','telefon')+', e-mail '+v('g-mail','e-mail')+', în calitate de persoană vizată, vă solicit următoarele.\n\nÎn raportul meu de credit emis de Biroul de Credit la data de '+d('g-rap','data raportului')+', la participantul '+part+', contractul nr. '+v('g-contr','număr')+', figurează: '+v('g-desc','descrierea exactă')+'.\n\nInformația este inexactă, deoarece '+v('g-motiv','motivul')+'.\n\nÎn temeiul art. 16 și art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, vă solicit:\n1. rectificarea datelor, astfel încât raportul să reflecte situația reală;\n2. ștergerea înregistrărilor care nu corespund realității;\n3. transmiterea datelor corectate către Biroul de Credit SA;\n4. comunicarea răspunsului scris în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament, la adresa de e-mail de mai sus.\n\nAnexez: copie act de identitate; raportul de credit din '+d('g-rap','data')+'; [extras de cont / chitanță / adeverință de închidere].'+end;
+    if(model===2){var sms=$('g-sms').value,pr=$('g-prima').value,info='Nu am primit nicio informare cu cel puțin 15 zile calendaristice înainte de prima raportare a datelor negative, așa cum prevede Decizia ANSPDCP nr. 105/2007.';
+      if(sms&&pr){var g=Math.round((dt(pr).getTime()-dt(sms).getTime())/864e5);info='Am primit un SMS pe data de '+d('g-sms','')+', cu doar '+g+' zile înainte de raportare, deși Decizia ANSPDCP nr. 105/2007 cere o informare cu cel puțin 15 zile calendaristice înainte de prima raportare a datelor negative.'}
+      return 'Către: '+part+', în atenția DPO\n\n**CERERE de ștergere a datelor negative raportate fără informare prealabilă**\n\nSubsemnatul/Subsemnata '+who+', e-mail '+v('g-mail','e-mail')+', vă solicit următoarele.\n\nÎn raportul meu de credit din '+d('g-rap','data')+' figurează date negative transmise de dumneavoastră pentru contractul nr. '+v('g-contr','număr')+', cu data primei raportări '+d('g-prima','data')+'.\n\n'+info+'\n\nÎn consecință, vă solicit:\n1. să îmi comunicați dovada informării prealabile: data, canalul (scrisoare, SMS, e-mail) și adresa sau numărul folosit;\n2. în lipsa acestei dovezi, ștergerea datelor negative raportate, în temeiul art. 17 alin. (1) lit. d) din Regulamentul (UE) 2016/679, întrucât au fost prelucrate nelegal;\n3. transmiterea ștergerii către Biroul de Credit SA;\n4. răspuns scris în termen de o lună, conform art. 12 alin. (3) din Regulament.\n\nAnexez: copie act de identitate; raportul de credit din '+d('g-rap','data')+'; [capturi cu mesajele primite, dacă există].'+end}
+    return 'Către: '+(($('g-part').value||'').trim()||'Biroul de Credit SA')+', în atenția DPO\n\n**CERERE de acces la datele cu caracter personal**\n\nSubsemnatul/Subsemnata '+who+', în temeiul art. 15 din Regulamentul (UE) 2016/679, vă solicit să îmi comunicați:\n1. datele mele prelucrate în sistemul Biroului de Credit (raportul de credit complet);\n2. participanții care au transmis datele și data fiecărei raportări;\n3. participanții care au consultat datele mele în ultimele '+v('g-luni','6')+' luni și scopul consultării;\n4. perioada de stocare pentru fiecare categorie de date.\n\nVă rog să îmi trimiteți răspunsul pe e-mail, la '+v('g-mail','e-mail')+', în termenul de o lună prevăzut de art. 12 alin. (3) din Regulament.\n\nAnexez: copie act de identitate.'+end;
+  }
+  function render(){
+    var g=$('gen');while(g.firstChild)g.removeChild(g.firstChild);
+    txt().split('**').forEach(function(part,i){if(i%2){var b=document.createElement('b');b.textContent=part;g.appendChild(b)}else g.appendChild(document.createTextNode(part))});
+    var s=$('g-trim').value,c=$('c-t');c.classList.remove('alert','ok');
+    if(s){var a=dt(s),b=dt(s);a.setUTCMonth(a.getUTCMonth()+1);b.setUTCMonth(b.getUTCMonth()+3);$('o-t').textContent='până la '+fmt(a);$('o-ts').innerHTML='Cu prelungire pentru cereri complexe: <b>'+fmt(b)+'</b>. Fără răspuns? Plângere la ANSPDCP.'}
+    else{$('o-t').textContent='—';$('o-ts').textContent='Completați data primirii cererii.'}
+  }
+  var tabs=[].slice.call(root.querySelectorAll('[data-tab]'));
+  function show(n){model=n;tabs.forEach(function(t){t.setAttribute('aria-selected',+t.getAttribute('data-tab')===n)});$('gpanel').className='panel m'+n;render()}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(+t.getAttribute('data-tab'))})});
+  root.querySelectorAll('#gpanel input').forEach(function(i){i.addEventListener('input',render);i.addEventListener('change',render)});
+  function copyText(t,b,label){function done(){b.textContent='Copiat ✓';setTimeout(function(){b.textContent=label},2000)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+    else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(a)}}
+  $('b-copy').addEventListener('click',function(){copyText(txt().replace(/\*\*/g,''),this,'Copiază cererea')});
+  root.querySelectorAll('[data-copy]').forEach(function(b){var l=b.textContent;b.addEventListener('click',function(){copyText($(b.getAttribute('data-copy')).innerText,b,l)})});
+  function ex(){show(1);var e={'g-nume':'Ion Popescu','g-cnp':'1800101123456','g-adr':'București, str. Exemplu nr. 1','g-mail':'ion.popescu@exemplu.ro','g-tel':'07xx xxx xxx','g-part':'Banca X SA','g-contr':'88412/2022','g-rap':'2026-10-02','g-desc':'restanță de 2.180 lei, status activ','g-motiv':'am achitat integral suma pe data de 22.05.2025, conform extrasului anexat','g-trim':'2026-10-12'};
+    Object.keys(e).forEach(function(k){$(k).value=e[k]});render()}
+  $('b-ex2').addEventListener('click',ex);
+  render();
 })();
 </script>
 
