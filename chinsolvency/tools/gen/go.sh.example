@@ -1,0 +1,15 @@
+# usage: go.sh pyfile slug "title" "excerpt" btnSel outSel [existingID]
+set -e
+S=/tmp/claude-0/-home-user-work/057d374e-6f74-511c-a2f4-1bfe9640b1d5/scratchpad; cd $S
+python3 gen/$1
+(cd /home/user/work/chinsolvency && python3 build.py $2.src.html $S/dist | tail -1)
+if [ -n "$7" ]; then ID=$7
+python3 -c "import json;json.dump({'content':open('dist/$2.wp.txt').read()},open('u.json','w'),ensure_ascii=False)"
+st=$(curl -sS --max-time 20 "https://chinsolvency.ro/wp-json/wp/v2/pages/$ID?context=edit&_fields=status"); echo "$st" | grep -q '"draft"' || { echo NOT DRAFT; exit 1; }
+curl -sS --max-time 60 -X POST -H 'Content-Type: application/json; charset=utf-8' --data-binary @u.json "https://chinsolvency.ro/wp-json/wp/v2/pages/$ID?_fields=id,status"; echo
+else ./mkpage.sh "$2" "$3" "$4" | tail -2
+ID=$(curl -sS "https://chinsolvency.ro/wp-json/wp/v2/pages?slug=$2&status=draft&context=edit&_fields=id" | python3 -c 'import json,sys;print(json.load(sys.stdin)[0]["id"])'); fi
+echo ID $ID
+./wpcheck.sh $ID "$5" "$6"
+node errchk.mjs | tail -1
+node shot4.mjs $2 "$5"

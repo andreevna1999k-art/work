@@ -1,0 +1,263 @@
+import sys,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from mk import *
+IMG1='clauzele-abuzive-frecvente-din-creditele-bancare.webp'; IMG2='cum-contesti-o-clauza-abuziva-pas-cu-pas.webp'
+calc='''<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Cât ai plătit comision și <span class="accent">cât poți cere înapoi</span></h2></div>
+      <p>Comisionul poate fi calculat la suma inițială sau la soldul care scade. Introdu datele din contract și vezi ambele variante. Folosește-le ca bază pentru reclamația la bancă, nu ca promisiune de rezultat.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Creditul</div>
+          <div class="field"><label for="f-s">Suma creditului (lei)</label><div class="inp"><input id="f-s" inputmode="numeric" placeholder="150000"></div></div>
+          <div class="field"><label for="f-n">Durata totală (ani)</label><div class="inp"><input id="f-n" inputmode="numeric" placeholder="25"></div></div>
+          <div class="field"><label for="f-r">Dobânda anuală (%)</label><div class="inp"><input id="f-r" inputmode="decimal" placeholder="6"></div></div>
+          <div class="grp">Comisionul</div>
+          <div class="field"><label for="f-c">Comision lunar (%)</label><div class="inp"><input id="f-c" inputmode="decimal" placeholder="0,2"></div></div>
+          <div class="field"><label for="f-l">Luni în care l-ai plătit</label><div class="inp"><input id="f-l" inputmode="numeric" placeholder="120"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: 150.000 lei, 25 de ani, 6%</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt" id="c-a"><span class="k">La suma inițială</span><span class="v" id="o-a">—</span><span class="s" id="o-as">Comision × luni.</span></div>
+            <div class="opt" id="c-b"><span class="k">La soldul care scade</span><span class="v" id="o-b">—</span><span class="s" id="o-bs">Rate egale (anuitate).</span></div>
+            <div class="opt full" id="c-p"><span class="k">Din suma împrumutată</span><span class="v" id="o-p">—</span><span class="s" id="o-ps">Baza cererii de restituire, la care se poate adăuga dobânda legală.</span></div>
+            <div class="opt full" id="c-m"><span class="k">Comision lunar la prima rată</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">La suma inițială.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne contractul spre analiză</a>
+          <span class="disc">Calcul orientativ, cu rate egale și dobândă constantă. Contractul tău poate avea alt grafic. Dacă un comision este abuziv se stabilește după analiza contractului, iar restituirea poate fi limitată de prescripție (art. 2517 Cod civil).</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>'''
+js=r'''  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function calc(){
+    var s=num('f-s'),n=num('f-n'),r=num('f-r'),c=num('f-c'),l=num('f-l');
+    if(s>0&&n>0&&c>0&&l>0){
+      var N=Math.round(n*12),L=Math.min(Math.round(l),N),i=(r||0)/1200,b=s,tot=0,pmt=i>0?s*i/(1-Math.pow(1+i,-N)):s/N;
+      for(var k=0;k<L;k++){tot+=b*c/100;b=b*(1+i)-pmt}
+      var a=s*c/100*L;
+      $('o-a').textContent=lei(a);$('o-as').textContent=lei(s*c/100)+' pe lună × '+L+' luni.';
+      $('o-b').textContent=lei(tot);$('o-bs').textContent='Comision lunar la soldul rămas, pe '+L+' luni.';
+      $('o-p').textContent=(a/s*100).toFixed(0)+'% / '+(tot/s*100).toFixed(0)+'%';$('o-ps').textContent='Suma inițială / sold, raportate la suma împrumutată. Baza cererii de restituire.';
+      $('o-m').textContent=lei(s*c/100);
+    }else{['o-a','o-b','o-p','o-m'].forEach(function(x){$(x).textContent='—'});$('o-as').textContent='Comision × luni.';$('o-bs').textContent='Rate egale (anuitate).'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-n','f-r','f-c','f-l'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-s').value='150000';$('f-n').value='25';$('f-r').value='6';$('f-c').value='0,2';$('f-l').value='120';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});'''
+S1='''        <span class="eyebrow">Pe scurt</span>
+        <h2>Clauze abuzive: răspuns rapid</h2>
+        <p>O clauză abuzivă este o prevedere pe care nu ai negociat-o și care creează un dezechilibru semnificativ în defavoarea ta, contrar bunei-credințe. Apare în contracte bancare, cu IFN, de leasing sau de servicii. Instanța o poate declara abuzivă. Clauza nu mai produce efecte, iar banii plătiți în baza ei pot fi ceruți înapoi.</p>
+        <p>Contractul rămâne, de regulă, în vigoare. Dispare doar clauza. Datoria propriu-zisă nu se șterge.</p>'''
+S2='''        <span class="eyebrow">Definiție</span>
+        <h2>Ce sunt clauzele abuzive</h2>
+        <p>Clauzele abuzive sunt prevederi impuse de profesionist printr-un formular standard. Consumatorul nu le-a putut modifica. Ele îi dau băncii drepturi pe care tu nu le ai sau îți pun costuri fără un serviciu real. Contează efectul: un dezechilibru semnificativ între drepturile și obligațiile părților.</p>
+        <p><strong>Clauză negociată</strong> înseamnă că ai putut influența textul: ai primit variante, ai cerut eliminarea unui cost. <strong>Clauză impusă</strong> înseamnă că ai semnat formularul băncii așa cum era. Semnătura nu dovedește negocierea. Dacă banca susține că a negociat o clauză standard, ea trebuie să o dovedească (art. 4 alin. (3) din Legea nr. 193/2000).</p>
+        <h3>Când o clauză devine abuzivă</h3>
+        <ul class="chk">
+          <li><strong>Lipsa negocierii directe:</strong> clauza vine dintr-un formular tipizat.</li>
+          <li><strong>Dezechilibru:</strong> banca își rezervă drepturi largi, tu ai doar obligații.</li>
+          <li><strong>Lipsa transparenței:</strong> nu puteai calcula ce plătești.</li>
+          <li><strong>Costuri neclare:</strong> comisioane fără serviciu identificabil.</li>
+        </ul>
+        <h4>Exemple simple pentru consumatori</h4>
+        <p>Un comision de administrare lunar, neexplicat. O dobândă pe care banca o poate schimba „în funcție de politica sa”. Penalități de întârziere mai mari decât rata. Costuri ascunse în anexe pe care nu le-ai primit.</p>'''
+S3='''        <span class="eyebrow">În bănci</span>
+        <h2>Clauze abuzive în contractele bancare</h2>
+        <p>Contractele de credit sunt redactate integral de bancă. Sunt lungi, tehnice și semnate rapid. De aceea, clauzele abuzive apar des în creditele ipotecare, în cele de nevoi personale, la carduri, în leasing și la IFN. Cele mai contestate privesc dobânda, comisioanele, penalitățile și riscul valutar.</p>
+        <p>Numele băncii nu schimbă analiza. Căutările de tipul „clauze abuzive BCR” sau „clauze abuzive Piraeus Bank” au același răspuns. Instanța judecă textul contractului tău și modul în care ți-a fost explicat.</p>
+        <h3>Clauze privind dobânda</h3>
+        <p>Dobânda variabilă nu este ilegală. Devine problematică când formula lipsește sau depinde de decizia internă a băncii. Exemplu: „dobânda poate fi modificată în funcție de evoluția pieței”. Fără un indice verificabil, nu puteai anticipa rata. Pentru contractele noi, OUG nr. 50/2010 cere ca dobânda variabilă să fie legată de un indice de referință clar.</p>
+        <h3>Clauze privind comisioanele</h3>
+        <p>Un comision este legal dacă plătește un serviciu real și clar descris. Cele mai contestate sunt:</p>
+        <ul class="chk">
+          <li><strong>Comisionul de risc:</strong> banca are deja ipotecă și garanții, iar comisionul nu acoperă niciun serviciu.</li>
+          <li><strong>Comisionul de administrare:</strong> se plătește lunar, ani la rând, pentru gestionarea propriului credit al băncii.</li>
+          <li><strong>Comisionul de acordare:</strong> discutabil când e calculat procentual, fără legătură cu costul real.</li>
+          <li><strong>Comisionul de rambursare anticipată:</strong> excesiv față de limitele prevăzute de lege.</li>
+        </ul>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Ai un credit de 150.000 lei. Contractul prevede un comision de administrare de 0,2% pe lună. Calculat la suma inițială, înseamnă 300 lei lunar. În 10 ani (120 de luni), ai plătit 36.000 lei.</p>
+          <p>Calculat la soldul care scade (credit pe 25 de ani, dobândă 6%), suma ajunge tot la aproximativ 32.200 lei. Adică peste o cincime din banii împrumutați. Aceasta este baza cererii de restituire, la care se adaugă dobânda legală.</p>
+          <span class="formula">150.000 × 0,2% × 120 = 36.000 lei · pe sold descrescător ≈ 32.200 lei · 32.200 / 150.000 ≈ 21%</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <h3>Clauze privind penalitățile</h3>
+        <p>Penalitatea compensează întârzierea. Nu poate deveni o sursă de profit. Este suspectă când depășește vizibil prejudiciul băncii sau se cumulează cu dobânda majorată și cu alte taxe. La IFN, o sumă mică poate crește de câteva ori din penalități. Verifici baza de calcul și perioada aplicată.</p>
+        <h4>Clauze privind moneda creditului</h4>
+        <p>Riscul valutar a lovit mai ales creditele în franci elvețieni. Consumatorul poate suporta acest risc. Condiția este să fi fost informat corect. În cauza C-186/16 Andriciuc (20 septembrie 2017), CJUE a spus că banca trebuie să-i ofere informații suficiente pentru o decizie prudentă. Consumatorul trebuie să înțeleagă că rata poate crește mult dacă moneda se apreciază.</p>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Tipul clauzei</th><th>Exemplu concret</th><th>De ce poate fi abuzivă</th><th>Documente</th><th>Efect posibil în instanță</th><th>Ce poți recupera</th></tr></thead>
+          <tbody>
+            <tr><td>Dobândă</td><td>Dobândă variabilă modificată unilateral</td><td>Formula lipsește sau depinde de bancă</td><td>Contract, scadențar, notificări, istoric dobândă</td><td>Clauza nu produce efecte; recalcularea ratei</td><td>Diferențele de dobândă</td></tr>
+            <tr><td>Comisioane</td><td>Comision de administrare sau de risc</td><td>Nu există un serviciu real</td><td>Contract, extrase, calculul comisionului</td><td>Eliminarea comisionului</td><td>Comisioanele plătite</td></tr>
+            <tr><td>Penalități</td><td>Penalități excesive de întârziere</td><td>Disproporționate față de prejudiciu</td><td>Contract, notificări, calculul penalităților</td><td>Înlăturarea sau reducerea efectelor</td><td>Penalitățile achitate</td></tr>
+            <tr><td>Risc valutar</td><td>Credit în CHF fără informare</td><td>Consumatorul nu a înțeles riscul</td><td>Contract, ofertă, simulări, scadențar</td><td>Analiza transparenței clauzei</td><td>Diferențe stabilite prin expertiză</td></tr>
+          </tbody>
+        </table></div>
+'''+fig(IMG1,'avocat clauze abuzive: dobândă, comisioane, penalități și risc valutar','Clauzele abuzive frecvente din creditele bancare')
+S4='''        <span class="eyebrow">Verificare</span>
+        <h2>Cum verifici dacă ai clauze abuzive în contract</h2>
+        <p>Iei contractul și citești doar clauzele despre bani: dobândă, comisioane, penalități, monedă, modificarea costurilor. Pentru fiecare, te întrebi dacă ai putut-o negocia și dacă ai fi putut calcula costul la semnare. Apoi compari extrasele cu textul. Două răspunsuri „nu” sunt un semnal pentru o analiză juridică.</p>
+        <h3>Checklist pentru contractul de credit</h3>
+        <ul class="chk">
+          <li>Există costuri neclare sau comisioane fără serviciu descris?</li>
+          <li>Banca poate modifica unilateral dobânda sau comisioanele?</li>
+          <li>Ai avut o posibilitate reală de negociere?</li>
+          <li>Clauza este scrisă clar și ușor de înțeles?</li>
+          <li>Există dezechilibru între drepturile băncii și ale tale?</li>
+        </ul>
+        <h4>Documente necesare pentru verificare</h4>
+        <p>Contractul de credit și condițiile generale. Actele adiționale. Scadențarul inițial și cele ulterioare. Extrasele de cont pe toată perioada. Notificările primite de la bancă sau IFN. Dacă nu mai ai extrasele, le ceri băncii în scris.</p>'''
+S5='''        <span class="eyebrow">Legea</span>
+        <h2>Ce spune legea despre clauzele abuzive</h2>
+        <p>Baza este Legea nr. 193/2000, numită des „legea clauzelor abuzive”. Ea transpune Directiva 93/13/CEE. Legea definește clauza abuzivă, conține în anexă o listă exemplificativă și stabilește efectul: clauza nu produce efecte față de consumator. Directiva și jurisprudența CJUE spun cum trebuie aplicate aceste reguli.</p>
+        <h3>Legea 193/2000</h3>
+        <p><strong>Rol:</strong> protejează consumatorii în contractele cu profesioniștii, inclusiv băncile și IFN-urile. <strong>Definiție:</strong> clauza nenegociată direct care creează, contrar bunei-credințe, un dezechilibru semnificativ (art. 4 alin. (1)). <strong>Obiectul principal:</strong> prețul și moneda pot fi analizate doar dacă nu sunt redactate clar și inteligibil (art. 4 alin. (6)). <strong>Efect:</strong> clauza abuzivă nu produce efecte, iar contractul continuă dacă poate fi executat fără ea (art. 6).</p>
+        <h3>Directiva 93/13/CEE</h3>
+        <p>Directiva fixează standardul european. Clauzele scrise trebuie să fie clare și inteligibile (art. 5). Clauzele abuzive nu creează obligații pentru consumator (art. 6). În cauza C-26/13 Kásler (2014), CJUE a precizat că transparența înseamnă mai mult decât un text lizibil. Consumatorul trebuie să poată evalua consecințele economice ale clauzei.</p>
+        <h4>Comparație între dreptul național și dreptul european</h4>
+        <p>Legea nr. 193/2000 dă regula aplicată de instanța română. Directiva o completează și îi fixează limitele. CJUE interpretează Directiva, iar instanțele naționale aplică legea internă în acest sens. Instanța trebuie să analizeze clauzele abuzive chiar dacă nu i-ai cerut-o expres.</p>
+        <h3>Clauze abuzive între profesioniști</h3>
+        <p>Legea nr. 193/2000 protejează doar consumatorii. O firmă care ia un credit pentru afacere nu o poate invoca. Pentru relațiile dintre profesioniști există Legea nr. 72/2013. Ea sancționează cu nulitatea absolută clauzele abuzive față de creditor privind termenul de plată, dobânda penalizatoare și despăgubirile. Codul civil (art. 1203) cere acceptarea expresă, în scris, a clauzelor standard neuzuale.</p>'''
+S6='''        <span class="eyebrow">Jurisprudență</span>
+        <h2>Jurisprudența privind clauzele abuzive</h2>
+        <p>Jurisprudența arată cum se aplică legea în dosare reale. CJUE a stabilit că instanța verifică din oficiu clauzele, că transparența este esențială și că restituirea nu poate fi blocată artificial. Instanțele românești au eliminat comisioane și au obligat bănci la restituiri. Rezultatul depinde însă de fiecare contract.</p>
+        <h3>Jurisprudența CJUE</h3>
+        <ul class="chk">
+          <li><strong>C-243/08 Pannon GSM (2009):</strong> instanța verifică din oficiu caracterul abuziv, dacă are elementele necesare.</li>
+          <li><strong>C-154/15 Gutiérrez Naranjo (2016):</strong> restituirea sumelor plătite în baza clauzei abuzive nu poate fi limitată în timp.</li>
+          <li><strong>C-698/18 și C-699/18 Raiffeisen Bank și BRD Groupe Société Générale (9 iulie 2020):</strong> constatarea caracterului abuziv e imprescriptibilă. Restituirea se poate prescrie, dar termenul curge de când ai cunoscut sau trebuia să cunoști caracterul abuziv.</li>
+          <li><strong>C-725/19 Impuls Leasing România (17 mai 2022):</strong> e contrară Directivei legislația care nu permite instanței de executare să verifice clauzele contractului-titlu executoriu, când suspendarea în acțiunea separată cere o cauțiune descurajantă.</li>
+        </ul>
+        <h3>Practica instanțelor din România</h3>
+        <p>Litigiile au vizat mai ales comisionul de risc, comisionul de administrare, dobânda variabilă fără formulă și riscul valutar. Când clauza a fost constatată abuzivă, efectele obișnuite sunt eliminarea ei, restituirea sumelor plătite și recalcularea creditului. Hotărâri concrete poți căuta pe portal.just.ro, după număr de dosar și instanță.</p>
+        <h4>Comentariu juridic</h4>
+        <p>Fiecare contract se analizează separat. Același „comision de administrare” poate fi abuziv într-un contract și valid în altul. Nimeni nu îți poate garanta câștigul. Dosarul se câștigă pe documente, calcule și probe.</p>'''
+S7='''        <span class="eyebrow">Contestare</span>
+        <h2>Cum se contestă clauzele abuzive</h2>
+        <p>Contestarea începe cu analiza contractului și calculul sumelor. Urmează reclamația la bancă și, opțional, o procedură amiabilă la CSALB. Dacă banca refuză, depui acțiunea în instanță. În anumite cazuri, acțiunile consumatorilor beneficiază de scutiri de taxă judiciară de timbru; întreabă ce taxe se plătesc la acțiunea ta.</p>
+        <h3>Etapele procedurii</h3>
+        <ol class="num">
+          <li><strong>Analiza contractului:</strong> identifici clauza exactă și temeiul juridic.</li>
+          <li><strong>Calculul:</strong> stabilești cât ai plătit în baza clauzei.</li>
+          <li><strong>Notificarea băncii sau IFN-ului:</strong> reclamație scrisă, cu clauzele contestate și suma cerută.</li>
+          <li><strong>Soluționarea amiabilă:</strong> CSALB este, de regulă, fără costuri pentru consumator, cu termene scurte. ANPC poate controla contractele și poate acționa banca în instanță (art. 12 din Legea nr. 193/2000).</li>
+          <li><strong>Cererea în instanță:</strong> la judecătorie (cereri evaluabile în bani de până la 200.000 lei și cele neevaluabile) sau tribunal (peste acest prag), conform art. 94–95 CPC. Competența teritorială o stabilești cu avocatul.</li>
+          <li><strong>Expertiza și probele:</strong> expertiza contabilă calculează sumele de restituit.</li>
+          <li><strong>Hotărârea instanței:</strong> poate fi atacată cu apel.</li>
+        </ol>
+        <p>Dacă banca a pornit deja executarea, ai nevoie și de o <a href="/contestatie-la-executare/">contestație la executare</a>, cu cerere de suspendare.</p>
+        <h3>Ce poți cere în instanță</h3>
+        <ul class="chk">
+          <li>Constatarea caracterului abuziv al clauzei.</li>
+          <li>Eliminarea clauzei și recalcularea creditului.</li>
+          <li>Restituirea sumelor plătite nedatorat.</li>
+          <li>Actualizarea sumelor cu inflația.</li>
+          <li>Dobânda legală, dacă este aplicabilă.</li>
+        </ul>
+        <h4>Cât durează procesul</h4>
+        <p>Orientativ, de la câteva luni la peste un an în primă instanță. Apelul adaugă timp. Durata depinde de instanță, de expertiză, de numărul termenelor și de apărările băncii.</p>
+'''+fig(IMG2,'avocat clauze abuzive: etapele contestării, de la analiză la restituire','Cum contești o clauză abuzivă, pas cu pas')
+S8='''        <span class="eyebrow">După anulare</span>
+        <h2>Ce se întâmplă după anularea unei clauze abuzive</h2>
+        <p>Clauza constatată abuzivă nu mai produce efecte față de tine, de la semnare. Banca nu o mai poate aplica. Sumele plătite în baza ei trebuie restituite, de regulă cu dobânda legală. Restul contractului rămâne valabil. Continui să plătești creditul, dar fără costul eliminat.</p>
+        <h3>Clauza nu mai produce efecte</h3>
+        <p>Contractul continuă fără clauză, dacă poate funcționa așa. Comisionul dispare din rată. Banca emite un scadențar nou.</p>
+        <h3>Recuperarea banilor plătiți</h3>
+        <p>Restituirea acoperă sumele achitate în baza clauzei, actualizate și cu dobânzi. Calculul pornește de la extrase și de la scadențare. Atenție la prescripție. Termenul general este de 3 ani (art. 2517 Cod civil). După C-698/18, el nu curge automat de la fiecare plată, iar momentul exact de început îl stabilești cu avocatul, pe cazul tău.</p>
+        <h4>Contractul poate fi anulat integral</h4>
+        <p>Doar excepțional. Instanța verifică dacă contractul poate continua fără clauza abuzivă. Când clauza ține de obiectul principal, de exemplu moneda creditului, discuția devine mai complexă.</p>'''
+S9='''        <span class="eyebrow">Avocatul</span>
+        <h2>Avocat pentru clauze abuzive și litigii bancare</h2>
+        <p>Un avocat clauze abuzive transformă o nemulțumire într-o cerere precisă. Identifică clauza, temeiul și suma. Calculează dacă procesul merită. Scrie reclamația și acțiunea, cere expertiza și te reprezintă în instanță. Pentru întreaga relație cu banca, vezi și pagina despre <a href="/avocat-specializat-credite-bancare/">avocat specializat credite bancare</a>.</p>
+        <h3>Când ai nevoie de avocat</h3>
+        <ul class="chk">
+          <li>Contractul are multe anexe și acte adiționale.</li>
+          <li>Banca a început executarea silită.</li>
+          <li>Ai plătit sume mari în baza unor comisioane.</li>
+          <li>Banca a refuzat reclamația sau soluționarea amiabilă.</li>
+        </ul>
+        <h3>Ce face avocatul</h3>
+        <p>Analizează contractul și extrasele. Identifică clauzele cu șanse reale. Pregătește acțiunea și probele. Te reprezintă în instanță, inclusiv în apel. Cum verifici rezultatele declarate de un avocat afli în ghidul despre <a href="/avocati-care-au-castigat-procese-cu-bancile/">avocați care au câștigat procese cu băncile</a>.</p>
+        <h4>Procese împotriva băncilor și IFN</h4>
+        <p>Situații tipice (anonimizate):</p>
+        <div class="roles">
+          <div><b>Comisioane</b>Comision de administrare plătit 12 ani. Proba centrală sunt extrasele.</div>
+          <div><b>Dobânzi</b>Dobândă crescută prin notificare, fără indice în contract.</div>
+          <div><b>Executare silită</b>IFN-ul execută contractul, iar clauzele se contestă în paralel.</div>
+          <div><b>Cesiune de creanță</b>Recuperatorul cere penalități calculate după clauza contestată.</div>
+        </div>
+        <p>Consumatorii păstrează de obicei contractul, dar pierd extrasele vechi. Fără ele, calculul devine o estimare.</p>
+        <div class="note dark"><b>Poziția juridică.</b> Reclamația la bancă nu este o formalitate. Ea fixează data la care ai invocat caracterul abuziv și arată poziția băncii. Un refuz motivat superficial este adesea cea mai bună probă că litigiul are sens.</div>'''
+S10='''        <span class="eyebrow">Alte contracte</span>
+        <h2>Clauze abuzive în alte contracte cu consumatorii</h2>
+        <p>Legea nr. 193/2000 se aplică oricărui contract dintre un profesionist și un consumator. Regula rămâne aceeași: profesionistul redactează, tu aderi, iar clauza trebuie să fie clară și echilibrată. Pe lângă credite, problemele apar des în leasing, telefonie, utilități și servicii online.</p>
+        <h3>Contracte de leasing</h3>
+        <p>Costuri neclare la reziliere și la calculul soldului. Penalități disproporționate față de valoarea bunului.</p>
+        <h3>Contracte de telefonie și utilități</h3>
+        <p>Prelungiri automate pe care nu le-ai cerut. Penalități de reziliere și taxe ascunse în condițiile generale.</p>
+        <h4>Contracte online și servicii digitale</h4>
+        <p>Termeni acceptați cu un clic, modificabili oricând de furnizor. Informare insuficientă despre preț și reînnoire.</p>'''
+S11='''        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente ale consumatorilor</h2>
+        <p>Cele mai multe dosare slabe au aceleași cauze: lipsesc documentele, consumatorul a semnat acte adiționale fără să le citească sau a așteptat prea mult. Unii confundă o clauză dezavantajoasă cu una abuzivă. O dobândă mare, dar clar calculată, nu este automat abuzivă.</p>
+        <ul class="ban">
+          <li><strong>Nu păstrează documentele:</strong> extrasele și scadențarele vechi se pierd.</li>
+          <li><strong>Nu citesc actele adiționale:</strong> unele schimbă formula dobânzii.</li>
+          <li><strong>Acceptă costuri neclare:</strong> fără să ceară explicații scrise.</li>
+          <li><strong>Nu acționează la timp:</strong> restituirea se poate prescrie.</li>
+          <li><strong>Confundă dezavantajul cu abuzul:</strong> și cer anularea întregului contract fără temei.</li>
+        </ul>
+        <h3>Concluzie</h3>
+        <p>O clauză abuzivă este o clauză impusă, netransparentă și dezechilibrată. Legea nr. 193/2000 o lipsește de efecte și îți permite să recuperezi banii plătiți. Contractul continuă fără ea. Totul pornește de la analiza contractului și a extraselor. Dacă rata nu mai e sustenabilă, discuția poate include și o <a href="/restructurare-credit-vs-refinantare/">restructurare credit</a>.</p>'''
+S12='''        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Scoate contractul, actele adiționale și scadențarul. Subliniază fiecare comision și formula dobânzii.</li>
+          <li>Cere băncii, în scris, extrasele de cont pentru toată durata creditului.</li>
+          <li>Adună sumele plătite ca „comision” și cere o analiză juridică a clauzelor.</li>
+        </ol>
+        <!--@author practice="litigii bancare" -->'''
+faq=[("Ce sunt clauzele abuzive?","Prevederi nenegociate care creează un dezechilibru semnificativ în defavoarea consumatorului, contrar bunei-credințe. Apar des la dobândă, comisioane, penalități și risc valutar."),
+("Cum știu dacă am clauze abuzive în contractul de credit?","Caută comisioane fără serviciu descris, dobândă fără indice verificabil, penalități mari și dreptul băncii de a schimba unilateral costurile."),
+("Pot da banca în judecată pentru clauze abuzive?","Da. Indici clauza, explici dezechilibrul și ceri suma. Întreabă ce taxe de timbru se plătesc, deoarece unele acțiuni ale consumatorilor beneficiază de scutiri."),
+("Ce comisioane bancare pot fi considerate abuzive?","Cel mai des: comisionul de risc, de administrare, de acordare și cel de rambursare anticipată excesiv. Decide contractul concret."),
+("Pot recupera banii plătiți în baza unei clauze abuzive?","Da, de regulă cu dobânda legală. Contează probele și prescripția, care curge de când ai cunoscut caracterul abuziv."),
+("Se poate anula tot contractul de credit?","Rar. Contractul continuă dacă poate funcționa fără clauza abuzivă (art. 6 din Legea nr. 193/2000)."),
+("Cât durează un proces pentru clauze abuzive?","De la câteva luni la peste un an în primă instanță, plus apelul. Expertiza prelungește de obicei procesul."),
+("Ce acte sunt necesare pentru verificarea contractului?","Contractul, actele adiționale, scadențarele, extrasele de cont și notificările primite de la bancă sau IFN."),
+("Se aplică legea și contractelor cu IFN?","Da, dacă ai contractat ca persoană fizică, în afara activității profesionale. Pentru firme se aplică alte reguli."),
+("Instanța poate verifica din oficiu clauzele abuzive?","Da. Potrivit CJUE, instanța trebuie să le verifice din oficiu când are elementele necesare. Totuși, vino cu acte și calcule.")]
+P=dict(slug='avocat-clauze-abuzive',crumb='Avocat clauze abuzive',
+ title='Avocat clauze abuzive: contracte bancare și de credit',
+ desc='Avocat clauze abuzive: cum recunoști comisioanele și dobânzile abuzive, cum le contești și ce sume poți recupera de la bancă sau IFN.',
+ nav='#calculator|Calculator;#ce-sunt|Ce sunt;#bancare|În bănci;#contestare|Cum contești;#intrebari|Întrebări',
+ images=[IMG1,IMG2],
+ hero=dict(eyebrow='Legea 193/2000 · comisioane · dobânzi · penalități',
+  h1='Avocat clauze abuzive: <span class="accent">cum contești clauzele din contractele bancare și de credit</span>',
+  lead=['Plătești de zece ani același credit. Pe extras apare lunar un „comision de administrare”. Nimeni nu ți-a spus vreodată pentru ce serviciu îl plătești.',
+        'Aici afli ce este o <strong>clauză abuzivă</strong> după Legea nr. 193/2000 și cum o găsești în contractul tău. Vezi ce poți cere de la bancă, ce termene contează și când are sens un avocat pentru clauze abuzive.'],
+  meta2='Prescripția generală: 3 ani',cta='Calculează comisionul plătit',
+  answer='O clauză abuzivă este o prevedere pe care nu ai negociat-o și care creează un dezechilibru semnificativ în defavoarea ta, contrar bunei-credințe. Instanța o poate declara abuzivă: clauza nu mai produce efecte, iar banii plătiți în baza ei pot fi ceruți înapoi. Contractul rămâne, de regulă, în vigoare, iar datoria nu se șterge.',
+  opts=[('Rămâne','contractul, fără clauza abuzivă'),('Se poate cere','restituirea sumelor plătite')]),
+ calc_html=calc,js=js,
+ sections=[('raspuns','Răspuns rapid',S1),('ce-sunt','Ce sunt clauzele abuzive',S2),('bancare','În contractele bancare',S3),('verificare','Cum verifici contractul',S4),('legea','Ce spune legea',S5),('jurisprudenta','Jurisprudență',S6),('contestare','Cum se contestă',S7),('dupa','După anulare',S8),('avocat','Avocat clauze abuzive',S9),('alte','Alte contracte',S10),('greseli','Greșeli frecvente',S11),('azi','Ce faci azi',S12)],
+ faq=faq,faq_h2='Întrebări frecvente despre clauze abuzive',
+ contact=dict(h2='Ce clauze pot fi contestate în contractul tău?',lead='Trimite-ne contractul de credit și ultimele extrase. Îți spunem ce clauze pot fi contestate și cât ai plătit în baza lor. Consultația nu te obligă la nimic.',nav='/|Acasă;/avocat-specializat-credite-bancare/|Avocat credite bancare;#intrebari|Întrebări;#contact|Contact',note='Consultarius nu este afiliat băncilor. Calculele sunt orientative.'),
+ howto=dict(name='Cum contești o clauză abuzivă',steps=[('Analiza contractului','Identifici clauza exactă și temeiul juridic.'),('Calculul sumelor','Stabilești cât ai plătit în baza clauzei, din extrase.'),('Reclamația la bancă','Trimiți o reclamație scrisă, cu clauzele contestate și suma cerută.'),('Acțiunea în instanță','Ceri constatarea caracterului abuziv, eliminarea clauzei și restituirea sumelor.')]),
+ knows=['Clauze abuzive','Drept bancar','Legea 193/2000','Litigii bancare'])
+if __name__=='__main__':
+    open('/home/user/work/chinsolvency/avocat-clauze-abuzive.src.html','w',encoding='utf-8').write(build(P))

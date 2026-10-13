@@ -1,0 +1,231 @@
+import sys,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from mk import *
+IMG1='problemele-cu-banca-ce-face-avocatul.webp'; IMG2='litigiul-bancar-de-la-consultatie-la-hotarare.webp'
+calc='''<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>Cât te costă un comision abuziv și <span class="accent">până când poți contesta</span></h2></div>
+      <p>Introdu creditul și comisionul din contract. Afli cât ai plătit doar comision și ce parte din împrumut reprezintă. Opțional, adaugă data somației sau a primei rețineri pentru termenul de contestație.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Creditul și comisionul</div>
+          <div class="field"><label for="f-s">Suma creditului (lei)</label><div class="inp"><input id="f-s" inputmode="numeric" placeholder="150000"></div></div>
+          <div class="field"><label for="f-c">Comision lunar la suma inițială (%)</label><div class="inp"><input id="f-c" inputmode="decimal" placeholder="0,2"></div></div>
+          <div class="field"><label for="f-l">Durata (luni)</label><div class="inp"><input id="f-l" inputmode="numeric" placeholder="120"></div></div>
+          <div class="field"><label for="f-p">Luni deja plătite (opțional)</label><div class="inp"><input id="f-p" inputmode="numeric" placeholder="0"></div></div>
+          <div class="grp">Executare silită (opțional)</div>
+          <div class="field full"><label for="f-d">Data somației sau a primei rețineri din salariu</label><div class="inp"><input type="date" id="f-d"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: 150.000 lei, 0,2%, 120 luni</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Comision total pe toată durata</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Completați suma, comisionul și durata.</span></div>
+            <div class="opt" id="c-m"><span class="k">Pe lună</span><span class="v" id="o-m">—</span><span class="s" id="o-ms">Calculat la suma inițială.</span></div>
+            <div class="opt" id="c-r"><span class="k">Din suma împrumutată</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">Peste dobândă.</span></div>
+            <div class="opt full" id="c-pl"><span class="k">Comision deja plătit</span><span class="v" id="o-pl">—</span><span class="s" id="o-pls">Sumă pe care o poți cere înapoi dacă instanța constată clauza abuzivă, în limita prescripției.</span></div>
+            <div class="opt full" id="c-x"><span class="k">Contestația la executare: depune până cel târziu pe</span><span class="v" id="o-x">—</span><span class="s" id="o-xs">Termen general: 15 zile (art. 715 CPC).</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne contractul spre analiză</a>
+          <span class="disc">Calcul orientativ, pe zile calendaristice. Termenul procedural se numără după regulile Codului de procedură civilă, deci depune cu cel puțin o zi înainte. Nu știm dacă clauza ta e abuzivă: asta se stabilește după analiza contractului.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>'''
+js=r'''  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/\s/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var s=num('f-s'),c=num('f-c'),l=num('f-l'),p=num('f-p')||0;
+    if(s>0&&c>0&&l>0){
+      var m=s*c/100,t=m*l,r=t/s*100;
+      $('o-t').textContent=lei(t);$('o-ts').textContent='Comision lunar × '+l+' luni, fără dobândă.';cls('c-t','alert');
+      $('o-m').textContent=lei(m);$('o-r').textContent=r.toFixed(0).replace('.',',')+'%';
+      if(p>0){var pl=m*Math.min(p,l);$('o-pl').textContent=lei(pl);$('o-pls').textContent='După '+Math.min(p,l)+' luni plătite. Se poate cere înapoi doar dacă instanța constată clauza abuzivă, în limita prescripției.'}
+      else{$('o-pl').textContent='—';$('o-pls').textContent='Introdu lunile deja plătite.'}
+    }else{$('o-t').textContent='—';$('o-ts').textContent='Completați suma, comisionul și durata.';cls('c-t');$('o-m').textContent='—';$('o-r').textContent='—';$('o-pl').textContent='—';$('o-pls').textContent='Sumă pe care o poți cere înapoi dacă instanța constată clauza abuzivă, în limita prescripției.'}
+    var d=$('f-d').value;
+    if(d){var e=dt(d);e.setUTCDate(e.getUTCDate()+15);$('o-x').textContent=fmt(e);cls('c-x','alert');$('o-xs').textContent='15 zile de la '+fmt(dt(d))+'. Cere și suspendarea executării odată cu contestația (art. 719 CPC).'}
+    else{$('o-x').textContent='—';cls('c-x');$('o-xs').textContent='Termen general: 15 zile (art. 715 CPC).'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-c','f-l','f-p','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-s').value='150000';$('f-c').value='0,2';$('f-l').value='120';$('f-p').value='36';$('f-d').value='';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});'''
+S1='''        <span class="eyebrow">Ce face</span>
+        <h2>Avocat credite și litigii bancare: ce face și când ai nevoie</h2>
+        <p>Un avocat specializat în credite bancare citește contractul tău ca pe o probă. Verifică dobânda, comisioanele, scadențarul, notificările și actele de executare. Apoi îți spune ce se poate contesta, ce se poate negocia și ce termene curg deja. Ai nevoie de el când suma cerută nu se explică sau când a început executarea.</p>
+        <p>Problemele cu banca sunt de trei feluri. <strong>Contractuale:</strong> clauze neclare, comisioane, dobândă modificată. <strong>Procesuale:</strong> somație, poprire, executare silită. <strong>Financiare:</strong> nu mai poți plăti rata. Fiecare are alt instrument juridic.</p>
+        <p>Când e necesar avocatul? Când banca refuză explicații în scris. Când primești acte de la executor. Când datoria a fost cesionată și nu știi cât datorezi. Când ți se propune un act adițional „urgent”.</p>
+        <h3>Tipuri de litigii bancare</h3>
+        <ul class="chk">
+          <li><strong>Clauze abuzive credit:</strong> comision de administrare, comision de risc, dobândă stabilită discreționar, risc valutar (CHF). Detalii în ghidul <a href="/avocat-clauze-abuzive/">avocat clauze abuzive</a>.</li>
+          <li><strong>Executare silită bancă:</strong> contestarea somației, a popririi sau a vânzării unui bun. Vezi <a href="/contestatie-la-executare/">contestație la executare</a>.</li>
+          <li><strong>Dobânzi:</strong> dobânda variabilă trebuie legată de un indice verificabil, nu de decizia băncii (OUG nr. 50/2010).</li>
+          <li><strong>Litigii IFN și cesiuni:</strong> costuri excesive, creanțe vândute unui recuperator, sume care nu se pot verifica.</li>
+        </ul>
+        <h4>Exemple concrete</h4>
+        <p>Un comision lunar de „administrare” calculat la suma inițială, deși soldul scade. O dobândă care crește, deși indicele de referință a scăzut. O somație pentru o sumă care include penalități neexplicate. În toate trei, discuția nu e doar despre bani. Este despre transparența contractului.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Să zicem că ai luat 150.000 lei pe 10 ani. Contractul prevede un comision de administrare de 0,2% pe lună, la suma inițială. Asta înseamnă 300 lei pe lună. În 120 de luni plătești 36.000 lei doar comision. Adică 24% din suma împrumutată, peste dobândă.</p>
+          <p>Dacă instanța constată clauza abuzivă, aceste sume se pot cere înapoi, în limita prescripției.</p>
+          <span class="formula">150.000 × 0,2% = 300 lei/lună · 300 × 120 = 36.000 lei · 36.000 / 150.000 = 24%</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>'''
+S2='''        <span class="eyebrow">Servicii</span>
+        <h2>Servicii oferite de un avocat credite</h2>
+        <p>Serviciile juridice bancare acoperă tot drumul: analiza contractului, consultanță, notificări, negociere cu banca, contestație la executare, proces împotriva băncii, dare în plată și insolvență. Un avocat bun nu le vinde pe toate. Îți recomandă instrumentul potrivit pentru situația ta, cu riscurile și costurile lui.</p>
+        <h3>Consultanță juridică</h3>
+        <p>Consultanța juridică pentru credite este o analiză pe acte, nu o discuție generală. Avocatul compară contractul cu scadențarul și cu extrasele. Caută clauze abuzive, sume calculate greșit și termene care curg. La final primești un plan scris: ce contești, ce negociezi, ce riscuri ai.</p>
+        <h3>Reprezentare în instanță</h3>
+        <p>Când negocierea nu ajunge, avocatul redactează cererea de chemare în judecată sau contestația. Cere probe: expertiză contabilă, înscrisuri de la bancă. Te reprezintă la termene și în căile de atac. Judecătorul are nevoie de o cronologie clară, nu de o poveste lungă.</p>
+        <h4>Negociere cu banca</h4>
+        <p>Negocierea merge când vrei să plătești în continuare, dar în condiții suportabile. Poți cere reeșalonare, perioadă de grație sau renunțarea la unele costuri. Variantele sunt descrise în ghidul <a href="/restructurare-credit-vs-refinantare/">restructurare credit</a>. O cerere scrisă, cu argument juridic, primește alt răspuns decât un telefon.</p>'''
+S3='''        <span class="eyebrow">Cum te ajută</span>
+        <h2>Cum te ajută un avocat în conflictele cu banca</h2>
+        <p>Avocatul te ajută în trei feluri concrete. Verifică dacă datoria cerută este corectă. Oprește temporar executarea, dacă există motive. Elimină efectele clauzelor abuzive. Și te împiedică să semnezi din frică un act care îți înrăutățește poziția. Pentru mulți clienți, ultimul punct contează cel mai mult.</p>
+        <h3>Reducerea datoriilor</h3>
+        <p><strong>Strategii:</strong> recalcularea debitului după eliminarea costurilor nelegale, negocierea, darea în plată sau insolvența. Reducerea nu e automată și nu poate fi promisă. Uneori datorezi bani, dar nu suma cerută.</p>
+        <p>Pentru creditele de la IFN-uri și pentru cesionari contează și Legea nr. 243/2024 privind costul total al creditării și cesiunea de creanțe, în vigoare din 11 noiembrie 2024. Ea plafonează dobânda anuală efectivă (BNR + 27 puncte procentuale la creditele de consum, +8 la cele ipotecare). Contractele în derulare la acea dată, cu întârzieri de cel mult 60 de zile, pot fi aduse la conformitate la cererea ta, prin procedura de revizuire din art. 8 și art. 10. Vezi și <a href="/legea-impotriva-recuperatorilor-de-credite/">legea împotriva recuperatorilor de credite</a>.</p>
+        <h3>Suspendarea executării</h3>
+        <p><strong>Proceduri:</strong> contestația la executare se face, de regulă, în 15 zile (art. 715 Cod procedură civilă). La poprirea pe salariu, nu aștepta: termenul curge de când ai aflat de poprire. Odată cu contestația se poate cere suspendarea executării (art. 719 CPC). Instanța o acordă doar pentru motive temeinice și, de regulă, cu cauțiune. Cauțiunea este de 10% din valoarea contestată, pentru sume de până la 10.000 lei, apoi crește în trepte.</p>
+        <h4>Anularea contractelor</h4>
+        <p><strong>Când este posibil:</strong> rar întregul contract, des anumite clauze. Clauzele abuzive nu produc efecte asupra consumatorului. Contractul continuă dacă poate funcționa fără ele (Legea nr. 193/2000, art. 6). Obiectivul realist al unei anulări de contract de credit este eliminarea efectului nelegal, nu ștergerea creditului.</p>
+'''+fig(IMG1,'avocat specializat în credite bancare: clauze abuzive, executare silită, dobânzi','Problemele cu banca: ce face avocatul')
+S4='''        <span class="eyebrow">Procedura</span>
+        <h2>Procedura unui litigiu bancar pas cu pas</h2>
+        <p>Un litigiu bancar are patru etape: analiza actelor, alegerea căii și depunerea cererii, judecata și hotărârea. Înainte de proces se trimite, de obicei, o notificare sau o reclamație la bancă. Dacă executarea a început deja, ritmul se schimbă. Termenul de 15 zile pentru contestație devine prioritatea numărul unu.</p>
+        <h3>Analiza situației</h3>
+        <p><strong>Documente</strong> pe care i le dai avocatului:</p>
+        <ul class="chk">
+          <li>Contractul de credit, actele adiționale și scadențarele, inclusiv cele vechi.</li>
+          <li>Extrasele de cont și dovezile de plată.</li>
+          <li>Notificările băncii: modificări de dobândă, declararea scadenței anticipate, cesiunea.</li>
+          <li>Actele executorului: încheierea de încuviințare, somația, adresa de poprire, cu plicurile.</li>
+          <li>Corespondența cu banca, IFN-ul sau recuperatorul.</li>
+          <li>Raportul din Biroul de Credit, dacă ai fost raportat (vezi <a href="/cerere-de-stergere-din-biroul-de-credit/">ștergere din Biroul de Credit</a>).</li>
+        </ul>
+        <h3>Depunerea acțiunii</h3>
+        <p><strong>Etape:</strong> alegi calea (acțiune în constatarea clauzelor abuzive, contestație la executare, dare în plată). Stabilești temeiul: Legea nr. 193/2000, OUG nr. 50/2010 sau OUG nr. 52/2016, Codul de procedură civilă. Formulezi pretențiile concret: ce clauză, ce sumă, ce soluție ceri. O contestație de contract de credit care spune doar „nu sunt de acord” se respinge.</p>
+        <h3>Judecata</h3>
+        <p><strong>Timeline:</strong> contestația la executare se judecă de urgență și cu precădere (art. 717 CPC). Acțiunea privind clauzele abuzive durează mai mult, mai ales dacă e nevoie de expertiză. Urmează căile de atac.</p>
+        <p>Instanța competentă depinde de valoarea și natura cererii. Judecătoria judecă, în prima instanță, cererile evaluabile în bani de până la 200.000 lei și pe cele neevaluabile în bani (art. 94 CPC); peste acest prag judecă tribunalul. Ca regulă, cererea se depune la instanța de la domiciliul sau sediul pârâtului. Competența exactă în cazul tău o stabilești cu avocatul.</p>
+        <h4>Soluția finală</h4>
+        <p><strong>Tipuri de rezultate:</strong> admitere, admitere parțială sau respingere. La clauze abuzive: constatarea caracterului abuziv, restituirea sumelor, recalcularea ratelor. La executare: anularea unor acte de executare sau a executării. O hotărâre de primă instanță nu este, de regulă, definitivă.</p>
+'''+fig(IMG2,'etapele unui litigiu bancar cu avocat specializat în credite bancare','Litigiul bancar, de la consultație la hotărâre')
+S5='''        <span class="eyebrow">Costuri</span>
+        <h2>Cât costă un avocat pentru credite</h2>
+        <p>Onorariul se stabilește în contractul de asistență juridică, în scris, înainte de începerea lucrului. Prețul depinde de ce faci: o analiză a contractului, o notificare, o contestație cu suspendare sau un proces complet cu expertiză. De aceea nu există un preț corect „din auzite”. Cere o ofertă scrisă după ce avocatul vede actele.</p>
+        <h3>Tipuri de costuri</h3>
+        <p><strong>Fix:</strong> onorariu pentru o etapă (analiză, redactare, reprezentare la prima instanță). <strong>Procent:</strong> Statutul profesiei de avocat interzice pactul de quota litis, adică un onorariu stabilit integral în funcție de rezultat; un onorariu de succes poate fi convenit doar în limitele Statutului. <strong>Cheltuieli externe:</strong> expertiză, copii din dosarul de executare, cauțiune, taxe. În anumite cazuri, acțiunile consumatorilor beneficiază de scutiri de taxă judiciară de timbru; întreabă ce taxe se plătesc în cazul tău.</p>
+        <h4>Factori care influențează prețul</h4>
+        <p><strong>Complexitate:</strong> valoarea datoriei, numărul de creditori, tipul creditului, urgența, existența executării și volumul de acte. Întrebări de pus înainte de semnare: Ce include onorariul? Include apelul? Cine plătește expertiza? Ce se întâmplă dacă banca propune o înțelegere?</p>'''
+S6='''        <span class="eyebrow">Practică</span>
+        <h2>Practica judiciară în litigii bancare</h2>
+        <p>Practica s-a format în jurul a trei teme: transparența clauzelor, restituirea sumelor și termenele. Curtea de Justiție a Uniunii Europene a dat repere obligatorii pentru instanțele românești. Instanțele verifică dacă clientul a putut înțelege consecințele economice ale clauzei. Nu e suficient ca textul să fie corect gramatical.</p>
+        <h3>Cazuri tipice</h3>
+        <p>Situații frecvente (anonimizate):</p>
+        <div class="roles">
+          <div><b>Poprire pe salariu</b>Clientul vine după prima reținere. Prioritatea este contestația în termen și cererea de suspendare.</div>
+          <div><b>Act adițional semnat în grabă</b>Clientul a acceptat o reeșalonare fără să citească noua dobândă. Se analizează ce a recunoscut prin semnătură.</div>
+          <div><b>Creanță cesionată</b>Un recuperator cere o sumă mai mare decât soldul din ultimul extras. Se cere calculul detaliat și actul de cesiune.</div>
+        </div>
+        <h3>Decizii ale instanțelor</h3>
+        <p><strong>Interpretări CJUE:</strong> C-26/13 Kásler (2014) — clauza trebuie să fie clară și sub aspectul consecințelor economice. C-186/16 Andriciuc (20 septembrie 2017) — la creditele în CHF din România, banca trebuia să explice riscul de curs. C-154/15 Gutiérrez Naranjo (2016) — restituirea nu poate fi limitată în timp de judecător. C-698/18 și C-699/18 (9 iulie 2020) — constatarea caracterului abuziv e imprescriptibilă, dar restituirea se poate prescrie. Termenul curge de când ai cunoscut sau trebuia să cunoști caracterul abuziv. Instanțele interne aplică diferit momentul exact de început, deci îl stabilești cu avocatul, în cazul tău.</p>
+        <p><strong>Practică internă:</strong> hotărâri anonimizate găsești pe portal.just.ro. Cere avocatului numerele de dosar ale cazurilor similare, ca să le poți verifica.</p>
+        <h4>Șanse de câștig</h4>
+        <p><strong>Analiză:</strong> nu există procent universal. Contează textul clauzei, probele, termenele respectate și practica instanței tale. Cum verifici ce spune un avocat despre procesele lui afli în ghidul <a href="/avocati-care-au-castigat-procese-cu-bancile/">avocați care au câștigat procese cu băncile</a>. Un avocat care promite rezultatul înainte să vadă contractul îți vinde speranță, nu analiză.</p>'''
+S7='''        <span class="eyebrow">Legislație</span>
+        <h2>Legislație aplicabilă în domeniul bancar</h2>
+        <p>Dreptul financiar bancar aplicat consumatorilor stă pe câteva acte: Codul civil, Legea nr. 193/2000 privind clauzele abuzive, OUG nr. 50/2010 și OUG nr. 52/2016 privind creditele, Codul de procedură civilă pentru executare. În situații speciale se adaugă Legea nr. 77/2016 (darea în plată) și Legea nr. 151/2015 (insolvența persoanelor fizice).</p>
+        <h3>Drept financiar bancar</h3>
+        <p><strong>Cadru legal:</strong> OUG nr. 50/2010 se aplică creditelor de consum, OUG nr. 52/2016 creditelor pentru imobile. Ele cer informare clară înainte de semnare și reguli verificabile pentru dobânda variabilă. Darea în plată are condiții restrânse după Decizia CCR nr. 623/2016.</p>
+        <h3>Protecția consumatorului</h3>
+        <p><strong>Drepturi:</strong> clauze clare și inteligibile; în caz de dubiu, interpretarea în favoarea ta (Legea nr. 193/2000, art. 1). Clauza abuzivă este cea nenegociată direct care creează, contrar bunei-credințe, un dezechilibru semnificativ (art. 4). Prețul și moneda pot fi analizate doar dacă nu sunt redactate clar.</p>
+        <h4>Comparație norme</h4>
+        <p><strong>Legi vs practică:</strong> Codul civil apără forța contractului. Legea nr. 193/2000 corectează dezechilibrul. Codul de procedură civilă îți dă instrumente când executarea a început. Practica CJUE spune cum se citesc toate acestea. Un avocat le folosește împreună, nu pe rând.</p>'''
+S8='''        <span class="eyebrow">Alegerea</span>
+        <h2>Cum alegi un avocat specializat în credite</h2>
+        <p>Alegi după trei lucruri: experiență reală în litigii bancare, felul în care explică riscurile și transparența onorariului. Un avocat serios îți cere actele înainte să promită ceva. Îți spune și ce nu se poate obține. Verifică întâi că este înscris în Tabloul avocaților, pe site-ul baroului sau al UNBR.</p>
+        <h3>Criterii importante</h3>
+        <p><strong>Experiență:</strong> câte dosare de credite a avut și de ce tip: clauze, executare, dare în plată. <strong>Rezultate:</strong> cere hotărâri anonimizate și numerele de dosar, ca să le verifici pe portal.just.ro. Profesia este reglementată de Legea nr. 51/1995. Un avocat nu are voie să-ți garanteze câștigul.</p>
+        <h3>Semne ale unui avocat bun</h3>
+        <p><strong>Transparență:</strong> pune întrebări precise. Când ai primit somația? Ce sumă se cere? Cine e creditorul actual? Există cesiune? Ai poprire? Îți dă un plan scris și un contract cu onorariul detaliat. Răspunde și la întrebarea „ce se întâmplă dacă pierdem”.</p>
+        <h4>Greșeli frecvente</h4>
+        <ul class="ban">
+          <li>Avocatul ales doar după preț.</li>
+          <li>Avocatul care promite „anularea creditului”.</li>
+          <li>Avocatul care nu cere contractul.</li>
+          <li>Alegerea după reclamă, nu după întrebările primite la prima întâlnire.</li>
+        </ul>'''
+S9='''        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente în relația cu banca</h2>
+        <p>Cele mai scumpe greșeli sunt tăcerea și graba. Tăcerea înseamnă notificări ignorate până vine poprirea. Graba înseamnă un act semnat la telefon sau la ghișeu, fără să-l citești. A treia greșeală este să discuți doar verbal. În litigii bancare, un document scris valorează mai mult decât zece promisiuni.</p>
+        <h3>Lipsa consultanței</h3>
+        <p><strong>Riscuri:</strong> termenele curg și fără tine. Contestația la executare are, de regulă, 15 zile. Dacă vii după termen, unele apărări nu mai pot fi folosite. Restituirea sumelor plătite se poate prescrie în timp.</p>
+        <h3>Semnarea contractelor fără analiză</h3>
+        <p><strong>Consecințe:</strong> un act adițional, o recunoaștere de datorie sau o tranzacție pot schimba poziția ta juridică. Uneori confirmă o sumă contestabilă. Prima întrebare pe care o pune un avocat este: ce ai semnat după contractul inițial? Cere timp și ia actul acasă. Banca nu are voie să te oblige să semnezi pe loc.</p>
+        <div class="note dark"><b>Poziția juridică.</b> Valoarea unui avocat specializat în credite bancare se vede înainte de proces, nu doar în instanță. Majoritatea problemelor încep cu un act semnat fără analiză sau cu un termen ratat. O oră de verificare a actelor la timp costă mai puțin decât un an de litigiu.</div>'''
+S10='''        <span class="eyebrow">Alternative</span>
+        <h2>Avantaje față de CSALB și alte alternative</h2>
+        <p>CSALB (Centrul de Soluționare Alternativă a Litigiilor în Domeniul Bancar) rezolvă litigii cu banca în afara instanței, prin conciliatori. Procedura este, de regulă, fără costuri pentru consumator. Diferența: CSALB caută o înțelegere. Avocatul poate negocia, dar poate și contesta executarea, cere suspendarea și merge în instanță.</p>
+        <h3>Când alegi concilierea</h3>
+        <p><strong>Explicație:</strong> banca e dispusă să discute, nu există executare și nu curge un termen procesual scurt. Merge pentru reeșalonări, reduceri de costuri, ajustări amiabile. ANPC poate controla banca, iar BNR o supraveghează, dar niciuna nu îți rezolvă litigiul individual.</p>
+        <h3>Când alegi avocat</h3>
+        <p><strong>Diferențe:</strong> ai executare, poprire sau risc de vânzare a casei. Ai clauze abuzive cu sume mari, o cesiune neclară sau un litigiu cu un IFN. Avocatul poate folosi și CSALB, ca etapă, fără să piardă termenele din instanță.</p>
+        <h4>Comparație directă</h4>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Variantă</th><th>Cost pentru tine</th><th>Durată</th><th>Ce poate obține</th><th>Când o alegi</th></tr></thead>
+          <tbody>
+            <tr><td>Avocat specializat în credite</td><td>Onorariu stabilit prin contract</td><td>Variabilă; executarea are regim de urgență</td><td>Suspendare, anulare acte, restituire, negociere</td><td>Executare, clauze abuzive, sume mari</td></tr>
+            <tr><td>CSALB</td><td>De regulă fără costuri pentru consumator</td><td>De obicei mai scurtă decât instanța</td><td>Doar ce acceptă banca</td><td>Banca vrea să discute, fără termen urgent</td></tr>
+            <tr><td>Negociere directă</td><td>Fără cost</td><td>Depinde de bancă</td><td>Reeșalonare, grație</td><td>Cazuri simple, fără executare</td></tr>
+            <tr><td>Insolvența persoanei fizice</td><td>Costuri de procedură</td><td>Lungă</td><td>Plan de plată, descărcare de datorii</td><td>Supraîndatorare (vezi <a href="/calculator-insolventa/">calculator insolvență</a>)</td></tr>
+          </tbody>
+        </table></div>'''
+S11='''        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Pune într-un dosar contractul, actele adiționale, scadențarele, extrasele și orice act de la executor.</li>
+          <li>Notează data la care ai primit somația sau prima reținere din salariu. De la ea curg cele 15 zile.</li>
+          <li>Nu semna niciun act nou până nu îl verifică un avocat specializat în credite bancare.</li>
+        </ol>
+        <!--@author practice="litigii bancare" -->'''
+faq=[("Când am nevoie de un avocat pentru credite?","Când nu înțelegi suma cerută, banca refuză explicații sau apar somații, popriri și acte de executare. Ideal, înainte ca dosarul să ajungă la executor."),
+("Cât costă un avocat bancar?","Onorariul se stabilește în contract, după complexitate: analiză, notificare, contestație sau proces complet. Cere o ofertă scrisă și întreabă ce include."),
+("Pot câștiga procesul cu banca?","Da, dar nu automat. Depinde de textul contractului, de probe, de termene și de practica instanței."),
+("Ce șanse am în litigii bancare?","Șansele se pot estima doar după analiza actelor. Un avocat serios nu dă procente înainte să vadă contractul și scadențarul."),
+("Cât durează un proces cu banca?","Depinde de instanță, de expertiză și de căile de atac. Contestația la executare se judecă de urgență, dar nu peste noapte."),
+("Ce este o clauză abuzivă?","O clauză nenegociată direct care creează, contrar bunei-credințe, un dezechilibru semnificativ în defavoarea ta (Legea nr. 193/2000, art. 4)."),
+("Pot opri executarea silită?","Temporar, da: ceri suspendarea odată cu contestația la executare (art. 719 CPC). Ai nevoie de motive temeinice și, de regulă, de cauțiune."),
+("Este mai bine CSALB sau avocat?","CSALB, pentru o înțelegere amiabilă fără termene urgente. Avocat, când ai executare, proces, clauze abuzive sau sume mari.")]
+P=dict(slug='avocat-specializat-credite-bancare',crumb='Avocat specializat în credite bancare',
+ title='Avocat specializat în credite bancare: servicii și alegere',
+ desc='Ce face un avocat specializat în credite bancare: analiza contractului, executare, negociere, proces. Ce acte îi dai și cum îl alegi.',
+ nav='#calculator|Calculator;#servicii|Servicii;#procedura|Procedura;#alegi|Cum alegi;#intrebari|Întrebări',
+ images=[IMG1,IMG2],
+ hero=dict(eyebrow='Litigii bancare · executare · clauze abuzive',
+  h1='Avocat specializat în credite bancare <span class="accent">și litigii bancare: servicii și asistență juridică</span>',
+  lead=['Rata ți-a crescut de trei ori în doi ani. Banca îți răspunde cu un formular. Acum a venit și o somație de la executor.',
+        'Aici afli ce face concret un <strong>avocat specializat în credite bancare</strong> și când ai nevoie de el. Vezi ce documente îi aduci, cum decurge colaborarea și cum îl alegi. La final ai trei pași pe care îi poți face chiar azi.'],
+  meta2='Contestația la executare: 15 zile',cta='Calculează comisionul',
+  answer='Un avocat specializat în credite bancare verifică contractul, contestă clauzele abuzive și executarea și negociază cu banca. Ai nevoie de el când suma cerută nu se explică sau când a început executarea. Atenție la termene: contestația la executare se face, de regulă, în 15 zile, iar suspendarea se cere odată cu ea.',
+  opts=[('Contestație','15 zile de la actul de executare'),('Onorariu','stabilit în scris, înainte de lucru')]),
+ calc_html=calc,js=js,
+ sections=[('ce-face','Ce face și când ai nevoie',S1),('servicii','Servicii',S2),('cum-te-ajuta','Cum te ajută',S3),('procedura','Procedura pas cu pas',S4),('cost','Cât costă',S5),('practica','Practica judiciară',S6),('legislatie','Legislație',S7),('alegi','Cum alegi',S8),('greseli','Greșeli frecvente',S9),('alternative','CSALB și alternative',S10),('azi','Ce faci azi',S11)],
+ faq=faq,faq_h2='Întrebări frecvente despre avocat credite',
+ contact=dict(h2='Ce termene curg în cazul tău?',lead='Trimite-ne contractul și ultimele acte primite de la bancă sau de la executor. Îți spunem ce termene curg și ce cale are sens în cazul tău. Consultația nu te obligă la nimic.',nav='/|Acasă;/contestatie-la-executare/|Contestație la executare;#intrebari|Întrebări;#contact|Contact',note='Consultarius nu este afiliat băncilor. Calculele sunt orientative.'),
+ howto=dict(name='Cum decurge un litigiu bancar',steps=[('Analiza actelor','Pui în dosar contractul, scadențarele, extrasele și actele executorului.'),('Alegerea căii și depunerea cererii','Alegi între acțiune în constatarea clauzelor abuzive, contestație la executare sau dare în plată.'),('Judecata','Contestația la executare se judecă de urgență; acțiunea pe clauze abuzive durează mai mult.'),('Hotărârea','Admitere, admitere parțială sau respingere, urmate de căile de atac.')]),
+ knows=['Drept bancar','Clauze abuzive','Executare silită','Litigii bancare'])
+if __name__=='__main__':
+    open('/home/user/work/chinsolvency/avocat-specializat-credite-bancare.src.html','w',encoding='utf-8').write(build(P))

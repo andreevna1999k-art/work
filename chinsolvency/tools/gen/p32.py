@@ -1,0 +1,287 @@
+import sys,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from mk import *
+IMG1='unde-depui-contestatia-pe-situatii.webp'; IMG2='cum-depui-contestatia-pas-cu-pas.webp'
+calc='''<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Calculator</span><h2>La ce instanță depui, <span class="accent">cât plătești și până când</span></h2></div>
+      <p>Alege situația ta, introdu suma contestată și data la care ai primit actul. Afli instanța competentă, taxa de timbru orientativă și ultima zi de depunere.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Situația ta</div>
+          <div class="field full"><label for="f-s">Ce contești</label><div class="inp"><select id="f-s">
+            <option value="0">Executare obișnuită (somație, poprire pe salariu sau cont)</option>
+            <option value="1">Mai mulți debitori, cu domicilii diferite</option>
+            <option value="2">Debitor fără domiciliu în România</option>
+            <option value="3">Imobil în raza altei curți de apel</option>
+            <option value="4">Lămurirea unei hotărâri judecătorești (contestație la titlu)</option>
+            <option value="5">Executare ANAF sau a primăriei</option>
+          </select></div></div>
+          <div class="grp">Suma și data</div>
+          <div class="field"><label for="f-v">Valoarea contestată (lei)</label><div class="inp"><input id="f-v" inputmode="numeric" placeholder="8000"></div></div>
+          <div class="field"><label for="f-d">Data primirii actului</label><div class="inp"><input type="date" id="f-d"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Calculează</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu: poprire de 8.000 lei</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-i"><span class="k">Instanța competentă</span><span class="v" id="o-i" style="font-size:19px">—</span><span class="s" id="o-is">Alege situația ta.</span></div>
+            <div class="opt" id="c-x"><span class="k">Taxa de timbru</span><span class="v" id="o-x">—</span><span class="s" id="o-xs">Cel mult 1.000 lei (art. 10 OUG 80/2013).</span></div>
+            <div class="opt" id="c-t"><span class="k">Depune până cel târziu pe</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">15 zile libere.</span></div>
+          </div>
+          <a href="http://chat.la.co.ua/o1r0iw" target="_blank" rel="noopener" class="btn btn-primary">Trimite-ne încheierea de încuviințare</a>
+          <span class="disc">Calcul orientativ. Instanța exactă o vezi în încheierea de încuviințare a executării. Taxa nu include cererea de suspendare (50 lei) și cauțiunea. Dacă ultima zi cade sâmbătă sau duminică, termenul se prelungește până luni; sărbătorile legale nu sunt luate în calcul aici. Depune cu cel puțin o zi înainte.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>'''
+js=r'''  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  var ZI=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
+  function lei(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' lei'}
+  function num(id){var v=($(id).value||'').replace(/[\s.]/g,'').replace(',','.');return v===''?null:parseFloat(v)}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function taxa(v){var t;if(v<=500)t=Math.max(20,0.08*v);else if(v<=5000)t=40+0.07*(v-500);else if(v<=25000)t=355+0.05*(v-5000);else t=1355;return Math.min(t,1000)}
+  var INST=[
+   ['Judecătoria domiciliului tău','Domiciliul de la data când creditorul a sesizat executorul, nu biroul executorului (art. 651 și art. 714 CPC).'],
+   ['Judecătoria care a încuviințat executarea','Regula pentru mai mulți debitori cu domicilii diferite, potrivit RIL nr. 20/2021 a ÎCCJ.'],
+   ['Judecătoria domiciliului sau sediului creditorului','Dacă nici creditorul nu e în țară: judecătoria biroului executorului (art. 651 alin. (1) CPC).'],
+   ['La alegere: instanța de executare sau judecătoria locului imobilului','Când imobilul e în raza altei curți de apel (art. 714 CPC).'],
+   ['Instanța care a pronunțat hotărârea','Contestația la titlu (art. 714 CPC). Dacă titlul e un contract de credit, rămâne instanța de executare.'],
+   ['Instanța judecătorească competentă, în practică judecătoria debitorului','Executarea fiscală urmează Codul de procedură fiscală; verifică instanța și termenul cu avocatul.']];
+  function calc(){
+    var s=parseInt($('f-s').value,10),v=num('f-v'),d=$('f-d').value;
+    $('o-i').textContent=INST[s][0];$('o-is').textContent=INST[s][1];
+    if(v>0){$('o-x').textContent=lei(taxa(v));$('o-xs').textContent=(v>25000?'La '+lei(v)+', grila ar depăși plafonul; se aplică plafonul de 1.000 lei.':'Grila din OUG 80/2013, cu plafon de 1.000 lei.');}
+    else{$('o-x').textContent='—';$('o-xs').textContent='Cel mult 1.000 lei (art. 10 OUG 80/2013).'}
+    if(d){var e=dt(d);e.setUTCDate(e.getUTCDate()+16);var w=e.getUTCDay();if(w===6)e.setUTCDate(e.getUTCDate()+2);else if(w===0)e.setUTCDate(e.getUTCDate()+1);
+      $('o-t').textContent=fmt(e);cls('c-t','alert');$('o-ts').textContent=ZI[e.getUTCDay()]+'; 15 zile libere după '+fmt(dt(d))+'.'}
+    else{$('o-t').textContent='—';cls('c-t');$('o-ts').textContent='15 zile libere.'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-s','f-v','f-d'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-s').value='0';$('f-v').value='8000';$('f-d').value='2026-10-12';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+  calc();'''
+S1='''        <span class="eyebrow">Pe scurt</span>
+        <h2>Unde se depune contestația la executare: răspuns rapid</h2>
+        <p>Contestația la executare se depune la instanța de executare. Aceasta este judecătoria în a cărei circumscripție se afla domiciliul sau sediul debitorului la data când creditorul l-a sesizat pe executor (art. 651 alin. (1) și art. 714 alin. (1) CPC). Nu contează unde are biroul executorul. Termenul general este de 15 zile.</p>
+        <p>Contestația nu oprește singură executarea. Pentru asta ceri, la aceeași instanță, <a href="/amanare-executare-silita/">suspendarea executării silite</a>. Șansele de anulare depind de acte: titlu, comunicări, sume, prescripție. Pentru imaginea de ansamblu, vezi ghidul despre <a href="/contestatie-la-executare/">contestație la executare</a>.</p>'''
+S2='''        <span class="eyebrow">Definiție</span>
+        <h2>Ce înseamnă contestația la executare silită</h2>
+        <p>Contestația la executare este procesul prin care ceri instanței să verifice executarea silită. Poți ataca executarea însăși, încheierile executorului sau orice act de executare (art. 712 CPC). Poți cere și lămurirea titlului executoriu. Felul contestației contează: el stabilește, în unele cazuri, altă instanță.</p>
+        <h3>Ce este executarea silită</h3>
+        <p>Creditorul își recuperează banii prin executorul judecătoresc: somație, poprire, urmărirea bunurilor. Executarea pornește numai cu titlu executoriu și cu încuviințarea judecătoriei. Etapele sunt în pagina despre <a href="/procedura-executare-silita-etape/">procedura executării silite</a>.</p>
+        <h3>Cine poate face contestație</h3>
+        <p>Debitorul, cel mai des. Apoi garantul sau codebitorul urmărit. Poate contesta și un terț care pretinde un drept asupra bunului urmărit, de exemplu proprietarul real al mașinii sechestrate. Oricine a fost vătămat printr-un act de executare are interes să conteste.</p>
+        <h4>Exemple practice</h4>
+        <p>Situații tipice (anonimizate):</p>
+        <div class="roles">
+          <div><b>Mutare după sesizare</b>Debitor mutat din Brașov în București după sesizarea executorului: instanța rămâne Brașov.</div>
+          <div><b>Mai mulți debitori</b>Codebitori cu domicilii diferite: judecătoria care a încuviințat executarea.</div>
+          <div><b>Imobil în alt județ</b>Apartament în Constanța, debitor în București: ai de ales între două judecătorii.</div>
+        </div>'''
+S3='''        <span class="eyebrow">Motive</span>
+        <h2>Motive pentru contestație la executare silită</h2>
+        <p>Motivul nu schimbă, de regulă, instanța: toate se judecă la instanța de executare. Excepția este contestația la titlu, când ceri lămurirea unei hotărâri judecătorești. Atunci competentă este instanța care a dat hotărârea. De aceea stabilești întâi ce contești: executarea, un act anume sau înțelesul titlului.</p>
+        <h3>Prescripția executării silite</h3>
+        <p>Dreptul de a cere executarea se prescrie, ca regulă, în 3 ani (art. 706 CPC). O invoci la instanța de executare.</p>
+        <h3>Lipsa titlului executoriu</h3>
+        <p>Executarea se face numai în baza unui titlu executoriu (art. 632 CPC). Dacă titlul nu e o hotărâre judecătorească, îl poți contesta și pe fond, în lipsa altei căi de atac (art. 713 CPC).</p>
+        <h3>Erori procedurale</h3>
+        <p>Somație necomunicată, poprire peste limite, cheltuieli umflate, executor necompetent.</p>
+        <h3>Clauze abuzive în contract</h3>
+        <p>Când titlul e un contract de credit, instanța de executare poate verifica și clauzele abuzive. CJUE a decis așa în cauza C-725/19 Impuls Leasing România (17 mai 2022). Vezi și <a href="/avocat-clauze-abuzive/">avocat clauze abuzive</a>.</p>
+        <h4>Alte motive de anulare</h4>
+        <p>Datoria plătită, cesiune nedovedită, bun neurmăribil. Lista completă e în ghidul general.</p>'''
+S4='''        <span class="eyebrow">Procedura</span>
+        <h2>Procedura contestației la executare pas cu pas</h2>
+        <p>Procedura are patru pași: stabilești instanța, redactezi cererea, plătești taxa, depui și păstrezi dovada. Instanța o afli din încheierea de încuviințare a executării, care numește judecătoria. Cererea respectă forma unei cereri de chemare în judecată (art. 716 și art. 194 CPC). Termenul de 15 zile curge în tot acest timp.</p>
+        <h3>Redactarea contestației</h3>
+        <p>Scrii cererea către judecătoria competentă. Arăți părțile, dosarul de executare, actele contestate, motivele și probele. Dacă nu locuiești în localitatea instanței, îți poți alege acolo un domiciliu procesual (art. 716 CPC). Dacă vrei și suspendarea, o ceri în aceeași cerere sau separat.</p>
+        <h3>Instanța competentă</h3>
+        <p>Regula are o singură întrebare: unde locuia debitorul când creditorul a sesizat executorul? Judecătoria de atunci este instanța de executare. Biroul executorului, sediul băncii sau locul unde ai semnat contractul nu contează. Dacă te-ai mutat după sesizare, mergi tot la judecătoria vechiului domiciliu.</p>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Situația ta</th><th>Unde depui</th><th>Temei</th></tr></thead>
+          <tbody>
+            <tr><td>Executare obișnuită (somație, poprire pe salariu sau cont)</td><td>Judecătoria domiciliului tău de la data sesizării executorului</td><td>Art. 651 alin. (1), art. 714 alin. (1) CPC</td></tr>
+            <tr><td>Mai mulți debitori, cu domicilii diferite</td><td>Judecătoria care a încuviințat executarea</td><td>Decizia ÎCCJ (RIL) nr. 20/2021</td></tr>
+            <tr><td>Debitor fără domiciliu în România</td><td>Judecătoria domiciliului sau sediului creditorului; dacă nici el nu e în țară, cea a biroului executorului</td><td>Art. 651 alin. (1) CPC</td></tr>
+            <tr><td>Imobil aflat în raza altei curți de apel</td><td>La alegere: instanța de executare sau judecătoria locului imobilului</td><td>Art. 714 CPC</td></tr>
+            <tr><td>Lămurirea unei hotărâri judecătorești (contestație la titlu)</td><td>Instanța care a pronunțat hotărârea</td><td>Art. 714 CPC</td></tr>
+            <tr><td>Executare ANAF sau a primăriei</td><td>Instanța judecătorească competentă, în practică judecătoria debitorului</td><td>Codul de procedură fiscală</td></tr>
+          </tbody>
+        </table></div>
+        <h4>Cum afli judecătoria</h4>
+        <p>Deschide încheierea de încuviințare primită de la executor. Antetul numește judecătoria care a încuviințat executarea. De regulă, ea este și instanța de executare. Dacă nu ai încheierea, verifici ce judecătorie are în circumscripție localitatea ta pe portal.just.ro sau pe site-ul judecătoriei. În București, contează sectorul: Judecătoria Sectorului 1–6.</p>
+        <h4>Excepțiile: contestația la titlu, imobilul, poprirea</h4>
+        <p>Contestația la titlu merge la instanța care a dat hotărârea, chiar dacă e tribunal sau curte de apel. Dacă titlul e un contract de credit, rămâne instanța de executare. La poprire nu mai ai opțiuni: se aplică doar regula domiciliului debitorului.</p>
+        <h4>Executarea fiscală: ANAF și primăria</h4>
+        <p>Executarea pornită de ANAF sau de primărie urmează Codul de procedură fiscală, cu reguli proprii pentru contestație. Termenul este, de regulă, tot de 15 zile, iar instanța competentă este instanța judecătorească, în practică judecătoria domiciliului sau sediului debitorului. Verifică ambele cu un avocat înainte de a depune. Dacă nu ești de acord cu suma din decizia de impunere, calea este contestația fiscală la ANAF, nu contestația la executare.</p>
+'''+fig(IMG1,'unde se depune contestația la executare — judecătoria competentă în funcție de situație','Unde depui contestația, pe situații')+'''
+        <h3>Depunerea actelor</h3>
+        <p>Depui contestația la registratura judecătoriei, prin poștă cu confirmare de primire sau prin curier. Actul trimis prin poștă sau curier în termen se consideră făcut în termen (art. 183 CPC). Multe instanțe primesc cereri și prin e-mail sau prin aplicații electronice; verifică pe site-ul judecătoriei. Păstrezi recipisa sau confirmarea de primire.</p>
+        <p>Anexezi:</p>
+        <ul class="chk">
+          <li>actele de executare primite: somația, adresa de poprire, încheierea de încuviințare;</li>
+          <li>titlul executoriu, dacă îl ai, sau contractul;</li>
+          <li>dovezile pentru motive: extrase, chitanțe, acte de domiciliu;</li>
+          <li>dovada plății taxei de timbru;</li>
+          <li>copii pentru fiecare parte.</li>
+        </ul>
+        <p>Nu ai tot dosarul de executare? Instanța îl cere executorului, în copie certificată (art. 717 CPC). Costul copiilor îl suporți tu.</p>
+        <h4>Judecata contestației</h4>
+        <p>Contestația se judecă de urgență și cu precădere, cu citarea părților. Creditorul depune întâmpinare. Hotărârea poate fi atacată numai cu apel (art. 718 CPC). Dacă ai depus la judecătoria greșită, ea își declină competența și trimite dosarul la instanța bună. Executarea continuă între timp.</p>'''
+S5='''        <span class="eyebrow">Termen</span>
+        <h2>Termenul pentru contestație la executare</h2>
+        <p>Ai 15 zile de la data când ai primit somația sau încheierea de încuviințare ori ai aflat de actul contestat (art. 715 CPC). La poprire, termenul curge de la comunicarea popririi sau, cel târziu, de la prima reținere. Termenul se calculează pe zile libere. Nu îl consuma căutând instanța.</p>
+        <h3>Regula termenului de 15 zile</h3>
+        <p>Nu se socotesc nici ziua în care începe, nici ziua în care se împlinește (art. 181 CPC). Dacă ultima zi e nelucrătoare, termenul se prelungește până la prima zi lucrătoare. Exemplele de calcul sunt în pagina despre <a href="/termen-contestatie-la-executare/">termen contestație la executare</a>.</p>
+        <h3>Excepții și situații speciale</h3>
+        <ul class="chk">
+          <li><strong>Încheierile executorului</strong> care nu sunt definitive: 15 zile de la comunicare (art. 715 alin. (2) CPC).</li>
+          <li><strong>Contestația la titlu:</strong> oricând, cât timp nu s-a prescris dreptul de a cere executarea.</li>
+          <li><strong>Terțul</strong> care pretinde un drept asupra bunului: în cursul executării, dar cel târziu în 15 zile de la vânzare.</li>
+          <li><strong>Executarea fiscală:</strong> regulile sunt în Codul de procedură fiscală; verifică termenul cu un avocat.</li>
+        </ul>
+        <h4>Riscurile depășirii termenului</h4>
+        <p>Contestația tardivă se respinge fără analiza motivelor. Zilele se pierd de obicei la început: debitorul sună executorul, așteaptă, caută instanța. Depune în termen și completează apoi motivele.</p>'''
+S6='''        <span class="eyebrow">Suspendare</span>
+        <h2>Suspendarea executării silite</h2>
+        <p>Suspendarea oprește temporar executarea până la judecarea contestației. O ceri la aceeași instanță, în contestație sau prin cerere separată (art. 719 CPC). Instanța o acordă pentru motive temeinice și, de regulă, cu plata unei cauțiuni. Taxa pentru cererea de suspendare este de 50 de lei.</p>
+        <h3>Cum se obține suspendarea</h3>
+        <p>Arăți prejudiciul greu de reparat: cont blocat, salariu reținut, vânzarea locuinței. Atașezi dovada cauțiunii.</p>
+        <h3>Condiții pentru suspendare</h3>
+        <p>Ai nevoie de motive temeinice și de cauțiune. Suspendarea e obligatorie, fără cauțiune, în câteva cazuri: titlul nu e executoriu, titlul a fost declarat fals în primă instanță sau ai un act autentic prin care creditorul ți-a dat amânare (art. 719 CPC).</p>
+        <h4>Cauțiunea</h4>
+        <p>Se calculează procentual din valoarea contestată, după grila din art. 719 alin. (2) CPC: 10% până la 10.000 lei, apoi 1.000 lei plus 5% din ce depășește 10.000 lei, și așa mai departe în trepte. În caz urgent, după plata cauțiunii, poți obține suspendarea provizorie, fără citarea părților. Detalii și calcul în ghidul <a href="/avocat-contestatie-executare-silita/">avocat contestație executare silită</a>.</p>'''
+S7='''        <span class="eyebrow">Durată</span>
+        <h2>Cât durează contestația la executare silită</h2>
+        <p>Legea cere judecarea contestației de urgență și cu precădere. Durata reală depinde de instanță, de cât de repede trimite executorul dosarul și de probe. Apelul adaugă timp. Cea mai evitabilă întârziere este instanța greșită: declinarea poate adăuga săptămâni sau luni.</p>
+        <h3>Durata procesului</h3>
+        <p>Cererea de suspendare se judecă, de regulă, înaintea contestației.</p>
+        <h3>Factori care influențează durata</h3>
+        <p>Încărcarea instanței, numărul debitorilor, expertiza contabilă, conflictele de competență.</p>'''
+S8='''        <span class="eyebrow">Costuri</span>
+        <h2>Costuri contestație executare silită</h2>
+        <p>La depunere plătești taxa judiciară de timbru. Ea se calculează la valoarea bunurilor urmărite sau a debitului, dacă acesta e mai mic, dar nu poate depăși 1.000 de lei (art. 10 OUG nr. 80/2013). Cererea de suspendare costă 50 de lei.</p>
+        <h3>Taxa de timbru</h3>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Ai o poprire pentru 8.000 de lei. Taxa se aplică după grila din art. 3 OUG nr. 80/2013: 355 lei plus 5% din ce depășește 5.000 lei. Adică 355 + 150 = 505 lei. Ceri și suspendarea: încă 50 de lei. Total la registratură: 555 de lei, plus cauțiunea.</p>
+          <p>La o poprire de 40.000 de lei, grila ar da 1.805 lei, dar plafonul te oprește la 1.000 de lei.</p>
+          <span class="formula">355 + 5% × 3.000 = 505 lei · 505 + 50 = 555 lei · la 40.000 lei: plafon 1.000 lei</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <h3>Onorariu avocat</h3>
+        <p>Se stabilește după acte. Prima analiză a dosarului o faci gratuit, în consultație.</p>
+        <h4>Cost total estimativ</h4>
+        <p>Taxa, cauțiunea, copiile dosarului și onorariul. Dacă câștigi, ceri cheltuielile de judecată de la creditor.</p>
+'''+fig(IMG2,'unde se depune contestația la executare — pașii de depunere, de la instanță la dovada depunerii','Cum depui contestația, pas cu pas')
+S9='''        <span class="eyebrow">Șanse</span>
+        <h2>Șanse de câștig în contestația la executare</h2>
+        <p>Șansele cresc când viciul se vede din acte: titlu lipsă, prescripție, comunicare greșită, sumă calculată greșit. Scad când termenul a trecut sau când contești doar faptul că datoria e mare. O contestație depusă la instanța bună, în termen, își păstrează toate motivele.</p>
+        <h3>Factori decisivi</h3>
+        <p>Prescripția, dovezile de comunicare, titlul și calculul sumei.</p>
+        <h3>Situații cu șanse mari</h3>
+        <p>Prescripție evidentă, cesiune fără dovadă, poprire peste limitele legale.</p>
+        <h4>Riscuri și limite</h4>
+        <p>Nimeni nu poate garanta rezultatul.</p>'''
+S10='''        <span class="eyebrow">Practică</span>
+        <h2>Practica judiciară și jurisprudența relevantă</h2>
+        <p>Pentru competență, cea mai importantă decizie este RIL nr. 20/2021 a ÎCCJ, obligatorie pentru instanțe. Când există mai mulți debitori, contestația unuia dintre ei se judecă, în principiu, la judecătoria care a încuviințat executarea. Practica instanțelor locale o verifici pe portal.just.ro, pentru instanța ta.</p>
+        <h3>Contestații admise de instanțe</h3>
+        <p>Admiterile țin de actele fiecărui dosar, nu de statistici.</p>
+        <h4>Strategii juridice eficiente</h4>
+        <div class="note dark"><b>Poziția juridică.</b> Prima întrebare nu este „ce motive am?”, ci „unde locuiam când a fost sesizat executorul?”. O contestație bună, depusă la instanța greșită, pierde săptămâni prin declinare. Între timp poprirea continuă, așa că instanța o verific înaintea motivelor.</div>'''
+S11='''        <span class="eyebrow">Legislație</span>
+        <h2>Legislație aplicabilă</h2>
+        <p>Regulile sunt în Codul de procedură civilă republicat: art. 651 pentru instanța de executare și art. 712–720 pentru contestație. Termenele se calculează după art. 181. Executarea fiscală are reguli proprii în Codul de procedură fiscală. Taxele sunt în OUG nr. 80/2013.</p>
+        <h3>Codul de procedură civilă</h3>
+        <p>Pentru instanță contează art. 651 și 714. Explicația articol cu articol o găsești în pagina despre <a href="/contestatia-la-executare-cod-procedura-civila/">contestația la executare în Codul de procedură civilă</a>.</p>
+        <h3>Drepturile debitorului</h3>
+        <p>Să conteste orice act de executare, să ceară suspendarea și, dacă executarea e anulată, întoarcerea ei.</p>
+        <h4>Comparație între interpretări</h4>
+        <p>Înainte de unele modificări legislative, la poprire puteai depune și la judecătoria domiciliului din raza altei curți de apel. Regula a fost schimbată, iar modelele vechi de pe internet o citează încă. Verifică întotdeauna regula în vigoare.</p>'''
+S12='''        <span class="eyebrow">Greșeli</span>
+        <h2>Greșeli frecvente în contestația la executare</h2>
+        <p>Cele mai multe probleme apar înainte de depunere. Debitorul depune la judecătoria de lângă biroul executorului. Sau folosește un model vechi. Sau depune fără somație și fără încheierea de încuviințare. Fiecare greșeală costă zile din termen, iar executarea nu așteaptă.</p>
+        <h3>Depunerea tardivă</h3>
+        <p>Contestația se respinge ca tardivă. Motivele bune nu mai sunt analizate.</p>
+        <h3>Lipsa documentelor</h3>
+        <p>Fără somație și încheierea de încuviințare nu poți dovedi data de la care curge termenul și nici instanța competentă.</p>
+        <h4>Contestație incompletă</h4>
+        <p>Instanța greșită, lipsa taxei, motive generale, lipsa cererii de suspendare. Cererea fără taxă poate fi anulată dacă nu plătești la termenul dat de instanță.</p>'''
+S13='''        <span class="eyebrow">Model</span>
+        <h2>Model simplificat de contestație la executare</h2>
+        <p>Modelul de mai jos e doar o schemă. Îl adaptezi la dosarul tău, pentru că instanța, părțile, actele și motivele diferă. Un model copiat fără verificare poate trimite cererea la instanța greșită. Poate omite și cererea de suspendare, exact când ai mai mare nevoie de ea.</p>
+        <h3>Structura documentului</h3>
+        <ol class="num">
+          <li>„Către Judecătoria …” (instanța de executare).</li>
+          <li>Contestatorul și intimații: creditorul, după caz terțul poprit.</li>
+          <li>Obiectul: actele contestate din dosarul de executare nr. …</li>
+          <li>Motivele în fapt și în drept, probele.</li>
+          <li>Cererea de suspendare, data, semnătura.</li>
+        </ol>
+        <h4>Exemplu orientativ</h4>
+        <div class="quote">„Formulez contestație la executare împotriva somației din … și a popririi din …, emise în dosarul de executare nr. … . Solicit anularea acestora pentru următoarele motive: … .” Restul îl construiești din acte.</div>'''
+S14='''        <span class="eyebrow">Urgent</span>
+        <h2>Ce trebuie să faci imediat dacă ești executat silit</h2>
+        <p>Află instanța din încheierea de încuviințare și calculează termenul de 15 zile. Depune la judecătoria domiciliului tău de la data sesizării executorului, cu excepțiile de mai sus. La <a href="/poprire-cont/">poprire cont</a> sau pe salariu, cere și suspendarea. La mai mulți debitori sau la un imobil, un <a href="/avocat-contestatie-executare-silita/">avocat contestație executare silită</a> verifică rapid competența. Uneori negocierea sau plata sunt mai potrivite.</p>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Criteriu</th><th>Contestație la executare</th><th>Negociere cu creditorul</th><th>Plata datoriei</th></tr></thead>
+          <tbody>
+            <tr><td>Cost</td><td>Taxă de cel mult 1.000 lei, cauțiune, avocat</td><td>Fără taxe; depinde de acord</td><td>Datoria, dobânzile, cheltuielile de executare</td></tr>
+            <tr><td>Durată</td><td>Luni, plus apelul</td><td>Zile sau săptămâni</td><td>Imediat</td></tr>
+            <tr><td>Șanse de succes</td><td>Depind de vicii: titlu, prescripție, comunicări</td><td>Depind de creditor</td><td>Închide executarea</td></tr>
+            <tr><td>Avantaje</td><td>Poate anula acte sau reduce suma</td><td>Eșalonare, reducere</td><td>Fără proces</td></tr>
+            <tr><td>Dezavantaje</td><td>Termen scurt, nu oprește singură executarea</td><td>Termenul de 15 zile curge</td><td>Plătești și sume contestabile</td></tr>
+            <tr><td>Recomandare juridică</td><td>Când există motive de nelegalitate</td><td>Când datoria e reală, dar plata integrală e grea</td><td>Doar după verificarea sumei</td></tr>
+          </tbody>
+        </table></div>'''
+S15='''        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Scoate somația, adresa de poprire și încheierea de încuviințare. Notează data primirii de pe plic sau din confirmare.</li>
+          <li>Citește în încheiere numele judecătoriei care a încuviințat executarea. Compară-l cu domiciliul tău de atunci.</li>
+          <li>Calculează ultima zi a termenului de 15 zile. Depune contestația până atunci, cu taxa plătită, și păstrează recipisa.</li>
+        </ol>
+        <!--@author practice="executare silită" -->'''
+faq=[("Unde se depune contestația la executare?","La instanța de executare: judecătoria domiciliului sau sediului debitorului de la data sesizării executorului (art. 651 și 714 CPC). Excepții: contestația la titlu, imobilele din raza altei curți de apel, debitorii din străinătate."),
+("Ce este contestația la executare silită?","Procesul prin care ceri instanței să verifice executarea, actele executorului sau înțelesul titlului executoriu (art. 712 CPC)."),
+("Care este termenul legal pentru contestație?","De regulă 15 zile, calculate pe zile libere (art. 715 și 181 CPC). Pentru încheierile executorului care nu sunt definitive, 15 zile de la comunicare (art. 715 alin. (2) CPC)."),
+("Pot opri executarea silită?","Da, prin cererea de suspendare, depusă la aceeași instanță. De regulă, plătești o cauțiune. Simpla contestație nu oprește executarea."),
+("Ce șanse am să câștig contestația?","Depind de acte: prescripție, titlu, comunicări, calculul sumei. Nimeni nu poate garanta rezultatul."),
+("Cât costă contestația la executare?","Taxa de timbru se calculează la valoarea contestată, dar e de cel mult 1.000 de lei. Suspendarea costă 50 de lei, plus cauțiunea."),
+("Este obligatoriu avocatul?","Nu. Poți depune singur. Avocatul ajută mai ales la imobile și la mai mulți debitori."),
+("Ce acte sunt necesare?","Somația, poprirea, încheierea de încuviințare, titlul sau contractul, probele și dovada taxei."),
+("Pot depune contestația online?","Multe instanțe primesc cereri prin e-mail sau prin aplicații electronice; verifică pe site-ul judecătoriei. Sigur rămân registratura, poșta cu confirmare și curierul."),
+("Ce fac dacă am depus la instanța greșită?","Instanța își declină competența și trimite dosarul la cea bună. Pierzi timp, iar executarea continuă."),
+("Ce se întâmplă dacă pierd procesul?","Executarea continuă. Poți face apel. Poți plăti cheltuielile de judecată ale creditorului.")]
+P=dict(slug='unde-se-depune-contestatia-la-executare',crumb='Unde se depune contestația la executare',
+ title='Unde se depune contestația la executare: instanța și acte',
+ desc='Unde se depune contestația la executare: ce judecătorie e competentă, excepțiile (titlu, imobil, ANAF), cum depui, ce anexezi și cât costă.',
+ nav='#calculator|Instanța și taxa;#procedura|Procedura;#termen|Termenul;#costuri|Costuri;#intrebari|Întrebări',
+ images=[IMG1,IMG2],
+ hero=dict(eyebrow='Executare silită · instanța de executare',
+  h1='Unde se depune contestația la executare: <span class="accent">instanța competentă, termen și acte</span>',
+  lead=['Ai primit o adresă de poprire. Executorul are biroul în Cluj. Tu locuiești în Iași. Ai 15 zile și nu știi la ce instanță să mergi.',
+        'Aici afli <strong>ce judecătorie judecă contestația</strong> ta și cum o găsești în 10 minute. Vezi excepțiile: contestația la titlu, imobilul din alt județ, executarea ANAF. Afli cum depui cererea, ce anexezi și cât plătești.'],
+  meta2='Termen: 15 zile libere',cta='Află instanța și taxa',
+  answer='Contestația la executare se depune la instanța de executare: judecătoria în a cărei circumscripție se afla domiciliul sau sediul debitorului la data când creditorul l-a sesizat pe executor (art. 651 și 714 CPC). Nu contează unde are biroul executorul. Termenul general este de 15 zile, iar suspendarea se cere separat.',
+  opts=[('Instanța','judecătoria domiciliului tău de atunci'),('Nu contează','biroul executorului')]),
+ calc_html=calc,js=js,
+ sections=[('raspuns','Răspuns rapid',S1),('ce-inseamna','Ce înseamnă',S2),('motive','Motive',S3),('procedura','Procedura pas cu pas',S4),('termen','Termenul',S5),('suspendare','Suspendarea',S6),('durata','Cât durează',S7),('costuri','Costuri',S8),('sanse','Șanse',S9),('practica','Practica judiciară',S10),('legislatie','Legislație',S11),('greseli','Greșeli frecvente',S12),('model','Model',S13),('urgent','Ce faci urgent',S14),('azi','Ce faci azi',S15)],
+ faq=faq,faq_h2='Întrebări frecvente despre unde se depune contestația la executare',
+ contact=dict(h2='La ce judecătorie depui contestația ta?',lead='Trimite-ne somația, adresa de poprire și încheierea de încuviințare. Îți spunem la ce judecătorie depui, până când și dacă merită cerută suspendarea. Consultația nu te obligă la nimic.',nav='/|Acasă;/contestatie-la-executare/|Contestație la executare;#intrebari|Întrebări;#contact|Contact',note='Consultarius nu este afiliat executorilor sau băncilor. Calculele sunt orientative.'),
+ howto=dict(name='Cum afli unde depui contestația la executare',steps=[('Deschizi încheierea de încuviințare','Antetul numește judecătoria care a încuviințat executarea.'),('Verifici domiciliul de la sesizare','Instanța de executare este judecătoria domiciliului debitorului la data sesizării executorului.'),('Verifici excepțiile','Contestația la titlu, imobilul din alt județ, mai mulți debitori, executarea fiscală.'),('Depui și păstrezi dovada','Registratură, poștă cu confirmare sau curier; păstrezi recipisa.')]),
+ knows=['Executare silită','Contestație la executare','Instanța de executare','Procedură civilă'])
+if __name__=='__main__':
+    open('/home/user/work/chinsolvency/unde-se-depune-contestatia-la-executare.src.html','w',encoding='utf-8').write(build(P))
