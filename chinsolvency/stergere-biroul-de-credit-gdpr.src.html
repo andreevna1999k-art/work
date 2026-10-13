@@ -1,0 +1,383 @@
+<!-- Consultarius — /stergere-biroul-de-credit-gdpr/ (draft). Built by build.py (partials + CSS injection). -->
+<!--@head -->
+<div class="cbx">
+
+<!--@header nav="#calculator|Ce drept ai;#drepturi|Drepturi GDPR;#model|Model;#intrebari|Întrebări" -->
+
+<!-- HERO -->
+<section class="hero a-hero">
+  <div class="wrap">
+    <div class="hero-box">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Acasă</a><span>/</span><span>Ștergere Biroul de Credit GDPR</span></nav>
+      <div class="a-hero-grid">
+        <div>
+          <span class="eyebrow">Art. 15 · 16 · 17 · 21 GDPR</span>
+          <h1>Ștergere din Biroul de Credit conform GDPR: <span class="accent">drepturi, procedură și cerere</span></h1>
+          <div class="lead">
+            <p>Ai citit pe un forum că „GDPR îți dă dreptul să fii uitat”. Ai trimis băncii o cerere de ștergere. Răspunsul: „Prelucrarea se bazează pe interesul legitim. Cererea se respinge.”</p>
+            <p>Aici afli ce drepturi îți dă GDPR în Biroul de Credit, de ce <strong>art. 17 nu șterge o restanță reală</strong> și în ce situații funcționează totuși. Afli și cum folosești dreptul de opoziție, cum îți retragi acordul pentru datele pozitive și cum faci plângere la ANSPDCP.</p>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Actualizat: 9 octombrie 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>Cererile GDPR sunt gratuite</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#calculator" class="btn btn-primary">Ce drept GDPR ai</a>
+            <a href="#contact" class="btn btn-ghost">Consultație gratuită <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg></a>
+          </div>
+        </div>
+        <aside class="answer">
+          <h2>Ce înseamnă ștergerea în context GDPR</h2>
+          <p>În limbajul GDPR, ștergerea e unul dintre mai multe drepturi asupra datelor tale. Se aplică doar în cazurile din art. 17: date inexacte, prelucrate nelegal, ținute după termen sau transmise pe baza unui acord retras. Nu te scoate din Biroul de Credit doar pentru că o ceri. Nu anulează nici datoria.</p>
+          <div class="opts">
+            <div><b>Funcționează</b>date nelegale, expirate, acord retras</div>
+            <div><b>Nu funcționează</b>restanță reală, notificată, în termen</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Verificare</span><h2>Ce drept GDPR folosești și <span class="accent">ce șanse are cererea</span></h2></div>
+      <p>Alege situația din raport, data plății restanței și data cererii. Afli temeiul legal, șansele, cât mai rămân datele și până când trebuie să primești răspuns.</p>
+    </div>
+    <div class="calc">
+      <div class="panel">
+        <form class="fields" onsubmit="return false">
+          <div class="grp">Situația</div>
+          <div class="field full"><label for="f-sit">Ce vezi în raport</label><div class="inp"><select id="f-sit">
+            <option value="inex">Date inexacte (sumă, status, credit care nu e al meu)</option>
+            <option value="notif">Raportare fără notificarea de 15 zile</option>
+            <option value="exp">Date ținute peste 4 ani de la plată</option>
+            <option value="poz">Date pozitive pe care vreau să le retrag</option>
+            <option value="opoz">Date negative corecte, dar disputate</option>
+            <option value="real">Restanță reală, notificată, în termen</option>
+          </select></div></div>
+          <div class="grp">Datele</div>
+          <div class="field"><label for="f-plata">Data plății restanței</label><div class="inp"><input type="date" id="f-plata"></div></div>
+          <div class="field"><label for="f-cer">Data cererii</label><div class="inp"><input type="date" id="f-cer"></div></div>
+          <div class="row-btns">
+            <button type="button" class="btn btn-primary" id="b-calc">Verifică</button>
+            <button type="button" class="btn btn-line" id="b-ex1">Exemplu din ghid</button>
+          </div>
+        </form>
+        <div class="result" aria-live="polite">
+          <span class="lbl">Rezultat</span>
+          <div class="duo">
+            <div class="opt full" id="c-t"><span class="k">Temei și șanse</span><span class="v" id="o-t">—</span><span class="s" id="o-ts">Alege situația.</span></div>
+            <div class="opt" id="c-e"><span class="k">Datele pot rămâne până la</span><span class="v" id="o-e">—</span><span class="s" id="o-es">4 ani de la plată.</span></div>
+            <div class="opt" id="c-l"><span class="k">Mai rămân la data cererii</span><span class="v" id="o-l">—</span><span class="s" id="o-ls">Din termenul de 4 ani.</span></div>
+            <div class="opt full" id="c-r"><span class="k">Răspuns până la</span><span class="v" id="o-r">—</span><span class="s" id="o-rs">O lună, prelungibil cu două (art. 12 alin. 3).</span></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Trimite-ne raportul și răspunsul băncii</a>
+          <span class="disc">Termenul de 4 ani curge de la plata restanței sau închiderea creditului (Decizia ANSPDCP nr. 105/2007). Răspunsul curge de la primirea cererii; aici e calculat de la data introdusă. Calcul orientativ.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section style="padding-top:32px">
+  <div class="wrap article">
+    <nav class="toc" aria-label="Cuprins">
+      <b>Cuprins</b>
+      <a href="#context">Ștergerea în GDPR</a>
+      <a href="#date">Ce date sunt stocate</a>
+      <a href="#cand">Când ai dreptul</a>
+      <a href="#procedura">Procedura pas cu pas</a>
+      <a href="#model">Model de cerere</a>
+      <a href="#drepturi">Drepturile GDPR</a>
+      <a href="#toate">Ștergerea tuturor datelor</a>
+      <a href="#practica">Practica judiciară</a>
+      <a href="#legislatie">Legislație</a>
+      <a href="#greseli">Greșeli și riscuri</a>
+      <a href="#azi">Ce faci azi</a>
+      <a href="#intrebari">Întrebări frecvente</a>
+    </nav>
+
+    <div class="prose">
+
+      <section id="context">
+        <span class="eyebrow">Concepte</span>
+        <h2>Ce înseamnă ștergerea din Biroul de Credit în context GDPR</h2>
+        <p><strong>Trei drepturi diferite.</strong> Rolul GDPR e să protejeze persoana de date greșite sau nelegale, nu de un istoric corect.</p>
+        <div class="stages">
+          <div><span class="k">Art. 17</span><b>Ștergerea</b>Elimină datele.</div>
+          <div><span class="k">Art. 16</span><b>Rectificarea</b>Le corectează.</div>
+          <div><span class="k">Art. 18</span><b>Restricționarea</b>Le „îngheață” cât timp exactitatea lor e contestată.</div>
+        </div>
+        <h3>Ce este prelucrarea datelor personale</h3>
+        <p>Prelucrare înseamnă orice operațiune cu datele tale: colectare, stocare, transmitere, consultare, ștergere (art. 4 GDPR). Când banca raportează o restanță, prelucrează. Când Biroul de Credit o păstrează, prelucrează. Când altă bancă îți consultă raportul, prelucrează. Fiecare are calitatea de operator pentru operațiunile pe care le face.</p>
+        <h3>Legalitatea prelucrării datelor</h3>
+        <p><strong>Când e legală.</strong> Datele negative corecte se raportează în baza interesului legitim al creditorilor de a evalua riscul (art. 6 alin. 1 lit. f GDPR). Datele pozitive se transmit cu acordul tău (art. 6 alin. 1 lit. a).</p>
+        <p><strong>Când poate fi contestată.</strong> Când lipsește notificarea de 15 zile înainte de prima raportare negativă, când raportarea s-a făcut înainte de 30 de zile de întârziere, când datele sunt inexacte sau ținute peste 4 ani de la plată (Decizia ANSPDCP nr. 105/2007).</p>
+      </section>
+
+      <section id="date">
+        <span class="eyebrow">Date</span>
+        <h2>Ce date sunt stocate în Biroul de Credit</h2>
+        <p>Biroul de Credit stochează date de identificare, credite active și închise, întârzieri de peste 30 de zile la sume de peste 10 lei și interogările făcute de bănci. Datele negative se păstrează 4 ani de la plată sau închidere. Datele pozitive se transmit doar cu acordul tău și pot fi oprite prin retragerea lui.</p>
+        <h3>Date negative și pozitive</h3>
+        <div class="t-grid">
+          <div class="t-card"><h3>Negative</h3><ul><li>Întârzieri, restanțe, credite cesionate.</li><li>Temei: interes legitim.</li><li>Nu ai nevoie de acordul tău pentru ele.</li></ul></div>
+          <div class="t-card"><h3>Pozitive</h3><ul><li>Rate plătite la timp.</li><li>Temei: consimțământ.</li><li>Le poți opri.</li></ul></div>
+        </div>
+        <h3>Durata de stocare a datelor</h3>
+        <p>Regula celor 4 ani: termenul curge de la plata restanței sau închiderea creditului. Dacă vrei să știi exact până când îți rămâne o restanță, folosește calculatorul de mai sus sau planificatorul din ghidul <a href="/verificare-online-biroul-de-credit/">verificare online Biroul de Credit</a>.</p>
+        <h3>Excepții legale</h3>
+        <div class="roles">
+          <div><b>Litigii</b>Cât timp contești exactitatea datelor, poți cere restricționarea prelucrării (art. 18 GDPR).</div>
+          <div><b>Fraudă</b>Un credit luat fără acordul tău nu are niciun temei de prelucrare pe numele tău. Ceri ștergerea, cu plângerea penală anexată.</div>
+        </div>
+      </section>
+
+      <section id="cand">
+        <span class="eyebrow">Art. 17</span>
+        <h2>Când ai dreptul la ștergere conform GDPR</h2>
+        <p>Art. 17 funcționează în Biroul de Credit în patru cazuri reale: date inexacte care nu pot fi corectate, raportare nelegală, date ținute după 4 ani și date pozitive după retragerea acordului. Mai există calea opoziției (art. 21), dar ea cedează, de regulă, în fața interesului legitim al creditorilor.</p>
+        <h3>Date incorecte sau incomplete</h3>
+        <p>Exemple: un credit care nu e al tău, o restanță plătită afișată ca activă, o sumă dublată. Primul pas e rectificarea (art. 16). Ștergerea (art. 17 alin. 1 lit. d) se cere pentru înregistrările care nu trebuiau să existe deloc.</p>
+        <h3>Lipsa temeiului legal</h3>
+        <p>Prelucrarea e abuzivă dacă banca nu te-a notificat cu cel puțin 15 zile înainte de prima raportare negativă sau te-a raportat înainte de 30 de zile de întârziere. În 2016, ANSPDCP a amendat mai multe bănci și IFN-uri exact pentru astfel de raportări. Din experiența mea, aceasta e situația în care art. 17 are cele mai multe șanse.</p>
+        <h3>Retragerea consimțământului</h3>
+        <p>Se aplică doar datelor pozitive. Poți retrage oricând acordul dat băncii (art. 7 alin. 3 GDPR). Din acel moment, participantul nu mai poate transmite date pozitive noi. Pentru datele deja transmise, ceri ștergerea în baza art. 17 alin. 1 lit. b.</p>
+        <div class="todo">[DE VERIFICAT: cum aplică participanții și Biroul de Credit retragerea acordului pentru datele pozitive deja raportate]</div>
+        <div class="note"><b>Atenție:</b> istoricul pozitiv te ajută la credit. Retrage-l doar dacă ai un motiv.</div>
+      </section>
+
+      <section id="procedura">
+        <span class="eyebrow">Pas cu pas</span>
+        <h2>Procedura de ștergere din Biroul de Credit pas cu pas</h2>
+        <p>Procedura GDPR are patru pași: exerciți dreptul de acces, identifici temeiul, trimiți cererea la operator, urmărești termenul de răspuns de o lună. Dacă răspunsul lipsește sau e nemotivat, faci plângere la ANSPDCP. Procedura practică, cu toate canalele de depunere, e descrisă în ghidul <a href="/cerere-de-stergere-din-biroul-de-credit/">cerere de ștergere din Biroul de Credit</a>.</p>
+        <ol class="num">
+          <li><strong>Verificarea raportului.</strong> Raportul gratuit de pe birouldecredit.ro e forma practică a dreptului de acces (art. 15). Analizezi cine a raportat, data primei raportări negative, data plății, temeiul (negativ sau pozitiv) și interogările.</li>
+          <li><strong>Redactarea cererii.</strong> Structura corectă: identificare, datele contestate, articolul invocat, măsura cerută. Elemente obligatorii: numărul contractului, data raportării, motivul și dovada.</li>
+          <li><strong>Trimiterea solicitării.</strong> Cererea merge la operatorul care a raportat, în atenția responsabilului cu protecția datelor (DPO). Fiecare bancă are o adresă de e-mail a DPO în politica de confidențialitate. Biroul de Credit primește solicitări prin site (detalii în ghidul <a href="/biroul-de-credit-bucuresti/">Biroul de Credit București</a>).</li>
+          <li><strong>Urmărirea răspunsului.</strong> Termenul GDPR: o lună de la primire, prelungibil cu două luni pentru cereri complexe (art. 12 alin. 3). Prelungirea trebuie anunțată și motivată în prima lună.</li>
+        </ol>
+      </section>
+
+      <section id="model">
+        <span class="eyebrow">Model</span>
+        <h2>Model cerere ștergere Biroul de Credit</h2>
+        <p>Mai jos ai un model GDPR specific: opoziție (art. 21) combinată cu ștergere (art. 17) și, opțional, retragerea acordului pentru datele pozitive. Pentru erori, lipsa notificării și acces la date, folosește cele trei modele din pagina <a href="/model-cerere-stergere-biroul-de-credit/">model cerere de ștergere din Biroul de Credit</a>.</p>
+        <div class="tpl" id="tpl"><p><b>Către:</b> [Denumirea participantului], în atenția Responsabilului cu protecția datelor</p>
+<p><b>CERERE de opoziție și ștergere, în temeiul art. 21 și art. 17 din Regulamentul (UE) 2016/679</b></p>
+<p>Subsemnatul/Subsemnata [nume], CNP [CNP], domiciliat(ă) în [adresa], e-mail [e-mail], mă opun prelucrării datelor mele în sistemul Biroului de Credit pentru contractul nr. [număr], din motive legate de situația mea particulară: [motivul concret, de ex. „datele se referă la o sumă de … lei, contestată în instanță în dosarul nr. …”].</p>
+<p>Vă solicit: (1) să încetați prelucrarea, dacă nu puteți demonstra motive legitime și imperioase care prevalează (art. 21 alin. 1); (2) ștergerea datelor, conform art. 17 alin. 1 lit. c; (3) [opțional] retragerea acordului pentru transmiterea datelor pozitive și ștergerea acestora, conform art. 7 alin. 3 și art. 17 alin. 1 lit. b; (4) răspuns în termen de o lună, conform art. 12 alin. 3.</p>
+<p>Data: [zz.ll.aaaa] | Semnătura: [semnătura]</p></div>
+        <button type="button" class="btn btn-line tpl-btn" id="b-copy">Copiază modelul</button>
+        <h3>Exemple de formulare corectă</h3>
+        <div class="quote">„Mă opun prelucrării din motive legate de situația mea particulară, și anume…” (nu „mă opun raportării în general”).</div>
+        <div class="quote">„Vă rog să indicați motivele legitime și imperioase pe care le invocați.”</div>
+        <h3>Greșeli frecvente</h3>
+        <ul class="ban">
+          <li><b>Cereri incomplete</b>Fără motivul „situației particulare”, opoziția e respinsă automat.</li>
+          <li><b>Art. 17 fără argument</b>Invocarea art. 17 pentru o restanță reală, fără alt argument, primește același refuz.</li>
+        </ul>
+      </section>
+
+      <section id="drepturi">
+        <span class="eyebrow">GDPR</span>
+        <h2>Drepturile persoanelor conform GDPR</h2>
+        <p>În Biroul de Credit folosești patru drepturi: acces (art. 15), rectificare (art. 16), ștergere (art. 17) și opoziție (art. 21). Accesul e mereu gratuit și sigur. Rectificarea câștigă dacă ai dovada. Ștergerea și opoziția sunt limitate de interesul legitim al creditorilor. Toate au același termen de răspuns: o lună.</p>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/drepturile-tale-gdpr-in-biroul-de-credit.webp" width="1200" height="675" alt="ștergere din Biroul de Credit GDPR: drept de acces, rectificare, ștergere, opoziție" loading="lazy">
+          <figcaption>Drepturile tale GDPR în Biroul de Credit</figcaption>
+        </figure>
+        <div class="rights">
+          <div><span class="n">15</span><b>Dreptul de acces</b>Afli ce date există, cine le-a transmis, cine le-a consultat și cât timp se păstrează. Raportul e gratuit o dată pe an. Pașii sunt în ghidul <a href="/verificare-online-biroul-de-credit/">verificare online Biroul de Credit</a>.</div>
+          <div><span class="n">16</span><b>Dreptul la rectificare</b>Ceri corectarea unei date inexacte sau completarea uneia incomplete. E dreptul cu cele mai mari șanse: nimeni nu are un interes legitim să păstreze o dată greșită.</div>
+          <div><span class="n">17</span><b>Dreptul la ștergere</b>Nu se aplică dacă prelucrarea e încă necesară și legală. Art. 17 alin. 3 permite operatorului să păstreze datele necesare pentru apărarea unui drept în instanță. O restanță reală, notificată și în termen, nu se șterge pe GDPR.</div>
+          <div><span class="n">21</span><b>Dreptul la opoziție</b>Se aplică prelucrărilor bazate pe interes legitim, deci exact datelor negative. Invoci o situație particulară; operatorul trebuie să demonstreze motive legitime și imperioase. Are șanse când datele sunt disputate sau disproporționate.</div>
+        </div>
+        <div class="todo">[DE VERIFICAT: tariful actual pentru rapoartele suplimentare în același an (circa 6 lei)]</div>
+        <div class="tbl wide"><table>
+          <thead><tr><th>Tip situație</th><th>Temei legal</th><th>Șanse de reușită</th><th>Durată proces</th><th>Necesitate avocat</th><th>Observații practice</th></tr></thead>
+          <tbody>
+            <tr><td>Date inexacte</td><td>Art. 16 GDPR</td><td>Mari</td><td>1 lună (max. 3)</td><td>Nu</td><td>Contează dovada documentară</td></tr>
+            <tr><td>Fără notificarea de 15 zile</td><td>Art. 17 alin. 1 lit. d + Decizia 105/2007</td><td>Medii–mari</td><td>1 lună</td><td>Rar</td><td>Banca trebuie să dovedească notificarea</td></tr>
+            <tr><td>Date ținute peste 4 ani</td><td>Art. 17 alin. 1 lit. a</td><td>Mari</td><td>1 lună</td><td>Nu</td><td>Indici data plății</td></tr>
+            <tr><td>Date pozitive, acord retras</td><td>Art. 7 alin. 3, art. 17 alin. 1 lit. b</td><td>Mari</td><td>1 lună</td><td>Nu</td><td>Pierzi istoricul bun</td></tr>
+            <tr><td>Opoziție la date negative corecte</td><td>Art. 21 alin. 1</td><td>Mici</td><td>1 lună</td><td>Util</td><td>Ai nevoie de o situație particulară reală</td></tr>
+            <tr><td>Restanță reală, în termen</td><td>— (art. 17 nu se aplică)</td><td>Practic nule</td><td>—</td><td>Nu</td><td>Singura soluție: plata, apoi 4 ani</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="toate">
+        <span class="eyebrow">Limite</span>
+        <h2>Este posibilă ștergerea tuturor datelor</h2>
+        <p>Nu. GDPR nu îți dă dreptul să rescrii istoricul financiar. Poți elimina datele greșite, nelegale, expirate și, dacă vrei, pe cele pozitive. Datele negative corecte rămân 4 ani de la plată. Mitul „dreptului de a fi uitat” vine din cazuri despre motoare de căutare, nu despre birouri de credit.</p>
+        <h3>Când NU se poate șterge</h3>
+        <p><strong>Datorii reale:</strong> restanța a existat, ai fost notificat, banca a raportat după 30 de zile. <strong>Termene legale:</strong> nu au trecut 4 ani de la plată. În aceste cazuri, refuzul băncii e legal.</p>
+        <h3>Diferența între ștergere și expirare</h3>
+        <p>Ștergerea pe GDPR e o excepție pe care o dovedești. Expirarea e regula: datele corecte dispar singure după 4 ani.</p>
+        <div class="example">
+          <div class="t">Cifră pe șervețel</div>
+          <p>Ai plătit o restanță de 450 lei pe 20.06.2024. Datele negative pot rămâne până pe 20.06.2028. Pe 01.10.2026 trimiți o cerere în baza art. 17. Mai sunt 20 de luni și 19 zile din termen. Banca o respinge legal, iar ANSPDCP nu o poate obliga să șteargă.</p>
+          <p>Același raport arată însă și un credit care nu e al tău. Pentru acela, art. 16 și art. 17 funcționează din prima zi.</p>
+          <span class="formula">20.06.2024 + 4 ani = 20.06.2028 · rămân 20 luni și 19 zile</span>
+          <button type="button" class="btn btn-line" data-ex="1">Verifică în calculator</button>
+        </div>
+        <figure>
+          <img src="https://chinsolvency.ro/wp-content/uploads/2026/10/cand-functioneaza-art-17-si-cand-nu.webp" width="1200" height="675" alt="ștergere Biroul de Credit GDPR: când se aplică art. 17" loading="lazy">
+          <figcaption>Când funcționează art. 17 și când nu</figcaption>
+        </figure>
+      </section>
+
+      <section id="practica">
+        <span class="eyebrow">Practică</span>
+        <h2>Practica judiciară privind Biroul de Credit</h2>
+        <p>Practica pe GDPR în Biroul de Credit vine din două surse: sancțiunile ANSPDCP și deciziile Curții de Justiție a UE despre birourile de credit private. Ambele merg în aceeași direcție. Datele trebuie să fie exacte, notificate și ținute doar cât e necesar. Datele corecte și legale rămân.</p>
+        <h3>Cazuri reale soluționate</h3>
+        <p>În 2016, ANSPDCP a aplicat amenzi de până la 25.000 lei mai multor bănci și IFN-uri. Motivele: raportare negativă fără dovada informării prealabile, raportare înainte de 30 de zile și mai multe raportări negative pentru aceeași persoană în aceeași lună.</p>
+        <h3>Decizii relevante ale instanțelor</h3>
+        <p>Pe 7 decembrie 2023, Curtea de Justiție a UE a decis, în cauzele SCHUFA (C-634/21 și C-26/22, C-64/22), că scorul calculat de un birou de credit poate fi o decizie automatizată în sensul art. 22 GDPR, când banca se bazează decisiv pe el. A mai decis că un birou privat nu poate păstra anumite date mai mult decât registrul public din care provin.</p>
+        <div class="todo">[DE VERIFICAT: modul în care instanțele române și ANSPDCP au aplicat aceste hotărâri]</div>
+        <div class="todo">[DE COMPLETAT: 1–2 hotărâri reale, cu instanță, număr și dată, verificate pe rejust.ro]</div>
+        <h3>Tendințe juridice</h3>
+        <p>Accentul se mută de pe „ștergere” pe transparență: cine a raportat, când te-a anunțat, cum s-a calculat scorul. La o decizie de credit automatizată, ai dreptul să ceri intervenție umană și să îți exprimi punctul de vedere (art. 22).</p>
+      </section>
+
+      <section id="legislatie">
+        <span class="eyebrow">Cadru legal</span>
+        <h2>Legislație aplicabilă în România</h2>
+        <p>GDPR (Regulamentul UE 2016/679) se aplică direct și îți dă drepturile. Legea nr. 190/2018 îl aplică în România. Decizia ANSPDCP nr. 105/2007 dă regulile concrete ale Biroului de Credit: notificare cu 15 zile, raportare după 30 de zile, păstrare 4 ani. Legea nr. 77/2016 interzice înscrierea pe durata procedurii de dare în plată.</p>
+        <h3>GDPR vs legislația națională</h3>
+        <p>GDPR spune „nu mai mult decât e necesar”. Decizia nr. 105/2007 traduce asta în cifre. Când scrii o cerere, citezi ambele: GDPR pentru drept, decizia pentru termen.</p>
+        <h3>Obligații ale băncilor și IFN-urilor</h3>
+        <ul class="chk">
+          <li>Să te informeze, la încheierea contractului, că datele pot ajunge în Biroul de Credit (art. 13 GDPR).</li>
+          <li>Să te notifice cu cel puțin 15 zile înainte de prima raportare negativă.</li>
+          <li>Să actualizeze datele după plată și să răspundă la cereri în termen de o lună.</li>
+          <li>Să aibă un responsabil cu protecția datelor la care să poți scrie.</li>
+        </ul>
+      </section>
+
+      <section id="greseli">
+        <span class="eyebrow">Riscuri</span>
+        <h2>Greșeli frecvente și riscuri</h2>
+        <p>Riscul principal e să crezi că GDPR e un buton de ștergere. Asta duce la cereri respinse, timp pierdut și bani dați unor intermediari. A doua greșeală e să nu folosești drepturile care chiar funcționează: accesul, rectificarea și cererea de dovadă a notificării.</p>
+        <h3>Servicii false de ștergere</h3>
+        <p>„Ștergere GDPR garantată în 10 zile” e o promisiune pe care legea nu o susține pentru date corecte. Verifică oferta înainte să plătești: criteriile sunt în ghidul <a href="/stergere-biroul-de-credit-fara-avans/">ștergere din Biroul de Credit fără avans</a>.</p>
+        <h3>Interpretarea greșită a GDPR</h3>
+        <div class="roles">
+          <div><b>Mit: „Dreptul de a fi uitat șterge orice.”</b>Realitate: art. 17 are condiții și excepții.</div>
+          <div><b>Mit: „Fără acordul meu, banca nu poate raporta.”</b>Realitate: pentru datele negative nu e nevoie de acord.</div>
+          <div><b>Mit: „ANSPDCP îmi aprobă creditul.”</b>Realitate: autoritatea verifică prelucrarea, nu dă credite.</div>
+        </div>
+        <h3>Recomandări practice</h3>
+        <div class="note dark"><b>Poziția juridică.</b> În practica mea, cea mai eficientă cerere GDPR nu e cea de ștergere, ci cea de acces și de dovadă a notificării. Ea mută sarcina probei pe bancă. Abia după răspuns decid dacă cer rectificare, ștergere sau fac plângere. Dacă banca refuză, plângerea la ANSPDCP (art. 77) e gratuită, iar pentru prejudicii poți cere despăgubiri în instanță (art. 82).</div>
+      </section>
+
+      <section id="azi">
+        <span class="eyebrow">Ce faci acum</span>
+        <h2>Ce faci azi</h2>
+        <ol class="num">
+          <li>Descarcă raportul și împarte rândurile în trei: date greșite, date negative corecte, date pozitive.</li>
+          <li>Pentru datele greșite trimite cerere de rectificare (art. 16). Pentru raportările suspecte cere dovada notificării de 15 zile.</li>
+          <li>Notează data trimiterii. Dacă în o lună nu ai răspuns motivat, pregătește plângerea la ANSPDCP.</li>
+        </ol>
+        <!--@author practice="protecția datelor cu caracter personal și drept bancar" -->
+      </section>
+
+      <section id="intrebari" class="faq-wide" style="padding-bottom:0">
+        <span class="eyebrow">Întrebări frecvente</span>
+        <h2>Întrebări frecvente despre ștergerea din Biroul de Credit</h2>
+        <div class="faq">
+          <details open><summary>Cum pot face ștergere din Biroul de Credit conform GDPR?</summary><p>Trimiți operatorului care a raportat o cerere în baza art. 17, cu motivul concret: date inexacte, raportare fără notificare, termen expirat sau acord retras. Fără unul dintre aceste motive, cererea se respinge.</p></details>
+          <details><summary>Este gratuită procedura?</summary><p>Da. Cererile GDPR sunt gratuite (art. 12 alin. 5), la fel plângerea la ANSPDCP. Operatorul poate refuza sau taxa doar cererile vădit nefondate ori excesive.</p></details>
+          <details><summary>Pot șterge orice datorie?</summary><p>Nu. O restanță reală, raportată legal, rămâne 4 ani de la plată. GDPR nu se aplică datelor corecte și necesare.</p></details>
+          <details><summary>Cât durează ștergerea?</summary><p>Răspunsul vine în cel mult o lună (prelungibil cu două). Datele corecte expiră după 4 ani de la plată sau închidere.</p></details>
+          <details><summary>Ce fac dacă banca refuză?</summary><p>Verifici dacă refuzul e motivat. Dacă nu, faci plângere la ANSPDCP (art. 77 GDPR) sau acțiune în instanță (art. 79).</p></details>
+          <details><summary>Este necesar un avocat?</summary><p>Nu, pentru acces și rectificare. Da, de regulă, pentru opoziție, litigii sau despăgubiri. Detalii în ghidul <a href="/avocat-stergere-biroul-de-credit/">avocat ștergere Biroul de Credit</a>.</p></details>
+          <details><summary>Cum verific raportul de credit?</summary><p>Online, pe birouldecredit.ro, cu cont creat cu e-mail, telefon, CNP și confirmare prin SMS. Primul raport din an e gratuit.</p></details>
+          <details><summary>Când se șterg automat datele?</summary><p>La 4 ani de la plata restanței sau de la închiderea creditului. Datele pozitive, când îți retragi acordul și ceri ștergerea.</p></details>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<!--@contact h2="Nu știi ce articol se aplică?" lead="Nu știi dacă situația ta intră sub art. 16, 17 sau 21? Trimite-ne raportul și răspunsul băncii, iar noi îți spunem ce drept GDPR are șanse și cum îl formulezi. Consultația nu te obligă la nimic." nav="/|Acasă;/model-cerere-stergere-biroul-de-credit/|Modele de cerere;#intrebari|Întrebări;#contact|Contact" note="Consultarius nu este afiliat Biroului de Credit. Calculele sunt orientative." -->
+
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var root=document.querySelector('.cbx'); if(!root) return;
+  var T={
+    inex:['Art. 16 GDPR · șanse mari','Ceri rectificarea cu dovada documentară. Pentru înregistrări care nu trebuiau să existe deloc: art. 17 alin. 1 lit. d.','ok'],
+    notif:['Art. 17 alin. 1 lit. d · șanse medii–mari','Ceri dovada notificării de 15 zile (Decizia ANSPDCP nr. 105/2007). Sarcina probei e pe bancă.','ok'],
+    exp:['Art. 17 alin. 1 lit. a · șanse mari','Datele ținute după 4 ani nu mai au temei. Indici data plății.','ok'],
+    poz:['Art. 7 alin. 3 + art. 17 alin. 1 lit. b · șanse mari','Retragi acordul și ceri ștergerea. Atenție: pierzi istoricul bun.','ok'],
+    opoz:['Art. 21 alin. 1 · șanse mici','Ai nevoie de o situație particulară reală. Operatorul trebuie să arate motive legitime și imperioase.',null],
+    real:['Art. 17 nu se aplică · șanse practic nule','Refuzul băncii e legal. Singura soluție: plata, apoi 4 ani de la plată.','alert']
+  };
+  function dt(s){var p=s.split('-');return new Date(Date.UTC(+p[0],+p[1]-1,+p[2]))}
+  function fmt(d){return ('0'+d.getUTCDate()).slice(-2)+'.'+('0'+(d.getUTCMonth()+1)).slice(-2)+'.'+d.getUTCFullYear()}
+  function addM(d,n){var x=new Date(d.getTime()),day=x.getUTCDate();x.setUTCDate(1);x.setUTCMonth(x.getUTCMonth()+n);var last=new Date(Date.UTC(x.getUTCFullYear(),x.getUTCMonth()+1,0)).getUTCDate();x.setUTCDate(Math.min(day,last));return x}
+  function today(){var t=new Date();return new Date(Date.UTC(t.getFullYear(),t.getMonth(),t.getDate()))}
+  function diff(a,b){var m=(b.getUTCFullYear()-a.getUTCFullYear())*12+b.getUTCMonth()-a.getUTCMonth();if(addM(a,m).getTime()>b.getTime())m--;var d=Math.round((b.getTime()-addM(a,m).getTime())/864e5);return [m,d]}
+  function cls(id,c){var e=$(id);e.classList.remove('alert','ok');if(c)e.classList.add(c)}
+  function calc(){
+    var s=$('f-sit').value,t=T[s],p=$('f-plata').value,c=$('f-cer').value,cd=c?dt(c):today();
+    $('o-t').textContent=t[0];$('o-ts').textContent=t[1];cls('c-t',t[2]);
+    if(p){var e=addM(dt(p),48);$('o-e').textContent=fmt(e);
+      if(e.getTime()>cd.getTime()){var r=diff(cd,e);$('o-l').textContent=r[0]+' luni și '+r[1]+' zile';cls('c-l');
+        $('o-ls').textContent=s==='exp'?'Termenul nu a trecut încă: art. 17 alin. 1 lit. a nu se aplică pentru acest rând.':'Din termenul de 4 ani, la data cererii.';
+        if(s==='exp'){cls('c-t','alert');$('o-t').textContent='Termenul nu a expirat'}
+        $('o-es').textContent='4 ani de la plată sau închidere.';cls('c-e')}
+      else{$('o-l').textContent='0: termen expirat';cls('c-l','ok');$('o-ls').textContent='Datele trebuiau să dispară. Ai temei solid: art. 17 alin. 1 lit. a.';cls('c-e','ok');$('o-es').textContent='Termenul de 4 ani a trecut.';
+        if(s==='real'){cls('c-t','ok');$('o-t').textContent='Art. 17 alin. 1 lit. a · șanse mari';$('o-ts').textContent='Restanța e reală, dar au trecut 4 ani de la plată: ceri ștergerea pentru termen expirat.'}}}
+    else{$('o-e').textContent='—';$('o-l').textContent='—';cls('c-e');cls('c-l');$('o-es').textContent='4 ani de la plată.';$('o-ls').textContent='Introdu data plății.'}
+    if(c){var d1=addM(cd,1),d3=addM(cd,3);$('o-r').textContent=fmt(d1);$('o-rs').innerHTML='Cu prelungire anunțată: <b>'+fmt(d3)+'</b>. Fără răspuns motivat: plângere la ANSPDCP (art. 77).';
+      cls('c-r',0>Math.round((d1.getTime()-today().getTime())/864e5)?'alert':null)}
+    else{$('o-r').textContent='—';cls('c-r');$('o-rs').textContent='O lună, prelungibil cu două (art. 12 alin. 3).'}
+  }
+  $('b-calc').addEventListener('click',calc);
+  ['f-sit','f-plata','f-cer'].forEach(function(id){$(id).addEventListener('input',calc);$(id).addEventListener('change',calc)});
+  function ex(){$('f-sit').value='real';$('f-plata').value='2024-06-20';$('f-cer').value='2026-10-01';calc()}
+  $('b-ex1').addEventListener('click',ex);
+  root.querySelectorAll('[data-ex]').forEach(function(b){b.addEventListener('click',function(){ex();$('calculator').scrollIntoView({behavior:'smooth'})})});
+  $('b-copy').addEventListener('click',function(){
+    var t=$('tpl').innerText,b=this;
+    function done(){b.textContent='Copiat ✓';setTimeout(function(){b.textContent='Copiază modelul'},2000)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+    else{var r=document.createRange();r.selectNodeContents($('tpl'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done()}catch(e){}}
+  });
+  calc();
+})();
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Acasă","item":"https://chinsolvency.ro/"},{"@type":"ListItem","position":2,"name":"Ștergere Biroul de Credit GDPR","item":"https://chinsolvency.ro/stergere-biroul-de-credit-gdpr/"}]},
+ {"@type":"Article","headline":"Ștergere din Biroul de Credit GDPR: drepturi și limite","description":"Ștergere din Biroul de Credit conform GDPR: ce îți dau art. 15, 16, 17 și 21, de ce art. 17 nu șterge o restanță reală și cum faci plângere la ANSPDCP.","inLanguage":"ro","dateModified":"2026-10-09","mainEntityOfPage":"https://chinsolvency.ro/stergere-biroul-de-credit-gdpr/","image":["https://chinsolvency.ro/wp-content/uploads/2026/10/drepturile-tale-gdpr-in-biroul-de-credit.webp","https://chinsolvency.ro/wp-content/uploads/2026/10/cand-functioneaza-art-17-si-cand-nu.webp"],"publisher":{"@type":"Organization","name":"Consultarius"}},
+ {"@type":"HowTo","name":"Cum ceri ștergerea din Biroul de Credit în baza GDPR","inLanguage":"ro","step":[
+  {"@type":"HowToStep","position":1,"name":"Verificarea raportului","text":"Obții raportul gratuit de pe birouldecredit.ro (art. 15 GDPR) și analizezi cine a raportat, data primei raportări negative și data plății."},
+  {"@type":"HowToStep","position":2,"name":"Redactarea cererii","text":"Indici datele contestate, articolul invocat, măsura cerută, numărul contractului și dovada."},
+  {"@type":"HowToStep","position":3,"name":"Trimiterea solicitării","text":"Trimiți cererea operatorului care a raportat, în atenția responsabilului cu protecția datelor."},
+  {"@type":"HowToStep","position":4,"name":"Urmărirea răspunsului","text":"Răspunsul vine în cel mult o lună, prelungibil cu două luni. Fără răspuns motivat, faci plângere la ANSPDCP."}]},
+ {"@type":"LegalService","name":"Consultarius","url":"https://chinsolvency.ro/","areaServed":"RO","knowsAbout":["Biroul de Credit","GDPR","Protecția datelor","Drept bancar"]},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Cum pot face ștergere din Biroul de Credit conform GDPR?","acceptedAnswer":{"@type":"Answer","text":"Trimiți operatorului care a raportat o cerere în baza art. 17, cu motivul concret: date inexacte, raportare fără notificare, termen expirat sau acord retras. Fără unul dintre aceste motive, cererea se respinge."}},
+  {"@type":"Question","name":"Este gratuită procedura?","acceptedAnswer":{"@type":"Answer","text":"Da. Cererile GDPR sunt gratuite (art. 12 alin. 5), la fel plângerea la ANSPDCP. Operatorul poate refuza sau taxa doar cererile vădit nefondate ori excesive."}},
+  {"@type":"Question","name":"Pot șterge orice datorie?","acceptedAnswer":{"@type":"Answer","text":"Nu. O restanță reală, raportată legal, rămâne 4 ani de la plată. GDPR nu se aplică datelor corecte și necesare."}},
+  {"@type":"Question","name":"Cât durează ștergerea?","acceptedAnswer":{"@type":"Answer","text":"Răspunsul vine în cel mult o lună (prelungibil cu două). Datele corecte expiră după 4 ani de la plată sau închidere."}},
+  {"@type":"Question","name":"Ce fac dacă banca refuză?","acceptedAnswer":{"@type":"Answer","text":"Verifici dacă refuzul e motivat. Dacă nu, faci plângere la ANSPDCP (art. 77 GDPR) sau acțiune în instanță (art. 79)."}},
+  {"@type":"Question","name":"Este necesar un avocat?","acceptedAnswer":{"@type":"Answer","text":"Nu, pentru acces și rectificare. Da, de regulă, pentru opoziție, litigii sau despăgubiri."}},
+  {"@type":"Question","name":"Cum verific raportul de credit?","acceptedAnswer":{"@type":"Answer","text":"Online, pe birouldecredit.ro, cu cont creat cu e-mail, telefon, CNP și confirmare prin SMS. Primul raport din an e gratuit."}},
+  {"@type":"Question","name":"Când se șterg automat datele?","acceptedAnswer":{"@type":"Answer","text":"La 4 ani de la plata restanței sau de la închiderea creditului. Datele pozitive, când îți retragi acordul și ceri ștergerea."}}
+ ]}
+]}
+</script>
