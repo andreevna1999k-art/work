@@ -2,10 +2,10 @@
 <html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Бойчук — дизайн-система</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap">
-<style>body{margin:0;background:#0D0D0E}
-.bz{--bg:#0D0D0E;--bg-2:#141415;--surface:#1A1A1C;--surface-2:#222225;--line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.16);--text:#F4EFE8;--muted:#A19C93;--dim:#6F6B64;--accent:#E8C7A0;--accent-600:#D9B185;--on-accent:#1B1510;
+<style>body{margin:0;background:#FBF7F1}
+.bz{--bg:#FBF7F1;--bg-2:#F4EDE2;--surface:#FFFFFF;--surface-2:#EFE6D8;--line:rgba(60,45,25,.11);--line-2:rgba(60,45,25,.24);--text:#201B15;--muted:#6A6257;--dim:#988F82;--accent:#E3BE92;--accent-600:#D6A870;--accent-ink:#8F6329;--on-accent:#201B15;
 --f-serif:'Playfair Display','Times New Roman',serif;--f-sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
---r-xl:32px;--r-lg:24px;--r-md:18px;--r-sm:12px;--r-pill:999px;--sh:0 24px 60px rgba(0,0,0,.45);
+--r-xl:32px;--r-lg:24px;--r-md:18px;--r-sm:12px;--r-pill:999px;--sh:0 24px 60px rgba(90,65,30,.18);
 background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow:hidden}
 .bz *{box-sizing:border-box}
 .bz img{max-width:100%;display:block}
@@ -15,7 +15,7 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
 .bz .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 .bz section{position:relative;padding:84px 0}
 .bz .eyebrow{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--muted);letter-spacing:.02em}
-.bz .eyebrow::before{content:"";width:44px;height:1px;background:var(--accent)}
+.bz .eyebrow::before{content:"";width:44px;height:1px;background:var(--accent-ink)}
 .bz h2{font-size:clamp(32px,4.4vw,52px);margin:14px 0 14px}
 .bz .lead{color:var(--muted);max-width:640px;font-size:16px}
 .bz .head{margin-bottom:44px}
@@ -23,11 +23,11 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
 /* buttons: pill + circular arrow chip */
 .bz .btn{display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 24px;border-radius:var(--r-pill);border:1px solid var(--line-2);background:transparent;color:var(--text);font:500 14px var(--f-sans);text-decoration:none;cursor:pointer;transition:border-color .2s,background .2s}
 .bz .btn::after{content:"↗";display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:15px;transition:transform .2s}
-.bz .btn:hover{border-color:var(--accent);background:rgba(232,199,160,.06)}
+.bz .btn:hover{border-color:var(--accent-ink);background:rgba(232,199,160,.06)}
 .bz .btn:hover::after{transform:rotate(45deg)}
-.bz .btn.solid{background:var(--accent);color:var(--on-accent);border-color:var(--accent);padding:6px 6px 6px 24px}
-.bz .btn.solid::after{background:var(--on-accent);color:var(--accent)}
-.bz .btn.solid:hover{background:var(--accent-600)}
+.bz .btn.solid{background:var(--text);color:#FBF7F1;border-color:var(--text)}
+.bz .btn.solid::after{background:var(--accent);color:var(--on-accent)}
+.bz .btn.solid:hover{background:#3A3026;border-color:#3A3026}
 .bz .btn.sm{font-size:13px;padding:4px 4px 4px 18px}.bz .btn.sm::after{width:32px;height:32px;font-size:13px}
 
 /* canvas: big rounded dark panel */
@@ -40,37 +40,37 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
 /* nav */
 .bz .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
 .bz .logo{font-family:var(--f-serif);font-size:22px;letter-spacing:.01em;text-decoration:none}
-.bz .logo b{color:var(--accent);font-weight:500}
+.bz .logo b{color:var(--accent-ink);font-weight:500}
 .bz .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:13.5px;color:var(--muted)}
-.bz .nav li.on{color:var(--text);box-shadow:0 -22px 0 -21px var(--accent) inset;padding-top:2px}
+.bz .nav li.on{color:var(--text);box-shadow:0 -22px 0 -21px var(--accent-ink) inset;padding-top:2px}
 @media(max-width:820px){.bz .nav ul{display:none}}
 
 /* hero */
 .bz .hero{padding:28px 0 0}
-.bz .hero .canvas{padding:0 44px 0;background:radial-gradient(900px 500px at 78% 40%,rgba(232,199,160,.12),transparent 60%),var(--bg-2)}
+.bz .hero .canvas{padding:0 44px 0;background:radial-gradient(900px 500px at 78% 40%,rgba(227,190,146,.42),transparent 60%),var(--bg-2)}
 .bz .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
 .bz .hero-copy{align-self:center;padding:56px 0}
 .bz .hero h1{font-size:clamp(40px,6vw,72px);margin:22px 0 28px}
-.bz .hero h1 em{font-style:italic;color:var(--accent)}
+.bz .hero h1 em{font-style:italic;color:var(--accent-ink)}
 .bz .hero .lead{margin-bottom:34px}
 .bz .hero-photo{align-self:center;padding:28px 0}
 .bz .hero-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-lg);border:1px solid var(--line-2);box-shadow:var(--sh)}
 @media(max-width:860px){.bz .hero .canvas{padding:0 22px}.bz .hero-grid{grid-template-columns:1fr;min-height:0}.bz .hero-copy{padding:36px 0 0}.bz .hero-photo{padding:24px 0 28px}}
 
 /* stat */
-.bz .stat{border-left:1px solid var(--accent);padding-left:14px}
+.bz .stat{border-left:2px solid var(--accent);padding-left:14px}
 .bz .stat b{display:block;font-family:var(--f-sans);font-weight:300;font-size:clamp(34px,4vw,48px);line-height:1;letter-spacing:-.01em}
 .bz .stat span{display:block;font-size:12.5px;color:var(--muted);margin-top:8px}
 .bz .stats-row{display:flex;flex-wrap:wrap;gap:34px 56px;padding:34px 44px;border-top:1px solid var(--line)}
 @media(max-width:860px){.bz .stats-row{padding:28px 22px}}
 
 /* service card */
-.bz .card{background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;transition:border-color .2s,transform .2s}
+.bz .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:0 1px 2px rgba(90,65,30,.05),0 14px 30px -16px rgba(90,65,30,.2);transition:border-color .2s,transform .2s}
 .bz .card:hover{border-color:var(--line-2);transform:translateY(-3px)}
-.bz .ico{width:44px;height:44px;color:var(--accent);margin-bottom:34px}
+.bz .ico{width:44px;height:44px;color:var(--accent-ink);margin-bottom:34px}
 .bz .card h3{font-size:22px;margin-bottom:10px}
 .bz .card p{color:var(--muted);font-size:14px}
-.bz .card .more{display:inline-block;margin-top:18px;font-size:13px;color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(232,199,160,.4)}
+.bz .card .more{display:inline-block;margin-top:18px;font-size:13px;color:var(--accent-ink);text-decoration:none;border-bottom:1px solid rgba(143,99,41,.4)}
 
 /* split section with photo */
 .bz .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
@@ -80,22 +80,22 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
 .bz .split p.txt{color:var(--muted);margin-bottom:14px;font-size:15px}
 .bz .chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}
 .bz .chip{font-size:12.5px;padding:7px 15px;border:1px solid var(--line-2);border-radius:var(--r-pill);color:var(--muted)}
-.bz .chip.on{border-color:var(--accent);color:var(--accent)}
+.bz .chip.on{border-color:var(--accent-ink);color:var(--accent-ink)}
 
 /* process */
 .bz .proc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
 .bz .proc::before{content:"";position:absolute;left:8%;right:8%;top:30px;height:1px;background:var(--line-2)}
 .bz .pstep{text-align:center;padding:0 14px;position:relative}
-.bz .node{width:60px;height:60px;border-radius:50%;background:var(--bg);border:1px solid var(--line-2);display:grid;place-items:center;margin:0 auto 20px;color:var(--accent);font-family:var(--f-serif);font-size:20px}
+.bz .node{width:60px;height:60px;border-radius:50%;background:var(--surface);border:1px solid var(--line-2);display:grid;place-items:center;margin:0 auto 20px;color:var(--accent-ink);font-family:var(--f-serif);font-size:20px}
 .bz .pstep h3{font-size:20px;margin-bottom:8px}
 .bz .pstep p{color:var(--muted);font-size:14px}
 @media(max-width:760px){.bz .proc{grid-template-columns:1fr;gap:28px}.bz .proc::before{display:none}}
 
 /* blog card */
 .bz .post{padding:0;overflow:hidden}
-.bz .post .cover{aspect-ratio:16/10;background:radial-gradient(circle at 70% 30%,rgba(232,199,160,.22),transparent 55%),linear-gradient(135deg,var(--surface-2),var(--bg));border-bottom:1px solid var(--line)}
+.bz .post .cover{aspect-ratio:16/10;background:radial-gradient(circle at 70% 30%,rgba(227,190,146,.6),transparent 55%),linear-gradient(135deg,var(--surface-2),var(--bg));border-bottom:1px solid var(--line)}
 .bz .post .body{padding:24px 26px 28px}
-.bz .tag{font-size:12px;color:var(--accent);letter-spacing:.04em}
+.bz .tag{font-size:12px;color:var(--accent-ink);letter-spacing:.04em}
 .bz .post h3{font-size:21px;margin:8px 0}
 .bz .post .soon{margin-top:16px;font-size:12.5px;color:var(--dim)}
 
@@ -103,7 +103,7 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
 .bz details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:12px;padding:0 24px}
 .bz summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:16px}
 .bz summary::-webkit-details-marker{display:none}
-.bz summary::after{content:"+";display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-2);color:var(--accent);font-size:18px;line-height:1}
+.bz summary::after{content:"+";display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-2);color:var(--accent-ink);font-size:18px;line-height:1}
 .bz details[open] summary::after{content:"–"}
 .bz details p{padding:0 0 20px;color:var(--muted);font-size:14.5px}
 .bz .faq{max-width:840px}
@@ -114,7 +114,7 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
 .bz .field{display:block;margin-bottom:18px}
 .bz .field span{display:block;font-size:12.5px;color:var(--muted);margin-bottom:8px}
 .bz .field input,.bz .field textarea{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px;color:var(--text);font:400 15px var(--f-sans)}
-.bz .field input:focus,.bz .field textarea:focus{outline:none;border-color:var(--accent)}
+.bz .field input:focus,.bz .field textarea:focus{outline:none;border-color:var(--accent-ink)}
 .bz .field textarea{min-height:96px;resize:vertical}
 .bz .links{display:grid;gap:14px;margin-top:26px}
 .bz .links a{display:flex;align-items:center;gap:14px;text-decoration:none;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
@@ -124,22 +124,22 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
 </style></head><body>
 <div class="bz" lang="uk">
 <section style="padding:48px 0 24px"><div class="wrap">
-  <div class="nav" style="border:0"><a class="logo" href="#">Артем <b>Бойчук</b></a><span style="color:var(--muted);font-size:13px">Design System v2.0 · legaladdress.com.ua</span></div>
+  <div class="nav" style="border:0"><a class="logo" href="#">Артем <b>Бойчук</b></a><span style="color:var(--muted);font-size:13px">Design System v2.1 · legaladdress.com.ua</span></div>
   <div class="eyebrow" style="margin-top:36px">Персональний блог адвоката</div>
-  <h1 style="font-size:clamp(42px,7vw,84px);margin:18px 0 18px">Дизайн-система <em style="color:var(--accent)">Dark&nbsp;Sand</em></h1>
-  <p class="lead">Темний графіт, пісочно-персиковий акцент, витончені засічні заголовки та м’які заокруглення. Стриманий, дорогий і впевнений тон — довіра без пафосу.</p>
+  <h1 style="font-size:clamp(42px,7vw,84px);margin:18px 0 18px">Дизайн-система <em style="color:var(--accent-ink)">Light&nbsp;Sand</em></h1>
+  <p class="lead">Тепла слонова кістка, графітово-коричневий текст, бронзово-пісочний акцент, витончені засічні заголовки та м’які заокруглення. Світлий, спокійний і впевнений тон — довіра без пафосу.</p>
 </div></section>
 
 <section><div class="wrap">
   <div class="head"><div class="eyebrow">01 · Кольори</div><h2>Палітра</h2></div>
   <div class="grid g4" id="sw"></div>
-  <p class="lead" style="margin-top:22px;font-size:14px">Акцент — лише для дій і ключових деталей (кнопки, лінії, цифри). Поверхні розділяємо тонкою лінією, а не тінню.</p>
+  <p class="lead" style="margin-top:22px;font-size:14px">Головна дія — темна таблетка з пісочною стрілкою. Бронзовий акцент — для курсиву, ліній і цифр. Картки білі на теплому фоні, з тонкою лінією й м’якою тінню.</p>
 </div></section>
 
 <section><div class="wrap">
   <div class="head"><div class="eyebrow">02 · Типографіка</div><h2>Шрифти</h2></div>
   <div class="grid g2">
-    <div class="card"><span class="tag">Заголовки · Playfair Display 500</span><h1 style="font-size:56px;margin:14px 0">Юридичний захист</h1><h2 style="font-size:38px;margin:0 0 8px">Напрями практики</h2><h3 style="font-size:24px">Кримінальний захист</h3><p style="margin-top:12px">Курсив <em style="font-family:var(--f-serif);color:var(--accent);font-style:italic">для акценту</em> в заголовку.</p></div>
+    <div class="card"><span class="tag">Заголовки · Playfair Display 500</span><h1 style="font-size:56px;margin:14px 0">Юридичний захист</h1><h2 style="font-size:38px;margin:0 0 8px">Напрями практики</h2><h3 style="font-size:24px">Кримінальний захист</h3><p style="margin-top:12px">Курсив <em style="font-family:var(--f-serif);color:var(--accent-ink);font-style:italic">для акценту</em> в заголовку.</p></div>
     <div class="card"><span class="tag">Текст · Inter 400 / 500</span><p style="font-size:18px;margin:14px 0 10px;color:var(--text)">Лід-абзац 18/1.6 — пояснює суть блоку.</p><p>Основний текст 16/1.65 у приглушеному кольорі. Адвокатська таємниця захищена законом, а ваша історія залишається між нами.</p><p style="font-size:13px;margin-top:10px;color:var(--dim)">Підпис і службовий текст 13</p><div class="stat" style="margin-top:22px"><b>100%</b><span>Цифри — Inter 300, великі</span></div></div>
   </div>
 </div></section>
@@ -180,10 +180,10 @@ background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16px;
   <p class="lead" style="margin-top:22px;font-size:14px">Портрети в костюмі на нейтральному фоні — у hero та «Про адвоката»; кадр «у русі» — для блогу й соцмереж. На фото — радіус 24px, тонка лінія, без рамок і тіней-плям.</p>
 </div></section>
 
-<section style="padding-bottom:40px"><div class="wrap"><div class="foot"><span>© Артем Бойчук, адвокат</span><span>Design System v2.0</span></div></div></section>
+<section style="padding-bottom:40px"><div class="wrap"><div class="foot"><span>© Артем Бойчук, адвокат</span><span>Design System v2.1</span></div></div></section>
 </div>
 <script>
-(function(){var c=[['--bg','#0D0D0E','Фон сторінки'],['--bg-2','#141415','Полотно'],['--surface','#1A1A1C','Картки, поля'],['--line','rgba(255,255,255,.09)','Розділювачі'],['--text','#F4EFE8','Основний текст'],['--muted','#A19C93','Другорядний'],['--accent','#E8C7A0','Акцент'],['--accent-600','#D9B185','Акцент hover']];
+(function(){var c=[['--bg','#FBF7F1','Фон сторінки'],['--bg-2','#F4EDE2','Полотно'],['--surface','#FFFFFF','Картки, поля'],['--line','rgba(60,45,25,.11)','Розділювачі'],['--text','#201B15','Основний текст'],['--muted','#6A6257','Другорядний'],['--accent','#E3BE92','Акцент (кнопка, лінії)'],['--accent-ink','#8F6329','Акцент для тексту']];
 var h='';c.forEach(function(x){h+='<div class="card" style="padding:0;overflow:hidden"><i style="display:block;height:84px;background:'+x[1]+';border-bottom:1px solid var(--line)"></i><div style="padding:14px 18px"><b style="font-weight:500">'+x[2]+'</b><div style="font-size:12px;color:var(--dim);font-family:ui-monospace,Menlo,monospace;margin-top:2px">'+x[0]+' '+x[1]+'</div></div></div>'});
 document.getElementById('sw').innerHTML=h})();
 </script>

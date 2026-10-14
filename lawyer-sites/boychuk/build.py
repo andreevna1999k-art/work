@@ -14,9 +14,9 @@ def sub(html, local):
     return html
 
 body = (R / "src/home.body.html").read_text(encoding="utf-8")
-(R / "home.wp.html").write_text(f"{FONTS}\n<style>\n{CSS}\n.bz{{{FULL}}}\nhtml,body{{margin:0!important;padding:0!important;background:#0D0D0E!important}}\nhtml{{scroll-behavior:smooth}}\n</style>\n{sub(body, False)}", encoding="utf-8")
+(R / "home.wp.html").write_text(f"{FONTS}\n<style>\n{CSS}\n.bz{{{FULL}}}\nhtml,body{{margin:0!important;padding:0!important;background:#FBF7F1!important}}\nhtml{{scroll-behavior:smooth}}\n</style>\n{sub(body, False)}", encoding="utf-8")
 ds = (R / "src/ds.body.html").read_text(encoding="utf-8")
 (R / "design-system.html").write_text(
     f'<!doctype html>\n<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-    f'<title>Бойчук — дизайн-система</title>\n{FONTS}\n<style>body{{margin:0;background:#0D0D0E}}\n{CSS}</style></head><body>\n{sub(ds, True)}\n</body></html>', encoding="utf-8")
+    f'<title>Бойчук — дизайн-система</title>\n{FONTS}\n<style>body{{margin:0;background:#FBF7F1}}\n{CSS}</style></head><body>\n{sub(ds, True)}\n</body></html>', encoding="utf-8")
 print("ok")
