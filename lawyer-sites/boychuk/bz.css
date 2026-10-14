@@ -1,4 +1,4 @@
-.bz{--page:#F5EEE4;--white:#FFFFFF;--ink:#2A1812;--ink-soft:#6B5A50;--brown:#5C2B1D;--brown-2:#6B3424;--brown-dark:#2B1711;--cream:#F4E6D0;--cream-soft:rgba(244,230,208,.74);--gold:#D4B27A;--maroon:#6E1423;--maroon-600:#8A1D30;--line:rgba(42,24,18,.12);--line-d:rgba(244,230,208,.18);
+.bz{--page:#F5EEE4;--white:#FFFFFF;--ink:#2A1812;--ink-soft:#5E4E44;--brown:#5C2B1D;--brown-2:#6B3424;--brown-dark:#2B1711;--cream:#F4E6D0;--cream-soft:rgba(244,230,208,.88);--gold:#D4B27A;--maroon:#6E1423;--maroon-600:#8A1D30;--line:rgba(42,24,18,.12);--line-d:rgba(244,230,208,.18);
 --f-head:'Forum','Times New Roman',serif;--f-body:'Source Sans 3',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
 --r-panel:36px;--r-card:24px;--r-md:18px;--r-pill:999px;--sh:0 18px 44px -18px rgba(43,23,17,.35);
 background:var(--page);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow:hidden}
