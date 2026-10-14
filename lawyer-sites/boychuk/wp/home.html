@@ -1,0 +1,248 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap">
+<style>
+.bz{--ivory:#FBF8F3;--cream:#F4EDE3;--sand:#EADFCF;--line:#E4D9C6;--bronze:#B08A47;--bronze-600:#9A7637;--bronze-700:#7F6128;--bronze-100:#F1E6D1;--ink:#1F1B15;--ink-soft:#5C5548;--ink-mute:#8A8171;--deep:#231E17;--white:#fff;--f-serif:'Cormorant Garamond','Times New Roman',serif;--f-sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--r-md:12px;--r-lg:18px;--sh-1:0 1px 2px rgba(60,45,20,.06),0 4px 14px rgba(60,45,20,.06);--sh-2:0 10px 30px rgba(60,45,20,.12);
+width:100vw;margin-left:calc(50% - 50vw);background:var(--ivory);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow:hidden}
+.bz *{box-sizing:border-box}
+.bz img{max-width:100%;display:block}
+.bz h1,.bz h2,.bz h3{font-family:var(--f-serif);font-weight:600;line-height:1.1;color:var(--ink);margin:0;letter-spacing:-.005em}
+.bz p{margin:0}
+.bz a{color:inherit}
+.bz .wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+.bz section{position:relative;padding:76px 0}
+.bz .alt{background:var(--cream)}
+.bz .wm{position:absolute;right:-10px;top:8px;font-family:var(--f-serif);font-weight:700;font-size:clamp(70px,14vw,190px);letter-spacing:.04em;color:var(--bronze);opacity:.07;pointer-events:none;line-height:1;text-transform:uppercase;white-space:nowrap}
+.bz .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-700)}
+.bz .eyebrow::before{content:"";width:7px;height:7px;background:var(--bronze)}
+.bz h2{font-size:clamp(32px,4.4vw,48px);margin:10px 0 10px}
+.bz .lead{color:var(--ink-soft);max-width:660px;font-size:17px}
+.bz .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;background:var(--bronze);color:#fff;font-weight:600;font-size:15px;text-decoration:none;box-shadow:var(--sh-1);transition:background .2s,transform .2s}
+.bz .btn:hover{background:var(--bronze-600);transform:translateY(-1px)}
+.bz .btn.ghost{background:transparent;color:var(--bronze-700);border:1px solid var(--bronze);box-shadow:none}
+.bz .btn.ghost:hover{background:var(--bronze-100)}
+.bz .grid{display:grid;gap:22px}
+.bz .g3{grid-template-columns:repeat(3,1fr)}
+.bz .g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.bz .g3{grid-template-columns:1fr}.bz .g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.bz .g4{grid-template-columns:1fr}.bz section{padding:56px 0}}
+
+/* hero */
+.bz .hero{padding:48px 0 64px;background:linear-gradient(180deg,var(--ivory),var(--cream))}
+.bz .hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center}
+@media(max-width:860px){.bz .hero-grid{grid-template-columns:1fr;gap:28px}}
+.bz .hero .photo{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-2);aspect-ratio:1/1}
+.bz .hero .photo img{width:100%;height:100%;object-fit:cover}
+.bz .hero h1{font-size:clamp(40px,6.4vw,72px);margin:14px 0 18px}
+.bz .hero h1 em{font-style:italic;color:var(--bronze-600)}
+.bz .hero p.lead{margin-bottom:26px}
+.bz .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.bz .sign{margin-top:30px;font-family:var(--f-serif);font-style:italic;font-weight:600;font-size:26px;color:var(--bronze-700)}
+.bz .sign small{display:block;font-family:var(--f-sans);font-style:normal;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-top:2px}
+
+/* value row */
+.bz .vals{padding:0;background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bz .val{padding:34px 28px;border-right:1px solid var(--line)}
+.bz .val:last-child{border-right:0}
+@media(max-width:900px){.bz .val{border-right:0;border-bottom:1px solid var(--line)}.bz .val:last-child{border-bottom:0}}
+.bz .ico{width:44px;height:44px;color:var(--bronze);margin-bottom:14px}
+.bz .val h3,.bz .card h3,.bz .step h3{font-size:24px;margin-bottom:8px}
+.bz .val p,.bz .card p,.bz .step p{color:var(--ink-soft);font-size:15px}
+
+/* cards */
+.bz .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:26px;box-shadow:var(--sh-1);transition:transform .2s,box-shadow .2s}
+.bz .card:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.bz .card .more{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--bronze-700);text-decoration:none}
+.bz .head{margin-bottom:38px;position:relative}
+
+/* about */
+.bz .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative}
+@media(max-width:860px){.bz .about-grid{grid-template-columns:1fr;gap:28px}}
+.bz .about .photo{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-2);aspect-ratio:1/1}
+.bz .about .photo img{width:100%;height:100%;object-fit:cover}
+.bz .about p{color:var(--ink-soft);margin-bottom:14px}
+.bz .facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
+.bz .chip{font-size:12.5px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--white);color:var(--ink-soft)}
+.bz .chip.on{background:var(--bronze-100);border-color:var(--bronze);color:var(--bronze-700);font-weight:600}
+
+/* steps */
+.bz .step{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:26px;position:relative}
+.bz .step .n{font-family:var(--f-serif);font-weight:700;font-size:48px;line-height:1;color:var(--bronze);opacity:.55;margin-bottom:8px}
+
+/* blog */
+.bz .post .tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze-700)}
+.bz .post h3{margin:8px 0}
+.bz .post .soon{font-size:12.5px;color:var(--ink-mute);margin-top:14px}
+
+/* faq */
+.bz .faq{max-width:820px}
+.bz details{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:12px;padding:0 22px}
+.bz summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:16px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.bz summary::-webkit-details-marker{display:none}
+.bz summary::after{content:"+";font-size:24px;line-height:1;color:var(--bronze)}
+.bz details[open] summary::after{content:"–"}
+.bz details p{padding:0 0 18px;color:var(--ink-soft);font-size:15px}
+
+/* contact */
+.bz .contact{background:var(--deep);color:#F3EBDD}
+.bz .contact h2{color:#F3EBDD}
+.bz .contact .lead{color:#C9BFAC}
+.bz .contact .eyebrow{color:#D4B176}
+.bz .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative}
+@media(max-width:860px){.bz .contact-grid{grid-template-columns:1fr}}
+.bz .contact .box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:28px}
+.bz .contact .box a{display:block;text-decoration:none;font-size:22px;font-family:var(--f-serif);font-weight:600;color:#fff;margin-bottom:6px}
+.bz .contact .box span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#D4B176;margin:14px 0 2px}
+.bz .contact .box span:first-child{margin-top:0}
+.bz .contact .wm{color:#fff;opacity:.04}
+.bz .foot{padding:22px 0;font-size:12.5px;color:var(--ink-mute);text-align:center;background:var(--ivory)}
+</style>
+
+<div class="bz" lang="uk">
+
+<!-- HERO -->
+<section class="hero">
+<div class="wm">Justice</div>
+<div class="wrap hero-grid">
+  <div>
+    <span class="eyebrow">Адвокат · Персональний блог</span>
+    <h1>Професійний <em>юридичний захист</em> без зайвих слів</h1>
+    <p class="lead">Я — Артем Бойчук. Допомагаю людям і бізнесу відстоювати права та приймати зважені правові рішення: чесно, за чіткою стратегією і з увагою до кожної деталі справи.</p>
+    <div class="cta-row">
+      <a class="btn" href="#contact">Отримати консультацію</a>
+      <a class="btn ghost" href="#blog">Читати блог</a>
+    </div>
+    <div class="sign">Артем Бойчук<small>Адвокат</small></div>
+  </div>
+  <div class="photo"><img src="https://legaladdress.com.ua/wp-content/uploads/2026/10/boychuk-portrait-office.jpg" alt="Адвокат Артем Бойчук" width="800" height="800"></div>
+</div>
+</section>
+
+<!-- VALUES -->
+<section class="vals">
+<div class="wrap grid g3" style="gap:0">
+  <div class="val">
+    <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 7 11v12c0 10 7 17 17 20 10-3 17-10 17-20V11L24 5Z"/><path d="m17 24 5 5 9-10"/></svg>
+    <h3>Результат, а не обіцянки</h3>
+    <p>Спочатку оцінюю перспективи справи, потім називаю реальні шляхи й ризики. Без гарантій «на 100%».</p>
+  </div>
+  <div class="val">
+    <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 6h17l8 8v28H13V6Z"/><path d="M30 6v8h8M19 24h13M19 31h13M19 38h8"/></svg>
+    <h3>Індивідуальна стратегія</h3>
+    <p>Кожна справа унікальна. Будую позицію під ваші обставини, документи й цілі.</p>
+  </div>
+  <div class="val">
+    <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7v34M10 41h28M10 14h28"/><path d="M10 14 4 28a6 6 0 0 0 12 0L10 14ZM38 14l-6 14a6 6 0 0 0 12 0l-6-14Z"/></svg>
+    <h3>Чесність і конфіденційність</h3>
+    <p>Адвокатська таємниця — не формальність. Усе, що ви розповідаєте, залишається між нами.</p>
+  </div>
+</div>
+</section>
+
+<!-- PRACTICE -->
+<section class="alt" id="practice">
+<div class="wm">Practice</div>
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">З чим допомагаю</span>
+    <h2>Напрями практики</h2>
+    <p class="lead">Основні питання, з якими до мене звертаються. Якщо вашого питання немає в списку — напишіть, і ми з’ясуємо, чи зможу допомогти.</p>
+  </div>
+  <div class="grid g3">
+    <article class="card"><h3>Кримінальний захист</h3><p>Захист на стадії досудового розслідування та в суді, супровід під час обшуків і допитів.</p><a class="more" href="#contact">Обговорити справу →</a></article>
+    <article class="card"><h3>Цивільні та господарські спори</h3><p>Договірні суперечки, стягнення боргів, захист майнових прав, представництво в судах.</p><a class="more" href="#contact">Обговорити справу →</a></article>
+    <article class="card"><h3>Правовий супровід бізнесу</h3><p>Договори, реєстрація та реорганізація, перевірка контрагентів, юридичні консультації для власників.</p><a class="more" href="#contact">Обговорити справу →</a></article>
+    <article class="card"><h3>Нерухомість і земля</h3><p>Перевірка об’єктів, оформлення прав, супровід угод, вирішення майнових конфліктів.</p><a class="more" href="#contact">Обговорити справу →</a></article>
+    <article class="card"><h3>Сімейне та спадкове право</h3><p>Розірвання шлюбу, поділ майна, аліменти, питання спадщини та заповітів.</p><a class="more" href="#contact">Обговорити справу →</a></article>
+    <article class="card"><h3>Консультації та аналіз документів</h3><p>Правова оцінка ситуації, перевірка договорів і підготовка процесуальних документів.</p><a class="more" href="#contact">Обговорити справу →</a></article>
+  </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="wm">Attorney</div>
+<div class="wrap about-grid">
+  <div class="photo"><img src="https://legaladdress.com.ua/wp-content/uploads/2026/10/boychuk-portrait-office-2.jpg" alt="Артем Бойчук, адвокат" width="640" height="640" loading="lazy"></div>
+  <div>
+    <span class="eyebrow">Про адвоката</span>
+    <h2>Артем Валерійович Бойчук</h2>
+    <p>Я працюю з клієнтами напряму: без посередників і шаблонних відписок. Пояснюю складне простою мовою, щоб ви розуміли, що відбувається у вашій справі на кожному етапі.</p>
+    <p>На цьому сайті — мій персональний блог: розбори практики, відповіді на типові питання та корисні поради, щоб ви могли захистити себе ще до того, як виникне проблема.</p>
+    <div class="facts">
+      <span class="chip on">Адвокат</span><span class="chip">Консультації онлайн</span><span class="chip">Адвокатська таємниця</span><span class="chip">Українською та російською</span>
+    </div>
+    <a class="btn" href="#contact">Написати мені</a>
+  </div>
+</div>
+</section>
+
+<!-- STEPS -->
+<section class="alt" id="how">
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Як це працює</span>
+    <h2>Від першого повідомлення до результату</h2>
+  </div>
+  <div class="grid g4">
+    <div class="step"><div class="n">01</div><h3>Звернення</h3><p>Ви коротко описуєте ситуацію в Telegram або телефонуєте.</p></div>
+    <div class="step"><div class="n">02</div><h3>Аналіз</h3><p>Вивчаю документи й обставини, оцінюю ризики та перспективи.</p></div>
+    <div class="step"><div class="n">03</div><h3>Стратегія</h3><p>Пропоную план дій, строки та вартість — прозоро й письмово.</p></div>
+    <div class="step"><div class="n">04</div><h3>Захист</h3><p>Веду справу, інформую про кожен крок і довожу її до результату.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+<div class="wm">Blog</div>
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Блог</span>
+    <h2>Корисне від адвоката</h2>
+    <p class="lead">Розбираю практичні питання без юридичного «канцеляриту». Перші статті — вже скоро.</p>
+  </div>
+  <div class="grid g3">
+    <article class="card post"><span class="tag">Кримінальне право</span><h3>Що робити під час обшуку: 7 правил</h3><p>Короткий чек-лист для тих, хто опинився в складній ситуації.</p><div class="soon">Незабаром</div></article>
+    <article class="card post"><span class="tag">Бізнес</span><h3>Як перевірити контрагента перед угодою</h3><p>Джерела, документи та сигнали, на які варто звернути увагу.</p><div class="soon">Незабаром</div></article>
+    <article class="card post"><span class="tag">Нерухомість</span><h3>Купівля квартири: типові ризики</h3><p>Де найчастіше помиляються покупці та як цього уникнути.</p><div class="soon">Незабаром</div></article>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="alt" id="faq">
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Питання та відповіді</span>
+    <h2>Часті запитання</h2>
+  </div>
+  <div class="faq">
+    <details><summary>Як записатися на консультацію?</summary><p>Напишіть у Telegram або зателефонуйте. Коротко опишіть ситуацію, і ми домовимося про зручний час та формат — особисто чи онлайн.</p></details>
+    <details><summary>Чи конфіденційна розмова з адвокатом?</summary><p>Так. Адвокатська таємниця захищена законом: відомості, якими ви ділитеся, не підлягають розголошенню.</p></details>
+    <details><summary>Скільки коштують послуги?</summary><p>Вартість залежить від складності справи та обсягу роботи. Після аналізу документів я називаю її заздалегідь і фіксую письмово.</p></details>
+    <details><summary>Ви працюєте дистанційно?</summary><p>Так, консультую та веду справи онлайн у всій Україні. Для судових засідань і слідчих дій виїжджаю за потреби.</p></details>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="wm">Contact</div>
+<div class="wrap contact-grid">
+  <div>
+    <span class="eyebrow">Контакти</span>
+    <h2>Розкажіть про вашу ситуацію</h2>
+    <p class="lead">Напишіть або зателефонуйте — разом визначимо, як вас захистити. Перша відповідь — у найближчий час.</p>
+  </div>
+  <div class="box">
+    <span>Телефон</span>
+    <a href="tel:+380754921980">+38 075 492 19 80</a>
+    <span>Telegram</span>
+    <a href="https://t.me/artem_adwokat" target="_blank" rel="noopener">@artem_adwokat</a>
+  </div>
+</div>
+</section>
+
+<div class="foot">© Артем Бойчук, адвокат · legaladdress.com.ua</div>
+
+</div>
