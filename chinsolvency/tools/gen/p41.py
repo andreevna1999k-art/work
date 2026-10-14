@@ -30,6 +30,7 @@ S1='''        <span class="eyebrow">Pe scurt</span>
         </div>'''
 S2='''        <span class="eyebrow">Definiție</span>
         <h2>Ce este poprirea bancară și cine o poate înființa</h2>
+'''+F('cum-ridici-poprirea-pasii')+'''
         <p>Poprirea indisponibilizează sumele din conturi (soldul și încasările viitoare, art. 781 alin. 2 CPC), din momentul comunicării adresei către bancă (art. 784 alin. 1). O înființează un executor judecătoresc, la cererea creditorului cu titlu executoriu; datoriile către stat se execută prin organele fiscale, după Codul de procedură fiscală. Ghidul complet: <a href="/poprire-cont/">poprirea pe cont</a>.</p>'''
 S3='''        <span class="eyebrow">Când se ridică</span>
         <h2>Când poate fi ridicată poprirea</h2>
