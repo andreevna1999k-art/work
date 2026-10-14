@@ -3,9 +3,9 @@ import pathlib
 R = pathlib.Path(__file__).parent
 CSS = (R / "bz.css").read_text(encoding="utf-8")
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap">')
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Source+Sans+3:wght@400;600&display=swap">')
 WP = "https://legaladdress.com.ua/wp-content/uploads/2026/10/boychuk-"
-IMGS = {"__IMG_OFFICE__": "portrait-office", "__IMG_OFFICE2__": "portrait-office-2", "__IMG_CAR__": "portrait-car"}
+IMGS = {"__IMG_OFFICE__": "portrait-office", "__IMG_OFFICE2__": "portrait-office-2", "__IMG_CAR__": "portrait-car-crop"}
 
 TITLE = "Бойчук Артем Валерійович — юрист по кредитам"
 DESC = "Юрист по кредитам у Києві: аналіз кредитного договору, переговори з банком, захист від колекторів і представництво в суді. Консультація в Telegram."
@@ -29,9 +29,9 @@ def sub(html, local):
     return html
 
 body = (R / "src/home.body.html").read_text(encoding="utf-8")
-(R / "home.wp.html").write_text(f"{HEAD}\n{FONTS}\n<style>\n{CSS}\n.bz{{{FULL}}}\nhtml,body{{margin:0!important;padding:0!important;background:#FBF7F1!important}}\nhtml{{scroll-behavior:smooth}}\n</style>\n{sub(body, False)}", encoding="utf-8")
+(R / "home.wp.html").write_text(f"{HEAD}\n{FONTS}\n<style>\n{CSS}\n.bz{{{FULL}}}\nhtml,body{{margin:0!important;padding:0!important;background:#F5EEE4!important}}\nhtml{{scroll-behavior:smooth}}\n</style>\n{sub(body, False)}", encoding="utf-8")
 ds = (R / "src/ds.body.html").read_text(encoding="utf-8")
 (R / "design-system.html").write_text(
     f'<!doctype html>\n<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-    f'<title>Бойчук — дизайн-система</title>\n{FONTS}\n<style>body{{margin:0;background:#FBF7F1}}\n{CSS}</style></head><body>\n{sub(ds, True)}\n</body></html>', encoding="utf-8")
+    f'<title>Бойчук — дизайн-система</title>\n{FONTS}\n<style>body{{margin:0;background:#F5EEE4}}\n{CSS}</style></head><body>\n{sub(ds, True)}\n</body></html>', encoding="utf-8")
 print("ok")
