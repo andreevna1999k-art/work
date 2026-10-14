@@ -7,13 +7,13 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
 WP = "https://legaladdress.com.ua/wp-content/uploads/2026/10/boychuk-"
 IMGS = {"__IMG_OFFICE__": "portrait-office", "__IMG_OFFICE2__": "portrait-office-2", "__IMG_CAR__": "portrait-car"}
 
-TITLE = "Бойчук Артем Валерійович — юрист з кредитних питань"
-DESC = "Юрист з кредитних питань у Києві: аналіз кредитного договору, переговори з банком, захист від колекторів і представництво в суді. Консультація в Telegram."
+TITLE = "Бойчук Артем Валерійович — юрист по кредитам"
+DESC = "Юрист по кредитам у Києві: аналіз кредитного договору, переговори з банком, захист від колекторів і представництво в суді. Консультація в Telegram."
 import json
 SCHEMA = {"@context": "https://schema.org", "@type": "Person",
  "@id": "https://legaladdress.com.ua/#boychuk",
  "name": "Бойчук Артем Валерійович", "givenName": "Артем", "familyName": "Бойчук", "additionalName": "Валерійович",
- "jobTitle": "Юрист з кредитних питань", "description": DESC,
+ "jobTitle": "Юрист по кредитам", "description": DESC,
  "url": "https://legaladdress.com.ua/", "image": WP+"portrait-office.jpg",
  "telephone": "+380754921980", "sameAs": ["https://t.me/artem_adwokat"],
  "knowsAbout": ["Кредитні спори", "Реструктуризація боргів", "Захист від колекторів", "Виконавче провадження", "Іпотека"],
