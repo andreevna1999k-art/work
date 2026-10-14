@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Дизайн-система · Блог адвоката Артема Бойчука</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  /* Colour */
+  --ivory:#FBF8F3; --cream:#F4EDE3; --sand:#EADFCF; --line:#E4D9C6;
+  --bronze:#B08A47; --bronze-600:#9A7637; --bronze-700:#7F6128; --bronze-100:#F1E6D1;
+  --ink:#1F1B15; --ink-soft:#5C5548; --ink-mute:#8A8171; --deep:#231E17; --white:#fff;
+  --ok:#4F7A4A; --warn:#B4651F;
+  /* Type */
+  --f-serif:'Cormorant Garamond','Times New Roman',serif;
+  --f-sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  /* Shape */
+  --r-sm:8px; --r-md:12px; --r-lg:18px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(60,45,20,.06),0 4px 14px rgba(60,45,20,.06);
+  --sh-2:0 10px 30px rgba(60,45,20,.12);
+  --gutter:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --ivory:#17130E; --cream:#1E1912; --sand:#2A2318; --line:#3A3122; --ink:#F3EBDD; --ink-soft:#C9BFAC; --ink-mute:#9A8F7B; --bronze:#C9A262; --bronze-600:#D4B176; --bronze-700:#E0C38F; --bronze-100:#2F2616; --white:#1E1912; }
+}
+:root[data-theme="dark"]{ --ivory:#17130E; --cream:#1E1912; --sand:#2A2318; --line:#3A3122; --ink:#F3EBDD; --ink-soft:#C9BFAC; --ink-mute:#9A8F7B; --bronze:#C9A262; --bronze-600:#D4B176; --bronze-700:#E0C38F; --bronze-100:#2F2616; --white:#1E1912; }
+
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--bronze-700)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+section.ds{padding:72px 0;border-top:1px solid var(--line);position:relative;overflow:hidden}
+section.ds.alt{background:var(--cream)}
+.watermark{position:absolute;right:-10px;top:10px;font-family:var(--f-serif);font-weight:700;font-size:clamp(70px,14vw,190px);letter-spacing:.04em;color:var(--bronze);opacity:.07;pointer-events:none;line-height:1;text-transform:uppercase;white-space:nowrap}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-700)}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--bronze);display:inline-block}
+h1,h2,h3,h4{font-family:var(--f-serif);font-weight:600;line-height:1.12;color:var(--ink);letter-spacing:-.005em}
+h2.sec{font-size:clamp(30px,4.2vw,44px);margin:10px 0 8px}
+.lead{color:var(--ink-soft);max-width:680px;font-size:17px}
+.note{font-size:13px;color:var(--ink-mute)}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.g6{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.g2,.g3,.g4{grid-template-columns:1fr}.g6{grid-template-columns:repeat(2,1fr)}}
+.mt{margin-top:36px}
+
+/* Cover */
+.cover{padding:30px 0 56px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 0 40px;font-size:13px;color:var(--ink-mute)}
+.cover h1{font-size:clamp(40px,7vw,76px);margin:14px 0 14px}
+.cover h1 em{font-style:italic;color:var(--bronze-600)}
+.cover-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:860px){.cover-grid{grid-template-columns:1fr}}
+.cover .photo{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-2);aspect-ratio:1/1;position:relative}
+.cover .photo img{width:100%;height:100%;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-size:12.5px;padding:5px 12px;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--white);color:var(--ink-soft)}
+.chip.on{background:var(--bronze-100);border-color:var(--bronze);color:var(--bronze-700);font-weight:600}
+
+/* Colours */
+.sw{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:var(--white);box-shadow:var(--sh-1)}
+.sw i{display:block;height:92px}
+.sw div{padding:10px 12px;font-size:13px}
+.sw b{display:block;font-size:13.5px}.sw span{color:var(--ink-mute);font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.sw small{display:block;color:var(--ink-soft);margin-top:2px;font-size:12px}
+
+/* Type */
+.spec{display:grid;grid-template-columns:150px 1fr;gap:12px 24px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.spec .k{font-size:12px;color:var(--ink-mute);font-family:ui-monospace,Menlo,monospace}
+@media(max-width:600px){.spec{grid-template-columns:1fr}}
+.t-display{font-family:var(--f-serif);font-weight:600;font-size:clamp(44px,7vw,72px);line-height:1.04}
+.t-h1{font-family:var(--f-serif);font-weight:600;font-size:clamp(34px,5vw,52px);line-height:1.08}
+.t-h2{font-family:var(--f-serif);font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1.12}
+.t-h3{font-family:var(--f-serif);font-weight:600;font-size:26px;line-height:1.2}
+.t-lead{font-size:18px;color:var(--ink-soft)}
+.t-body{font-size:16px}.t-small{font-size:13.5px;color:var(--ink-soft)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14.5px/1 var(--f-sans);padding:14px 22px;border-radius:var(--r-sm);border:1.5px solid transparent;cursor:pointer;text-decoration:none;transition:.18s}
+.btn-primary{background:var(--bronze-700);color:#fff}
+.btn-primary:hover{background:var(--bronze-600);box-shadow:0 6px 18px rgba(127,97,40,.28);transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--bronze-700);border-color:var(--bronze)}
+.btn-line:hover{background:var(--bronze-100)}
+.btn-text{padding:6px 0;color:var(--bronze-700);border:0;background:none;border-bottom:1.5px solid var(--bronze)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--bronze);outline-offset:3px}
+.btn-sm{padding:10px 16px;font-size:13.5px}
+
+/* Components */
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:26px;box-shadow:var(--sh-1)}
+.card h3{font-size:22px;margin:14px 0 6px}
+.card p{color:var(--ink-soft);font-size:14.5px}
+.ico{width:46px;height:46px;stroke:var(--bronze);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.more{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--bronze-700);text-decoration:none}
+.more::after{content:" →"}
+.cols-div>*+*{border-left:1px solid var(--line)}
+@media(max-width:900px){.cols-div>*+*{border-left:0}}
+.feat{padding:8px 28px}
+.feat:first-child{padding-left:0}
+
+.navdemo{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 22px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;box-shadow:var(--sh-1)}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.logo .mark{width:40px;height:40px;border:1.5px solid var(--bronze);border-radius:8px 8px 20px 20px;display:grid;place-items:center;font-family:var(--f-serif);font-weight:700;font-size:20px;color:var(--bronze-700);background:var(--bronze-100)}
+.logo b{display:block;font-family:var(--f-serif);font-size:20px;line-height:1;letter-spacing:.06em}
+.logo span{display:block;font-size:10px;letter-spacing:.3em;color:var(--ink-mute);margin-top:3px}
+.navdemo nav{display:flex;gap:22px;font-size:13.5px;flex:1;justify-content:center;flex-wrap:wrap}
+.navdemo nav a{color:var(--ink);text-decoration:none;padding:4px 0;border-bottom:1.5px solid transparent}
+.navdemo nav a.on,.navdemo nav a:hover{color:var(--bronze-700);border-color:var(--bronze)}
+
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:36px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;position:relative;overflow:hidden}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:18px}}
+.hero .ph{border-radius:var(--r-md);overflow:hidden;aspect-ratio:4/4.2}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.hero h3{font-size:clamp(34px,4.6vw,54px);margin:12px 0 14px;line-height:1.05}
+.hero p{color:var(--ink-soft);max-width:460px;margin-bottom:22px}
+.sig{font-family:var(--f-serif);font-style:italic;font-size:30px;color:var(--bronze-700);margin-top:26px;line-height:1}
+.sig small{display:block;font-family:var(--f-sans);font-style:normal;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:6px}
+
+.stat b{display:block;font-family:var(--f-serif);font-size:44px;font-weight:600;line-height:1;color:var(--ink)}
+.stat span{font-size:13px;color:var(--ink-soft)}
+.stat{display:flex;gap:14px;align-items:center}
+.stat .ico{width:34px;height:34px;flex:none}
+
+.post{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--sh-1);display:flex;flex-direction:column;transition:.2s}
+.post:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.post .cover-img{aspect-ratio:16/9;background:linear-gradient(135deg,#E9DCC3,#CDB68A);display:grid;place-items:center}
+.post .cover-img .ico{width:54px;height:54px;stroke:#fff;opacity:.9}
+.post .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.post .meta{font-size:12px;color:var(--ink-mute);display:flex;gap:10px;align-items:center}
+.tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze-700);background:var(--bronze-100);padding:4px 10px;border-radius:var(--r-pill)}
+.post h3{font-size:23px}
+.post p{font-size:14.5px;color:var(--ink-soft)}
+
+.article{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,4vw,48px);box-shadow:var(--sh-1)}
+.article .byline{display:flex;gap:12px;align-items:center;margin:14px 0 22px;font-size:13.5px;color:var(--ink-soft)}
+.article .byline img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 18%}
+.article h1{font-size:clamp(32px,4.6vw,48px);margin:12px 0}
+.article p{max-width:680px;margin-bottom:16px}
+.article h2{font-size:30px;margin:26px 0 10px}
+blockquote{border-left:3px solid var(--bronze);background:var(--cream);padding:18px 22px;border-radius:0 var(--r-md) var(--r-md) 0;font-family:var(--f-serif);font-size:23px;line-height:1.35;color:var(--ink);max-width:680px;margin:20px 0}
+.callout{background:var(--bronze-100);border:1px solid var(--bronze);border-radius:var(--r-md);padding:16px 20px;max-width:680px;margin:20px 0;font-size:15px}
+.callout b{color:var(--bronze-700);display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.author{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:var(--r-md);padding:20px;max-width:720px;margin-top:28px}
+.author img{width:96px;height:96px;border-radius:var(--r-md);object-fit:cover;object-position:50% 15%}
+.author b{font-family:var(--f-serif);font-size:22px;display:block}
+.author p{font-size:13.5px;color:var(--ink-soft);margin:4px 0 0}
+.author .ph-note{color:var(--ink-mute);font-style:italic}
+
+.cta-band{background:var(--deep);color:#F3EBDD;border-radius:var(--r-lg);padding:34px clamp(22px,4vw,44px);display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta-band h3{color:#F6EEDF;font-size:clamp(26px,3.4vw,36px)}
+.cta-band p{color:#CFC4AE;max-width:520px;margin-top:6px}
+.cta-band .btn-primary{background:var(--bronze);color:#1F1B15}
+.cta-band .btn-primary:hover{background:#C9A262}
+
+details.faq{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:0 20px;margin-bottom:10px}
+details.faq summary{cursor:pointer;list-style:none;padding:16px 0;font-weight:600;display:flex;justify-content:space-between;gap:12px}
+details.faq summary::after{content:"+";color:var(--bronze);font-size:22px;line-height:1}
+details.faq[open] summary::after{content:"–"}
+details.faq p{padding:0 0 16px;color:var(--ink-soft);font-size:15px}
+
+.tbl{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;font-size:14.5px}
+.tbl th{background:var(--bronze-100);text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze-700);padding:12px 16px}
+.tbl td{padding:12px 16px;border-top:1px solid var(--line)}
+
+.tok{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.tok div{background:var(--white);border:1px solid var(--line);padding:14px;border-radius:var(--r-md);font-size:13px}
+.tok .shape{height:48px;background:var(--bronze-100);border:1.5px solid var(--bronze);margin-bottom:10px}
+
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.dd{grid-template-columns:1fr}}
+.dd ul{list-style:none;padding:0;display:grid;gap:8px;font-size:14.5px}
+.dd li{padding-left:24px;position:relative;color:var(--ink-soft)}
+.do li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.dont li::before{content:"×";position:absolute;left:3px;color:var(--warn);font-weight:700}
+footer.f{background:var(--deep);color:#CFC4AE;padding:42px 0;font-size:13.5px}
+.theme{background:none;border:1px solid var(--line);color:var(--ink-soft);padding:6px 12px;border-radius:var(--r-pill);cursor:pointer;font:500 12.5px var(--f-sans)}
+</style>
+</head>
+<body>
+
+<header class="wrap cover">
+  <div class="topbar">
+    <div class="eyebrow">Дизайн-система · v1.0</div>
+    <button class="theme" id="th" type="button">Світла / темна</button>
+  </div>
+  <div class="cover-grid">
+    <div>
+      <div class="eyebrow">Персональний блог адвоката</div>
+      <h1>Артем Бойчук:<br><em>професійний</em><br>юридичний захист</h1>
+      <p class="lead">Теплий, «пергаментний» стиль: слонова кістка, бронза, класична антиква для заголовків і чиста гротеска для тексту. Мета: довіра і статус експерта, без крику та зайвої декоративності.</p>
+      <div class="chips"><span class="chip on">Довіра</span><span class="chip on">Експертність</span><span class="chip">Спокій</span><span class="chip">Чіткість</span><span class="chip">Статус</span></div>
+    </div>
+    <div class="photo"><img src="{{IMG_HERO}}" alt="Артем Бойчук, адвокат"></div>
+  </div>
+</header>
+
+<section class="ds alt" id="principles">
+  <div class="watermark">Принципи</div>
+  <div class="wrap">
+    <span class="eyebrow">01 · Основи</span>
+    <h2 class="sec">Принципи стилю</h2>
+    <div class="grid g3 mt cols-div">
+      <div class="feat"><svg class="ico" viewBox="0 0 48 48"><path d="M24 6l15 6v11c0 9-6 16-15 19C15 39 9 32 9 23V12z"/><path d="M17 24l5 5 9-10"/></svg><h3 style="font-size:22px;margin:12px 0 6px">Довіра насамперед</h3><p class="t-small">Світле тло, багато повітря, реальні фото адвоката. Жодних стоків «Феміди» там, де можна показати людину.</p></div>
+      <div class="feat"><svg class="ico" viewBox="0 0 48 48"><path d="M12 8h20l6 6v26H12z"/><path d="M32 8v6h6M18 22h14M18 28h14M18 34h9"/></svg><h3 style="font-size:22px;margin:12px 0 6px">Читабельність блогу</h3><p class="t-small">Колонка тексту до 680 px, міжрядковий інтервал 1,65, заголовки-антиква. Стаття важливіша за декор.</p></div>
+      <div class="feat"><svg class="ico" viewBox="0 0 48 48"><path d="M24 8v32M10 16h28M10 16l-5 12h10zM38 16l-5 12h10z"/><path d="M16 40h16"/></svg><h3 style="font-size:22px;margin:12px 0 6px">Одна акцентна мова</h3><p class="t-small">Бронза — лише для дій, акцентів і тонких ліній. Усе інше — теплі нейтральні кольори.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ds" id="colour">
+  <div class="watermark">Колір</div>
+  <div class="wrap">
+    <span class="eyebrow">02 · Колір</span>
+    <h2 class="sec">Палітра</h2>
+    <p class="lead">Тло та поверхні мають теплий підтон, акцент — приглушена бронза. Текстова бронза темніша (<code>bronze-700</code>), щоб тримати контраст на світлому тлі.</p>
+    <div class="grid g4 mt">
+      <div class="sw"><i style="background:#FBF8F3"></i><div><b>Ivory</b><span>#FBF8F3</span><small>Основне тло сторінки</small></div></div>
+      <div class="sw"><i style="background:#F4EDE3"></i><div><b>Cream</b><span>#F4EDE3</span><small>Чергові секції, цитати</small></div></div>
+      <div class="sw"><i style="background:#EADFCF"></i><div><b>Sand</b><span>#EADFCF</span><small>Плейсхолдери, заливки</small></div></div>
+      <div class="sw"><i style="background:#E4D9C6"></i><div><b>Line</b><span>#E4D9C6</span><small>Рамки, роздільники</small></div></div>
+      <div class="sw"><i style="background:#B08A47"></i><div><b>Bronze</b><span>#B08A47</span><small>Декор, іконки, лінії</small></div></div>
+      <div class="sw"><i style="background:#9A7637"></i><div><b>Bronze 600</b><span>#9A7637</span><small>Hover, виділення</small></div></div>
+      <div class="sw"><i style="background:#7F6128"></i><div><b>Bronze 700</b><span>#7F6128</span><small>Кнопки, текстові посилання</small></div></div>
+      <div class="sw"><i style="background:#F1E6D1"></i><div><b>Bronze 100</b><span>#F1E6D1</span><small>Теги, callout, фон іконок</small></div></div>
+      <div class="sw"><i style="background:#1F1B15"></i><div><b>Ink</b><span>#1F1B15</span><small>Заголовки, основний текст</small></div></div>
+      <div class="sw"><i style="background:#5C5548"></i><div><b>Ink soft</b><span>#5C5548</span><small>Другорядний текст</small></div></div>
+      <div class="sw"><i style="background:#8A8171"></i><div><b>Ink mute</b><span>#8A8171</span><small>Підписи, мета (лише великий/допоміжний)</small></div></div>
+      <div class="sw"><i style="background:#231E17"></i><div><b>Deep</b><span>#231E17</span><small>CTA-блок, футер</small></div></div>
+    </div>
+    <p class="note mt">Контраст: Ink на Ivory ≈ 16:1, Ink soft на Ivory ≈ 7:1, білий на Bronze 700 ≈ 6:1. Темна тема має власні значення токенів (перемикач угорі).</p>
+  </div>
+</section>
+
+<section class="ds alt" id="type">
+  <div class="watermark">Шрифти</div>
+  <div class="wrap">
+    <span class="eyebrow">03 · Типографіка</span>
+    <h2 class="sec">Шрифти та шкала</h2>
+    <p class="lead"><b>Cormorant Garamond</b> (заголовки, цитати, цифри) + <b>Inter</b> (текст, інтерфейс). Обидва підтримують кирилицю та безкоштовні (Google Fonts).</p>
+    <div class="mt">
+      <div class="spec"><span class="k">Display · 72/76 · 600</span><div class="t-display">Захист, якому довіряють</div></div>
+      <div class="spec"><span class="k">H1 · 52/56 · 600</span><div class="t-h1">Заголовок статті блогу</div></div>
+      <div class="spec"><span class="k">H2 · 38/42 · 600</span><div class="t-h2">Підзаголовок розділу</div></div>
+      <div class="spec"><span class="k">H3 · 26/31 · 600</span><div class="t-h3">Заголовок картки чи блоку</div></div>
+      <div class="spec"><span class="k">Lead · Inter 18/28</span><div class="t-lead">Вступний абзац: коротко пояснює, про що стаття і кому вона допоможе.</div></div>
+      <div class="spec"><span class="k">Body · Inter 16/26</span><div class="t-body">Основний текст статті. Пишемо простими реченнями, посилаємося на норму закону, не перевантажуємо термінами.</div></div>
+      <div class="spec"><span class="k">Small · Inter 13.5/20</span><div class="t-small">Підписи, дата, час читання, примітки до таблиць.</div></div>
+      <div class="spec"><span class="k">Eyebrow · Inter 11.5 · 600 · +16%</span><div><span class="eyebrow">Блог · Кримінальне право</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ds" id="tokens">
+  <div class="wrap">
+    <span class="eyebrow">04 · Форма</span>
+    <h2 class="sec">Радіуси, тіні, відступи</h2>
+    <div class="tok mt">
+      <div><div class="shape" style="border-radius:8px"></div><b>radius-sm · 8px</b><br>Кнопки, поля, таблиці</div>
+      <div><div class="shape" style="border-radius:12px"></div><b>radius-md · 12px</b><br>Картки, фото, цитати</div>
+      <div><div class="shape" style="border-radius:18px"></div><b>radius-lg · 18px</b><br>Hero, CTA-блок, стаття</div>
+      <div><div class="shape" style="border-radius:999px"></div><b>radius-pill</b><br>Теги, фільтри</div>
+      <div><div class="shape" style="box-shadow:var(--sh-1)"></div><b>shadow-1</b><br>Картки у спокої</div>
+      <div><div class="shape" style="box-shadow:var(--sh-2)"></div><b>shadow-2</b><br>Hover, фото-панелі</div>
+    </div>
+    <p class="note mt">Сітка: контейнер до 1160 px, 12 колонок, відступи 4 · 8 · 12 · 16 · 24 · 32 · 48 · 72 px. Мобільний: гутер 16 px, одна колонка. Тонкі лінії 1 px кольором Line замість важких рамок.</p>
+  </div>
+</section>
+
+<section class="ds alt" id="buttons">
+  <div class="watermark">Кнопки</div>
+  <div class="wrap">
+    <span class="eyebrow">05 · Дії</span>
+    <h2 class="sec">Кнопки та посилання</h2>
+    <p class="lead">Одна основна дія на екран. Усі кнопки «Записатися» ведуть у месенджер, без форм.</p>
+    <div class="mt" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <a class="btn btn-primary" href="#buttons">Безкоштовна консультація</a>
+      <a class="btn btn-line" href="#buttons">Усі статті</a>
+      <a class="btn btn-text" href="#buttons">Читати далі →</a>
+      <a class="btn btn-primary btn-sm" href="#buttons">Написати в Telegram</a>
+    </div>
+    <p class="note mt">Стани: hover — світліший фон і легке підняття; focus — обведення 3 px бронзою; min-висота дотику 44 px на мобільному.</p>
+  </div>
+</section>
+
+<section class="ds" id="components">
+  <div class="watermark">Компоненти</div>
+  <div class="wrap">
+    <span class="eyebrow">06 · Компоненти</span>
+    <h2 class="sec">Шапка, перший екран, переваги</h2>
+
+    <div class="navdemo mt">
+      <a class="logo" href="#components"><span class="mark">АБ</span><span><b>АРТЕМ БОЙЧУК</b><span>АДВОКАТ</span></span></a>
+      <nav><a class="on" href="#components">Головна</a><a href="#components">Про мене</a><a href="#components">Напрями</a><a href="#components">Блог</a><a href="#components">Контакти</a></nav>
+      <a class="btn btn-primary btn-sm" href="#components">Консультація</a>
+    </div>
+
+    <div class="hero mt">
+      <div class="ph"><img src="{{IMG_HERO2}}" alt="Адвокат Артем Бойчук у кабінеті"></div>
+      <div>
+        <span class="eyebrow">Адвокат · Захист ваших інтересів</span>
+        <h3>Професійний юридичний захист</h3>
+        <p>Практичні рішення без зайвих обіцянок: чесна оцінка перспектив, зрозумілі кроки, чіткі терміни. Пишу про те, з чим працюю щодня.</p>
+        <a class="btn btn-primary" href="#components">Записатися на консультацію</a>
+        <div class="sig">Артем Бойчук<small>Адвокат</small></div>
+      </div>
+    </div>
+
+    <div class="grid g3 cols-div mt" style="padding:12px 0">
+      <div class="feat"><svg class="ico" viewBox="0 0 48 48"><path d="M6 20L24 8l18 12M10 20v16M20 20v16M28 20v16M38 20v16M6 40h36"/></svg><h3 style="font-size:20px;margin:12px 0 6px">Стратегія під справу</h3><p class="t-small">Кожна справа окрема. Спершу розбираю ситуацію, потім пропоную план.</p><a class="more" href="#components">Детальніше</a></div>
+      <div class="feat"><svg class="ico" viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8M18 24h14M18 30h10"/><path d="M30 38l8-8 3 3-8 8-4 1z"/></svg><h3 style="font-size:20px;margin:12px 0 6px">Зрозумілі документи</h3><p class="t-small">Пояснюю кожен крок і кожне рішення без юридичного «туману».</p><a class="more" href="#components">Детальніше</a></div>
+      <div class="feat"><svg class="ico" viewBox="0 0 48 48"><path d="M24 8v28M12 14h24M12 14l-6 14h12zM36 14l-6 14h12z"/><path d="M16 40h16"/></svg><h3 style="font-size:20px;margin:12px 0 6px">Чесність і етика</h3><p class="t-small">Адвокатська таємниця і повага до клієнта як норма роботи.</p><a class="more" href="#components">Детальніше</a></div>
+    </div>
+
+    <div class="grid g4 mt">
+      <div class="stat"><svg class="ico" viewBox="0 0 48 48"><circle cx="18" cy="18" r="7"/><circle cx="34" cy="20" r="5"/><path d="M6 40c1-8 6-12 12-12s11 4 12 12M30 30c6-1 11 3 12 10"/></svg><div><b>[ХХ]+</b><span>клієнтів (уточнити)</span></div></div>
+      <div class="stat"><svg class="ico" viewBox="0 0 48 48"><path d="M24 6l15 6v11c0 9-6 16-15 19C15 39 9 32 9 23V12z"/><path d="M17 24l5 5 9-10"/></svg><div><b>[ХХ]%</b><span>успішних справ (уточнити)</span></div></div>
+      <div class="stat"><svg class="ico" viewBox="0 0 48 48"><path d="M14 8h20v10a10 10 0 01-20 0zM14 12H7c0 8 3 11 8 11M34 12h7c0 8-3 11-8 11M24 28v8M16 40h16"/></svg><div><b>[ХХ]+</b><span>років практики (уточнити)</span></div></div>
+      <div class="stat"><svg class="ico" viewBox="0 0 48 48"><path d="M10 38l16-16 6 6-16 16zM26 22l6-6 8 8-6 6M8 42h18"/></svg><div><b>[ХХ]</b><span>напрямів (уточнити)</span></div></div>
+    </div>
+    <p class="note mt">Цифри в блоці — плейсхолдери: підставляємо лише ті, що підтверджені клієнтом.</p>
+  </div>
+</section>
+
+<section class="ds alt" id="blog">
+  <div class="watermark">Блог</div>
+  <div class="wrap">
+    <span class="eyebrow">07 · Блог</span>
+    <h2 class="sec">Картки статей і сторінка статті</h2>
+    <div class="chips" style="margin:6px 0 24px"><span class="chip on">Усі</span><span class="chip">Кримінальне право</span><span class="chip">Цивільні справи</span><span class="chip">Права людини</span><span class="chip">Поради</span></div>
+
+    <div class="grid g3">
+      <article class="post"><div class="cover-img"><svg class="ico" viewBox="0 0 48 48"><path d="M6 20L24 8l18 12M10 20v16M20 20v16M28 20v16M38 20v16M6 40h36"/></svg></div><div class="body"><div class="meta"><span class="tag">Практика</span><span>14 жовтня 2026</span><span>· 6 хв</span></div><h3>Заголовок статті у дві-три рядки</h3><p>Короткий анонс: про що матеріал і яку проблему читача він розв’язує.</p><a class="more" href="#blog">Читати</a></div></article>
+      <article class="post"><div class="cover-img" style="background:linear-gradient(135deg,#D9CBAE,#A98650)"><svg class="ico" viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8M18 24h14M18 30h10"/></svg></div><div class="body"><div class="meta"><span class="tag">Поради</span><span>10 жовтня 2026</span><span>· 4 хв</span></div><h3>Що робити, якщо отримали повістку</h3><p>Приклад заголовка з практичним обіцянням і конкретним сценарієм.</p><a class="more" href="#blog">Читати</a></div></article>
+      <article class="post"><div class="cover-img" style="background:linear-gradient(135deg,#CFC2A8,#8E7648)"><svg class="ico" viewBox="0 0 48 48"><path d="M24 8v28M12 14h24M12 14l-6 14h12zM36 14l-6 14h12z"/></svg></div><div class="body"><div class="meta"><span class="tag">Права</span><span>2 жовтня 2026</span><span>· 8 хв</span></div><h3>Ваші права під час затримання</h3><p>Анонс із посиланням на норму закону та короткою відповіддю.</p><a class="more" href="#blog">Читати</a></div></article>
+    </div>
+
+    <div class="article mt">
+      <span class="eyebrow">Блог · Поради</span>
+      <h1>Як діяти, якщо до вас прийшли з обшуком</h1>
+      <div class="byline"><img src="{{IMG_HERO2}}" alt=""><div><b style="color:var(--ink)">Артем Бойчук</b>, адвокат<br><span class="note">Оновлено 14.10.2026 · 7 хв читання</span></div></div>
+      <p class="t-lead" style="color:var(--ink-soft);font-size:18px">Вступ на 2–3 речення: ситуація, біль читача і що він отримає після прочитання.</p>
+      <h2>Підзаголовок розділу</h2>
+      <p>Основний текст ширини до 680 px. Абзаци короткі, ключові терміни пояснюємо одразу, а на норму закону посилаємося точно: стаття, частина, пункт.</p>
+      <blockquote>Спокійні дії в перші хвилини часто вирішують більше, ніж будь-яка стратегія потім.</blockquote>
+      <div class="callout"><b>Важливо</b>Матеріал має інформаційний характер і не замінює консультацію за вашою ситуацією.</div>
+      <table class="tbl" style="max-width:680px"><tr><th>Дія</th><th>Коли</th><th>Документ</th></tr><tr><td>Викликати адвоката</td><td>Одразу</td><td>Ордер / договір</td></tr><tr><td>Зафіксувати час</td><td>Протягом дії</td><td>Протокол</td></tr></table>
+      <div class="author"><img src="{{IMG_HERO2}}" alt="Артем Бойчук"><div><b>Артем Бойчук</b><p>Адвокат. <span class="ph-note">[Свідоцтво, досвід, напрями, підтвердити з клієнтом]</span></p><a class="more" href="#blog">Усі статті автора</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ds" id="cta">
+  <div class="wrap">
+    <span class="eyebrow">08 · Конверсія</span>
+    <h2 class="sec">CTA-блок і FAQ</h2>
+    <div class="cta-band mt">
+      <div><h3>Потрібна консультація адвоката?</h3><p>Напишіть у чат: опишіть ситуацію, і ми підкажемо перші кроки. Без форм і без зобов’язань.</p></div>
+      <a class="btn btn-primary" href="#cta">Написати в Telegram</a>
+    </div>
+    <div class="mt" style="max-width:760px">
+      <details class="faq" open><summary>Як швидко можна отримати консультацію?</summary><p>Відповідь на запитання пишемо простою мовою, 2–4 речення, з посиланням на норму закону, якщо це доречно.</p></details>
+      <details class="faq"><summary>Чи гарантуєте ви результат?</summary><p>Ні. Адвокат не може гарантувати результат; він оцінює перспективи і діє в інтересах клієнта.</p></details>
+      <details class="faq"><summary>Як відбувається оплата?</summary><p>Умови погоджуються письмово в договорі до початку роботи. [Уточнити з клієнтом]</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="ds alt" id="rules">
+  <div class="wrap">
+    <span class="eyebrow">09 · Правила</span>
+    <h2 class="sec">Що можна, а чого не можна</h2>
+    <div class="dd mt">
+      <div class="card do"><h3 style="margin:0 0 12px">Так</h3><ul class="do">
+        <li>Реальні фото адвоката в діловому вигляді, з теплою корекцією</li>
+        <li>Бронза лише для дій, акцентів і тонких ліній</li>
+        <li>Заголовки антиквою, текст гротескою</li>
+        <li>Тонкі лінії, світлі секції, багато повітря</li>
+        <li>Кнопки «Консультація» ведуть у месенджер</li>
+      </ul></div>
+      <div class="card dont"><h3 style="margin:0 0 12px">Ні</h3><ul class="dont">
+        <li>Чорно-червоні «агресивні» схеми та крик у заголовках</li>
+        <li>Вигадані цифри, відгуки, справи та нагороди</li>
+        <li>Більше однієї основної кнопки на екран</li>
+        <li>Текст бронзою світліше Bronze 700 на світлому тлі</li>
+        <li>Фото-стоки з молотком там, де можна показати людину</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<footer class="f"><div class="wrap">Дизайн-система блогу адвоката Артема Бойчука · v1.0 · Усі цифри, відгуки й досягнення на сайті додаються лише після підтвердження клієнтом.</div></footer>
+<script>
+(function(){var b=document.getElementById('th');if(!b)return;b.addEventListener('click',function(){var r=document.documentElement;var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);r.setAttribute('data-theme',dark?'light':'dark')})})();
+</script>
+</body>
+</html>
