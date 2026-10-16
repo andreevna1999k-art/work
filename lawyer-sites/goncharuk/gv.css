@@ -1,4 +1,4 @@
-.gv{--olive:#B4A367;--olive-t:#6B5F26;--ink:#1C2430;--ink-2:#273142;--ink-soft:#4A5260;--cream:#F5F0E3;--cream-2:#EBE4D0;--white:#FFFFFF;--gold:#D3C283;--line:rgba(28,36,48,.14);--line-l:rgba(245,240,227,.22);
+.gv{--olive:#CDC28F;--olive-t:#6B5F26;--ink:#1C2430;--ink-2:#273142;--ink-soft:#4A5260;--cream:#F5F0E3;--cream-2:#EBE4D0;--white:#FFFFFF;--gold:#D3C283;--line:rgba(28,36,48,.14);--line-l:rgba(245,240,227,.22);
 --f-head:'Noto Serif Display','Times New Roman',serif;--f-body:'Jost',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
 --r-band:56px;--r-card:26px;--r-pill:999px;--sh:0 20px 44px -22px rgba(28,36,48,.45);
 background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow:hidden;width:100%}
@@ -9,7 +9,7 @@ background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18p
 .gv a{color:inherit;text-decoration:none}
 .gv .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
 .gv h2{font-size:clamp(28px,3.6vw,46px);text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px}
-.gv .eyebrow{display:inline-block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;margin-bottom:18px}
+.gv .eyebrow{display:inline-block;font-size:16px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-bottom:20px}
 .gv .band{position:relative;border-radius:var(--r-band) var(--r-band) 0 0;margin-top:calc(var(--r-band) * -1);padding:96px 0 112px}
 .gv .on-cream{background:var(--cream);color:var(--ink)}
 .gv .on-olive{background:var(--olive);color:var(--ink)}
@@ -50,7 +50,7 @@ background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18p
 .gv .wave path{fill:var(--cream)}
 
 /* about */
-.gv .about{padding-top:40px}
+.gv .about{padding-top:calc(clamp(70px,9vw,150px) + 48px)}
 .gv .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
 .gv .about .arch{aspect-ratio:4/5;max-width:470px;margin:0 auto}
 .gv .about .arch img{object-position:50% 18%}
