@@ -90,17 +90,24 @@ main.wp-block-group,.wp-block-post-content{margin:0!important;padding:0!importan
 
 /* 4. Результати */
 .yk .results{padding:clamp(64px,7vw,110px) clamp(22px,5vw,88px) clamp(40px,5vw,70px)}
-.yk .results .head p{color:var(--mute);max-width:560px;margin-top:14px}
-.yk .case-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:44px}
-.yk .case{position:relative;padding-bottom:70px}
-.yk .case-ph{border-radius:32px;aspect-ratio:4/3.3;background:linear-gradient(135deg,#2B2F5A,#181A31);display:grid;place-items:center;overflow:hidden;position:relative}
-.yk .case-ph::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;border:36px solid rgba(201,160,106,.12);right:-70px;top:-70px}
-.yk .case-ph svg{width:64px;height:64px;stroke:var(--gold);fill:none;stroke-width:1.4;opacity:.85}
-.yk .case-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.yk .case-tag{position:absolute;left:18px;top:18px;background:rgba(255,255,255,.95);color:var(--gold-d);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
-.yk .case-cap{position:absolute;left:24px;right:24px;bottom:0;background:#fff;border-radius:24px;padding:22px 24px;box-shadow:0 18px 44px rgba(24,26,49,.14)}
-.yk .case-cap h3{font-size:20px}
-.yk .case-cap p{font-size:14.5px;color:var(--mute);margin-top:6px}
+.yk .results .head p{color:var(--mute);max-width:620px;margin-top:14px}
+.yk .res-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:44px}
+.yk .res{display:flex;flex-direction:column;min-width:0;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 14px 40px rgba(24,26,49,.08);transition:.25s}
+.yk .res:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(24,26,49,.14)}
+.yk .res-ph{display:block;width:100%;aspect-ratio:3/4;padding:0;margin:0;border:0;background:#fff;cursor:zoom-in;position:relative;overflow:hidden;border-bottom:1px solid #ECECF2}
+.yk .res-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 0;transition:transform .35s}
+.yk .res-ph:hover img{transform:scale(1.03)}
+.yk .res-ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(0deg,#fff,rgba(255,255,255,0))}
+.yk .res-ph i{position:absolute;right:14px;bottom:14px;z-index:2;width:40px;height:40px;border-radius:50%;background:var(--navy);display:grid;place-items:center}
+.yk .res-ph i svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round}
+.yk .res-tx{padding:20px 22px 22px;flex:1}
+.yk .res-tx h3{font-size:19px;line-height:1.25;margin:0 0 10px}
+.yk .res-tx p{font-size:14.5px;line-height:1.6;color:var(--mute)}
+.yk .res .bar{background:var(--navy);color:var(--gold);padding:14px 22px;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.yk .lb{position:fixed;inset:0;z-index:99999;background:rgba(24,26,49,.92);display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto}
+.yk .lb[hidden]{display:none}
+.yk .lb img{max-width:min(920px,100%);max-height:100%;width:auto;height:auto;border-radius:20px;background:#fff}
+.yk .lb-x{position:fixed;top:14px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(201,160,106,.6);background:rgba(24,26,49,.7);color:var(--gold);font-size:28px;line-height:1;cursor:pointer}
 
 /* 5. Відгуки */
 .yk .reviews{background:#fff;padding:clamp(44px,6vw,90px) clamp(22px,5vw,88px);margin-top:clamp(10px,1.6vw,24px)}
@@ -145,7 +152,7 @@ main.wp-block-group,.wp-block-post-content{margin:0!important;padding:0!importan
   .yk .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .yk .facts{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:-76px}
   .yk .facts div:nth-child(3){border-left:0;padding-left:0}
-  .yk .case-g,.yk .rv-g{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .yk .res-g,.yk .rv-g{grid-template-columns:repeat(2,minmax(0,1fr))}
   .yk .nav nav{gap:18px;font-size:14px}
 }
 /* Телефон */
@@ -168,8 +175,8 @@ main.wp-block-group,.wp-block-post-content{margin:0!important;padding:0!importan
   .yk .card{padding:26px 24px}
   .yk .facts{grid-template-columns:1fr;margin-top:-70px;padding:24px}
   .yk .facts div+div{border-left:0;padding-left:0;border-top:1px solid #E4E4EE;padding-top:16px}
-  .yk .case-g,.yk .rv-g{grid-template-columns:1fr}
-  .yk .case-cap{left:14px;right:14px}
+  .yk .res-g,.yk .rv-g{grid-template-columns:1fr;gap:16px}
+  .yk .res-ph{aspect-ratio:4/5}
   .yk .ct-g{grid-template-columns:1fr}
   .yk .ct a,.yk .ct span.v{font-size:17px}
   .yk .cta .btn{width:100%;justify-content:space-between}
@@ -255,16 +262,21 @@ main.wp-block-group,.wp-block-post-content{margin:0!important;padding:0!importan
   <div class="in">
     <div class="head">
       <span class="eyebrow">Результати</span>
-      <h2 class="t">Результати для клієнтів</h2>
-      <p>Тут з'являться реальні кейси: фото документів або рішень (без персональних даних) і короткий опис підсумку для клієнта.</p>
+      <h2 class="t">Результати роботи</h2>
+      <p>Документи з реальних справ: гарантійні листи та листи про врегулювання заборгованості. Персональні дані клієнтів закрито. Натисніть на документ, щоб збільшити.</p>
     </div>
-    <div class="case-g">
-      <article class="case"><div class="case-ph"><!-- <img src="" alt=""> --><svg viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8M18 24h14M18 30h10"/></svg><span class="case-tag">Кейс 1</span></div><div class="case-cap"><h3>Назва кейсу</h3><p>Опис результату для клієнта буде додано.</p></div></article>
-      <article class="case"><div class="case-ph"><svg viewBox="0 0 48 48"><path d="M24 8v32M12 14h24M12 14l-6 14h12zM36 14l-6 14h12z"/></svg><span class="case-tag">Кейс 2</span></div><div class="case-cap"><h3>Назва кейсу</h3><p>Опис результату для клієнта буде додано.</p></div></article>
-      <article class="case"><div class="case-ph"><svg viewBox="0 0 48 48"><path d="M24 6l15 6v11c0 9-6 16-15 19C15 39 9 32 9 23V12z"/><path d="M17 24l5 5 9-10"/></svg><span class="case-tag">Кейс 3</span></div><div class="case-cap"><h3>Назва кейсу</h3><p>Опис результату для клієнта буде додано.</p></div></article>
+    <div class="res-g">
+{{RESULTS}}
     </div>
   </div>
 </section>
+<div class="lb" id="lb" hidden><button class="lb-x" type="button" aria-label="Закрити">×</button><img id="lb-img" alt=""></div>
+<script>
+(function(){var lb=document.getElementById('lb'),im=document.getElementById('lb-img');if(!lb)return;
+function close(){lb.hidden=true;im.removeAttribute('src');document.body.style.overflow=''}
+document.querySelectorAll('.res-ph').forEach(function(b){b.addEventListener('click',function(){im.src=b.getAttribute('data-full');im.alt=b.getAttribute('data-alt');lb.hidden=false;document.body.style.overflow='hidden'})});
+lb.addEventListener('click',close);document.addEventListener('keydown',function(ev){if(ev.key==='Escape')close()});})();
+</script>
 
 <!-- 5. ВІДГУКИ -->
 <section class="panel reviews" id="reviews">

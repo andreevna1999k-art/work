@@ -6,6 +6,9 @@ import json, sys, html, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 hero = sys.argv[1] if len(sys.argv) > 1 else 'img/yakovenko-yurist-po-kredytam-kabinet.jpg'
 about = sys.argv[2] if len(sys.argv) > 2 else 'img/yakovenko-dmytro-yurist.jpg'
+res_base = sys.argv[3] if len(sys.argv) > 3 else 'img/results/yakovenko-rezultat-'
+sys.path.insert(0, HERE)
+from results_data import R
 
 # ЧЕРНЕТКА: текстові заглушки. Замінити реальними відгуками перед публікацією.
 REVIEWS = [
@@ -32,6 +35,18 @@ def card(n, d, t):
 
 cards = [card(*r) for r in REVIEWS]
 
+ARROW = '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+ZOOM = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg>'
+import re
+def nb(x):
+    x = re.sub(r'(\d) (?=\d{3}\b)', '\\1\u00a0', x)
+    return re.sub(r' (грн|заміст)', '\u00a0\\1', x)
+res_cards = '\n'.join(
+    f'      <article class="res"><button class="res-ph" type="button" data-full="{res_base}{n:02d}.webp" data-alt="{html.escape(alt)}" aria-label="Збільшити: {html.escape(h)}">'
+    f'<img src="{res_base}{n:02d}.webp" alt="{html.escape(alt)}" width="1000" height="1414" loading="lazy"><i>{ZOOM}</i></button>'
+    f'<div class="res-tx"><h3>{html.escape(nb(h))}</h3><p>{html.escape(nb(t))}</p></div><div class="bar">Результат клієнта</div></article>'
+    for n, h, t, alt in R)
+
 # Person Schema. Відгуки в розмітку не включаємо (поки заглушки).
 schema = {
   "@context": "https://schema.org",
@@ -54,7 +69,7 @@ schema = {
 
 s = open(os.path.join(HERE, 'home.src.html'), encoding='utf-8').read()
 s = (s.replace('{{HERO}}', hero).replace('{{ABOUT}}', about)
-      .replace('{{REVIEWS_FIRST}}', '\n'.join(cards[:6]))
+      .replace('{{RESULTS}}', res_cards).replace('{{REVIEWS_FIRST}}', '\n'.join(cards[:6]))
       .replace('{{REVIEWS_REST}}', '\n'.join(cards[6:]))
       .replace('{{SCHEMA}}', json.dumps(schema, ensure_ascii=False, indent=2)))
 
