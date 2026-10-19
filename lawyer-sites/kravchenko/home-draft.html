@@ -15,10 +15,9 @@
   "@type": "Person",
   "@id": "https://rada-advokat.uz.ua/#person",
   "name": "Кравченко Максим Віталійович",
-  "jobTitle": "Юрист з кредитних спорів",
-  "description": "Юрист з кредитних спорів, виконавчого провадження та примусового стягнення заборгованостей. Захист позичальників у спорах з банками, МФО та колекторами.",
+  "jobTitle": "Адвокат, юрист з кредитних спорів",
+  "description": "Адвокат. Юрист з кредитних спорів, виконавчого провадження та примусового стягнення заборгованостей. Захист позичальників у спорах з банками, МФО та колекторами.",
   "url": "https://rada-advokat.uz.ua/",
-  "image": "https://rada-advokat.uz.ua/wp-content/uploads/2025/08/Kravchenko-Yevhenii-Olehovych.jpg",
   "telephone": "+380914811951",
   "address": {"@type": "PostalAddress", "streetAddress": "пр-т Європейського Союзу (Правди), 31а", "addressLocality": "Київ", "postalCode": "04108", "addressCountry": "UA"},
   "sameAs": ["https://t.me/evgen_yrist", "https://www.instagram.com/yuryst_kravchenko/"],
@@ -147,12 +146,23 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .map iframe{width:100%;height:100%;min-height:340px;border:0}
 .copy{text-align:center;color:#777;font-size:13px;margin-top:32px}
 
+.btn.ghost{background:transparent;color:#fff;box-shadow:none;border:1.5px solid rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.1);transform:none}
+.btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.callbar{display:none}
 @media(max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
   .nav ul{display:none}
   .hero-g,.about-g,.exp-g,.ct-g{grid-template-columns:1fr}
   .hero-ph img{height:auto;aspect-ratio:1/1.05}.fcard.a{right:2%}
   .g3{grid-template-columns:1fr 1fr}.side{position:static}
+}
+@media(max-width:900px){
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:10px;right:10px;bottom:10px;z-index:9999;background:rgba(20,20,20,.92);backdrop-filter:blur(10px);border-radius:999px;padding:8px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .callbar .btn{padding:15px 10px;font-size:11.5px;box-shadow:none}
+  .callbar .btn.ghost{border-color:rgba(255,255,255,.35)}
+  .page{padding-bottom:84px}
+  .hero .btn.ghost,.cta .btn.ghost{display:none}
 }
 @media(max-width:560px){.g3,.g4,.mini-g{grid-template-columns:1fr}summary .yr{display:none}details ul{padding-left:30px}.btn{padding:17px 26px;white-space:normal;text-align:center}.fcard.b{display:none}}
 </style>
@@ -171,8 +181,8 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
     <div>
       <h1>Кравченко Максим Віталійович - <span class="lime">юрист по кредитам</span></h1>
       <p class="lead">Захищаю позичальників у судах з банками, МФО та колекторами. Виконавче провадження, примусове стягнення, реструктуризація та списання боргів.</p>
-      <div class="chips"><span class="chip">1500+ виграних справ</span><span class="chip">20+ років досвіду</span><span class="chip">100 млн ₴ реструктуризацій</span><span class="chip">без паніки</span><span class="chip">без тиску колекторів</span></div>
-      <a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація</a>
+      <div class="chips"><span class="chip">адвокат</span><span class="chip">1500+ виграних справ</span><span class="chip">20+ років досвіду</span><span class="chip">100 млн ₴ реструктуризацій</span><span class="chip">без паніки</span><span class="chip">без тиску колекторів</span></div>
+      <div class="btns"><a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація</a><a class="btn ghost" href="tel:+380914811951">Подзвонити</a></div>
     </div>
     <div class="hero-ph">
       <img src="img/portrait-suit.jpg" alt="Кравченко Максим Віталійович - юрист по кредитам" width="1528" height="1580">
@@ -281,7 +291,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 
 <!-- 8. ФУТЕР -->
 <footer class="box sec dk" id="contacts"><div class="in">
-  <div class="cta"><h2>Потрібна допомога з кредитом або боргом? <span class="lime">Напишіть юристу</span></h2><a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація</a></div>
+  <div class="cta"><h2>Потрібна допомога з кредитом або боргом? <span class="lime">Напишіть юристу</span></h2><div class="btns"><a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація</a><a class="btn ghost" href="tel:+380914811951">+380914811951</a></div></div>
   <div class="ct-g">
     <div class="ct">
       <h3>Контакти</h3>
@@ -296,6 +306,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
   <p class="copy">© Кравченко Максим Віталійович, rada-advokat.uz.ua</p>
 </div></footer>
 
+<div class="callbar"><a class="btn ghost" href="tel:+380914811951">Подзвонити</a><a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Telegram</a></div>
 </div>
 </body>
 </html>
