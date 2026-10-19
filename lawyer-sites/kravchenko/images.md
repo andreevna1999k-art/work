@@ -14,3 +14,7 @@
 - ID 1783 https://rada-advokat.uz.ua/wp-content/uploads/2025/08/6-scaled.webp
 - ID 1784 https://rada-advokat.uz.ua/wp-content/uploads/2025/08/7-scaled.webp
 - ID 1785 https://rada-advokat.uz.ua/wp-content/uploads/2025/08/8-scaled.webp
+
+Фото от заказчика (локально, в img/):
+- img/portrait-office.jpg — за рабочим столом с ноутбуком, горизонтальное (820×580)
+- img/portrait-suit.jpg — в тёмном костюме с галстуком, в кресле, квадратное
