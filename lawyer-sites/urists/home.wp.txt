@@ -291,7 +291,7 @@ lb.addEventListener('click',close);document.addEventListener('keydown',function(
   <div class="in">
     <div class="head">
       <span class="eyebrow">Відгуки</span>
-      <h2 class="t">Що кажуть клієнти</h2>
+      <h2 class="t">Відгуки клієнтів</h2>
     </div>
     <!-- ПЛАГІН ВІДГУКІВ: вставити шорткод/блок плагіна тут (плагін на urists.com.ua поки не встановлено) -->
     <div class="rv-g">
