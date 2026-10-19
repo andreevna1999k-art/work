@@ -121,9 +121,14 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .mini-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
 
 /* Результати */
-.rc{background:#fff;border-radius:var(--r2);overflow:hidden}
-.rc .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#d9dce0,#c6cacf);display:grid;place-items:center;color:var(--muted);font-size:14px;font-weight:600}
-.rc .tx{padding:clamp(18px,1.8vw,26px)}.rc h3{font-size:clamp(15px,1.2vw,19px);margin-bottom:8px;letter-spacing:-.01em}.rc p{color:var(--muted);font-size:.94em}
+.g4r{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);align-items:stretch}
+.rc{background:#fff;border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column}
+.rc .ph{background:#eceef0;padding:12px 12px 0;display:block;aspect-ratio:5/6;overflow:hidden;font-size:0;box-sizing:border-box}
+.rc .ph img{width:100%;height:auto;border-radius:10px 10px 0 0;display:block}
+.rc.cta-card{background:var(--lime);justify-content:center;min-height:300px}
+.rc.cta-card .tx{display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:clamp(22px,2.2vw,36px)}
+.rc.cta-card p{color:#2a2f12}
+.rc .tx{padding:clamp(18px,1.8vw,26px);flex:1}.rc h3{font-size:clamp(14px,1.1vw,18px);margin-bottom:8px;letter-spacing:-.01em}.rc p{color:var(--muted);font-size:.94em}
 
 /* Відгуки */
 .slot{margin-bottom:22px;text-align:center}
@@ -150,7 +155,8 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .btn.ghost:hover{background:rgba(255,255,255,.1);transform:none}
 .btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .callbar{display:none}
-@media(max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1300px){.g4r{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}.g4r{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
   .nav ul{display:none}
   .hero-g,.about-g,.exp-g,.ct-g{grid-template-columns:1fr}
@@ -164,7 +170,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
   .page{padding-bottom:84px}
   .hero .btn.ghost,.cta .btn.ghost{display:none}
 }
-@media(max-width:560px){.g3,.g4,.mini-g{grid-template-columns:1fr}summary .yr{display:none}details ul{padding-left:30px}.btn{padding:17px 26px;white-space:normal;text-align:center}.fcard.b{display:none}}
+@media(max-width:560px){.g3,.g4,.g4r,.mini-g{grid-template-columns:1fr}summary .yr{display:none}details ul{padding-left:30px}.btn{padding:17px 26px;white-space:normal;text-align:center}.fcard.b{display:none}}
 </style>
 </head>
 <body>
@@ -260,10 +266,15 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 <!-- 6. РЕЗУЛЬТАТИ -->
 <section class="sec res" id="results"><div class="in">
   <h2>результати для клієнтів</h2>
-  <div class="g3">
-    <div class="rc"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
-    <div class="rc"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
-    <div class="rc"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
+  <div class="g4r">
+    <article class="rc"><div class="ph"><img src="results/rezultat-01-elit-finans-21999.webp" alt="Гарантійний лист ТОВ «ФК «Еліт Фінанс» про погашення боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Еліт Фінанс»: борг закрито за 21 999 грн</h3><p>За гарантійним листом кредитор погодився закрити борг при сплаті 21 999 грн. Інакше стягнення йшло б у повному обсязі: 56 319,98 грн.</p></div></article>
+    <article class="rc"><div class="ph"><img src="results/rezultat-02-aventus-ukraina-25107.webp" alt="Додаткова угода з ТОВ «Авентус Україна» про розстрочку боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Авентус Україна»: розстрочка на 4 платежі</h3><p>Борг зафіксовано на 25 107,92 грн, нарахування відсотків припинено. Виплата розбита на 4 рівні платежі по 6 276,98 грн.</p></div></article>
+    <article class="rc"><div class="ph"><img src="results/rezultat-03-spozhyvchyi-tsentr-23580.webp" alt="Гарантійний лист ТОВ «Споживчий центр» про зменшення боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Споживчий центр»: борг зменшено на 9 990 грн</h3><p>З боргу в 23 580 грн кредитор погодив знижку 9 990 грн. Для закриття достатньо сплатити 13 590 грн.</p></div></article>
+    <article class="rc"><div class="ph"><img src="results/rezultat-04-siti-finans-10000.webp" alt="Гарантійний лист ФК «Сіті Фінанс» про прощення залишку боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Сіті Фінанс»: сплата 10 000 грн і прощення 4 020 грн</h3><p>Після внесення 10 000 грн кредитор анулює залишок заборгованості в сумі 4 020 грн.</p></div></article>
+    <article class="rc"><div class="ph"><img src="results/rezultat-05-hama-apgreid-7536.webp" alt="Гарантійний лист ТОВ «Гама Апгрейд» про списання залишку боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Гама Апгрейд»: борг 7 536 грн, сплата 5 200 грн</h3><p>За умови сплати 5 200 грн кредитор списує весь залишок боргу та не подає позов до суду.</p></div></article>
+    <article class="rc"><div class="ph"><img src="results/rezultat-06-universal-bank-34321.webp" alt="Лист АТ «Універсал Банк» про добровільне врегулювання боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Універсал Банк»: розстрочка боргу на 24 місяці</h3><p>Банк погодив добровільне врегулювання: перший внесок 34 321 грн, залишок розбито на 24 платежі по 4 291 грн.</p></div></article>
+    <article class="rc"><div class="ph"><img src="results/rezultat-07-lineura-ukraina-dovidka.webp" alt="Довідка ТОВ «Лінеура Україна» про закриття договору" loading="lazy" width="1000"></div><div class="tx"><h3>«Лінеура Україна»: відсотки списано, договір закрито</h3><p>Після сплати основної суми кредиту (8 800 грн) компанія списала нараховані відсотки. Заборгованості немає, договір закрито.</p></div></article>
+    <article class="rc cta-card"><div class="tx"><h3>Ваш результат може бути наступним</h3><p>Опишіть ситуацію — безкоштовно підкажу, що можна зробити з вашим боргом.</p><a class="btn k" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Написати в Telegram</a></div></article>
   </div>
 </div></section>
 

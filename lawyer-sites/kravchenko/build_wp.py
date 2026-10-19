@@ -63,6 +63,9 @@ body{overflow-x:hidden}
 body = re.search(r'<body>(.*?)</body>', src, re.S).group(1)
 body = body.replace('<div class="page">', '<div class="kr-wrap">')
 
+import glob
+for f in sorted(glob.glob('results/*.webp')):
+    body = body.replace(f, 'data:image/webp;base64,' + base64.b64encode(open(f, 'rb').read()).decode())
 for n in ('portrait-suit', 'portrait-office'):
     b = base64.b64encode(open(f'img/{n}.jpg', 'rb').read()).decode()
     body = body.replace(f'img/{n}.jpg', f'data:image/jpeg;base64,{b}')
