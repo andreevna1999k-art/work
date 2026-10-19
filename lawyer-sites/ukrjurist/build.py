@@ -3,7 +3,9 @@ Photos: photos/hz-hero.jpg, hz-about.jpg, hz-chair.jpg (processed copies of phot
 import json, pathlib, re, sys
 R = pathlib.Path(__file__).parent
 LOCAL = "--local" in sys.argv
-WP = "https://ukrjurist.com.ua/wp-content/uploads/2026/10/honcharuk-"
+WP = "https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-"
+SCANS = pathlib.Path("/tmp/claude-0/-home-user-work/1b462dfe-7007-59f9-af84-0f520b5507b3/scratchpad/out")  # лише для локального прев'ю
+from results_data import R as RES
 TITLE = "Гончарук Вікторія Анатолієвна - юрист по кредитам"
 DESC = "Юрист по кредитам у Києві: 15+ років у банках, реструктуризація боргів, банкрутство фізосіб, захист позичальників. Консультація в Telegram."
 assert len(DESC) <= 160, len(DESC)
@@ -19,11 +21,16 @@ SCHEMA = {"@context": "https://schema.org", "@type": "Person", "@id": "https://u
 def img(m):
     key, alt, w, h, lazy = m.group(1).split("|")
     f = R / f"photos/hz-{key}.jpg"
-    if not f.exists():
+    if LOCAL and not f.exists():
         return f'<div class="ph">Фото ({key}) буде додано</div>'
     src = f"../photos/hz-{key}.jpg" if LOCAL else f"{WP}{key}.jpg"
     return f'<img src="{src}" alt="{alt}" width="{w}" height="{h}" loading="{lazy}">'
-res = "\n".join('<article class="res-card"><div class="shot">Фото результату</div><p>Результати з\'являться найближчим часом</p></article>' for _ in range(6))
+def card(i, mid, t, d, alt):
+    n = f"{i:02d}"
+    src = f"file://{SCANS}/res-{n}.webp" if LOCAL else f"{WP}rezultat-{n}.webp"
+    return (f'<article class="res-card"><a class="shot" href="{src}" target="_blank" rel="noopener"><img src="{src}" alt="{alt}" loading="lazy"></a>'
+            f'<h3>{t}</h3><p>{d}</p></article>')
+res = "\n".join(card(i, *r) for i, r in enumerate(RES, 1))
 REV = [("Ірина К.","12.03.2026"),("Олег М.","28.03.2026"),("Наталія С.","14.04.2026"),("Андрій Т.","02.05.2026"),("Світлана Л.","19.05.2026"),("Максим Д.","07.06.2026"),
        ("Оксана Б.","25.06.2026"),("Віктор Р.","11.07.2026"),("Тетяна Г.","30.07.2026"),("Сергій П.","16.08.2026"),("Людмила Ш.","03.09.2026"),("Роман Ф.","21.09.2026")]
 rev = "\n".join(f'<!-- ЗАГЛУШКА: замінити реальними -->\n<article class="rev-card"><div class="stars">★★★★★</div><p>Текст відгуку-заглушка. Тут буде справжній відгук клієнта.</p><div class="who"><b>{n}</b><span>{d}</span></div></article>' for n, d in REV)

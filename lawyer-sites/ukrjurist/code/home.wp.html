@@ -1,4 +1,4 @@
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://ukrjurist.com.ua/#person", "name": "Гончарук Вікторія Анатолієвна", "jobTitle": "юристка по кредитам", "description": "Юрист по кредитам у Києві: 15+ років у банках, реструктуризація боргів, банкрутство фізосіб, захист позичальників. Консультація в Telegram.", "url": "https://ukrjurist.com.ua/", "image": "https://ukrjurist.com.ua/wp-content/uploads/2026/10/honcharuk-hero.jpg", "telephone": "+380753916186", "sameAs": ["https://t.me/Viktoriia_yrist", "https://www.facebook.com/profile.php?id=100087531533171"], "knowsAbout": ["Кредитне право", "Реструктуризація боргів", "Банкрутство фізичних осіб", "Захист прав позичальників"], "alumniOf": {"@type": "CollegeOrUniversity", "name": "Донецький національний університет імені Василя Стуса"}, "address": {"@type": "PostalAddress", "streetAddress": "вул. Михайлівська, 24а", "addressLocality": "Київ", "postalCode": "01001", "addressCountry": "UA"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://ukrjurist.com.ua/#person", "name": "Гончарук Вікторія Анатолієвна", "jobTitle": "юристка по кредитам", "description": "Юрист по кредитам у Києві: 15+ років у банках, реструктуризація боргів, банкрутство фізосіб, захист позичальників. Консультація в Telegram.", "url": "https://ukrjurist.com.ua/", "image": "https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-hero.jpg", "telephone": "+380753916186", "sameAs": ["https://t.me/Viktoriia_yrist", "https://www.facebook.com/profile.php?id=100087531533171"], "knowsAbout": ["Кредитне право", "Реструктуризація боргів", "Банкрутство фізичних осіб", "Захист прав позичальників"], "alumniOf": {"@type": "CollegeOrUniversity", "name": "Донецький національний університет імені Василя Стуса"}, "address": {"@type": "PostalAddress", "streetAddress": "вул. Михайлівська, 24а", "addressLocality": "Київ", "postalCode": "01001", "addressCountry": "UA"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700&display=swap&subset=cyrillic">
@@ -58,10 +58,10 @@ font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--cre
 .hz .card h3{font-size:26px;color:#fff}
 .hz .card p{font-size:15px;color:#fff;opacity:.88}
 .hz .res{background:var(--cream)}
-.hz .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.hz .res-card{background:var(--paper);border:1px dashed var(--gold);border-radius:26px;padding:16px;display:flex;flex-direction:column;gap:14px}
-.hz .res-card .shot{aspect-ratio:4/3;border-radius:18px;background:repeating-linear-gradient(45deg,#EDE6D3,#EDE6D3 12px,#F5EFE3 12px,#F5EFE3 24px);display:grid;place-items:center;color:var(--mute);font-size:14px}
-.hz .res-card p{font-size:15px;color:var(--mute);padding:0 6px 6px}
+.hz .res-grid{columns:4 260px;column-gap:20px}
+.hz .res-card{break-inside:avoid;margin:0 0 20px;background:var(--paper);border:1px solid rgba(183,164,101,.55);border-radius:26px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.hz .res-card .shot{display:block;border-radius:18px;overflow:hidden;border:1px solid #E3DAC3;background:#fff}.hz .res-card .shot img{width:100%;height:auto}
+.hz .res-card h3{font-size:24px;padding:0 6px;color:var(--ink)}.hz .res-card p{font-size:15px;color:var(--mute);padding:0 6px 6px}
 .hz .rev{background:var(--night);color:#fff;border-radius:40px;margin:0 clamp(8px,1.5vw,24px)}
 .hz .rev .plugin{border:1px dashed rgba(183,164,101,.7);border-radius:26px;padding:22px;text-align:center;color:#fff;opacity:.85;margin-bottom:26px;font-size:15px}
 .hz .rev-row{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}
@@ -79,7 +79,7 @@ font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--cre
 .hz .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 .hz .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:22px 4px 0;font-size:14px;color:var(--mute)}
 .hz .foot a{text-decoration:underline}
-@media(max-width:1200px){.hz .svc-grid{grid-template-columns:repeat(3,1fr)}.hz .nav ul{gap:18px}}
+@media(max-width:1200px){.hz .res-grid{columns:2}.hz .svc-grid{grid-template-columns:repeat(3,1fr)}.hz .nav ul{gap:18px}}
 @media(max-width:900px){
 .hz .nav ul{display:none}
 .hz .hero{min-height:0;display:block}
@@ -91,7 +91,7 @@ font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--cre
 .hz .btn{width:100%;justify-content:space-between}.hz .nav .btn{width:auto}
 .hz .about .grid,.hz .c-panel{grid-template-columns:1fr}
 .hz .facts{grid-template-columns:1fr 1fr}
-.hz .svc-grid,.hz .res-grid{grid-template-columns:1fr}
+.hz .svc-grid{grid-template-columns:1fr}.hz .res-grid{columns:1}
 .hz .svc,.hz .rev,.hz .c-panel{border-radius:28px}
 .hz .card{flex-direction:row;align-items:flex-start}.hz .card .ic{flex:0 0 64px;height:80px;width:64px}
 }
@@ -115,13 +115,13 @@ html,body{margin:0!important;padding:0!important;background:#F5EFE3!important}ht
     <p class="slogan">15+ років всередині банківської системи — тепер я граю на вашому боці</p>
     <a class="btn" href="https://t.me/Viktoriia_yrist" target="_blank" rel="noopener">Написати в Telegram <b>↗</b></a>
   </div>
-  <div class="h-photo"><div class="ph">Фото (hero) буде додано</div></div>
+  <div class="h-photo"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-hero.jpg" alt="Гончарук Вікторія Анатолієвна — юрист по кредитам" width="800" height="1000" loading="eager"></div>
 </div></div></section>
 
 <!-- 2 · ПРО МЕНЕ -->
 <section id="about" class="about"><div class="wrap">
 <div class="grid">
-  <div class="arch"><div class="ph">Фото (about) буде додано</div></div>
+  <div class="arch"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-about.jpg" alt="Вікторія Гончарук, юристка з кредитних питань" width="640" height="853" loading="lazy"></div>
   <div>
     <h2>Про мене</h2>
     <p class="quote">«Я бачила, як банки приймають рішення, як формуються відмови, як працюють колектори зсередини. І зрозуміла: людям по той бік потрібен хтось, хто знає всі ці механізми.»</p>
@@ -151,16 +151,18 @@ html,body{margin:0!important;padding:0!important;background:#F5EFE3!important}ht
   <div style="text-align:center;margin-top:40px"><a class="btn" href="https://t.me/Viktoriia_yrist" target="_blank" rel="noopener">Обговорити мою ситуацію <b>↗</b></a></div>
 </div></section>
 
-<!-- 4 · РЕЗУЛЬТАТИ (поки порожні; до 10 карток, заповнимо пізніше) -->
+<!-- 4 · РЕЗУЛЬТАТИ (8 довідок з бібліотеки; персональні дані клієнтів закриті) -->
 <section id="results" class="res"><div class="wrap">
   <div class="head"><h2>Результати</h2></div>
   <div class="res-grid">
-    <article class="res-card"><div class="shot">Фото результату</div><p>Результати з'являться найближчим часом</p></article>
-<article class="res-card"><div class="shot">Фото результату</div><p>Результати з'являться найближчим часом</p></article>
-<article class="res-card"><div class="shot">Фото результату</div><p>Результати з'являться найближчим часом</p></article>
-<article class="res-card"><div class="shot">Фото результату</div><p>Результати з'являться найближчим часом</p></article>
-<article class="res-card"><div class="shot">Фото результату</div><p>Результати з'являться найближчим часом</p></article>
-<article class="res-card"><div class="shot">Фото результату</div><p>Результати з'являться найближчим часом</p></article>
+    <article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-01.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-01.webp" alt="Довідка «Незалежні фінанси» від 27.07.2026 про виконання зобов'язань за кредитним договором" loading="lazy"></a><h3>Незалежні фінанси: договір припинив дію</h3><p>Довідка ТОВ «ФК «Незалежні фінанси» від 27.07.2026: клієнт у повному обсязі виконав зобов'язання за кредитним договором, договір припинив дію, кредитодавець вимог не має.</p></article>
+<article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-02.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-02.webp" alt="Довідка МІЛОАН від 21.08.2026 про виконання зобов'язань за кредитним договором" loading="lazy"></a><h3>МІЛОАН: зобов'язання виконано, вимог немає</h3><p>Довідка ТОВ «МІЛОАН» від 21.08.2026: клієнт повністю виконав зобов'язання за кредитним договором від 08.06.2026, договір припинив дію, вимог до клієнта немає.</p></article>
+<article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-03.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-03.webp" alt="Довідка Tengo (ТОВ «МІЛОАН») від 21.08.2026 про закриття кредитного договору" loading="lazy"></a><h3>Tengo: кредитний договір закрито</h3><p>Довідка ТОВ «МІЛОАН» (бренд Tengo) від 21.08.2026: зобов'язання за кредитним договором від 08.06.2026 виконано в повному обсязі, договір припинив дію, вимог немає.</p></article>
+<article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-04.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-04.webp" alt="Довідка Манівео про відсутність заборгованості станом на 29.07.2026" loading="lazy"></a><h3>Манівео: заборгованості за договором немає</h3><p>Довідка ТОВ «МАНІВЕО ШВИДКА ФІНАНСОВА ДОПОМОГА»: за кредитним договором від 21.06.2026 зобов'язання виконано в повному обсязі, станом на 29.07.2026 заборгованість відсутня.</p></article>
+<article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-05.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-05.webp" alt="Довідка ФК «ЕЙС» від 10.08.2026 про врегулювання заборгованості" loading="lazy"></a><h3>ФК «ЕЙС»: заборгованість врегульовано</h3><p>Довідка ФК «ЕЙС» від 10.08.2026: заборгованість за кредитним договором від 04.08.2024 врегульовано, компанія як новий кредитор жодних фінансових чи майнових претензій не має.</p></article>
+<article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-06.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-06.webp" alt="Довідка MyCredit від 09.08.2026 про відсутність заборгованості" loading="lazy"></a><h3>MyCredit: заборгованість відсутня</h3><p>Довідка ТОВ «1 Безпечне агентство необхідних кредитів» (MyCredit) від 09.08.2026: позичальник виконав зобов'язання за договором позики від 26.05.2026 в повному обсязі, заборгованість відсутня.</p></article>
+<article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-07.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-07.webp" alt="Довідка Таліон Плюс від 30.08.2026 про відсутність заборгованості" loading="lazy"></a><h3>Таліон Плюс: заборгованість відсутня</h3><p>Довідка ТОВ «Таліон Плюс» від 30.08.2026: за кредитним договором від 08.11.2025 станом на 30.08.2026 заборгованість відсутня у зв'язку з повним виконанням зобов'язань, фінансових претензій немає.</p></article>
+<article class="res-card"><a class="shot" href="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-08.webp" target="_blank" rel="noopener"><img src="https://ukrjurist.com.ua/wp-content/uploads/2026/10/goncharuk-rezultat-08.webp" alt="Довідка ФК «ТОП1» від 21.08.2026 про припинення договору позики" loading="lazy"></a><h3>ФК «ТОП1»: договір позики припинено</h3><p>Довідка ТОВ «ФК «ТОП1» від 21.08.2026: договір позики від 14.06.2026 припинив дію 21.08.2026 у зв'язку з повним виконанням позичальником своїх зобов'язань.</p></article>
   </div>
 </div></section>
 
