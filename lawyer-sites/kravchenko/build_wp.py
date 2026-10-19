@@ -44,7 +44,7 @@ scoped = parse(css)
 scoped = scoped.replace('.page{', '.kr-wrap{').replace('#kr .page{', '#kr .kr-wrap{')
 
 reset = """
-body.page-id-1901 .entry-title,body.page-id-1901 .page-title,body.page-id-1901 .page-header{display:none!important}
+body.page-id-1901 .site-footer,body.page-id-1901 #colophon,body.page-id-1901 .site-header,body.page-id-1901 #masthead,body.page-id-1901 .elementor-location-footer,body.page-id-1901 .elementor-location-header,body.page-id-1901 .entry-title,body.page-id-1901 .page-title,body.page-id-1901 .page-header{display:none!important}
 html{scroll-behavior:smooth}
 body{overflow-x:hidden}
 #kr{width:100vw;max-width:none;position:relative;left:50%;margin-left:-50vw;margin-top:0;margin-bottom:0;padding:0;text-align:left;display:block;float:none;min-height:100vh}
