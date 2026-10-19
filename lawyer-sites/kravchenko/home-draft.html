@@ -29,188 +29,258 @@
 </script>
 <style>
 :root{
-  --green-900:#06231a; --green-800:#0b3a2a; --green-700:#115238; --gold:#b99a5b; --gold-d:#9c7f45;
-  --cream:#f6f3ec; --white:#fff; --ink:#14221c; --muted:#5d6b64; --line:#e4dfd2;
-  --r-xl:36px; --r-lg:26px; --r-md:18px; --pad:clamp(20px,5vw,80px);
+  --g9:#04180f; --g8:#082a1d; --g7:#0d3d2a; --g6:#145a3d; --gold:#b8955a; --gold-d:#9a7a43; --gold-l:#e6d5b0;
+  --cream:#f5f2ea; --paper:#fbf9f4; --ink:#12201a; --muted:#5f6d66; --line:#e3ddcd; --white:#fff;
+  --bg:linear-gradient(180deg,#e9edea 0,#e9edea 55%,#cfeadd 100%);
   --serif:'Playfair Display',Georgia,'Times New Roman',serif; --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --gap:clamp(14px,1.4vw,24px); --pad:clamp(20px,5vw,96px); --r1:clamp(22px,2.2vw,40px); --r2:clamp(18px,1.6vw,28px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;font-size:clamp(15px,1.05vw,17px);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.wrap{width:100%;max-width:1760px;margin:0 auto;padding-inline:var(--pad)}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em}
-h2{font-size:clamp(30px,3.6vw,58px)}
-h2 em,h1 em{font-style:normal;color:var(--gold)}
-.eyebrow{display:inline-block;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--white);font-size:13px;color:var(--muted);margin-bottom:18px}
-section{padding-block:clamp(56px,8vw,130px)}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);background-attachment:fixed;line-height:1.6;font-size:clamp(15px,1.02vw,17px);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-style:none}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.012em}
+h2{font-size:clamp(30px,3.5vw,60px)}
+em{font-style:normal;color:var(--gold)}
+.page{padding:clamp(10px,1.1vw,20px);display:grid;gap:clamp(10px,1.1vw,20px)}
+.box{border-radius:var(--r1);overflow:hidden;position:relative}
+.in{max-width:1720px;margin:0 auto;padding-inline:var(--pad)}
+.sec{padding-block:clamp(56px,7vw,120px)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 18px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}
+.dark .pill{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#d4e3da}
+.center{text-align:center}.center .pill{margin-bottom:22px}
 
-/* кнопки: усі ведуть у Telegram */
-.btn{display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 26px;border-radius:999px;background:var(--gold);color:#fff;font-weight:600;font-size:15px;transition:.25s;white-space:nowrap}
-.btn i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--gold-d);font-style:normal;font-size:20px;transition:.25s}
+/* кнопки (усі → Telegram) */
+.btn{display:inline-flex;align-items:center;gap:14px;padding:7px 7px 7px 26px;border-radius:999px;background:var(--gold);color:#fff;font-weight:600;font-size:15px;transition:.25s;white-space:nowrap}
+.btn i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--gold-d);font-style:normal;font-size:19px;transition:.3s}
 .btn:hover{background:var(--gold-d)}.btn:hover i{transform:rotate(45deg)}
-.btn.light{background:#fff;color:var(--ink)}.btn.light:hover{background:var(--cream)}
+.btn.w{background:#fff;color:var(--ink)}.btn.w i{background:var(--gold);color:#fff}
+.btn.o{background:transparent;color:var(--ink);border:1.5px solid var(--line)}.btn.o:hover{background:#fff}
+.btn.sm{padding:5px 5px 5px 22px;font-size:14px}.btn.sm i{width:38px;height:38px}
 
-/* навігація */
-.nav{position:absolute;top:clamp(14px,2vw,28px);left:0;right:0;z-index:5}
-.nav .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fff;border-radius:999px;padding:10px 10px 10px clamp(20px,2.4vw,36px);box-shadow:0 10px 40px rgba(0,0,0,.18)}
-.nav .logo{font-family:var(--serif);font-weight:700;font-size:clamp(17px,1.6vw,24px)}
-.nav ul{display:flex;gap:clamp(18px,2.6vw,44px);list-style:none;font-size:14.5px;font-weight:500}
-.nav ul a:hover{color:var(--gold-d)}
-@media(max-width:900px){.nav ul{display:none}.nav .btn{padding-left:18px}.nav .btn span{display:none}.nav .btn{padding:6px}}
+/* HERO */
+.hero{min-height:calc(100svh - clamp(20px,2.2vw,40px));display:flex;flex-direction:column;color:#fff;
+  background:radial-gradient(900px 700px at 80% 45%,#1d7a50 0,rgba(29,122,80,.0) 62%),radial-gradient(700px 500px at 10% 100%,#0f4a32 0,transparent 70%),linear-gradient(135deg,var(--g9),var(--g8) 55%,var(--g7))}
+.nav{padding:clamp(12px,1.4vw,24px) clamp(12px,1.4vw,24px) 0}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#fff;color:var(--ink);border-radius:999px;padding:8px 8px 8px clamp(22px,2.6vw,44px);box-shadow:0 14px 40px rgba(0,0,0,.22)}
+.logo{font-family:var(--serif);font-weight:700;font-size:clamp(18px,1.7vw,26px)}
+.bar ul{display:flex;gap:clamp(18px,3vw,56px);font-size:14.5px;font-weight:500}
+.bar ul a:hover{color:var(--gold-d)}
+.hero-body{flex:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(16px,3vw,60px);align-items:end;padding:clamp(24px,3vw,56px) clamp(20px,4.5vw,90px) 0;max-width:1760px;width:100%;margin:0 auto}
+.hero-text{align-self:center;padding-bottom:clamp(20px,3vw,70px)}
+.hero .pill{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#e8f1ec;margin-bottom:26px}
+.hero h1{font-size:clamp(34px,4.5vw,82px);margin-bottom:22px}
+.hero h1 em{display:block}
+.hero .lead{font-size:clamp(16px,1.3vw,21px);color:#cfe0d6;max-width:600px;margin-bottom:34px}
+.hero-ph{position:relative;align-self:end;display:flex;justify-content:flex-end}
+.hero-ph::before{content:"";position:absolute;inset:8% -4% 0 6%;border-radius:50% 50% 0 0/38% 38% 0 0;background:radial-gradient(circle at 50% 40%,rgba(61,170,118,.55),rgba(61,170,118,0) 70%)}
+.hero-ph img{position:relative;width:min(100%,640px);height:clamp(380px,calc(100svh - 430px),700px);object-fit:cover;object-position:50% 10%;border-radius:var(--r1) var(--r1) 0 0;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid rgba(255,255,255,.16);padding:clamp(16px,1.8vw,30px) clamp(20px,4.5vw,90px);max-width:1760px;width:100%;margin:0 auto}
+.stat{display:flex;gap:14px;align-items:center}
+.stat svg{width:clamp(26px,2.4vw,38px);height:auto;flex:none;stroke:#e6d5b0;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(24px,2.7vw,44px);font-weight:600;line-height:1}
+.stat span{font-size:clamp(12px,.9vw,14px);color:#b9cfc4}
 
-/* 1 екран */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;padding-block:clamp(110px,12vw,150px) 0;
-  background:radial-gradient(1200px 700px at 78% 40%,#1a6a47 0%,rgba(26,106,71,0) 60%),linear-gradient(135deg,var(--green-900),var(--green-800) 60%,#0d4a33);border-radius:0 0 var(--r-xl) var(--r-xl);overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:clamp(20px,4vw,80px);width:100%}
-.hero-text{padding-bottom:clamp(20px,3vw,60px);align-self:center}
-.hero .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:7px 16px;border-radius:999px;font-size:13px;margin-bottom:26px}
-.hero h1{font-size:clamp(34px,4.2vw,76px);margin-bottom:22px}
-.hero p.lead{font-size:clamp(16px,1.35vw,21px);max-width:620px;color:#d3e0d9;margin-bottom:34px}
-.hero-photo{position:relative;align-self:end}
-.hero-photo img{width:100%;max-width:640px;margin-left:auto;border-radius:var(--r-xl) var(--r-xl) 0 0;height:clamp(380px,calc(100svh - 400px),720px);object-fit:cover;object-position:50% 12%;box-shadow:0 30px 80px rgba(0,0,0,.35)}
-.stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid rgba(255,255,255,.14);padding-block:clamp(20px,2.4vw,36px)}
-.stats b{display:block;font-family:var(--serif);font-size:clamp(26px,3vw,48px);font-weight:600}
-.stats span{font-size:13.5px;color:#bcd0c6}
-@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-photo{order:-1;max-width:420px;margin-inline:auto}.hero-photo img{height:auto;aspect-ratio:1/.9}.hero-text{padding-bottom:10px}.stats{grid-template-columns:repeat(2,1fr)}}
+/* ПРО МЕНЕ — речення з фото-вставками */
+.about{background:var(--paper);text-align:center}
+.about .big{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.4vw,58px);line-height:1.35;max-width:1500px;margin:0 auto 26px;letter-spacing:-.01em}
+.chip{display:inline-block;vertical-align:middle;height:1.05em;width:2.1em;border-radius:999px;object-fit:cover;margin:0 .12em;position:relative;top:-.06em}
+.chip.g{background:linear-gradient(135deg,var(--g7),var(--g6));width:1.5em}
+.about .small{max-width:640px;margin:0 auto 34px;color:var(--muted)}
+.about .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-/* 2 про мене */
-.about .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,90px);align-items:start}
-.about .photo img{border-radius:var(--r-xl);aspect-ratio:1/1.05;object-fit:cover;width:100%;position:sticky;top:20px}
-.about p.intro{font-size:clamp(17px,1.5vw,23px);color:var(--muted);margin:20px 0 34px}
-.timeline{display:grid;gap:14px}
-.job{background:#fff;border-radius:var(--r-lg);padding:clamp(18px,2vw,28px);border:1px solid var(--line)}
-.job .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px}
-.job h3{font-size:clamp(19px,1.6vw,26px)}
-.job .yr{color:var(--gold-d);font-weight:600;font-size:14px;white-space:nowrap}
-.job .role{font-weight:600;margin-bottom:8px}
-.job ul{padding-left:18px;color:var(--muted);font-size:.95em}
-.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-.card{background:#fff;border-radius:var(--r-lg);padding:clamp(18px,2vw,28px);border:1px solid var(--line)}
-.card h3{font-size:20px;margin-bottom:10px}
-.card li{margin-left:18px;margin-bottom:8px;color:var(--muted);font-size:.95em}
-.card p{color:var(--muted);font-size:.95em}
-@media(max-width:900px){.about .grid{grid-template-columns:1fr}.about .photo img{position:static;aspect-ratio:1/.8}.cols{grid-template-columns:1fr}}
+/* ПОСЛУГИ */
+.svc{background:var(--cream)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,3.5vw,56px)}
+.head .pill{margin-bottom:18px}
+.head p{max-width:520px;color:var(--muted)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:clamp(14px,1.2vw,20px);display:flex;flex-direction:column;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(8,42,29,.12)}
+.card .ic{aspect-ratio:4/3;border-radius:calc(var(--r2) - 8px);background:radial-gradient(circle at 70% 30%,var(--g6),var(--g8));display:grid;place-items:center;margin-bottom:20px}
+.card .ic svg{width:34%;stroke:var(--gold-l);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:clamp(19px,1.5vw,25px);margin-bottom:10px;padding-inline:6px}
+.card p{color:var(--muted);font-size:.94em;padding-inline:6px;flex:1}
+.card .go{align-self:flex-start;margin:18px 6px 4px;width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;transition:.3s}
+.card:hover .go{transform:rotate(45deg)}
 
-/* 3 послуги */
-.services{background:#fff;border-radius:var(--r-xl)}
-.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,56px)}
-.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.svc{background:var(--cream);border-radius:var(--r-lg);padding:clamp(22px,2.2vw,34px);min-height:300px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
-.svc:hover{background:var(--green-800);color:#fff;transform:translateY(-6px)}
-.svc .n{font-family:var(--serif);font-size:44px;color:var(--gold)}
-.svc h3{font-size:clamp(20px,1.7vw,27px)}
-@media(max-width:1100px){.cards4{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.cards4{grid-template-columns:1fr}.svc{min-height:200px}}
+/* ЧОМУ Я */
+.why{background:var(--paper)}
+.why-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,80px);align-items:center}
+.why-ph{border-radius:var(--r1);overflow:hidden;aspect-ratio:4/4.6;position:relative}
+.why-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.why-ph .tag{position:absolute;left:16px;bottom:16px;right:16px;background:rgba(255,255,255,.92);border-radius:var(--r2);padding:14px 18px;font-size:14px;backdrop-filter:blur(8px)}
+.why-ph .tag b{display:block;font-family:var(--serif);font-size:18px}
+.why h2{margin-bottom:16px}.why .sub{color:var(--muted);margin-bottom:28px;max-width:560px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.feat{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:clamp(18px,1.8vw,28px)}
+.feat .n{width:46px;height:46px;border-radius:50%;background:var(--g7);color:var(--gold-l);display:grid;place-items:center;margin-bottom:16px}
+.feat .n svg{width:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.feat h3{font-size:clamp(17px,1.35vw,22px);margin-bottom:8px}.feat p{color:var(--muted);font-size:.93em}
 
-/* 4 результати */
-.results .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.res{background:#fff;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line)}
-.res .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#e9e4d6,#d9d2bf);display:grid;place-items:center;color:var(--muted);font-size:14px}
-.res .tx{padding:22px}.res h3{font-size:21px;margin-bottom:8px}.res p{color:var(--muted);font-size:.95em}
-@media(max-width:900px){.results .cards3{grid-template-columns:1fr}}
+/* ДОСВІД (темна секція) */
+.exp{background:radial-gradient(800px 600px at 90% 10%,#14573b 0,transparent 65%),linear-gradient(140deg,var(--g9),var(--g8));color:#fff}
+.exp-g{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,80px);align-items:start}
+.exp h2{margin:0 0 clamp(24px,3vw,44px)}
+.steps{display:grid;gap:12px}
+details{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r2);padding:0 clamp(16px,1.6vw,26px)}
+details[open]{background:rgba(255,255,255,.11)}
+summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:16px;padding:clamp(14px,1.3vw,20px) 0}
+summary::-webkit-details-marker{display:none}
+summary .no{flex:none;width:42px;height:42px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-weight:600;font-size:14px}
+summary h3{font-size:clamp(18px,1.5vw,24px)}summary small{display:block;color:#b9cfc4;font-family:var(--sans);font-size:13px;margin-top:2px}
+summary .yr{margin-left:auto;color:var(--gold-l);font-size:13.5px;font-weight:600;white-space:nowrap}
+details ul{padding:0 0 clamp(14px,1.4vw,22px) 58px;color:#cfe0d6;font-size:.94em;display:grid;gap:8px}
+details li{position:relative}details li::before{content:"";position:absolute;left:-16px;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.side{display:grid;gap:var(--gap);position:sticky;top:20px}
+.side .ph{border-radius:var(--r1);overflow:hidden;aspect-ratio:16/11}
+.side .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.mini{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r2);padding:clamp(18px,1.8vw,28px)}
+.mini h3{font-size:20px;margin-bottom:12px;color:var(--gold-l)}
+.mini li{color:#d3e2d9;font-size:.94em;margin-bottom:8px}.mini li b{color:#fff}
+.mini p{color:#d3e2d9;font-size:.94em}
+.mini-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
 
-/* 5 відгуки */
-.reviews{background:linear-gradient(135deg,var(--green-900),var(--green-800));color:#fff;border-radius:var(--r-xl)}
-.reviews .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#cfe0d6}
-.plugin-slot{margin-bottom:28px}
-.rv-grid{columns:3 320px;column-gap:18px}
-.rv{break-inside:avoid;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-lg);padding:22px;margin-bottom:18px}
-.rv .st{color:var(--gold);letter-spacing:2px;font-size:14px}
-.rv p{margin:10px 0 14px;color:#e3ede7;font-size:.96em}
-.rv .by{display:flex;justify-content:space-between;font-size:13px;color:#a9c0b3}
-.rv .by b{color:#fff;font-weight:600}
+/* РЕЗУЛЬТАТИ */
+.res{background:var(--cream)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.rc{background:#fff;border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.rc .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#e7e1d1,#d6cdb6);display:grid;place-items:center;color:var(--muted);font-size:14px}
+.rc .tx{padding:clamp(18px,1.8vw,28px)}.rc h3{font-size:clamp(19px,1.5vw,24px);margin-bottom:8px}.rc p{color:var(--muted);font-size:.94em}
 
-/* футер */
-footer{padding-block:clamp(56px,7vw,110px) 30px}
-.cta-box{background:var(--gold);color:#fff;border-radius:var(--r-xl);padding:clamp(28px,4vw,64px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,56px)}
-.cta-box h2{font-size:clamp(26px,3vw,46px);max-width:760px}
-.contacts{display:grid;grid-template-columns:1fr 1.3fr;gap:18px}
-.c-card{background:#fff;border-radius:var(--r-xl);padding:clamp(24px,3vw,44px);border:1px solid var(--line)}
-.c-card h3{font-size:clamp(24px,2.2vw,34px);margin-bottom:20px}
-.c-row{display:flex;gap:14px;padding-block:12px;border-bottom:1px solid var(--line)}.c-row:last-child{border:0}
-.c-row small{display:block;color:var(--muted);font-size:12.5px}
-.c-row a:hover{color:var(--gold-d)}
-.map{border-radius:var(--r-xl);overflow:hidden;min-height:340px;background:linear-gradient(135deg,#e9e4d6,#d9d2bf);display:grid;place-items:center;color:var(--muted);text-align:center;padding:20px}
+/* ВІДГУКИ */
+.rev{background:var(--paper)}
+.slot{margin-bottom:24px}
+.rv-g{columns:3 320px;column-gap:var(--gap)}
+.rv{break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:clamp(18px,1.8vw,26px);margin-bottom:var(--gap)}
+.rv .st{color:var(--gold);letter-spacing:3px;font-size:14px}
+.rv p{margin:10px 0 16px;font-size:.96em}
+.rv .by{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+.rv .by b{color:var(--ink);font-weight:600}
+
+/* ФУТЕР */
+.foot{background:radial-gradient(700px 500px at 85% 0,#14573b 0,transparent 65%),linear-gradient(140deg,var(--g9),var(--g8));color:#fff}
+.cta{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding-bottom:clamp(30px,4vw,64px);border-bottom:1px solid rgba(255,255,255,.16);margin-bottom:clamp(30px,4vw,64px)}
+.cta h2{font-size:clamp(28px,3.4vw,56px);max-width:900px}
+.ct-g{display:grid;grid-template-columns:1fr 1.25fr;gap:var(--gap)}
+.ct{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r1);padding:clamp(24px,3vw,44px)}
+.ct h3{font-size:clamp(24px,2.2vw,34px);margin-bottom:18px}
+.row{padding-block:13px;border-bottom:1px solid rgba(255,255,255,.12)}.row:last-child{border:0}
+.row small{display:block;color:#a9c0b3;font-size:12.5px}.row a:hover{color:var(--gold-l)}
+.map{border-radius:var(--r1);min-height:340px;background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.28);display:grid;place-items:center;text-align:center;color:#b9cfc4;padding:20px;overflow:hidden}
 .map iframe{width:100%;height:100%;min-height:340px;border:0}
-.copy{text-align:center;color:var(--muted);font-size:13px;margin-top:30px}
-@media(max-width:900px){.contacts{grid-template-columns:1fr}}
+.copy{text-align:center;color:#8fa89b;font-size:13px;margin-top:34px}
+
+@media(max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .bar ul{display:none}.bar .btn span{display:none}.bar .btn{padding:5px}
+  .hero-body{grid-template-columns:1fr}.hero-ph{justify-content:center}.hero-ph img{height:auto;aspect-ratio:1/1.05;max-width:420px}
+  .why-g,.exp-g,.ct-g{grid-template-columns:1fr}.side{position:static}.g3{grid-template-columns:1fr}
+  .why-ph{aspect-ratio:4/3.6}
+}
+@media(max-width:560px){.g4,.g2,.mini-g{grid-template-columns:1fr}summary .yr{display:none}details ul{padding-left:30px}.about .big{font-size:25px}}
 </style>
 </head>
 <body>
+<div class="page">
 
-<header class="nav"><div class="wrap"><div class="bar">
-  <a class="logo" href="#top">Кравченко М. В.</a>
-  <ul><li><a href="#about">Про мене</a></li><li><a href="#services">Послуги</a></li><li><a href="#results">Результати</a></li><li><a href="#reviews">Відгуки</a></li><li><a href="#contacts">Контакти</a></li></ul>
-  <a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener"><span>Безкоштовна консультація</span><i>↗</i></a>
-</div></div></header>
-
-<!-- 1 ЕКРАН -->
-<main id="top">
-<section class="hero"><div class="wrap">
-  <div class="hero-text">
-    <span class="tag">⚖ Понад 1500 виграних справ</span>
-    <h1>Кравченко Максим Віталійович - <em>юрист по кредитам</em></h1>
-    <p class="lead">Юрист з кредитних спорів, виконавчого провадження та примусового стягнення заборгованостей. Захищаю позичальників у судах з банками, МФО та колекторами.</p>
-    <a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація <i>↗</i></a>
+<!-- 1. HERO -->
+<header class="box hero" id="top">
+  <div class="nav"><div class="bar">
+    <a class="logo" href="#top">Кравченко М. В.</a>
+    <ul><li><a href="#about">Про мене</a></li><li><a href="#services">Послуги</a></li><li><a href="#experience">Досвід</a></li><li><a href="#results">Результати</a></li><li><a href="#reviews">Відгуки</a></li><li><a href="#contacts">Контакти</a></li></ul>
+    <a class="btn sm" href="https://t.me/evgen_yrist" target="_blank" rel="noopener"><span>Безкоштовна консультація</span><i>↗</i></a>
+  </div></div>
+  <div class="hero-body">
+    <div class="hero-text">
+      <span class="pill">⚖ Юрист з кредитних спорів · з 2003 року</span>
+      <h1>Кравченко Максим Віталійович - <em>юрист по кредитам</em></h1>
+      <p class="lead">Захищаю позичальників у судах з банками, МФО та колекторами. Виконавче провадження, примусове стягнення, реструктуризація та списання боргів.</p>
+      <a class="btn w" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація <i>↗</i></a>
+    </div>
+    <div class="hero-ph"><img src="img/portrait-suit.jpg" alt="Кравченко Максим Віталійович - юрист по кредитам" width="1528" height="1580"></div>
   </div>
-  <div class="hero-photo"><img src="img/portrait-suit.jpg" alt="Кравченко Максим Віталійович - юрист по кредитам" width="1528" height="1580"></div>
   <div class="stats">
-    <div><b>1500+</b><span>виграних судових справ</span></div>
-    <div><b>100 млн ₴</b><span>успішних реструктуризацій</span></div>
-    <div><b>20+ років</b><span>юридичного досвіду з 2003</span></div>
-    <div><b>4 банки</b><span>ПриватБанк, Дельта, Юнісон, Михайлівський</span></div>
+    <div class="stat"><svg viewBox="0 0 40 40"><path d="M20 4l4 8 9 1-6.5 6.3 1.5 9L20 24l-8 4.3 1.5-9L7 13l9-1z"/></svg><div><b>1500+</b><span>виграних справ</span></div></div>
+    <div class="stat"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14"/><path d="M20 11v18M15 16c0-3 10-3 10 1s-10 2-10 6 10 4 10 1"/></svg><div><b>100 млн ₴</b><span>реструктуризацій</span></div></div>
+    <div class="stat"><svg viewBox="0 0 40 40"><rect x="7" y="9" width="26" height="24" rx="3"/><path d="M7 16h26M14 5v6M26 5v6"/></svg><div><b>20+ років</b><span>юридичного досвіду</span></div></div>
+    <div class="stat"><svg viewBox="0 0 40 40"><path d="M5 17l15-9 15 9M9 17v12M17 17v12M23 17v12M31 17v12M6 31h28"/></svg><div><b>4 банки</b><span>у практиці</span></div></div>
+  </div>
+</header>
+
+<!-- 2. ПРО МЕНЕ -->
+<section class="box sec about" id="about"><div class="in">
+  <span class="pill" style="margin-bottom:22px">Про мене</span>
+  <p class="big">Максим <img class="chip" src="img/portrait-office.jpg" alt="Кравченко Максим Віталійович за робочим столом"> — юрист, який двадцять років працював у банках, а тепер <span class="chip g"></span> стоїть на боці позичальника та <span class="chip g" style="background:linear-gradient(135deg,var(--gold),var(--gold-d))"></span> веде справу до результату.</p>
+  <p class="small">Знаю, як банки, МФО та колектори вибудовують свою позицію, і використовую це у ваших справах: від оскарження дій виконавця до списання боргу.</p>
+  <div class="btns"><a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація <i>↗</i></a><a class="btn o" href="#experience">Мій досвід <i style="background:var(--gold);color:#fff">↓</i></a></div>
+</div></section>
+
+<!-- 3. ПОСЛУГИ -->
+<section class="box sec svc" id="services"><div class="in">
+  <div class="head"><div><span class="pill">Послуги</span><h2>Правова допомога, <em>якій можна довіряти</em></h2></div><p>Чотири напрями, у яких маю найбільше практики та виграних справ.</p></div>
+  <div class="g4">
+    <a class="card" href="https://t.me/evgen_yrist" target="_blank" rel="noopener"><div class="ic"><svg viewBox="0 0 48 48"><path d="M24 6v36M10 14h28M10 14l-6 14a7 7 0 0012 0zM38 14l-6 14a7 7 0 0012 0zM16 42h16"/></svg></div><h3>Виконавче провадження</h3><p>Примусове стягнення боргів, оскарження дій виконавців, зняття арештів.</p><span class="go">↗</span></a>
+    <a class="card" href="https://t.me/evgen_yrist" target="_blank" rel="noopener"><div class="ic"><svg viewBox="0 0 48 48"><path d="M8 38h32M10 38V20M20 38V20M28 38V20M38 38V20M6 20L24 8l18 12z"/></svg></div><h3>Спори з банками, МФО та колекторами</h3><p>Судовий захист позичальників, оскарження незаконних дій колекторів.</p><span class="go">↗</span></a>
+    <a class="card" href="https://t.me/evgen_yrist" target="_blank" rel="noopener"><div class="ic"><svg viewBox="0 0 48 48"><path d="M10 6h20l8 8v28H10zM30 6v8h8M16 24h16M16 31h16"/></svg></div><h3>Реструктуризація та списання боргів</h3><p>Реструктуризація та списання кредитних зобов’язань на вигідних умовах.</p><span class="go">↗</span></a>
+    <a class="card" href="https://t.me/evgen_yrist" target="_blank" rel="noopener"><div class="ic"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 12l4 12-4 12-4-12zM12 24h24"/></svg></div><h3>Правові стратегії</h3><p>Розробка стратегії захисту у сфері проблемної заборгованості.</p><span class="go">↗</span></a>
   </div>
 </div></section>
 
-<!-- 2 ПРО МЕНЕ -->
-<section class="about" id="about"><div class="wrap"><div class="grid">
-  <div class="photo"><img src="img/portrait-office.jpg" alt="Кравченко Максим Віталійович за робочим столом" width="820" height="580" loading="lazy"></div>
+<!-- 4. ЧОМУ Я -->
+<section class="box sec why" id="why"><div class="in"><div class="why-g">
+  <div class="why-ph"><img src="img/portrait-suit.jpg" alt="Кравченко Максим Віталійович" loading="lazy"><div class="tag"><b>Радник проєкту закону</b>«Про колекторську діяльність»</div></div>
   <div>
-    <span class="eyebrow">Про мене</span>
-    <h2>Досвід банку — <em>на боці позичальника</em></h2>
-    <p class="intro">Понад двадцять років працюю з кредитами, виконавчим провадженням і стягненням боргів — спочатку в найбільших банках України, тепер захищаю інтереси позичальників. Знаю, як банки та колектори будують свою позицію, і використовую це у ваших справах.</p>
-    <div class="timeline">
-      <div class="job"><div class="top"><h3>Юридична фірма «ЛА Консалтинг»</h3><span class="yr">2022 – дотепер</span></div><div class="role">Юрист з кредитних спорів</div><ul><li>Захист інтересів позичальників у судах, у тому числі у спорах з банками та МФО.</li><li>Оскарження незаконних дій колекторів та виконавців.</li><li>Консультації з питань реструктуризації та списання боргів.</li><li>Представництво клієнтів у процесах примусового стягнення заборгованостей.</li></ul></div>
-      <div class="job"><div class="top"><h3>Банк «Михайлівський»</h3><span class="yr">2015 – 2017</span></div><div class="role">Керівник департаменту правового забезпечення</div><ul><li>Розробка стратегій досудового врегулювання заборгованостей.</li><li>Безпосередня участь у створенні проєктів змін до законодавства у сфері колекторської діяльності.</li><li>Взаємодія з Національним банком України та профільними комітетами Верховної Ради з питань кредитної та колекторської політики.</li></ul></div>
-      <div class="job"><div class="top"><h3>Юнісон Банк</h3><span class="yr">2013 – 2015</span></div><div class="role">Начальник юридичного департаменту</div><ul><li>Керівництво юридичним підрозділом з питань кредитування та стягнення боргів.</li><li>Супровід справ у судах різних інстанцій, включно з апеляційними та касаційними процесами.</li><li>Участь у переговорах з великими корпоративними боржниками та укладення мирових угод.</li></ul></div>
-      <div class="job"><div class="top"><h3>Дельта Банк</h3><span class="yr">2008 – 2013</span></div><div class="role">Керівник відділу виконавчого провадження</div><ul><li>Організація роботи з примусового стягнення боргів.</li><li>Контроль виконання судових рішень у справах з проблемними кредитами.</li><li>Розробка внутрішніх регламентів роботи з колекторськими компаніями.</li></ul></div>
-      <div class="job"><div class="top"><h3>ПриватБанк</h3><span class="yr">2003 – 2008</span></div><div class="role">Юрист кредитного департаменту</div><ul><li>Юридичний супровід кредитних договорів фізичних та юридичних осіб.</li><li>Представництво банку у судах у справах про стягнення заборгованостей.</li><li>Співпраця з Державною виконавчою службою для реалізації рішень судів.</li></ul></div>
-    </div>
-    <div class="cols">
-      <div class="card"><h3>Освіта</h3><ul><li><b>1998–2003</b> — Ужгородський національний університет, юридичний факультет, «Правознавство».</li><li><b>2005</b> — підвищення кваліфікації з банківського та фінансового права (КНЕУ).</li><li><b>2016</b> — сертифікат «Фінансові інструменти, кредитні ризики та стягнення заборгованостей» (Banking Academy Ukraine).</li></ul></div>
-      <div class="card"><h3>Мови</h3><ul><li>Українська — рідна</li><li>Російська — вільно</li><li>Англійська — вище середнього</li></ul></div>
-      <div class="card"><h3>Особисті якості</h3><p>Аналітичне мислення, відповідальність, стресостійкість, вміння працювати з великими масивами правової інформації та вести переговори у складних конфліктах.</p></div>
+    <span class="pill" style="margin-bottom:20px">Чому я</span>
+    <h2>Чому обирають <em>Максима Віталійовича</em></h2>
+    <p class="sub">Досвід у найбільших банках України та участь у створенні законодавства про колекторів — це знання, яких немає в більшості юристів.</p>
+    <div class="g2">
+      <div class="feat"><div class="n"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M10 21V10M14 21V10M19 21V10M2 10l10-6 10 6z"/></svg></div><h3>Досвід у банках</h3><p>ПриватБанк, Дельта Банк, Юнісон Банк, Банк «Михайлівський» — знаю кредитні та виконавчі процеси зсередини.</p></div>
+      <div class="feat"><div class="n"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.3 6L12 16.4 6.6 19.4l1.3-6L3.4 9.3l6-.7z"/></svg></div><h3>1500+ виграних справ</h3><p>У сфері кредитних спорів та виконавчого провадження.</p></div>
+      <div class="feat"><div class="n"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 13h7M9 17h7"/></svg></div><h3>Законотворча робота</h3><p>Радник співавтора проєкту Закону України «Про колекторську діяльність».</p></div>
+      <div class="feat"><div class="n"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-2 6-2 6 .5s-6 1.5-6 4 6 2 6 0"/></svg></div><h3>100+ млн грн</h3><p>Успішний супровід реструктуризацій на суму понад 100 млн грн.</p></div>
     </div>
   </div>
 </div></div></section>
 
-<!-- 3 ПОСЛУГИ -->
-<section class="services" id="services"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Послуги</span><h2>Чим я <em>допоможу</em></h2></div><a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація <i>↗</i></a></div>
-  <div class="cards4">
-    <div class="svc"><div class="n">01</div><h3>Виконавче провадження та примусове стягнення боргів</h3></div>
-    <div class="svc"><div class="n">02</div><h3>Судові спори з банками, МФО та колекторськими компаніями</h3></div>
-    <div class="svc"><div class="n">03</div><h3>Реструктуризація та списання кредитних зобов’язань</h3></div>
-    <div class="svc"><div class="n">04</div><h3>Розробка правових стратегій у сфері проблемної заборгованості</h3></div>
+<!-- 5. ДОСВІД -->
+<section class="box sec exp dark" id="experience"><div class="in"><div class="exp-g">
+  <div>
+    <span class="pill" style="margin-bottom:20px">Професійний досвід</span>
+    <h2>Шлях від банку <em>до захисту клієнтів</em></h2>
+    <div class="steps">
+      <details open><summary><span class="no">01</span><div><h3>Юридична фірма «ЛА Консалтинг»</h3><small>Юрист з кредитних спорів</small></div><span class="yr">2022 – дотепер</span></summary><ul><li>Захист інтересів позичальників у судах, у тому числі у спорах з банками та МФО.</li><li>Оскарження незаконних дій колекторів та виконавців.</li><li>Консультації з питань реструктуризації та списання боргів.</li><li>Представництво клієнтів у процесах примусового стягнення заборгованостей.</li></ul></details>
+      <details><summary><span class="no">02</span><div><h3>Банк «Михайлівський»</h3><small>Керівник департаменту правового забезпечення</small></div><span class="yr">2015 – 2017</span></summary><ul><li>Розробка стратегій досудового врегулювання заборгованостей.</li><li>Безпосередня участь у створенні проєктів змін до законодавства у сфері колекторської діяльності.</li><li>Взаємодія з Національним банком України та профільними комітетами Верховної Ради з питань кредитної та колекторської політики.</li></ul></details>
+      <details><summary><span class="no">03</span><div><h3>Юнісон Банк</h3><small>Начальник юридичного департаменту</small></div><span class="yr">2013 – 2015</span></summary><ul><li>Керівництво юридичним підрозділом з питань кредитування та стягнення боргів.</li><li>Супровід справ у судах різних інстанцій, включно з апеляційними та касаційними процесами.</li><li>Участь у переговорах з великими корпоративними боржниками та укладення мирових угод.</li></ul></details>
+      <details><summary><span class="no">04</span><div><h3>Дельта Банк</h3><small>Керівник відділу виконавчого провадження</small></div><span class="yr">2008 – 2013</span></summary><ul><li>Організація роботи з примусового стягнення боргів.</li><li>Контроль виконання судових рішень у справах з проблемними кредитами.</li><li>Розробка внутрішніх регламентів роботи з колекторськими компаніями.</li></ul></details>
+      <details><summary><span class="no">05</span><div><h3>ПриватБанк</h3><small>Юрист кредитного департаменту</small></div><span class="yr">2003 – 2008</span></summary><ul><li>Юридичний супровід кредитних договорів фізичних та юридичних осіб.</li><li>Представництво банку у судах у справах про стягнення заборгованостей.</li><li>Співпраця з Державною виконавчою службою для реалізації рішень судів.</li></ul></details>
+    </div>
+  </div>
+  <div class="side">
+    <div class="ph"><img src="img/portrait-office.jpg" alt="Кравченко Максим Віталійович за робочим столом" loading="lazy"></div>
+    <div class="mini"><h3>Освіта</h3><ul><li><b>1998–2003</b> — Ужгородський національний університет, юридичний факультет, «Правознавство».</li><li><b>2005</b> — підвищення кваліфікації з банківського та фінансового права (КНЕУ).</li><li><b>2016</b> — сертифікат «Фінансові інструменти, кредитні ризики та стягнення заборгованостей» (Banking Academy Ukraine).</li></ul></div>
+    <div class="mini-g">
+      <div class="mini"><h3>Мови</h3><ul><li>Українська — рідна</li><li>Російська — вільно</li><li>Англійська — вище середнього</li></ul></div>
+      <div class="mini"><h3>Якості</h3><p>Аналітичне мислення, відповідальність, стресостійкість, вміння працювати з великими масивами правової інформації та вести переговори у складних конфліктах.</p></div>
+    </div>
+  </div>
+</div></div></section>
+
+<!-- 6. РЕЗУЛЬТАТИ -->
+<section class="box sec res" id="results"><div class="in">
+  <div class="head"><div><span class="pill">Результати</span><h2>Результати <em>для клієнтів</em></h2></div><p>Реальні справи та рішення, яких вдалося досягти.</p></div>
+  <div class="g3">
+    <div class="rc"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
+    <div class="rc"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
+    <div class="rc"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
   </div>
 </div></section>
 
-<!-- 4 РЕЗУЛЬТАТИ -->
-<section class="results" id="results"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Результати</span><h2>Результати для <em>клієнтів</em></h2></div></div>
-  <div class="cards3">
-    <div class="res"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
-    <div class="res"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
-    <div class="res"><div class="ph">Фото результату — додамо</div><div class="tx"><h3>Назва результату</h3><p>Опис результату для клієнта буде додано.</p></div></div>
-  </div>
-</div></section>
-
-<!-- 5 ВІДГУКИ -->
-<section class="reviews" id="reviews"><div class="wrap">
-  <div class="head"><div><span class="eyebrow">Відгуки</span><h2>Що кажуть <em>клієнти</em></h2></div></div>
-  <div class="plugin-slot">[react_reviews_1]</div>
-  <div class="rv-grid">
+<!-- 7. ВІДГУКИ -->
+<section class="box sec rev" id="reviews"><div class="in">
+  <div class="head"><div><span class="pill">Відгуки</span><h2>Що кажуть <em>клієнти</em></h2></div></div>
+  <div class="slot">[react_reviews_1]</div>
+  <div class="rv-g">
     <div class="rv"><div class="st">★★★★★</div><p>Банк подав на мене до суду на велику суму. Максим Віталійович розклав усе по поличках, знайшов порушення в договорі, і суд суттєво зменшив борг. Дуже вдячна.</p><div class="by"><b>Олена К.</b><span>14.11.2024</span></div></div>
     <div class="rv"><div class="st">★★★★★</div><p>Колектори дзвонили щодня, у тому числі рідним. Після звернення до юриста дзвінки припинилися за кілька днів. Рекомендую.</p><div class="by"><b>Андрій М.</b><span>02.12.2024</span></div></div>
     <div class="rv"><div class="st">★★★★★</div><p>Відкрили виконавче провадження і заблокували картку. Допоміг оскаржити дії виконавця, рахунок розблокували. Все чітко і без зайвих слів.</p><div class="by"><b>Ірина Т.</b><span>19.01.2025</span></div></div>
@@ -228,23 +298,24 @@ footer{padding-block:clamp(56px,7vw,110px) 30px}
     <div class="rv"><div class="st">★★★★★</div><p>Суд визнав частину нарахувань незаконними. Сума боргу значно менша. Дякую!</p><div class="by"><b>Катерина З.</b><span>22.01.2026</span></div></div>
   </div>
 </div></section>
-</main>
 
-<!-- ФУТЕР -->
-<footer id="contacts"><div class="wrap">
-  <div class="cta-box"><h2>Потрібна допомога з кредитом або боргом? Напишіть юристу</h2><a class="btn light" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація <i>↗</i></a></div>
-  <div class="contacts">
-    <div class="c-card">
+<!-- 8. ФУТЕР -->
+<footer class="box sec foot dark" id="contacts"><div class="in">
+  <div class="cta"><h2>Потрібна допомога з кредитом або боргом? <em>Напишіть юристу</em></h2><a class="btn w" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Безкоштовна консультація <i>↗</i></a></div>
+  <div class="ct-g">
+    <div class="ct">
       <h3>Контакти</h3>
-      <div class="c-row"><div><small>Телефон</small><a href="tel:+380914811951">+380914811951</a></div></div>
-      <div class="c-row"><div><small>Telegram</small><a href="https://t.me/evgen_yrist" target="_blank" rel="noopener">@evgen_yrist</a></div></div>
-      <div class="c-row"><div><small>Instagram</small><a href="https://www.instagram.com/yuryst_kravchenko/" target="_blank" rel="noopener">@yuryst_kravchenko</a></div></div>
-      <div class="c-row"><div><small>Адреса</small>Адресу буде додано</div></div>
-      <div class="c-row"><div><small>Години роботи</small>пн–пт з 09:00 до 18:00, на вихідних за домовленістю</div></div>
+      <div class="row"><small>Телефон</small><a href="tel:+380914811951">+380914811951</a></div>
+      <div class="row"><small>Telegram</small><a href="https://t.me/evgen_yrist" target="_blank" rel="noopener">@evgen_yrist</a></div>
+      <div class="row"><small>Instagram</small><a href="https://www.instagram.com/yuryst_kravchenko/" target="_blank" rel="noopener">@yuryst_kravchenko</a></div>
+      <div class="row"><small>Адреса</small>Адресу буде додано</div>
+      <div class="row"><small>Години роботи</small>пн–пт з 09:00 до 18:00, на вихідних за домовленістю</div>
     </div>
     <div class="map"><!-- Сюди вставити HTML-скрипт Google Maps (iframe) з міткою, коли буде адреса -->Google-карта з міткою — буде додано після уточнення адреси</div>
   </div>
   <p class="copy">© Кравченко Максим Віталійович, rada-advokat.uz.ua</p>
 </div></footer>
+
+</div>
 </body>
 </html>
