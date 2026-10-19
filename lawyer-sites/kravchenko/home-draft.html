@@ -44,7 +44,9 @@ h2{font-size:clamp(22px,2.5vw,42px)}
 .page>*,.in{min-width:0}
 .box{border-radius:var(--r1);overflow:hidden;position:relative}
 .in{max-width:1680px;margin:0 auto;padding-inline:var(--pad)}
-.sec{padding-block:clamp(48px,6vw,110px)}
+.sec{padding-block:clamp(36px,4.2vw,76px)}
+.res{padding-bottom:clamp(18px,2.2vw,36px)}
+.rev{padding-top:clamp(18px,2.2vw,36px)}
 .dk{background:radial-gradient(900px 500px at 75% -10%,#3a3a3a 0,transparent 60%),linear-gradient(160deg,#1c1c1c,#0f0f0f);color:#fff}
 .lime{color:var(--lime)}
 .tag{display:inline-block;background:var(--lime);color:var(--black);border-radius:14px;padding:.1em .45em;font-family:var(--serif);font-weight:600}
@@ -122,8 +124,12 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .mini-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
 
 /* Результати */
+.sh h2{text-align:left;margin:0}
+.sh.c{text-align:center;margin-bottom:clamp(22px,2.6vw,40px)}.sh.c h2{text-align:center}
+.eb{display:inline-flex;align-items:center;gap:9px;background:#fff;border-radius:999px;padding:7px 16px 7px 12px;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:16px;box-shadow:0 2px 0 rgba(20,20,20,.08)}
+.eb::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(20,20,20,.9)}
+.hl{display:inline-block;background:var(--lime);color:var(--black);border-radius:.32em;padding:.02em .3em .06em;line-height:1.08;box-shadow:0 .07em 0 var(--lime-d);transform:rotate(-1.2deg)}
 .car-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(22px,2.6vw,40px)}
-.car-head h2{margin:0}
 .car-ctl{display:flex;align-items:center;gap:10px}
 .car-count{font-family:var(--serif);font-size:15px;color:var(--muted);margin-right:8px}.car-count b{color:var(--ink);font-size:20px}
 .car-btn{width:52px;height:52px;border-radius:50%;border:0;background:var(--lime);color:var(--black);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 4px 0 var(--lime-d);transition:.15s}
@@ -134,7 +140,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .car-track{display:flex;gap:var(--gap);width:max-content;padding-bottom:6px}
 .car-bar{height:4px;border-radius:4px;background:rgba(20,20,20,.12);margin-top:clamp(18px,2vw,28px);overflow:hidden}
 .car-bar i{display:block;height:100%;width:20%;background:var(--ink);border-radius:4px;transition:width .2s}
-.car-note{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
+.car-note{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
 .kr-lb{position:fixed;inset:0;z-index:99999;background:rgba(10,10,10,.88);display:none;overflow:auto;padding:clamp(16px,4vw,48px)}
 .kr-lb.on{display:block}
 .kr-lb img{display:block;width:min(900px,100%);height:auto;margin:0 auto;border-radius:12px;background:#fff}
@@ -284,7 +290,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 <!-- 6. РЕЗУЛЬТАТИ РОБОТИ -->
 <section class="sec res" id="results"><div class="in">
   <div class="car-head">
-    <h2>Результати роботи</h2>
+    <div class="sh"><span class="eb">Документи кредиторів</span><h2>Результати <span class="hl">роботи</span></h2></div>
     <div class="car-ctl"><span class="car-count"><b>01</b> / 07</span><button type="button" class="car-btn prev" aria-label="Попередній результат">←</button><button type="button" class="car-btn next" aria-label="Наступний результат">→</button></div>
   </div>
   <div class="car" data-car>
@@ -305,7 +311,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 
 <!-- 7. ВІДГУКИ -->
 <section class="sec rev" id="reviews"><div class="in">
-  <h2>відгуки клієнтів</h2>
+  <div class="sh c"><span class="eb">Думка клієнтів</span><h2>Відгуки <span class="hl">клієнтів</span></h2></div>
   <div class="rv-g">
     <div class="rv"><div class="st">★★★★★</div><p>Банк подав на мене до суду на велику суму. Максим Віталійович розклав усе по поличках, знайшов порушення в договорі, і суд суттєво зменшив борг. Дуже вдячна.</p><div class="by"><b>Олена К.</b><span>14.11.2024</span></div></div>
     <div class="rv"><div class="st">★★★★★</div><p>Колектори дзвонили щодня, у тому числі рідним. Після звернення до юриста дзвінки припинилися за кілька днів. Рекомендую.</p><div class="by"><b>Андрій М.</b><span>02.12.2024</span></div></div>
