@@ -53,6 +53,7 @@ body{overflow-x:hidden}
 #kr h1,#kr h2,#kr h3{font-family:var(--serif)!important;font-weight:600!important;line-height:1.12;letter-spacing:-.012em;color:inherit;word-break:normal}
 #kr p,#kr li,#kr a,#kr span,#kr small,#kr b,#kr summary{font-family:var(--sans)}
 #kr ul{list-style:none}
+#kr p,#kr li,#kr small,#kr b{color:inherit}
 #kr a{color:inherit;text-decoration:none;box-shadow:none;border-bottom:0}
 #kr a:hover,#kr a:focus{color:inherit;text-decoration:none}
 #kr img{max-width:100%;height:auto;border:0;box-shadow:none}
