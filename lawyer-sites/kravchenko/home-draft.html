@@ -131,22 +131,13 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .eb::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px var(--black)}
 .hl{display:inline-block;background:var(--lime);color:#fff;border-radius:.32em;padding:.02em .3em .06em;line-height:1.08;box-shadow:0 .07em 0 var(--lime-d);transform:rotate(-1.2deg)}
 .car-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(22px,2.6vw,40px)}
-.car-ctl{display:flex;align-items:center;gap:10px}
-.car-count{font-family:var(--serif);font-size:15px;color:var(--muted);margin-right:8px}.car-count b{color:var(--ink);font-size:20px}
-.car-btn{width:52px;height:52px;border-radius:50%;border:0;background:var(--lime);color:#fff;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 4px 0 var(--lime-d);transition:.15s}
-.car-btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--lime-d)}
-.car-btn:disabled{opacity:.35;cursor:default}
-.car{max-width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;margin-inline:calc(-1*var(--pad));padding-inline:var(--pad);scroll-padding-inline:var(--pad)}
-.car::-webkit-scrollbar{display:none}
-.car-track{display:flex;gap:var(--gap);width:max-content;padding-bottom:6px}
-.car-bar{height:4px;border-radius:4px;background:rgba(4,42,65,.14);margin-top:clamp(18px,2vw,28px);overflow:hidden}
-.car-bar i{display:block;height:100%;width:20%;background:var(--ink);border-radius:4px;transition:width .2s}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);align-items:stretch}
 .car-note{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
 .kr-lb{position:fixed;inset:0;z-index:99999;background:rgba(2,24,39,.92);display:none;overflow:auto;padding:clamp(16px,4vw,48px)}
 .kr-lb.on{display:block}
 .kr-lb img{display:block;width:min(900px,100%);height:auto;margin:0 auto;border-radius:12px;background:#fff}
 .kr-lb-x{position:fixed;top:14px;right:18px;width:46px;height:46px;border-radius:50%;border:0;background:var(--lime);color:#fff;font-size:26px;line-height:1;cursor:pointer;z-index:2}
-.rc{flex:0 0 clamp(270px,27vw,440px);scroll-snap-align:start;background:#fff;border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column}
+.rc{background:#fff;border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column}
 .rc .ph{background:#eceef0;padding:12px 12px 0;display:block;aspect-ratio:5/6;overflow:hidden;font-size:0;box-sizing:border-box;cursor:zoom-in;position:relative}
 .rc .ph::after{content:"Збільшити";position:absolute;right:20px;bottom:12px;background:var(--black);color:#fff;font:600 11px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;border-radius:999px;opacity:0;transform:translateY(6px);transition:.2s}
 .rc:hover .ph::after{opacity:1;transform:none}
@@ -186,7 +177,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .dk .btn.sm:not(.ghost):not(.k){box-shadow:0 4px 0 var(--steel)}
 .dk .btn:not(.ghost):not(.k):hover,.callbar .btn:not(.ghost):hover{box-shadow:0 2px 0 var(--steel)}
 .kr-lb-x{background:var(--sky);color:var(--navy)}
-@media(max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1100px){.g4,.rgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
   .nav ul{display:none}
   .hero-g,.about-g,.exp-g,.ct-g{grid-template-columns:1fr}
@@ -200,7 +191,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
   .page{padding-bottom:84px}
   .hero .btn.ghost,.cta .btn.ghost{display:none}
 }
-@media(max-width:560px){.g3,.g4,.mini-g{grid-template-columns:1fr}.rc{flex-basis:78vw}.car-btn{width:46px;height:46px}summary .yr{display:none}details ul{padding-left:30px}.btn{padding:17px 26px;white-space:normal;text-align:center}.fcard.b{display:none}}
+@media(max-width:560px){.g3,.g4,.rgrid,.mini-g{grid-template-columns:1fr}summary .yr{display:none}details ul{padding-left:30px}.btn{padding:17px 26px;white-space:normal;text-align:center}.fcard.b{display:none}}
 </style>
 </head>
 <body>
@@ -297,10 +288,8 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 <section class="sec res" id="results"><div class="in">
   <div class="car-head">
     <div class="sh"><span class="eb">Документи кредиторів</span><h2>Результати <span class="hl">роботи</span></h2></div>
-    <div class="car-ctl"><span class="car-count"><b>01</b> / 07</span><button type="button" class="car-btn prev" aria-label="Попередній результат">←</button><button type="button" class="car-btn next" aria-label="Наступний результат">→</button></div>
   </div>
-  <div class="car" data-car>
-    <div class="car-track">
+  <div class="rgrid">
       <article class="rc" data-n="1"><div class="ph" title="Збільшити"><img src="results/rezultat-01-elit-finans-21999.webp" alt="Гарантійний лист ТОВ «ФК «Еліт Фінанс» про погашення боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Еліт Фінанс»: борг закрито за 21 999 грн</h3><p>За гарантійним листом кредитор погодився закрити борг при сплаті 21 999 грн. Інакше стягнення йшло б у повному обсязі: 56 319,98 грн.</p></div></article>
       <article class="rc" data-n="2"><div class="ph" title="Збільшити"><img src="results/rezultat-02-aventus-ukraina-25107.webp" alt="Додаткова угода з ТОВ «Авентус Україна» про розстрочку боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Авентус Україна»: розстрочка на 4 платежі</h3><p>Борг зафіксовано на 25 107,92 грн, нарахування відсотків припинено. Виплата розбита на 4 рівні платежі по 6 276,98 грн.</p></div></article>
       <article class="rc" data-n="3"><div class="ph" title="Збільшити"><img src="results/rezultat-03-spozhyvchyi-tsentr-23580.webp" alt="Гарантійний лист ТОВ «Споживчий центр» про зменшення боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Споживчий центр»: борг зменшено на 9 990 грн</h3><p>З боргу в 23 580 грн кредитор погодив знижку 9 990 грн. Для закриття достатньо сплатити 13 590 грн.</p></div></article>
@@ -309,9 +298,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
       <article class="rc" data-n="6"><div class="ph" title="Збільшити"><img src="results/rezultat-06-universal-bank-34321.webp" alt="Лист АТ «Універсал Банк» про добровільне врегулювання боргу" loading="lazy" width="1000"></div><div class="tx"><h3>«Універсал Банк»: розстрочка боргу на 24 місяці</h3><p>Банк погодив добровільне врегулювання: перший внесок 34 321 грн, залишок розбито на 24 платежі по 4 291 грн.</p></div></article>
       <article class="rc" data-n="7"><div class="ph" title="Збільшити"><img src="results/rezultat-07-lineura-ukraina-dovidka.webp" alt="Довідка ТОВ «Лінеура Україна» про закриття договору" loading="lazy" width="1000"></div><div class="tx"><h3>«Лінеура Україна»: відсотки списано, договір закрито</h3><p>Після сплати основної суми кредиту (8 800 грн) компанія списала нараховані відсотки. Заборгованості немає, договір закрито.</p></div></article>
       <article class="rc cta-card"><div class="tx"><h3>Ваш результат може бути наступним</h3><p>Опишіть ситуацію — безкоштовно підкажу, що можна зробити з вашим боргом.</p><a class="btn k" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Написати в Telegram</a></div></article>
-    </div>
   </div>
-  <div class="car-bar"><i></i></div>
   <p class="car-note">Натисніть на документ, щоб розглянути його докладно.</p>
 </div></section>
 
@@ -356,17 +343,11 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 
 <div class="callbar"><a class="btn ghost" href="tel:+380914811951">Подзвонити</a><a class="btn" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Telegram</a></div>
 <script>
-(function(){var root=document.getElementById('kr');if(!root){return}var c=root.querySelector('[data-car]');if(!c){return}var t=c.querySelector('.car-track'),n=t.children.length-1,cnt=root.querySelector('.car-count b'),bar=root.querySelector('.car-bar i'),pv=root.querySelector('.car-btn.prev'),nx=root.querySelector('.car-btn.next');
-function step(){return t.children[1].offsetLeft-t.children[0].offsetLeft}
-function upd(){var i=Math.min(n,Math.round(c.scrollLeft/step())+1);cnt.textContent=('0'+i).slice(-2);bar.style.width=Math.min(100,(c.scrollLeft+c.clientWidth)/c.scrollWidth*100)+'%';pv.disabled=c.scrollLeft<4;nx.disabled=c.scrollLeft+c.clientWidth>c.scrollWidth-4}
-c.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);
-pv.addEventListener('click',function(){c.scrollBy({left:-step(),behavior:'smooth'})});nx.addEventListener('click',function(){c.scrollBy({left:step(),behavior:'smooth'})});
-var d=0,sx=0,sl=0,mv=0;c.addEventListener('mousedown',function(e){d=1;mv=0;sx=e.pageX;sl=c.scrollLeft;c.style.scrollSnapType='none'});window.addEventListener('mousemove',function(e){if(d){var dx=e.pageX-sx;if(Math.abs(dx)>4){mv=1}c.scrollLeft=sl-dx}});window.addEventListener('mouseup',function(){if(d){d=0;c.style.scrollSnapType='';if(mv){c.scrollBy({left:1,behavior:'smooth'})}}});
+(function(){var root=document.getElementById('kr');if(!root){return}var g=root.querySelector('.rgrid');if(!g){return}
 var lb=document.createElement('div');lb.className='kr-lb';lb.innerHTML='<button type="button" class="kr-lb-x" aria-label="Закрити">&times;</button><img alt="">';root.appendChild(lb);var li=lb.querySelector('img');
 function close(){lb.classList.remove('on');document.body.style.overflow=''}
-c.addEventListener('click',function(e){var im=e.target.closest?e.target.closest('.ph img'):null;if(!im||mv){return}li.src=im.src;li.alt=im.alt;lb.classList.add('on');document.body.style.overflow='hidden';lb.scrollTop=0});
-lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'){close()}});
-upd()})();
+g.addEventListener('click',function(e){var im=e.target.closest?e.target.closest('.ph img'):null;if(!im){return}li.src=im.src;li.alt=im.alt;lb.classList.add('on');document.body.style.overflow='hidden';lb.scrollTop=0});
+lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'){close()}})})();
 </script>
 </div>
 </body>
