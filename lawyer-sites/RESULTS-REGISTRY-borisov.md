@@ -30,3 +30,25 @@
 Відгуки в блоці ДЕМО (вигадані, для перегляду макета, за проханням замовниці), на сторінці є напис. Замінити реальними/плагіном перед публікацією. AggregateRating/Review у JSON-LD НЕ додавати.
 
 Збірка: `lawyer-sites/uchet/results-block/build_blocks.py index.html out.html`; дані карток і відгуків у `results_data.py`.
+
+## Сторінка «Результати роботи» (page 33, slug rezultaty-roboty, draft): 14 документів
+8 з головної + ще 6 нових (медіа ID 27–32). Для інших юристів ці 6 теж не брати:
+
+| № | Файл на Drive | Drive ID | Медіа WP |
+|---|---|---|---|
+| 9 | Фінмаркет - 11 285 грн.png | 11JP3VNwVJmoc-J1KjXxUQq-NwYi7CR36 | 27 |
+| 10 | ДІДЖИ ФІНАНС - 2 800 грн.png | 13zcnAoWUhh2B_Cs24UP-9YrtpHvhTdWs | 28 |
+| 11 | Є Гроші - 13 698 грн.png | 1J9uMWWL5W_crDEYftSBtG3uXH2FKBFyg | 29 |
+| 12 | КРЕДИТСЕРВІС - 55 643,61 грн.png | 1gG0Xe2aNDM2UFfBs0wuDghTxPM8256_8 | 30 |
+| 13 | Укр Кредит Фінанс - 77 329,55 грн.png | 1hgtlYXpz6pP9vEjI-jZTCagocA2v80gt | 31 |
+| 14 | Стар Файненс Груп - 37 680 грн.png | 1VlM1W_BVERfyEDS0IE5T7AoHc96ZwYhv | 32 |
+
+На нашій копії замазано номер договору: у КРЕДИТСЕРВІС (низ документа) і в Укр Кредит Фінанс (рядок з «№ …»).
+
+Переглянуті й відхилені при доборі 6 нових:
+- КОЛЛЕКТ ЦЕНТР - 3 614,01 грн (1C6pUTlKad57RbuGwdeo5WSazDEKuDdsN): видно ПІБ і РНОКПП клієнта.
+- МІСТЕР МАНІ - 3 500 грн (1fI6Mrp2xU-eP8SHCG5MZgH_nCuD1wxfI): умови майже не читаються (форс-мажор), опис неможливий.
+- Смартівей Юкрейн - 30 380 грн (1B4V0Qel25cY99yUwVYmY-WYHf9qE3ADK): текст закрито.
+- Резерв (чисті, але вже є компанія в наборі): Є Гроші - 15 500 грн (1N2m0B5Po3LcqVj8sW-WJImOybqq2y0ZU), ДІДЖИ ФІНАНС - 4 000 грн (1Kku8ozrtKMkMZPcyPkad5m1eeAs7AumE), Ел.Ен.Груп - 4 836,40 грн (1xAwflec-fkfLM6wVUr10lHB5kIrbs-rt, дата платежу раніше за дату листа).
+
+Збірка сторінки: `results-block/build_results_page.py index.html results-page.html`; дані: `results_data.py` (R = 8 з головної, R2 = 6 нових). На головній під сіткою кнопка «Усі результати роботи» веде на /rezultaty-roboty/ (сторінка поки чернетка).
