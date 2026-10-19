@@ -50,7 +50,7 @@ body{overflow-x:hidden}
 #kr{width:100vw;max-width:none;position:relative;left:50%;margin-left:-50vw;margin-top:0;margin-bottom:0;padding:0;text-align:left;display:block;float:none;min-height:100vh}
 #kr,#kr *,#kr *::before,#kr *::after{box-sizing:border-box}
 #kr h1,#kr h2,#kr h3,#kr p,#kr ul,#kr li,#kr div,#kr details,#kr summary{margin:0;padding:0;border:0;text-transform:none;letter-spacing:normal;float:none}
-#kr h1,#kr h2,#kr h3{font-family:var(--serif)!important;font-weight:600!important;line-height:1.1;letter-spacing:-.012em;color:inherit;word-break:normal}
+#kr h1,#kr h2,#kr h3{font-family:var(--serif)!important;font-weight:600!important;line-height:1.12;letter-spacing:-.012em;color:inherit;word-break:normal}
 #kr p,#kr li,#kr a,#kr span,#kr small,#kr b,#kr summary{font-family:var(--sans)}
 #kr ul{list-style:none}
 #kr a{color:inherit;text-decoration:none;box-shadow:none;border-bottom:0}
