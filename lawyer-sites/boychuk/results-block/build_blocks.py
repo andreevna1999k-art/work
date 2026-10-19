@@ -19,8 +19,8 @@ cards=''.join(f'''    <article class="res"><button class="res-photo" type="butto
 ''' for s,h,t,alt in R)
 RES=f'''<!-- 4 · РЕЗУЛЬТАТИ (8 карток, вертикальна сітка 4/2/1 без горизонтального скролу) -->
 <section id="results"><div class="wrap">
-<div class="pad" style="padding-left:12px;padding-right:12px">
-  <div class="head"><span class="rule" style="background:var(--maroon)"></span><h2>Результати для клієнтів</h2>
+<div class="panel on-white pad res-panel">
+  <div class="head res-head"><span class="res-badge">Реальні документи</span><h2 class="res-title"><span>Результати роботи</span></h2>
   <p class="lead">Документи з реальних справ: гарантійні листи та угоди про врегулювання заборгованості. Персональні дані клієнтів закрито. Натисніть на документ, щоб збільшити.</p></div>
   <div class="res-grid">
 {cards}  </div>
@@ -62,6 +62,16 @@ REV=f'''<!-- 5 · ВІДГУКИ (ДЕМО: вигадані тексти для
 </div></section>
 '''
 CSS='''
+
+/* results heading highlight */
+.bz .res-panel{box-shadow:0 18px 44px -22px rgba(43,23,17,.35);border:1px solid rgba(212,178,122,.55);background:linear-gradient(180deg,#fff 0,#FBF6EE 100%)}
+.bz .res-head{text-align:center;margin-bottom:44px}
+.bz .res-head .lead{margin:0 auto}
+.bz .res-badge{display:inline-block;margin-bottom:16px;padding:7px 18px;border-radius:999px;background:var(--maroon);color:#fff;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.bz .res-title{font-size:clamp(32px,5vw,58px);margin:0 0 18px;color:var(--brown)}
+.bz .res-title span{display:inline;padding:0 .18em;background:linear-gradient(transparent 62%,rgba(212,178,122,.6) 62%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.bz .res-title::after{content:"";display:block;width:96px;height:3px;margin:18px auto 0;border-radius:3px;background:var(--maroon)}
+@media(max-width:860px){.bz .res-head{margin-bottom:30px}}
 /* results v2: vertical grid, no horizontal scroll */
 .bz .res-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .bz .res{display:flex;flex-direction:column;min-width:0;padding:12px 12px 22px}
