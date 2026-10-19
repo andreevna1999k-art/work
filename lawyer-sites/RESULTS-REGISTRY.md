@@ -20,6 +20,21 @@
 
 Для других юристов эти 7 не брать.
 
+Страница «Результати роботи» Кравченко (черновик, WordPress ID 1916), ещё 7 документов:
+
+| № | Файл на Drive | Drive ID |
+|---|---|---|
+| 8 | Смартівей Юкрейн - Довідка.png | 1iY0jn6HOpNr1G_h6YTIQ-CzGA5zYO643 |
+| 9 | Фінтаргет - 1 375 грн.png | 1ZJQSNFUaLJvQpoCTcv9BJv7E3HUPRJyE |
+| 10 | Технофінанс - 9 000 грн.png | 15akJ7hUbubBfNF7i8H5Q34lk_yND4J-y |
+| 11 | Технофінанс - 5 800 грн.png | 1xbhu3fe7mIPqjcH6xqkq_ojcuC3L-ahU |
+| 12 | Сос Кредит - 3 520,92 грн.png | 1gurgbBbBfJTw6uKxtGbtOtiQdwwDdRWV |
+| 13 | Еко Фін - 2 500 грн.png | 1odAGY15lCauQyK2xlNp3YkxuBJ6AevRM |
+| 14 | СЛОН КРЕДИТ - 5 500 грн.png | 1yqf0UcRgMCNfF5EP8EChAT6Uz1A3aUd5 |
+
+Итого за Кравченко: 14 документов (1–7 на главной и странице, 8–14 только на странице). Другим юристам не брать.
+Примечание: имена файлов на Drive не всегда совпадают с суммами в документе (Еко Фін, Слон Кредит). В описаниях использованы цифры из самих документов.
+
 ## НЕ использовать нигде (в документе видны персональные данные клиента)
 
 | Файл | Drive ID | Что видно |
@@ -34,6 +49,22 @@
 | Таліон Плюс - 9 817,41 грн.png | 1KHeXxoO97024Kh12j797uth1lLG_fYgt | адрес клиента |
 | ПРОЦЕНТ - Довідка.png | 1uv4wwqjMU8JGm39MDK4QBBKUJZyvm401 | инициалы, телефон |
 | КРЕДИТ-КАПІТАЛ - Довідка.png | 1vD8bOcO-otuPRoSxioG_ozfEOdRN515I | скриншот с телефона, номер договора |
+
+## Отброшены при просмотре второй партии (видны номера договоров, адреса клиентов или суммы нечитаемы)
+
+| Файл | Drive ID | Причина |
+|---|---|---|
+| КРЕДИТ-КАПІТАЛ - 8 330 грн.png | 1jMjWu5aXwqR6gi2TlXZ4tKgbIB4c6QCf | номер договора |
+| МАЙБІЗ - 1 700 грн.png | 1fy0CFBjWojE0On_3-BFOcENejtYaV9-S | адрес клиента |
+| МАНІВЕО ... - Довідка.png | 1Eli75epoQ0WthoJ7DES1jJLzZyppNFmC | номер договора |
+| МІЛОАН - Довідка.png | 1xVfQhFT3NtlMeD66iaaaljjCg2aFNTgP | номер договора |
+| НЕЗАЛЕЖНІ ФІНАНСИ - Довідка.png | 1muglgboR93SvnGwOETk85uXZZQVpb_pJ | номер договора |
+| ПЕРШИЙ УКРАЇНСЬКИЙ МІЖНАРОДНИЙ БАНК - 564,24 грн.png | 1fGAHZkBjmPQZFoEi7uJRK6eiX3NSkuEI | населённый пункт и индекс клиента |
+| ФІНФОРС - 850 грн.png | 1hRTwhfMnjzOFacmDBkfH6G_C0q6qQN8x | адрес клиента |
+| ТОП1 - Довідка.png | 1ihZDh1ZSWFSrNJO-n63h9ZsCQ6L15tdy | номер договора |
+| Н.А. ГРУП - 9 000 грн.png | 1hM3NqZzJotSudxykCoWqtCTG0c8Wohyj | сумма нечитаема |
+| Стар Файненс Груп - Довідка.png | 191ihT9k8d7FZqyqz5kZANOZM9nE72jRv | содержание нечитаемо |
+| HI-TECH DYNAMICS GROUP LIMITED - 216 USDT.png | 1J1JQTAyVqhNA_crfp-wtWFO0wvRc8K7z | сумма и суть неясны |
 
 ## Проверены, чистые, но свободны (резерв)
 

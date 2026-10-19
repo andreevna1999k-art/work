@@ -2,7 +2,10 @@
 Усі стилі ізольовані під #kr, щоб тема/Elementor не ламали верстку."""
 import re, base64, sys
 
-src = open('home-draft.html', encoding='utf-8').read()
+SRC = sys.argv[1] if len(sys.argv) > 1 else 'home-draft.html'
+OUT = sys.argv[2] if len(sys.argv) > 2 else 'wp-page.html'
+PID = sys.argv[3] if len(sys.argv) > 3 else '1901'
+src = open(SRC, encoding='utf-8').read()
 css = re.search(r'<style>(.*?)</style>', src, re.S).group(1)
 css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
 
@@ -44,7 +47,7 @@ scoped = parse(css)
 scoped = scoped.replace('.page{', '.kr-wrap{').replace('#kr .page{', '#kr .kr-wrap{')
 
 reset = """
-body.page-id-1901 .site-footer,body.page-id-1901 #colophon,body.page-id-1901 .site-header,body.page-id-1901 #masthead,body.page-id-1901 .elementor-location-footer,body.page-id-1901 .elementor-location-header,body.page-id-1901 .entry-title,body.page-id-1901 .page-title,body.page-id-1901 .page-header{display:none!important}
+body.page-id-{PID} .site-footer,body.page-id-{PID} #colophon,body.page-id-{PID} .site-header,body.page-id-{PID} #masthead,body.page-id-{PID} .elementor-location-footer,body.page-id-{PID} .elementor-location-header,body.page-id-{PID} .entry-title,body.page-id-{PID} .page-title,body.page-id-{PID} .page-header{display:none!important}
 html{scroll-behavior:smooth}
 body{overflow-x:hidden}
 #kr{width:100vw;max-width:none;position:relative;left:50%;margin-left:-50vw;margin-top:0;margin-bottom:0;padding:0;text-align:left;display:block;float:none;min-height:100vh}
@@ -60,6 +63,7 @@ body{overflow-x:hidden}
 #kr nav a,#kr .bar a{white-space:nowrap}
 #kr .btn,#kr .btn:hover{text-decoration:none}
 """
+reset = reset.replace('{PID}', PID)
 # відновлюємо специфічні правила після reset (reset стоїть ПЕРЕД scoped з тією ж специфічністю → scoped перемагає за порядком)
 body = re.search(r'<body>(.*?)</body>', src, re.S).group(1)
 body = body.replace('<div class="page">', '<div class="kr-wrap">')
@@ -75,5 +79,5 @@ head = '''<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
 '''
 ld = re.search(r'<script type="application/ld\+json">.*?</script>', src, re.S).group(0)
-open('wp-page.html', 'w', encoding='utf-8').write(f'{head}{ld}\n<style>{reset}{scoped}</style>\n<div id="kr">{body}</div>')
+open(OUT, 'w', encoding='utf-8').write(f'{head}{ld}\n<style>{reset}{scoped}</style>\n<div id="kr">{body}</div>')
 print(len(scoped))
