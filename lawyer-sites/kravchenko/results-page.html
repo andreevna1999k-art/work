@@ -170,6 +170,26 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 .dk .btn.sm:not(.ghost):not(.k){box-shadow:0 4px 0 var(--steel)}
 .dk .btn:not(.ghost):not(.k):hover,.callbar .btn:not(.ghost):hover{box-shadow:0 2px 0 var(--steel)}
 .kr-lb-x{background:var(--sky);color:var(--navy)}
+/* мобільне меню (бургер) і меню у футері */
+.menu-cb{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.14);cursor:pointer;flex:none;position:relative}
+.burger i,.burger i::before,.burger i::after{content:"";position:absolute;left:13px;width:20px;height:2px;background:#fff;border-radius:2px;transition:.2s}
+.burger i{top:22px}.burger i::before{left:0;top:-7px}.burger i::after{left:0;top:7px}
+.menu-cb:checked ~ .burger i{background:transparent}
+.menu-cb:checked ~ .burger i::before{top:0;transform:rotate(45deg)}
+.menu-cb:checked ~ .burger i::after{top:0;transform:rotate(-45deg)}
+.nav{position:relative}
+.fnav{display:flex;flex-wrap:wrap;gap:8px 26px;margin:clamp(22px,2.6vw,34px) 0 0;padding-top:clamp(18px,2vw,28px);border-top:1px solid rgba(255,255,255,.14);font-size:14px;font-weight:600}
+.fnav a{color:#c2e8ff}.fnav a:hover{color:#fff}
+@media(max-width:900px){
+  .burger{display:block}
+  .nav{gap:8px;padding-right:6px}.nav .btn.sm{margin-left:auto;padding:11px 16px;font-size:10.5px}.nav .logo{font-size:15px}.burger{width:42px;height:42px}.burger i,.burger i::before,.burger i::after{left:11px}.burger i{top:20px}.burger i::before{left:0}.burger i::after{left:0}
+  .nav ul{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:30;flex-direction:column;gap:2px;padding:10px;background:#06324d;border:1px solid rgba(255,255,255,.16);border-radius:var(--r2);box-shadow:0 24px 50px rgba(0,0,0,.4)}
+  .menu-cb:checked ~ ul{display:flex}
+  .nav ul a{display:block;padding:15px 16px;border-radius:12px;font-size:16px;color:#fff}
+  .nav ul a:hover{background:rgba(255,255,255,.1);color:#fff}
+  .fnav{flex-direction:column;gap:2px}.fnav a{display:block;padding:11px 0}
+}
 @media(max-width:1100px){.g4,.rgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
   .nav ul{display:none}
@@ -179,6 +199,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 }
 @media(max-width:900px){
 }
+@media(max-width:430px){.nav .btn.sm{display:none}.burger{margin-left:auto}}
 @media(max-width:560px){.g3,.g4,.rgrid,.mini-g{grid-template-columns:1fr}summary .yr{display:none}details ul{padding-left:30px}.btn{padding:17px 26px;white-space:normal;text-align:center}.fcard.b{display:none}}
 
 .rp-hero{min-height:0;padding-bottom:clamp(36px,5vw,84px)}
@@ -201,8 +222,10 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
 <header class="box hero dk rp-hero" id="top">
   <div class="nav">
     <a class="logo" href="https://rada-advokat.uz.ua/">Кравченко М. В.</a>
-    <ul><li><a href="https://rada-advokat.uz.ua/#help">Кому допоможу</a></li><li><a href="https://rada-advokat.uz.ua/#about">Про мене</a></li><li><a href="https://rada-advokat.uz.ua/#services">Послуги</a></li><li><a href="https://rada-advokat.uz.ua/#experience">Досвід</a></li><li><a href="https://rada-advokat.uz.ua/#reviews">Відгуки</a></li><li><a href="#contacts">Контакти</a></li></ul>
+    <input type="checkbox" id="krm" class="menu-cb" aria-hidden="true" tabindex="-1">
     <a class="btn sm" href="https://t.me/evgen_yrist" target="_blank" rel="noopener">Консультація</a>
+    <label for="krm" class="burger" aria-label="Меню"><i></i></label>
+    <ul><li><a href="https://rada-advokat.uz.ua/#help">Кому допоможу</a></li><li><a href="https://rada-advokat.uz.ua/#about">Про мене</a></li><li><a href="https://rada-advokat.uz.ua/#services">Послуги</a></li><li><a href="https://rada-advokat.uz.ua/#experience">Досвід</a></li><li><a href="https://rada-advokat.uz.ua/#reviews">Відгуки</a></li><li><a href="#contacts">Контакти</a></li></ul>
   </div>
   <div class="rp-in">
     <h1>Результати <span class="lime">роботи</span></h1>
@@ -247,6 +270,7 @@ details li{position:relative}details li::before{content:"";position:absolute;lef
     </div>
     <div class="map"><iframe title="Карта: пр-т Європейського Союзу (Правди), 31а, Київ" src="https://www.google.com/maps?q=%D0%BF%D1%80-%D1%82+%D0%84%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE+%D0%A1%D0%BE%D1%8E%D0%B7%D1%83+31%D0%B0%2C+%D0%9A%D0%B8%D1%97%D0%B2%2C+04108&amp;hl=uk&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
   </div>
+  <nav class="fnav" aria-label="Меню"><a href="https://rada-advokat.uz.ua/#help">Кому допоможу</a><a href="https://rada-advokat.uz.ua/#about">Про мене</a><a href="https://rada-advokat.uz.ua/#services">Послуги</a><a href="https://rada-advokat.uz.ua/#experience">Досвід</a><a href="https://rada-advokat.uz.ua/#reviews">Відгуки</a><a href="#contacts">Контакти</a></nav>
   <p class="copy">© Кравченко Максим Віталійович, rada-advokat.uz.ua</p>
 </div></footer>
 
@@ -256,6 +280,12 @@ var lb=document.createElement('div');lb.className='kr-lb';lb.innerHTML='<button 
 function close(){lb.classList.remove('on');document.body.style.overflow=''}
 g.addEventListener('click',function(e){var im=e.target.closest?e.target.closest('.ph img'):null;if(!im){return}li.src=im.src;li.alt=im.alt;lb.classList.add('on');document.body.style.overflow='hidden';lb.scrollTop=0});
 lb.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape'){close()}})})();
+</script>
+
+<script>
+(function(){var r=document.getElementById('kr');if(!r){return}var cb=r.querySelector('#krm');if(!cb){return}
+r.querySelectorAll('.nav ul a').forEach(function(a){a.addEventListener('click',function(){cb.checked=false})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){cb.checked=false}})})();
 </script>
 </div>
 </body>
