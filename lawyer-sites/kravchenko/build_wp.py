@@ -67,6 +67,8 @@ reset = reset.replace('{PID}', PID)
 # відновлюємо специфічні правила після reset (reset стоїть ПЕРЕД scoped з тією ж специфічністю → scoped перемагає за порядком)
 body = re.search(r'<body>(.*?)</body>', src, re.S).group(1)
 body = body.replace('<div class="page">', '<div class="kr-wrap">')
+body = re.sub(r'<!--.*?-->', '', body, flags=re.S)
+body = re.sub(r'>\s*\n\s*<', '><', body)
 
 import glob
 for f in sorted(glob.glob('results/*.webp')):
@@ -75,9 +77,8 @@ for n in ('portrait-suit', 'portrait-office'):
     b = base64.b64encode(open(f'img/{n}.jpg', 'rb').read()).decode()
     body = body.replace(f'img/{n}.jpg', f'data:image/jpeg;base64,{b}')
 
-head = '''<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
-'''
+fonts = re.search(r'<link href="https://fonts\.googleapis\.com/css2[^>]*>', src).group(0)
+head = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' + fonts + '\n'
 ld = re.search(r'<script type="application/ld\+json">.*?</script>', src, re.S).group(0)
-open(OUT, 'w', encoding='utf-8').write(f'{head}{ld}\n<style>{reset}{scoped}</style>\n<div id="kr">{body}</div>')
+open(OUT, 'w', encoding='utf-8').write(f'<!-- wp:html -->\n{head}{ld}\n<style>{reset}{scoped}</style>\n<div id="kr">{body}</div>\n<!-- /wp:html -->')
 print(len(scoped))
