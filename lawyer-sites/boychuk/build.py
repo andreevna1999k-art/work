@@ -1,6 +1,7 @@
 """Builds WordPress homepage fragment and the design-system page from src/ + bz.css."""
-import pathlib
+import pathlib, sys
 R = pathlib.Path(__file__).parent
+WITH_PLUGIN = "--plugin" in sys.argv  # підставляє шорткод плагіна відгуків (плагін має бути активний!)
 CSS = (R / "bz.css").read_text(encoding="utf-8")
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Source+Sans+3:wght@400;600&display=swap">')
@@ -29,6 +30,11 @@ def sub(html, local):
     return html
 
 body = (R / "src/home.body.html").read_text(encoding="utf-8")
+if WITH_PLUGIN:
+    import re
+    body, n = re.subn(r'<div class="rev-slot" id="reviews-plugin">.*?</div>', '[react_reviews]', body, flags=re.S)
+    assert n == 1, "блок rev-slot не знайдено"
+    CSS += "\n" + (R / "reviews-s1.css").read_text(encoding="utf-8")
 (R / "home.wp.html").write_text(f"{HEAD}\n{FONTS}\n<style>\n{CSS}\n.bz{{{FULL}}}\nhtml,body{{margin:0!important;padding:0!important;background:#F5EEE4!important}}\nhtml{{scroll-behavior:smooth}}\n</style>\n{sub(body, False)}", encoding="utf-8")
 ds = (R / "src/ds.body.html").read_text(encoding="utf-8")
 (R / "design-system.html").write_text(

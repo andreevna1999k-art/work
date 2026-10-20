@@ -1,0 +1,42 @@
+/* Тема плагіна відгуків (WP Personal Reviews / react_reviews) у стилі S1 Mahogany. Лише оформлення, плагін не змінюється. */
+.bz .react-personal-reviews{color:var(--cream);font-family:var(--f-body)}
+.bz .personal-reviews-container{display:flex;flex-direction:column;max-width:none;padding:0;margin:0}
+.bz .personal-reviews-container>.review-form{order:2}
+.bz .loading{color:var(--cream-soft);padding:30px 0}
+/* картки відгуків */
+.bz .carousel-container{padding:26px 54px 60px!important;margin-bottom:8px!important}
+.bz .review-card,.bz .review-card.list-view{background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-card);padding:28px 26px;box-shadow:var(--sh);height:100%;transform:none}
+.bz .review-card:hover{transform:translateY(-3px)}
+.bz .review-card h3{font-family:var(--f-head);font-weight:400;text-transform:uppercase;letter-spacing:.04em;font-size:19px;line-height:1.2;margin:0 0 6px;color:var(--ink)}
+.bz .review-card .rating{color:#B58A33;font-size:18px;letter-spacing:.12em;margin:0 0 12px}
+.bz .review-card .review-text{color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0 0 14px}
+.bz .review-card .social-link{color:var(--maroon);font-size:14px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(110,20,35,.35)}
+.bz .review-card .review-date{color:var(--ink-soft);font-size:14px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.bz .reviews-list{gap:18px}
+/* стрілки і крапки каруселі */
+.bz .carousel-button-left,.bz .carousel-button-right{width:44px;height:44px;background:var(--gold)!important;border:0!important;color:var(--brown-dark)!important;box-shadow:none}
+.bz .carousel-button-left{left:0!important}.bz .carousel-button-right{right:0!important}
+.bz .carousel-button-left svg,.bz .carousel-button-right svg{stroke:var(--brown-dark)}
+.bz .carousel-dots{bottom:18px!important;height:14px!important;width:100%!important;flex-wrap:wrap;gap:4px;left:0;align-items:center}
+.bz .carousel-dot{background:rgba(244,230,208,.38)!important;border:0!important}
+.bz .carousel-dot[style*="255, 255, 255"]{background:var(--gold)!important}
+/* форма «Залишити відгук» */
+.bz .review-form{order:2;max-width:720px;width:100%;margin:8px auto 0;padding:34px 32px;background:var(--cream);color:var(--ink);border:1px solid var(--line-d);border-radius:var(--r-card);box-shadow:none}
+.bz .review-form h3{font-family:var(--f-head);font-weight:400;text-transform:uppercase;letter-spacing:.04em;font-size:24px;color:var(--ink);margin:0 0 22px}
+.bz .form-group{margin-bottom:14px;position:relative}
+.bz .form-group input,.bz .form-group textarea,.bz .form-group select{width:100%;padding:15px 20px;border:1px solid var(--line);border-radius:18px;background:var(--white);color:var(--ink);font:400 16px/1.4 var(--f-body);box-sizing:border-box}
+.bz .form-group textarea{border-radius:22px;min-height:130px}
+.bz .form-group input:focus,.bz .form-group textarea:focus,.bz .form-group select:focus{outline:none;border-color:var(--maroon);box-shadow:0 0 0 3px rgba(110,20,35,.16)}
+.bz .reviews-submit-button,.bz .review-form button[type="submit"]{display:inline-flex;align-items:center;gap:12px;padding:16px 30px;border:1px solid var(--maroon);border-radius:var(--r-pill);background:var(--maroon);color:#fff;font:600 14px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s}
+.bz .reviews-submit-button:hover,.bz .review-form button[type="submit"]:hover{background:var(--maroon-600);transform:translateY(-1px)}
+.bz .reviews-submit-button:disabled{background:#a68;opacity:.7;cursor:not-allowed}
+.bz .message{margin-top:14px;padding:14px 18px;border-radius:16px;font-size:15px}
+.bz .message.success{background:#E7F0E2;color:#1F4A25;border:1px solid #BCD4B4}
+.bz .message.error{background:#F8E3E3;color:#7A1E1E;border:1px solid #E5B7B7}
+@media(max-width:860px){
+  .bz .carousel-container{padding:20px 6px 76px!important}
+  .bz .carousel-button-left,.bz .carousel-button-right{top:auto!important;bottom:14px;transform:none!important;width:42px;height:42px}
+  .bz .carousel-button-left{left:calc(50% - 54px)!important;right:auto!important}.bz .carousel-button-right{right:calc(50% - 54px)!important;left:auto!important}
+  .bz .carousel-dots{display:none!important}
+  .bz .review-form{padding:26px 18px}
+}
