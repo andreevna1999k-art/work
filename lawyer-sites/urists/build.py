@@ -68,6 +68,10 @@ schema = {
 }
 
 s = open(os.path.join(HERE, 'home.src.html'), encoding='utf-8').read()
+if os.environ.get('NO_DEMO_REVIEWS'):
+    # публічна версія: без вигаданих відгуків, лише плагін
+    i = s.index('    <div class="rv-g">\n{{REVIEWS_FIRST}}'); j = s.index('    </details>\n', i) + len('    </details>\n')
+    s = s[:i] + s[j:]
 s = (s.replace('{{HERO}}', hero).replace('{{ABOUT}}', about)
       .replace('{{RESULTS}}', res_cards).replace('{{REVIEWS_FIRST}}', '\n'.join(cards[:6]))
       .replace('{{REVIEWS_REST}}', '\n'.join(cards[6:]))
