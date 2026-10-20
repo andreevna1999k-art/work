@@ -1,5 +1,5 @@
 /* Тема плагіна відгуків (WP Personal Reviews, шорткод react_reviews) у стилі S2 Khaki Light. Лише оформлення, плагін не змінюється. */
-.uc .rv-plugin{margin-top:40px;padding-top:36px;border-top:1px solid rgba(210,196,143,.22)}
+.uc .rv-plugin{margin-top:24px}
 .uc .rv-plugin-lead{margin:0 0 6px;color:#C9C8C0;font-size:15px;max-width:760px}
 .uc .react-personal-reviews{color:#fff;font-family:'Montserrat',system-ui,sans-serif}
 .uc .personal-reviews-container{display:flex;flex-direction:column;max-width:none;padding:0;margin:0}
