@@ -147,6 +147,53 @@ background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18p
   .gv .nav .btn.sm{display:none}
   .gv .nav{justify-content:center}
 }
+/* Плагін відгуків (WP Personal Reviews, шорткод react_reviews) у стилі сторінки. Лише оформлення, плагін не змінюється. */
+.gv .rv-plugin{max-width:980px;margin:0 auto 56px}
+.gv .rv-plugin-lead{text-align:center;margin:0 auto 26px;max-width:640px;color:var(--ink);font-size:17px}
+.gv .react-personal-reviews{color:var(--ink);font-family:var(--f-body)}
+.gv .personal-reviews-container{display:flex;flex-direction:column;max-width:none;padding:0;margin:0}
+.gv .personal-reviews-container>.review-form{order:2}
+.gv .react-personal-reviews .loading{color:var(--ink);padding:30px 0;text-align:center}
+/* картки відгуків */
+.gv .carousel-container{padding:18px 0 64px!important;margin-bottom:0!important}
+.gv .carousel-slides>div{display:flex}
+.gv .review-card,.gv .review-card.list-view{width:100%;background:var(--cream);color:var(--ink);border:0;border-radius:var(--r-card);padding:26px 26px 24px;box-shadow:var(--sh);transform:none;transition:transform .2s}
+.gv .review-card:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.gv .review-card h3{font-family:var(--f-head);font-weight:500;font-size:20px;line-height:1.25;margin:0 0 6px;color:var(--ink)}
+.gv .review-card .rating{color:var(--olive-t);font-size:17px;letter-spacing:.12em;margin:0 0 12px}
+.gv .review-card .review-text{color:var(--ink);font-size:16px;line-height:1.6;margin:0 0 14px}
+.gv .review-card .social-link{color:var(--olive-t);font-size:14px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(107,95,38,.45)}
+.gv .review-card .review-date{color:var(--ink-soft);font-size:13.5px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.gv .reviews-list{gap:18px}
+/* стрілки й крапки каруселі */
+.gv .carousel-button-left,.gv .carousel-button-right{width:44px;height:44px;background:var(--ink)!important;border:0!important;color:var(--cream)!important;box-shadow:none;top:auto!important;bottom:6px;transform:none!important}
+.gv .carousel-button-left{left:0!important}.gv .carousel-button-right{right:0!important}
+.gv .carousel-button-left svg,.gv .carousel-button-right svg{stroke:var(--cream)}
+.gv .carousel-dots{bottom:21px!important;height:14px!important;width:100%!important;flex-wrap:wrap;gap:4px;left:0;align-items:center}
+.gv .carousel-dot{background:rgba(28,36,48,.3)!important;border:0!important}
+.gv .carousel-dot[style*="255, 255, 255"]{background:var(--ink)!important}
+/* форма «Залишити відгук» */
+.gv .review-form{max-width:720px;width:100%;margin:8px auto 0;padding:34px 32px;background:var(--cream);color:var(--ink);border:0;border-radius:var(--r-card);box-shadow:var(--sh)}
+.gv .review-form h3{font-family:var(--f-head);font-weight:500;font-size:28px;color:var(--ink);margin:0 0 22px;text-transform:uppercase;letter-spacing:.04em}
+.gv .form-group{margin-bottom:14px;position:relative}
+.gv .form-group input,.gv .form-group textarea{width:100%;padding:15px 22px;border:1px solid var(--line);border-radius:var(--r-pill);background:#fff;color:var(--ink);font:400 16px/1.4 var(--f-body);box-sizing:border-box}
+.gv .form-group textarea{border-radius:24px;min-height:130px}
+.gv .form-group>div{width:240px!important;max-width:100%}
+.gv .form-group select{width:100%!important;padding:15px 44px 15px 22px!important;border:1px solid var(--line)!important;border-radius:var(--r-pill)!important;background:#fff!important;color:var(--ink);font:400 16px/1.4 var(--f-body);box-sizing:border-box}
+.gv .form-group input:focus,.gv .form-group textarea:focus,.gv .form-group select:focus{outline:none;border-color:var(--olive-t);box-shadow:0 0 0 3px rgba(107,95,38,.2)}
+.gv .reviews-submit-button,.gv .review-form button[type="submit"]{display:inline-flex;align-items:center;gap:12px;padding:16px 34px;border:0;border-radius:var(--r-pill);background:var(--ink);color:var(--cream);font:500 14px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .2s}
+.gv .reviews-submit-button:hover,.gv .review-form button[type="submit"]:hover{transform:translateY(-2px);background:var(--ink-2)}
+.gv .reviews-submit-button:disabled{background:#8c8f98;cursor:not-allowed;transform:none}
+.gv .review-form .message{margin-top:14px;padding:14px 18px;border-radius:18px;font-size:15px}
+.gv .review-form .message.success{background:#E7F0E2;color:#1F4A25;border:1px solid #BCD4B4}
+.gv .review-form .message.error{background:#F8E3E3;color:#7A1E1E;border:1px solid #E5B7B7}
+@media(max-width:860px){
+ .gv .carousel-container{padding:12px 0 84px!important}
+ .gv .carousel-button-left,.gv .carousel-button-right{bottom:16px;width:42px;height:42px}
+ .gv .carousel-button-left{left:calc(50% - 54px)!important;right:auto!important}.gv .carousel-button-right{right:calc(50% - 54px)!important;left:auto!important}
+ .gv .carousel-dots{display:none!important}
+ .gv .review-form{padding:26px 18px}
+}
 </style>
 
 <div class="gv" id="top">
@@ -230,8 +277,11 @@ background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18p
 <section class="band on-olive" id="reviews">
   <div class="wrap">
     <div class="head"><span class="eyebrow">Відгуки</span><h2>Відгуки клієнтів</h2></div>
-    <!-- МІСЦЕ ПІД ПЛАГІН ВІДГУКІВ: вставити шорткод плагіна замість цього блоку. -->
-    <div class="rev-slot">Тут буде плагін відгуків</div>
+    <!-- Плагін WP Personal Reviews (шорткод react_reviews); відгуки модеруються в адмінці «WP Відгуки». Нижче лишено 12 демо-карток (заглушки). -->
+    <div class="rv-plugin">
+      <p class="rv-plugin-lead">Залишити відгук може кожен відвідувач сайту. Після перевірки він з’явиться тут.</p>
+[react_reviews]
+    </div>
     <!-- ЗАГЛУШКИ: 12 відгуків за ТЗ (12–20, різні дати). Вигадані, замінити реальними перед публікацією. У Schema не потрапляють. -->
     <div class="rev-track">
 <article class="rev"><span class="qm">“</span><p>Пояснила все простою мовою і розклала по кроках, що робити з кредитним договором. Стало зрозуміло, з чого починати.</p><footer><b>Олена К.</b><time datetime="2026-02-12">12 лютого 2026</time></footer></article>
