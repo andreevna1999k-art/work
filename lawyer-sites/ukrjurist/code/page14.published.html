@@ -199,6 +199,20 @@ background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18p
  .gv .foot-band{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
  .gv .copy{padding-bottom:8px}
 }
+/* мобільне меню (бургер на <details>, без JS) */
+.gv .m-menu{display:none}
+@media(max-width:860px){
+ .gv .nav{justify-content:space-between}
+ .gv .m-menu{display:block}
+ .gv .m-menu summary{list-style:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--cream);cursor:pointer;-webkit-tap-highlight-color:transparent}
+ .gv .m-menu summary::-webkit-details-marker{display:none}
+ .gv .m-menu svg{width:22px;height:22px}
+ .gv .m-menu .ic-x{display:none}.gv .m-menu[open] .ic-x{display:block}.gv .m-menu[open] .ic-bars{display:none}
+ .gv .m-panel{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:20;background:var(--cream);border-radius:28px;box-shadow:var(--sh);padding:10px;display:grid;gap:2px}
+ .gv .m-panel a:not(.btn){display:block;padding:15px 20px;border-radius:18px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+ .gv .m-panel a:not(.btn):active{background:var(--cream-2)}
+ .gv .m-panel .btn{margin-top:6px;width:100%;justify-content:space-between}
+}
 </style>
 
 <div class="gv" id="top">
@@ -210,6 +224,7 @@ background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18p
       <li><a href="/rezultaty-roboty/">Результати</a></li><li><a href="#reviews">Відгуки</a></li><li><a href="#contacts">Контакти</a></li>
     </ul>
     <a class="btn sm" href="https://t.me/Viktoriia_yrist">Telegram</a>
+    <details class="m-menu"><summary aria-label="Меню"><svg class="ic-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></summary><div class="m-panel"><a href="#about" onclick="this.closest('details').removeAttribute('open')">Про мене</a><a href="#services" onclick="this.closest('details').removeAttribute('open')">Послуги</a><a href="/rezultaty-roboty/" onclick="this.closest('details').removeAttribute('open')">Результати</a><a href="#reviews" onclick="this.closest('details').removeAttribute('open')">Відгуки</a><a href="#contacts" onclick="this.closest('details').removeAttribute('open')">Контакти</a><a class="btn" href="https://t.me/Viktoriia_yrist">Написати в Telegram</a></div></details>
   </nav>
   <div class="hero-grid">
     <div class="hero-copy">
