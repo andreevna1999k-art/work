@@ -115,7 +115,7 @@
 .uc .rev h2{color:#fff}.uc .rev h2 em{color:var(--kh-l)}.uc .rev .eyebrow{color:var(--kh-l)}
 .uc .rev-slot{margin-top:32px;border:1.5px dashed rgba(210,196,143,.4);border-radius:28px;padding:44px 24px;text-align:center;color:#B9B8B0;font-size:15px}
 /* Тема плагіна відгуків (WP Personal Reviews, шорткод react_reviews) у стилі S2 Khaki Light. Лише оформлення, плагін не змінюється. */
-.uc .rv-plugin{margin-top:24px}
+.uc .rv-plugin{margin-top:40px;padding-top:36px;border-top:1px solid rgba(210,196,143,.22)}
 .uc .rv-plugin-lead{margin:0 0 6px;color:#C9C8C0;font-size:15px;max-width:760px}
 .uc .react-personal-reviews{color:#fff;font-family:'Montserrat',system-ui,sans-serif}
 .uc .personal-reviews-container{display:flex;flex-direction:column;max-width:none;padding:0;margin:0}
@@ -252,8 +252,25 @@ lb.addEventListener('click',close);document.addEventListener('keydown',function(
 <section style="padding-top:0"><div class="rev">
  <span class="eyebrow">Відгуки</span>
  <h2>Відгуки <em>клієнтів</em></h2>
+ <!-- ДЕМО: вигадані відгуки для перегляду макета. Замінити реальними або плагіном перед публікацією. Review/AggregateRating у JSON-LD НЕ додавати. -->
+ <div class="rv-grid">
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">жовтень 2026</span></div><blockquote>Прийшов із кредитним договором і купою питань. Максим Юрійович спокійно розклав, що в ньому можна оскаржити, а що ні, і одразу сказав, яких документів ще не вистачає.</blockquote><figcaption><b>Сергій Л.</b><span>Київ</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">вересень 2026</span></div><blockquote>Мені прийшов виконавчий напис, я не знала, що робити. Пояснили порядок дій простою мовою, без тиску та обіцянок «стовідсоткового» результату. Це мене й переконало.</blockquote><figcaption><b>Наталія Д.</b><span>Дніпро</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 4 з 5">★★★★☆</span><span class="rv-date">серпень 2026</span></div><blockquote>Дуже допомогла консультація по МФО. Юрист пройшовся по кожному кредиту, підказав, на що звернути увагу в нарахуваннях, і як писати кредитору.</blockquote><figcaption><b>Олексій Г.</b><span>Харків</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">липень 2026</span></div><blockquote>Колектори почали телефонувати на роботу. Мені чітко пояснили, що вони можуть, а чого не мають права робити, і як на це відповідати. Стало набагато спокійніше.</blockquote><figcaption><b>Ірина В.</b><span>Львів</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">червень 2026</span></div><blockquote>Добре, що юрист не вигадує зайвого. Оцінив справу чесно, показав сильні та слабкі місця і сказав, з чого почати. Відповідав у Telegram у той самий день.</blockquote><figcaption><b>Андрій П.</b><span>Одеса</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">травень 2026</span></div><blockquote>Звернулася щодо реструктуризації кредиту. Допоміг скласти звернення до банку і пояснив, який буде порядок розгляду. Усе по суті, без води.</blockquote><figcaption><b>Тетяна Б.</b><span>Київ</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 4 з 5">★★★★☆</span><span class="rv-date">квітень 2026</span></div><blockquote>Корисна консультація з виконавчого провадження. Зрозумів, які в мене права, які строки і яких кроків краще не пропускати.</blockquote><figcaption><b>Віктор М.</b><span>Запоріжжя</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">березень 2026</span></div><blockquote>Приємно, що уважно вивчили всі документи, а не відповідали загальними фразами. Рекомендації були конкретні й зрозумілі.</blockquote><figcaption><b>Оксана Ш.</b><span>Вінниця</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">лютий 2026</span></div><blockquote>Мав кілька кредитів і боявся, що ситуація безвихідна. Після розмови з’явився план: що робити першим, а що потім. Дякую за терпіння й роз’яснення.</blockquote><figcaption><b>Дмитро Р.</b><span>Полтава</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">січень 2026</span></div><blockquote>Швидко відповів, пояснив простою мовою і не залякував. Окремо дякую за те, що чесно сказав, чого очікувати від кредитора.</blockquote><figcaption><b>Юлія К.</b><span>Черкаси</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 4 з 5">★★★★☆</span><span class="rv-date">грудень 2025</span></div><blockquote>Допомога з аналізом договору та нарахувань. Знайшлися моменти, про які я навіть не здогадувався. Рекомендую звертатися, не чекаючи суду.</blockquote><figcaption><b>Руслан Т.</b><span>Київ</span></figcaption></figure>
+  <figure class="rv"><div class="rv-top"><span class="rv-st" aria-label="Оцінка 5 з 5">★★★★★</span><span class="rv-date">листопад 2025</span></div><blockquote>Звернулася в складний момент. Підтримали, розібрали ситуацію крок за кроком і підказали, як діяти далі. Було зрозуміло й спокійно.</blockquote><figcaption><b>Марина Ч.</b><span>Суми</span></figcaption></figure>
+ </div>
+ <p class="demo-note">Демо-відгуки для перегляду макета. Перед публікацією замінити реальними відгуками або плагіном.</p>
  <div class="rv-plugin">
   <!-- Плагін WP Personal Reviews (шорткод react_reviews); відгуки модеруються в адмінці «WP Відгуки» -->
+  <span class="eyebrow">Відгуки відвідувачів</span>
   <p class="rv-plugin-lead">Залишити відгук може кожен відвідувач сайту. Після перевірки він з’явиться тут.</p>
   [react_reviews]
  </div>
