@@ -194,6 +194,11 @@ background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:18p
  .gv .carousel-dots{display:none!important}
  .gv .review-form{padding:26px 18px}
 }
+/* телефон: плаваюча панель браузера (iOS) не повинна перекривати футер */
+@media(max-width:860px){
+ .gv .foot-band{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+ .gv .copy{padding-bottom:8px}
+}
 </style>
 
 <div class="gv" id="top">
