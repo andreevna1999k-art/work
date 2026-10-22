@@ -1,0 +1,44 @@
+/* Сторінки «Контакти» і «Політика конфіденційності» + оновлений футер (S1 Mahogany). Додається до bz.css. */
+.bz .sec-gap{padding:14px 0}
+.bz .ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bz .ct-card{display:block;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:26px 26px 28px;box-shadow:var(--sh);transition:transform .2s}
+.bz a.ct-card:hover{transform:translateY(-3px)}
+.bz .ct-card small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);font-weight:600;margin-bottom:8px}
+.bz .ct-card b{display:block;font-family:var(--f-head);font-weight:400;font-size:21px;line-height:1.3;letter-spacing:.02em;color:var(--ink);word-break:break-word}
+.bz .ct-card p{margin-top:8px;font-size:15px;color:var(--ink-soft)}
+.bz .map-panel{padding:14px;background:var(--white);border:1px solid var(--line);box-shadow:var(--sh)}
+.bz .map-panel iframe{display:block;width:100%;height:440px;border:0;border-radius:24px}
+.bz .soc-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:30px}
+.bz .soc-head h2{color:var(--cream);margin:0}
+.bz .soc-head p{color:var(--cream-soft);max-width:420px}
+.bz .soc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.bz .soc{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid var(--line-d);border-radius:22px;background:rgba(244,230,208,.06);transition:background .2s}
+.bz .soc:hover{background:rgba(244,230,208,.13)}
+.bz .soc-ico{flex:0 0 52px;height:52px;border-radius:50%;background:var(--gold);color:var(--brown-dark);display:grid;place-items:center}
+.bz .soc-ico svg{width:24px;height:24px;fill:currentColor}
+.bz .soc small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.bz .soc b{font-family:var(--f-head);font-weight:400;font-size:19px;letter-spacing:.03em;color:var(--cream)}
+/* політика */
+.bz .legal-wrap{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.bz .toc{position:sticky;top:20px;padding:22px 22px;border:1px solid var(--line);border-radius:var(--r-card);background:var(--page)}
+.bz .toc b{display:block;font-family:var(--f-head);font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:16px;margin-bottom:10px;color:var(--ink)}
+.bz .toc a{display:block;padding:5px 0;font-size:14.5px;color:var(--ink-soft);line-height:1.35}
+.bz .toc a:hover{color:var(--maroon)}
+.bz .legal h2{font-size:clamp(21px,2.4vw,28px);margin:38px 0 12px;color:var(--ink)}
+.bz .legal h2:first-of-type{margin-top:0}
+.bz .legal p,.bz .legal li{color:var(--ink-soft);font-size:16.5px;line-height:1.7}
+.bz .legal p{margin-bottom:12px}
+.bz .legal ul{margin:0 0 14px;padding-left:22px}.bz .legal li{margin-bottom:6px}
+.bz .legal a{color:var(--maroon);border-bottom:1px solid rgba(110,20,35,.35)}
+.bz .legal .upd{display:inline-block;margin-bottom:26px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;color:var(--ink-soft)}
+.bz .rp-head.legal-h h1{font-size:clamp(26px,4vw,48px)}
+/* футер */
+.bz .foot{align-items:center}
+.bz .foot .legal-links{display:flex;flex-wrap:wrap;gap:6px 22px}
+.bz .foot a{color:var(--ink-soft);border-bottom:1px solid rgba(94,78,68,.35)}
+.bz .foot a:hover{color:var(--maroon)}
+.bz .soc-mini{display:flex;gap:10px;margin-top:22px}
+.bz .soc-mini a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--brown-dark);padding:0;border:0}
+.bz .soc-mini svg{width:21px;height:21px;fill:currentColor}
+@media(max-width:980px){.bz .ct-grid{grid-template-columns:repeat(2,1fr)}.bz .legal-wrap{grid-template-columns:1fr}.bz .toc{position:static}}
+@media(max-width:620px){.bz .ct-grid{grid-template-columns:1fr}.bz .map-panel iframe{height:320px}.bz .rp-head{padding:44px 6px 48px}}
