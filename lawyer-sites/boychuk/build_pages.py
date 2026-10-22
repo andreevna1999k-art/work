@@ -36,14 +36,14 @@ ICO_FB = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.
 
 NAV = f'''<div class="nav"><input type="checkbox" id="bzm" class="menu-cb" aria-hidden="true" tabindex="-1">
     <a class="logo" href="/">Бойчук А. В.</a>
-    <ul><li><a href="/#about">Про мене</a></li><li><a href="/#services">Послуги</a></li><li><a href="{URL_RESULTS}"%CUR_R%>Результати</a></li><li><a href="/#reviews">Відгуки</a></li><li><a href="{URL_CONTACTS}"%CUR_C%>Контакти</a></li></ul>
+    <ul><li><a href="/#about">Про мене</a></li><li><a href="/#services">Послуги</a></li><li><a href="{URL_RESULTS}"%CUR_R%>Результати</a></li><li><a href="/#reviews">Відгуки</a></li><li><a href="{URL_CONTACTS}"%CUR_C%>Контакти</a></li><li><a href="{URL_POLICY}"%CUR_P%>Політика</a></li></ul>
     <a class="btn sm" href="{TG}" target="_blank" rel="noopener">Telegram</a><label for="bzm" class="burger" aria-label="Меню"><i></i></label>
   </div>'''
 
 BURGER_JS = '<script>(function(){var r=document.getElementById("top");if(!r)return;var cb=r.querySelector("#bzm");if(!cb)return;r.querySelectorAll(".nav ul a").forEach(function(a){a.addEventListener("click",function(){cb.checked=false})});document.addEventListener("keydown",function(e){if(e.key==="Escape")cb.checked=false})})();</script>'
 
-def nav(cur_contacts=False, cur_results=False):
-    return NAV.replace("%CUR_C%", ' class="cur"' if cur_contacts else "").replace("%CUR_R%", ' class="cur"' if cur_results else "")
+def nav(cur_contacts=False, cur_results=False, cur_policy=False):
+    return NAV.replace("%CUR_C%", ' class="cur"' if cur_contacts else "").replace("%CUR_R%", ' class="cur"' if cur_results else "").replace("%CUR_P%", ' class="cur"' if cur_policy else "")
 
 def social_block(dark=True):
     return f'''<section id="socials"><div class="wrap">
@@ -82,7 +82,7 @@ def footer():
 def hero(h1_html, lead, badge, cls=""):
     return f'''<section class="hero"><div class="wrap">
 <div class="panel rp-hero">
-  {nav(cur_contacts=(cls=="contacts"))}
+  {nav(cur_contacts=(cls=="contacts"), cur_policy=(cls=="legal"))}
   <div class="rp-head{' legal-h' if cls=='legal' else ''}"><span class="res-badge">{badge}</span>
     <h1>{h1_html}</h1>
     <p class="lead">{lead}</p>
