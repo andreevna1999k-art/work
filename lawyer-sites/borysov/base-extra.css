@@ -1,0 +1,7 @@
+.uc .hero.sub{padding-bottom:0}
+.uc .hero.sub .hero-g{min-height:0;display:block}
+.uc .hero.sub .hero-t{width:auto;max-width:760px;padding:30px 0 clamp(70px,9vw,110px)}
+.uc .crumbs{font-size:13px;color:#A9A89F;margin-bottom:18px}
+.uc .crumbs a{color:var(--kh-l)}
+.uc .hero.sub h1{font-size:clamp(34px,5.4vw,64px)}
+.uc .hero.sub h1 em{display:inline}

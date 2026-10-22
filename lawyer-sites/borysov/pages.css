@@ -1,0 +1,33 @@
+/* Борисов (S2 Khaki Light): сторінки «Контакти», «Політика», футер з email і Політикою, блок соцмереж */
+.uc .cc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.uc .cc{display:block;background:#fff;border-radius:28px;padding:26px 26px 28px;transition:transform .2s,box-shadow .2s}
+.uc a.cc:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(13,16,23,.1)}
+.uc .cc small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--kh-t);margin-bottom:8px}
+.uc .cc b{display:block;font-size:19px;font-weight:700;line-height:1.3;color:var(--dark);word-break:break-word}
+.uc .cc p{margin:8px 0 0;font-size:14.5px;color:var(--tx2)}
+.uc .map-box{border-radius:32px;overflow:hidden;background:var(--panel);padding:10px;margin-top:18px}
+.uc .map-box iframe{display:block;width:100%;height:420px;border:0;border-radius:24px}
+.uc .soc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:26px}
+.uc .soc{display:flex;align-items:center;gap:16px;background:#fff;border-radius:999px;padding:10px 26px 10px 10px;transition:transform .2s}
+.uc .soc:hover{transform:translateY(-2px)}
+.uc .soc-ico{flex:0 0 52px;height:52px;border-radius:50%;background:var(--kh);color:#fff;display:grid;place-items:center}
+.uc .soc-ico svg{width:24px;height:24px;fill:currentColor}
+.uc .soc small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--kh-t);font-weight:600}
+.uc .soc b{font-size:16px;font-weight:700;color:var(--dark)}
+.uc .sec-head{max-width:720px;margin-bottom:8px}
+.uc .legal-wrap{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.uc .toc{position:sticky;top:20px;background:#fff;border-radius:28px;padding:22px}
+.uc .toc b{display:block;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--dark);margin-bottom:10px}
+.uc .toc a{display:block;padding:5px 0;font-size:14px;color:var(--tx2);line-height:1.35}
+.uc .toc a:hover{color:var(--kh-t)}
+.uc .legal h2{font-size:clamp(20px,2.3vw,26px);margin:36px 0 12px;font-weight:700;letter-spacing:0}
+.uc .legal h2:first-of-type{margin-top:0}
+.uc .legal p,.uc .legal li{color:var(--tx2);font-size:16px;line-height:1.7}
+.uc .legal p{margin:0 0 12px}.uc .legal ul{margin:0 0 14px;padding-left:22px}.uc .legal li{margin-bottom:6px}
+.uc .legal a{color:var(--kh-t);border-bottom:1px solid rgba(126,112,56,.4)}
+.uc .upd{display:inline-block;margin-bottom:24px;padding:7px 16px;border-radius:999px;background:#fff;font-size:13px;color:var(--tx2)}
+.uc .end-bar .legal-links{display:flex;flex-wrap:wrap;gap:10px}
+.uc .end-bar .legal-links a{display:inline-flex;align-items:center;padding:11px 20px;border:1px solid rgba(210,196,143,.5);border-radius:999px;color:var(--kh-l);font-weight:600;font-size:13.5px;line-height:1.2;transition:background .2s,color .2s}
+.uc .end-bar .legal-links a:hover{background:var(--kh-l);color:var(--dark)}
+@media(max-width:980px){.uc .cc-grid{grid-template-columns:repeat(2,1fr)}.uc .legal-wrap{grid-template-columns:1fr}.uc .toc{position:static}}
+@media(max-width:620px){.uc .cc-grid{grid-template-columns:1fr}.uc .map-box iframe{height:320px}}
