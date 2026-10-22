@@ -98,7 +98,7 @@ def wrap_page(title, desc, ld, body):
 # ---------- Контакти ----------
 C_DESC = ("Контакти юриста по кредитам Бойчука Артема Валерійовича: телефон, email, Telegram, Facebook, адреса офісу в Києві та години роботи.")
 assert len(C_DESC) <= 160, len(C_DESC)
-C_TITLE = f"Контакти — {NAME}"
+C_TITLE = "Контакти"
 ORG = {
     "@context": "https://schema.org",
     "@type": ["Organization", "LegalService"],
@@ -151,7 +151,7 @@ def contacts_body():
 # ---------- Політика ----------
 P_DESC = ("Політика конфіденційності та обробки персональних даних сайту юриста Бойчука Артема Валерійовича: які дані збираємо, навіщо, права відвідувачів, скарги.")
 assert len(P_DESC) <= 160, len(P_DESC)
-P_TITLE = f"{POLICY_TITLE} — {NAME}"
+P_TITLE = POLICY_TITLE
 P_LD = {"@context": "https://schema.org", "@type": "WebPage", "@id": SITE + URL_POLICY + "#page", "url": SITE + URL_POLICY,
         "name": POLICY_TITLE, "description": P_DESC, "inLanguage": "uk", "dateModified": DATE_ISO,
         "isPartOf": {"@type": "WebSite", "name": NAME, "url": SITE + "/"}, "about": {"@id": SITE + "/#organization"}}
