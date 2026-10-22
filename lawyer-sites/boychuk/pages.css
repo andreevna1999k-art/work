@@ -35,8 +35,9 @@
 /* футер */
 .bz .foot{align-items:center}
 .bz .foot .legal-links{display:flex;flex-wrap:wrap;gap:6px 22px}
-.bz .foot a{color:var(--ink-soft);border-bottom:1px solid rgba(94,78,68,.35)}
-.bz .foot a:hover{color:var(--maroon)}
+.bz .foot .legal-links{gap:10px}
+.bz .foot .legal-links a{display:inline-flex;align-items:center;padding:12px 22px;border:1px solid var(--maroon);border-radius:999px;color:var(--maroon);font-weight:600;font-size:14px;letter-spacing:.03em;line-height:1.2;text-align:center;transition:background .2s,color .2s}
+.bz .foot .legal-links a:hover{background:var(--maroon);color:#fff}
 .bz .soc-mini{display:flex;gap:10px;margin-top:22px}
 .bz .soc-mini a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--brown-dark);padding:0;border:0}
 .bz .soc-mini svg{width:21px;height:21px;fill:currentColor}
