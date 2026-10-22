@@ -69,9 +69,10 @@ def footer():
       <a href="{TG}" target="_blank" rel="noopener"><small>Telegram</small><b>{TG_NICK}</b></a>
       <a href="{FB}" target="_blank" rel="noopener me"><small>Facebook</small><b>Профіль у Facebook</b></a>
       <a href="{MAPS_LINK}" target="_blank" rel="noopener"><small>Адреса</small><b>{ADDR}</b></a>
+      <a href="{URL_POLICY}"><small>Документи</small><b>Політика конфіденційності</b></a>
     </div>
     <div class="hours"><b>Години роботи:</b> пн–пт з 09:00 до 18:00, на вихідних — за домовленістю.</div>
-    <nav class="fnav" aria-label="Меню"><a href="/#about">Про мене</a><a href="/#services">Послуги</a><a href="{URL_RESULTS}">Результати</a><a href="/#reviews">Відгуки</a><a href="{URL_CONTACTS}">Контакти</a></nav>
+    <nav class="fnav" aria-label="Меню"><a href="/#about">Про мене</a><a href="/#services">Послуги</a><a href="{URL_RESULTS}">Результати</a><a href="/#reviews">Відгуки</a><a href="{URL_CONTACTS}">Контакти</a><a href="{URL_POLICY}">Політика</a></nav>
   </div>
   <div class="map"><iframe title="Мапа: {ADDR}" src="{MAP_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 </div>
