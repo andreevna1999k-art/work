@@ -36,7 +36,7 @@ ICO_FB = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.
 
 NAV = f'''<div class="nav"><input type="checkbox" id="bzm" class="menu-cb" aria-hidden="true" tabindex="-1">
     <a class="logo" href="/">Бойчук А. В.</a>
-    <ul><li><a href="/#about">Про мене</a></li><li><a href="/#services">Послуги</a></li><li><a href="{URL_RESULTS}"%CUR_R%>Результати</a></li><li><a href="/#reviews">Відгуки</a></li><li><a href="{URL_CONTACTS}"%CUR_C%>Контакти</a></li><li><a href="{URL_POLICY}"%CUR_P%>Політика</a></li></ul>
+    <ul><li><a href="/#about">Про мене</a></li><li><a href="/#services">Послуги</a></li><li><a href="{URL_RESULTS}"%CUR_R%>Результати</a></li><li><a href="/#reviews">Відгуки</a></li><li><a href="{URL_CONTACTS}"%CUR_C%>Контакти</a></li></ul>
     <a class="btn sm" href="{TG}" target="_blank" rel="noopener">Telegram</a><label for="bzm" class="burger" aria-label="Меню"><i></i></label>
   </div>'''
 
