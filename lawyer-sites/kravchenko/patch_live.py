@@ -32,6 +32,12 @@ def patch(pid, with_socials):
     # sameAs: додати Facebook
     if B.FB not in new.split("</script>")[0]:
         new = new.replace('"https://www.instagram.com/yuryst_kravchenko/"]', '"https://www.instagram.com/yuryst_kravchenko/", "' + B.FB + '"]', 1)
+    # Telegram: правильний @maxim_yrist (на сайті помилково @evgen_yrist)
+    new = new.replace("t.me/evgen_yrist", "t.me/maxim_yrist").replace("@evgen_yrist", "@maxim_yrist")
+    # статус: юрист по кредитам (не адвокат), за уточненням замовниці
+    new = new.replace('"jobTitle": "Адвокат, юрист з кредитних спорів"', '"jobTitle": "Юрист по кредитам"')
+    new = new.replace('"description": "Адвокат. Юрист з кредитних спорів', '"description": "Юрист з кредитних спорів')
+    new = new.replace('<span class="chip">адвокат</span>', '')
     assert new.count("<h1") == raw.count("<h1")
     r = call("POST", f"{SITE}/wp-json/wp/v2/pages/{pid}", {"content": new})
     print(pid, r.get("status"), "| політика у футері:", r["content"]["raw"].count("/polityka-konfidentsiinosti/") if "content" in r else r)

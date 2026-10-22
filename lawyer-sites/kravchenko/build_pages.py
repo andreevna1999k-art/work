@@ -13,9 +13,9 @@ NAME = "Кравченко Максим Віталійович"
 EMAIL = "maksym-yrist@rada-advokat.uz.ua"
 EMAIL_HTML = EMAIL.replace("@", "<wbr>@")
 PHONE_TEL, PHONE = "+380914811951", "+380914811951"
-# УВАГА: на живому сайті Telegram @evgen_yrist, у таблиці «Создание соцей» @maxim_yrist. Тут як на живому сайті; змінити тут і в patch_live.py
-TG_NICK = "@evgen_yrist"
-TG = "https://t.me/evgen_yrist"
+# Telegram підтверджено замовницею 22.10: @maxim_yrist (раніше на сайті помилково стояв @evgen_yrist)
+TG_NICK = "@maxim_yrist"
+TG = "https://t.me/maxim_yrist"
 IG, IG_NICK = "https://www.instagram.com/yuryst_kravchenko/", "@yuryst_kravchenko"
 FB = "https://www.facebook.com/profile.php?id=100077932089127"
 ADDR = "04108, м. Київ, пр-т Європейського Союзу (Правди), 31а"
@@ -67,7 +67,7 @@ def wrap(pid, ld, body):
 
 # ---------- Контакти ----------
 C_TITLE = f"Контакти — {NAME}"
-C_DESC = "Контакти адвоката, юриста по кредитам Кравченка Максима Віталійовича: телефон, email, Telegram, Instagram, Facebook, адреса в Києві та години роботи."
+C_DESC = "Контакти юриста по кредитам Кравченка Максима Віталійовича: телефон, email, Telegram, Instagram, Facebook, адреса в Києві та години роботи."
 assert len(C_DESC) <= 170
 ORG = {"@type": ["Organization", "LegalService"], "@id": SITE + "/#organization",
        "name": f"{NAME} — юрист по кредитам", "legalName": NAME, "url": SITE + "/", "email": EMAIL, "telephone": PHONE_TEL,
@@ -93,13 +93,13 @@ def contacts_body():
 <a class="cc" href="{FB}" target="_blank" rel="noopener me"><small>Facebook</small><b>Профіль у Facebook</b><p>Повідомлення в месенджері.</p></a>
 <a class="cc" href="{MAPS_LINK}" target="_blank" rel="noopener"><small>Адреса</small><b>{ADDR}</b><p>Зустріч за попередньою домовленістю.</p></a>
 </div>'''
-    return (header("Контакти", "адвоката", "Напишіть у Telegram, зателефонуйте або надішліть лист. Розберемо вашу ситуацію з кредитом чи боргом і підкажемо, з чого почати.")
+    return (header("Контакти", "юриста", "Напишіть у Telegram, зателефонуйте або надішліть лист. Розберемо вашу ситуацію з кредитом чи боргом і підкажемо, з чого почати.")
         + f'''<main><section class="sec pg" id="ways"><div class="in"><h2 class="sec-t">Оберіть зручний <span class="hl">спосіб</span></h2>{cards}
 <div class="map-box"><iframe title="Карта: {ADDR}" src="{MAP_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 <p class="car-note">Години роботи: пн–пт з 09:00 до 18:00, на вихідних за домовленістю.</p></div></section>{social_block()}</main>''' + footer())
 
 # ---------- Політика: блок «Коротко» + нумеровані розділи з кружечками (відрізняється від інших сайтів) ----------
-P_DESC = "Політика конфіденційності та обробки персональних даних сайту адвоката Кравченка Максима Віталійовича: мета, підстави, строки, права, звернення і скарги."
+P_DESC = "Політика конфіденційності та обробки персональних даних сайту юриста Кравченка Максима Віталійовича: мета, підстави, строки, права, звернення і скарги."
 assert len(P_DESC) <= 170
 P_TITLE = f"{POLICY_TITLE} — {NAME}"
 P_LD = {"@context": "https://schema.org", "@type": "WebPage", "@id": U_POLICY + "#page", "url": U_POLICY, "name": POLICY_TITLE,
