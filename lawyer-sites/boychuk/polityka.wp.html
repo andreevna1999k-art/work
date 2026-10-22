@@ -230,16 +230,29 @@ html{scroll-behavior:smooth}
 @media(max-width:980px){.bz .ct-grid{grid-template-columns:repeat(2,1fr)}.bz .legal-wrap{grid-template-columns:1fr}.bz .toc{position:static}}
 @media(max-width:620px){.bz .ct-grid{grid-template-columns:1fr}.bz .map-panel iframe{height:320px}.bz .rp-head{padding:44px 6px 48px}}
 
+/* бургер-меню і меню у футері (як на головній) */
+.bz .menu-cb{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.bz .burger{display:none;width:42px;height:42px;border-radius:50%;background:rgba(244,230,208,.14);cursor:pointer;flex:none;position:relative}
+.bz .burger i,.bz .burger i::before,.bz .burger i::after{content:"";position:absolute;left:11px;width:20px;height:2px;background:var(--cream);border-radius:2px;transition:.2s}
+.bz .burger i{top:20px}.bz .burger i::before{left:0;top:-7px}.bz .burger i::after{left:0;top:7px}
+.bz .menu-cb:checked ~ .burger i{background:transparent}
+.bz .menu-cb:checked ~ .burger i::before{top:0;transform:rotate(45deg)}
+.bz .menu-cb:checked ~ .burger i::after{top:0;transform:rotate(-45deg)}
+.bz .fnav{display:flex;flex-wrap:wrap;gap:8px 26px;margin:26px 0 0;padding-top:20px;border-top:1px solid var(--line-d);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.bz .fnav a{color:var(--cream-soft);text-decoration:none;padding:0;border:0;background:none;display:inline}.bz .fnav a:hover{color:var(--gold)}
+@media(max-width:860px){.bz .nav{gap:8px}.bz .burger{display:block}.bz .nav .btn.sm{margin-left:auto}.bz .menu-cb:checked ~ ul{display:flex!important;position:absolute;top:calc(100% + 8px);left:10px;right:10px;z-index:30;flex-direction:column;gap:2px;padding:10px;background:#3d2118;border:1px solid rgba(244,230,208,.26);border-radius:24px;box-shadow:0 24px 50px rgba(0,0,0,.45)}.bz .menu-cb:checked ~ ul li{list-style:none}.bz .menu-cb:checked ~ ul a{display:block;padding:15px 16px;border-radius:14px;font-size:15px;color:var(--cream)}.bz .menu-cb:checked ~ ul a:hover{background:rgba(244,230,208,.1);color:var(--gold)}.bz .fnav{flex-direction:column;gap:2px}.bz .fnav a{display:block;padding:11px 0}}
+@media(max-width:460px){.bz .nav .btn.sm{display:none}.bz .burger{margin-left:auto}}
+
 </style>
 <style>.bz{width:100%;margin:0;min-height:100vh}html,body{margin:0!important;padding:0!important;background:#F5EEE4!important}html{scroll-behavior:smooth}</style>
 <div class="bz" lang="uk" id="top">
 
 <section class="hero"><div class="wrap">
 <div class="panel rp-hero">
-  <div class="nav">
+  <div class="nav"><input type="checkbox" id="bzm" class="menu-cb" aria-hidden="true" tabindex="-1">
     <a class="logo" href="/">Бойчук А. В.</a>
     <ul><li><a href="/#about">Про мене</a></li><li><a href="/#services">Послуги</a></li><li><a href="/rezultaty-roboty/">Результати</a></li><li><a href="/#reviews">Відгуки</a></li><li><a href="/kontakty/">Контакти</a></li></ul>
-    <a class="btn sm" href="https://t.me/artem_adwokat" target="_blank" rel="noopener">Telegram</a>
+    <a class="btn sm" href="https://t.me/artem_adwokat" target="_blank" rel="noopener">Telegram</a><label for="bzm" class="burger" aria-label="Меню"><i></i></label>
   </div>
   <div class="rp-head legal-h"><span class="res-badge">Конфіденційність</span>
     <h1>Політика конфіденційності та обробки персональних даних</h1>
@@ -335,6 +348,7 @@ html{scroll-behavior:smooth}
       <a href="https://www.google.com/maps/search/?api=1&query=02055%2C%20%D0%B2%D1%83%D0%BB.%20%D0%9A%D0%BD%D1%8F%D0%B6%D0%B8%D0%B9%20%D0%97%D0%B0%D1%82%D0%BE%D0%BD%2C%202/30%2C%20%D0%9A%D0%B8%D1%97%D0%B2" target="_blank" rel="noopener"><small>Адреса</small><b>02055, вул. Княжий Затон, 2/30, Київ</b></a>
     </div>
     <div class="hours"><b>Години роботи:</b> пн–пт з 09:00 до 18:00, на вихідних — за домовленістю.</div>
+    <nav class="fnav" aria-label="Меню"><a href="/#about">Про мене</a><a href="/#services">Послуги</a><a href="/rezultaty-roboty/">Результати</a><a href="/#reviews">Відгуки</a><a href="/kontakty/">Контакти</a></nav>
   </div>
   <div class="map"><iframe title="Мапа: 02055, вул. Княжий Затон, 2/30, Київ" src="https://www.google.com/maps?q=02055%2C%20%D0%B2%D1%83%D0%BB.%20%D0%9A%D0%BD%D1%8F%D0%B6%D0%B8%D0%B9%20%D0%97%D0%B0%D1%82%D0%BE%D0%BD%2C%202/30%2C%20%D0%9A%D0%B8%D1%97%D0%B2&hl=uk&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 </div>
@@ -342,4 +356,5 @@ html{scroll-behavior:smooth}
 </div></section>
 
 </div>
+<script>(function(){var r=document.getElementById("top");if(!r)return;var cb=r.querySelector("#bzm");if(!cb)return;r.querySelectorAll(".nav ul a").forEach(function(a){a.addEventListener("click",function(){cb.checked=false})});document.addEventListener("keydown",function(e){if(e.key==="Escape")cb.checked=false})})();</script>
 <!-- /wp:html -->

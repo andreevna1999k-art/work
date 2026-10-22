@@ -34,14 +34,16 @@ FULL = ".bz{width:100%;margin:0;min-height:100vh}html,body{margin:0!important;pa
 ICO_TG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.8.8.8.5 0 .8-.2 1.1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.2-.5-1.8-1.5-1.4zM8.5 13.6l9.6-6c.5-.3.9-.1.5.2l-7.8 7-.3 3.2z"/></svg>'
 ICO_FB = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.5-3.2h-3.2V7.7c0-.9.3-1.6 1.7-1.6h1.6V3.2c-.3 0-1.3-.1-2.4-.1-2.5 0-4.1 1.5-4.1 4.2v2.5H7.5V13h2.8v8z"/></svg>'
 
-NAV = f'''<div class="nav">
+NAV = f'''<div class="nav"><input type="checkbox" id="bzm" class="menu-cb" aria-hidden="true" tabindex="-1">
     <a class="logo" href="/">Бойчук А. В.</a>
-    <ul><li><a href="/#about">Про мене</a></li><li><a href="/#services">Послуги</a></li><li><a href="{URL_RESULTS}">Результати</a></li><li><a href="/#reviews">Відгуки</a></li><li><a href="{URL_CONTACTS}"%CUR%>Контакти</a></li></ul>
-    <a class="btn sm" href="{TG}" target="_blank" rel="noopener">Telegram</a>
+    <ul><li><a href="/#about">Про мене</a></li><li><a href="/#services">Послуги</a></li><li><a href="{URL_RESULTS}"%CUR_R%>Результати</a></li><li><a href="/#reviews">Відгуки</a></li><li><a href="{URL_CONTACTS}"%CUR_C%>Контакти</a></li></ul>
+    <a class="btn sm" href="{TG}" target="_blank" rel="noopener">Telegram</a><label for="bzm" class="burger" aria-label="Меню"><i></i></label>
   </div>'''
 
-def nav(cur_contacts=False):
-    return NAV.replace("%CUR%", ' class="cur"' if cur_contacts else "")
+BURGER_JS = '<script>(function(){var r=document.getElementById("top");if(!r)return;var cb=r.querySelector("#bzm");if(!cb)return;r.querySelectorAll(".nav ul a").forEach(function(a){a.addEventListener("click",function(){cb.checked=false})});document.addEventListener("keydown",function(e){if(e.key==="Escape")cb.checked=false})})();</script>'
+
+def nav(cur_contacts=False, cur_results=False):
+    return NAV.replace("%CUR_C%", ' class="cur"' if cur_contacts else "").replace("%CUR_R%", ' class="cur"' if cur_results else "")
 
 def social_block(dark=True):
     return f'''<section id="socials"><div class="wrap">
@@ -69,6 +71,7 @@ def footer():
       <a href="{MAPS_LINK}" target="_blank" rel="noopener"><small>Адреса</small><b>{ADDR}</b></a>
     </div>
     <div class="hours"><b>Години роботи:</b> пн–пт з 09:00 до 18:00, на вихідних — за домовленістю.</div>
+    <nav class="fnav" aria-label="Меню"><a href="/#about">Про мене</a><a href="/#services">Послуги</a><a href="{URL_RESULTS}">Результати</a><a href="/#reviews">Відгуки</a><a href="{URL_CONTACTS}">Контакти</a></nav>
   </div>
   <div class="map"><iframe title="Мапа: {ADDR}" src="{MAP_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
 </div>
@@ -89,7 +92,7 @@ def hero(h1_html, lead, badge, cls=""):
 def wrap_page(title, desc, ld, body):
     ldj = json.dumps(ld, ensure_ascii=False)
     return (f'<!-- wp:html -->\n<meta name="description" content="{desc}">\n<script type="application/ld+json">{ldj}</script>\n'
-            f'{FONTS}\n<style>\n{CSS}\n</style>\n<style>{FULL}</style>\n<div class="bz" lang="uk" id="top">\n\n{body}\n\n</div>\n<!-- /wp:html -->\n')
+            f'{FONTS}\n<style>\n{CSS}\n</style>\n<style>{FULL}</style>\n<div class="bz" lang="uk" id="top">\n\n{body}\n\n</div>\n{BURGER_JS}\n<!-- /wp:html -->\n')
 
 # ---------- Контакти ----------
 C_DESC = ("Контакти юриста по кредитам Бойчука Артема Валерійовича: телефон, email, Telegram, Facebook, адреса офісу в Києві та години роботи.")
@@ -243,9 +246,11 @@ if __name__ == "__main__":
         print(p["file"], len(html))
         if "--publish" in sys.argv:
             found = call("GET", f"{SITE}/wp-json/wp/v2/pages?slug={slug}&status=any&context=edit&_fields=id,status")
-            payload = {"title": p["title"], "slug": slug, "status": "draft", "template": "page-blank", "content": html}
+            payload = {"title": p["title"], "slug": slug, "template": "page-blank", "content": html}
+            if not found:
+                payload["status"] = "draft"
             if found:
-                if found[0]["status"] != "draft":
+                if found[0]["status"] != "draft" and "--update" not in sys.argv:
                     sys.exit(f"{slug}: уже опублікована, не чіпаю")
                 d = call("POST", f"{SITE}/wp-json/wp/v2/pages/{found[0]['id']}", payload)
             else:
