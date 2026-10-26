@@ -4,6 +4,6 @@
 
 - `tz.html` — ТЗ (виправлене головредом)
 - `text-ua.html`, `text-ru.html` — тексти UA і RU (експорт з Google Docs)
-- `audit-glavred.html` — аудит головреда (за версією тексту до правок із аудиту)
+- `audit-glavred.html` — аудит головреда (другий прохід, за поточною версією тексту)
 - `img/` — інфографіка UA (pozovna-davnist-ta-strok-pred-iavlennia, prykl-khronolohii-strok-vykonavchoho-dokumenta) і RU (isk-davnost-i-srok-predyavleniya, primer-hronologii-srok-ispolnitelnogo-dokumenta), PNG і WebP
 - `infographics-spec.json` — тексти для генератора `lawyer-sites/tools/infographic_render.py`
