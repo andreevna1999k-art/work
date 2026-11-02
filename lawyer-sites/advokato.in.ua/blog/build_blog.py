@@ -3,7 +3,8 @@
  out/blog-hub.html           сторінка-хаб (WP id 1818, чернетка)
  out/block-preview.html      блок «Мої статті» в контексті сайту (WP id 1819, чернетка)
  out/home-block-snippet.html той самий блок окремо, для вставки в HTML-віджет Elementor на головній
-Живі сторінки не чіпає."""
+Живі сторінки не чіпає.
+Сторінки мають шаблон elementor_canvas (без контейнера теми Astra): інакше блок зсувається вправо."""
 import os, html, base64, sys
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
 from articles import ARTICLES, PLACEHOLDERS
@@ -17,7 +18,7 @@ CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Serif:wght@700&display=swap');
 .kv{--rose:#B5838C;--peach:#FFCDB2;--slate:#615C68;--slate2:#6E6876;--char:#424242;--ink:#2F2B36;--white:#fff;
  font-family:Lato,sans-serif;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);background:var(--slate);
- position:relative;left:50%;margin-left:-50vw;width:100vw;overflow:hidden;-webkit-font-smoothing:antialiased}
+ position:relative;width:100%;margin:0;overflow:hidden;-webkit-font-smoothing:antialiased}
 .kv *{box-sizing:border-box}.kv h1,.kv h2,.kv h3,.kv p,.kv ul,.kv li{margin:0;padding:0}.kv ul{list-style:none}
 .kv a{color:inherit;text-decoration:none;border:0;box-shadow:none}
 .kv h1,.kv h2,.kv h3{font-family:'Noto Serif',serif;font-weight:700;color:#fff;line-height:1.2;text-transform:none;letter-spacing:0}
