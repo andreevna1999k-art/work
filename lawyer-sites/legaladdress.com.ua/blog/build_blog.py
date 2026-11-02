@@ -16,7 +16,7 @@ CSS = """<style>
 .bz .bl-card{display:flex;flex-direction:column;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:0 0 24px;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;overflow:hidden}
 .bz .bl-cover{position:relative;display:block;aspect-ratio:8/5;background:var(--brown-dark)}
 .bz .bl-cover img{width:100%;height:100%;object-fit:cover}
-.bz .bl-cover .bl-tag{position:absolute;top:14px;right:14px;background:rgba(43,23,17,.82);color:var(--cream);backdrop-filter:blur(2px)}
+.bz .bl-cover .bl-tag{position:absolute;top:14px;left:14px;background:rgba(43,23,17,.82);color:var(--cream);backdrop-filter:blur(2px)}
 .bz .bl-body{display:flex;flex-direction:column;flex:1;padding:20px 24px 0}
 .bz .bl-card:hover{transform:translateY(-3px)}
 .bz .bl-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px;font-size:13.5px;color:var(--ink-soft)}
