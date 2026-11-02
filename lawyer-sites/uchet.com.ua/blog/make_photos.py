@@ -6,7 +6,9 @@ from articles import ARTICLES
 from PIL import Image
 H = os.path.dirname(os.path.abspath(__file__)); os.makedirs(os.path.join(H,'photos'), exist_ok=True)
 for a in ARTICLES:
-    f = glob.glob(os.path.join(H, 'photos-src', f'{a[0]:02d}-*.webp'))[0]
+    g = glob.glob(os.path.join(H, 'photos-src', f'{a[0]:02d}-*.webp'))
+    if not g: print('немає фото №', a[0]); continue
+    f = g[0]
     im = Image.open(f).convert('RGB').resize((760,507), Image.LANCZOS)
     im.save(os.path.join(H,'photos',a[2]+'.webp'), quality=74, method=6)
 print('ok', sum(os.path.getsize(p) for p in glob.glob(os.path.join(H,'photos','*.webp')))//1024, 'KB')
