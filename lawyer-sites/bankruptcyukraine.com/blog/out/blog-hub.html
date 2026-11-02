@@ -1,0 +1,67 @@
+<!-- wp:html -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto+Condensed:wght@400;700&display=swap');
+.kv{font-family:'Roboto Condensed',sans-serif;font-size:16px;line-height:1.6;color:#4B4F58;background:#E4F7FC;position:relative;width:100%;margin:0;overflow:hidden;-webkit-font-smoothing:antialiased}
+.kv *{box-sizing:border-box}.kv h1,.kv h2,.kv h3,.kv p,.kv ul,.kv li{margin:0;padding:0}.kv ul{list-style:none}
+.kv a{color:inherit;text-decoration:none;border:0;box-shadow:none}
+.kv h1,.kv h2,.kv h3{font-family:Montserrat,sans-serif;font-weight:800;line-height:1.2;text-transform:none;letter-spacing:0}
+.kv .w{max-width:1180px;margin:0 auto;padding:0 24px}
+.kv .bar{display:block;width:60px;height:3px;background:#FFFFFF;margin:18px 0 0}
+.kv .btn{display:inline-block;padding:15px 30px;background:#FFE16A;color:#02176D;font:700 13px/1 'Roboto Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;border:0;transition:.2s}.kv .btn:hover{background:#FFFFFF;color:#02176D}
+.kv .hero{position:relative;background:linear-gradient(90deg,#02176D 0 50%,#E4F7FC 50% 100%);padding:150px 0 90px;color:#FFFFFF}
+.kv .hero h1{color:#FFFFFF;font-size:clamp(34px,4.6vw,56px)}
+.kv .hero .w{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative}
+.kv .hero .sub{margin-top:22px;font:700 18px/1.4 'Roboto Condensed',sans-serif;color:#FFFFFF}
+.kv .hero .lead{margin-top:14px;max-width:470px;opacity:.92}
+.kv .hero .btn{margin-top:30px}
+.kv .hero .ph{justify-self:end;width:min(100%,430px)}
+.kv .hero .ph img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%;border-radius:8px;display:block;box-shadow:0 24px 50px rgba(0,0,0,.3)}
+.kv .sec{padding:80px 0 90px;background:#E4F7FC}
+.kv .sec.pre{padding-top:140px}
+.kv .sec h2{font-size:clamp(28px,3.6vw,44px);text-align:center;color:#222222}
+.kv .sec .bar{margin:18px auto 0;background:#222222}
+.kv .sec .lead2{max-width:660px;margin:20px auto 0;text-align:center}
+.kv .bl-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px}
+.kv .bl-card{display:flex;flex-direction:column;min-width:0;background:#FFFFFF;border-radius:6px;overflow:hidden;box-shadow:0 14px 40px rgba(2,23,109,.12);transition:transform .2s}
+.kv .bl-card:hover{transform:translateY(-4px)}
+.kv .bl-cover{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:linear-gradient(135deg,#02176D,#0B2A9F)}
+.kv .bl-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.kv .bl-tag{position:absolute;top:14px;left:14px;padding:6px 14px;background:#FFE16A;color:#02176D;font:700 11px/1.2 'Roboto Condensed',sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.kv .bl-body{display:flex;flex-direction:column;flex:1;padding:22px 24px 26px}
+.kv .bl-card time{display:block;margin-bottom:10px;font:700 13px/1 'Roboto Condensed',sans-serif;letter-spacing:.06em;color:#02176D}
+.kv .bl-card h3{font-size:19px;line-height:1.3;margin:0 0 12px;color:#222222}
+.kv .bl-card h3 a:hover{color:#02176D}
+.kv .bl-card p{margin:0 0 20px;font-size:16px;color:#4B4F58}
+.kv .bl-more{margin-top:auto;font:700 13px/1 'Roboto Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#222222}
+.kv .bl-more::after{content:" \2192"}.kv .bl-more:hover{color:#02176D}
+.kv .all{text-align:center;margin-top:44px}
+.kv .ft{background:#02176D;color:rgba(255,255,255,.85);padding:70px 0 60px}
+.kv .ft .w{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.kv .ft h3{font-size:20px;margin-bottom:18px;color:#FFFFFF}
+.kv .ft p,.kv .ft li{font-size:16px;margin-bottom:10px}
+.kv .ft a{color:#FFE16A}.kv .ft a:hover{color:#fff}
+.kv .ft .copy{max-width:1180px;margin:44px auto 0;padding:24px 24px 0;border-top:1px solid rgba(255,255,255,.2);font-size:14px;opacity:.8}
+@media(max-width:900px){.kv .hero{background:linear-gradient(180deg,#02176D 0 64%,#E4F7FC 64% 100%)}.kv .hero .w{grid-template-columns:1fr}.kv .hero .ph{justify-self:start;width:min(100%,360px)}.kv .bl-g{grid-template-columns:repeat(2,minmax(0,1fr))}.kv .ft .w{grid-template-columns:1fr;gap:28px}}
+@media(max-width:620px){.kv .bl-g{grid-template-columns:minmax(0,1fr);gap:16px}.kv .sec{padding:60px 0 70px}.kv .bl-body{padding:18px 18px 22px}}
+
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+.kvh{position:fixed;top:0;left:0;right:0;z-index:99999;background:#02176D;border-bottom:1px solid rgba(255,255,255,.18);font-family:'Roboto Condensed',sans-serif}
+body.admin-bar .kvh{top:32px}@media(max-width:782px){body.admin-bar .kvh{top:46px}}
+.kvh *{box-sizing:border-box}.kvh a{color:#FFFFFF;text-decoration:none;border:0;box-shadow:none}
+.kvh .in{max-width:1280px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.kvh .logo{font:800 20px/1 Montserrat,sans-serif;white-space:nowrap}
+.kvh .menu{display:flex;gap:26px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-left:auto;font-weight:700}
+.kvh .menu a{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}.kvh .menu a:hover,.kvh .menu a.cur{border-bottom-color:#FFE16A}
+.kvh .cta{padding:11px 20px;background:#FFE16A;color:#02176D;border:0;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:.2s}.kvh .cta:hover{background:#fff;color:#02176D}
+.kvh .cb{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.kvh .burger{display:none;width:42px;height:42px;border:1px solid #FFFFFF;cursor:pointer;position:relative;flex:none}
+.kvh .burger i,.kvh .burger i::before,.kvh .burger i::after{content:"";position:absolute;left:10px;width:20px;height:2px;background:#FFFFFF}
+.kvh .burger i{top:20px}.kvh .burger i::before{left:0;top:-7px}.kvh .burger i::after{left:0;top:7px}
+.kvh .cb:checked ~ .burger i{background:transparent}.kvh .cb:checked ~ .burger i::before{top:0;transform:rotate(45deg)}.kvh .cb:checked ~ .burger i::after{top:0;transform:rotate(-45deg)}
+@media(max-width:1060px){.kvh .cta{display:none}.kvh .menu{gap:18px}}
+@media(max-width:860px){.kvh .in{height:60px}.kvh .burger{display:block;margin-left:auto}.kvh .menu{display:none;margin:0}
+ .kvh .cb:checked ~ .menu{display:flex;flex-direction:column;gap:0;position:absolute;top:60px;left:0;right:0;background:#02176D;padding:8px 16px 16px;border-top:1px solid rgba(255,255,255,.18)}
+ .kvh .cb:checked ~ .menu a{padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}.kvh .cb:checked ~ .menu a:last-child{border-bottom:0}}
+body.page-id-1397 .entry-header,body.page-id-1397 .ast-breadcrumbs-wrapper,body.page-id-1397 .entry-title,body.page-id-1397 .site-footer{display:none!important}body.page-id-1397 .ast-container,body.page-id-1397 #primary,body.page-id-1397 .entry-content{padding:0!important;margin:0!important;max-width:none!important}</style>
+<div class="kvh"><div class="in"><a class="logo" href="/">Бондар О. О.</a><input type="checkbox" id="kvhm" class="cb" aria-hidden="true" tabindex="-1"><nav class="menu" aria-label="Меню"><a href="/#about">Освіта</a><a href="/#experience">Досвід</a><a href="/#results">Результати</a><a href="/#reviews">Відгуки</a><a href="/blog/" class="cur">Блог</a><a href="/#contacts">Контакти</a></nav><a class="cta" href="https://t.me/Oleg_adwokat" target="_blank" rel="noopener">Консультація</a><label for="kvhm" class="burger" aria-label="Меню"><i></i></label></div></div><div class="kv"><header class="hero"><div class="w"><div><h1>Мої статті</h1><span class="bar"></span><p class="sub">Адвокат зі скасування судових наказів<br>та колекторських дій</p><p class="lead">Пояснюю питання скасування судових наказів, дій колекторів і захисту боржників простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.</p><a class="btn" href="https://t.me/Oleg_adwokat" target="_blank" rel="noopener">Безкоштовна консультація</a></div><div class="ph"><img src="https://bankruptcyukraine.com/wp-content/uploads/2025/07/bondar-oleh-oleksiiovych-yuryst-po-kredytam.jpg" alt="Бондар Олег Олексійович" width="640" height="640"></div></div></header><section class="sec" id="articles"><div class="w"><div class="bl-g"><article class="bl-card"><a class="bl-cover" href="/blog/" tabindex="-1"><span class="bl-tag">Тема статті</span></a><div class="bl-body"><time>ДД.ММ.РРРР</time><h3><a href="/blog/">Назва статті, яка займе один-два рядки</a></h3><p>Короткий анонс статті на дві-три речення. Текст з’явиться, коли стаття буде готова.</p><a class="bl-more" href="/blog/">Читати статтю</a></div></article><article class="bl-card"><a class="bl-cover" href="/blog/" tabindex="-1"><span class="bl-tag">Тема статті</span></a><div class="bl-body"><time>ДД.ММ.РРРР</time><h3><a href="/blog/">Назва статті, яка займе один-два рядки</a></h3><p>Короткий анонс статті на дві-три речення. Текст з’явиться, коли стаття буде готова.</p><a class="bl-more" href="/blog/">Читати статтю</a></div></article><article class="bl-card"><a class="bl-cover" href="/blog/" tabindex="-1"><span class="bl-tag">Тема статті</span></a><div class="bl-body"><time>ДД.ММ.РРРР</time><h3><a href="/blog/">Назва статті, яка займе один-два рядки</a></h3><p>Короткий анонс статті на дві-три речення. Текст з’явиться, коли стаття буде готова.</p><a class="bl-more" href="/blog/">Читати статтю</a></div></article><article class="bl-card"><a class="bl-cover" href="/blog/" tabindex="-1"><span class="bl-tag">Тема статті</span></a><div class="bl-body"><time>ДД.ММ.РРРР</time><h3><a href="/blog/">Назва статті, яка займе один-два рядки</a></h3><p>Короткий анонс статті на дві-три речення. Текст з’явиться, коли стаття буде готова.</p><a class="bl-more" href="/blog/">Читати статтю</a></div></article><article class="bl-card"><a class="bl-cover" href="/blog/" tabindex="-1"><span class="bl-tag">Тема статті</span></a><div class="bl-body"><time>ДД.ММ.РРРР</time><h3><a href="/blog/">Назва статті, яка займе один-два рядки</a></h3><p>Короткий анонс статті на дві-три речення. Текст з’явиться, коли стаття буде готова.</p><a class="bl-more" href="/blog/">Читати статтю</a></div></article><article class="bl-card"><a class="bl-cover" href="/blog/" tabindex="-1"><span class="bl-tag">Тема статті</span></a><div class="bl-body"><time>ДД.ММ.РРРР</time><h3><a href="/blog/">Назва статті, яка займе один-два рядки</a></h3><p>Короткий анонс статті на дві-три речення. Текст з’явиться, коли стаття буде готова.</p><a class="bl-more" href="/blog/">Читати статтю</a></div></article></div></div></section><footer class="ft" id="contacts"><div class="w"><div><h3>Контакти</h3><p><a href="tel:+380992515087">+38 (099) 251 50 87</a></p><p><a href="https://www.instagram.com/oleg_adwokat/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=100087526713738" target="_blank" rel="noopener">Facebook</a></p></div><div><h3>Графік роботи</h3><p>Пн–Пт<br>9:00 — 18:00</p></div><div><h3>Корисні статті</h3><ul><li><a href="/blog/">Блог: усі статті</a></li><li><a href="/turbo-hroshi-kredyty-borhy-kolektory/">Турбо Гроші: кредити, борги, колектори та правовий захист</a></li><li><a href="/pryvatni-kredytory-v-ukraini/">Приватні кредитори в Україні: юридичний супровід та права боржників</a></li></ul></div></div><div class="copy">© Бондар Олег Олексійович</div></footer></div>
+<!-- /wp:html -->
