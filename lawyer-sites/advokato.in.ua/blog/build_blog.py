@@ -26,19 +26,8 @@ CSS = """
 .kv .bar{display:block;width:60px;height:3px;background:#fff;margin:18px 0 0}
 .kv .btn{display:inline-block;padding:15px 30px;border:1px solid #fff;color:#fff;font:400 14px/1 Lato,sans-serif;letter-spacing:.08em;text-transform:uppercase;background:transparent;transition:.2s}
 .kv .btn:hover{background:#fff;color:var(--slate)}
-/* верхня смуга з меню (на сайті меню немає, тут мінімальне) */
-.kv .top{position:absolute;z-index:5;left:0;right:0;top:0;padding:22px 0}
-.kv .top .w{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.kv .logo{font:700 20px/1 'Noto Serif',serif;color:#fff}
-.kv .menu{display:flex;gap:30px;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
-.kv .menu a{padding:6px 0;border-bottom:1px solid transparent}.kv .menu a:hover,.kv .menu a.cur{border-bottom-color:#fff}
-.kv .menu-cb{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
-.kv .burger{display:none;width:42px;height:42px;border:1px solid #fff;cursor:pointer;position:relative}
-.kv .burger i,.kv .burger i::before,.kv .burger i::after{content:"";position:absolute;left:10px;width:20px;height:2px;background:#fff}
-.kv .burger i{top:20px}.kv .burger i::before{left:0;top:-7px}.kv .burger i::after{left:0;top:7px}
-.kv .menu-cb:checked ~ .burger i{background:transparent}.kv .menu-cb:checked ~ .burger i::before{top:0;transform:rotate(45deg)}.kv .menu-cb:checked ~ .burger i::after{top:0;transform:rotate(-45deg)}
 /* hero: дві половини, як на головній сайту */
-.kv .hero{position:relative;background:linear-gradient(90deg,var(--rose) 0 50%,var(--char) 50% 100%);padding:130px 0 80px}
+.kv .hero{position:relative;background:linear-gradient(90deg,var(--rose) 0 50%,var(--char) 50% 100%);padding:150px 0 90px}
 .kv .hero .w{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .kv .hero h1{font-size:clamp(38px,5vw,60px)}
 .kv .hero .sub{margin-top:22px;font:700 17px/1.4 Lato,sans-serif;color:#fff}
@@ -48,7 +37,7 @@ CSS = """
 .kv .hero .ph img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:28px;display:block;box-shadow:0 24px 50px rgba(0,0,0,.35)}
 /* секція з картками */
 .kv .sec{padding:80px 0 90px;background:var(--slate)}
-.kv .sec.pre{padding-top:120px}
+.kv .sec.pre{padding-top:140px}
 .kv .sec h2{font-size:clamp(30px,4vw,50px);text-align:center}
 .kv .sec .bar{margin:18px auto 0}
 .kv .sec .lead2{max-width:640px;margin:20px auto 0;text-align:center}
@@ -71,10 +60,41 @@ CSS = """
 .kv .ft h3{font-size:20px;margin-bottom:18px}
 .kv .ft p,.kv .ft li{font-size:15px;margin-bottom:8px}
 .kv .ft a{color:var(--rose)}.kv .ft a:hover{color:#fff}
-@media(max-width:900px){.kv .hero{background:linear-gradient(180deg,var(--rose) 0 62%,var(--char) 62% 100%)}.kv .hero .w{grid-template-columns:1fr}.kv .hero .ph{justify-self:start;width:min(100%,360px)}.kv .bl-g{grid-template-columns:repeat(2,minmax(0,1fr))}.kv .ft .w{grid-template-columns:1fr;gap:28px}
- .kv .burger{display:block}.kv .menu{display:none}.kv .menu-cb:checked ~ .menu{display:flex;flex-direction:column;gap:0;position:absolute;top:70px;left:16px;right:16px;background:var(--char);padding:10px;border:1px solid rgba(255,255,255,.25)}.kv .menu-cb:checked ~ .menu a{padding:14px 12px}}
+@media(max-width:900px){.kv .hero{background:linear-gradient(180deg,var(--rose) 0 62%,var(--char) 62% 100%)}.kv .hero .w{grid-template-columns:1fr}.kv .hero .ph{justify-self:start;width:min(100%,360px)}.kv .bl-g{grid-template-columns:repeat(2,minmax(0,1fr))}.kv .ft .w{grid-template-columns:1fr;gap:28px}}
 @media(max-width:620px){.kv .bl-g{grid-template-columns:minmax(0,1fr);gap:16px}.kv .sec{padding:60px 0 70px}.kv .bl-body{padding:18px 18px 22px}}
 """
+
+
+HDR_CSS = """
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+.kvh{position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(66,66,66,.96);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.18);font-family:Lato,sans-serif}
+body.admin-bar .kvh{top:32px}@media(max-width:782px){body.admin-bar .kvh{top:46px}}
+.kvh *{box-sizing:border-box}.kvh a{color:#fff;text-decoration:none;border:0;box-shadow:none}
+.kvh .in{max-width:1280px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.kvh .logo{font:700 20px/1 'Noto Serif',serif;white-space:nowrap}
+.kvh .menu{display:flex;gap:26px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-left:auto}
+.kvh .menu a{padding:6px 0;border-bottom:1px solid transparent;white-space:nowrap}.kvh .menu a:hover,.kvh .menu a.cur{border-bottom-color:#fff}
+.kvh .cta{padding:11px 20px;border:1px solid #fff;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:.2s}.kvh .cta:hover{background:#fff;color:#424242}.kvh .cta:hover{color:#424242}
+.kvh .cb{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.kvh .burger{display:none;width:42px;height:42px;border:1px solid #fff;cursor:pointer;position:relative;flex:none}
+.kvh .burger i,.kvh .burger i::before,.kvh .burger i::after{content:"";position:absolute;left:10px;width:20px;height:2px;background:#fff}
+.kvh .burger i{top:20px}.kvh .burger i::before{left:0;top:-7px}.kvh .burger i::after{left:0;top:7px}
+.kvh .cb:checked ~ .burger i{background:transparent}.kvh .cb:checked ~ .burger i::before{top:0;transform:rotate(45deg)}.kvh .cb:checked ~ .burger i::after{top:0;transform:rotate(-45deg)}
+@media(max-width:1060px){.kvh .cta{display:none}.kvh .menu{gap:18px}}
+@media(max-width:860px){.kvh .in{height:60px}.kvh .burger{display:block;margin-left:auto}.kvh .menu{display:none;margin:0}
+ .kvh .cb:checked ~ .menu{display:flex;flex-direction:column;gap:0;position:absolute;top:60px;left:0;right:0;background:#424242;padding:8px 16px 16px;border-top:1px solid rgba(255,255,255,.18)}
+ .kvh .cb:checked ~ .menu a{padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}.kvh .cb:checked ~ .menu a:last-child{border-bottom:0}}
+"""
+
+def header(prefix='/', cur=''):
+    """Фіксована шапка з навігацією. prefix '' для головної (якорі на тій самій сторінці), '/' для інших."""
+    p = prefix
+    def a(href, text, key=''):
+        return f'<a href="{href}"' + (' class="cur"' if cur == key and key else '') + f'>{text}</a>'
+    return ('<div class="kvh"><div class="in"><a class="logo" href="/">Коваленко Н. О.</a><input type="checkbox" id="kvhm" class="cb" aria-hidden="true" tabindex="-1">'
+            '<nav class="menu" aria-label="Меню">' + a(p + '#about', 'Освіта') + a(p + '#experience', 'Досвід') + a(p + '#results', 'Результати') +
+            a(p + '#reviews', 'Відгуки') + a('/blog/', 'Блог', 'blog') + a(p + '#contacts', 'Контакти') + '</nav>'
+            f'<a class="cta" href="{TG}" target="_blank" rel="noopener">Консультація</a><label for="kvhm" class="burger" aria-label="Меню"><i></i></label></div></div>')
 
 def items():
     if ARTICLES: return ARTICLES
@@ -90,11 +110,6 @@ def card(a):
     dt = f'<time datetime="{d[6:]}-{d[3:5]}-{d[:2]}">{d}</time>' if slug else f'<time>{d}</time>'
     return (f'<article class="bl-card"><a class="bl-cover" href="{u}" tabindex="-1">{img}<span class="bl-tag">{e(topic)}</span></a>'
             f'<div class="bl-body">{dt}<h3><a href="{u}">{e(title)}</a></h3><p>{e(ann)}</p><a class="bl-more" href="{u}">Читати статтю</a></div></article>')
-
-def top(cur):
-    return ('<div class="top"><div class="w"><a class="logo" href="/">Коваленко Н. О.</a><input type="checkbox" id="kvm" class="menu-cb" aria-hidden="true" tabindex="-1">'
-            f'<nav class="menu" aria-label="Меню"><a href="/">Головна</a><a href="/blog/"{" class=\"cur\"" if cur=="blog" else ""}>Блог</a><a href="#contacts">Контакти</a></nav>'
-            '<label for="kvm" class="burger" aria-label="Меню"><i></i></label></div></div>')
 
 FOOT = ('<footer class="ft" id="contacts"><div class="w"><div><h3>Контакти</h3><p><a href="tel:+380508202176">+38 (050) 820-21-76</a></p>'
         f'<p><a href="{TG}" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.facebook.com/profile.php?id=100087439299448" target="_blank" rel="noopener">Facebook</a></p></div>'
@@ -117,10 +132,10 @@ def hub():
     hero = ('<header class="hero"><div class="w"><div><h1>Мої статті</h1><span class="bar"></span><p class="sub">Юрист з питань<br>банкрутства фізичних осіб</p>'
             f'<p class="lead">{LEAD}</p><a class="btn" href="{TG}" target="_blank" rel="noopener">Безкоштовна консультація</a></div>'
             f'<div class="ph"><img src="{PORTRAIT}" alt="Коваленко Наталія Олександрівна, юрист з питань банкрутства фізичних осіб" width="640" height="640"></div></div></header>')
-    return f'<!-- wp:html -->\n<style>{CSS}{hide(HUB_ID)}</style>\n<div class="kv">{top("blog")}{hero}{section(False, 99)}{FOOT}</div>\n<!-- /wp:html -->'
+    return f'<!-- wp:html -->\n<style>{CSS}{HDR_CSS}{hide(HUB_ID)}</style>\n{header("/", "blog")}<div class="kv">{hero}{section(False, 99)}{FOOT}</div>\n<!-- /wp:html -->'
 
 def preview():
-    return f'<!-- wp:html -->\n<style>{CSS}{hide(PREVIEW_ID)}</style>\n<div class="kv">{top("")}{section(True, 3, True)}{FOOT}</div>\n<!-- /wp:html -->'
+    return f'<!-- wp:html -->\n<style>{CSS}{HDR_CSS}{hide(PREVIEW_ID)}</style>\n{header("/")}<div class="kv">{section(True, 3, True)}{FOOT}</div>\n<!-- /wp:html -->'
 
 def snippet():
     return f'<style>{CSS}</style>\n<div class="kv">{section(True, 3)}</div>'
