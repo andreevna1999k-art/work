@@ -1,0 +1,14 @@
+/* мобільне меню (бургер на <details>, без JS) */
+.gv .m-menu{display:none}
+@media(max-width:860px){
+ .gv .nav{justify-content:space-between}
+ .gv .m-menu{display:block}
+ .gv .m-menu summary{list-style:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--cream);cursor:pointer;-webkit-tap-highlight-color:transparent}
+ .gv .m-menu summary::-webkit-details-marker{display:none}
+ .gv .m-menu svg{width:22px;height:22px}
+ .gv .m-menu .ic-x{display:none}.gv .m-menu[open] .ic-x{display:block}.gv .m-menu[open] .ic-bars{display:none}
+ .gv .m-panel{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:20;background:var(--cream);border-radius:28px;box-shadow:var(--sh);padding:10px;display:grid;gap:2px}
+ .gv .m-panel a:not(.btn){display:block;padding:15px 20px;border-radius:18px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+ .gv .m-panel a:not(.btn):active{background:var(--cream-2)}
+ .gv .m-panel .btn{margin-top:6px;width:100%;justify-content:space-between}
+}

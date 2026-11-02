@@ -1,0 +1,48 @@
+/* Тема плагіна відгуків (WP Personal Reviews, шорткод react_reviews) у стилі S2 Khaki Light. Лише оформлення, плагін не змінюється. */
+.uc .rv-plugin{margin-top:40px;padding-top:36px;border-top:1px solid rgba(210,196,143,.22)}
+.uc .rv-plugin-lead{margin:0 0 6px;color:#C9C8C0;font-size:15px;max-width:760px}
+.uc .react-personal-reviews{color:#fff;font-family:'Montserrat',system-ui,sans-serif}
+.uc .personal-reviews-container{display:flex;flex-direction:column;max-width:none;padding:0;margin:0}
+.uc .personal-reviews-container>.review-form{order:2}
+.uc .react-personal-reviews .loading{color:#A9A89F;padding:30px 0}
+/* картки відгуків */
+.uc .carousel-container{padding:18px 0 64px!important;margin-bottom:0!important}
+.uc .carousel-slides>div{display:flex}
+.uc .review-card,.uc .review-card.list-view{width:100%;background:var(--panel);color:var(--tx);border:0;border-radius:28px;padding:26px 24px;box-shadow:none;transform:none;transition:transform .2s}
+.uc .review-card:hover{transform:translateY(-3px);box-shadow:none}
+.uc .review-card h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;line-height:1.25;margin:0 0 6px;color:var(--dark)}
+.uc .review-card .rating{color:var(--kh);font-size:17px;letter-spacing:.12em;margin:0 0 12px}
+.uc .review-card .review-text{color:var(--tx2);font-size:15px;line-height:1.6;margin:0 0 14px}
+.uc .review-card .social-link{color:var(--kh-t);font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(126,112,56,.4)}
+.uc .review-card .review-date{color:var(--tx2);font-size:13px;margin-top:14px;padding-top:12px;border-top:1px solid #E2DED0}
+.uc .reviews-list{gap:18px}
+/* стрілки й крапки каруселі */
+.uc .carousel-button-left,.uc .carousel-button-right{width:44px;height:44px;background:var(--kh-l)!important;border:0!important;color:var(--dark)!important;box-shadow:none}
+.uc .carousel-button-left,.uc .carousel-button-right{top:auto!important;bottom:6px;transform:none!important}
+.uc .carousel-button-left{left:0!important}.uc .carousel-button-right{right:0!important}
+.uc .carousel-button-left svg,.uc .carousel-button-right svg{stroke:var(--dark)}
+.uc .carousel-dots{bottom:21px!important;height:14px!important;width:100%!important;flex-wrap:wrap;gap:4px;left:0;align-items:center}
+.uc .carousel-dot{background:rgba(210,196,143,.38)!important;border:0!important}
+.uc .carousel-dot[style*="255, 255, 255"]{background:var(--kh-l)!important}
+/* форма «Залишити відгук» */
+.uc .review-form{max-width:720px;width:100%;margin:8px auto 0;padding:34px 32px;background:var(--panel);color:var(--tx);border:0;border-radius:28px;box-shadow:none}
+.uc .review-form h3{font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;color:var(--dark);margin:0 0 22px}
+.uc .form-group{margin-bottom:14px;position:relative}
+.uc .form-group input,.uc .form-group textarea{width:100%;padding:15px 22px;border:1px solid #E2DED0;border-radius:999px;background:#fff;color:var(--tx);font:500 15px/1.4 'Montserrat',sans-serif;box-sizing:border-box}
+.uc .form-group textarea{border-radius:24px;min-height:130px}
+.uc .form-group>div{width:240px!important;max-width:100%}
+.uc .form-group select{width:100%!important;padding:15px 44px 15px 22px!important;border:1px solid #E2DED0!important;border-radius:999px!important;background:#fff!important;color:var(--tx);font:500 15px/1.4 'Montserrat',sans-serif;box-sizing:border-box}
+.uc .form-group input:focus,.uc .form-group textarea:focus,.uc .form-group select:focus{outline:none;border-color:var(--kh);box-shadow:0 0 0 3px rgba(122,109,60,.18)}
+.uc .reviews-submit-button,.uc .review-form button[type="submit"]{display:inline-flex;align-items:center;gap:12px;padding:16px 34px;border:0;border-radius:999px;background:var(--kh);color:#fff;font:600 15px/1 'Montserrat',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.uc .reviews-submit-button:hover,.uc .review-form button[type="submit"]:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(122,109,60,.35)}
+.uc .reviews-submit-button:disabled{background:#A9A27E;cursor:not-allowed;transform:none;box-shadow:none}
+.uc .review-form .message{margin-top:14px;padding:14px 18px;border-radius:18px;font-size:14.5px}
+.uc .review-form .message.success{background:#E7F0E2;color:#1F4A25;border:1px solid #BCD4B4}
+.uc .review-form .message.error{background:#F8E3E3;color:#7A1E1E;border:1px solid #E5B7B7}
+@media(max-width:860px){
+ .uc .carousel-container{padding:12px 0 84px!important}
+ .uc .carousel-button-left,.uc .carousel-button-right{bottom:16px;width:42px;height:42px}
+ .uc .carousel-button-left{left:calc(50% - 54px)!important;right:auto!important}.uc .carousel-button-right{right:calc(50% - 54px)!important;left:auto!important}
+ .uc .carousel-dots{display:none!important}
+ .uc .review-form{padding:26px 18px}
+}
