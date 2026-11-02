@@ -10,7 +10,7 @@ cfg = dict(
     portrait='https://jurist-po-ipotechnum-kreditam.kiev.ua/wp-content/uploads/2025/07/ponomarenko-volodymyr-mykhailovych-yuryst-po-kredytam.jpg',
     lead='Пояснюю питання іпотеки, арештів майна та майнових спорів простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.',
     nav=[('Освіта', 'about'), ('Досвід', 'experience'), ('Результати', 'results'), ('Відгуки', 'reviews'), ('Блог', 'blog'), ('Контакти', 'contacts')],
-    btn_style='solid', btn_radius='0', photo_radius='24px', card_radius='12px', shadow='rgba(0,12,48,.12)', placeholders=6, articles=[],
+    btn_style='solid', btn_radius='0', photo_radius='24px', card_radius='12px', shadow='rgba(0,12,48,.12)', placeholders=12, articles=[],
     fonts=dict(head="'Playfair Display',serif", head_weight='400', body="Poppins,sans-serif",
                **{'import': 'https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;500;600&display=swap'}),
     colors=dict(hero_left='#BFE3F2', hero_right='#E8F5FB', hero_text='#000C30', sec_bg='#F2F2F2', sec_title='#000C30', sec_text='#000C30',

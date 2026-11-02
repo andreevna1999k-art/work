@@ -9,7 +9,7 @@ cfg = dict(
     portrait='https://jurist-online.info/wp-content/uploads/2025/07/melnyk-mariia-mykolaivna-yuryst-po-kredytam.jpg',
     lead='Пояснюю питання захисту прав споживачів кредитних послуг, дій МФО та шахрайських кредитів простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.',
     nav=[('Про мене', 'about'), ('Досвід', 'experience'), ('Результати', 'results'), ('Відгуки', 'reviews'), ('Блог', 'blog'), ('Контакти', 'contacts')],
-    btn_style='solid', btn_radius='8px', photo_radius='28px', card_radius='16px', shadow='rgba(102,51,0,.14)', placeholders=6, articles=[],
+    btn_style='solid', btn_radius='8px', photo_radius='28px', card_radius='16px', shadow='rgba(102,51,0,.14)', placeholders=12, articles=[],
     fonts=dict(head="Jost,sans-serif", head_weight='600', body="'DM Sans',sans-serif",
                **{'import': 'https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=DM+Sans:wght@400;700&display=swap'}),
     colors=dict(hero_left='#FCE8CF', hero_right='#FFF6EA', hero_text='#2E1700', sec_bg='#FBF5F1', sec_title='#2E1700', sec_text='#663300',

@@ -10,7 +10,7 @@ cfg = dict(
     portrait='https://bankruptcyukraine.com/wp-content/uploads/2025/07/bondar-oleh-oleksiiovych-yuryst-po-kredytam.jpg',
     lead='Пояснюю питання скасування судових наказів, дій колекторів і захисту боржників простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.',
     nav=[('Освіта', 'about'), ('Досвід', 'experience'), ('Результати', 'results'), ('Відгуки', 'reviews'), ('Блог', 'blog'), ('Контакти', 'contacts')],
-    btn_style='solid', photo_radius='8px', card_radius='6px', placeholders=6, articles=[],
+    btn_style='solid', photo_radius='8px', card_radius='6px', placeholders=12, articles=[],
     fonts=dict(head="Montserrat,sans-serif", head_weight='800', body="'Roboto Condensed',sans-serif",
                **{'import': 'https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto+Condensed:wght@400;700&display=swap'}),
     colors=dict(hero_left='#02176D', hero_right='#E4F7FC', hero_text='#FFFFFF', sec_bg='#E4F7FC', sec_title='#222222', sec_text='#4B4F58',
