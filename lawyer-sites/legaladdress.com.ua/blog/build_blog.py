@@ -5,15 +5,21 @@
 import re, html, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from articles import ARTICLES
+import base64
+from make_covers import svg as cover_svg
 H = os.path.dirname(os.path.abspath(__file__))
 rd = lambda n: open(os.path.join(H, n), encoding='utf-8').read()
 e = html.escape
 
 CSS = """<style>
 .bz .bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.bz .bl-card{display:flex;flex-direction:column;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:26px 26px 24px;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s}
+.bz .bl-card{display:flex;flex-direction:column;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:0 0 24px;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;overflow:hidden}
+.bz .bl-cover{position:relative;display:block;aspect-ratio:8/5;background:var(--brown-dark)}
+.bz .bl-cover img{width:100%;height:100%;object-fit:cover}
+.bz .bl-cover .bl-tag{position:absolute;top:14px;right:14px;background:rgba(43,23,17,.82);color:var(--cream);backdrop-filter:blur(2px)}
+.bz .bl-body{display:flex;flex-direction:column;flex:1;padding:20px 24px 0}
 .bz .bl-card:hover{transform:translateY(-3px)}
-.bz .bl-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:16px;font-size:13.5px;color:var(--ink-soft)}
+.bz .bl-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px;font-size:13.5px;color:var(--ink-soft)}
 .bz .bl-tag{display:inline-block;padding:5px 14px;border-radius:999px;background:rgba(212,178,122,.28);color:var(--brown);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 .bz .bl-card h3{font-size:21px;line-height:1.25;margin:0 0 12px;color:var(--brown);letter-spacing:.02em}
 .bz .bl-card h3 a:hover{color:var(--maroon)}
@@ -23,17 +29,19 @@ CSS = """<style>
 .bz .bl-card .bl-more:hover{color:var(--maroon-600)}
 .bz .bl-more-row{text-align:center;margin-top:38px}
 @media(max-width:1100px){.bz .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.bz .bl-grid{grid-template-columns:minmax(0,1fr);gap:16px}.bz .bl-card{padding:22px 20px 20px}.bz .bl-card h3{font-size:19px}}
+@media(max-width:620px){.bz .bl-grid{grid-template-columns:minmax(0,1fr);gap:16px}.bz .bl-body{padding:18px 20px 0}.bz .bl-card h3{font-size:19px}}
 </style>
 """
 
 def card(a, tag='h3'):
     n, d, slug, topic, title, ann = a
     u = f"/blog/{slug}/"
-    return (f'<article class="bl-card"><div class="bl-meta"><span class="bl-tag">{e(topic)}</span>'
-            f'<time datetime="{d[6:]}-{d[3:5]}-{d[:2]}">{d}</time></div>'
+    src = 'data:image/svg+xml;base64,' + base64.b64encode(cover_svg(n).encode()).decode()
+    return (f'<article class="bl-card"><a class="bl-cover" href="{u}" tabindex="-1" aria-hidden="true">'
+            f'<img src="{src}" alt="" width="1200" height="750" loading="lazy"><span class="bl-tag">{e(topic)}</span></a>'
+            f'<div class="bl-body"><div class="bl-meta"><time datetime="{d[6:]}-{d[3:5]}-{d[:2]}">{d}</time></div>'
             f'<{tag}><a href="{u}">{e(title)}</a></{tag}><p>{e(ann)}</p>'
-            f'<a class="bl-more" href="{u}">Читати статтю</a></article>')
+            f'<a class="bl-more" href="{u}">Читати статтю</a></div></article>')
 
 def add_nav(src, cur=False):
     # пункт меню «Блог» після «Результати» (шапка) і у футері
