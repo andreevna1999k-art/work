@@ -192,7 +192,9 @@ def home_draft(cfg, live, draft_id=None):
     out = [wrap('kvhdr01', f'<style>{hdr_css(cfg)}</style>' + header(cfg, '', ''))] + data[:ri + 1] + \
           [wrap('kvblk01', f'<style>{css(cfg)}</style><div class="kv">{section(cfg, True, 3)}</div>')] + data[ri + 1:] + \
           ([] if 'contacts' in anchors else [wrap('kvanc01', '<span id="contacts" style="display:block;height:0"></span>')])
+    # той самий шаблон, що в живої головної (інакше тема додає заголовок і бокову колонку); якщо в живої шаблон порожній, беремо чистий Canvas
     payload = {"title": "ЧЕРНЕТКА: Головна з шапкою і блоком «Мої статті» (макет)", "slug": "golovna-chernetka-shapka-blog", "status": "draft",
+               "template": live.get('template') or 'elementor_canvas',
                "content": live['content']['raw'], "meta": {k: v for k, v in meta.items() if v not in ('', None, [], {}, False, 0) and not k.startswith('_yoast')}}
     payload["meta"]["_elementor_data"] = json.dumps(out, ensure_ascii=False)
     return post(cfg['site'], 'pages' + (f'/{draft_id}' if draft_id else ''), payload), anchors

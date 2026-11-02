@@ -29,6 +29,7 @@ payload = {
     "title": "ЧЕРНЕТКА: Головна з шапкою і блоком «Мої статті» (макет)",
     "slug": "golovna-chernetka-shapka-blog",
     "status": "draft",
+    "template": "elementor_canvas",
     "content": live['content']['raw'],
     "meta": {k: v for k, v in meta.items() if v not in ('', None, [], {}, False, 0) and not k.startswith('_yoast')},
 }
