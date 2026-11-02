@@ -25,8 +25,8 @@ def card(cfg, a):
 
 def css(cfg):
     c, f = cfg['colors'], cfg['fonts']
-    btn_solid = f".kv .btn{{display:inline-block;padding:15px 30px;background:{c['btn_bg']};color:{c['btn_fg']};font:700 13px/1 {f['body']};letter-spacing:.08em;text-transform:uppercase;border:0;transition:.2s}}.kv .btn:hover{{background:{c['btn_hover']};color:{c['btn_fg']}}}"
-    btn_out = f".kv .btn{{display:inline-block;padding:15px 30px;border:1px solid {c['btn_bg']};color:{c['btn_bg']};font:400 14px/1 {f['body']};letter-spacing:.08em;text-transform:uppercase;background:transparent;transition:.2s}}.kv .btn:hover{{background:{c['btn_bg']};color:{c['btn_fg']}}}"
+    btn_solid = f".kv .btn{{display:inline-block;padding:15px 30px;background:{c['btn_bg']};color:{c['btn_fg']};font:700 13px/1 {f['body']};letter-spacing:.08em;text-transform:uppercase;border:0;border-radius:{cfg.get('btn_radius','0')};transition:.2s}}.kv .btn:hover{{background:{c['btn_hover']};color:{c['btn_fg']}}}"
+    btn_out = f".kv .btn{{display:inline-block;padding:15px 30px;border:1px solid {c['btn_bg']};color:{c['btn_bg']};font:400 14px/1 {f['body']};letter-spacing:.08em;text-transform:uppercase;background:transparent;border-radius:{cfg.get('btn_radius','0')};transition:.2s}}.kv .btn:hover{{background:{c['btn_bg']};color:{c['btn_fg']}}}"
     btn = btn_solid if cfg.get('btn_style', 'solid') == 'solid' else btn_out
     cta_h = (f"background:{c['btn_bg']};color:{c['btn_fg']};border:0;font-weight:700;" if cfg.get('btn_style', 'solid') == 'solid' else f"border:1px solid {c['btn_bg']};")
     return f"""
@@ -52,7 +52,7 @@ def css(cfg):
 .kv .sec .bar{{margin:18px auto 0;background:{c['sec_title']}}}
 .kv .sec .lead2{{max-width:660px;margin:20px auto 0;text-align:center}}
 .kv .bl-g{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px}}
-.kv .bl-card{{display:flex;flex-direction:column;min-width:0;background:{c['card_bg']};border-radius:{cfg.get('card_radius','6px')};overflow:hidden;box-shadow:0 14px 40px rgba(2,23,109,.12);transition:transform .2s}}
+.kv .bl-card{{display:flex;flex-direction:column;min-width:0;background:{c['card_bg']};border-radius:{cfg.get('card_radius','6px')};overflow:hidden;box-shadow:0 14px 40px {cfg.get('shadow','rgba(2,23,109,.12)')};transition:transform .2s}}
 .kv .bl-card:hover{{transform:translateY(-4px)}}
 .kv .bl-cover{{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:linear-gradient(135deg,{c['cover_a']},{c['cover_b']})}}
 .kv .bl-cover img{{width:100%;height:100%;object-fit:cover;display:block}}
@@ -69,15 +69,15 @@ def css(cfg):
 .kv .ft .w{{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}}
 .kv .ft h3{{font-size:20px;margin-bottom:18px;color:{c['footer_title']}}}
 .kv .ft p,.kv .ft li{{font-size:16px;margin-bottom:10px}}
-.kv .ft a{{color:{c['footer_link']}}}.kv .ft a:hover{{color:#fff}}
-.kv .ft .copy{{max-width:1180px;margin:44px auto 0;padding:24px 24px 0;border-top:1px solid rgba(255,255,255,.2);font-size:14px;opacity:.8}}
+.kv .ft a{{color:{c['footer_link']}}}.kv .ft a:hover{{color:{c.get('footer_hover','#fff')}}}
+.kv .ft .copy{{max-width:1180px;margin:44px auto 0;padding:24px 24px 0;border-top:1px solid {c.get('footer_line','rgba(255,255,255,.2)')};font-size:14px;opacity:.85}}
 @media(max-width:900px){{.kv .hero{{background:linear-gradient(180deg,{c['hero_left']} 0 64%,{c['hero_right']} 64% 100%)}}.kv .hero .w{{grid-template-columns:1fr}}.kv .hero .ph{{justify-self:start;width:min(100%,360px)}}.kv .bl-g{{grid-template-columns:repeat(2,minmax(0,1fr))}}.kv .ft .w{{grid-template-columns:1fr;gap:28px}}}}
 @media(max-width:620px){{.kv .bl-g{{grid-template-columns:minmax(0,1fr);gap:16px}}.kv .sec{{padding:60px 0 70px}}.kv .bl-body{{padding:18px 18px 22px}}}}
 """
 
 def hdr_css(cfg):
     c, f = cfg['colors'], cfg['fonts']
-    cta = (f"background:{c['btn_bg']};color:{c['btn_fg']};border:0;font-weight:700;" if cfg.get('btn_style', 'solid') == 'solid' else f"border:1px solid {c['header_text']};")
+    cta = (f"background:{c.get('cta_bg', c['btn_bg'])};color:{c.get('cta_fg', c['btn_fg'])};border:0;border-radius:{cfg.get('btn_radius','0')};font-weight:700;" if cfg.get('btn_style', 'solid') == 'solid' else f"border:1px solid {c['header_text']};")
     return f"""
 html{{scroll-padding-top:90px;scroll-behavior:smooth}}
 .kvh{{position:fixed;top:0;left:0;right:0;z-index:99999;background:{c['header_bg']};border-bottom:1px solid rgba(255,255,255,.18);font-family:{f['body']}}}
@@ -87,7 +87,7 @@ body.admin-bar .kvh{{top:32px}}@media(max-width:782px){{body.admin-bar .kvh{{top
 .kvh .logo{{font:{f['head_weight']} 20px/1 {f['head']};white-space:nowrap}}
 .kvh .menu{{display:flex;gap:26px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-left:auto;font-weight:700}}
 .kvh .menu a{{padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap}}.kvh .menu a:hover,.kvh .menu a.cur{{border-bottom-color:{c['accent']}}}
-.kvh .cta{{padding:11px 20px;{cta}font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:.2s}}.kvh .cta:hover{{background:#fff;color:{c['header_bg']}}}
+.kvh .cta{{padding:11px 20px;{cta}font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:.2s}}.kvh a.cta{{color:{c.get('cta_fg', c['btn_fg'])}}}.kvh .cta:hover{{background:#fff}}.kvh a.cta:hover{{color:{c['header_bg']}}}
 .kvh .cb{{position:absolute;opacity:0;pointer-events:none;width:0;height:0}}
 .kvh .burger{{display:none;width:42px;height:42px;border:1px solid {c['header_text']};cursor:pointer;position:relative;flex:none}}
 .kvh .burger i,.kvh .burger i::before,.kvh .burger i::after{{content:"";position:absolute;left:10px;width:20px;height:2px;background:{c['header_text']}}}
@@ -162,7 +162,7 @@ def upload_pages(cfg):
         res[pid] = {k: j.get(k) for k in ('id', 'status', 'template', 'code', 'message')}
     return res
 
-KEYS = [('Освіта', 'about'), ('Досвід', 'experience'), ('Результат', 'results'), ('Відгук', 'reviews')]
+KEYS = [('Освіта', 'about'), ('Про мене', 'about'), ('Досвід', 'experience'), ('Результат', 'results'), ('Відгук', 'reviews'), ('Контакти', 'contacts')]
 def _texts(el, acc):
     s = el.get('settings', {})
     if not isinstance(s, dict): s = {}
@@ -188,9 +188,10 @@ def home_draft(cfg, live, draft_id=None):
         return {"id": eid, "elType": "container", "settings": {"content_width": "full", "padding": zero, "margin": zero, "flex_gap": {"size": "0", "unit": "px", "column": "0", "row": "0", "isLinked": True}, "flex_direction": "column"},
                 "elements": [{"id": eid + "w", "elType": "widget", "widgetType": "html", "settings": {"html": h, "_margin": zero}, "elements": [], "isInner": False}], "isInner": False}
     ri = anchors.index('results') if 'results' in anchors else (anchors.index('reviews') - 1 if 'reviews' in anchors else len(data) - 1)
+    ri = min(ri, len(data) - 1)
     out = [wrap('kvhdr01', f'<style>{hdr_css(cfg)}</style>' + header(cfg, '', ''))] + data[:ri + 1] + \
           [wrap('kvblk01', f'<style>{css(cfg)}</style><div class="kv">{section(cfg, True, 3)}</div>')] + data[ri + 1:] + \
-          [wrap('kvanc01', '<span id="contacts" style="display:block;height:0"></span>')]
+          ([] if 'contacts' in anchors else [wrap('kvanc01', '<span id="contacts" style="display:block;height:0"></span>')])
     payload = {"title": "ЧЕРНЕТКА: Головна з шапкою і блоком «Мої статті» (макет)", "slug": "golovna-chernetka-shapka-blog", "status": "draft",
                "content": live['content']['raw'], "meta": {k: v for k, v in meta.items() if v not in ('', None, [], {}, False, 0) and not k.startswith('_yoast')}}
     payload["meta"]["_elementor_data"] = json.dumps(out, ensure_ascii=False)
