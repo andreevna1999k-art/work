@@ -6,7 +6,6 @@ import re, html, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from articles import ARTICLES
 import base64
-from make_covers import svg as cover_svg
 H = os.path.dirname(os.path.abspath(__file__))
 rd = lambda n: open(os.path.join(H, n), encoding='utf-8').read()
 e = html.escape
@@ -14,7 +13,7 @@ e = html.escape
 CSS = """<style>
 .bz .bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .bz .bl-card{display:flex;flex-direction:column;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:0 0 24px;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;overflow:hidden}
-.bz .bl-cover{position:relative;display:block;aspect-ratio:8/5;background:var(--brown-dark)}
+.bz .bl-cover{position:relative;display:block;aspect-ratio:3/2;background:var(--brown-dark)}
 .bz .bl-cover img{width:100%;height:100%;object-fit:cover}
 .bz .bl-cover .bl-tag{position:absolute;top:14px;left:14px;background:rgba(43,23,17,.82);color:var(--cream);backdrop-filter:blur(2px)}
 .bz .bl-body{display:flex;flex-direction:column;flex:1;padding:20px 24px 0}
@@ -36,9 +35,9 @@ CSS = """<style>
 def card(a, tag='h3'):
     n, d, slug, topic, title, ann = a
     u = f"/blog/{slug}/"
-    src = 'data:image/svg+xml;base64,' + base64.b64encode(cover_svg(n).encode()).decode()
-    return (f'<article class="bl-card"><a class="bl-cover" href="{u}" tabindex="-1" aria-hidden="true">'
-            f'<img src="{src}" alt="" width="1200" height="750" loading="lazy"><span class="bl-tag">{e(topic)}</span></a>'
+    src = 'data:image/webp;base64,' + base64.b64encode(open(os.path.join(H,'photos',slug+'.webp'),'rb').read()).decode()
+    return (f'<article class="bl-card"><a class="bl-cover" href="{u}" tabindex="-1">'
+            f'<img src="{src}" alt="{e(title)}" width="760" height="507" loading="lazy"><span class="bl-tag">{e(topic)}</span></a>'
             f'<div class="bl-body"><div class="bl-meta"><time datetime="{d[6:]}-{d[3:5]}-{d[:2]}">{d}</time></div>'
             f'<{tag}><a href="{u}">{e(title)}</a></{tag}><p>{e(ann)}</p>'
             f'<a class="bl-more" href="{u}">Читати статтю</a></div></article>')
