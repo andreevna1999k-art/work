@@ -162,7 +162,7 @@ def upload_pages(cfg):
         res[pid] = {k: j.get(k) for k in ('id', 'status', 'template', 'code', 'message')}
     return res
 
-KEYS = [('Освіта', 'about'), ('Про мене', 'about'), ('Досвід', 'experience'), ('Результат', 'results'), ('Відгук', 'reviews'), ('Контакти', 'contacts')]
+KEYS = [('Освіта', 'about'), ('Про мене', 'about'), ('Досвід', 'experience'), ('Результат', 'results'), ('Приклади', 'results'), ('Відгук', 'reviews'), ('Контакти', 'contacts')]
 def _texts(el, acc):
     s = el.get('settings', {})
     if not isinstance(s, dict): s = {}
