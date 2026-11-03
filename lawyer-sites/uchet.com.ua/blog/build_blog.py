@@ -4,6 +4,10 @@
 import os, re, sys, gzip, html, base64
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
 from articles import ARTICLES
+sys.path.insert(0, os.path.join(H, '..', '..', '_blog-kit'))
+import dyn
+PHOTOS = os.path.join(H, 'photos')
+PARENT = 58   # id хабу (батьківська сторінка статей)
 e = html.escape
 rd = lambda n: gzip.open(os.path.join(H, n), 'rt', encoding='utf-8').read()
 
@@ -25,6 +29,7 @@ CSS = """
 .uc .bl-more{margin-top:auto;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--dark)}
 .uc .bl-more::after{content:" \\2192"}
 .uc .bl-more:hover{color:var(--kh-t)}
+.uc .bl-empty{grid-column:1/-1;text-align:center;color:var(--tx2);padding:30px 10px;font-size:18px}
 @media(max-width:1000px){.uc .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.uc .bl-grid{grid-template-columns:minmax(0,1fr);gap:16px}.uc .bl-body{padding:18px 18px 22px}.uc .bl-card h3{font-size:17px}}
 """
@@ -60,7 +65,7 @@ def home():
     s = nav(rd('backup-page9-live-20261102.html.gz'), 2)
     sec = ('<section id="articles"><div class="w"><span class="eyebrow">Блог юриста</span><h2>Мої <em>статті</em></h2>'
            '<p class="lead">Пояснюю питання кредитів, боргів і виїзду за кордон простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.</p>'
-           '<div class="bl-grid">' + ''.join(card(a) for a in ARTICLES[:3]) + '</div>'
+           '<div class="bl-grid" id="blogGrid"></div>' + dyn.script(PARENT, 3, ARTICLES, PHOTOS, cls=dyn.UKR) +
            '<div class="res-cta"><a class="btn" href="/blog/">Усі статті <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div></div></section>\n\n')
     m = '<section style="padding-top:0" id="reviews">'; assert s.count(m) == 1
     return addcss(s.replace(m, sec + m))
@@ -74,8 +79,8 @@ def hub():
     s = s.replace('Обговорити вашу справу', 'Обговорити вашу ситуацію', 1)
     a = s.index('<section id="results">'); b = s.index('</section>', a) + len('</section>')
     sec = ('<section id="articles"><div class="w"><span class="eyebrow">Блог юриста</span><h2>Усі <em>статті</em></h2>'
-           f'<p class="lead">Усього {len(ARTICLES)} статей. Матеріали мають інформаційний характер і не замінюють індивідуальну консультацію.</p>'
-           '<div class="bl-grid">' + '\n'.join(card(x) for x in ARTICLES) + '</div></div></section>')
+           '<p class="lead">Усього <b id="blogCount">0</b> <span id="blogCountLabel">статей</span>. Матеріали мають інформаційний характер і не замінюють індивідуальну консультацію.</p>'
+           '<div class="bl-grid" id="blogGrid"></div>' + dyn.script(PARENT, 100, ARTICLES, PHOTOS, cls=dyn.UKR) + '</div></section>')
     s = s[:a] + sec + s[b:]
     s = re.sub(r'<script>\s*\(function\(\)\{var lb=document.getElementById\(.lb.\).*?</script>', '', s, count=1, flags=re.S)
     s = re.sub(r'<div id="lb" class="lb"[^>]*>.*?</div>\n?', '', s, count=1, flags=re.S)

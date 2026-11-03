@@ -20,7 +20,7 @@ class _Conv(HTMLParser):
         self.out = []; self.meta = {}; self.title = ''
         self.stack = []; self.buf = None; self.started = False
         self.in_h = 0; self.bold = 0; self.a_stack = []; self.skip_list = False; self.after_zmist = False
-        self.table_depth = 0; self.row = 0; self.in_thead = False; self.list_depth = 0; self.li_depth = 0; self.cell = None
+        self.skip_depth = 0; self.table_depth = 0; self.row = 0; self.in_thead = False; self.list_depth = 0; self.li_depth = 0; self.cell = None
     # -- допоміжне
     def w(self, s):
         (self.buf if self.buf is not None else self.out).append(s)
@@ -32,6 +32,8 @@ class _Conv(HTMLParser):
             if self.li_depth or self.cell is not None:   # p в li/td -> inline, але з пробілом між абзацами
                 self.w(' '); return
             self.begin('p'); return
+        if tag in ('span', 'a') and self.skip_depth:
+            self.stack.append(None); return
         if tag == 'span':
             if 'font-weight:700' in st and not self.in_h:
                 self.w('<strong>'); self.bold += 1; self.stack.append('strong')
@@ -43,10 +45,11 @@ class _Conv(HTMLParser):
             ext = href.startswith('http')
             self.w(f'<a href="{html.escape(href, quote=True)}"' + (' target="_blank" rel="noopener"' if ext else '') + '>'); self.stack.append('a'); return
         if tag in ('ul', 'ol'):
-            if self.skip_list: self.stack.append('skip'); return
+            if self.skip_list or self.skip_depth:
+                self.skip_list = False; self.skip_depth += 1; return
             self.list_depth += 1; self.w(f'<{tag}>'); self.stack.append(tag); return
         if tag == 'li':
-            if self.stack and self.stack[-1] == 'skip': return
+            if self.skip_depth: return
             self.li_depth += 1; self.w('<li>'); self.stack.append('li'); return
         if tag == 'table':
             self.table_depth += 1; self.row = 0; self.w('<div class="art-table"><table>'); self.stack.append('table'); return
@@ -73,10 +76,12 @@ class _Conv(HTMLParser):
             t = self.stack.pop()
             if t == 'a': self.w('</a>')
             return
+        if tag in ('ul', 'ol') and self.skip_depth:
+            self.skip_depth -= 1; return
         if tag in ('ul', 'ol') and self.stack:
             t = self.stack.pop()
-            if t == 'skip': self.skip_list = False; return
             self.list_depth -= 1; self.w(f'</{tag}>'); return
+        if tag == 'li' and self.skip_depth: return
         if tag == 'li' and self.stack:
             t = self.stack.pop()
             if t == 'li': self.li_depth -= 1; self.w('</li>')
