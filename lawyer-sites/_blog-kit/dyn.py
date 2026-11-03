@@ -14,7 +14,11 @@ def photo_map(items, photos_dir):
             m[slug]['i'] = 'data:image/webp;base64,' + base64.b64encode(open(p, 'rb').read()).decode()
     return m
 
-def script(parent_id, limit, items, photos_dir, count_id='blogCount', grid_id='blogGrid'):
+LEGAL = dict(card='bl-card', cover='bl-cover', tag='bl-tag', body='bl-body', meta='bl-meta', more='bl-more', empty='bl-empty')
+RADA = dict(card='bc', cover='bp', tag='bt', body='bx', meta=None, more='bl', empty='bc-empty')
+
+def script(parent_id, limit, items, photos_dir, count_id='blogCount', grid_id='blogGrid', cls=None):
+    cls = cls or LEGAL
     data = json.dumps(photo_map(items, photos_dir), ensure_ascii=False)
     return ('<script>(function(){var g=document.getElementById("' + grid_id + '");if(!g)return;var M=' + data + ';var LIM=' + str(limit) + ';'
             'function T(s){var d=document.createElement("div");d.innerHTML=s;return(d.textContent||"").replace(/\\s+/g," ").trim()}'
@@ -23,14 +27,14 @@ def script(parent_id, limit, items, photos_dir, count_id='blogCount', grid_id='b
             'fetch("/wp-json/wp/v2/pages?parent=' + str(parent_id) + '&per_page=100&orderby=date&order=desc&_fields=id,date,link,slug,title,excerpt",{credentials:"omit"})'
             '.then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(a){'
             'var c=document.getElementById("' + count_id + '");if(c){c.textContent=a.length;var lb=document.getElementById("' + count_id + 'Label"),n=a.length%100,k=a.length%10;if(lb)lb.textContent=(n>10&&n<15)||k==0||k>4?"статей":(k==1?"стаття":"статті")}'
-            'if(!a.length){g.appendChild(E("p","bl-empty","Перші статті з’являться найближчим часом."));return}'
+            'if(!a.length){g.appendChild(E("p","' + cls['empty'] + '","Перші статті з’являться найближчим часом."));return}'
             'a.slice(0,LIM).forEach(function(x){var u=new URL(x.link,location.href).pathname,m=M[x.slug]||{t:"Стаття"},ti=T(x.title.rendered);'
-            'var art=E("article","bl-card"),cv=E("a","bl-cover");cv.href=u;cv.tabIndex=-1;'
+            'var art=E("article","' + cls['card'] + '"),cv=E("a","' + cls['cover'] + '");cv.href=u;cv.tabIndex=-1;'
             'if(m.i){var im=new Image();im.src=m.i;im.alt=ti;im.width=760;im.height=507;im.loading="lazy";cv.appendChild(im)}'
-            'cv.appendChild(E("span","bl-tag",m.t));art.appendChild(cv);'
-            'var b=E("div","bl-body"),mt=E("div","bl-meta"),tm=E("time",null,D(x.date));tm.setAttribute("datetime",String(x.date).slice(0,10));mt.appendChild(tm);b.appendChild(mt);'
+            'cv.appendChild(E("span","' + cls['tag'] + '",m.t));art.appendChild(cv);'
+            'var b=E("div","' + cls['body'] + '"),tm=E("time",null,D(x.date));tm.setAttribute("datetime",String(x.date).slice(0,10));' + ('var mt=E("div","' + cls['meta'] + '");mt.appendChild(tm);b.appendChild(mt);' if cls['meta'] else 'b.appendChild(tm);') +
             'var h=E("h3"),l=E("a",null,ti);l.href=u;h.appendChild(l);b.appendChild(h);b.appendChild(E("p",null,T(x.excerpt&&x.excerpt.rendered||"")));'
-            'var mr=E("a","bl-more","Читати статтю");mr.href=u;b.appendChild(mr);art.appendChild(b);g.appendChild(art)})})'
-            '.catch(function(){g.appendChild(E("p","bl-empty","Не вдалося завантажити статті. Спробуйте оновити сторінку."))})})();</script>')
+            'var mr=E("a","' + cls['more'] + '","Читати статтю");mr.href=u;b.appendChild(mr);art.appendChild(b);g.appendChild(art)})})'
+            '.catch(function(){g.appendChild(E("p","' + cls['empty'] + '","Не вдалося завантажити статті. Спробуйте оновити сторінку."))})})();</script>')
 
 EXTRA_CSS = ".bz .bl-empty{grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:30px 10px;font-size:18px}"

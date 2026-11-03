@@ -4,6 +4,10 @@
 import os, re, sys, gzip, html, base64
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
 from articles import ARTICLES
+sys.path.insert(0, os.path.join(H, '..', '..', '_blog-kit'))
+import dyn
+PHOTOS = os.path.join(H, 'photos')
+PARENT = 1942   # id хабу (батьківська сторінка статей)
 e = html.escape
 HUB_ID, HOME_ID = 1942, 1943
 B = 'https://rada-advokat.uz.ua'
@@ -24,6 +28,7 @@ CSS = """
 #kr .bc .bl{margin-top:auto;font-weight:800;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--lime)}
 #kr .bc .bl::after{content:" \\2192"}
 #kr .bwrap{margin-top:0}
+#kr .bc-empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 10px;font-size:18px}
 @media(max-width:1100px){#kr .bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){#kr .bgrid{grid-template-columns:minmax(0,1fr)}}
 """
@@ -52,7 +57,7 @@ def home():
     s = rd('backup-page1901-live-20261102.html.gz').replace('page-id-1901', f'page-id-{HOME_ID}')
     s = nav(s)
     sec = ('<section class="sec art" id="articles"><div class="in"><div class="sh c"><span class="eb">Блог юриста</span><h2>Мої <span class="hl">статті</span></h2></div>'
-           '<div class="bgrid">' + ''.join(card(a) for a in ARTICLES[:3]) + '</div>'
+           '<div class="bgrid" id="blogGrid"></div>' + dyn.script(PARENT, 3, ARTICLES, PHOTOS, cls=dyn.RADA) +
            f'<div class="rmore"><a class="btn" href="{B}/blog/">Усі статті</a></div></div></section>')
     m = '<section class="sec rev" id="reviews">'; assert s.count(m) == 1
     return addcss(s.replace(m, sec + m))
@@ -62,9 +67,9 @@ def hub():
     s = nav(s)
     a = s.index('<div class="rp-in">'); b = s.index('</header><main>')
     s = s[:a] + ('<div class="rp-in"><h1>Мої <span class="lime">статті</span></h1><p class="lead">Пояснюю питання кредитів, боргів і виконавчого провадження простою мовою: що каже закон, як діє виконавець і що варто зробити в першу чергу.</p>'
-                 f'<p class="rp-note"><span><b>{len(ARTICLES)} статей.</b> Матеріали мають інформаційний характер і не замінюють індивідуальну консультацію.</span></p></div>') + s[b:]
+                 f'<p class="rp-note"><span><b><span id="blogCount">0</span> <span id="blogCountLabel">статей</span>.</b> Матеріали мають інформаційний характер і не замінюють індивідуальну консультацію.</span></p></div>') + s[b:]
     a = s.index('<main>'); b = s.index('</main>') + len('</main>')
-    main = ('<main><section class="sec res rp-res" id="articles"><div class="in"><div class="bgrid">' + ''.join(card(x) for x in ARTICLES) + '</div></div></section></main>')
+    main = ('<main><section class="sec res rp-res" id="articles"><div class="in"><div class="bgrid" id="blogGrid"></div>' + dyn.script(PARENT, 100, ARTICLES, PHOTOS, cls=dyn.RADA) + '</div></section></main>')
     s = s[:a] + main + s[b:]
     s = re.sub(r'<script>\s*\(function\(\)\{var root=document\.getElementById\(\'kr\'\).*?</script>', '', s, count=1, flags=re.S)
     s = s.replace('Результати <span', 'Результати <span')  # no-op guard
