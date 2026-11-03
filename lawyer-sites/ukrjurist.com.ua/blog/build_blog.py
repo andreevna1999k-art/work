@@ -4,6 +4,10 @@
 import os, re, sys, gzip, html, base64
 H = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, H)
 from articles import ARTICLES
+sys.path.insert(0, os.path.join(H, '..', '..', '_blog-kit'))
+import dyn
+PHOTOS = os.path.join(H, 'photos')
+PARENT = 57   # id хабу (батьківська сторінка статей)
 e = html.escape
 rd = lambda n: gzip.open(os.path.join(H, n), 'rt', encoding='utf-8').read()
 
@@ -23,6 +27,7 @@ CSS = """
 .gv .bl-more::after{content:" \\2197"}
 .gv .bl-more:hover{color:var(--olive-t)}
 .gv .bl-all{text-align:center;margin-top:38px}
+.gv .bl-empty{grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:30px 10px;font-size:18px}
 @media(max-width:1000px){.gv .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.gv .bl-grid{grid-template-columns:minmax(0,1fr);gap:16px}.gv .bl-body{padding:18px 18px 22px}.gv .bl-card h3{font-size:19px}}
 """
@@ -54,7 +59,7 @@ def home():
     s = rd('backup-page14-live-20261102.html.gz'); s = nav(s)
     sec = ('<section class="band on-cream" id="articles"><div class="wrap"><div class="head"><span class="eyebrow" style="color:var(--olive-t)">Блог юристки</span><h2>Мої статті</h2>'
            '<p class="lead">Пояснюю питання кредитів, боргів і кредитної історії простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.</p></div>'
-           '<div class="bl-grid">' + ''.join(card(a) for a in ARTICLES[:3]) + '</div>'
+           '<div class="bl-grid" id="blogGrid"></div>' + dyn.script(PARENT, 3, ARTICLES, PHOTOS, cls=dyn.UKR) +
            '<div class="bl-all"><a class="btn" href="/blog/">Усі статті</a></div></div></section>\n\n')
     m = '<section class="band on-olive" id="reviews">'; assert s.count(m) == 1
     return addcss(s.replace(m, sec + m))
@@ -69,7 +74,7 @@ def hub():
     s = s.replace('<p class="lead">Довідки кредиторів про виконання зобов’язань і відсутність заборгованості. Персональні дані клієнтів закрито.</p>',
                   '<p class="lead">Пояснюю питання кредитів, боргів і кредитної історії простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.</p>', 1)
     a = s.index('<section class="band on-cream" id="results">'); b = s.index('<section class="band on-cream" id="cta">')
-    sec = ('<section class="band on-cream" id="articles">\n  <div class="wrap">\n    <div class="bl-grid">' + '\n'.join(card(x) for x in ARTICLES) + '</div>\n  </div>\n</section>\n\n')
+    sec = ('<section class="band on-cream" id="articles">\n  <div class="wrap">\n    <div class="bl-grid" id="blogGrid"></div>' + dyn.script(PARENT, 100, ARTICLES, PHOTOS, cls=dyn.UKR) + '\n  </div>\n</section>\n\n')
     s = s[:a] + sec + s[b:]
     ld = ('{"@context": "https://schema.org", "@type": "Blog", "name": "Блог — Гончарук Вікторія Анатолієвна", "description": "%s", "url": "https://ukrjurist.com.ua/blog/", '
           '"author": {"@type": "Person", "@id": "https://ukrjurist.com.ua/#person", "name": "Гончарук Вікторія Анатолієвна", "jobTitle": "Юристка по кредитам", "url": "https://ukrjurist.com.ua/"}}') % desc

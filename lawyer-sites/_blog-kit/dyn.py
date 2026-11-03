@@ -15,6 +15,7 @@ def photo_map(items, photos_dir):
     return m
 
 LEGAL = dict(card='bl-card', cover='bl-cover', tag='bl-tag', body='bl-body', meta='bl-meta', more='bl-more', empty='bl-empty')
+UKR = dict(card='bl-card', cover='bl-cover', tag='bl-tag', body='bl-body', meta=None, more='bl-more', empty='bl-empty')
 RADA = dict(card='bc', cover='bp', tag='bt', body='bx', meta=None, more='bl', empty='bc-empty')
 
 def script(parent_id, limit, items, photos_dir, count_id='blogCount', grid_id='blogGrid', cls=None):
