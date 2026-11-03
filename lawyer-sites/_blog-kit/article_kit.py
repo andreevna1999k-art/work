@@ -126,12 +126,13 @@ def convert(doc_html):
 
 def faq(body):
     """Пари (питання, відповідь) із розділу «Часті запитання»: h3 після h2 з таким заголовком."""
-    m = re.search(r'<h2[^>]*>[^<]*(?:Часті запитання|Питання й відповіді|FAQ)[^<]*</h2>(.*?)(?=<h2|$)', body, re.S | re.I)
+    m = re.search(r'<h2[^>]*>[^<]*(?:Часті запитання|Часті питання|Поширені запитання|Питання та відповіді|Питання й відповіді|FAQ)[^<]*</h2>(.*?)(?=<h2|$)', body, re.S | re.I)
     if not m: return []
     pairs = []
     for q, a in re.findall(r'<h3[^>]*>(.*?)</h3>(.*?)(?=<h3|$)', m.group(1), re.S):
         ans = re.sub(r'<[^>]+>', ' ', a); ans = html.unescape(re.sub(r'\s+', ' ', ans)).strip()
-        if ans: pairs.append((html.unescape(re.sub(r'<[^>]+>', '', q)).strip(), ans))
+        qq = html.unescape(re.sub(r'<[^>]+>', '', q)).strip()
+        if ans and qq.endswith('?'): pairs.append((html.unescape(re.sub(r'<[^>]+>', '', q)).strip(), ans))
     return pairs
 
 ART_CSS = """

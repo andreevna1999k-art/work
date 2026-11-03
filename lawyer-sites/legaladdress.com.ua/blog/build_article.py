@@ -9,6 +9,7 @@ from articles import ARTICLES
 n = int(sys.argv[1]); doc = open(sys.argv[2], encoding='utf-8').read()
 a = [x for x in ARTICLES if x[0] == n][0]
 art = K.convert(doc)
+art['body'] = art['body'].replace('[ДАТА ОНОВЛЕННЯ]', a[1])   # у документі №12 лишився плейсхолдер: підставляємо дату публікації
 hub = open(os.path.join(H, 'out/blog-hub.html'), encoding='utf-8').read()
 d, mo, y = a[1].split('.')
 meta = dict(site_url='https://legaladdress.com.ua', slug=a[2], date_iso=f'{y}-{mo}-{d}T09:00:00', topic=a[3], author_name='Бойчук Артем Валерійович',
