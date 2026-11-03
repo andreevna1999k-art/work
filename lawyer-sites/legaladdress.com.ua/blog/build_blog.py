@@ -3,14 +3,20 @@
 Вхід: backup-page13-live-*.html (головна), backup-page48-live-*.html (каркас хабу). Вихід: out/*.html
 Живі сторінки НЕ чіпає."""
 import re, html, sys, os
-sys.path.insert(0, os.path.dirname(__file__))
+H = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, H)
 from articles import ARTICLES
+sys.path.insert(0, os.path.join(H, '..', '..', '_blog-kit'))
+import dyn
+PHOTOS = os.path.join(H, 'photos')
+PARENT = 94
 import base64
 H = os.path.dirname(os.path.abspath(__file__))
 rd = lambda n: open(os.path.join(H, n), encoding='utf-8').read()
 e = html.escape
 
 CSS = """<style>
+.bz .bl-empty{grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:30px 10px;font-size:18px}
 .bz .bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .bz .bl-card{display:flex;flex-direction:column;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:0 0 24px;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;overflow:hidden}
 .bz .bl-cover{position:relative;display:block;aspect-ratio:3/2;background:var(--brown-dark)}
@@ -57,7 +63,7 @@ def home():
     blk = ('<!-- 4б · МОЇ СТАТТІ -->\n<section id="articles"><div class="wrap">\n<div class="panel on-white pad">\n'
            '<div class="head res-head"><span class="res-badge">Блог юриста</span>\n<h2 class="res-title">Мої статті</h2>\n'
            '<p class="lead">Пояснюю кредитні питання простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.</p></div>\n'
-           '<div class="bl-grid">' + ''.join(card(a) for a in ARTICLES[:3]) + '</div>\n'
+           '<div class="bl-grid" id="blogGrid"></div>' + dyn.script(PARENT, 3, ARTICLES, PHOTOS) + '\n'
            '<div class="bl-more-row"><a class="btn ghost dark" href="/blog/">Усі статті</a></div>\n</div>\n</div></section>\n')
     # блок — після «Результати», перед lightbox
     m = '<div id="lb" class="lb" hidden="">'
@@ -82,12 +88,12 @@ def hub():
     a = s.index('<div class="rp-head">'); b = s.index('</div>\n</div>\n</div></section>', a)
     head = ('<div class="rp-head"><span class="res-badge">Блог юриста</span>\n    <h1>Мої <span>статті</span></h1>\n'
             '    <p class="lead">Пояснюю кредитні питання простою мовою: що каже закон, як діє суд і що варто зробити в першу чергу.</p>\n'
-            f'    <span class="rp-count"><b>{len(ARTICLES)}</b> статей</span>\n  ')
+            f'    <span class="rp-count"><b id="blogCount">0</b> <span id="blogCountLabel">статей</span></span>\n  ')
     s = s[:a] + head + s[b:]
     # список
     a = s.index('<section id="results">'); b = s.index('<section><div class="wrap">\n<div class="panel pad rp-cta">')
-    lst = ('<section id="articles"><div class="wrap">\n<div class="panel on-white pad res-panel rp-list">\n<div class="bl-grid">\n'
-           + '\n'.join(card(x) for x in ARTICLES) + '\n</div>\n</div></div></section>\n\n')
+    lst = ('<section id="articles"><div class="wrap">\n<div class="panel on-white pad res-panel rp-list">\n<div class="bl-grid" id="blogGrid"></div>\n'
+           + dyn.script(PARENT, 100, ARTICLES, PHOTOS) + '\n</div></div></section>\n\n')
     s = s[:a] + lst + s[b:]
     # CTA
     s = s.replace('Хочете такий самий результат?', 'Потрібна допомога з кредитом?')
