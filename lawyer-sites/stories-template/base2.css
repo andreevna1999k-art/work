@@ -1,0 +1,23 @@
+@import url(fonts/all.css);
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{position:relative;font-family:'Noto Sans',sans-serif;font-weight:600;color:#F7F4EC;-webkit-font-smoothing:antialiased}
+.abs{position:absolute}
+.serif{font-family:'Noto Serif',serif;font-weight:900}
+.cond{font-family:'Roboto Condensed',sans-serif;font-weight:900}
+.sans{font-family:'Noto Sans',sans-serif;font-weight:600}
+.full{left:0;top:0;width:1080px;height:1920px}
+.bk{position:absolute;border-radius:50%;filter:blur(34px)}
+.grain{left:0;top:0;width:1080px;height:1920px;opacity:.2;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.4 -.15'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.top{left:72px;width:936px;top:258px;display:flex;justify-content:space-between;align-items:flex-end;font-size:25px;letter-spacing:3px;text-transform:uppercase;line-height:1}
+.top span{padding-bottom:12px}
+.top .k{border-bottom:3px solid var(--acc)}
+.top .d{opacity:.85;border-bottom:3px solid rgba(247,244,236,.35)}
+.giant{left:72px;width:936px;text-align:center;line-height:.8;white-space:nowrap}
+.co{width:262px}
+.co::before{content:'';display:block;width:60px;border-top:5px solid var(--acc);margin-bottom:16px}
+.co b{display:block;font-weight:600;color:var(--ct,#fff);font-size:28px;letter-spacing:1.5px;line-height:1.12;text-transform:uppercase;margin-bottom:9px}
+.co p{font-size:25px;line-height:1.27;font-weight:600;color:var(--cd,#E9E5DA)}
+.byline{left:72px;top:1452px;font-size:23px;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;opacity:.9}
+.byline i{font-style:normal;color:var(--acc)}
+.plate{left:72px;top:1496px;height:84px;padding:0 30px;background:var(--acc);color:var(--pt,#fff);font-size:46px;display:flex;align-items:center;white-space:nowrap}

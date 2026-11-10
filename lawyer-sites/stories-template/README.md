@@ -5,3 +5,9 @@
 `NODE_PATH=$(npm root -g) node render.js a2 b2 c2 d2 e2` — PNG з'являться поруч.
 Вирізка: `pip install rembg`, модель `isnet-general-use`, alpha matting (див. історію сесії).
 Шрифти: Noto Serif Black, Roboto Condensed Black, Noto Sans SemiBold (локально в fonts/).
+
+## v3 (поточний стиль, референси Forbes / Business / Business Frontiers)
+f1…f5.html + base2.css + fit.js. Гігантське слово за головою (`.fit`, підганяється під 936 px), атмосферний фон (боке, глоу, зерно),
+4 виноски з тексту статті (`.co`), заголовок, підзаголовок, рядок автора, плашка заклику. Кожен юрист має свою палітру/акцент;
+5 обкладинок одного юриста — один каркас, різні колір, кадр, шрифт гігантського слова. Усі виноски беруться ТІЛЬКИ з тексту статті.
+Рендер: `NODE_PATH=$(npm root -g) node render.js f1 f2 f3 f4 f5`. Фото: `cut2x.png` (вирізка, 2x, різкість).

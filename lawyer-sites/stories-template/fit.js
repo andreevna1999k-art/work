@@ -1,0 +1,1 @@
+document.fonts.ready.then(()=>{document.querySelectorAll('.fit').forEach(e=>{const w=+e.dataset.w;e.style.fontSize='100px';e.style.display='inline-block';const k=w/e.getBoundingClientRect().width;e.style.fontSize=(100*k)+'px'})});
