@@ -13,6 +13,14 @@ DATES = ["2026-11-10","2026-11-12","2026-11-13","2026-11-16","2026-11-18","2026-
 TAGS = ["Робота і борги","Права водія","Батьківські права","Колектори","Подружжя","Права боржника","Закон і суд","Особистий бюджет","Втрата роботи","Наслідки несплати","Кредит за кордоном","Позовна давність"]
 TPL = (R / "template-page54.html").read_text(encoding="utf-8")
 idx = json.load(open(R / "src/index.json"))
+import base64
+ALTS = json.load(open(R / "image-alts.json"))   # {"NN": "alt"}; файл img/NN.webp (1200x800)
+IMAGES = {}
+for rec in idx:
+    n = f"{rec[0]:02d}"
+    p = R / "img" / f"{n}.webp"
+    if n in ALTS and p.exists():
+        IMAGES[rec[1]] = {"src": "data:image/webp;base64," + base64.b64encode(p.read_bytes()).decode(), "alt": ALTS[n]}
 
 def ui(d): y,m,dd = d.split("-"); return f"{dd}.{m}.{y}"
 
@@ -47,6 +55,11 @@ def build(i, url, h1_unused, src_file):
         exc = (exc + " " + x).strip()
         if len(exc) >= 120: break
     if len(exc) > 230: exc = exc[:227].rsplit(" ", 1)[0] + "…"
+    fig = IMAGES.get(url)
+    if fig:
+        f = (f'<figure class="art-fig" style="margin:30px 0"><img src="{fig["src"]}" alt="{html.escape(fig["alt"], quote=True)}" width="1200" height="800" '
+             'loading="lazy" decoding="async" style="display:block;width:100%;height:auto;border-radius:24px"></figure>')
+        body = body.replace('<h2 id="s1">', f + '\n<h2 id="s1">', 1)
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": h1, "description": desc, "inLanguage": "uk", "datePublished": date + "T09:00:00+02:00",
          "mainEntityOfPage": f"{SITE}/blog/{url}/", "author": {"@id": SITE + "/#person"}, "isPartOf": {"@type": "Blog", "url": SITE + "/blog/"}}]}
