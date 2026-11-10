@@ -1,0 +1,52 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:'Open Sans',sans-serif;
+ background:linear-gradient(180deg,#EBEBF4 0%,#D2D1E6 28%,#B9B8D6 56%,#B1B0D1 57.5%,#1E2142 62%,#181A31 100%)}
+.mast{position:absolute;left:72px;top:395px;font-family:'Prata',serif;font-size:152px;line-height:1;color:#181A31;letter-spacing:2px}
+.mastsub{position:absolute;left:72px;top:548px;font-weight:700;font-size:22px;letter-spacing:.14em;color:#181A31}
+.badge{position:absolute;right:62px;top:250px;width:270px;height:240px}
+.badge svg{position:absolute;inset:0}
+.badge .b1{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:84px;text-align:center;font-family:'Prata',serif;color:#181A31;font-size:34px;line-height:1.1}
+.badge .b2{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:140px;text-align:center;font-family:'Prata',serif;color:#8A6128;font-size:25px;letter-spacing:.06em}
+.photo{position:absolute;left:200px;top:476px;width:770px}
+.photo img{width:100%;display:block}
+.fade{position:absolute;left:0;right:0;top:1010px;height:110px;background:linear-gradient(180deg,rgba(30,33,66,0) 0%,#1E2142 100%)}
+.panel{position:absolute;left:0;right:0;top:1118px;bottom:0;background:linear-gradient(180deg,#1E2142 0%,#181A31 100%)}
+.tipwrap{position:absolute;left:72px;top:610px;width:262px}
+.tip-label{display:inline-block;background:#181A31;color:#fff;font-weight:700;font-size:22px;letter-spacing:.12em;padding:7px 16px}
+.tips{margin-top:18px;font-weight:800;font-size:22px;line-height:1.22;color:#181A31;text-transform:uppercase}
+.tips div{margin-bottom:12px}
+.tipline{width:128px;height:5px;background:#fff;margin-top:14px}
+.stat{position:absolute;right:52px;top:520px;width:250px;text-align:center;color:#181A31}
+.stat .n{font-family:'Prata',serif;font-size:128px;line-height:1}
+.stat .l{font-weight:800;font-size:30px;letter-spacing:.06em;margin-top:2px}
+.stat .s{font-weight:700;font-size:19px;line-height:1.25;margin-top:6px;word-break:break-word;padding:0 4px}
+.t1{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:1130px;text-align:center;font-family:'Prata',serif;color:#fff;font-size:56px;letter-spacing:.07em}
+.t2{position:absolute;left:50%;transform:translateX(-50%);top:1200px;text-align:center;font-family:'Prata',serif;color:#fff;line-height:1.05;white-space:nowrap}
+.by{position:absolute;left:0;right:0;top:1425px;text-align:center;color:#fff;font-weight:800;font-size:33px;letter-spacing:.2em}
+.gold{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:1487px;text-align:center;color:#C9A06A;font-weight:700;font-size:24px;letter-spacing:.1em}
+.cta{position:absolute;left:72px;right:72px;top:1580px;height:88px;background:#C9A06A;color:#181A31;font-weight:800;font-size:38px;display:flex;align-items:center;justify-content:center}
+.rule{position:absolute;left:72px;right:72px;top:1720px;height:2px;background:rgba(255,255,255,.18)}
+.dom{position:absolute;left:0;right:0;top:1748px;text-align:center;color:#B9BACF;font-weight:600;font-size:26px;letter-spacing:.24em}
+</style></head><body>
+<div class="mast">КРЕДИТ</div><div class="mastsub">КИЇВ · КРЕДИТНІ СПОРИ</div>
+<div class="badge"><svg viewBox="0 0 270 240"><polygon points="68,6 202,6 264,120 202,234 68,234 6,120" fill="#181A31" opacity=".05"/><polygon points="68,8 202,8 262,120 202,232 68,232 8,120" fill="#F1F1F7" stroke="#181A31" stroke-width="4"/><polygon points="76,20 194,20 248,120 194,220 76,220 22,120" fill="none" stroke="#C9A06A" stroke-width="2"/></svg>
+ <div class="b1" id="b1"></div><div class="b2" id="b2"></div></div>
+<div class="photo"><img src="portrait-cutout.png"></div>
+<div class="fade"></div><div class="panel"></div>
+<div class="tipwrap"><span class="tip-label">ВАЖЛИВО</span><div class="tips" id="tips"></div><div class="tipline"></div></div>
+<div class="stat"><div class="n" id="sn"></div><div class="l" id="sl"></div><div class="s" id="ss"></div></div>
+<div class="t1" id="t1"></div><div class="t2" id="t2"></div>
+<div class="by">ПОРАДИ ЮРИСТА ДМИТРА ЯКОВЕНКА</div><div class="gold" id="gold"></div>
+<div class="cta">Читайте мою нову статтю</div><div class="rule"></div><div class="dom">urists.com.ua</div>
+<script>
+const p=new URLSearchParams(location.search);const d=JSON.parse(p.get('d'));
+document.getElementById('b1').textContent=d.badge[0];document.getElementById('b2').textContent=d.badge[1];
+document.getElementById('tips').innerHTML=d.tips.map(t=>'<div>'+t+'</div>').join('');
+document.getElementById('sn').textContent=d.stat[0];document.getElementById('sl').textContent=d.stat[1];document.getElementById('ss').textContent=d.stat[2];
+document.getElementById('t1').textContent=d.t1;document.getElementById('t2').textContent=d.t2;document.getElementById('gold').textContent=d.gold;
+function fit(el,max,w){let s=max;el.style.fontSize=s+'px';while(el.scrollWidth>w&&s>14){s-=2;el.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{fit(document.getElementById('b1'),34,168);fit(document.getElementById('b2'),25,168);fit(document.getElementById('t2'),118,960);fit(document.getElementById('t1'),56,960);fit(document.getElementById('gold'),24,980);document.title='ready'});
+</script></body></html>
