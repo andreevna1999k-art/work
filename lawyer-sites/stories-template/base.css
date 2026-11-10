@@ -1,0 +1,9 @@
+@import url(fonts/all.css);
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{position:relative;font-family:'Noto Serif',serif;-webkit-font-smoothing:antialiased}
+.abs{position:absolute}
+.serif{font-family:'Noto Serif',serif;font-weight:900}
+.cond{font-family:'Roboto Condensed',sans-serif;font-weight:900}
+.sans{font-family:'Noto Sans',sans-serif;font-weight:600}
+.cta{position:absolute;font-family:'Noto Sans',sans-serif;font-weight:600;font-size:46px;line-height:1;white-space:nowrap}
