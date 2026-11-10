@@ -1,0 +1,497 @@
+
+<meta name="description" content="Чи може банк забути про кредит? Пояснюю, коли спливає позовна давність, що її перериває і як заявити про неї в суді. Юрист Дмитро Яковенко.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&#038;family=Prata&#038;display=swap">
+<style>
+/* Повна ширина поверх constrained-layout теми (вона ставить margin:auto !important) */
+html body .yk.yk.yk.yk.yk{width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;left:auto!important}
+/* Скидання теми WP: власні шапка, футер і заголовок сторінки */
+body{overflow-x:clip;background:#F1F1F5}
+header.wp-block-template-part,footer.wp-block-template-part,.wp-block-post-title{display:none!important}
+main.wp-block-group,.wp-block-post-content{margin:0!important;padding:0!important;max-width:none!important}
+.wp-block-post-content>*{max-width:none!important}
+
+.yk{--bg:#F1F1F5;--navy:#181A31;--navy-2:#23264A;--gold:#C9A06A;--gold-d:#8A6128;--gold-l:#F3E8D6;--ink:#181A31;--mute:#5C5E76;--white:#fff;
+  --f-head:'Prata','Playfair Display','Times New Roman',serif;--f-body:'Nunito',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  position:relative;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;padding:clamp(10px,1.6vw,24px) clamp(10px,1.6vw,24px) 0}
+.yk,.yk *{box-sizing:border-box}
+.yk img{max-width:100%;display:block}
+.yk h1,.yk h2,.yk h3{font-family:var(--f-head);font-weight:400;line-height:1.12;margin:0;color:inherit;letter-spacing:0}
+.yk p{margin:0}
+.yk a{color:inherit}
+.yk .in{max-width:1320px;margin:0 auto;width:100%}
+.yk .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d)}
+.yk .eyebrow::before{content:"";width:34px;height:2px;background:var(--gold)}
+.yk .dark .eyebrow{color:var(--gold)}
+.yk h2.t{font-size:clamp(32px,4.4vw,56px);margin:14px 0 0}
+.yk .panel{border-radius:40px;position:relative;overflow:hidden}
+
+/* Кнопки-таблетки з круглою стрілкою */
+.yk .btn{display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 28px;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:800;font-size:16px;text-decoration:none;transition:.2s;border:0}
+.yk .btn i{width:46px;height:46px;border-radius:50%;background:var(--navy);display:grid;place-items:center;flex:none;transition:.2s}
+.yk .btn i svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.yk .btn:hover{background:#D8B27E;box-shadow:0 10px 30px rgba(201,160,106,.35);transform:translateY(-2px)}
+.yk .btn:hover i{transform:translateX(3px)}
+.yk .nav .btn .sh{display:none}.yk .btn.sm{padding:5px 5px 5px 20px;font-size:14.5px;gap:10px}.yk .btn.sm i{width:36px;height:36px}.yk .btn.sm i svg{width:16px;height:16px}
+.yk .btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.yk .btn.line:hover{background:rgba(255,255,255,.08)}
+.yk .btn.line i{background:var(--gold)}.yk .btn.line i svg{stroke:var(--navy)}
+.yk .btn:focus-visible,.yk a:focus-visible,.yk summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* 1. Hero */
+.yk .hero{background:var(--navy);color:#fff;min-height:min(92vh,860px);display:flex;flex-direction:column}
+.yk .nav{position:relative;z-index:5;margin:clamp(14px,2vw,28px) clamp(14px,3vw,48px) 0;background:rgba(35,38,74,.92);backdrop-filter:blur(8px);border:1px solid rgba(201,160,106,.28);border-radius:999px;padding:10px 10px 10px 26px;display:flex;align-items:center;gap:24px}
+.yk .logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap}
+.yk .logo b{font-family:var(--f-head);font-weight:400;font-size:21px;color:#fff}
+.yk .logo span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.yk .nav nav{display:flex;gap:30px;margin:0 auto;font-weight:600;font-size:15px}
+.yk .nav nav a{text-decoration:none;color:#D9DAE8;padding:6px 0;border-bottom:2px solid transparent;transition:.15s}
+.yk .nav nav a:hover{color:var(--gold);border-color:var(--gold)}
+.yk .hero-body{position:relative;flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;padding:clamp(28px,4vw,64px) clamp(22px,5vw,88px) clamp(40px,5vw,72px);gap:32px;z-index:2}
+.yk .hero-photo{position:absolute;right:0;top:0;bottom:0;width:62%;z-index:1}
+.yk .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:62% 18%}
+.yk .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(24,26,49,.78) 20%,rgba(24,26,49,.12) 58%,rgba(24,26,49,0) 100%),linear-gradient(0deg,rgba(24,26,49,.5),rgba(24,26,49,0) 35%)}
+.yk .hero h1{font-size:clamp(38px,4.7vw,70px);line-height:1.1;margin:18px 0 22px}
+.yk .hero h1 em{font-style:normal;color:var(--gold);display:block}
+.yk .hero .lead{max-width:520px;color:#CBCDE0;font-size:clamp(16px,1.3vw,19px)}
+.yk .hero .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.yk .hero .copy{position:relative;z-index:3}
+.yk .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.yk .chips span{font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid rgba(201,160,106,.4);color:#E8D5B5;background:rgba(201,160,106,.08)}
+
+/* 2. Про мене */
+.yk .about{background:#fff;margin-top:clamp(10px,1.6vw,24px);padding:clamp(40px,6vw,96px) clamp(22px,5vw,88px)}
+.yk .about::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;border:70px solid var(--gold-l);left:-220px;top:50%;transform:translateY(-50%);opacity:.85}
+.yk .about-g{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:clamp(28px,5vw,80px);align-items:center}
+.yk .about p{color:var(--mute);margin-top:18px;max-width:620px}
+.yk .about p.big{color:var(--ink);font-size:clamp(18px,1.6vw,21px);font-weight:600}
+.yk .about-ph{border-radius:40px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 70px rgba(24,26,49,.18)}
+.yk .about-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.yk .about .acts{margin-top:30px}
+.yk .sign{font-family:var(--f-head);color:var(--gold-d);font-size:26px;margin-top:26px}
+.yk .sign small{display:block;font-family:var(--f-body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+
+/* 3. Послуги */
+.yk .services{background:var(--navy);color:#fff;margin-top:clamp(10px,1.6vw,24px);padding:clamp(48px,6vw,96px) clamp(22px,5vw,88px) clamp(130px,11vw,160px)}
+.yk .services .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.yk .services .head p{max-width:460px;color:#B9BBD2}
+.yk .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px}
+.yk .card{background:var(--navy-2);border:1px solid rgba(201,160,106,.2);border-radius:28px;padding:32px 30px;transition:.25s}
+.yk .card:hover{transform:translateY(-5px);border-color:rgba(201,160,106,.6);background:#292D55}
+.yk .card svg{width:54px;height:54px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.yk .card h3{font-size:23px;line-height:1.25;margin:20px 0 10px}
+.yk .card p{color:#B9BBD2;font-size:15.5px}
+.yk .facts{width:calc(100% - 20px);position:relative;z-index:3;background:#fff;border-radius:28px;box-shadow:0 24px 60px rgba(24,26,49,.16);padding:30px clamp(20px,3vw,44px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:-84px auto 0;max-width:1180px}
+.yk .facts div{display:flex;gap:14px;align-items:center}
+.yk .facts div+div{border-left:1px solid #E4E4EE;padding-left:20px}
+.yk .facts svg{width:38px;height:38px;flex:none;stroke:var(--gold-d);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.yk .facts b{display:block;font-family:var(--f-head);font-weight:400;font-size:18px;line-height:1.2}
+.yk .facts span{font-size:13.5px;color:var(--mute);line-height:1.4;display:block;margin-top:2px}
+
+/* 4. Результати */
+.yk .results{padding:clamp(64px,7vw,110px) clamp(22px,5vw,88px) clamp(40px,5vw,70px)}
+.yk .results .head p{color:var(--mute);max-width:620px;margin-top:14px}
+.yk .res-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:44px}
+.yk .res{display:flex;flex-direction:column;min-width:0;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 14px 40px rgba(24,26,49,.08);transition:.25s}
+.yk .res:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(24,26,49,.14)}
+.yk .res-ph{display:block;width:100%;aspect-ratio:3/4;padding:0;margin:0;border:0;background:#fff;cursor:zoom-in;position:relative;overflow:hidden;border-bottom:1px solid #ECECF2}
+.yk .res-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 0;transition:transform .35s}
+.yk .res-ph:hover img{transform:scale(1.03)}
+.yk .res-ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(0deg,#fff,rgba(255,255,255,0))}
+.yk .res-ph i{position:absolute;right:14px;bottom:14px;z-index:2;width:40px;height:40px;border-radius:50%;background:var(--navy);display:grid;place-items:center}
+.yk .res-ph i svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round}
+.yk .res-tx{padding:20px 22px 22px;flex:1}
+.yk .res-tx h3{font-size:19px;line-height:1.25;margin:0 0 10px}
+.yk .res-tx p{font-size:14.5px;line-height:1.6;color:var(--mute)}
+.yk .res .bar{background:var(--navy);color:var(--gold);padding:14px 22px;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.yk .lb{position:fixed;inset:0;z-index:99999;background:rgba(24,26,49,.92);display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto}
+.yk .lb[hidden]{display:none}
+.yk .lb img{max-width:min(920px,100%);max-height:100%;width:auto;height:auto;border-radius:20px;background:#fff}
+.yk .lb-x{position:fixed;top:14px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(201,160,106,.6);background:rgba(24,26,49,.7);color:var(--gold);font-size:28px;line-height:1;cursor:pointer}
+
+/* 5. Відгуки */
+.yk .reviews{background:#fff;padding:clamp(44px,6vw,90px) clamp(22px,5vw,88px);margin-top:clamp(10px,1.6vw,24px)}
+.yk .reviews::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:60px solid var(--gold-l);right:-200px;top:-180px;opacity:.8}
+.yk .reviews .head{position:relative;z-index:1}
+.yk .rv-g{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:40px}
+.yk .rv{background:var(--bg);border-radius:28px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:14px}
+.yk .stars{color:var(--gold);letter-spacing:3px;font-size:16px}
+.yk .rv p{color:#34364F;font-size:15.5px;flex:1}
+.yk .rv footer{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--mute)}
+.yk .rv footer i{width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-style:normal;font-family:var(--f-head);font-size:17px;flex:none}
+.yk .rv footer b{display:block;color:var(--ink);font-size:15px}
+.yk details.more{position:relative;z-index:1}
+.yk details.more summary{list-style:none;cursor:pointer;display:flex;width:max-content;margin:34px auto 0;padding:14px 30px;border-radius:999px;border:1.5px solid var(--gold);font-weight:800;color:var(--gold-d);transition:.2s}
+.yk details.more summary::-webkit-details-marker{display:none}
+.yk details.more summary:hover{background:var(--gold-l)}
+.yk details.more[open] summary{margin-bottom:0}
+.yk details.more[open] summary span.o{display:none}.yk details.more:not([open]) summary span.c{display:none}
+.yk details.more .rv-g{margin-top:22px}
+
+/* CTA */
+.yk .cta{margin-top:clamp(10px,1.6vw,24px);background:linear-gradient(120deg,#23264A,#181A31);color:#fff;padding:clamp(36px,5vw,70px) clamp(22px,5vw,88px);display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.yk .cta h2{font-size:clamp(28px,3.6vw,46px);max-width:700px}
+.yk .cta p{color:#B9BBD2;margin-top:12px;max-width:560px}
+
+/* Футер / контакти */
+.yk .contacts{background:var(--navy);color:#fff;margin-top:clamp(10px,1.6vw,24px);padding:clamp(44px,6vw,90px) clamp(22px,5vw,88px) 28px;border-radius:40px 40px 0 0}
+.yk .ct-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,4vw,64px);margin-top:36px;align-items:stretch}
+.yk .ct-list{display:grid;gap:14px;align-content:start}
+.yk .ct{display:flex;gap:18px;align-items:flex-start;background:var(--navy-2);border:1px solid rgba(201,160,106,.2);border-radius:24px;padding:20px 24px}
+.yk .ct svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:2px}
+.yk .ct small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.yk .ct a,.yk .ct span.v{font-size:18px;font-weight:600;text-decoration:none;color:#fff}
+.yk .ct a:hover{color:var(--gold)}
+.yk .ct em{display:block;font-style:normal;color:#B9BBD2;font-size:14.5px;margin-top:2px}
+.yk .map{border-radius:32px;overflow:hidden;min-height:380px;border:1px solid rgba(201,160,106,.3);background:var(--navy-2)}
+.yk .map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+.yk .bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px;color:#9A9CB8}
+
+/* Планшет */
+@media(max-width:1100px){
+  .yk .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .yk .facts{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:-76px}
+  .yk .facts div:nth-child(3){border-left:0;padding-left:0}
+  .yk .res-g,.yk .rv-g{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .yk .nav nav{gap:18px;font-size:14px}
+}
+/* Телефон */
+@media(max-width:860px){
+  .yk{font-size:16px}
+  .yk .panel{border-radius:28px}
+  .yk .nav{padding:8px 8px 8px 18px;margin:12px 12px 0}
+  .yk .nav nav{display:none}.yk .nav .btn{margin-left:auto;white-space:nowrap}.yk .nav .btn .lg{display:none}.yk .nav .btn .sh{display:inline}
+  .yk .logo span{display:none}.yk .logo b{font-size:18px}
+  .yk .hero{min-height:0}
+  .yk .hero-body{grid-template-columns:1fr;padding:0 20px 36px;gap:0}
+  .yk .hero-photo{position:relative;width:auto;height:auto;margin:18px 12px 22px;border-radius:24px;overflow:hidden;aspect-ratio:4/3.1}
+  .yk .hero-photo::after{background:linear-gradient(0deg,var(--navy) 2%,rgba(24,26,49,.2) 50%,rgba(24,26,49,0) 100%)}
+  .yk .hero-photo img{object-position:60% 16%}
+  .yk .hero h1{margin-top:22px}
+  .yk .hero .acts .btn{width:100%;justify-content:space-between}
+  .yk .about-g{grid-template-columns:1fr}.yk .about-ph{aspect-ratio:1/1;order:-1}
+  .yk .about::before{width:420px;height:420px;border-width:46px;left:-180px;top:30%}
+  .yk .cards{grid-template-columns:1fr;gap:16px}
+  .yk .card{padding:26px 24px}
+  .yk .facts{grid-template-columns:1fr;margin-top:-70px;padding:24px}
+  .yk .facts div+div{border-left:0;padding-left:0;border-top:1px solid #E4E4EE;padding-top:16px}
+  .yk .res-g,.yk .rv-g{grid-template-columns:1fr;gap:16px}
+  .yk .res-ph{aspect-ratio:4/5}
+  .yk .ct-g{grid-template-columns:1fr}
+  .yk .ct a,.yk .ct span.v{font-size:17px}
+  .yk .cta .btn{width:100%;justify-content:space-between}
+  .yk .contacts{border-radius:28px 28px 0 0}
+}
+@media(prefers-reduced-motion:reduce){.yk *{transition:none!important}}
+
+/* Яковенко (S3 Navy Gold): сторінки «Контакти», «Політика», доповнення футера */
+.yk .pg{padding:clamp(34px,5vw,70px) 0 0}
+.yk .cc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.yk .cc{display:block;background:#fff;border:1px solid rgba(201,160,106,.35);border-radius:28px;padding:26px 26px 28px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.yk a.cc:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(24,26,49,.12)}
+.yk .cc small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);font-weight:800;margin-bottom:8px}
+.yk .cc b{display:block;font-family:var(--f-head);font-weight:400;font-size:22px;line-height:1.25;color:var(--navy);word-break:break-word}
+.yk .cc p{margin-top:8px;font-size:15px;color:var(--mute)}
+.yk .map-box{margin-top:18px;border-radius:32px;overflow:hidden;background:#fff;border:1px solid rgba(201,160,106,.35);padding:10px}
+.yk .map-box iframe{display:block;width:100%;height:420px;border:0;border-radius:24px}
+.yk .soc-panel{background:var(--navy);color:#fff;border-radius:40px;padding:clamp(34px,5vw,64px) clamp(22px,5vw,88px);margin-top:clamp(10px,1.6vw,24px)}
+.yk .soc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:28px}
+.yk .soc{display:flex;align-items:center;gap:16px;background:var(--navy-2);border:1px solid rgba(201,160,106,.25);border-radius:999px;padding:10px 26px 10px 10px;text-decoration:none;transition:background .2s}
+.yk .soc:hover{background:#2b2f5a}
+.yk .soc-ico{flex:0 0 52px;height:52px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center}
+.yk .soc-ico svg{width:24px;height:24px;fill:currentColor}
+.yk .soc small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.yk .soc b{font-size:18px;font-weight:700;color:#fff}
+.yk .legal-card{background:#fff;border:1px solid rgba(201,160,106,.35);border-radius:40px;padding:clamp(26px,4vw,56px)}
+.yk .legal-wrap{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+.yk .toc{position:sticky;top:20px;background:var(--bg);border-radius:26px;padding:22px}
+.yk .toc b{display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px}
+.yk .toc a{display:block;padding:5px 0;font-size:14.5px;color:var(--mute);line-height:1.35;text-decoration:none}
+.yk .toc a:hover{color:var(--gold-d)}
+.yk .legal h2{font-size:clamp(22px,2.4vw,30px);margin:38px 0 12px;color:var(--navy)}
+.yk .legal h2:first-of-type{margin-top:0}
+.yk .legal p,.yk .legal li{font-size:16.5px;line-height:1.7;color:var(--mute)}
+.yk .legal p{margin:0 0 12px}.yk .legal ul{margin:0 0 14px;padding-left:22px}.yk .legal li{margin-bottom:6px}
+.yk .legal a{color:var(--gold-d);border-bottom:1px solid rgba(138,97,40,.4);text-decoration:none}
+.yk .legal .n{display:inline-block;min-width:3.2em;font-weight:800;color:var(--gold-d)}
+.yk .upd{display:inline-block;margin-bottom:24px;padding:7px 16px;border-radius:999px;background:var(--bg);font-size:13.5px;color:var(--mute)}
+.yk .bottom .legal-links{display:flex;flex-wrap:wrap;gap:10px}
+.yk .bottom .legal-links a{display:inline-flex;align-items:center;padding:11px 20px;border:1px solid rgba(201,160,106,.55);border-radius:999px;color:var(--gold-l);font-weight:700;font-size:13.5px;line-height:1.2;text-decoration:none;transition:background .2s,color .2s}
+.yk .bottom .legal-links a:hover{background:var(--gold);color:var(--navy)}
+@media(max-width:980px){.yk .cc-grid{grid-template-columns:repeat(2,1fr)}.yk .legal-wrap{grid-template-columns:1fr}.yk .toc{position:static}}
+@media(max-width:620px){.yk .cc-grid{grid-template-columns:1fr}.yk .map-box iframe{height:320px}}
+
+
+.yk .bl-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:34px}
+.yk .bl-card{display:flex;flex-direction:column;min-width:0;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 14px 40px rgba(24,26,49,.08);transition:.25s}
+.yk .bl-card:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(24,26,49,.14)}
+.yk .bl-cover{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:radial-gradient(420px 240px at 80% -10%,#23264A 0,transparent 65%),linear-gradient(160deg,#23264A,#181A31)}
+.yk .bl-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.yk .bl-tag{position:absolute;top:14px;left:14px;display:inline-block;padding:7px 15px;border-radius:999px;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.yk .bl-body{display:flex;flex-direction:column;flex:1;padding:22px 24px 26px}
+.yk .bl-card time{display:block;margin-bottom:10px;font-size:13.5px;font-weight:700;letter-spacing:.04em;color:var(--gold-d)}
+.yk .bl-card h3{font-family:var(--f-head);font-weight:400;font-size:21px;line-height:1.25;margin:0 0 12px;color:var(--navy)}
+.yk .bl-card h3 a{color:inherit;text-decoration:none}
+.yk .bl-card p{margin:0 0 20px;color:var(--mute);font-size:15.5px}
+.yk .bl-more{margin-top:auto;font-weight:800;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);text-decoration:none}
+.yk .bl-more::after{content:" \2192"}
+.yk .bl-all{display:flex;justify-content:center;margin-top:38px}
+@media(max-width:1000px){.yk .bl-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.yk .bl-g{grid-template-columns:minmax(0,1fr);gap:16px}.yk .bl-body{padding:18px 18px 22px}.yk .bl-card h3{font-size:19px}}
+.yk .menu-cb{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.yk .burger{display:none;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.14);cursor:pointer;flex:none;position:relative}
+.yk .burger i,.yk .burger i::before,.yk .burger i::after{content:"";position:absolute;left:11px;width:20px;height:2px;background:#fff;border-radius:2px;transition:.2s}
+.yk .burger i{top:20px}
+.yk .burger i::before{left:0;top:-7px}
+.yk .burger i::after{left:0;top:7px}
+.yk .menu-cb:checked ~ .burger i{background:transparent}
+.yk .menu-cb:checked ~ .burger i::before{top:0;transform:rotate(45deg)}
+.yk .menu-cb:checked ~ .burger i::after{top:0;transform:rotate(-45deg)}
+.yk .fnav{display:flex;flex-wrap:wrap;gap:8px 26px;margin:0 0 22px;padding:18px 0 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px;font-weight:600}
+.yk .fnav a{color:var(--gold-l);text-decoration:none}
+.yk .fnav a:hover{color:var(--gold)}
+@media(max-width:860px){.yk .burger{display:block}.yk .nav{gap:8px}.yk .menu-cb:checked ~ nav{display:flex!important;position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:30;flex-direction:column;gap:2px;margin:0;padding:10px;background:var(--navy-2);border:1px solid rgba(201,160,106,.28);border-radius:24px;box-shadow:0 24px 50px rgba(0,0,0,.4)}.yk .menu-cb:checked ~ nav a{display:block;padding:15px 16px;border-radius:14px;font-size:16px;color:#fff;border:0}.yk .menu-cb:checked ~ nav a:hover{background:rgba(255,255,255,.1);color:var(--gold)}.yk .fnav{flex-direction:column;gap:2px}.yk .fnav a{display:block;padding:11px 0}}
+@media(max-width:430px){.yk .nav .btn{display:none}.yk .burger{margin-left:auto}}</style>
+
+<style>
+.yk .hero.sub{min-height:0}
+.yk .sub-body{position:relative;z-index:2;padding:clamp(34px,5vw,80px) clamp(22px,5vw,88px) clamp(46px,6vw,90px);max-width:1320px;margin:0 auto;width:100%}
+.yk .sub-body h1{font-size:clamp(40px,5.6vw,84px);margin:18px 0 20px}
+.yk .sub-body h1 em{font-style:normal;color:var(--gold)}
+.yk .sub-body .lead{max-width:640px;color:#CBCDE0;font-size:clamp(16px,1.3vw,19px)}
+.yk .sub-body .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.yk .sub-ring{position:absolute;right:-160px;top:-120px;width:560px;height:560px;border-radius:50%;border:70px solid rgba(201,160,106,.10);z-index:1}
+.yk .results.page{padding-top:clamp(40px,5vw,70px)}
+@media(max-width:860px){.yk .sub-ring{width:340px;height:340px;border-width:44px;right:-120px;top:-90px}}
+</style>
+
+<style>
+.yk .sub-body.art{padding-bottom:clamp(40px,5vw,72px)}
+.yk .sub-body.art h1{font-size:clamp(30px,4.2vw,58px);margin:14px 0 0;max-width:1000px}
+.yk .art-crumbs{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.yk .art-crumbs a{text-decoration:none;color:var(--gold)}.yk .art-crumbs a:hover{text-decoration:underline}
+.yk .art-sec{padding:clamp(26px,3.5vw,48px) 0 clamp(10px,2vw,24px)}
+.yk .art-card{background:var(--white);border-radius:40px;padding:clamp(24px,5vw,72px);max-width:1000px;margin:0 auto}
+.yk .art-meta{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;font-size:14.5px;color:var(--mute);margin-bottom:26px}
+.yk .art-tag{background:var(--gold-l);color:var(--gold-d);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:12.5px;padding:7px 14px;border-radius:999px}
+.yk .art-body{font-size:18px;line-height:1.75;color:var(--ink)}
+.yk .art-body p{margin:0 0 18px}
+.yk .art-body h2{font-size:clamp(26px,3vw,38px);margin:42px 0 16px;color:var(--navy)}
+.yk .art-body h3{font-size:clamp(21px,2.2vw,27px);margin:30px 0 12px;color:var(--navy)}
+.yk .art-body a{color:var(--gold-d);text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.yk .art-body a:hover{color:var(--navy)}
+.yk .art-body ul,.yk .art-body ol{margin:0 0 22px;padding-left:1.4em}
+.yk .art-body li{margin:0 0 9px}
+.yk .art-body li::marker{color:var(--gold-d);font-weight:800}
+.yk .art-table{overflow-x:auto;margin:24px 0 28px;border:1px solid #E3E0EA;border-radius:22px;background:#fff}
+.yk .art-body table{border-collapse:collapse;width:100%;min-width:620px;font-size:15.5px;line-height:1.5}
+.yk .art-body th{background:var(--navy);color:var(--gold);text-align:left;padding:14px 16px;font-weight:800}
+.yk .art-body td{padding:13px 16px;border-top:1px solid #ECE9F1;vertical-align:top;color:var(--mute);font-weight:600}
+.yk .art-body tbody tr:nth-child(even) td{background:#F7F5FA}
+.yk .art-body tbody td:first-child{color:var(--ink);font-weight:800}
+.yk .art-body blockquote{margin:24px 0;padding:20px 24px;border-left:4px solid var(--gold);background:var(--gold-l);border-radius:0 22px 22px 0}
+.yk .art-back{margin-top:34px;padding-top:22px;border-top:1px solid #E3E0EA}
+.yk .art-back a{font-weight:800;color:var(--gold-d);text-decoration:none}
+@media(max-width:640px){.yk .art-card{border-radius:28px}.yk .art-body{font-size:17px}}
+</style>
+<div class="yk" id="top">
+
+<section class="panel hero sub dark">
+  <div class="sub-ring"></div>
+  <div class="nav"><input type="checkbox" id="ykm" class="menu-cb" aria-hidden="true" tabindex="-1">
+    <a class="logo" href="/"><b>Яковенко Дмитро</b><span>Юрист</span></a>
+    <nav>
+      <a href="/#about">Про мене</a>
+      <a href="/#services">Послуги</a>
+      <a href="/rezultaty-roboty/">Результати</a><a href="/blog/">Блог</a>
+      <a href="/#reviews">Відгуки</a>
+      <a href="/kontakty/">Контакти</a>
+    </nav>
+    <a class="btn sm" href="https://t.me/yakovenko_lawyer" target="_blank" rel="noopener"><span class="lg">Написати в Telegram</span><span class="sh">Telegram</span><i><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><label for="ykm" class="burger" aria-label="Меню"><i></i></label>
+  </div>
+  <div class="sub-body art">
+    <p class="art-crumbs"><a href="/">Головна</a> / <a href="/blog/">Блог</a></p>
+    <h1>Чи може банк забути про кредит: що каже закон і суд</h1>
+  </div>
+</section>
+
+<section class="art-sec" id="article"><div class="in"><article class="art-card"><div class="art-meta"><span class="art-tag">Позовна давність</span><time datetime="2026-12-04">04.12.2026</time><span>Яковенко Дмитро</span></div><div class="art-body"><p>Чи може банк забути про кредит? Ні, сам банк борг не списує. Але через три роки право банку стягнути його через суд обмежене. Це відбувається лише за умов, які ви маєте виконати самі. Нижче я пояснюю, які саме це умови.</p>
+<p>Люди ставлять це питання, бо банк мовчить роками. Потім приходить лист, дзвінок колектора або позов. Незважаючи на тишу, борг у цей час не зникає, а вимоги зростають. Я, Дмитро Яковенко, щотижня бачу такі справи.</p>
+<p>У статті ви знайдете умови давності, розрахунок по платежах і дві постанови Верховного Суду. Наприкінці є чеклист на сьогодні. Матеріал інформаційний і не замінює консультацію юриста.</p>
+<h2 id="s1">Чи може банк забути про кредит: коротка відповідь</h2>
+<p>Банк не забуває про кредит, і борг не зникає сам. Обов'язок повернути гроші залишається. Обмеженим стає інше: право банку вимагати борг через суд. Це право обмежує позовна давність, і вона триває три роки (ст. 256, 257 ЦК України).</p>
+<p>Банки мовчать роками з трьох причин:</p>
+<ol>
+<li>Борг продають колекторам, і новий власник діє пізніше.</li>
+<li>Проценти і штрафи накопичуються, а сума вимоги зростає.</li>
+<li>Банк розраховує на дію боржника, яка визнає борг і поновить строк.</li>
+</ol>
+<p>Автоматичного списання боргу закон не передбачає. Тому тиша банку не є підставою перестати слідкувати за строками.</p>
+<p>Що саме не зникає? Заборгованість лишається повністю: тіло кредиту, проценти за договором і штрафні санкції. Окремо банк може вимагати три проценти річних та інфляційні втрати за прострочення грошового зобов'язання. Цивільний кодекс України прямо передбачає такі наслідки, тому сума вимоги з роками зростає, навіть якщо банк мовчить.</p>
+<p>Інше питання — коли банк подасть позов. Закон не зобов'язує кредитора звертатися до суду негайно. Він може чекати, продати борг колектору або передати справу МФО чи колекторській компанії. Тому читайте не лише дату останнього платежу, а й кожен документ, який надходить від нового власника боргу.</p>
+<h2 id="s2">Обмеження права банку діє за трьох умов</h2>
+<p>Давність захищає боржника не завжди. Спрацьовує вона лише за певних умов, і кожну з них треба перевірити окремо.</p>
+<p>Обмеження застосовують за трьох умов:</p>
+<ol>
+<li>Минуло три роки з дня, коли банк дізнався або міг дізнатися про порушення свого права (ст. 256, 257, 261 ЦК України). Для кредиту з платежами це дата кожного прострочення.</li>
+<li>За цей час не було дій, що визнають борг (ст. 264 ЦК України). Частковий платіж або підпис під графіком обнуляє відлік. Строк починається заново.</li>
+<li>Боржник сам заявив про давність у суді до ухвалення рішення (ст. 267 ЦК України).</li>
+</ol>
+<p>Отже, ключовою є умова третя. Суд не застосовує давність сам. Без вашої заяви він розглядає позов так, ніби строк не сплив.</p>
+<p>Є ще одне застереження. Строки давності в Україні змінювали на час карантину і воєнного стану. Тому реальний строк за вашим договором треба рахувати індивідуально.</p>
+<p>Для цього потрібні кредитний договір і графік платежів. Саме графік показує, коли мав бути кожен платіж і коли саме настало порушення. Без нього точний розрахунок зробити неможливо, а помилка в одну дату може змінити результат по цілому місяцю платежів.</p>
+<h2 id="s3">Порівняння: що відбувається з боргом у різних ситуаціях</h2>
+<p>Наслідки залежать від двох речей: скільки минуло часу і що робили ви. Таблиця показує шість типових ситуацій.</p>
+<div class="art-table"><table>
+<thead>
+<tr><th>Ситуація</th><th>Чи може банк стягнути через суд</th><th>Що з процентами</th><th>Що робити</th></tr>
+</thead>
+<tbody>
+<tr><td>Ви платите за графіком</td><td>Банк стягує борг у межах договору</td><td>Нараховуються за договором</td><td>Платити і зберігати квитанції</td></tr>
+<tr><td>Прострочення менше трьох років</td><td>Так, давність не сплила</td><td>Нараховуються, поки триває строк кредитування</td><td>Не ігнорувати вимогу, перевірити розрахунок</td></tr>
+<tr><td>Прострочення понад три роки, дій не було</td><td>Так, якщо ви не заявите про давність у суді</td><td>Після строку кредитування договірні проценти не нараховують</td><td>Підготувати відзив із заявою про давність</td></tr>
+<tr><td>Понад три роки, але ви частково платили або підписали графік</td><td>Так, строк почався заново (ст. 264 ЦК)</td><td>Залежить від нового графіка</td><td>Перевірити, що саме ви підписали</td></tr>
+<tr><td>Банк сам списав гроші з картки за договором</td><td>Строк це не перериває (справа № 442/5498/16-ц)</td><td>Залежить від договору</td><td>Зберегти виписки як доказ</td></tr>
+<tr><td>Строк кредитування закінчився або банк вимагав повернути все одразу</td><td>Так, у межах давності</td><td>Договірні проценти припиняються (справа № 444/9519/12)</td><td>Перевірити, що саме нарахував банк</td></tr>
+</tbody>
+</table></div>
+<p>Висновок автора. Тиша банку нічого не гарантує. Найчастіше борг повертає собі сам боржник, коли платить «хоча б щось» після дзвінка. Обмеження права банку працює лише тоді, коли ви нічого не визнавали і вчасно заявили про давність.</p>
+<h2 id="s4">Як рахується давність за щомісячними платежами: розрахунок</h2>
+<p>Давність за кредитом з графіком рахують окремо за кожним простроченим платежем. Так вирішила Велика Палата Верховного Суду у справі № 444/9519/12. Отже, частина боргу може бути поза строком, а інша частина ще ні.</p>
+<p>Розгляньмо навчальний приклад з моєї практики. Імена змінено, цифри умовні. Пан Олег узяв у 2015 році кредит 36 000 грн. Платіж становив 3 000 грн щомісяця з січня по грудень 2015 року.</p>
+<ol>
+<li>Пан Олег сплатив три платежі, за січень, лютий і березень.</li>
+<li>З квітня 2015 року почалося прострочення. Дев'ять платежів дають 27 000 грн.</li>
+<li>Банк подав позов у вересні 2018 року. Пан Олег заявив про давність до рішення суду.</li>
+<li>Платежі за квітень–серпень 2015 року мають давність, що сплила. Це 5 × 3 000 = 15 000 грн.</li>
+<li>Платежі за вересень–грудень 2015 року лежать у межах строку. Це 4 × 3 000 = 12 000 грн.</li>
+</ol>
+<div class="art-table"><table>
+<thead>
+<tr><th>Місяць</th><th>Сума</th><th>Давність</th></tr>
+</thead>
+<tbody>
+<tr><td>Квітень–серпень 2015</td><td>5 × 3 000 = 15 000 грн</td><td>Сплила</td></tr>
+<tr><td>Вересень–грудень 2015</td><td>4 × 3 000 = 12 000 грн</td><td>Не сплила</td></tr>
+</tbody>
+</table></div>
+<p>Є ще одне наслідок. Строк кредитування закінчився у грудні 2015 року. Після цього банк не може нараховувати договірні проценти. Його права захищає ст. 625 ЦК України. Точну межу в кожній справі визначає день платежу за договором.</p>
+<h2 id="s5">Закон, суд, я: спірні питання давності</h2>
+<p>Спори виникають навколо одного питання: що вважати визнанням боргу. Закон каже одне, суди уточнюють, а я у практиці бачу, як це працює в реальних справах.</p>
+<h3 id="s6">Чи переривають давність дзвінки та листи колекторів</h3>
+<p>Давність переривається лише дією боржника, що свідчить про визнання боргу (ст. 264 ЦК України). Дзвінки і листи кредитора такою дією не є. Небезпека в іншому: ваша письмова відповідь із визнанням суми вже є такою дією. У моїй практиці люди самі обнуляли строк одним необережним листом.</p>
+<h3 id="s7">Чи перериває давність списання банком коштів з картки</h3>
+<p>Касаційний цивільний суд у складі Верховного Суду у постанові від 13.01.2020 у справі № 442/5498/16-ц вказав таке. Договірне списання коштів банком не перериває давність. Боржник у цьому випадку не вчиняє активних дій. Отже, автоматичне списання не поновлює строк.</p>
+<h3 id="s8">Чи може договір збільшити строк давності</h3>
+<p>Це питання часто ставлять читачі. Договори банків нерідко містять умову про збільшений строк. Тому перевіряйте текст саме свого договору. Не підписуйте нових документів, поки не побачите, що в них записано про строки.</p>
+<h2 id="s9">Правова позиція Верховного Суду: дві постанови, які варто знати</h2>
+<p>Для захисту від старого боргу важливі дві постанови. Вони допомагають порахувати строки і перевірити нарахування банку. На них варто посилатися у відзиві.</p>
+<h3 id="s10">Постанова Великої Палати ВС від 28.03.2018 у справі № 444/9519/12</h3>
+<p>Суть позиції: після спливу строку кредитування або вимоги за ч. 2 ст. 1050 ЦК банк не може нараховувати договірні проценти. Його права захищає ст. 625 ЦК. Давність за щомісячними платежами рахують окремо за кожним простроченим платежем. Що це означає для позичальника:</p>
+<ol>
+<li>Частина боргу може бути поза строком давності.</li>
+<li>Договірні проценти після строку кредитування вимагати не можна.</li>
+<li>У відзиві варто вимагати окремого розрахунку за кожним платежем.</li>
+</ol>
+<h3 id="s11">Постанова КЦС ВС від 13.01.2020 у справі № 442/5498/16-ц</h3>
+<p>Суть позиції: договірне списання коштів банком не перериває давність, бо боржник не вчиняє активних дій. Що це означає для позичальника:</p>
+<ol>
+<li>Списання з вашої картки саме по собі не поновлює строк.</li>
+<li>Банк має довести дію боржника, що визнає борг.</li>
+<li>У відзиві варто посилатися на цю постанову разом зі ст. 264 ЦК.</li>
+</ol>
+<h2 id="s12">Що робити, якщо банк згадав про старий кредит: крок за кроком</h2>
+<p>Головне правило таке: не платіть «символічно» і не підписуйте визнання суми до перевірки. Кожна така дія може поновити строк. Спершу порахуйте, потім діяйте.</p>
+<ol>
+<li>Зберіть кредитний договір і виписки за рахунком.</li>
+<li>Визначте дату останнього платежу і строк кредитування.</li>
+<li>Порахуйте давність окремо за кожним платежем.</li>
+<li>Не підписуйте графіків і не платіть до аналізу.</li>
+<li>Якщо надійшов позов, подайте відзив із заявою про застосування давності до ухвалення рішення (ст. 267 ЦК України).</li>
+<li>Перевірте, чи нараховував банк проценти після строку кредитування.</li>
+<li>Фіксуйте тиск колекторів: дати, номери, зміст розмов.</li>
+</ol>
+<p>Якщо надійшов позов, відзив на позов потрібно подати в строк, указаний в ухвалі суду. Саме у відзиві заявляють про давність. Якщо відкрито виконавче провадження, перевірте, на підставі якого рішення воно відкрите й чи не пропущено строк для стягнення. Інакше ви втрачаєте шанс на захист.</p>
+<p>Я перевірю договір і порахую строки по кожному платежу.</p>
+<h2 id="s13">Помилки, через які банк повертає собі строк</h2>
+<p>Більшість помилок — це дії самого боржника, що переривають давність. Банк лише чекає на таку дію. Особливо небезпечна пропозиція реструктуризації: вона виглядає як допомога, але підпис під новим графіком може поновити строк. Ось п'ять помилок, які я бачу найчастіше:</p>
+<ol>
+<li>Оплата «хоч 100 грн» після дзвінка. Це може визнати борг і поновити строк.</li>
+<li>Підпис під графіком реструктуризації без аналізу.</li>
+<li>Письмова відповідь із визнанням суми.</li>
+<li>Ігнорування повістки. Якщо ви не прийшли і не подали заяви, давність ніхто не застосує.</li>
+<li>Очікування, що суд сам застосує давність.</li>
+</ol>
+<p>Практика тиску на боржників викликає в мене критичні зауваження. Банки і колектори вимагають «символічний платіж» саме заради поновлення строку. Старі борги перепродують без пояснень. Проценти після закінчення строку кредитування нараховують незважаючи на позицію Верховного Суду. Цю позицію Верховний Суд сформулював у справі № 444/9519/12, але на практиці її ігнорують у розрахунках для боржника. Окремо варто пам'ятати: вимога про дострокове повернення змінює розрахунок. Після неї договірні проценти припиняються, а кредитор захищається ст. 625 ЦК. У моїй практиці людина платила 200 грн, і через це вся давність була втрачена.</p>
+<h2 id="s14">Що зробити сьогодні: чеклист позичальника</h2>
+<p>Чеклист потрібен, щоб не діяти навмання. Пройдіть його сьогодні, до будь-яких платежів і розмов з кредитором.</p>
+<ul>
+<li>Знайдіть кредитний договір.</li>
+<li>Замовте виписку за рахунком.</li>
+<li>Запишіть дату останнього платежу.</li>
+<li>Нічого не платіть і не підписуйте до перевірки.</li>
+<li>Перевірте реєстр судових рішень за своїм прізвищем.</li>
+<li>Зберігайте листи та записи дзвінків колекторів.</li>
+<li>Запишіться на консультацію.</li>
+</ul>
+<p>Я відповім у Telegram у робочі години і скажу, які документи потрібні.</p>
+<h2 id="s15">Часті запитання</h2>
+<h3 id="s16">Чи може банк забути про кредит через 3 роки?</h3>
+<p>Ні, банк сам борг не списує. Через три роки обмежується право стягнути його в суді. Це діє, якщо не було визнання боргу і ви заявили про давність (ст. 257, 264, 267 ЦК України). Без заяви суд давність не застосує.</p>
+<h3 id="s17">Чи є можливість не сплачувати суму боргу, яку вимагає банк?</h3>
+<p>Частково, і лише за платежами, по яких давність сплила. Для цього потрібна заява в суді. Решта боргу залишається вашим обов'язком. Результат залежить від обставин справи, тому гарантій немає.</p>
+<h3 id="s18">Чи може банк збільшити строк позовної давності?</h3>
+<p>Договір може містити умову про збільшений строк. Перевірте текст свого договору до будь-яких дій. Якщо така умова є, строк у вашому випадку розраховують інакше.</p>
+<h3 id="s19">Чи перериває давність часткова оплата боргу?</h3>
+<p>Так, якщо це ваша дія, що свідчить про визнання боргу (ст. 264 ЦК). Відлік тоді починається заново. Договірне списання банком давність не перериває (справа № 442/5498/16-ц).</p>
+<h3 id="s20">Що буде, якщо не платити кредит 3 роки?</h3>
+<p>Вимоги банку зростають, можливі позов і продаж боргу колекторам. Давність не захищає автоматично, її треба заявити. Див. таблицю порівняння вище.</p>
+<h3 id="s21">Чи можна переговорити про реструктуризацію старого боргу?</h3>
+<p>Можна, але обережно. Реструктуризація зазвичай означає підписання нового графіка, а це може визнати борг і поновити строк. Спершу порахуйте давність по кожному платежу, а вже потім обговорюйте умови. Якщо договір укладено з МФО, діє те саме правило.</p>
+<h3 id="s22">Чи застосує суд давність, якщо я не прийду на засідання?</h3>
+<p>Ні. Суд застосовує давність лише за заявою сторони, зробленою до ухвалення рішення (ст. 267 ЦК). Потрібні відзив або письмова заява.</p>
+<h3 id="s23">Чи може банк нараховувати проценти після закінчення строку кредиту?</h3>
+<p>За позицією Великої Палати ВС у справі № 444/9519/12 договірні проценти після строку кредитування не нараховують. Права банку тоді захищає ст. 625 ЦК.</p>
+<h2 id="s24">Висновок юриста</h2>
+<p>Банк не забуває про кредит, але закон обмежує його право за трьох умов. Ключовою є ваша власна заява про давність у суді. Без неї тиша банку нічого не вирішує.</p>
+<p>Моя оцінка проста. Найбільше шкодять не роки прострочення, а поспішні дії боржника після дзвінка. Спершу перевірка строків, потім рішення. Напишіть мені в Telegram: перевірю договір, порахую строки давності по кожному платежу і скажу, які у вас підстави для захисту. Більше матеріалів — у розділі інші статті про кредити. Автор: юрист по кредитах Дмитро Яковенко.</p></div><p class="art-back"><a href="/blog/">← Усі статті блогу</a></p></article></div></section>
+
+<!-- CTA -->
+<section class="panel cta dark">
+  <div>
+    <h2>Не відкладайте: розберемося з вашим кредитом разом</h2>
+    <p>Опишіть ситуацію в Telegram: підкажу перші кроки та скажу, чи потрібне представництво.</p>
+  </div>
+  <a class="btn" href="https://t.me/yakovenko_lawyer" target="_blank" rel="noopener">Написати юристу<i><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+</section>
+
+<!-- ФУТЕР: КОНТАКТИ -->
+<footer class="contacts dark" id="contacts">
+  <div class="in">
+    <span class="eyebrow">Контакти</span>
+    <h2 class="t">Зв&#8217;яжіться зі мною</h2>
+    <div class="ct-g">
+      <div class="ct-list">
+        <div class="ct"><svg viewBox="0 0 48 48"><path d="M24 44s14-12.5 14-24a14 14 0 0 0-28 0c0 11.5 14 24 14 24z"/><circle cx="24" cy="20" r="5"/></svg><div><small>Адреса</small><span class="v">01024, вул. Басейна, 9, к.3</span><em>Київ</em></div></div>
+        <div class="ct"><svg viewBox="0 0 48 48"><path d="M12 6h8l4 10-5 3a22 22 0 0 0 10 10l3-5 10 4v8a4 4 0 0 1-4 4C22 40 8 26 8 10a4 4 0 0 1 4-4z"/></svg><div><small>Телефон</small><a href="tel:+380751462697">+38 075 146 26 97</a></div></div>
+        <div class="ct"><svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4"/><path d="m6 14 18 13 18-13"/></svg><div><small>Email</small><a href="mailto:dmytro-yrist@urists.com.ua">dmytro-yrist<wbr>@urists.com.ua</a></div></div>
+        <div class="ct"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 14v10l7 4"/></svg><div><small>Години роботи</small><span class="v">Пн-пт: 09:00-18:00</span><em>У вихідні за домовленістю</em></div></div>
+        <div class="ct"><svg viewBox="0 0 48 48"><path d="M42 8L6 22l10 4 4 12 6-7 9 7z"/><path d="M16 26L42 8"/></svg><div><small>Telegram</small><a href="https://t.me/yakovenko_lawyer" target="_blank" rel="noopener">@yakovenko_lawyer</a></div></div>
+        <div class="ct"><svg viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="3"/><path d="M17 16h14M17 23h14M17 30h8"/></svg><div><small>Документи</small><a href="/polityka-konfidentsiinosti/">Політика конфіденційності</a></div></div>
+        <div style="margin-top:6px"><a class="btn" href="https://t.me/yakovenko_lawyer" target="_blank" rel="noopener">Написати в Telegram<i><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
+      </div>
+      <div class="map"><iframe title="Мапа: вул. Басейна, 9, Київ" src="https://www.google.com/maps?q=%D0%B2%D1%83%D0%BB.%20%D0%91%D0%B0%D1%81%D0%B5%D0%B9%D0%BD%D0%B0%2C%209%2C%20%D0%9A%D0%B8%D1%97%D0%B2%2C%2001024&#038;hl=uk&#038;z=16&#038;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    </div>
+    <nav class="fnav" aria-label="Меню"><a href="/#about">Про мене</a><a href="/#services">Послуги</a><a href="/rezultaty-roboty/">Результати</a><a href="/blog/">Блог</a><a href="/#reviews">Відгуки</a><a href="/kontakty/">Контакти</a><a href="/polityka-konfidentsiinosti/">Політика</a></nav>
+    <div class="bottom"><span>© 2026 Яковенко Дмитро &#45; юрист по кредитам</span><span>Інформація на сайті має ознайомчий характер і не є юридичною консультацією.</span><span class="legal-links"><a href="/polityka-konfidentsiinosti/">Політика конфіденційності та обробки персональних даних</a><a href="/kontakty/">Контакти</a></span></div>
+  </div>
+</footer>
+
+
+</div>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Чи може банк забути про кредит: що каже закон і суд", "description": "Чи може банк забути про кредит? Пояснюю, коли спливає позовна давність, що її перериває і як заявити про неї в суді. Юрист Дмитро Яковенко.", "inLanguage": "uk", "datePublished": "2026-12-04T09:00:00+02:00", "mainEntityOfPage": "https://urists.com.ua/blog/chy-mozhe-bank-zabuty-pro-kredyt/", "author": {"@id": "https://urists.com.ua/#person"}, "isPartOf": {"@type": "Blog", "url": "https://urists.com.ua/blog/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чи може банк забути про кредит через 3 роки?", "acceptedAnswer": {"@type": "Answer", "text": "Ні, банк сам борг не списує. Через три роки обмежується право стягнути його в суді. Це діє, якщо не було визнання боргу і ви заявили про давність (ст. 257, 264, 267 ЦК України). Без заяви суд давність не застосує."}}, {"@type": "Question", "name": "Чи є можливість не сплачувати суму боргу, яку вимагає банк?", "acceptedAnswer": {"@type": "Answer", "text": "Частково, і лише за платежами, по яких давність сплила. Для цього потрібна заява в суді. Решта боргу залишається вашим обов'язком. Результат залежить від обставин справи, тому гарантій немає."}}, {"@type": "Question", "name": "Чи може банк збільшити строк позовної давності?", "acceptedAnswer": {"@type": "Answer", "text": "Договір може містити умову про збільшений строк. Перевірте текст свого договору до будь-яких дій. Якщо така умова є, строк у вашому випадку розраховують інакше."}}, {"@type": "Question", "name": "Чи перериває давність часткова оплата боргу?", "acceptedAnswer": {"@type": "Answer", "text": "Так, якщо це ваша дія, що свідчить про визнання боргу (ст. 264 ЦК). Відлік тоді починається заново. Договірне списання банком давність не перериває (справа № 442/5498/16-ц)."}}, {"@type": "Question", "name": "Що буде, якщо не платити кредит 3 роки?", "acceptedAnswer": {"@type": "Answer", "text": "Вимоги банку зростають, можливі позов і продаж боргу колекторам. Давність не захищає автоматично, її треба заявити. Див. таблицю порівняння вище."}}, {"@type": "Question", "name": "Чи можна переговорити про реструктуризацію старого боргу?", "acceptedAnswer": {"@type": "Answer", "text": "Можна, але обережно. Реструктуризація зазвичай означає підписання нового графіка, а це може визнати борг і поновити строк. Спершу порахуйте давність по кожному платежу, а вже потім обговорюйте умови. Якщо договір укладено з МФО, діє те саме правило."}}, {"@type": "Question", "name": "Чи застосує суд давність, якщо я не прийду на засідання?", "acceptedAnswer": {"@type": "Answer", "text": "Ні. Суд застосовує давність лише за заявою сторони, зробленою до ухвалення рішення (ст. 267 ЦК). Потрібні відзив або письмова заява."}}, {"@type": "Question", "name": "Чи може банк нараховувати проценти після закінчення строку кредиту?", "acceptedAnswer": {"@type": "Answer", "text": "За позицією Великої Палати ВС у справі № 444/9519/12 договірні проценти після строку кредитування не нараховують. Права банку тоді захищає ст. 625 ЦК."}}]}]}</script>
+
+<script>(function(){var r=document.querySelector(".yk");if(!r)return;var cb=r.querySelector("#ykm");if(!cb)return;r.querySelectorAll(".nav nav a").forEach(function(a){a.addEventListener("click",function(){cb.checked=false})});document.addEventListener("keydown",function(e){if(e.key==="Escape")cb.checked=false})})();</script>
+
