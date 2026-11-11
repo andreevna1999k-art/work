@@ -1,0 +1,60 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:'Open Sans',sans-serif;background:#E9EBEF}
+.bg{position:absolute;inset:0;background:linear-gradient(180deg,#F4F5F8 0%,#E9EBEF 60%,#D9DDEE 100%)}
+.circle{position:absolute;left:300px;top:470px;width:820px;height:820px;border-radius:50%;background:#1A5CE0}
+.arc{position:absolute;border:3px solid #1A5CE0;border-radius:50%;opacity:.55}
+.sidebar{position:absolute;right:0;top:0;width:64px;height:820px;background:#1A5CE0;z-index:1}
+.sidebar span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(90deg);white-space:nowrap;color:#fff;font:700 21px/1 'Open Sans',sans-serif;letter-spacing:.3em}
+.eyebrow{position:absolute;left:56px;top:46px;font:700 24px/1 'Open Sans',sans-serif;letter-spacing:.22em;color:#1A5CE0}
+.dom{position:absolute;right:104px;top:46px;font:600 22px/1 'Open Sans',sans-serif;letter-spacing:.18em;color:#232961}
+.h1{position:absolute;left:52px;top:80px;font:800 280px/.9 Poppins,sans-serif;color:#000F23;letter-spacing:-8px;white-space:nowrap;z-index:2}
+.h2{position:absolute;left:52px;top:330px;font:800 200px/.95 Poppins,sans-serif;color:#000F23;letter-spacing:-6px;white-space:nowrap;z-index:2}
+.photo{position:absolute;left:150px;top:472px;width:880px;z-index:3}
+.photo img{width:100%;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.tips{position:absolute;left:32px;top:590px;width:292px;z-index:5;background:rgba(244,245,248,.94);padding:20px 20px 8px;border-radius:12px;box-shadow:0 8px 24px rgba(35,41,97,.18)}
+.tips .t{font:600 22px/1.3 'Open Sans',sans-serif;color:#232961;text-transform:uppercase;letter-spacing:.04em;padding-bottom:16px;margin-bottom:16px;border-bottom:3px solid #1A5CE0}
+.tips .t:last-child{border-bottom:0;margin-bottom:0}
+.tip-label{display:block;font:700 20px/1 'Open Sans',sans-serif;letter-spacing:.28em;color:#1A5CE0;margin-bottom:18px}
+.stat{position:absolute;right:92px;top:604px;width:250px;z-index:5;text-align:left;color:#fff}
+.stat .n{display:inline-block;white-space:nowrap;font:800 100px/1 Poppins,sans-serif;color:#fff}
+.stat .l{font:700 26px/1.1 Poppins,sans-serif;letter-spacing:.04em;margin-top:2px}
+.stat .s{font:600 19px/1.3 'Open Sans',sans-serif;margin-top:8px;color:#D9DDEE}
+.sticker{position:absolute;left:44px;top:1040px;width:190px;height:190px;border-radius:50%;background:#000F23;color:#fff;z-index:5;transform:rotate(-10deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:800 26px/1.1 Poppins,sans-serif;box-shadow:0 10px 30px rgba(0,15,35,.35)}
+.sticker small{font:700 17px/1.2 'Open Sans',sans-serif;letter-spacing:.12em;margin-top:8px;color:#8FB0FF}
+.panel{position:absolute;left:0;right:0;top:1340px;height:470px;background:#232961;z-index:4}
+.name{position:absolute;left:0;top:1290px;height:84px;padding:0 44px 0 56px;background:#1A5CE0;color:#fff;font:700 38px/84px Poppins,sans-serif;letter-spacing:.02em;z-index:6;white-space:nowrap}
+.t1{position:absolute;left:56px;top:1424px;white-space:nowrap;font:600 48px/1 Poppins,sans-serif;color:#fff;z-index:6}
+.t2{position:absolute;left:56px;top:1494px;white-space:nowrap;font:800 100px/1.05 Poppins,sans-serif;color:#8FB0FF;z-index:6}
+.chips{position:absolute;left:56px;right:56px;top:1688px;display:flex;gap:16px;z-index:6}
+.chips div{flex:1;border:2px solid #8FB0FF;color:#fff;border-radius:40px;text-align:center;padding:16px 8px;font:700 24px/1.1 Poppins,sans-serif;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.bar{position:absolute;left:0;right:0;top:1810px;bottom:0;background:#000F23;z-index:6;display:flex;align-items:center;justify-content:space-between;padding-left:56px}
+.bar .l{color:#fff;font:600 24px/1 'Open Sans',sans-serif;letter-spacing:.2em;white-space:nowrap}
+.bar .r{height:100%;width:400px;background:#1A5CE0;color:#fff;display:flex;align-items:center;justify-content:center;font:700 30px/1 Poppins,sans-serif;letter-spacing:.06em}
+</style></head><body>
+<div class="bg"></div><div class="circle"></div>
+<div class="arc" style="left:640px;top:70px;width:520px;height:520px"></div><div class="arc" style="left:700px;top:130px;width:400px;height:400px"></div>
+<div class="arc" style="left:-260px;top:900px;width:520px;height:520px"></div><div class="arc" style="left:-200px;top:960px;width:400px;height:400px"></div>
+<div class="sidebar"><span>ЧИТАЙТЕ ПОВНУ СТАТТЮ НА САЙТІ</span></div>
+<div class="eyebrow" id="iss"></div><div class="dom">yuristy.in.ua</div>
+<div class="h1" id="h1">СУД</div><div class="h2" id="h2">З БАНКОМ</div>
+<div class="photo"><img src="portrait-cutout.png"></div>
+<div class="tips"><span class="tip-label">ВАЖЛИВО</span><div id="tips"></div></div>
+<div class="stat"><div class="n" id="sn"></div><div class="l" id="sl"></div><div class="s" id="ss"></div></div>
+<div class="sticker">НОВА<br>СТАТТЯ<small>ЧИТАЙТЕ ↓</small></div>
+<div class="panel"></div><div class="name">ХМЕЛЬНИЦЬКИЙ МАКСИМ</div>
+<div class="t1" id="t1"></div><div class="t2" id="t2"></div>
+<div class="chips" id="chips"></div>
+<div class="bar"><span class="l">ПОРАДИ ЮРИСТА З КРЕДИТНИХ СПОРІВ</span><span class="r">ЧИТАЙТЕ СТАТТЮ →</span></div>
+<script>
+const p=new URLSearchParams(location.search);const d=JSON.parse(p.get('d'));
+document.getElementById('iss').textContent='КРЕДИТНІ СПОРИ · ВИПУСК '+d.n;
+document.getElementById('tips').innerHTML=d.tips.map(t=>'<div class="t">'+t+'</div>').join('');
+document.getElementById('sn').textContent=d.stat[0];document.getElementById('sl').textContent=d.stat[1];document.getElementById('ss').textContent=d.stat[2];
+document.getElementById('t1').textContent=d.t1;document.getElementById('t2').textContent=d.t2;
+document.getElementById('chips').innerHTML=d.gold.split(' · ').map(x=>'<div>'+x+'</div>').join('');
+function fit(el,max,w){let s=max;el.style.fontSize=s+'px';while(el.scrollWidth>w&&s>14){s-=2;el.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{fit(document.getElementById('t2'),100,968);fit(document.getElementById('t1'),48,968);fit(document.getElementById('sn'),100,236);fit(document.getElementById('sl'),26,250);fit(document.getElementById('h2'),200,900);document.title='ready'});
+</script></body></html>
