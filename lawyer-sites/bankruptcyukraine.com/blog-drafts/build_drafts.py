@@ -116,7 +116,7 @@ def build(i, url, pid):
     return payload, dict(title=title, desc=desc, words=len(re.sub(r'<[^>]+>', ' ', body).split()), faq=len(faq), h1=h1, exc=exc)
 
 # ---------- хаб (динамічний + запасний список для чернетки) ----------
-JS = r'''(function(){var A=String.fromCharCode(38);var g=document.getElementById("blogGrid");if(!g)return;var M=%(M)s;var LIM=100,PID=%(hub)d;
+JS = r'''(function(){var A=String.fromCharCode(38);var g=document.getElementById("blogGrid");if(!g)return;var M=%(M)s;var LIM=%(lim)d,PID=%(hub)d,FB=%(fb)d;
 function T(s){var d=document.createElement("div");d.innerHTML=s;return(d.textContent||"").replace(/\s+/g," ").trim()}
 function D(s){var p=String(s).slice(0,10).split("-");return p[2]+"."+p[1]+"."+p[0]}
 function E(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
@@ -124,7 +124,7 @@ function card(u,slug,ti,dt,ex){var m=M[slug]||{t:"Стаття"};var art=E("arti
 if(m.i){var im=new Image();im.src=m.i;im.alt=ti;im.width=640;im.height=427;im.loading="lazy";cv.appendChild(im)}
 cv.appendChild(E("span","bl-tag",m.t));art.appendChild(cv);var b=E("div","bl-body"),tm=E("time",null,D(dt));tm.setAttribute("datetime",String(dt).slice(0,10));b.appendChild(tm);
 var h=E("h3"),l=E("a",null,ti);l.href=u;l.style.color="inherit";h.appendChild(l);b.appendChild(h);b.appendChild(E("p",null,ex));var mr=E("a","bl-more","Читати статтю");mr.href=u;b.appendChild(mr);art.appendChild(b);g.appendChild(art)}
-function fallback(){Object.keys(M).sort(function(a,b){return M[b].d.localeCompare(M[a].d)}).slice(0,LIM).forEach(function(s){card("/blog/"+s+"/",s,M[s].h,M[s].d,M[s].e)})}
+function fallback(){if(!FB){g.appendChild(E("p","bl-empty","Перші статті з’являться найближчим часом."));return}Object.keys(M).sort(function(a,b){return M[b].d.localeCompare(M[a].d)}).slice(0,LIM).forEach(function(s){card("/blog/"+s+"/",s,M[s].h,M[s].d,M[s].e)})}
 fetch("/wp-json/wp/v2/pages?parent="+PID+A+"per_page=100"+A+"orderby=date"+A+"order=desc"+A+"_fields=id,date,link,slug,title,excerpt",{credentials:"omit"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(a){
 if(!a.length){fallback();return}a.slice(0,LIM).forEach(function(x){card(new URL(x.link,location.href).pathname,x.slug,T(x.title.rendered),x.date,T((x.excerpt?x.excerpt.rendered:"")||""))})}).catch(fallback)})();'''
 def thumb(n):
@@ -133,12 +133,15 @@ def thumb(n):
     if not p.exists(): return ""
     im = Image.open(p).convert("RGB").resize((640, 427)); b = io.BytesIO(); im.save(b, "WEBP", quality=70, method=6)
     return "data:image/webp;base64," + base64.b64encode(b.getvalue()).decode()
-def hub_html(infos):
+FALLBACK = False   # True -- показувати запасний список із 12 карток, поки статті в чернетках (лише для перегляду макета)
+def blog_js(gid, lim, infos):
     M = {}
     for i, url, _ in json.load(open(R / "src/index.json")):
         inf = infos[i]; M[url] = {"t": TAGS[i-1], "i": thumb(i), "h": inf["h1"], "d": DATES[i-1], "e": inf["exc"]}
     Mj = json.dumps(M, ensure_ascii=False, separators=(",", ":")).replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e")
-    js = "<script>" + JS % dict(M=Mj, hub=HUB_ID) + "</script>"
+    return "<script>" + JS.replace('getElementById("blogGrid")', 'getElementById("%s")' % gid) % dict(M=Mj, hub=HUB_ID, lim=lim, fb=int(FALLBACK)) + "</script>"
+def hub_html(infos):
+    js = blog_js("blogGrid", 100, infos)
     css = (f"<style>body.page-id-{HUB_ID} .entry-header,body.page-id-{HUB_ID} .ast-breadcrumbs-wrapper,body.page-id-{HUB_ID} .entry-title,body.page-id-{HUB_ID} .site-footer{{display:none!important}}"
            f"body.page-id-{HUB_ID} .ast-container,body.page-id-{HUB_ID} #primary,body.page-id-{HUB_ID} .entry-content{{padding:0!important;margin:0!important;max-width:none!important}}body.page-id-{HUB_ID}{{background:#E4F7FC}}</style>")
     inner = ('<header class="hero"><div class="w"><div><h1>Мої статті</h1><span class="bar"></span><p class="sub">Адвокат зі скасування судових наказів<br>та колекторських дій</p>'
