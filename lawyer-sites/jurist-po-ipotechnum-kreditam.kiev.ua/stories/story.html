@@ -1,0 +1,59 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:Roboto,sans-serif;background:#CAE6F0}
+.bg{position:absolute;inset:0;background:linear-gradient(180deg,#F1FAFE 0%,#D9EEF7 30%,#BFE0EE 58%,#9AC2D7 100%)}
+.wave{position:absolute;left:-200px;top:400px;width:1500px;height:900px;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(14,178,231,.35),rgba(14,178,231,0) 65%)}
+.ring{position:absolute;left:150px;top:470px;width:780px;height:780px;border-radius:50%;border:6px solid rgba(14,178,231,.6)}
+.top{position:absolute;left:56px;right:56px;top:46px;display:flex;justify-content:space-between;font:700 24px/1 Roboto,sans-serif;letter-spacing:.2em;color:#000C30}
+.mast{position:absolute;left:0;right:0;top:112px;text-align:center;font:900 340px/1 'Playfair Display',serif;color:#000C30;letter-spacing:-4px;white-space:nowrap}
+.strip{position:absolute;left:0;right:0;top:432px;height:58px;background:#0EB2E7;color:#000C30;display:flex;align-items:center;justify-content:space-between;padding:0 56px;font:900 21px/1 Roboto,sans-serif;letter-spacing:.12em;z-index:1}
+.photo{position:absolute;left:60px;top:300px;width:960px;z-index:2}
+.photo img{width:100%;display:block}
+.fade{position:absolute;left:0;right:0;top:1110px;height:160px;background:linear-gradient(180deg,rgba(0,12,48,0),#000C30);z-index:3}
+.panel{position:absolute;left:0;right:0;top:1268px;bottom:0;background:#000C30;z-index:3}
+.tips{position:absolute;left:44px;top:524px;width:236px;z-index:4}
+.tip-label{display:inline-block;background:#0EB2E7;color:#000C30;font-weight:900;font-size:22px;letter-spacing:.14em;padding:8px 14px}
+.tips .t{margin-top:10px;background:#000C30;color:#fff;font-weight:700;font-size:21px;line-height:1.2;padding:10px 12px;text-transform:uppercase;border-left:6px solid #0EB2E7}
+.badge{position:absolute;right:44px;top:520px;width:250px;height:222px;z-index:4}
+.badge svg{position:absolute;inset:0}
+.badge .b1,.badge .b2{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;text-align:center;font-family:'Playfair Display',serif;font-weight:900}
+.badge .b1{top:78px;color:#000C30;font-size:30px}.badge .b2{top:128px;color:#0A7FA8;font-size:22px;letter-spacing:.04em}
+.stat{position:absolute;right:38px;top:762px;width:262px;text-align:center;color:#000C30;z-index:4;background:rgba(255,255,255,.92);border-radius:14px;padding:14px 8px 16px;box-shadow:0 10px 30px rgba(0,12,48,.25)}
+.stat .n{display:inline-block;white-space:nowrap;font:900 112px/1 'Playfair Display',serif;color:#000C30}
+.stat .l{font-weight:900;font-size:30px;letter-spacing:.06em;margin-top:2px}
+.stat .s{font-weight:700;font-size:20px;line-height:1.25;margin-top:6px;color:#0A5F80;word-break:break-word}
+.sticker{position:absolute;left:30px;top:1020px;width:200px;height:200px;border-radius:50%;background:#0EB2E7;color:#000C30;z-index:4;transform:rotate(-10deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:900 28px/1.1 'Playfair Display',serif;box-shadow:0 10px 30px rgba(0,12,48,.35)}
+.sticker small{font:700 21px/1.2 Roboto,sans-serif;letter-spacing:.12em;margin-top:8px}
+.t1{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:1292px;text-align:center;font:900 54px/1 'Playfair Display',serif;color:#fff;z-index:5}
+.t2{position:absolute;left:50%;transform:translateX(-50%);top:1362px;text-align:center;font:900 112px/1.05 'Playfair Display',serif;color:#0EB2E7;white-space:nowrap;z-index:5}
+.by{position:absolute;left:0;right:0;top:1520px;text-align:center;color:#fff;font:700 31px/1 Roboto,sans-serif;letter-spacing:.1em;white-space:nowrap;z-index:5}
+.gold{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:1580px;text-align:center;color:#9AC2D7;font:700 25px/1 Roboto,sans-serif;letter-spacing:.1em;z-index:5}
+.cta{position:absolute;left:56px;right:56px;top:1660px;height:92px;background:#0EB2E7;color:#000C30;font:900 38px/1 'Playfair Display',serif;display:flex;align-items:center;justify-content:center;z-index:5}
+.dom{position:absolute;left:0;right:0;top:1796px;text-align:center;color:#fff;font:700 26px/1 Roboto,sans-serif;letter-spacing:.16em;z-index:5}
+</style></head><body>
+<div class="bg"></div><div class="wave"></div><div class="ring"></div>
+<div class="top"><span id="iss"></span><span>ЮРИДИЧНИЙ ЖУРНАЛ</span></div>
+<div class="mast" id="mast"><span id="mastt" style="display:inline-block">МАЙНО</span></div><div class="strip"><span>ІПОТЕКА · АРЕШТИ</span><span>АВТО В КРЕДИТІ</span></div>
+<div class="photo"><img src="portrait-cutout.png"></div>
+<div class="fade"></div><div class="panel"></div>
+<div class="tips"><span class="tip-label">ВАЖЛИВО</span><div id="tips"></div></div>
+<div class="badge"><svg viewBox="0 0 250 222"><polygon points="62,6 188,6 244,111 188,216 62,216 6,111" fill="#fff" stroke="#0EB2E7" stroke-width="6"/><polygon points="72,20 178,20 228,111 178,202 72,202 22,111" fill="none" stroke="#000C30" stroke-width="2"/></svg>
+ <div class="b1" id="b1"></div><div class="b2" id="b2"></div></div>
+<div class="stat"><div class="n" id="sn"></div><div class="l" id="sl"></div><div class="s" id="ss"></div></div>
+<div class="sticker">НОВА<br>СТАТТЯ<small>ЧИТАЙТЕ ↓</small></div>
+<div class="t1" id="t1"></div><div class="t2" id="t2"></div>
+<div class="by" id="by">ПОРАДИ ЮРИСТА ВОЛОДИМИРА ПОНОМАРЕНКА</div><div class="gold" id="gold"></div>
+<div class="cta">Читайте мою нову статтю</div><div class="dom">jurist-po-ipotechnum-kreditam.kiev.ua</div>
+<script>
+const p=new URLSearchParams(location.search);const d=JSON.parse(p.get('d'));
+document.getElementById('iss').textContent='ВИПУСК '+d.n;
+document.getElementById('b1').textContent=d.badge[0];document.getElementById('b2').textContent=d.badge[1];
+document.getElementById('tips').innerHTML=d.tips.map(t=>'<div class="t">'+t+'</div>').join('');
+document.getElementById('sn').textContent=d.stat[0];document.getElementById('sl').textContent=d.stat[1];document.getElementById('ss').textContent=d.stat[2];
+document.getElementById('t1').textContent=d.t1;document.getElementById('t2').textContent=d.t2;document.getElementById('gold').textContent=d.gold;
+function fit(el,max,w){let s=max;el.style.fontSize=s+'px';while(el.scrollWidth>w&&s>14){s-=2;el.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{fit(document.getElementById('b1'),30,170);fit(document.getElementById('b2'),22,170);fit(document.getElementById('t2'),112,960);fit(document.getElementById('t1'),54,960);fit(document.getElementById('gold'),25,980);fit(document.getElementById('sn'),104,230);
+(function(){var m=document.getElementById('mast'),t=document.getElementById('mastt'),z=340;m.style.fontSize=z+'px';while(t.offsetWidth>1000&&z>120){z-=4;m.style.fontSize=z+'px'}})();document.title='ready'});
+</script></body></html>
