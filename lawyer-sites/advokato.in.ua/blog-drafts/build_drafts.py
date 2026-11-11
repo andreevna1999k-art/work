@@ -50,6 +50,13 @@ CSS_ART = """<style>
 @media(max-width:700px){.kv .art-card{padding:30px 20px 34px;margin-top:-20px;border-radius:18px}.kv .ahero{padding:110px 0 56px}.kv .art-body{font-size:16px}}
 </style>"""
 
+import base64
+ALTS = json.load(open(R / "image-alts.json")) if (R / "image-alts.json").exists() else {}
+IMAGES = {}
+for _n, _alt in ALTS.items():
+    _p = R / "img" / f"{_n}.webp"
+    if _p.exists(): IMAGES[int(_n)] = {"src": "data:image/webp;base64," + base64.b64encode(_p.read_bytes()).decode(), "alt": _alt}
+
 def ui(d): y, m, dd = d.split("-"); return f"{dd}.{m}.{y}"
 
 def clean(body, date):
@@ -96,6 +103,10 @@ def build(i, url, pid):
     if faq:
         ld["@graph"].append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": re.sub(r'<[^>]+>', '', q),
             "acceptedAnswer": {"@type": "Answer", "text": re.sub(r'<[^>]+>', '', a)}} for q, a in faq]})
+    fig = IMAGES.get(i)
+    if fig:
+        f = (f'<figure class="art-fig"><img src="{fig["src"]}" alt="{html.escape(fig["alt"], quote=True)}" width="1200" height="800" loading="lazy" decoding="async"></figure>')
+        body = body.replace('<h2 id="s1">', f + '\n<h2 id="s1">', 1)
     content = page_html(i, url, pid, date, tag, h1, desc, body, ld)
     payload = {"title": h1, "slug": url, "status": "draft", "parent": HUB_ID, "template": "elementor_canvas",
                "content": content, "excerpt": exc, "date": date + "T09:00:00"}
