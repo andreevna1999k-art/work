@@ -21,13 +21,13 @@ def call(method, path, data=None):
     try: return json.loads(r.stdout.decode())
     except Exception: return {"raw": r.stdout.decode()[:200]}
 
-JS = r'''(function(){var A=String.fromCharCode(38);var g=document.getElementById("%(gid)s");if(!g)return;var LIM=%(lim)d,PID=%(hub)d,INC="%(inc)s";
+JS = r'''(function(){var A=String.fromCharCode(38);var g=document.getElementById("%(gid)s");if(!g)return;var LIM=%(lim)d,PID=%(hub)d,INC="%(inc)s",M=%(m)s;
 function T(s){var d=document.createElement("div");d.innerHTML=s;return(d.textContent||"").replace(/\s+/g," ").trim()}
 function D(s){var p=String(s).slice(0,10).split("-");return p[2]+"."+p[1]+"."+p[0]}
 function E(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
 function card(x){var u=new URL(x.link,location.href).pathname,ti=T(x.title.rendered),ex=T((x.excerpt?x.excerpt.rendered:"")||"");if(ex.indexOf(ti)===0)ex=ex.slice(ti.length).trim();ex=ex.replace(/\s*\[…\]\s*$/,"");if(ex.length>230){ex=ex.slice(0,227).replace(/\s+\S*$/,"")+"…"}var art=E("article","bl-card"),cv=E("a","bl-cover");cv.href=u;cv.tabIndex=-1;
-var fm=x._embedded&&x._embedded["wp:featuredmedia"]&&x._embedded["wp:featuredmedia"][0];if(fm&&fm.source_url){var im=new Image();im.src=fm.source_url;im.alt=ti;im.width=640;im.height=427;im.loading="lazy";cv.appendChild(im)}
-cv.appendChild(E("span","bl-tag","Стаття"));art.appendChild(cv);var b=E("div","bl-body"),tm=E("time",null,D(x.date));tm.setAttribute("datetime",String(x.date).slice(0,10));b.appendChild(tm);
+var mm=M[x.slug]||{};var fm=x._embedded&&x._embedded["wp:featuredmedia"]&&x._embedded["wp:featuredmedia"][0];var src=mm.i||(fm&&fm.source_url);if(src){var im=new Image();im.src=src;im.alt=ti;im.width=640;im.height=427;im.loading="lazy";cv.appendChild(im)}
+cv.appendChild(E("span","bl-tag",mm.t||"Стаття"));art.appendChild(cv);var b=E("div","bl-body"),tm=E("time",null,D(x.date));tm.setAttribute("datetime",String(x.date).slice(0,10));b.appendChild(tm);
 var h=E("h3"),l=E("a",null,ti);l.href=u;l.style.color="inherit";h.appendChild(l);b.appendChild(h);b.appendChild(E("p",null,ex));var mr=E("a","bl-more","Читати статтю");mr.href=u;b.appendChild(mr);art.appendChild(b);g.appendChild(art)}
 function empty(){g.appendChild(E("p","bl-empty","Перші статті з’являться найближчим часом."))}
 var F="_embed=wp:featuredmedia"+A+"_fields=id,date,link,slug,title,excerpt,_embedded";
@@ -37,9 +37,10 @@ if(!a.length){empty();return}a.sort(function(p,q){return String(q.date).localeCo
 GRID = re.compile(r'<div class="bl-g">(?:<article.*?</article>)+</div>', re.S)
 EMPTY_CSS = ".kv .bl-empty{grid-column:1/-1;text-align:center;opacity:.8;padding:30px 10px;font-size:18px}"
 INC = INC_ENV
+CARD_MAP = open(os.environ["CARD_MAP"], encoding="utf-8").read() if os.environ.get("CARD_MAP") else "{}"
 def dyn(html, gid, lim):
     if ".kv .bl-empty" not in html: html = html.replace("</style>", EMPTY_CSS + "\n</style>", 1)
-    js = "<script>" + JS % dict(gid=gid, lim=lim, hub=HUB, inc=INC) + "</script>"
+    js = "<script>" + JS % dict(gid=gid, lim=lim, hub=HUB, inc=INC, m=CARD_MAP) + "</script>"
     n = len(GRID.findall(html))
     assert n == 1, f"очікувалась 1 сітка карток, знайдено {n}"
     html = GRID.sub(lambda m: f'<div class="bl-g" id="{gid}"></div>' + js, html, count=1)
@@ -70,7 +71,7 @@ blk = find(ed_dr, "kvblk01w") or find(ed_dr, "kvblk02w"); assert blk or PATCH, "
 SCRIPT_RE = re.compile(r'<script>\(function\(\)\{var A=String.fromCharCode\(38\);var g=document.getElementById\("(blogGrid|homeBlog)"\).*?\}\)\(\);</script>', re.S)
 def repl_scripts(html):
     def f(m):
-        gid = m.group(1); return "<script>" + JS % dict(gid=gid, lim=(100 if gid == "blogGrid" else 3), hub=HUB, inc=INC) + "</script>"
+        gid = m.group(1); return "<script>" + JS % dict(gid=gid, lim=(100 if gid == "blogGrid" else 3), hub=HUB, inc=INC, m=CARD_MAP) + "</script>"
     new, n = SCRIPT_RE.subn(f, html); return new, n
 if PATCH:
     h, n1 = repl_scripts(hubd["content"]["raw"]); assert n1 == 1, n1

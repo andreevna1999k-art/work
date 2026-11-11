@@ -59,7 +59,7 @@ def paragraphs(s):
     res.append(s[prev:].strip())
     return [("p", x) for x in res if x]
 
-def parse(txt, n):
+def parse(txt, n=None, tables=None, extra_h3=()):
     txt = txt.replace("копії документів. Закон, суд, я: спірні питання\n", "копії документів. \nЗакон, суд, я: спірні питання\n")
     lines = [l.rstrip() for l in txt.split("\n")]
     meta = {"title": lines[0].replace("Title:", "").strip(), "desc": lines[1].replace("Description:", "").strip()}
@@ -79,7 +79,7 @@ def parse(txt, n):
     for l in intro:
         for b in split_inline(l.strip()): blocks.append(b)
     i = 0
-    tabs = TABLES.get(n, [])
+    tabs = tables if tables is not None else TABLES.get(n, [])
     section = None
     while i < len(rest):
         raw = rest[i]; l = raw.strip(); i += 1
@@ -98,7 +98,7 @@ def parse(txt, n):
             section = l; blocks.append(("h2", l)); continue
         if section == "FAQ" and l.endswith("?") and len(l) < 150:
             blocks.append(("h3", l)); continue
-        if H3_RE.match(l) and len(l) < 120:
+        if (l in extra_h3 or H3_RE.match(l)) and len(l) < 120:
             blocks.append(("h3", l.rstrip(":"))); continue
         m = re.match(r"^[•◦]\s+(.*)$", l)
         if m: blocks.append(("li", m.group(1).strip())); continue
