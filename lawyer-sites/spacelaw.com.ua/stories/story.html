@@ -1,0 +1,54 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&family=Playfair+Display:ital,wght@0,700;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:Inter,sans-serif;background:#D8D8F5}
+.bg{position:absolute;inset:0;background:linear-gradient(180deg,#E9E5FC 0%,#D8D8F5 40%,#BDB5F2 100%)}
+.pre{position:absolute;left:56px;top:56px;font:900 40px/1 Inter,sans-serif;letter-spacing:.04em;color:#1B0F4A;z-index:5}
+.issue{position:absolute;right:56px;top:60px;font:italic 500 26px/1 'Playfair Display',serif;color:#1B0F4A;z-index:5}
+.mast{position:absolute;left:0;right:0;top:80px;text-align:left;padding-left:40px;font:900 330px/1 Inter,sans-serif;color:#1B0F4A;white-space:nowrap;letter-spacing:-14px}
+.mag{position:absolute;left:56px;top:346px;font:800 38px/1 Inter,sans-serif;color:#6528F7;letter-spacing:-.5px;z-index:5}
+.photo{position:absolute;left:-20px;top:170px;width:1300px;z-index:2}
+.photo img{width:100%;display:block}
+.panel{position:absolute;left:0;right:0;top:1150px;bottom:0;background:#F2F0FE;z-index:3}
+.panel::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px;background:#6528F7}
+.stk{position:absolute;left:36px;top:440px;width:270px;height:270px;border-radius:50%;background:#1B0F4A;z-index:5;transform:rotate(-8deg);box-shadow:0 14px 30px rgba(27,15,74,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff}
+.stk .a{font:italic 700 26px/1 'Playfair Display',serif;color:#D8D8F5;padding:0 24px}
+.stk .n{display:inline-block;white-space:nowrap;font:italic 700 74px/1.05 'Playfair Display',serif;color:#fff;margin:4px 0}
+.stk .b{font:italic 500 20px/1.2 'Playfair Display',serif;color:#BDB5F2;padding:0 26px}
+.tip{position:absolute;left:36px;width:285px;background:rgba(242,240,254,.94);padding:16px 18px 16px;z-index:5;border-radius:4px;box-shadow:0 8px 20px rgba(27,15,74,.18)}
+.tip i{display:block;width:104px;height:9px;background:#1B0F4A;margin-bottom:10px}
+.tip b{display:block;font:800 24px/1.12 Inter,sans-serif;color:#1B0F4A;text-transform:uppercase}
+.t1{position:absolute;left:56px;top:1190px;font:900 104px/1 Inter,sans-serif;color:#1B0F4A;text-transform:uppercase;white-space:nowrap;letter-spacing:-3px;z-index:6}
+.t2{position:absolute;left:56px;top:1300px;width:968px;font:900 112px/1 Inter,sans-serif;color:#6528F7;text-transform:uppercase;letter-spacing:-3px;z-index:6}
+.sub{position:absolute;left:0;right:0;text-align:center;font:italic 500 38px/1.2 'Playfair Display',serif;color:#1B0F4A;z-index:6;top:1610px}
+.cta{position:absolute;left:56px;right:56px;top:1700px;height:96px;background:#6528F7;color:#fff;font:800 38px/1 Inter,sans-serif;display:flex;align-items:center;justify-content:center;z-index:6;border-radius:12px}
+.dom{position:absolute;left:0;right:0;top:1836px;text-align:center;color:#1B0F4A;font:700 26px/1 Inter,sans-serif;letter-spacing:.24em;z-index:6}
+.by{position:absolute;left:56px;top:1868px;color:#6528F7;font:700 20px/1 Inter,sans-serif;letter-spacing:.16em;z-index:6}
+</style></head><body>
+<div class="bg"></div>
+<div class="pre">ЖУРНАЛ ПРО</div><div class="issue" id="iss"></div>
+<div class="mast" id="mast"><span id="mastt" style="display:inline-block">КРЕДИТ</span></div>
+<div class="mag">юридичний випуск</div>
+<div class="photo"><img src="portrait-cutout.png"></div>
+<div class="panel"></div>
+<div class="stk"><div class="a" id="sa"></div><div class="n" id="sn"></div><div class="b" id="sb"></div></div>
+<div id="tips"></div>
+<div class="t1" id="t1"></div><div class="t2" id="t2"></div><div class="sub" id="sub"></div>
+<div class="cta">Читайте мою нову статтю</div><div class="dom">SPACELAW.COM.UA</div>
+<script>
+const p=new URLSearchParams(location.search);const d=JSON.parse(p.get('d'));
+document.getElementById('iss').textContent='Випуск № '+d.n+' • 2026';
+var s0=d.stat[0],s1=d.stat[1];var big=s0.length<=s1.length?s0:s1,small=s0.length<=s1.length?s1:s0;
+document.getElementById('sa').textContent=small;document.getElementById('sn').textContent=big;document.getElementById('sb').textContent=d.stat[2];
+document.getElementById('tips').innerHTML=d.tips.map(function(t,k){return '<div class="tip" style="top:'+(745+k*135)+'px"><i></i><b>'+t+'</b></div>'}).join('');
+document.getElementById('t1').textContent=d.t1;document.getElementById('t2').textContent=d.t2;
+document.getElementById('sub').textContent=d.gold.split(' · ').join(' · ');
+function fit(el,max,w){let s=max;el.style.fontSize=s+'px';while(el.scrollWidth>w&&s>14){s-=2;el.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{
+ fit(document.getElementById('sn'),74,224);fit(document.getElementById('sa'),26,230);
+ fit(document.getElementById('t1'),104,968);fit(document.getElementById('sub'),38,1080);
+ var t2=document.getElementById('t2'),z=112;var ms=document.createElement('span');ms.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;font:900 112px/1 Inter;letter-spacing:-3px;text-transform:uppercase';document.body.appendChild(ms);var mw=0;d.t2.split(' ').forEach(function(w){ms.textContent=w;mw=Math.max(mw,ms.offsetWidth)});z=Math.min(112,Math.floor(112*960/mw));t2.style.fontSize=z+'px';while(t2.offsetHeight>270&&z>36){z-=2;t2.style.fontSize=z+'px'}t2.style.top=(1315+Math.max(0,(270-t2.offsetHeight)/2))+'px';
+ (function(){var m=document.getElementById('mast'),t=document.getElementById('mastt'),zz=330;m.style.fontSize=zz+'px';while(t.offsetWidth>990&&zz>80){zz-=4;m.style.fontSize=zz+'px'}})();
+ document.title='ready'});
+</script></body></html>
