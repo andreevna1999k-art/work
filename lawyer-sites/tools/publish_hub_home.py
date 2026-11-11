@@ -10,6 +10,9 @@ import json, re, sys, subprocess, pathlib, datetime
 SITE_DIR = pathlib.Path(__file__).resolve().parent.parent
 site, HUB, HOMED, FRONT = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])
 APPLY = "--apply" in sys.argv
+PATCH = "--patch-scripts" in sys.argv
+import os
+INC_ENV = os.environ.get("LEGACY_IDS", "")
 BASE = f"https://{site}"
 def call(method, path, data=None):
     cmd = ["curl", "-s", "-m", "150", "-X", method, f"{BASE}/wp-json/wp/v2/{path}"]
@@ -18,22 +21,25 @@ def call(method, path, data=None):
     try: return json.loads(r.stdout.decode())
     except Exception: return {"raw": r.stdout.decode()[:200]}
 
-JS = r'''(function(){var A=String.fromCharCode(38);var g=document.getElementById("%(gid)s");if(!g)return;var LIM=%(lim)d,PID=%(hub)d;
+JS = r'''(function(){var A=String.fromCharCode(38);var g=document.getElementById("%(gid)s");if(!g)return;var LIM=%(lim)d,PID=%(hub)d,INC="%(inc)s";
 function T(s){var d=document.createElement("div");d.innerHTML=s;return(d.textContent||"").replace(/\s+/g," ").trim()}
 function D(s){var p=String(s).slice(0,10).split("-");return p[2]+"."+p[1]+"."+p[0]}
 function E(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-function card(x){var u=new URL(x.link,location.href).pathname,ti=T(x.title.rendered),ex=T((x.excerpt?x.excerpt.rendered:"")||"");var art=E("article","bl-card"),cv=E("a","bl-cover");cv.href=u;cv.tabIndex=-1;
+function card(x){var u=new URL(x.link,location.href).pathname,ti=T(x.title.rendered),ex=T((x.excerpt?x.excerpt.rendered:"")||"");if(ex.indexOf(ti)===0)ex=ex.slice(ti.length).trim();ex=ex.replace(/\s*\[…\]\s*$/,"");if(ex.length>230){ex=ex.slice(0,227).replace(/\s+\S*$/,"")+"…"}var art=E("article","bl-card"),cv=E("a","bl-cover");cv.href=u;cv.tabIndex=-1;
 var fm=x._embedded&&x._embedded["wp:featuredmedia"]&&x._embedded["wp:featuredmedia"][0];if(fm&&fm.source_url){var im=new Image();im.src=fm.source_url;im.alt=ti;im.width=640;im.height=427;im.loading="lazy";cv.appendChild(im)}
 cv.appendChild(E("span","bl-tag","Стаття"));art.appendChild(cv);var b=E("div","bl-body"),tm=E("time",null,D(x.date));tm.setAttribute("datetime",String(x.date).slice(0,10));b.appendChild(tm);
 var h=E("h3"),l=E("a",null,ti);l.href=u;l.style.color="inherit";h.appendChild(l);b.appendChild(h);b.appendChild(E("p",null,ex));var mr=E("a","bl-more","Читати статтю");mr.href=u;b.appendChild(mr);art.appendChild(b);g.appendChild(art)}
 function empty(){g.appendChild(E("p","bl-empty","Перші статті з’являться найближчим часом."))}
-fetch("/wp-json/wp/v2/pages?parent="+PID+A+"per_page=100"+A+"orderby=date"+A+"order=desc"+A+"_embed=wp:featuredmedia"+A+"_fields=id,date,link,slug,title,excerpt,_embedded",{credentials:"omit"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(a){
-if(!a.length){empty();return}a.slice(0,LIM).forEach(card)}).catch(empty)})();'''
+var F="_embed=wp:featuredmedia"+A+"_fields=id,date,link,slug,title,excerpt,_embedded";
+function J(u){return fetch(u,{credentials:"omit"}).then(function(r){if(!r.ok)throw 0;return r.json()})}
+Promise.all([J("/wp-json/wp/v2/pages?parent="+PID+A+"per_page=100"+A+F),INC?J("/wp-json/wp/v2/pages?include="+INC+A+"per_page=100"+A+F).catch(function(){return[]}):Promise.resolve([])]).then(function(r){var m={},a=[];r[0].concat(r[1]).forEach(function(x){if(!m[x.id]){m[x.id]=1;a.push(x)}});
+if(!a.length){empty();return}a.sort(function(p,q){return String(q.date).localeCompare(String(p.date))});a.slice(0,LIM).forEach(card)}).catch(empty)})();'''
 GRID = re.compile(r'<div class="bl-g">(?:<article.*?</article>)+</div>', re.S)
 EMPTY_CSS = ".kv .bl-empty{grid-column:1/-1;text-align:center;opacity:.8;padding:30px 10px;font-size:18px}"
+INC = INC_ENV
 def dyn(html, gid, lim):
     if ".kv .bl-empty" not in html: html = html.replace("</style>", EMPTY_CSS + "\n</style>", 1)
-    js = "<script>" + JS % dict(gid=gid, lim=lim, hub=HUB) + "</script>"
+    js = "<script>" + JS % dict(gid=gid, lim=lim, hub=HUB, inc=INC) + "</script>"
     n = len(GRID.findall(html))
     assert n == 1, f"очікувалась 1 сітка карток, знайдено {n}"
     html = GRID.sub(lambda m: f'<div class="bl-g" id="{gid}"></div>' + js, html, count=1)
@@ -60,7 +66,25 @@ def strip_ids(nodes):
 base_dr = strip_ids(json.loads(json.dumps([e for e in ed_dr if e.get("id") not in ADDED])))
 same = json.dumps(base_dr, sort_keys=True) == json.dumps(strip_ids(json.loads(json.dumps(ed_live))), sort_keys=True)
 print("чернетка = жива + додані (header/block/anchors):", same, "| контейнерів live/draft:", len(ed_live), len(ed_dr))
-blk = find(ed_dr, "kvblk01w"); assert blk, "немає kvblk01w"
+blk = find(ed_dr, "kvblk01w") or find(ed_dr, "kvblk02w"); assert blk or PATCH, "немає kvblk01w"
+SCRIPT_RE = re.compile(r'<script>\(function\(\)\{var A=String.fromCharCode\(38\);var g=document.getElementById\("(blogGrid|homeBlog)"\).*?\}\)\(\);</script>', re.S)
+def repl_scripts(html):
+    def f(m):
+        gid = m.group(1); return "<script>" + JS % dict(gid=gid, lim=(100 if gid == "blogGrid" else 3), hub=HUB, inc=INC) + "</script>"
+    new, n = SCRIPT_RE.subn(f, html); return new, n
+if PATCH:
+    h, n1 = repl_scripts(hubd["content"]["raw"]); assert n1 == 1, n1
+    r = call("POST", f"pages/{HUB}", {"content": h}); print("hub script ->", r.get("id"), r.get("status"))
+    cur = json.loads(homed["meta"]["_elementor_data"]); cnt = [0]
+    def walk(nodes):
+        for e in nodes:
+            st = e.get("settings")
+            if isinstance(st, dict) and st.get("html") and "homeBlog" in st["html"]:
+                st["html"], n = repl_scripts(st["html"]); cnt[0] += n
+            walk(e.get("elements", []))
+    walk(cur); assert cnt[0] == 1, cnt
+    r = call("POST", f"pages/{HOMED}", {"meta": {"_elementor_data": json.dumps(cur, ensure_ascii=True, separators=(",", ":"))}}); print("home script ->", r.get("id"), str(r.get("code", ""))[:60])
+    print("elementor cache ->", subprocess.run(["curl", "-s", "-X", "DELETE", f"{BASE}/wp-json/elementor/v1/cache"], capture_output=True).stdout.decode()[:60]); sys.exit()
 if not APPLY:
     html = dyn(blk["settings"]["html"], "homeBlog", 3); print("dyn home OK", len(html))
     dyn(hubd["content"]["raw"], "blogGrid", 100); print("dyn hub OK"); sys.exit()
