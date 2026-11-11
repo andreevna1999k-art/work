@@ -1,0 +1,343 @@
+<!-- wp:html -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Serif:wght@700&display=swap');
+.kv{--rose:#B5838C;--peach:#FFCDB2;--slate:#615C68;--slate2:#6E6876;--char:#424242;--ink:#2F2B36;--white:#fff;
+ font-family:Lato,sans-serif;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);background:var(--slate);
+ position:relative;width:100%;margin:0;overflow:hidden;-webkit-font-smoothing:antialiased}
+.kv *{box-sizing:border-box}.kv h1,.kv h2,.kv h3,.kv p,.kv ul,.kv li{margin:0;padding:0}.kv ul{list-style:none}
+.kv a{color:inherit;text-decoration:none;border:0;box-shadow:none}
+.kv h1,.kv h2,.kv h3{font-family:'Noto Serif',serif;font-weight:700;color:#fff;line-height:1.2;text-transform:none;letter-spacing:0}
+.kv .w{max-width:1180px;margin:0 auto;padding:0 24px}
+.kv .bar{display:block;width:60px;height:3px;background:#fff;margin:18px 0 0}
+.kv .btn{display:inline-block;padding:15px 30px;border:1px solid #fff;color:#fff;font:400 14px/1 Lato,sans-serif;letter-spacing:.08em;text-transform:uppercase;background:transparent;transition:.2s}
+.kv .btn:hover{background:#fff;color:var(--slate)}
+/* hero: дві половини, як на головній сайту */
+.kv .hero{position:relative;background:linear-gradient(90deg,var(--rose) 0 50%,var(--char) 50% 100%);padding:150px 0 90px}
+.kv .hero .w{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.kv .hero h1{font-size:clamp(38px,5vw,60px)}
+.kv .hero .sub{margin-top:22px;font:700 17px/1.4 Lato,sans-serif;color:#fff}
+.kv .hero .lead{margin-top:14px;max-width:460px;color:rgba(255,255,255,.9)}
+.kv .hero .btn{margin-top:30px}
+.kv .hero .ph{justify-self:end;width:min(100%,430px)}
+.kv .hero .ph img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:28px;display:block;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+/* секція з картками */
+.kv .sec{padding:80px 0 90px;background:var(--slate)}
+.kv .sec.pre{padding-top:140px}
+.kv .sec h2{font-size:clamp(30px,4vw,50px);text-align:center}
+.kv .sec .bar{margin:18px auto 0}
+.kv .sec .lead2{max-width:640px;margin:20px auto 0;text-align:center}
+.kv .bl-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px}
+.kv .bl-card{display:flex;flex-direction:column;min-width:0;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.18);transition:transform .2s}
+.kv .bl-card:hover{transform:translateY(-4px)}
+.kv .bl-cover{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:linear-gradient(135deg,var(--slate2),var(--char))}
+.kv .bl-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.kv .bl-tag{position:absolute;top:14px;left:14px;padding:6px 14px;background:var(--rose);color:#fff;font:700 11px/1.2 Lato,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.kv .bl-body{display:flex;flex-direction:column;flex:1;padding:22px 24px 26px}
+.kv .bl-card time{display:block;margin-bottom:10px;font:700 13px/1 Lato,sans-serif;letter-spacing:.06em;color:var(--rose)}
+.kv .bl-card h3{font-size:20px;line-height:1.3;margin:0 0 12px;color:var(--ink)}
+.kv .bl-card p{margin:0 0 20px;font-size:15px;color:#5E5A66}
+.kv .bl-more{margin-top:auto;font:700 13px/1 Lato,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.kv .bl-more::after{content:" \2192"}.kv .bl-more:hover{color:var(--rose)}
+.kv .all{text-align:center;margin-top:44px}
+/* футер: три колонки, як на головній сайту */
+.kv .ft{background:var(--slate);padding:0 0 60px}
+.kv .ft .w{border-top:1px solid rgba(255,255,255,.3);padding-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.kv .ft h3{font-size:20px;margin-bottom:18px}
+.kv .ft p,.kv .ft li{font-size:15px;margin-bottom:8px}
+.kv .ft a{color:var(--rose)}.kv .ft a:hover{color:#fff}
+@media(max-width:900px){.kv .hero{background:linear-gradient(180deg,var(--rose) 0 62%,var(--char) 62% 100%)}.kv .hero .w{grid-template-columns:1fr}.kv .hero .ph{justify-self:start;width:min(100%,360px)}.kv .bl-g{grid-template-columns:repeat(2,minmax(0,1fr))}.kv .ft .w{grid-template-columns:1fr;gap:28px}}
+@media(max-width:620px){.kv .bl-g{grid-template-columns:minmax(0,1fr);gap:16px}.kv .sec{padding:60px 0 70px}.kv .bl-body{padding:18px 18px 22px}}
+
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+.kvh{position:fixed;top:0;left:0;right:0;z-index:99999;background:rgba(66,66,66,.96);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.18);font-family:Lato,sans-serif}
+body.admin-bar .kvh{top:32px}@media(max-width:782px){body.admin-bar .kvh{top:46px}}
+.kvh *{box-sizing:border-box}.kvh a{color:#fff;text-decoration:none;border:0;box-shadow:none}
+.kvh .in{max-width:1280px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.kvh .logo{font:700 20px/1 'Noto Serif',serif;white-space:nowrap}
+.kvh .menu{display:flex;gap:26px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-left:auto}
+.kvh .menu a{padding:6px 0;border-bottom:1px solid transparent;white-space:nowrap}.kvh .menu a:hover,.kvh .menu a.cur{border-bottom-color:#fff}
+.kvh .cta{padding:11px 20px;border:1px solid #fff;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:.2s}.kvh .cta:hover{background:#fff;color:#424242}.kvh .cta:hover{color:#424242}
+.kvh .cb{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.kvh .burger{display:none;width:42px;height:42px;border:1px solid #fff;cursor:pointer;position:relative;flex:none}
+.kvh .burger i,.kvh .burger i::before,.kvh .burger i::after{content:"";position:absolute;left:10px;width:20px;height:2px;background:#fff}
+.kvh .burger i{top:20px}.kvh .burger i::before{left:0;top:-7px}.kvh .burger i::after{left:0;top:7px}
+.kvh .cb:checked ~ .burger i{background:transparent}.kvh .cb:checked ~ .burger i::before{top:0;transform:rotate(45deg)}.kvh .cb:checked ~ .burger i::after{top:0;transform:rotate(-45deg)}
+@media(max-width:1060px){.kvh .cta{display:none}.kvh .menu{gap:18px}}
+@media(max-width:860px){.kvh .in{height:60px}.kvh .burger{display:block;margin-left:auto}.kvh .menu{display:none;margin:0}
+ .kvh .cb:checked ~ .menu{display:flex;flex-direction:column;gap:0;position:absolute;top:60px;left:0;right:0;background:#424242;padding:8px 16px 16px;border-top:1px solid rgba(255,255,255,.18)}
+ .kvh .cb:checked ~ .menu a{padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}.kvh .cb:checked ~ .menu a:last-child{border-bottom:0}}
+</style>
+<style>
+.kv .ahero{background:var(--char);padding:140px 0 70px}
+.kv .ahero .crumbs{font:700 12px/1 Lato,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.kv .ahero .crumbs a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
+.kv .ahero h1{font-size:clamp(30px,4.4vw,52px);margin-top:20px;max-width:980px}
+.kv .art-sec{background:var(--slate);padding:0 0 80px}
+.kv .art-card{position:relative;max-width:900px;margin:-30px auto 0;background:#fff;border-radius:22px;padding:44px 52px 48px;color:#3A3640;box-shadow:0 14px 40px rgba(0,0,0,.18)}
+.kv .art-meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:26px;font:700 13px/1 Lato,sans-serif;letter-spacing:.06em;color:#6E6876}
+.kv .art-tag{padding:6px 14px;background:var(--rose);color:#fff;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.kv .art-meta time{color:var(--rose)}
+.kv .art-body{font-size:17px;line-height:1.7;color:#3A3640}
+.kv .art-body p{margin:0 0 16px}
+.kv .art-body h2{font-size:clamp(25px,3vw,32px);color:var(--ink);margin:40px 0 14px}
+.kv .art-body h3{font-size:clamp(20px,2.4vw,23px);color:var(--ink);margin:28px 0 10px}
+.kv .art-body ul,.kv .art-body ol{margin:0 0 18px;padding-left:24px}
+.kv .art-body ul{list-style:disc}.kv .art-body ol{list-style:decimal}
+.kv .art-body li{margin:0 0 8px;padding-left:4px}
+.kv .art-body a{color:var(--rose);border-bottom:1px solid currentColor}
+.kv .art-table{overflow-x:auto;margin:22px 0;border-radius:14px;border:1px solid #E7DFE0}
+.kv .art-body table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+.kv .art-body th{background:var(--rose);color:#fff;text-align:left;padding:12px 14px;font-weight:700}
+.kv .art-body td{padding:12px 14px;border-top:1px solid #EEE6E7;vertical-align:top;color:#4A4650}
+.kv .art-body tr:nth-child(even) td{background:#FBF6F3}
+.kv .art-fig{margin:30px 0}.kv .art-fig img{width:100%;height:auto;display:block;border-radius:18px}
+.kv .art-back{margin-top:34px;padding-top:22px;border-top:1px solid #E7DFE0;font:700 13px/1 Lato,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.kv .art-back a{color:var(--ink)}.kv .art-back a:hover{color:var(--rose)}
+.kv .cta-band{background:var(--rose);padding:64px 0;text-align:center}
+.kv .cta-band h2{font-size:clamp(26px,3.4vw,40px)}
+.kv .cta-band p{max-width:620px;margin:16px auto 0;color:#fff}
+.kv .cta-band .btn{margin-top:28px}
+@media(max-width:700px){.kv .art-card{padding:30px 20px 34px;margin-top:-20px;border-radius:18px}.kv .ahero{padding:110px 0 56px}.kv .art-body{font-size:16px}}
+</style>
+<style>
+.kv .hero{padding:140px 0 90px}.kv .hero .sub{font-size:19px}
+.kv .sec h2{margin-bottom:0}
+.kv .sec.edu{background:var(--slate)}.kv .sec.edu p{max-width:900px;margin:30px auto 0;text-align:center;font-size:15.5px}
+.kv .sec.exp{background:var(--slate2)}
+.kv .exp .w{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.kv .exp h2{text-align:left}.kv .exp .bar{margin-left:0}
+.kv .exp .box{margin-top:30px;background:var(--rose);padding:34px 36px;color:#fff;font-size:15.5px}
+.kv .exp .box p{margin:0 0 14px}.kv .exp .box strong{color:#fff}.kv .exp .box a{color:#fff;border-bottom:1px solid #fff}
+.kv .exp .btn{margin-top:26px}
+.kv .exp .ph img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.kv .sec.res{background:var(--slate)}
+.kv .res-row{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:34px 4px 18px;margin-top:10px}
+.kv .res-row a{flex:0 0 auto;scroll-snap-align:start;background:#fff;padding:8px;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.kv .res-row img{display:block;height:340px;width:auto}
+.kv .res-row::-webkit-scrollbar{height:8px}.kv .res-row::-webkit-scrollbar-thumb{background:rgba(255,255,255,.4);border-radius:4px}
+.kv .cen{text-align:center;margin-top:34px}
+.kv .sec.arts{background:var(--slate2)}
+.kv .bl-empty{grid-column:1/-1;text-align:center;color:#fff;padding:30px 10px;font-size:18px}
+.kv .sec.rev{background:var(--slate)}.kv .rev-box{max-width:760px;margin:36px auto 0}
+.kv .hero + .sec,.kv .hero{scroll-margin-top:80px}
+.kv section[id]{scroll-margin-top:68px}
+@media(max-width:900px){.kv .exp .w{grid-template-columns:1fr;gap:34px}.kv .res-row img{height:280px}}
+</style>
+<style>body.page-id-0 .entry-header,body.page-id-0 .ast-breadcrumbs-wrapper,body.page-id-0 .entry-title,body.page-id-0 .site-footer,body.page-id-0 #masthead,body.page-id-0 .ast-above-header-wrap,body.page-id-0 .site-header{display:none!important}body.page-id-0 .ast-container,body.page-id-0 #primary,body.page-id-0 .entry-content{padding:0!important;margin:0!important;max-width:none!important}body.page-id-0{background:#615C68}</style>
+<div class="kvh"><div class="in"><a class="logo" href="/">Коваленко Н. О.</a><input type="checkbox" id="kvhm" class="cb" aria-hidden="true" tabindex="-1"><nav class="menu" aria-label="Меню"><a href="/#about">Освіта</a><a href="/#experience">Досвід</a><a href="/#results">Результати</a><a href="/blog/">Блог</a><a href="/#reviews">Відгуки</a><a href="/#contacts">Контакти</a></nav><a class="cta" href="https://t.me/yrist_kovalenko" target="_blank" rel="noopener">Консультація</a><label for="kvhm" class="burger" aria-label="Меню"><i></i></label></div></div><div class="kv"><header class="ahero"><div class="w"><p class="crumbs"><a href="/">Головна</a> / Куди скаржитись на дії колекторів в Україні</p><h1>Куди скаржитись на дії колекторів в Україні</h1><span class="bar"></span></div></header><section class="art-sec"><div class="w"><article class="art-card"><div class="art-body"><span class="elementor-divider-separator">
+						</span>
+															<figure class="art-fig"><img src="https://advokato.in.ua/wp-content/uploads/2025/10/ChatGPT-Image-Oct-30-2025-02_53_49-PM-683x1024.png" alt="" loading="lazy"></figure>															
+					<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коли колектори переходять межу: як захистити свої права</title>
+</head>
+<body>
+            Коли колектори переходять межу: як захистити свої права
+            Повний посібник із захисту від незаконних дій колекторів
+            <h3>📋 Зміст статті</h3>
+            <ol>
+                <li>Вступ: коли колектори переходять межу — як зрозуміти, що їхні дії незаконні</li>
+                <li>Яке законодавство регулює діяльність колекторів в Україні</li>
+                <li>Ваші права як боржника: що колектори можуть, а що категорично заборонено</li>
+                <li>Куди і як подати скаргу на колекторів: офіційні органи та покрокова інструкція</li>
+                <li>Скарга до Нацбанку України — як діє механізм контролю</li>
+                <li>Звернення до поліції, прокуратури або суду — коли дії колекторів перетинають межу криміналу</li>
+                <li>Типові помилки громадян при подачі скарг і як їх уникнути</li>
+                <li>Судова практика: реальні приклади рішень на користь боржників</li>
+                <li>Як зафіксувати докази порушень: поради з моєї практики</li>
+                <li>Висновок: як захистити себе і чому варто діяти одразу</li>
+            </ol>
+            <h2>Вступ: коли колектори переходять межу — як зрозуміти, що їхні дії незаконні</h2>
+            <p>Якщо ви читаєте цю статтю, значить, швидше за все, ви вже відчули на собі тиск колекторів. Телефони не замовкають, повідомлення сипляться десятками, а іноді дзвінки надходять навіть до ваших родичів чи колег. На жаль, подібна поведінка — не рідкість. Я бачла десятки випадків, коли люди просто не знали, що такі дії є порушенням закону, і терпіли місяцями.</p>
+                <p><strong>Важливо знати:</strong> Колектор — це не просто "агресивний телефонний голос". Це представник компанії, яка має право стягувати заборгованість лише в межах закону.</p>
+            <p>В Україні діяльність таких компаній чітко регулюється Законом України "Про споживче кредитування", а також Постановою НБУ №64 від 12.05.2021 року, якою встановлено правила етичної поведінки колекторів. Згідно з цими нормами, будь-який контакт із боржником має бути коректним, обмеженим у часі та формі, без психологічного тиску чи приниження.</p>
+            <p>На практиці, однак, ми часто бачимо зовсім іншу картину. Мені доводилось чути записи дзвінків, де колектор прямо погрожував "виїхати на адресу", або розповідав сусідам про борги людини. Це вже не просто порушення етики — це порушення статті 182 Кримінального кодексу України ("Порушення недоторканності приватного життя").</p>
+                <p><strong>Запам'ятайте просте правило:</strong> ніхто не має права принижувати вас або розголошувати інформацію про ваш борг стороннім особам. Якщо це сталося — перед вами не колектор, а потенційний правопорушник.</p>
+                <p>"Право на повагу до честі та гідності — не залежить від наявності боргу" — Олександр Святош, журнал «Юридична практика», №23, 2022 рік</p>
+            <p>З мого досвіду, більшість конфліктів з колекторами вирішуються тоді, коли людина починає діяти грамотно — фіксує порушення, подає скаргу і не мовчить. У наступному розділі я розповім, яке саме законодавство регулює дії колекторів, і що дає вам підстави вимагати справедливості.</p>
+                <a href="https://zakon.rada.gov.ua/laws/show/1734-19#Text">Закон України "Про споживче кредитування"</a>
+                <a href="https://bank.gov.ua/ua/legislation/Resolution_12052021_64">Постанова НБУ №64</a>
+            <h2>Яке законодавство регулює діяльність колекторів в Україні</h2>
+            <p>Почнемо з головного: колектори не можуть діяти «як заманеться». Усі їхні права та обов'язки чітко визначені Законом України "Про споживче кредитування", а також рядом інших актів, серед яких — Постанова Правління Національного банку України №64 від 12.05.2021 року "Про затвердження Положення про реєстр колекторських компаній". Саме ці документи створюють рамки, за які виходити не можна.</p>
+                <p><strong>Перевірте легальність колектора:</strong> Колектор — це фінансова компанія, внесена до офіційного реєстру НБУ. Без включення до цього реєстру колектори не мають права контактувати з боржником.</p>
+                <p>
+                    <a href="https://bank.gov.ua/ua/markets/register-collection">Перевірити в реєстрі НБУ</a>
+                </p>
+            <p>З моєї практики, саме з цього починається грамотний захист: перевірити, чи взагалі має право компанія з вами спілкуватися. Багато разів я стикався з ситуаціями, коли люди отримували дзвінки від "колекторів", які виявлялися звичайними шахраями або підрядниками, що не мають жодного юридичного статусу.</p>
+            <p>Важливу роль у регулюванні також відіграє Закон України "Про захист прав споживачів" — він прямо забороняє вводити клієнтів в оману чи тиснути психологічно. Тобто, якщо колектор, наприклад, погрожує "забрати майно" або "передати справу в суд без рішення кредитора", — це вже підстава для скарги до Нацбанку або навіть до поліції.</p>
+            <h3>Ключові обмеження для колекторів:</h3>
+            <ul>
+                <li>Не більше 2–3 контактів на день</li>
+                <li>Жодних дзвінків уночі</li>
+                <li>Заборона дзвінків вашим родичам або роботодавцю без вашої письмової згоди</li>
+                <li>Зобов'язання колектора ідентифікувати себе під час дзвінка</li>
+            </ul>
+                <p><strong>На які закони посилатись у скарзі:</strong></p>
+                <ul>
+                    <li>Стаття 25 Закону "Про споживче кредитування"</li>
+                    <li>Стаття 19 Закону "Про захист прав споживачів"</li>
+                    <li>Стаття 182 Кримінального кодексу</li>
+                </ul>
+                <p>Усе разом це дає повний юридичний фундамент для вашого захисту.</p>
+                <p>"Хто володіє інформацією — той володіє владою" — Гарольд Ласвелл</p>
+            <h2>Ваші права як боржника: що колектори можуть, а що категорично заборонено</h2>
+                <p><strong>Запам'ятайте:</strong> Борг — це ще не злочин. Ви не втратили своїх прав лише тому, що маєте фінансові труднощі. Навпаки — закон стоїть на вашому боці, якщо колектори переходять межу.</p>
+            <p>Ваші права захищені Законом України "Про споживче кредитування" (стаття 25), який зобов'язує колекторів діяти етично, чесно і без втручання в приватне життя боржника.</p>
+            <h3>Колектор МАЄ ПРАВО:</h3>
+            <ul>
+                <li>Повідомляти про наявність боргу</li>
+                <li>Пропонувати шляхи його врегулювання</li>
+                <li>Узгоджувати графік погашення</li>
+            </ul>
+            <h3>Колектор НЕ МАЄ ПРАВА:</h3>
+            <ul>
+                <li>Принижувати, залякувати, або погрожувати судом без рішення кредитора</li>
+                <li>Телефонувати вночі або погрожувати "передати справу в виконавчу службу" без судового рішення</li>
+                <li>Розголошувати інформацію про борг третім особам</li>
+            </ul>
+            <h3>Ваші додаткові права:</h3>
+                <ul>
+                    <li>✓ Вимагати, щоб спілкування відбувалося у письмовій формі</li>
+                    <li>✓ Відмовитись від телефонних дзвінків, повідомивши про це компанію офіційно</li>
+                    <li>✓ Отримати копію договору, на підставі якого діє колектор</li>
+                    <li>✓ Дізнатися джерело вашого персонального номера</li>
+                </ul>
+            <h2>Куди і як подати скаргу на колекторів: офіційні органи та покрокова інструкція</h2>
+            <p>З мого досвіду можу сказати: кожна друга людина не знає, куди звертатися із скаргою на колекторів. А ті, хто знають, часто не вірять, що це дасть результат. І дарма. Бо скарга — це не "папірець для галочки", а юридичний інструмент, який реально працює.</p>
+            <h3>Основні інстанції для подання скарг:</h3>
+                <p><span class="step-number">1</span><strong>Національний банк України (НБУ)</strong></p>
+                <p>Регулює діяльність колекторських компаній і може накласти штрафи або відкликати ліцензію.</p>
+                <p>
+                    <a href="https://bank.gov.ua/ua/consumer-protection">Подати скаргу до НБУ</a>
+                </p>
+                <p><span class="step-number">2</span><strong>Національна поліція України</strong></p>
+                <p>При погрозах, шантажі або втручанні в приватне життя.</p>
+                <p>
+                    <a href="https://e-zvernennya.np.gov.ua/">Звернутися до поліції</a>
+                </p>
+                <p><span class="step-number">3</span><strong>Уповноважений Верховної Ради з прав людини</strong></p>
+                <p>При систематичному порушенні ваших прав.</p>
+                <p>
+                    <a href="https://ombudsman.gov.ua/">Звернутися до Омбудсмена</a>
+                </p>
+            <h3>Покрокова інструкція подачі скарги:</h3>
+            <ol>
+                <li><strong>Крок 1:</strong> Зберіть усі докази (записи розмов, скріншоти, деталізацію дзвінків)</li>
+                <li><strong>Крок 2:</strong> Напишіть скаргу з чітким викладом фактів та датами</li>
+                <li><strong>Крок 3:</strong> Вкажіть, які саме норми закону порушені</li>
+                <li><strong>Крок 4:</strong> Додайте всі докази до скарги</li>
+                <li><strong>Крок 5:</strong> Відправте скаргу рекомендованим листом або через онлайн-форму</li>
+                <li><strong>Крок 6:</strong> Контролюйте розгляд — через 30 днів запитуйте про статус</li>
+            </ol>
+            <h2>Скарга до Нацбанку України — як діє механізм контролю</h2>
+            <p>Національний банк України — це не просто регулятор. Це орган, який має реальні важелі впливу на колекторські компанії: штрафи, попередження, а в крайньому випадку — виключення з реєстру, що фактично означає заборону діяльності.</p>
+                <h3>Що може зробити НБУ після вашої скарги:</h3>
+                <ul>
+                    <li>✓ Провести перевірку компанії</li>
+                    <li>✓ Накласти штраф до 170 000 грн</li>
+                    <li>✓ Видати припис про усунення порушень</li>
+                    <li>✓ Виключити компанію з реєстру колекторів</li>
+                </ul>
+            <h3>Приклад успішної скарги до НБУ:</h3>
+                <p>У 2023 році клієнтка подала скаргу на колекторську компанію за систематичні нічні дзвінки та погрози. НБУ провів перевірку, наклав штраф у розмірі 85 000 грн та зобов'язав компанію письмово вибачитись. Дзвінки припинилися назавжди.</p>
+            <p>Процедура розгляду скарги НБУ займає до 30 днів. За цей час регулятор зобов'язаний перевірити факти та надати вам письмову відповідь.</p>
+            <h2>Звернення до поліції, прокуратури або суду — коли дії колекторів перетинають межу криміналу</h2>
+            <p>Коли колектори переходять від "наполегливості" до прямих погроз чи втручання в особисте життя — це вже не цивільний спір, а кримінальна справа.</p>
+                <h3>Коли звертатися до правоохоронців:</h3>
+                <ul>
+                    <li>• Погрози фізичною розправою — ст. 129 КК України</li>
+                    <li>• Розголошення інформації про борг третім особам — ст. 182 КК України</li>
+                    <li>• Вимагання з погрозами — ст. 189 КК України</li>
+                    <li>• Самовільне проникнення до житла — ст. 162 КК України</li>
+                </ul>
+            <p>З мого досвіду, поліція реагує швидше, коли ви приходите з готовою заявою та доказами. Не просто "поскаржитись", а з конкретними фактами, датами, записами.</p>
+                <p>"Закон допомагає тому, хто не спить" — Девід Дадлі Філд II, відомий американський юрист</p>
+            <h2>Типові помилки громадян при подачі скарг і як їх уникнути</h2>
+            <h3>Найпоширеніші помилки:</h3>
+                <p><strong>❌ Помилка 1: Емоційна скарга без конкретики</strong></p>
+                <p>Замість "вони мене дістали" пишіть: "15 травня о 21:45 представник компанії погрожував..."</p>
+                <p><strong>❌ Помилка 2: Відсутність доказів</strong></p>
+                <p>Завжди додавайте записи, скріншоти, деталізацію дзвінків</p>
+                <p><strong>❌ Помилка 3: Скарга не на ту інстанцію</strong></p>
+                <p>НБУ — для порушення правил, поліція — для кримінальних дій</p>
+                <p><strong>❌ Помилка 4: Невказання законів</strong></p>
+                <p>Обов'язково вказуйте конкретні статті законів, які порушені</p>
+                <p><strong>❌ Помилка 5: Анонімність</strong></p>
+                <p>Анонімні скарги часто не розглядаються. Вказуйте свої дані</p>
+                <p><strong>❌ Помилка 6: Пасивність після подачі</strong></p>
+                <p>Контролюйте процес! Через 30 днів запитуйте про статус</p>
+            <h2>Судова практика: реальні приклади рішень на користь боржників</h2>
+            <p>Я завжди кажу клієнтам: "не вірте на слово — вірте судовій практиці". Бо саме судові рішення показують, як закон працює в реальному житті, а не тільки на папері.</p>
+            <h3>Реальні судові справи:</h3>
+                <p><strong>Порушення:</strong> Систематичні дзвінки на роботу боржника</p>
+                <p><strong>Рішення:</strong> Визнано порушення ст. 182 КК України</p>
+                <p><strong>Компенсація:</strong> 25 000 грн моральної шкоди</p>
+                <p><strong>Порушення:</strong> СМС з образами "Ти злодій", "Тебе шукають"</p>
+                <p><strong>Рішення:</strong> Приниження честі та гідності (ст. 297 ЦК України)</p>
+                <p><strong>Компенсація:</strong> 40 000 грн</p>
+                <p><strong>Порушення:</strong> Поширення даних боржника у Viber-групах будинку</p>
+                <p><strong>Рішення:</strong> Порушення Закону про захист персональних даних</p>
+                <p><strong>Результат:</strong> Видалення інформації + письмові вибачення</p>
+                <p>"Колекторська діяльність — це не дика зона, а частина цивілізованого ринку, де головний принцип — повага до людини" — Костянтин Кузьмін, журнал «Право України»</p>
+            <h2>Як зафіксувати докази порушень: поради з моєї практики</h2>
+            <p>З моєї практики можу сказати: найкраща скарга — це не та, що емоційна, а та, що має докази. У справах проти колекторів кожна дрібниця важлива.</p>
+            <h3>Покрокова інструкція збору доказів:</h3>
+                <ul>
+                    <li>✓ Ви маєте право записувати розмови, в яких берете участь</li>
+                    <li>✓ Зберігайте в оригінальному форматі</li>
+                    <li>✓ Не обрізайте та не редагуйте</li>
+                </ul>
+                <ul>
+                    <li>✓ Робіть скріншоти всіх повідомлень</li>
+                    <li>✓ Зберігайте з датами та номерами</li>
+                    <li>✓ Робіть резервні копії в хмарі</li>
+                </ul>
+                <ul>
+                    <li>✓ Записуйте дату, час, тривалість</li>
+                    <li>✓ Фіксуйте короткий зміст розмови</li>
+                    <li>✓ Отримайте деталізацію від оператора</li>
+                </ul>
+                <ul>
+                    <li>✓ Зберігайте копії всіх листів</li>
+                    <li>✓ Беріть квитанції з описом вкладення</li>
+                    <li>✓ Використовуйте рекомендовані листи</li>
+                </ul>
+                <p>"Докази — це ваш щит. Бо в юридичній боротьбі емоції зникають, а записи залишаються."</p>
+            <h2>Висновок: як захистити себе і чому варто діяти одразу</h2>
+            <p>Якщо ви дочитали до цього моменту — значить, ви або вже маєте справу з колекторами, або не хочете потрапити в їхні тенета. І це правильний вибір. Бо головна помилка більшості людей — мовчати, сподіваючись, що все "якось вирішиться".</p>
+                <p><strong>З мого досвіду:</strong> 80% конфліктів з колекторами припиняються, коли людина починає діяти юридично грамотно. Один запис дзвінка, один офіційний лист або одна скарга до НБУ — і ситуація змінюється миттєво.</p>
+            <h3>Пам'ятайте, що закон на вашому боці. Вас захищають:</h3>
+            <ul>
+                <li>Закон "Про споживче кредитування" — регулює, як і коли колектори можуть контактувати</li>
+                <li>Закон "Про захист прав споживачів" — забороняє обман і психологічний тиск</li>
+                <li>Кримінальний кодекс України (ст. 182, 189, 355) — карає за погрози та втручання в приватне життя</li>
+                <li>Конституція України (ст. 28) — гарантує право на повагу до гідності</li>
+            </ul>
+            <h3>Найкраща стратегія — поєднати три дії:</h3>
+            <ol>
+                <li>Зафіксувати кожен факт порушення</li>
+                <li>Подати скаргу до НБУ або поліції</li>
+                <li>Звернутися до юриста, якщо порушення продовжуються</li>
+            </ol>
+                <p>"Захист — це не агресія, це форма самоповаги. Ви не боретеся з банком чи державою — ви просто вимагаєте, щоб із вами поводилися законно."</p>
+            <h3>✅ Підсумок:</h3>
+            <ul>
+                <li>Колектори мають діяти лише в межах закону</li>
+                <li>Ваші права захищені Конституцією, законами та практикою судів</li>
+                <li>Кожен незаконний дзвінок можна зупинити — варто лише почати діяти</li>
+            </ul>
+            <a href="https://bank.gov.ua/ua/consumer-protection">Захист прав споживачів НБУ</a>
+            <a href="https://e-zvernennya.np.gov.ua/">Звернення до поліції</a>
+            <a href="https://ombudsman.gov.ua/">Уповноважений з прав людини</a>
+            <p><strong>Коваленко Наталія Олександрівна</strong></p>
+            <p>Юристка, практикуюча фахівчиня у сфері фінансового права</p>
+            <p>Стаття підготовлена спеціально для юридичного блогу про захист боржників в Україні</p>
+</body>
+</html>				
+					<h2>Відгуки</h2>				
+			<span class="elementor-divider-separator">
+						</span></div><p class="art-back"><a href="/">← На головну</a></p></article></div></section><section class="cta-band"><div class="w"><h2>Потрібна консультація юриста?</h2><p>Опишіть ситуацію в Telegram: підкажу перші кроки та скажу, чи потрібне представництво.</p><a class="btn" href="https://t.me/yrist_kovalenko" target="_blank" rel="noopener">Безкоштовна консультація</a></div></section><footer class="ft" id="contacts"><div class="w"><div><h3>Контакти</h3><p><a href="tel:+380508202176">+38 (050) 820-21-76</a></p><p><a href="https://t.me/yrist_kovalenko" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.facebook.com/profile.php?id=100087439299448" target="_blank" rel="noopener">Facebook</a></p></div><div><h3>Графік роботи</h3><p>Пн–Пт<br>9:00 — 18:00</p></div><div><h3>Корисні статті</h3><ul><li><a href="/blog/">Блог: усі статті</a></li><li><a href="/poniattia-bankrutstva/">Поняття банкрутства: юридичне визначення та ознаки</a></li><li><a href="/primokolect-kolektorska-kompaniia-borhy-ta-pravovyi-zakhyst/">Прімоколект: колекторська компанія, борги та правовий захист</a></li></ul></div></div></footer></div>
+<!-- /wp:html -->
