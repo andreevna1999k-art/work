@@ -1,0 +1,59 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:'Nunito Sans',sans-serif;background:#3006A1}
+.bg{position:absolute;inset:0;background:linear-gradient(160deg,#3006A1 0%,#5225F8 40%,#7A3CF8 70%,#AB46F8 100%)}
+.glow{position:absolute;left:150px;top:380px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.28),rgba(255,255,255,0) 65%)}
+.top{position:absolute;left:56px;right:56px;top:44px;display:flex;justify-content:space-between;font:800 22px/1 'Nunito Sans',sans-serif;letter-spacing:.2em;color:#fff}
+.mast{position:absolute;left:0;right:0;top:126px;text-align:center;font:900 300px/1 'Nunito Sans',sans-serif;color:#fff;letter-spacing:-6px;white-space:nowrap;text-shadow:0 8px 0 rgba(17,17,17,.18)}
+.sub{position:absolute;left:0;right:0;top:386px;text-align:center;font:800 28px/1 'Nunito Sans',sans-serif;letter-spacing:.2em;color:#fff}
+.sub b{color:#F86754;font-weight:900}
+.photo{position:absolute;left:40px;top:372px;width:1000px;z-index:2}
+.photo img{width:100%;display:block}
+.tips{position:absolute;left:44px;top:470px;width:290px;z-index:4}
+.tip-label{display:inline-block;background:#F86754;color:#fff;font:900 24px/1 'Nunito Sans',sans-serif;letter-spacing:.06em;padding:9px 14px;margin-bottom:16px}
+.tips .t{color:#fff;font:800 25px/1.18 'Nunito Sans',sans-serif;text-transform:uppercase;margin-bottom:20px;text-shadow:0 2px 10px rgba(30,6,110,.7)}
+.tips .t::after{content:"";display:block;width:56px;height:5px;background:#F86754;margin-top:10px}
+.stat{position:absolute;right:40px;top:470px;width:282px;z-index:4;background:#fff;border-radius:18px;padding:22px 16px 24px;text-align:center;box-shadow:0 14px 36px rgba(20,4,90,.4)}
+.stat .n{display:inline-block;white-space:nowrap;font:900 110px/1 'Nunito Sans',sans-serif;color:#5225F8}
+.stat .l{font:900 28px/1.1 'Nunito Sans',sans-serif;color:#111;margin-top:4px;letter-spacing:.04em}
+.stat .s{font:700 20px/1.25 'Nunito Sans',sans-serif;color:#F86754;margin-top:8px}
+.sticker{position:absolute;left:32px;top:1010px;width:190px;height:190px;border-radius:50%;background:#F86754;color:#fff;z-index:4;transform:rotate(-10deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:900 28px/1.1 'Nunito Sans',sans-serif;box-shadow:0 10px 30px rgba(20,4,90,.45)}
+.sticker small{font:800 18px/1.2 'Nunito Sans',sans-serif;letter-spacing:.1em;margin-top:8px}
+.mid{position:absolute;left:0;right:0;top:1236px;height:260px;background:#111;z-index:3}
+.mid::before{content:"";position:absolute;left:0;top:-70px;right:0;height:70px;background:linear-gradient(180deg,rgba(17,17,17,0),#111)}
+.t1{position:absolute;left:56px;top:1262px;white-space:nowrap;font:600 54px/1 'Nunito Sans',sans-serif;color:#fff;z-index:5}
+.t2{position:absolute;left:56px;top:1330px;white-space:nowrap;font:900 112px/1.05 'Nunito Sans',sans-serif;color:#fff;z-index:5}
+.by{position:absolute;left:56px;top:1470px;color:#F86754;font:800 28px/1 'Nunito Sans',sans-serif;letter-spacing:.08em;white-space:nowrap;z-index:5}
+.cols{position:absolute;left:0;right:0;top:1520px;height:150px;background:#111;z-index:3;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:2px solid rgba(255,255,255,.15)}
+.cols div{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 22px;color:#fff;font:800 27px/1.2 'Nunito Sans',sans-serif;text-transform:uppercase;border-left:2px solid rgba(255,255,255,.3)}
+.cols div:first-child{border-left:0}.cols div::first-line{color:#fff}
+.cta{position:absolute;left:56px;right:56px;top:1712px;height:92px;background:#F86754;color:#fff;font:900 38px/1 'Nunito Sans',sans-serif;border-radius:46px;display:flex;align-items:center;justify-content:center;z-index:5}
+.dom{position:absolute;left:0;right:0;top:1838px;text-align:center;color:#fff;font:800 28px/1 'Nunito Sans',sans-serif;letter-spacing:.2em;z-index:5}
+.base{position:absolute;left:0;right:0;top:1496px;bottom:0;background:#111;z-index:3}
+</style></head><body>
+<div class="bg"></div><div class="glow"></div>
+<div class="top"><span id="iss"></span><span>ЮРИДИЧНИЙ ЖУРНАЛ</span></div>
+<div class="mast" id="mast"><span id="mastt" style="display:inline-block">АРЕШТИ</span></div>
+<div class="sub">РЕЄСТР БОРЖНИКІВ <b>·</b> РАХУНКИ <b>·</b> ВИПЛАТИ</div>
+<div class="photo"><img src="portrait-cutout.png"></div>
+<div class="mid"></div><div class="base"></div>
+<div class="tips"><span class="tip-label">ВАЖЛИВО</span><div id="tips"></div></div>
+<div class="stat"><div class="n" id="sn"></div><div class="l" id="sl"></div><div class="s" id="ss"></div></div>
+<div class="sticker">НОВА<br>СТАТТЯ<small>ЧИТАЙТЕ ↓</small></div>
+<div class="t1" id="t1"></div><div class="t2" id="t2"></div>
+<div class="by" id="by">ПОРАДИ ЮРИСТА СЕРГІЯ ВИШНЕВСЬКОГО</div>
+<div class="cols" id="cols"></div>
+<div class="cta">Читайте мою нову статтю</div><div class="dom">pravovid.com.ua</div>
+<script>
+const p=new URLSearchParams(location.search);const d=JSON.parse(p.get('d'));
+document.getElementById('iss').textContent='ВИПУСК '+d.n;
+document.getElementById('tips').innerHTML=d.tips.map(t=>'<div class="t">'+t+'</div>').join('');
+document.getElementById('sn').textContent=d.stat[0];document.getElementById('sl').textContent=d.stat[1];document.getElementById('ss').textContent=d.stat[2];
+document.getElementById('t1').textContent=d.t1;document.getElementById('t2').textContent=d.t2;
+document.getElementById('cols').innerHTML=d.gold.split(' · ').map(x=>'<div>'+x+'</div>').join('');
+function fit(el,max,w){let s=max;el.style.fontSize=s+'px';while(el.scrollWidth>w&&s>14){s-=2;el.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{fit(document.getElementById('t2'),112,968);fit(document.getElementById('t1'),54,968);fit(document.getElementById('sn'),110,250);
+(function(){var m=document.getElementById('mast'),t=document.getElementById('mastt'),z=300;m.style.fontSize=z+'px';while(t.offsetWidth>980&&z>80){z-=4;m.style.fontSize=z+'px'}})();document.title='ready'});
+</script></body></html>
