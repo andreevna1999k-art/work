@@ -1,0 +1,53 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:'Open Sans',sans-serif;background:#0B1624}
+.bg{position:absolute;inset:0;background:radial-gradient(ellipse 760px 900px at 700px 820px,#2C5A6B 0%,#173246 42%,#0E1B2B 72%,#0B1624 100%)}
+.bar{position:absolute;top:340px;bottom:620px;width:34px;background:rgba(212,243,215,.06)}
+.top{position:absolute;left:56px;right:56px;top:46px;display:flex;justify-content:space-between;font:600 22px/1 'Open Sans',sans-serif;letter-spacing:.2em;color:#1B9C85}
+.mast{position:absolute;left:0;right:0;top:150px;text-align:center;font:400 250px/1 'Playfair Display',serif;color:#D4F3D7;white-space:nowrap}
+.sub{position:absolute;left:56px;right:56px;top:376px;display:flex;justify-content:space-between;font:600 24px/1 'Open Sans',sans-serif;letter-spacing:.14em;color:#D4F3D7;padding-top:18px;border-top:2px solid #1B9C85}
+.photo{position:absolute;left:290px;top:430px;width:760px;z-index:2}
+.photo img{width:100%;display:block;filter:contrast(1.03)}
+.fade{position:absolute;left:0;right:0;top:1150px;height:200px;background:linear-gradient(180deg,rgba(11,22,36,0),#0B1624 85%);z-index:3}
+.panel{position:absolute;left:0;right:0;top:1330px;bottom:0;background:#0B1624;z-index:3}
+.tips{position:absolute;left:56px;top:490px;width:300px;z-index:4}
+.tip-label{display:block;color:#1B9C85;font:700 22px/1 'Open Sans',sans-serif;letter-spacing:.22em;margin-bottom:22px}
+.tips .t{color:#fff;font:600 25px/1.25 'Open Sans',sans-serif;letter-spacing:.03em;text-transform:uppercase;padding-bottom:24px;margin-bottom:24px;border-bottom:2px solid #1B9C85;width:290px}
+.tips .t:last-child{border-bottom:0}
+.stat{position:absolute;right:44px;top:512px;width:260px;text-align:center;color:#fff;z-index:4;background:rgba(11,22,36,.72);border:2px solid #1B9C85;border-radius:6px;padding:20px 12px 22px}
+.stat .n{display:inline-block;white-space:nowrap;font:700 84px/1 'Playfair Display',serif;color:#D4F3D7}
+.stat .l{font:700 24px/1.1 'Open Sans',sans-serif;letter-spacing:.1em;margin-top:6px;color:#1B9C85;background:#D4F3D7;display:inline-block;padding:4px 10px}
+.stat .s{font:600 19px/1.3 'Open Sans',sans-serif;margin-top:12px;color:#fff;letter-spacing:.03em}
+.sticker{position:absolute;left:44px;top:1090px;width:190px;height:190px;border-radius:50%;background:#1B9C85;color:#fff;z-index:4;transform:rotate(-10deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 27px/1.1 'Playfair Display',serif;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.sticker small{font:600 18px/1.2 'Open Sans',sans-serif;letter-spacing:.12em;margin-top:8px}
+.t1{position:absolute;left:56px;top:1350px;white-space:nowrap;font:400 60px/1 'Playfair Display',serif;color:#fff;letter-spacing:.03em;z-index:5}
+.t2{position:absolute;left:56px;top:1430px;white-space:nowrap;font:700 112px/1.05 'Playfair Display',serif;color:#1B9C85;z-index:5}
+.by{position:absolute;left:56px;right:56px;top:1590px;color:#fff;font:600 28px/1 'Open Sans',sans-serif;letter-spacing:.12em;white-space:nowrap;z-index:5;padding-top:22px;border-top:2px solid rgba(212,243,215,.35)}
+.gold{position:absolute;left:56px;top:1646px;white-space:nowrap;color:#D4F3D7;font:400 24px/1 'Open Sans',sans-serif;letter-spacing:.08em;z-index:5}
+.cta{position:absolute;left:56px;right:56px;top:1710px;height:88px;background:#1B9C85;color:#fff;font:700 36px/1 'Playfair Display',serif;display:flex;align-items:center;justify-content:center;z-index:5}
+.dom{position:absolute;left:0;right:0;top:1832px;text-align:center;color:#D4F3D7;font:600 26px/1 'Open Sans',sans-serif;letter-spacing:.24em;z-index:5}
+</style></head><body>
+<div class="bg"></div><div class="bar" style="left:120px"></div><div class="bar" style="left:640px"></div><div class="bar" style="left:900px"></div>
+<div class="top"><span id="iss"></span><span>БАНКИ · МФО · ДОМОВЛЕНІСТЬ</span></div>
+<div class="mast" id="mast"><span id="mastt" style="display:inline-block">ПЕРЕГОВОРИ</span></div>
+<div class="sub"><span>ЖУРНАЛ ПРО ДОГОВОРИ З БАНКАМИ</span><span>ВИПУСК ПРО ТЕБЕ</span></div>
+<div class="photo"><img src="portrait-cutout.png"></div>
+<div class="fade"></div><div class="panel"></div>
+<div class="tips"><span class="tip-label">ВАЖЛИВО</span><div id="tips"></div></div>
+<div class="stat"><div class="n" id="sn"></div><br><div class="l" id="sl"></div><div class="s" id="ss"></div></div>
+<div class="sticker">НОВА<br>СТАТТЯ<small>ЧИТАЙТЕ ↓</small></div>
+<div class="t1" id="t1"></div><div class="t2" id="t2"></div>
+<div class="by" id="by">ПОРАДИ ЮРИСТА ВОЛОДИМИРА КОВАЛЕНКА</div><div class="gold" id="gold"></div>
+<div class="cta">Читайте мою нову статтю</div><div class="dom">lawmsb.com.ua</div>
+<script>
+const p=new URLSearchParams(location.search);const d=JSON.parse(p.get('d'));
+document.getElementById('iss').textContent='ВИПУСК '+d.n;
+document.getElementById('tips').innerHTML=d.tips.map(t=>'<div class="t">'+t+'</div>').join('');
+document.getElementById('sn').textContent=d.stat[0];document.getElementById('sl').textContent=d.stat[1];document.getElementById('ss').textContent=d.stat[2];
+document.getElementById('t1').textContent=d.t1;document.getElementById('t2').textContent=d.t2;document.getElementById('gold').textContent=d.gold;
+function fit(el,max,w){let s=max;el.style.fontSize=s+'px';while(el.scrollWidth>w&&s>14){s-=2;el.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{fit(document.getElementById('t2'),112,970);fit(document.getElementById('t1'),60,970);fit(document.getElementById('gold'),24,970);fit(document.getElementById('sn'),84,236);fit(document.getElementById('sl'),24,236);
+(function(){var m=document.getElementById('mast'),t=document.getElementById('mastt'),z=250;m.style.fontSize=z+'px';while(t.offsetWidth>968&&z>80){z-=4;m.style.fontSize=z+'px'}})();document.title='ready'});
+</script></body></html>
