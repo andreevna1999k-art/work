@@ -8,7 +8,8 @@ import json, re, sys, pathlib, subprocess, html, base64, io
 from PIL import Image
 R = pathlib.Path(__file__).parent
 B = R.parent / "blog-drafts"
-SITE = "https://advokato.in.ua"; HUB = 1818; HOME = 1824
+SITE = "https://advokato.in.ua"; HUB = 1818
+HOME = (json.load(open(pathlib.Path(__file__).parent / "ids.json")).get("home") if (pathlib.Path(__file__).parent / "ids.json").exists() else None) or 1824
 sys.path.insert(0, str(B))
 import build_drafts as bd
 
@@ -69,7 +70,7 @@ def art_meta():
         M[url] = {"t": bd.TAGS[i-1], "i": thumb(i), "h": p["title"], "d": bd.DATES[i-1], "e": p["excerpt"]}
     return M
 
-JS = r'''(function(){var g=document.getElementById("%(gid)s");if(!g)return;var M=%(M)s;var LIM=%(lim)d,PID=%(hub)d;
+JS = r'''(function(){var A=String.fromCharCode(38);var g=document.getElementById("%(gid)s");if(!g)return;var M=%(M)s;var LIM=%(lim)d,PID=%(hub)d;
 function T(s){var d=document.createElement("div");d.innerHTML=s;return(d.textContent||"").replace(/\s+/g," ").trim()}
 function D(s){var p=String(s).slice(0,10).split("-");return p[2]+"."+p[1]+"."+p[0]}
 function E(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
@@ -77,11 +78,11 @@ function card(u,slug,ti,dt,ex){var m=M[slug]||{t:"Стаття"};var art=E("arti
 if(m.i){var im=new Image();im.src=m.i;im.alt=ti;im.width=640;im.height=427;im.loading="lazy";cv.appendChild(im)}
 cv.appendChild(E("span","bl-tag",m.t));art.appendChild(cv);var b=E("div","bl-body"),tm=E("time",null,D(dt));tm.setAttribute("datetime",String(dt).slice(0,10));b.appendChild(tm);
 var h=E("h3"),l=E("a",null,ti);l.href=u;l.style.color="inherit";h.appendChild(l);b.appendChild(h);b.appendChild(E("p",null,ex));var mr=E("a","bl-more","Читати статтю");mr.href=u;b.appendChild(mr);art.appendChild(b);g.appendChild(art)}
-function fallback(){Object.keys(M).sort(function(a,b){return M[b].d<M[a].d?-1:1}).slice(0,LIM).forEach(function(s){card("/blog/"+s+"/",s,M[s].h,M[s].d,M[s].e)})}
-fetch("/wp-json/wp/v2/pages?parent="+PID+"&per_page=100&orderby=date&order=desc&_fields=id,date,link,slug,title,excerpt",{credentials:"omit"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(a){
-if(!a.length){fallback();return}a.slice(0,LIM).forEach(function(x){card(new URL(x.link,location.href).pathname,x.slug,T(x.title.rendered),x.date,T(x.excerpt&&x.excerpt.rendered||""))})}).catch(fallback)})();'''
+function fallback(){Object.keys(M).sort(function(a,b){return M[b].d.localeCompare(M[a].d)}).slice(0,LIM).forEach(function(s){card("/blog/"+s+"/",s,M[s].h,M[s].d,M[s].e)})}
+fetch("/wp-json/wp/v2/pages?parent="+PID+A+"per_page=100"+A+"orderby=date"+A+"order=desc"+A+"_fields=id,date,link,slug,title,excerpt",{credentials:"omit"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(a){
+if(!a.length){fallback();return}a.slice(0,LIM).forEach(function(x){card(new URL(x.link,location.href).pathname,x.slug,T(x.title.rendered),x.date,T((x.excerpt?x.excerpt.rendered:"")||""))})}).catch(fallback)})();'''
 def blog_js(gid, lim, M):
-    return "<script>" + JS % dict(gid=gid, M=json.dumps(M, ensure_ascii=False, separators=(",", ":")), lim=lim, hub=HUB) + "</script>"
+    return "<script>" + JS % dict(gid=gid, M=json.dumps(M, ensure_ascii=False, separators=(",", ":")).replace("&","\\u0026").replace("<","\\u003c").replace(">","\\u003e"), lim=lim, hub=HUB) + "</script>"
 
 def wrap(pid, cur, inner, extra=""):
     return ("<!-- wp:html -->\n" + CSS + "\n" + CSS_ART + "\n" + CSS_SITE + "\n" + pidcss(pid) + "\n" + extra + hdr(cur) + '<div class="kv">' + inner + FTR + "</div>\n<!-- /wp:html -->")
@@ -176,5 +177,5 @@ if __name__ == "__main__":
                 if "id" not in r: print("  ERR", str(r)[:300]); continue
                 ids[k] = pid = r["id"]; json.dump(ids, open(idf, "w"), indent=1)
                 n = int(k[4:]); p, _ = copy_page(n, pid)
-            r = call("POST", f"{SITE}/wp-json/wp/v2/pages/{pid}", p)
+            r = call("POST", f"{SITE}/wp-json/wp/v2/pages/{pid}", {"content": p["content"]})
             print("  ->", r.get("id"), r.get("status"), r.get("link"), str(r.get("code", ""))[:60])
