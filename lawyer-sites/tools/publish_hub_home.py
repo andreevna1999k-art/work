@@ -113,6 +113,7 @@ assert "homeBlog" in chk["meta"].get("_elementor_data", ""), "дані голо�
 for k in ("_yoast_wpseo_title", "_yoast_wpseo_metadesc"):
     if live["meta"].get(k): call("POST", f"pages/{HOMED}", {"meta": {k: live["meta"][k]}})
 r = call("POST", "settings", {"page_on_front": HOMED, "show_on_front": "page"}); print("front ->", r.get("page_on_front"))
+r = call("POST", f"pages/{HOMED}", {"title": live["title"]["raw"]}); print("resave home (canonical) ->", r.get("status"))
 r = call("POST", f"pages/{FRONT}", {"status": "draft"}); print("old home ->", r.get("id"), r.get("status"))
 # Elementor кешує відрендерений вміст: без цього сторінка показує старі заглушки
 r = subprocess.run(["curl", "-s", "-X", "DELETE", f"{BASE}/wp-json/elementor/v1/cache"], capture_output=True); print("elementor cache ->", r.stdout.decode()[:80])
