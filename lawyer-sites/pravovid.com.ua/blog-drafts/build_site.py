@@ -152,6 +152,10 @@ if __name__ == "__main__":
     infos = {}
     for n, folder, slug, date, tag, alt in ART:
         p, info = article(n, folder, slug, date, tag, alt); infos[n] = info
+        # посилання на закони й справи вставляємо ДО публікації: на сайт сторінка потрапляє одразу з ними (tools/add_law_links.py --local)
+        _f = R / "payload" / "_links_tmp.json"; _f.write_text(json.dumps(p, ensure_ascii=False), encoding="utf-8")
+        subprocess.run([sys.executable, str(R.parent.parent / "tools" / "add_law_links.py"), "--local", str(_f), "--apply"], check=True)
+        p = json.loads(_f.read_text(encoding="utf-8")); _f.unlink()
         (R / "payload" / f"{n:02d}-{slug}.json").write_text(json.dumps(p, ensure_ascii=False), encoding="utf-8")
         (R / "preview" / f"{n:02d}-{slug}.html").write_text(p["content"], encoding="utf-8")
         print(n, slug, "words", info["words"], "faq", info["faq"], "|", info["title"][:50], "|", len(info["desc"]), "|", info["exc"][:80])
@@ -165,9 +169,6 @@ if __name__ == "__main__":
             else:
                 r = call("POST", f"{SITE}/wp-json/wp/v2/pages/{IDS[slug]}", p)
             print("   ->", r.get("id"), r.get("status"), r.get("date"), r.get("parent"), r.get("template"), r.get("link"), str(r.get("code", ""))[:60])
-            # одразу додаємо посилання на закони й справи (tools/add_law_links.py), щоб сторінка ніколи не стояла без них
-            if r.get("id"):
-                subprocess.run([sys.executable, str(R.parent.parent / "tools" / "add_law_links.py"), SITE.split("//")[1], str(r["id"]), "--apply"])
     # мапа карток для блоку «Мої статті» (картинка 640x427 + тег) -- підхоплює tools/publish_hub_home.py --patch-scripts (CARD_MAP=card-map.json)
     cm = {slug: {"t": tag, "i": MEDIA[slug]["card"]} for n, folder, slug, date, tag, alt in ART}
     (R / "card-map.json").write_text(json.dumps(cm, ensure_ascii=False, separators=(",", ":")).replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e"), encoding="utf-8")

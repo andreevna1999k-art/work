@@ -16,7 +16,8 @@ CASES = {"444/9519/12": 74838904, "310/11534/13-ц": 75287282, "442/5498/16-ц":
          "756/8815/20": 104728588, "910/2629/20": 91786468, "903/806/20": 105458809, "916/2372/20": 106774351}
 CCU = "https://ccu.gov.ua/dokument/3-rii2023"
 law = lambda i: f"https://zakon.rada.gov.ua/laws/show/{i}#Text"
-site, pid = sys.argv[1], sys.argv[2]
+LOCAL = len(sys.argv) > 2 and sys.argv[1] == "--local"   # --local <payload.json>: лінкує поле content у файлі, без сайту
+site, pid = ("local", sys.argv[2]) if LOCAL else (sys.argv[1], sys.argv[2])
 APPLY = "--apply" in sys.argv
 ONLY_CASES = "--only-cases" in sys.argv; HEAD = "--headings-cases" in sys.argv; ODB = "--odb" in sys.argv; FORCE = "--force" in sys.argv
 CUSTOM = [a.split("|") for a in sys.argv if "|" in a and a.count("|") == 1 and not a.startswith("--")]
@@ -62,9 +63,12 @@ def curl(path, data=None):
     if data is not None: cmd += ["-X", "POST", "-H", "Content-Type: application/json", "--data-binary", "@-"]
     r = subprocess.run(cmd, input=json.dumps(data, ensure_ascii=False).encode() if data is not None else None, capture_output=True)
     t = r.stdout.decode(); return json.loads(t[t.find("{"):])
-d = curl("?context=edit&_fields=id,status,date,content")
-raw = d["content"]["raw"]
-pathlib.Path(f"/tmp/claude-0/linkbak/{site}-{pid}.html").write_text(raw, encoding="utf-8")
+if LOCAL:
+    _pl = json.loads(pathlib.Path(pid).read_text(encoding="utf-8")); raw = _pl["content"]; d = {"status": "local", "date": "-"}
+else:
+    d = curl("?context=edit&_fields=id,status,date,content")
+    raw = d["content"]["raw"]
+    pathlib.Path(f"/tmp/claude-0/linkbak/{site}-{pid}.html").write_text(raw, encoding="utf-8")
 if not FORCE and ("zakon.rada.gov.ua/laws/show" in raw.split('<script type="application/ld+json">')[0].split('<div class="art-body">')[-1]):
     print(site, pid, "вже має посилання, пропускаю"); sys.exit()
 bs = raw.find('<div class="art-body">') + len('<div class="art-body">')
@@ -90,7 +94,9 @@ for p in parts:
         out.append(p)
 new = raw[:s] + "".join(out) + raw[e:]
 print(site, pid, d["status"], d["date"], "посилань:", cnt["n"], "| FAQ виключено:", bool(fm))
-if APPLY:
+if APPLY and LOCAL:
+    _pl["content"] = new; pathlib.Path(pid).write_text(json.dumps(_pl, ensure_ascii=False), encoding="utf-8")
+elif APPLY:
     r = curl("", {"content": new}); print("  ->", r.get("id"), r.get("status"), r.get("date"))
 else:
     ex = re.findall(r'<a href="[^"]+" target="_blank" rel="noopener">[^<]+</a>', new)
