@@ -17,9 +17,11 @@ PH = SITE + "/wp-content/uploads/2025/07/ponomarenko-volodymyr-mykhailovych-yury
 ART = [
  (1, "01-chym-nebezpechnyi-kredyt-pid-zastavu-kvartyry", "chym-nebezpechnyi-kredyt-pid-zastavu-kvartyry", "2026-11-12", "Іпотека", "Чоловік вивчає документи за столом, поруч макет будинку та ключі"),
  (2, "02-chy-mozhna-kupyty-kvartyru-iakshcho-ie-borhy-po-kredytakh", "chy-mozhna-kupyty-kvartyru-iakshcho-ie-borhy-po-kredytakh", "2026-11-13", "Купівля квартири", "Жінка з планшетом і папкою документів у порожній квартирі"),
+ (3, "03-chy-mozhna-prodaty-kvartyru-iakshcho-ie-borhy-po-kredytakh", "chy-mozhna-prodaty-kvartyru-iakshcho-ie-borhy-po-kredytakh", "2026-11-16", "Продаж квартири", "Чоловік і жінка за столом із документами та ключами від квартири"),
 ]
 PARSE_CFG = {
  1: dict(tables=[("Варіант дій", 6, 6)], extra_h3=("Чи може іпотекодержатель продати квартиру без суду", "Чи можуть виселити з іпотечної квартири під час воєнного стану", "Чи «згоряє» борг, поки банк судиться за квартиру", "Що зробити сьогодні")),
+ 3: dict(tables=[("Ситуація", 5, 5)], extra_h3=('Борг є, але суду і виконавця ще немає', 'Квартира в іпотеці', 'На квартиру накладено арешт', 'Ви в Єдиному реєстрі боржників', '1. Борг погашено, а арешт лишився', '2. Банк продав борг колекторам', '3. Арештовано рахунок зі спеціальним режимом', 'Справа № 639/858/21: борг погашено, арешт залишився', 'Справа № 361/4481/19: виселення з іпотечного житла')),
  2: dict(tables=[("Сценарій", 5, 4)], extra_h3=("Ви купили квартиру, а там виявилася іпотека", "Борг погашено, а арешт лишився", "Чи можна виселити з іпотечного житла під час воєнного стану", "Справа № 639/858/21: арешт після погашення боргу", "Справа № 361/4481/19: виселення з іпотечного житла", "Що зробити сьогодні")),
 }
 CSS_HUB = (R / "hub-css.html").read_text(encoding="utf-8")
@@ -151,10 +153,15 @@ if __name__ == "__main__":
     infos = {}
     for n, folder, slug, date, tag, alt in ART:
         p, info = article(n, folder, slug, date, tag, alt); infos[n] = info
+        _f = R / "payload" / "_links_tmp.json"; _f.write_text(json.dumps(p, ensure_ascii=False), encoding="utf-8")
+        subprocess.run([sys.executable, str(R.parent.parent / "tools" / "add_law_links.py"), "--local", str(_f), "--apply"], check=True)
+        p = json.loads(_f.read_text(encoding="utf-8")); _f.unlink()
         (R / "payload" / f"{n:02d}-{slug}.json").write_text(json.dumps(p, ensure_ascii=False), encoding="utf-8")
         (R / "preview" / f"{n:02d}-{slug}.html").write_text(p["content"], encoding="utf-8")
         print(n, slug, "words", info["words"], "faq", info["faq"], "|", info["title"][:50], "|", len(info["desc"]), "|", info["exc"][:80])
-        if "--push" in sys.argv:
+        if "--push" in sys.argv and "--only" not in sys.argv:
+            sys.exit("Захист: --push лише з --only N")
+        if "--push" in sys.argv and str(n) == sys.argv[sys.argv.index("--only") + 1]:
             if slug not in IDS:
                 r = call("POST", SITE + "/wp-json/wp/v2/pages", p)
                 if "id" not in r: print("   ERR", str(r)[:300]); continue
