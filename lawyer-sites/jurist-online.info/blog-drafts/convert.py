@@ -59,6 +59,9 @@ def paragraphs(s):
     res.append(s[prev:].strip())
     return [("p", x) for x in res if x]
 
+class _Q(list):
+    _md = True
+
 def parse(txt, n=None, tables=None, extra_h3=()):
     txt = txt.replace("копії документів. Закон, суд, я: спірні питання\n", "копії документів. \nЗакон, суд, я: спірні питання\n")
     lines = [l.rstrip() for l in txt.split("\n")]
@@ -100,6 +103,12 @@ def parse(txt, n=None, tables=None, extra_h3=()):
             blocks.append(("h3", l)); continue
         if (l in extra_h3 or H3_RE.match(l)) and len(l) < 120:
             blocks.append(("h3", l.rstrip(":"))); continue
+        if l.startswith("> "):  # блок-цитата (зразок листа): послідовні рядки "> ..."
+            if blocks and blocks[-1][0] == "quote" and getattr(blocks[-1][1], "_md", False):
+                blocks[-1][1].append(l[2:].strip())
+            else:
+                q = _Q([l[2:].strip()]); blocks.append(("quote", q))
+            continue
         m = re.match(r"^[•◦]\s+(.*)$", l)
         if m: blocks.append(("li", m.group(1).strip())); continue
         m = re.match(r"^\d+\.\s+(.*)$", l)

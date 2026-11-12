@@ -17,6 +17,8 @@ for kind, v in blocks:
     if kind == "p": doc.add_paragraph(v)
     elif kind == "h2": doc.add_heading(v, 2)
     elif kind == "h3": doc.add_heading(v, 3)
+    elif kind == "quote":
+        for x in v: doc.add_paragraph(x, style="Quote")
     elif kind == "li": doc.add_paragraph(v, style="List Bullet")
     elif kind == "oli":
         n += 1; doc.add_paragraph(f"{n}. {v}")
