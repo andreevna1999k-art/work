@@ -1,0 +1,332 @@
+#!/usr/bin/env python3
+"""alternative.in.ua (Фоменко І. О.), стиль S5 «Powder Arch». Збірка 5 сторінок-чернеток.
+  python3 build.py             -> out/*.html
+  python3 build.py --publish   -> POST/PUT чернеток у WP (статус draft)
+Фото: поки uploads на сервері не пишеться -> вбудовуються як data-URI (--media: брати з /wp-content/uploads/...)."""
+import base64, json, pathlib, sys, urllib.request, urllib.parse
+
+R = pathlib.Path(__file__).parent
+SITE = "https://alternative.in.ua"
+NAME = "Фоменко Ірина Олександрівна"
+SHORT = "Фоменко І. О."
+H1 = "Фоменко Ірина Олександрівна — юрист по кредитам"
+TG, TG_NICK = "https://t.me/yurist_fomenko", "@yurist_fomenko"
+PHONE_TEL, PHONE = "+380992515087", "+38 099 251 50 87"
+U = {"home": "/", "hub": "/statti/", "res": "/rezultaty-roboty/", "contacts": "/kontakty/", "policy": "/polityka-konfidentsiinosti/"}
+FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Onest:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">'
+MEDIA = "--media" in sys.argv
+
+def img(name):
+    if MEDIA:
+        return f"{SITE}/wp-content/uploads/2026/11/fomenko-{name}.jpg"
+    b = (R / "img" / f"fomenko-{name}.jpg").read_bytes()
+    return "data:image/jpeg;base64," + base64.b64encode(b).decode()
+
+CSS = """
+.fa{--navy:#14264A;--navy2:#1D3560;--blue:#5B83B7;--blue-t:#2F5A93;--powder:#DCE8F5;--powder2:#EEF4FA;--cream:#F7F2E8;--cream2:#EDE5D3;--camel:#B98A5B;--camel-t:#8A5F33;--ink:#14264A;--soft:#44546F;--white:#fff;--line:rgba(20,38,74,.14);
+--fh:'Lora',Georgia,'Times New Roman',serif;--fb:'Onest',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--r:28px;--rc:22px;
+width:100vw;position:relative;left:50%;margin-left:-50vw;background:var(--cream);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.fa *{box-sizing:border-box}.fa img{max-width:100%;display:block}.fa p{margin:0}.fa a{color:inherit;text-decoration:none}
+.fa h1,.fa h2,.fa h3{font-family:var(--fh);font-weight:600;line-height:1.18;margin:0;color:inherit;letter-spacing:0}
+.fa .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.fa h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:16px}
+.fa .eyebrow{display:inline-block;font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--camel-t);margin-bottom:14px}
+.fa .btn{display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:#fff;border-radius:999px;padding:8px 8px 8px 26px;font-weight:600;font-size:16px;line-height:1.2;transition:background .2s,transform .2s}
+.fa .btn i{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--camel);color:#fff;font-style:normal;font-size:18px}
+.fa .btn:hover{background:var(--blue-t)}
+.fa .btn.light{background:#fff;color:var(--navy)}.fa .btn.light:hover{background:var(--powder)}
+.fa .btn.sm{padding:6px 6px 6px 20px;font-size:15px}.fa .btn.sm i{width:34px;height:34px}
+.fa .ghost{display:inline-flex;align-items:center;border:1.5px solid var(--navy);border-radius:999px;padding:12px 24px;font-weight:600}
+.fa .ghost:hover{background:var(--navy);color:#fff}
+/* nav */
+.fa .top{position:sticky;top:0;z-index:50;background:rgba(247,242,232,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.fa .nav{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:20px}
+.fa .logo{font-family:var(--fh);font-weight:600;font-size:20px;margin-right:auto;white-space:nowrap}
+.fa .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.fa .nav ul a{font-size:15px;font-weight:500;color:var(--soft)}.fa .nav ul a:hover{color:var(--navy)}
+.fa .m-menu{display:none;position:relative}
+.fa .m-menu summary{list-style:none;cursor:pointer;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center}
+.fa .m-menu summary::-webkit-details-marker{display:none}
+.fa .m-menu .ic-x,.fa .m-menu[open] .ic-bars{display:none}.fa .m-menu[open] .ic-x{display:block}
+.fa .m-menu svg{width:22px;height:22px}
+.fa .m-panel{position:fixed;left:12px;right:12px;top:68px;background:#fff;border-radius:24px;padding:14px;box-shadow:0 24px 48px -20px rgba(20,38,74,.5);display:flex;flex-direction:column;gap:2px}
+.fa .m-panel a{padding:14px 16px;border-radius:14px;font-weight:500}.fa .m-panel a:hover{background:var(--powder2)}
+.fa .m-panel .btn{margin-top:8px;justify-content:space-between;color:#fff;padding-left:22px}
+/* hero */
+.fa .hero{background:linear-gradient(180deg,var(--cream) 0%,var(--powder2) 100%);padding:56px 0 0;overflow:hidden}
+.fa .hero-grid{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.fa .hero-copy{padding-bottom:72px}
+.fa .hero h1{font-size:clamp(34px,4.6vw,58px);margin-bottom:20px}
+.fa .hero h1 em{font-style:italic;color:var(--blue-t);font-weight:500}
+.fa .hero .lead{font-size:19px;color:var(--soft);max-width:540px;margin-bottom:30px}
+.fa .hero .acts{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.fa .arch{position:relative;justify-self:center;width:min(100%,440px)}
+.fa .arch::before{content:"";position:absolute;inset:34px -26px 0 26px;background:var(--powder);border-radius:999px 999px 0 0}
+.fa .arch img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:62% 30%;border-radius:999px 999px 0 0}
+.fa .badge{position:absolute;left:-18px;bottom:46px;background:var(--navy);color:#fff;border-radius:20px;padding:14px 18px;max-width:210px;font-size:14px;line-height:1.4;box-shadow:0 18px 36px -18px rgba(20,38,74,.7)}
+.fa .badge b{display:block;font-family:var(--fh);font-size:17px;margin-bottom:2px}
+.fa .hero.sub{padding:64px 0 56px}.fa .hero.sub .hero-grid{grid-template-columns:1fr;text-align:left}.fa .hero.sub .hero-copy{padding:0;max-width:780px}
+.fa .hero.sub h1{font-size:clamp(30px,4vw,48px)}.fa .hero.sub .lead{margin-bottom:0}
+/* sections */
+.fa .band{padding:84px 0}.fa .band.powder{background:var(--powder)}.fa .band.white{background:#fff}.fa .band.navy{background:var(--navy);color:#fff;border-radius:var(--r) var(--r) 0 0}
+.fa .band.navy h2{color:#fff}.fa .band.navy .eyebrow{color:#E3C29B}
+.fa .sec-head{max-width:700px;margin-bottom:40px}.fa .sec-head p{color:var(--soft);font-size:18px}
+.fa .band.navy .sec-head p{color:#C9D6EA}
+.fa .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.fa .about .pic{border-radius:var(--r);overflow:hidden;box-shadow:0 30px 50px -30px rgba(20,38,74,.55)}
+.fa .about .pic img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:35% 20%}
+.fa .about p+p{margin-top:14px}.fa .about p{color:var(--soft)}
+.fa .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.fa .fact{background:#fff;border-radius:var(--rc);padding:18px;border:1px solid var(--line)}
+.fa .fact b{display:block;font-family:var(--fh);font-size:20px}.fa .fact span{font-size:14px;color:var(--soft)}
+.fa .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fa .card{background:#fff;border-radius:var(--rc);padding:28px;border:1px solid var(--line)}
+.fa .card .ar{width:52px;height:64px;border-radius:999px 999px 8px 8px;background:var(--powder);display:grid;place-items:center;margin-bottom:18px;color:var(--blue-t)}
+.fa .card .ar svg{width:24px;height:24px}
+.fa .card h3{font-size:21px;margin-bottom:10px}.fa .card p{color:var(--soft);font-size:16px}
+.fa .ph{border:1.5px dashed rgba(20,38,74,.3);border-radius:var(--rc);padding:28px;text-align:center;color:var(--soft);background:rgba(255,255,255,.5)}
+.fa .band.navy .ph{border-color:rgba(255,255,255,.35);color:#C9D6EA;background:rgba(255,255,255,.05)}
+.fa .res-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fa .res-ph{aspect-ratio:3/4;border-radius:999px 999px var(--rc) var(--rc);border:1.5px dashed rgba(20,38,74,.3);display:grid;place-items:center;padding:24px;text-align:center;color:var(--soft);font-size:15px;background:rgba(255,255,255,.55)}
+.fa .more{margin-top:32px;text-align:center}
+.fa .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fa .art{background:#fff;border-radius:var(--rc);padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.fa .art small{color:var(--camel-t);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.fa .art h3{font-size:20px}.fa .art p{color:var(--soft);font-size:15px}
+.fa .art.soon{border-style:dashed;background:rgba(255,255,255,.55)}
+.fa .rev-box{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.fa .form{background:#fff;color:var(--ink);border-radius:var(--r);padding:28px}
+.fa .form h3{font-size:22px;margin-bottom:6px}.fa .form p{color:var(--soft);font-size:15px;margin-bottom:16px}
+.fa .form label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}
+.fa .form input,.fa .form textarea{width:100%;font:inherit;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--powder2);color:var(--ink)}
+.fa .form textarea{min-height:110px;resize:vertical}
+.fa .form .btn{margin-top:18px;border:0;cursor:pointer;font-family:inherit}
+.fa .form small{display:block;margin-top:10px;color:var(--soft);font-size:13px}
+.fa .cta{background:var(--powder);border-radius:var(--r);padding:44px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.fa .cta h2{margin:0 0 8px;font-size:clamp(24px,3vw,34px)}.fa .cta p{color:var(--soft);max-width:560px}
+/* footer */
+.fa .foot{background:var(--navy);color:#fff;padding:72px 0 28px;border-radius:var(--r) var(--r) 0 0}
+.fa .foot h2{color:#fff}.fa .foot .eyebrow{color:#E3C29B}
+.fa .contacts{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.fa .clinks{display:grid;gap:12px;margin-top:22px}
+.fa .clinks a,.fa .clinks div{display:block;background:rgba(255,255,255,.08);border-radius:18px;padding:14px 18px}
+.fa .clinks small{display:block;font-size:13px;color:#B9C8E0}.fa .clinks b{font-weight:600;font-size:18px;color:#fff}
+.fa .clinks a:hover{background:rgba(255,255,255,.16)}
+.fa .mapph{border-radius:var(--rc);background:rgba(255,255,255,.07);border:1.5px dashed rgba(255,255,255,.35);min-height:260px;display:grid;place-items:center;text-align:center;padding:24px;color:#C9D6EA}
+.fa .bottom{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;font-size:14px;color:#B9C8E0}
+.fa .bottom a:hover{color:#fff}
+/* text pages */
+.fa .prose{max-width:820px;margin:0 auto}.fa .prose h2{font-size:26px;margin:36px 0 12px}.fa .prose p,.fa .prose li{color:var(--soft)}.fa .prose ul{padding-left:22px}.fa .prose li{margin:6px 0}.fa .prose p{margin:10px 0}
+.fa .prose a{color:var(--blue-t);text-decoration:underline}
+.fa .c-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:960px){
+.fa .nav ul,.fa .nav>.btn{display:none}.fa .m-menu{display:block}
+.fa .hero-grid{grid-template-columns:1fr;gap:28px}.fa .hero-copy{padding-bottom:0}.fa .arch{width:min(86%,380px)}
+.fa .about,.fa .rev-box,.fa .contacts{grid-template-columns:1fr}
+.fa .cards,.fa .art-grid,.fa .res-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+.fa{font-size:16px}.fa .band{padding:56px 0}.fa .wrap,.fa .nav,.fa .hero-grid{padding-left:16px;padding-right:16px}
+.fa .hero{padding-top:32px}.fa .hero .acts .btn,.fa .hero .acts .ghost{width:100%;justify-content:space-between}.fa .hero .acts .ghost{justify-content:center}
+.fa .badge{left:0;bottom:24px}.fa .arch::before{inset:26px -8px 0 18px}
+.fa .cards,.fa .art-grid,.fa .res-row,.fa .facts,.fa .c-cards{grid-template-columns:1fr}
+.fa .cta{padding:28px 20px}.fa .cta .btn{width:100%;justify-content:space-between}
+.fa .res-ph{aspect-ratio:4/3;border-radius:var(--rc)}
+.fa .foot{padding-top:48px}.fa .band.navy{border-radius:24px 24px 0 0}
+}
+"""
+
+ICO = {
+ "doc": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg>',
+ "shield": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+ "scale": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M6 20h12M5 7h14M5 7l-3 7a3 3 0 006 0zM19 7l-3 7a3 3 0 006 0z"/></svg>',
+ "chat": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>',
+ "card": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></svg>',
+ "list": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>',
+}
+LINKS = [(U["home"] + "#about", "Про мене"), (U["home"] + "#services", "Послуги"), (U["res"], "Результати"), (U["hub"], "Статті"), (U["home"] + "#reviews", "Відгуки"), (U["contacts"], "Контакти")]
+CLOSE = "onclick=\"this.closest('details').removeAttribute('open')\""
+
+def top():
+    ul = "".join(f'<li><a href="{h}">{t}</a></li>' for h, t in LINKS)
+    panel = "".join(f'<a href="{h}" {CLOSE}>{t}</a>' for h, t in LINKS)
+    return f'''<div class="top"><nav class="nav" aria-label="Меню">
+<a class="logo" href="/">{SHORT}</a><ul>{ul}</ul>
+<a class="btn sm" href="{TG}">Telegram <i>↗</i></a>
+<details class="m-menu"><summary aria-label="Меню"><svg class="ic-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></summary><div class="m-panel">{panel}<a class="btn" href="{TG}">Написати в Telegram <i>↗</i></a></div></details>
+</nav></div>'''
+
+def footer():
+    return f'''<footer class="foot" id="contacts"><div class="wrap">
+<div class="contacts"><div>
+<span class="eyebrow">Контакти</span><h2>Зв’яжіться зі мною</h2>
+<div class="clinks">
+<a href="tel:{PHONE_TEL}"><small>Телефон</small><b>{PHONE}</b></a>
+<a href="{TG}"><small>Telegram</small><b>{TG_NICK}</b></a>
+<div><small>Адреса</small><b>[адресу додасть замовниця]</b></div>
+<div><small>Години прийому</small><b>[години додасть замовниця]</b></div>
+</div></div>
+<div class="mapph"><div><b style="color:#fff">Карта Google</b><br>з’явиться після підтвердження адреси</div></div></div>
+<div class="bottom"><span>© {NAME}</span><span><a href="{U["policy"]}">Політика конфіденційності</a> · <a href="{U["contacts"]}">Контакти</a></span></div>
+</div></footer>'''
+
+def sub_hero(h1, lead, eyebrow):
+    return f'''<header class="hero sub"><div class="hero-grid"><div class="hero-copy"><span class="eyebrow">{eyebrow}</span><h1>{h1}</h1><p class="lead">{lead}</p></div></div></header>'''
+
+def cta(text="Опишіть ситуацію в Telegram — подивимось документи й домовимось про наступні кроки."):
+    return f'''<section class="band"><div class="wrap"><div class="cta"><div><h2>Потрібна консультація?</h2><p>{text}</p></div><a class="btn" href="{TG}">Написати в Telegram <i>↗</i></a></div></div></section>'''
+
+def person_schema(desc):
+    return {"@context": "https://schema.org", "@type": "Person", "name": NAME, "jobTitle": "Юристка по кредитам",
+            "description": desc, "url": SITE + "/", "image": img("hero") if MEDIA else None, "telephone": PHONE_TEL, "sameAs": [TG]}
+
+def wrap_page(title, desc, h1, body, schema):
+    schema = {k: v for k, v in schema.items() if v}
+    return f'''<!-- wp:html -->
+<!-- Title: {title} -->
+<!-- H1: {h1} -->
+<!-- Description: {desc} -->
+{FONTS}
+<style>{CSS}</style>
+<div class="fa" id="top">
+{top()}
+{body}
+{footer()}
+</div>
+<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
+<!-- /wp:html -->
+'''
+
+# ---------- pages ----------
+SERV = [
+ ("card", "Кредитні спори", "Розбір кредитного договору, нарахувань і вимог банку чи фінансової компанії; підготовка заперечень і позовних документів."),
+ ("shield", "Захист від стягнення", "Робота з арештами рахунків, виконавчими провадженнями та вимогами колекторів у межах закону."),
+ ("scale", "Реструктуризація боргів", "Переговори з кредитором щодо графіка платежів, відстрочки чи зміни умов договору."),
+ ("doc", "Документи та позови", "Скарги, заяви, відзиви та позови з кредитних питань; перевірка документів перед підписанням."),
+ ("chat", "Консультація", "Первинна оцінка ситуації: що є в договорі, які ризики, які варіанти дій."),
+ ("list", "Супровід у суді", "Представництво інтересів позичальника в судових справах за кредитними договорами."),
+]
+ARTS = [("Кредити", "Як діяти, якщо банк подав до суду"), ("Борги", "Арешт рахунків: що перевірити й куди звертатись"), ("Колектори", "Що може вимагати колектор, а що — ні")]
+
+def home():
+    desc = "Фоменко Ірина Олександрівна — юрист по кредитам: кредитні спори, захист від стягнення, реструктуризація боргів. Консультація в Telegram."
+    assert len(desc) <= 160, len(desc)
+    services = "".join(f'<div class="card"><div class="ar">{ICO[i]}</div><h3>{t}</h3><p>{d}</p></div>' for i, t, d in SERV)
+    arts = "".join(f'<div class="art soon"><small>{c}</small><h3>{t}</h3><p>Стаття готується до публікації.</p></div>' for c, t in ARTS)
+    res = "".join('<div class="res-ph">Тут буде документ про результат справи (дані клієнтів закриті)</div>' for _ in range(3))
+    body = f'''<header class="hero"><div class="hero-grid">
+<div class="hero-copy"><span class="eyebrow">Юрист по кредитам</span>
+<h1>Фоменко Ірина Олександрівна — <em>юрист по кредитам</em></h1>
+<p class="lead">Допомагаю позичальникам розібратися з кредитним договором, вимогами банку та боргами й обрати законний спосіб захисту.</p>
+<div class="acts"><a class="btn" href="{TG}">Написати в Telegram <i>↗</i></a><a class="ghost" href="tel:{PHONE_TEL}">{PHONE}</a></div></div>
+<div class="arch"><img src="{img("hero")}" alt="{NAME}, юрист по кредитам" width="640" height="640"><div class="badge"><b>{SHORT}</b>юрист по кредитам</div></div>
+</div></header>
+
+<section class="band" id="about"><div class="wrap"><div class="about">
+<div class="pic"><img src="{img("about")}" alt="{NAME} за робочим столом" loading="lazy" width="640" height="640"></div>
+<div><span class="eyebrow">Про мене</span><h2>Допомагаю розібратися з кредитом і не втратити контроль над ситуацією</h2>
+<p>Я — Ірина Фоменко, юрист, який працює з кредитними питаннями: договори, нарахування, вимоги банків і колекторів, стягнення боргів.</p>
+<p>[Тут буде більш детальний опис: освіта, досвід, спеціалізація — текст надасть замовниця]</p>
+<div class="facts"><div class="fact"><b>[досвід]</b><span>додасть замовниця</span></div><div class="fact"><b>[освіта]</b><span>додасть замовниця</span></div><div class="fact"><b>[місто]</b><span>додасть замовниця</span></div></div></div>
+</div></div></section>
+
+<section class="band powder" id="services"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">Послуги</span><h2>З чим я допомагаю</h2><p>Кожну ситуацію розглядаю індивідуально — за договором і документами.</p></div>
+<div class="cards">{services}</div></div></section>
+
+<section class="band" id="results"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">Результати роботи</span><h2>Результати роботи</h2><p>Тут будуть довідки та рішення за справами клієнтів із закритими персональними даними.</p></div>
+<div class="res-row">{res}</div>
+<div class="more"><a class="ghost" href="{U["res"]}">Усі результати</a></div></div></section>
+
+<section class="band white" id="articles"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">Мої статті</span><h2>Мої статті</h2><p>Пояснюю складні кредитні питання простою мовою.</p></div>
+<div class="art-grid">{arts}</div>
+<div class="more"><a class="ghost" href="{U["hub"]}">Усі статті</a></div></div></section>
+
+<section class="band navy" id="reviews"><div class="wrap">
+<div class="sec-head"><span class="eyebrow">Відгуки клієнтів</span><h2>Відгуки клієнтів</h2><p>Тут з’являтимуться відгуки клієнтів. Залишити свій можна через форму поруч.</p></div>
+<div class="rev-box">
+<div class="ph">Поки що відгуків немає. Це місце під справжні відгуки; вигадані відгуки не публікуються.</div>
+<div class="form"><h3>Залишити відгук</h3><p>Форма підключиться до плагіна коментарів/відгуків сайту.</p>
+<label for="fa-n">Ім’я</label><input id="fa-n" type="text" placeholder="Ваше ім’я" disabled>
+<label for="fa-t">Відгук</label><textarea id="fa-t" placeholder="Напишіть кілька слів про співпрацю" disabled></textarea>
+<a class="btn" href="{TG}">Надіслати в Telegram <i>↗</i></a><small>Відгуки публікуються після перевірки.</small></div>
+</div></div></section>
+
+{cta()}'''
+    return "home", wrap_page(H1, desc, H1, body, person_schema(desc)), H1, "golovna"
+
+def contacts():
+    t = f"Контакти — {NAME}"
+    desc = "Контакти юриста по кредитам Фоменко Ірини Олександрівни: телефон, Telegram, адреса й години прийому."
+    body = f'''{sub_hero("Контакти", "Напишіть або зателефонуйте — розповісте ситуацію, і ми визначимо, чим я можу бути корисною.", f"{NAME} · юрист по кредитам")}
+<section class="band"><div class="wrap"><div class="c-cards">
+<a class="card" href="tel:{PHONE_TEL}"><h3>Телефон</h3><p style="font-size:20px;color:var(--navy);font-weight:600">{PHONE}</p></a>
+<a class="card" href="{TG}"><h3>Telegram</h3><p style="font-size:20px;color:var(--navy);font-weight:600">{TG_NICK}</p></a>
+<div class="card"><h3>Адреса</h3><p>[адресу додасть замовниця]</p></div>
+<div class="card"><h3>Години прийому</h3><p>[години додасть замовниця]</p></div>
+</div></div></section>
+{cta()}'''
+    return "contacts", wrap_page(t, desc, "Контакти", body, {"@context": "https://schema.org", "@type": "ContactPage", "name": t, "url": SITE + U["contacts"]}), "Контакти", "kontakty"
+
+def results():
+    t = f"Результати роботи — {NAME}"
+    desc = "Результати роботи юриста по кредитам Фоменко Ірини Олександрівни: довідки та рішення за справами клієнтів."
+    res = "".join('<div class="res-ph">Тут буде документ про результат справи (дані клієнтів закриті)</div>' for _ in range(6))
+    body = f'''{sub_hero("Результати роботи", "Довідки та рішення за справами. Персональні дані клієнтів будуть закриті.", f"{NAME} · юрист по кредитам")}
+<section class="band"><div class="wrap"><div class="res-row">{res}</div></div></section>
+{cta()}'''
+    return "results", wrap_page(t, desc, "Результати роботи", body, {"@context": "https://schema.org", "@type": "CollectionPage", "name": t, "url": SITE + U["res"]}), "Результати роботи", "rezultaty-roboty"
+
+def hub():
+    t = f"Статті — {NAME}"
+    desc = "Статті юриста по кредитам Фоменко Ірини Олександрівни про кредитні договори, борги, арешти рахунків і права позичальників."
+    arts = "".join(f'<div class="art soon"><small>{c}</small><h3>{x}</h3><p>Стаття готується до публікації.</p></div>' for c, x in ARTS * 2)
+    body = f'''{sub_hero("Статті", "Пояснюю кредитні питання простою мовою: що каже закон і які кроки реально допомагають.", f"{NAME} · юрист по кредитам")}
+<section class="band"><div class="wrap"><div class="art-grid" id="hub-cards">{arts}</div></div></section>
+{cta()}'''
+    return "hub", wrap_page(t, desc, "Статті", body, {"@context": "https://schema.org", "@type": "CollectionPage", "name": t, "url": SITE + U["hub"]}), "Статті", "statti"
+
+def policy():
+    t = "Політика конфіденційності та обробки персональних даних"
+    desc = "Політика конфіденційності сайту alternative.in.ua: які дані збираються, як використовуються і як їх захищено."
+    body = f'''{sub_hero(t, "Сайт alternative.in.ua · дата редакції: [додасть замовниця]", NAME)}
+<section class="band"><div class="wrap"><div class="prose">
+<h2>1. Загальні положення</h2>
+<p>Ця політика пояснює, як сайт alternative.in.ua (далі — Сайт) обробляє персональні дані відвідувачів. Користуючись Сайтом, ви погоджуєтесь з цими умовами.</p>
+<h2>2. Які дані можуть збиратися</h2>
+<ul><li>дані, які ви надаєте самі: імʼя, телефон, нікнейм у месенджері, зміст повідомлення чи відгуку;</li><li>технічні дані: IP-адреса, тип браузера, сторінки, які ви відвідали, файли cookie.</li></ul>
+<h2>3. Мета обробки</h2>
+<ul><li>звʼязатися з вами за вашим запитом;</li><li>надати юридичну консультацію чи послугу;</li><li>опублікувати відгук (лише за вашою згодою);</li><li>покращувати роботу Сайту.</li></ul>
+<h2>4. Передача третім особам</h2>
+<p>Персональні дані не продаються і не передаються третім особам, окрім випадків, передбачених законом, або коли це потрібно для роботи Сайту (хостинг, аналітика).</p>
+<h2>5. Захист даних і строк зберігання</h2>
+<p>Вживаються розумні організаційні та технічні заходи захисту. Дані зберігаються стільки, скільки потрібно для мети обробки або вимагає закон.</p>
+<h2>6. Ваші права</h2>
+<p>Ви можете запросити доступ до своїх даних, їх виправлення чи видалення, а також відкликати згоду, написавши за контактами нижче.</p>
+<h2>7. Файли cookie</h2>
+<p>Сайт може використовувати cookie для коректної роботи. Ви можете вимкнути їх у налаштуваннях браузера.</p>
+<h2>8. Контакти</h2>
+<p>Телефон: <a href="tel:{PHONE_TEL}">{PHONE}</a>; Telegram: <a href="{TG}">{TG_NICK}</a>; е-пошта: [додасть замовниця].</p>
+<p style="margin-top:24px;font-size:14px">Текст є типовою редакцією і потребує перевірки юристом/замовницею перед публікацією.</p>
+</div></div></section>'''
+    return "policy", wrap_page(t, desc, t, body, {"@context": "https://schema.org", "@type": "WebPage", "name": t, "url": SITE + U["policy"]}), t, "privacy-policy"
+
+def wp(method, path, payload):
+    req = urllib.request.Request(SITE + "/wp-json/wp/v2/" + path, data=json.dumps(payload).encode(), method=method, headers={"Content-Type": "application/json", "User-Agent": "curl/8.5.0"})
+    return json.load(urllib.request.urlopen(req, timeout=120))
+
+if __name__ == "__main__":
+    out = R / "out"; out.mkdir(exist_ok=True)
+    ids = json.loads((R / "ids.json").read_text()) if (R / "ids.json").exists() else {}
+    for fn in (home, contacts, results, hub, policy):
+        key, html, title, slug = fn()
+        (out / f"{key}.html").write_text(html, encoding="utf-8")
+        print(key, len(html))
+        if "--publish" in sys.argv:
+            pl = {"title": title, "content": html, "status": "draft", "slug": slug, "template": "page-blank"}
+            r = wp("POST", f"pages/{ids[key]}", pl) if key in ids else wp("POST", "pages", pl)
+            ids[key] = r["id"]; print("  ->", r["id"], r["status"], r["link"])
+    if "--publish" in sys.argv:
+        (R / "ids.json").write_text(json.dumps(ids))
