@@ -1,0 +1,181 @@
+Дата,Проєкт / сайт,Що зроблено,Підтвердження (коміт),Джерело задачі
+2026-10-12,,Add restructuring vs refinancing page with cost simulator,84e3eff,репозиторій
+2026-10-12,,Add loan deferral page with capitalized-interest calculator,70250c2,репозиторій
+2026-10-12,,Add BRD loan deferral page; link it from the general deferral guide,8ecd4db,репозиторій
+2026-10-12,,Add CEC Bank loan deferral page; link it from the general deferral guide,d280c8c,репозиторій
+2026-10-12,,Add Raiffeisen loan restructuring page (draft 1810),08e83b4,репозиторій
+2026-10-12,,Add judicial reorganization page (draft),bbf4f70,репозиторій
+2026-10-13,,Add debt collectors page (draft),7708da2,репозиторій
+2026-10-13,,Recuperatori page: avoid '<' in inline JS (wptexturize),697d0f3,репозиторій
+2026-10-13,,Recuperatori page: fix JS comparison,3272fd7,репозиторій
+2026-10-13,,Add debt collection companies page (draft),65fa3b2,репозиторій
+2026-10-13,,"Add debt collectors law page (draft), cross-link collector pages",2c208e3,репозиторій
+2026-10-13,,Add verificare-datorii-anaf-persoane-juridice page (draft),a03ec21,репозиторій
+2026-10-13,,Add birou-de-credit-brd page (draft),0469250,репозиторій
+2026-10-13,,Add verificare-online-biroul-de-credit page (draft),aedc544,репозиторій
+2026-10-13,,Add cerere-de-stergere-din-biroul-de-credit page (draft),54cf246,репозиторій
+2026-10-13,,Add stergere-biroul-de-credit-fara-avans page (draft),cf66e00,репозиторій
+2026-10-13,,Add model-cerere-stergere-biroul-de-credit page (draft),dc60550,репозиторій
+2026-10-13,,Add biroul-de-credit-bucuresti page (draft),8cfeac0,репозиторій
+2026-10-13,,Add avocat-stergere-biroul-de-credit page (draft),8a1c7a9,репозиторій
+2026-10-13,,Add stergere-biroul-de-credit-gdpr page (draft),a6841e1,репозиторій
+2026-10-13,,Add cat-dureaza-stergerea-din-biroul-de-credit page (draft),7c48c38,репозиторій
+2026-10-13,,Add firme-care-te-sterg-din-biroul-de-credit page (draft),f9985ac,репозиторій
+2026-10-13,,Cross-link Biroul de Credit drafts to new guides,5e2c57d,репозиторій
+2026-10-13,,Replace contact form with chat CTA on all pages,134bbaa,репозиторій
+2026-10-13,,Add pipeline handoff notes and company fact-check,57833f8,репозиторій
+2026-10-13,,Pipeline notes: table dedup done,96ccc26,репозиторій
+2026-10-13,,"Merge model-cerere generator into cerere-de-stergere, repoint links; notes done",439c094,репозиторій
+2026-10-13,Note,Note: draft 1843 moved to WP trash,dc56d27,репозиторій
+2026-10-13,Fact-check,"Fact-check: resolve all DE VERIFICAT markers on 21 pages, update drafts",c063455,репозиторій
+2026-10-13,,"Verify against lege5 sources: restore art.132(4) exceptions and art.75, refine plan voting/Legea 243 text",aa181c7,репозиторій
+2026-10-13,,Add avocat-specializat-credite-bancare page (draft WP 1913),43acb0b,репозиторій
+2026-10-13,,"Add pages: avocati-care-au-castigat-procese-cu-bancile, avocat-clauze-abuzive (drafts WP 1916, 1919)",05a7dc0,репозиторій
+2026-10-13,,Add avocat-contestatie-executare-silita page (draft WP 1922),fb24c6b,репозиторій
+2026-10-13,,Add contestatie-la-executare page (draft WP 1925),6794ff5,репозиторій
+2026-10-13,,Add unde-se-depune-contestatia-la-executare page (draft WP 1928),bbaf6f6,репозиторій
+2026-10-13,,"Add contestatia-la-executare-cod-procedura-civila page (draft WP 1934); fix art.715(2) term, art.720(3) fine",122941f,репозиторій
+2026-10-13,,Add termen-contestatie-la-executare page (draft WP 1937),a65057e,репозиторій
+2026-10-13,,Layout of 8 ready pages done; fix positive-data basis wording on 5 BdC pages; add page generator,a947056,репозиторій
+2026-10-13,,"Generate texts, audits-ready sources and infographics for pages 30, 35, 40",28ddcb3,репозиторій
+2026-10-13,,"Layout drafts for pages 30, 35, 40 (WP 1949-1951)",0fe3c89,репозиторій
+2026-10-13,,"Pages 31, 33, 37: texts, infographics and WP drafts (1958-1960)",4175ad3,репозиторій
+2026-10-13,,"12 pages (26,28,38,41,42,48-53,57): generators, infographics, texts",1c999e1,репозиторій
+2026-10-13,,"Pages 43-47: city auction pages, generator and infographics",dd04fcc,репозиторій
+2026-10-13,,"Pages 54, 55, 56, 39, 58: generators, images, texts, pipeline notes",2f8bf7a,репозиторій
+2026-10-13,mkdoc,mkdoc: embed infographics (PNG) and absolute links in Drive docs,ffc3168,репозиторій
+2026-10-14,p41,p41: place second infographic on page,ee32cfb,репозиторій
+2026-10-14,,Boychuk blog design system v1.0,d577d2d,репозиторій
+2026-10-19,Boychuk,"Boychuk: results (8) + demo reviews blocks builder, registry, page13 backup",089501d,репозиторій
+2026-10-19,Boychuk,"Boychuk: results block title 'Результати роботи' with highlight, final build; media IDs",f661ee8,репозиторій
+2026-10-19,Boychuk,"Boychuk: standalone 'Результати роботи' page (13 results), shared results data, 'Усі результати' button",ac7b27f,репозиторій
+2026-10-27,,Add sample blog content plan for legaladdress.com.ua,d13e6b2,репозиторій
+2026-10-27,,Add November 2026 blog content plans for 16 lawyer sites,bc13531,репозиторій
+2026-10-27,,Replace non-question focus keys with question keys in content plans,70d6c2b,репозиторій
+2026-10-27,,Remove case-type articles from content plans,0fc49cf,репозиторій
+2026-10-27,,"Content plans: focus phrase is the semantic key, add frequency and cluster columns",ade5895,репозиторій
+2026-10-27,,"Add environment notes (hosts only, no secrets)",f38e38e,репозиторій
+2026-10-27,,Add copywriting style cards and Style column for 16 sites,4cb90e1,репозиторій
+2026-10-27,,Content plans: focus phrases translated to Ukrainian,0efcb02,репозиторій
+2026-10-27,,Content plans xlsx: Ukrainian phrases for mortgage site tab,86d62f9,репозиторій
+2026-10-27,,Content plans: add cluster frequency column,e22a5c9,репозиторій
+2026-10-28,,Content plans: add TZ generator brief column (J) and template sheet,8d23995,репозиторій
+2026-10-28,,"Content plans: legal base per key (laws + court cases, max 5), brief updated to chief-editor and boss requirements",f08a22f,репозиторій
+2026-10-28,,Content plans: compact ready-to-paste brief in column J with laws and court cases,f6e5783,репозиторій
+2026-11-02,lawyer-sites,"lawyer-sites: folders renamed to site domains, merged materials from all branches, added folders and content plans for 11 missing sites",098aed2,репозиторій
+2026-11-05,urists.com.ua,urists.com.ua: backups of home (id 9) and blog hub (id 48) before adding the articles block and publishing the hub,990df36,репозиторій
+2026-11-10,urists.com.ua,"urists.com.ua: 12 blog drafts (WP ids 64-75, status draft, planned dates 10.11-04.12) + GPT image prompts",13b09ce,репозиторій
+2026-11-10,,"urists.com.ua drafts: add 5 photos (articles 1, 2, 6, 11, 12), embedded as data URIs",b8b94fe,репозиторій
+2026-11-10,urists.com.ua,urists.com.ua: Stories creatives for 12 blog articles (1080x1920) + generator,85f57a4,репозиторій
+2026-11-11,advokato.in.ua,"advokato.in.ua: 12 blog drafts under hub id 1818 (WP ids 1830-1852, draft, planned dates 11.11-04.12); style registry note",57e981e,репозиторій
+2026-11-11,,"advokato.in.ua drafts: add 5 photos (articles 4, 5, 6, 7, 10), embedded as data URIs",1593311,репозиторій
+2026-11-11,,"advokato.in.ua drafts: add photos for articles 1, 2, 3, 8, 11",90cacad,репозиторій
+2026-11-11,,advokato.in.ua drafts: add photos for articles 9 and 12 (all 12 done),ac9441b,репозиторій
+2026-11-11,advokato.in.ua,advokato.in.ua: blog hub draft (id 1818) now lists the 12 article cards; backup of the original mockup,a5f5db2,репозиторій
+2026-11-11,advokato.in.ua,"advokato.in.ua: чернетки головної, хабу «Мої статті» та копій сторінок із шапкою",0488758,репозиторій
+2026-11-11,advokato.in.ua,"advokato.in.ua: шапка на опублікованих сторінках, хаб /blog/, стаття 1 (11.11.2026); бекап живих сторінок",903999c,репозиторій
+2026-11-11,advokato.in.ua,advokato.in.ua: Stories-креативи (12 шт.) у стилі сайту,6af3117,репозиторій
+2026-11-11,bankruptcyukraine.com,"bankruptcyukraine.com: чернетки 12 статей і хаб «Мої статті», промпти для картинок; реєстр стилів",c910a50,репозиторій
+2026-11-11,bankruptcyukraine.com,bankruptcyukraine.com: опублікований хаб /blog/ і нова головна з шапкою та блоком «Мої статті»; бекапи,fb3cccd,репозиторій
+2026-11-11,bankruptcyukraine.com,"bankruptcyukraine.com: картинки до статей 1, 4, 5, 8, 12",4eb7c14,репозиторій
+2026-11-11,bankruptcyukraine.com,"bankruptcyukraine.com: картинки до статей 3, 6, 7, 9, 10",546d862,репозиторій
+2026-11-11,bankruptcyukraine.com,bankruptcyukraine.com: картинки до статей 2 і 11 (усі 12 готові),dcfc92d,репозиторій
+2026-11-11,bankruptcyukraine.com,bankruptcyukraine.com: Stories-креативи (12 шт.) у стилі сайту,4e7ae96,репозиторій
+2026-11-11,jurist-online.info,jurist-online.info: Stories-креативи (12 шт.) у стилі сайту,7bb1d4c,репозиторій
+2026-11-11,jurist-po-ipotechnum-kreditam.kiev.ua,jurist-po-ipotechnum-kreditam.kiev.ua: Stories-креативи (12 шт.) у стилі сайту,f05523e,репозиторій
+2026-11-11,lawmsb.com.ua,lawmsb.com.ua: Stories-креативи (12 шт.) у стилі сайту,d3c58d2,репозиторій
+2026-11-11,pravovid.com.ua,pravovid.com.ua: Stories-креативи (12 шт.) у стилі сайту,5fec4a0,репозиторій
+2026-11-11,yuristy.in.ua,yuristy.in.ua: Stories-креативи (12 шт.) у стилі сайту,68d9761,репозиторій
+2026-11-11,advokat-kharkov.org.ua,advokat-kharkov.org.ua: Stories-креативи (12 шт.) у стилі сайту,d966f2d,репозиторій
+2026-11-11,advokat-kharkov.org.ua,advokat-kharkov.org.ua: Stories-креативи у новому макеті (без QR),33b89a8,репозиторій
+2026-11-11,profconsulting.com.ua,profconsulting.com.ua: Stories-креативи (12 шт.) у стилі сайту,a2fc250,репозиторій
+2026-11-11,argument-consulting.com.ua,argument-consulting.com.ua: Stories-креативи (12 шт.) у стилі сайту,94e1b55,репозиторій
+2026-11-11,spacelaw.com.ua,spacelaw.com.ua: Stories creatives (12) in magazine-cover style,9c1b772,репозиторій
+2026-11-11,jurist-online.info,"jurist-online.info: draft text and TZ for article 1 (kept offline, not published)",3cbbc9d,репозиторій
+2026-11-11,jurist-online.info,"jurist-online.info: corrected text of article 1 (calc, extra law reference, typos, long sentences)",6c033d1,репозиторій
+2026-11-11,jurist-online.info,jurist-online.info: images for articles 1-4 (not yet on site),94a0225,репозиторій
+2026-11-11,jurist-online.info,"jurist-online.info: article 2 text (corrected) and TZ, kept offline",798cdb1,репозиторій
+2026-11-11,jurist-online.info,"jurist-online.info: article 3 text (corrected) and TZ, kept offline",9d4ce30,репозиторій
+2026-11-11,jurist-online.info,jurist-online.info: article 3 FAQ sentence fix,0133289,репозиторій
+2026-11-11,jurist-online.info,"jurist-online.info: article 4 text (corrected) and TZ, kept offline",79e85d3,репозиторій
+2026-11-11,jurist-online.info,"jurist-online.info: 4 articles scheduled (12.11-18.11 09:00), hub and home built as drafts, style registry row S-jo",8af6aad,репозиторій
+2026-11-11,jurist-online.info,"jurist-online.info: hub and new home published, old home backed up",ebee4e4,репозиторій
+2026-11-11,,"Publish hub + new home with 'Мої статті' block for 8 sites (jurist-po-ipotechnum, lawmsb, pravovid, yuristy, advokat-kharkov, profconsulting, argument-consulting, spacelaw); tools/publish_hub_home.py and backups of old homes",888a2fc,репозиторій
+2026-11-11,,Restore tracked __pycache__ files removed by cleanup,a94a0f6,репозиторій
+2026-11-11,publish_hub_home,"publish_hub_home: legacy article ids in hub block, excerpt trimming, patch-scripts mode",6dfad8e,репозиторій
+2026-11-11,publish_hub_home,publish_hub_home: re-save home after front switch (fix canonical),c7dc226,репозиторій
+2026-11-11,jurist-po-ipotechnum,"jurist-po-ipotechnum: article 1 text (corrected) and TZ, kept offline",6268aa8,репозиторій
+2026-11-11,jurist-po-ipotechnum,jurist-po-ipotechnum: images for articles 1-2 (not yet on site),f1cfe4d,репозиторій
+2026-11-11,,robots.txt templates for 16 sites (with Sitemap line) and instructions,5fcb08b,репозиторій
+2026-11-11,jurist-po-ipotechnum,"jurist-po-ipotechnum: article 2 text (corrected) and TZ, kept offline",9a354b3,репозиторій
+2026-11-11,jurist-po-ipotechnum,"jurist-po-ipotechnum: 2 articles scheduled (12.11, 13.11 09:00); card map in hub/home blocks",799f713,репозиторій
+2026-11-11,,"Знімок назв статей, внесених у колонку D головної таблиці",12617e3,репозиторій
+2026-11-11,lawmsb,"lawmsb: стаття 1 (ТЗ, текст, виправлена версія, картинка), конвертер у docx",00856d3,репозиторій
+2026-11-11,lawmsb,"lawmsb: стаття 1 на сайті (future, id 3777, 12.11 09:00), мапа карток для блоку",1a2292c,репозиторій
+2026-11-11,pravovid,"pravovid: стаття 1 (ТЗ, оригінал, виправлений текст, картинка)",15bd819,репозиторій
+2026-11-11,pravovid,"pravovid: стаття 1 на сайті (future, id 1269, 12.11 09:00), мапа карток для блоку",09945a2,репозиторій
+2026-11-11,yuristy,"yuristy: стаття 1 (ТЗ, оригінал, виправлений текст, картинка)",b01785c,репозиторій
+2026-11-11,yuristy,"yuristy: стаття 1 на сайті (future, 12.11 09:00), мапа карток для блоку",7ec1238,репозиторій
+2026-11-11,advokat-kharkov,"advokat-kharkov: стаття 1 (ТЗ, оригінал, виправлений текст, картинка)",0c8ca09,репозиторій
+2026-11-11,advokat-kharkov,"advokat-kharkov: стаття 1 на сайті (future, 12.11 09:00), мапа карток для блоку",0e28032,репозиторій
+2026-11-11,profconsulting,"profconsulting: стаття 1 (ТЗ, оригінал, виправлений текст, картинка)",048c67a,репозиторій
+2026-11-11,profconsulting,"profconsulting: стаття 1 на сайті (future, 12.11 09:00), мапа карток для блоку",6abb6fb,репозиторій
+2026-11-11,argument-consulting,"argument-consulting: стаття 1 (ТЗ, оригінал, виправлений текст, картинка)",40061a3,репозиторій
+2026-11-11,argument-consulting,"argument-consulting: стаття 1 на сайті (future, id 1531, 12.11 09:00), мапа карток для блоку",19bc1a1,репозиторій
+2026-11-11,spacelaw,"spacelaw: стаття 1 (ТЗ, оригінал, виправлений текст, картинка)",6a5106a,репозиторій
+2026-11-11,spacelaw,"spacelaw: стаття 1 на сайті (future, id 1512, 12.11 09:00), мапа карток для блоку",dfd7e98,репозиторій
+2026-11-12,,Скрипт додавання посилань на закони й постанови в статті (за Google-документами юристів),3f74346,репозиторій
+2026-11-12,add_law_links,"add_law_links: старі сайти (КЗпП, opendatabot, заголовки, FAQ-маркери)",e4c2f6b,репозиторій
+2026-11-12,lawmsb,"lawmsb: стаття 2 (кредитні канікули в банку) — текст, ТЗ, картинка, збірка",a1f7caf,репозиторій
+2026-11-12,lawmsb,"lawmsb: стаття 2 запланована на 13.11, посилання на закони й справи, оновлено картки хабу",8c4e6ad,репозиторій
+2026-11-12,lawmsb,"lawmsb: стаття 3 (кредитні канікули в МФО) — текст, ТЗ, картинка, збірка",397a1ae,репозиторій
+2026-11-12,lawmsb,"lawmsb: стаття 3 запланована на 16.11 з посиланнями; add_law_links: закон про захист прав споживачів, справа 679/1103/23",28ca3ac,репозиторій
+2026-11-12,,"build_site.py (7 сайтів): --push лише з --only N, посилання на закони додаються автоматично",0f5fe07,репозиторій
+2026-11-12,pravovid,"pravovid: стаття 2 (реєстр боржників) — текст, ТЗ, картинка, збірка",71ecfa7,репозиторій
+2026-11-12,pravovid,"pravovid: стаття 2 запланована на 13.11 з посиланнями, оновлено картки хабу",011961e,репозиторій
+2026-11-12,,build_site.py (7 сайтів): посилання на закони вставляються у сторінку до публікації (add_law_links --local),5b0a07d,репозиторій
+2026-11-12,pravovid,"pravovid: стаття 3 (борг у судових приставів) — текст, ТЗ, картинка, збірка",65b763d,репозиторій
+2026-11-12,pravovid,"pravovid: стаття 3 запланована на 16.11 з посиланнями, оновлено картки хабу",4723696,репозиторій
+2026-11-12,yuristy,"yuristy: стаття 2 (апеляція на рішення суду за кредитом) — текст, ТЗ, картинка, збірка",cad53aa,репозиторій
+2026-11-12,yuristy,"yuristy: стаття 2 запланована на 13.11 з посиланнями, оновлено картки хабу",fc25a10,репозиторій
+2026-11-12,yuristy,"yuristy: стаття 3 (строк позовної давності) — текст, ТЗ, картинка, збірка",fd32727,репозиторій
+2026-11-12,yuristy,"yuristy: стаття 3 запланована на 16.11 з посиланнями, оновлено картки хабу",b15ee88,репозиторій
+2026-11-12,advokat-kharkov,"advokat-kharkov: стаття 2 (як поводитися в суді з банком) — текст, ТЗ, картинка, збірка",3f00b28,репозиторій
+2026-11-12,advokat-kharkov,"advokat-kharkov: стаття 2 запланована на 13.11 з посиланнями, оновлено картки хабу",9599148,репозиторій
+2026-11-12,advokat-kharkov,"advokat-kharkov: стаття 3 (оскарження рішення по мікрозаймах) — текст, ТЗ, картинка, збірка",03268cf,репозиторій
+2026-11-12,advokat-kharkov,"advokat-kharkov: стаття 3 запланована на 16.11 з посиланнями, оновлено картки хабу",c23eba1,репозиторій
+2026-11-12,profconsulting,"profconsulting: стаття 2 (як поводитися з МФО при простроченні) — текст, ТЗ, картинка, збірка",872bd32,репозиторій
+2026-11-12,profconsulting,"profconsulting: стаття 2 запланована на 13.11 з посиланнями, оновлено картки хабу",9f000e3,репозиторій
+2026-11-12,profconsulting,"profconsulting: стаття 3 (купа боргів у МФО) — текст, ТЗ, картинка, збірка",9b9dbb6,репозиторій
+2026-11-12,profconsulting,"profconsulting: стаття 3 запланована на 16.11 з посиланнями, оновлено картки хабу",ed08989,репозиторій
+2026-11-12,argument-consulting,"argument-consulting: стаття 2 (борг у ПриватБанку) — текст, ТЗ, картинка, збірка",b9d6601,репозиторій
+2026-11-12,argument-consulting,"argument-consulting: стаття 2 запланована на 13.11 з посиланнями, оновлено картки хабу",9e967bd,репозиторій
+2026-11-12,argument-consulting,"argument-consulting: стаття 3 (як дізнатися чи є борг у ПриватБанку) — текст, ТЗ, картинка, збірка",f739bde,репозиторій
+2026-11-12,argument-consulting,"argument-consulting: стаття 3 запланована на 16.11 з посиланнями, оновлено картки хабу",4662968,репозиторій
+2026-11-12,spacelaw,"spacelaw: стаття 2 (як повернути частину грошей за кредит) — текст, ТЗ, картинка, збірка",77852e4,репозиторій
+2026-11-12,spacelaw,"spacelaw: стаття 2 запланована на 13.11 з посиланнями, оновлено картки хабу; add_law_links: справа 583/3343/19",35d1b56,репозиторій
+2026-11-12,spacelaw,"spacelaw: стаття 3 (чи потрібно йти в банк після погашення кредиту) — текст, ТЗ, картинка, збірка",2bffcfd,репозиторій
+2026-11-12,spacelaw,"spacelaw: стаття 3 запланована на 16.11 з посиланнями, оновлено картки хабу",4a3a2c0,репозиторій
+2026-11-12,jurist-po,"jurist-po: стаття 3 (продаж квартири з боргами), захист --only і локальні посилання в build_site",cd37556,репозиторій
+2026-11-12,jurist-po,"jurist-po: стаття 3 заплановано на 16.11 (id 987), оновлено картки",d35acc3,репозиторій
+2026-11-12,jurist-po,"jurist-po: стаття 4 (відстрочка по іпотеці) підготовлена, 18.11",319a414,репозиторій
+2026-11-12,jurist-po,"jurist-po: стаття 4 заплановано на 18.11, оновлено картки",f55ed4d,репозиторій
+2026-11-12,lawmsb,"lawmsb: стаття 4 (лист у банк про відстрочку) підготовлена, 18.11; підтримка блоку-цитати в convert/make_docx",70734f1,репозиторій
+2026-11-12,lawmsb,"lawmsb: стаття 4 заплановано на 18.11 (id 3793), оновлено картки",d1c1870,репозиторій
+2026-11-12,pravovid,"pravovid: стаття 4 (арешт рахунків без суду) підготовлена, 18.11",49d7fce,репозиторій
+2026-11-12,pravovid,"pravovid: стаття 4 заплановано на 18.11 (id 1278), оновлено картки",a74ba0e,репозиторій
+2026-11-12,yuristy,"yuristy: стаття 4 (як боротися з ПриватБанком) підготовлена, 18.11",6019bc5,репозиторій
+2026-11-12,yuristy,"yuristy: стаття 4 заплановано на 18.11 (id 25537), оновлено картки",b53619a,репозиторій
+2026-11-12,,Прибрано ШІ-маркери (покрокова інструкція/план юриста) у заголовках і тексті на всіх сайтах; оновлено docx з посиланнями; інструмент tools/ai-markers,aadad04,репозиторій
+2026-11-12,,Прибрано «пояснює юрист»/«пояснення юриста» у заголовках і тексті на всіх сайтах і в таблицях; оновлено docx,e7d0654,репозиторій
+2026-11-12,,Прибрано «відповідь юриста» і «алгоритм дій від юриста» на всіх сайтах і в таблицях; оновлено docx,1692f90,репозиторій
+2026-11-12,,"Прибрано «практика/позиція/поради юриста», «план дій від юриста», «відповідь адвоката»; оновлено docx",ddda082,репозиторій
+2026-11-12,,"Тексти Google Docs для 7 сайтів перестворено без заміних фраз (з посиланнями), старі переміщено в кошик; tools/make_docx_generic.py",516033e,репозиторій
+2026-11-12,,ТЗ для uchet (2 з 30 для 7 сайтів) без заборонених фраз; tools/md_to_docx.py,c9d2900,репозиторій
+2026-11-13,alternative.in.ua,"alternative.in.ua: чернетки сайту S5 Powder Arch, гайд стилю, контент-план, реєстр",c8ad05a,репозиторій
+2026-11-13,,Список опублікованих статей сайтів юристів (для перевірки індексації),e8e28f7,репозиторій
+2026-11-12,16 сайтів,"Прибрано ШІ-маркери в заголовках і тексті (за вимогою керівника), також у таблицях юристів",сканування 0 збігів,керівник
+2026-11-12,"7 сайтів (advokato, bankruptcyukraine, rada-advokat, legaladdress, ukrjurist, urists, uchet)","Перестворено 30 Google Docs текстів + ТЗ uchet, посилання в таблиці замінено, старі в кошик",таблиця плану,керівник
+2026-11-13,lawagency.kiev.ua,Створено «Ссылочный план» і каталог усіх таблиць (2 таблиці),Google Sheets,керівник
+2026-11-13,alternative.in.ua,"Чернетки: головна, контакти, результати, статті, політика; стиль S5; гайд стилю; контент-план","id 11,12,13,14,3",керівник
+2026-11-13,16 сайтів,"Список опублікованих статей (83) для перевірки індексації, таблиця",Google Sheets,керівник
