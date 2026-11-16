@@ -5,7 +5,7 @@
 CSV безанкорних 1–10: https://docs.google.com/spreadsheets/d/1K0NIEe2tFdI7wHEyiodIM8ipYZw9_yFMehYwLS6Kf0Q/edit
 Старі версії в Drive позначені «[ЗАСТАРІЛО]». Стара папка `lawyer-sites/lawagency-links/guest-posts/` — неактуальні чернетки.
 
-## Безанкорні (→ https://lawagency.kiev.ua/, голий URL), стиль як у примерах, уже в HTML і CSV
+## Безанкорні (→ https://lawagency.kiev.ua/, голий URL) — ТИП: звичайні, уже в HTML і CSV
 | № | Тайтл | Стаття | Статус |
 |---|---|---|---|
 | 1 | Як вибрати юристів | https://docs.google.com/document/d/1ymcPU_28B5hPLzG7fyjZ_7yPxLqwtaMG-tsrGXpELPY | готово (простіший рівень, ~3 000 зн.) |
@@ -19,7 +19,8 @@ CSV безанкорних 1–10: https://docs.google.com/spreadsheets/d/1K0NIE
 | 9 | Ознаки недобросовісного юриста | https://docs.google.com/document/d/1lTRB1Iaczxmre5MY8Snj4fO3qC98A09Ne0NgGmhhxLM | готово (КК ст. 190 не підтверджена файлом) |
 | 10 | Як оцінити юридичну фірму | https://docs.google.com/document/d/1Mn1oLa3KTCdw33lflkL7ZI5y9eLi5yrl0g0AxzcvKeQ | готово |
 
-## Анкорні про ЛА Консалтінг (→ https://lawagency.kiev.ua/)
+## Анкорні про ЛА Консалтінг (→ https://lawagency.kiev.ua/) — ТИП: ЕКСПЕРТНІ (ШАБЛОН-ЕКСПЕРТНИЙ)
+Увага: 11 (v2) і 20 (v6) написані ще до ПРИКЛАДУ 1 — потребують переробки під експертний шаблон (немає «Що каже закон», порівняння-таблиці, «Юридичного коментаря»).
 | № | Тайтл (H1) | Анкор (дослівно) | Мова | ТЗ | Стаття / статус |
 |---|---|---|---|---|---|
 | 11 | Ла консалтінг поділились досвідом, як треба перевіряти юристів | відгуки про юридичну фірму ла консалтінг можна почитати на порталі | uk | https://docs.google.com/document/d/1104JVsPkaMhx5S2VLjPx4B64iQltNMI9lSfgwnsTJG0 | https://docs.google.com/document/d/101hpKoLT0AXPTbxAkorYYKPnz1iBaMQn3OZyPsr1VUo — v2 готово (еталон, examples/11) |
@@ -33,7 +34,7 @@ CSV безанкорних 1–10: https://docs.google.com/spreadsheets/d/1K0NIE
 | 19 | Як оцінити роботу юриста, що він може дійсно зробити на прикладі захисту клієнтів від дзвінків колекторів | Ваші відгуки про ЛА Консалтінг допоможуть оцінити роботу | uk | https://docs.google.com/document/d/1DzyHf5rMVacz8JAqgeNG1n-IgyL7YZjTAIFsNOQaCuM | не написано; колекторські норми не підтверджені |
 | 20 | Кому дійсно юристи можуть списати борги | раджу почитати історії боржників і відгуки про ла консалтінг | uk | https://docs.google.com/document/d/1FAhadvk4t3js6i2nZXZapHw8cfeSvLtgOe77F92ANS4 | https://docs.google.com/document/d/1VidHoPllPKy_93lc7YP6Kdvz9u0pdlJxwj1aMWOAUvc — v6 готово (еталон, examples/20) |
 
-## Про платформу (→ https://lawagency.kiev.ua/kompanii/) — не почато
+## Про платформу (→ https://lawagency.kiev.ua/kompanii/) — ТИП: звичайні, не почато
 | № | Тайтл (робочий) | Анкор |
 |---|---|---|
 | 21 | Як знайти перевіреного юриста в Києві: де порівнювати фірми | Сайт відгуків про юридичні фірми |
