@@ -2,7 +2,7 @@
 
 Таблиця: https://docs.google.com/spreadsheets/d/1mIwFxbk8B5WHwUemh7DP57P1po5WsCsPWHi7zQ6Bi3A/edit
 (лист «Гест пости lawagency.kiev.ua» — тайтли/анкори/HTML; лист «Статті для перевірки» — C: стаття, D: ТЗ (лише 1–10)).
-CSV безанкорних 1–10: https://docs.google.com/spreadsheets/d/1K0NIEe2tFdI7wHEyiodIM8ipYZw9_yFMehYwLS6Kf0Q/edit
+CSV усіх 25 (Collaborator): https://docs.google.com/spreadsheets/d/1sU6tPcgACqMyxmyQkKpvCN3CLWorUDjIobs1N2-pN74/edit (рядки 1–10 перенесено зі старого CSV, 11–25 — `tools/make_csv.py`). HTML усіх 25 — у колонці H основного листа, посилання на CSV — у I2.
 Старі версії в Drive позначені «[ЗАСТАРІЛО]». Стара папка `lawyer-sites/lawagency-links/guest-posts/` — неактуальні чернетки.
 
 ## Безанкорні (→ https://lawagency.kiev.ua/, голий URL) — ТИП: звичайні, уже в HTML і CSV
