@@ -13,6 +13,7 @@ def md2html(md):
     for line in md.split('\n')[1:]:
         line=line.strip()
         if not line: close(); continue
+        if line.startswith('<'): close(); out.append(line); continue
         if line.startswith('## '): close(); out.append('<h2>%s</h2>'%inl(line[3:]))
         elif line.startswith('- '):
             if lst!='ul': close(); out.append('<ul>'); lst='ul'
@@ -26,16 +27,16 @@ plan=openpyxl.load_workbook('GUEST-POSTS-PLAN.xlsx').active
 rows=[]
 files={}
 for i in range(1,11): files[i]='bare-%02d.md'%i
-for i in (11,13,14,15,17,18,19,20): files[i]='anchor-%d.md'%i
+for i in range(11,21): files[i]='anchor-%d.md'%i
 for i in range(21,26): files[i]='platform-%d.md'%i
 for r in plan.iter_rows(min_row=2,max_row=26,values_only=True):
     typ,n,title,anchor,url,price,lang=r[:7]
     kind='Безанкорне' if n<=10 else 'Анкор'
     if n==18: anchor='юридична фірма ТОВ ЛА Консалтинг має оцінку 4,7 на порталі відгуків'
-    if n==12: lang='Російська (уточнити)'
+    if n==12: lang='Російська'
     else: lang='Українська'
     if n<=10: anchor=url
-    content=md2html(open(files[n]).read()) if n in files else ''
+    content=md2html(open(files[n]).read().replace('\n<tr>','<tr>').replace('\n</table>','</table>')) if n in files else ''
     rows.append(['','lawagency.kiev.ua',lang,url,kind,anchor,title,content,'','',price.replace('–','-')]+['']*14)
 H=['Дата публікації','Домен сайту','Мова','Сторінка акцептор','Тип посилання','Анкор','Заголовок/тема','Контент для розміщення','CSV','Домен (площадка)','Ціна до 1000','DR','Трафік','Тематика','Authority Score','Backlinks','Domains','IPs','Follow links','Nofollow links','Text links','Image links','Page','Індекс опублікованої статті']
 rows=[r[:11]+['']*13 for r in rows]
